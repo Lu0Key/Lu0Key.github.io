@@ -1,0 +1,1722 @@
+<!doctype html>
+<html lang="en-us">
+
+<head>
+    
+    <title>Js Dom // 洛七的摸鱼池塘</title>
+    <link rel="shortcut icon" href="%20/favicon.ico%20" />
+    <meta charset="utf-8" /> <meta name="generator" content="Hugo 0.80.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="author" content="洛七" />
+    <meta name="description" content="" /> <link rel="stylesheet" href="https://Lu0key.github.io/css/main.min.88e7083eff65effb7485b6e6f38d10afbec25093a6fac42d734ce9024d3defbd.css" />  <meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Js Dom"/>
+<meta name="twitter:description" content="DOM DOM 树   DOM
+ DOM 树 获取DOM元素 元素的属性 操作元素类名 操作文本内容 全选 选项卡 返回顶部 操作元素样式 DOM节点 获取节点 创建节点 插入节点 删除节点 替换节点 克隆节点 带有添加和删除功能的表格 动态创建表格 获取元素尺寸 获取元素偏移量 获取浏览器窗口尺寸 元素的常用事件 二级菜单渲染 选择器    doucument object model文档对象模型
+  操作页面元素的属性与方法
+  DOM树
+  DOM 的顶级是 document，可能会有更高的节点window，看情况
+  可以操作各种标签，文本，属性， 样式
+  获取DOM元素  非常规标签  html/head/body  document.documentElement document.head document.body     常规标签  能用常规标签的方法去获取非常规标签，知识一般不这样用   getElementById()  语法：查找范围."/>
+ <meta property="og:title" content="Js Dom" />
+<meta property="og:description" content="DOM DOM 树   DOM
+ DOM 树 获取DOM元素 元素的属性 操作元素类名 操作文本内容 全选 选项卡 返回顶部 操作元素样式 DOM节点 获取节点 创建节点 插入节点 删除节点 替换节点 克隆节点 带有添加和删除功能的表格 动态创建表格 获取元素尺寸 获取元素偏移量 获取浏览器窗口尺寸 元素的常用事件 二级菜单渲染 选择器    doucument object model文档对象模型
+  操作页面元素的属性与方法
+  DOM树
+  DOM 的顶级是 document，可能会有更高的节点window，看情况
+  可以操作各种标签，文本，属性， 样式
+  获取DOM元素  非常规标签  html/head/body  document.documentElement document.head document.body     常规标签  能用常规标签的方法去获取非常规标签，知识一般不这样用   getElementById()  语法：查找范围." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://Lu0key.github.io/post/js-dom/" />
+<meta property="article:published_time" content="2021-01-21T14:41:37+08:00" />
+<meta property="article:modified_time" content="2021-01-21T14:41:37+08:00" />
+
+
+</head>
+
+<body>
+    <header class="app-header">
+        <a href="https://Lu0key.github.io/"><img class="app-header-avatar" src="/avatar.jpg" alt="洛七" /></a>
+        <h1>洛七的摸鱼池塘</h1>
+        <nav class="app-header-menu">
+            <a class="app-header-menu-item" href="/tags/">Tags</a>
+        </nav>
+        <p>即将没书读的咸鱼</p>
+        <div class="app-header-social">
+            
+        </div>
+    </header>
+    <main class="app-container">
+        
+  <article class="post">
+    <header class="post-header">
+      <h1 class ="post-title">Js Dom</h1>
+      <div class="post-meta">
+        <div>
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-calendar">
+  <title>calendar</title>
+  <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line>
+</svg>
+          Jan 21, 2021
+        </div>
+        <div>
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-clock">
+  <title>clock</title>
+  <circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline>
+</svg>
+          11 min read
+        </div>
+      </div>
+    </header>
+    <div class="post-content">
+      <h1 id="dom">DOM</h1>
+<h3 id="dom-树">DOM 树</h3>
+<ul>
+<li>
+<p><a href="#dom">DOM</a></p>
+<ul>
+<li><a href="#dom-%E6%A0%91">DOM 树</a></li>
+<li><a href="#%E8%8E%B7%E5%8F%96dom%E5%85%83%E7%B4%A0">获取DOM元素</a></li>
+<li><a href="#%E5%85%83%E7%B4%A0%E7%9A%84%E5%B1%9E%E6%80%A7">元素的属性</a></li>
+<li><a href="#%E6%93%8D%E4%BD%9C%E5%85%83%E7%B4%A0%E7%B1%BB%E5%90%8D">操作元素类名</a></li>
+<li><a href="#%E6%93%8D%E4%BD%9C%E6%96%87%E6%9C%AC%E5%86%85%E5%AE%B9">操作文本内容</a></li>
+<li><a href="#%E5%85%A8%E9%80%89">全选</a></li>
+<li><a href="#%E9%80%89%E9%A1%B9%E5%8D%A1">选项卡</a></li>
+<li><a href="#%E8%BF%94%E5%9B%9E%E9%A1%B6%E9%83%A8">返回顶部</a></li>
+<li><a href="#%E6%93%8D%E4%BD%9C%E5%85%83%E7%B4%A0%E6%A0%B7%E5%BC%8F">操作元素样式</a></li>
+<li><a href="#dom%E8%8A%82%E7%82%B9">DOM节点</a></li>
+<li><a href="#%E8%8E%B7%E5%8F%96%E8%8A%82%E7%82%B9">获取节点</a></li>
+<li><a href="#%E5%88%9B%E5%BB%BA%E8%8A%82%E7%82%B9">创建节点</a></li>
+<li><a href="#%E6%8F%92%E5%85%A5%E8%8A%82%E7%82%B9">插入节点</a></li>
+<li><a href="#%E5%88%A0%E9%99%A4%E8%8A%82%E7%82%B9">删除节点</a></li>
+<li><a href="#%E6%9B%BF%E6%8D%A2%E8%8A%82%E7%82%B9">替换节点</a></li>
+<li><a href="#%E5%85%8B%E9%9A%86%E8%8A%82%E7%82%B9">克隆节点</a></li>
+<li><a href="#%E5%B8%A6%E6%9C%89%E6%B7%BB%E5%8A%A0%E5%92%8C%E5%88%A0%E9%99%A4%E5%8A%9F%E8%83%BD%E7%9A%84%E8%A1%A8%E6%A0%BC">带有添加和删除功能的表格</a></li>
+<li><a href="#%E5%8A%A8%E6%80%81%E5%88%9B%E5%BB%BA%E8%A1%A8%E6%A0%BC">动态创建表格</a></li>
+<li><a href="#%E8%8E%B7%E5%8F%96%E5%85%83%E7%B4%A0%E5%B0%BA%E5%AF%B8">获取元素尺寸</a></li>
+<li><a href="#%E8%8E%B7%E5%8F%96%E5%85%83%E7%B4%A0%E5%81%8F%E7%A7%BB%E9%87%8F">获取元素偏移量</a></li>
+<li><a href="#%E8%8E%B7%E5%8F%96%E6%B5%8F%E8%A7%88%E5%99%A8%E7%AA%97%E5%8F%A3%E5%B0%BA%E5%AF%B8">获取浏览器窗口尺寸</a></li>
+<li><a href="#%E5%85%83%E7%B4%A0%E7%9A%84%E5%B8%B8%E7%94%A8%E4%BA%8B%E4%BB%B6">元素的常用事件</a></li>
+<li><a href="#%E4%BA%8C%E7%BA%A7%E8%8F%9C%E5%8D%95%E6%B8%B2%E6%9F%93">二级菜单渲染</a></li>
+<li><a href="#%E9%80%89%E6%8B%A9%E5%99%A8">选择器</a></li>
+</ul>
+</li>
+<li>
+<p>doucument object model文档对象模型</p>
+</li>
+<li>
+<p>操作页面元素的属性与方法</p>
+</li>
+<li>
+<p><a href="https://www.cnblogs.com/cjeandailynotes/p/10508623.html">DOM树</a></p>
+</li>
+<li>
+<p>DOM 的顶级是 document，可能会有更高的节点window，看情况</p>
+</li>
+<li>
+<p>可以操作各种标签，文本，属性， 样式</p>
+</li>
+</ul>
+<h3 id="获取dom元素">获取DOM元素</h3>
+<ul>
+<li>非常规标签
+<ul>
+<li>html/head/body
+<ul>
+<li>document.documentElement</li>
+<li>document.head</li>
+<li>document.body</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>常规标签
+<ul>
+<li>能用常规标签的方法去获取非常规标签，知识一般不这样用</li>
+</ul>
+</li>
+<li>getElementById()
+<ul>
+<li>语法：查找范围.getElementById(&lsquo;id名称&rsquo;)</li>
+<li>返回值：
+<ul>
+<li>元素</li>
+<li>或者null</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>getElementsByTagName()
+<ul>
+<li>语法：查找范围.getElementsByTagName(&lsquo;标签名&rsquo;)</li>
+<li>返回值
+<ul>
+<li>所有范围内这个标签名组成的一个伪数组</li>
+<li>或者空的伪数组</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>getElementsByClassName()
+<ul>
+<li>语法：查找范围.getElementsByClassName(&lsquo;类名&rsquo;)</li>
+<li>返回值
+<ul>
+<li>所有范围内这个组成的一个伪数组</li>
+<li>或者空的伪数组</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>getElementsByName()
+<ul>
+<li>语法：查找范围.getElementsByName(&lsquo;元素name属性的值&rsquo;)</li>
+<li>返回值
+<ul>
+<li>所有范围内这个元素name属性的值组成的一个伪数组</li>
+<li>或者空的伪数组</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>querySelector()
+<ul>
+<li>语法：查找范围.querySelector(&lsquo;选择器&rsquo;)</li>
+<li>返回值
+<ul>
+<li>如果找到选择器匹配的内容，则返回第一个</li>
+<li>null</li>
+</ul>
+</li>
+<li>IE低版本不支持</li>
+</ul>
+</li>
+<li>querySelectorAll()
+<ul>
+<li>语法：查找范围.querySelectorAll(&lsquo;选择器&rsquo;)</li>
+<li>返回值
+<ul>
+<li>如果找到选择器匹配的元素，则返回全部</li>
+<li>空的伪数组</li>
+</ul>
+</li>
+<li>IE低版本不支持</li>
+</ul>
+</li>
+</ul>
+<h3 id="元素的属性">元素的属性</h3>
+<ul>
+<li>什么是元素的属性</li>
+<li>原生属性
+<ul>
+<li>id/class/style/type/src/&hellip;</li>
+</ul>
+</li>
+<li>自定义属性
+<ul>
+<li>aaa/abc/hhhh/&hellip;</li>
+</ul>
+</li>
+<li>H5 自定义属性
+<ul>
+<li>data-*</li>
+</ul>
+</li>
+<li>操作标签上的三种属性</li>
+<li>原生属性
+<ul>
+<li>元素.属性名(class)除外，类名用 元素.className</li>
+<li>增删查改
+<ul>
+<li>增/改 元素.属性名 = &lsquo;值&rsquo;</li>
+<li>查 元素.属性名</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>自定义属性
+<ul>
+<li>不能直接点操作</li>
+<li>增删查改
+<ul>
+<li>增/改 元素.setAttribute(&lsquo;属性名&rsquo;,&lsquo;属性值&rsquo;)</li>
+<li>删 removeAttribute(&lsquo;属性名&rsquo;)</li>
+<li>查 getAttribute(&lsquo;属性名&rsquo;)   // 拿到的时候都是字符串</li>
+</ul>
+</li>
+<li>可以操作自定义属性，也可以操作原生属性(一般不这么用)</li>
+</ul>
+</li>
+<li>H5 自定义属性
+<ul>
+<li>每一个元素身上有一个属性叫做dataset</li>
+<li>里面包含了所有 H5 自定义属性
+<ul>
+<li>key 是除了 data- 以外的部分</li>
+<li>value 就是这个属性的值</li>
+</ul>
+</li>
+<li>增删查改
+<ul>
+<li>增/改 元素.dataset.key = &lsquo;value&rsquo;</li>
+<li>删 delete 元素.dataset.key</li>
+<li>查 元素.dataset.key</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h3 id="操作元素类名">操作元素类名</h3>
+<ul>
+<li>设置类名
+<ul>
+<li>设置/改 元素.className = &lsquo;className&rsquo;</li>
+<li>追加类名 元素.className += ' secondClassName'</li>
+<li>删除类名(好加不好去)
+<ul>
+<li>获取类名</li>
+<li>截取字符串</li>
+<li>按照空格切开，循环便利，找到想删除的那个</li>
+<li>再写一遍</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>H5 标准提供的API
+<ul>
+<li>classList    元素.classList</li>
+<li>
+<ol>
+<li>add()</li>
+</ol>
+<ul>
+<li>元素.classList.add(&lsquo;你要添加的类名&rsquo;)</li>
+</ul>
+</li>
+<li>
+<ol start="2">
+<li>remove()</li>
+</ol>
+<ul>
+<li>元素.classList.remove(&lsquo;你要移除的类名&rsquo;)</li>
+</ul>
+</li>
+<li>
+<ol start="3">
+<li>toggle()</li>
+</ol>
+<ul>
+<li>元素.classList.toggle(&lsquo;你要切换的类名&rsquo;)</li>
+<li>如果有就删除，如果没有就添加(开关)</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h3 id="操作文本内容">操作文本内容</h3>
+<ul>
+<li>innerHTML
+<ul>
+<li>读写的属性
+<ul>
+<li>操作元素的超文本内容</li>
+<li>读：获取元素内部所有的内容
+<ul>
+<li>文本+标签全部内容</li>
+<li>以字符串的形式范围</li>
+<li>语法：元素.innerHTML</li>
+</ul>
+</li>
+<li>写：设置元素内部所有的内容
+<ul>
+<li>完全覆盖的书写</li>
+<li>语法：元素.innerHTML = &lsquo;你要设置的内容&rsquo;</li>
+<li>出现 HTML 结构时会自动解析</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>innerText
+<ul>
+<li>一个读写的属性</li>
+<li>操作元素的文本内容
+<ul>
+<li>读：获取元素内部的所有文本内容
+<ul>
+<li>包括子元素后代元素里的文本内容</li>
+<li>标签内容不获取</li>
+<li>语法：元素.innerText</li>
+</ul>
+</li>
+<li>写：设置元素内部的文本内容
+<ul>
+<li>完全覆盖式的写</li>
+<li>语法：元素.innerText = &lsquo;你要设置的内容&rsquo;</li>
+<li>出现 HTML 结构时不会自动解析</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>value
+<ul>
+<li>一个读写的属性</li>
+<li>操作表单的元素的 value 值</li>
+<li>读：获取表单元素的 value 值
+<ul>
+<li>语法：元素.value</li>
+</ul>
+</li>
+<li>写：设置表单元素的 value 值
+<ul>
+<li>语法：元素.value = &lsquo;你要设置的值&rsquo;</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h3 id="全选">全选</h3>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html">&lt;<span style="color:#f92672">style</span>&gt;
+    <span style="color:#f92672">*</span>{
+        <span style="color:#66d9ef">margin</span>: <span style="color:#ae81ff">0</span>;
+        <span style="color:#66d9ef">padding</span>: <span style="color:#ae81ff">0</span>;
+    }
+
+    .<span style="color:#a6e22e">box</span> {
+        <span style="color:#66d9ef">width</span>:<span style="color:#ae81ff">160</span><span style="color:#66d9ef">px</span>;
+        <span style="color:#66d9ef">padding</span>: <span style="color:#ae81ff">5</span><span style="color:#66d9ef">px</span>;
+        <span style="color:#66d9ef">border</span>: <span style="color:#ae81ff">1</span><span style="color:#66d9ef">px</span> <span style="color:#66d9ef">solid</span> <span style="color:#ae81ff">#333</span>;
+        <span style="color:#66d9ef">margin</span>: <span style="color:#ae81ff">100</span><span style="color:#66d9ef">px</span> <span style="color:#66d9ef">auto</span>;
+    }
+
+    .<span style="color:#a6e22e">box</span> <span style="color:#f92672">&gt;</span><span style="color:#f92672">div</span>{
+        <span style="color:#66d9ef">padding</span>: <span style="color:#ae81ff">15</span><span style="color:#66d9ef">px</span>;
+    }
+&lt;/<span style="color:#f92672">style</span>&gt;
+
+&lt;<span style="color:#f92672">body</span>&gt;
+    &lt;<span style="color:#f92672">div</span> <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;box&#34;</span>&gt;
+        &lt;<span style="color:#f92672">div</span> <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;all&#34;</span>&gt;
+            全选：&lt;<span style="color:#f92672">input</span> <span style="color:#a6e22e">type</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;checkbox&#34;</span> <span style="color:#a6e22e">name</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;&#34;</span> <span style="color:#a6e22e">id</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;&#34;</span>&gt;
+        &lt;/<span style="color:#f92672">div</span>&gt;
+        &lt;<span style="color:#f92672">hr</span>/&gt;
+        &lt;<span style="color:#f92672">div</span> <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;items&#34;</span>&gt;
+            选项1: &lt;<span style="color:#f92672">input</span> <span style="color:#a6e22e">type</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;checkbox&#34;</span>&gt; &lt;<span style="color:#f92672">br</span>/&gt; 选项2: 
+            &lt;<span style="color:#f92672">input</span> <span style="color:#a6e22e">type</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;checkbox&#34;</span>&gt; &lt;<span style="color:#f92672">br</span>/&gt; 选项3: 
+            &lt;<span style="color:#f92672">input</span> <span style="color:#a6e22e">type</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;checkbox&#34;</span>&gt;&lt;<span style="color:#f92672">br</span>/&gt; 选项4:
+            &lt;<span style="color:#f92672">input</span> <span style="color:#a6e22e">type</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;checkbox&#34;</span>&gt;&lt;<span style="color:#f92672">br</span>/&gt; 选项5:
+            &lt;<span style="color:#f92672">input</span> <span style="color:#a6e22e">type</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;checkbox&#34;</span>&gt;&lt;<span style="color:#f92672">br</span>/&gt;
+        &lt;/<span style="color:#f92672">div</span>&gt;
+    &lt;/<span style="color:#f92672">div</span>&gt;
+&lt;/<span style="color:#f92672">body</span>&gt;
+
+&lt;<span style="color:#f92672">script</span>&gt;
+    <span style="color:#66d9ef">let</span> <span style="color:#a6e22e">allBtn</span> <span style="color:#f92672">=</span> document.<span style="color:#a6e22e">querySelector</span>(<span style="color:#e6db74">&#39;.all &gt; input&#39;</span>);
+    <span style="color:#66d9ef">let</span> <span style="color:#a6e22e">itemsBtns</span> <span style="color:#f92672">=</span> document.<span style="color:#a6e22e">querySelectorAll</span>(<span style="color:#e6db74">&#39;.items &gt; input&#39;</span>);
+
+    <span style="color:#75715e">// 给 allTtn 绑定点击事件
+</span><span style="color:#75715e"></span>    <span style="color:#a6e22e">allBtn</span>.<span style="color:#a6e22e">onclick</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">function</span>() {
+            <span style="color:#75715e">// 获取自己当前的状态
+</span><span style="color:#75715e"></span>            <span style="color:#66d9ef">let</span> <span style="color:#a6e22e">type</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">allBtn</span>.<span style="color:#a6e22e">checked</span>;
+
+            <span style="color:#75715e">// 遍历循环 itemBtns
+</span><span style="color:#75715e"></span>            <span style="color:#75715e">// for (let i = 0; i &lt; itemsBtns.length; i++) {
+</span><span style="color:#75715e"></span>            <span style="color:#75715e">//     itemsBtns[i].checked = type;
+</span><span style="color:#75715e"></span>            <span style="color:#75715e">// }
+</span><span style="color:#75715e"></span>            <span style="color:#75715e">// 或者
+</span><span style="color:#75715e"></span>            <span style="color:#a6e22e">itemsBtns</span>.<span style="color:#a6e22e">forEach</span>(<span style="color:#66d9ef">function</span>(<span style="color:#a6e22e">item</span>) {
+                <span style="color:#a6e22e">item</span>.<span style="color:#a6e22e">checked</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">type</span>;
+            });
+        }
+        <span style="color:#75715e">// 给每一个选项按钮添加点击事件
+</span><span style="color:#75715e"></span>    <span style="color:#a6e22e">itemsBtns</span>.<span style="color:#a6e22e">forEach</span>(<span style="color:#66d9ef">function</span>(<span style="color:#a6e22e">item</span>) {
+        <span style="color:#a6e22e">item</span>.<span style="color:#a6e22e">onclick</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">function</span>() {
+            <span style="color:#75715e">// 判断是不是每一个都选中
+</span><span style="color:#75715e"></span>            <span style="color:#66d9ef">let</span> <span style="color:#a6e22e">flag</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">true</span>;
+            <span style="color:#a6e22e">itemsBtns</span>.<span style="color:#a6e22e">forEach</span>(<span style="color:#66d9ef">function</span>(<span style="color:#a6e22e">item</span>) {
+                <span style="color:#66d9ef">if</span> (<span style="color:#f92672">!</span><span style="color:#a6e22e">item</span>.<span style="color:#a6e22e">checked</span>) <span style="color:#a6e22e">flag</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">false</span>;
+            })
+            <span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#a6e22e">flag</span>);
+            <span style="color:#a6e22e">allBtn</span>.<span style="color:#a6e22e">checked</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">flag</span>;
+        }
+    });
+&lt;/<span style="color:#f92672">script</span>&gt;
+</code></pre></div><h3 id="选项卡">选项卡</h3>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html">&lt;<span style="color:#f92672">style</span>&gt;
+    <span style="color:#f92672">*</span> {
+        <span style="color:#66d9ef">margin</span>: <span style="color:#ae81ff">0</span>;
+        <span style="color:#66d9ef">padding</span>: <span style="color:#ae81ff">0</span>;
+    }
+    
+    <span style="color:#f92672">ul</span><span style="color:#f92672">,</span>
+    <span style="color:#f92672">ol</span><span style="color:#f92672">,</span>
+    <span style="color:#f92672">li</span> {
+        <span style="color:#66d9ef">list-style</span>: <span style="color:#66d9ef">none</span>;
+    }
+    
+    .<span style="color:#a6e22e">box</span> {
+        <span style="color:#66d9ef">width</span>: <span style="color:#ae81ff">600</span><span style="color:#66d9ef">px</span>;
+        <span style="color:#66d9ef">height</span>: <span style="color:#ae81ff">400</span><span style="color:#66d9ef">px</span>;
+        <span style="color:#66d9ef">border</span>: <span style="color:#ae81ff">10</span><span style="color:#66d9ef">px</span> <span style="color:#66d9ef">solid</span> <span style="color:#ae81ff">#3e3e3e</span>;
+        <span style="color:#66d9ef">margin</span>: <span style="color:#ae81ff">50</span><span style="color:#66d9ef">px</span> <span style="color:#66d9ef">auto</span>;
+        <span style="color:#75715e">/* overflow: hidden; */</span>
+    }
+    
+    .<span style="color:#a6e22e">box</span><span style="color:#f92672">&gt;</span><span style="color:#f92672">ul</span> {
+        <span style="color:#66d9ef">height</span>: <span style="color:#ae81ff">50</span><span style="color:#66d9ef">px</span>;
+        <span style="color:#66d9ef">width</span>: <span style="color:#ae81ff">100</span><span style="color:#66d9ef">%</span>;
+        <span style="color:#66d9ef">overflow</span>: <span style="color:#66d9ef">hidden</span>;
+    }
+    
+    .<span style="color:#a6e22e">box</span><span style="color:#f92672">&gt;</span><span style="color:#f92672">ul</span><span style="color:#f92672">&gt;</span><span style="color:#f92672">li</span> {
+        <span style="color:#66d9ef">float</span>: <span style="color:#66d9ef">left</span>;
+        <span style="color:#66d9ef">width</span>: <span style="color:#ae81ff">200</span><span style="color:#66d9ef">px</span>;
+        <span style="color:#66d9ef">height</span>: <span style="color:#ae81ff">100</span><span style="color:#66d9ef">%</span>;
+        <span style="color:#66d9ef">text-align</span>: <span style="color:#66d9ef">center</span>;
+        <span style="color:#66d9ef">line-height</span>: <span style="color:#ae81ff">50</span><span style="color:#66d9ef">px</span>;
+        <span style="color:#66d9ef">font-size</span>: <span style="color:#ae81ff">30</span><span style="color:#66d9ef">px</span>;
+        <span style="color:#66d9ef">background-color</span>: <span style="color:#66d9ef">skyblue</span>;
+        <span style="color:#66d9ef">color</span>: <span style="color:#ae81ff">#fff</span>;
+        <span style="color:#66d9ef">cursor</span>: <span style="color:#66d9ef">pointer</span>;
+    }
+    
+    .<span style="color:#a6e22e">box</span><span style="color:#f92672">&gt;</span><span style="color:#f92672">ul</span><span style="color:#f92672">&gt;</span><span style="color:#f92672">li</span>.<span style="color:#a6e22e">active</span> {
+        <span style="color:#66d9ef">background-color</span>: <span style="color:#66d9ef">orange</span>;
+    }
+    
+    .<span style="color:#a6e22e">box</span><span style="color:#f92672">&gt;</span><span style="color:#f92672">ol</span> {
+        <span style="color:#66d9ef">width</span>: <span style="color:#ae81ff">100</span><span style="color:#66d9ef">%</span>;
+        <span style="color:#66d9ef">height</span>: <span style="color:#ae81ff">350</span><span style="color:#66d9ef">px</span>;
+        <span style="color:#66d9ef">position</span>: <span style="color:#66d9ef">relative</span>;
+    }
+    
+    .<span style="color:#a6e22e">box</span><span style="color:#f92672">&gt;</span><span style="color:#f92672">ol</span><span style="color:#f92672">&gt;</span><span style="color:#f92672">li</span> {
+        <span style="color:#66d9ef">width</span>: <span style="color:#ae81ff">100</span><span style="color:#66d9ef">%</span>;
+        <span style="color:#66d9ef">height</span>: <span style="color:#ae81ff">100</span><span style="color:#66d9ef">%</span>;
+        <span style="color:#66d9ef">background-color</span>: <span style="color:#66d9ef">purple</span>;
+        <span style="color:#66d9ef">text-align</span>: <span style="color:#66d9ef">center</span>;
+        <span style="color:#66d9ef">line-height</span>: <span style="color:#ae81ff">350</span><span style="color:#66d9ef">px</span>;
+        <span style="color:#66d9ef">font-size</span>: <span style="color:#ae81ff">100</span><span style="color:#66d9ef">px</span>;
+        <span style="color:#66d9ef">color</span>: <span style="color:#ae81ff">#fff</span>;
+        <span style="color:#66d9ef">position</span>: <span style="color:#66d9ef">absolute</span>;
+        <span style="color:#66d9ef">left</span>: <span style="color:#ae81ff">0</span>;
+        <span style="color:#66d9ef">top</span>: <span style="color:#ae81ff">0</span>;
+        <span style="color:#66d9ef">display</span>: <span style="color:#66d9ef">none</span>;
+    }
+    
+    .<span style="color:#a6e22e">box</span><span style="color:#f92672">&gt;</span><span style="color:#f92672">ol</span><span style="color:#f92672">&gt;</span><span style="color:#f92672">li</span>.<span style="color:#a6e22e">active</span> {
+        <span style="color:#66d9ef">display</span>: <span style="color:#66d9ef">block</span>;
+    }
+&lt;/<span style="color:#f92672">style</span>&gt;
+
+&lt;<span style="color:#f92672">body</span>&gt;
+    &lt;<span style="color:#f92672">div</span> <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;box&#34;</span>&gt;
+        &lt;<span style="color:#f92672">ul</span>&gt;
+            &lt;<span style="color:#f92672">li</span> <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;active&#34;</span>&gt;1&lt;/<span style="color:#f92672">li</span>&gt;
+            &lt;<span style="color:#f92672">li</span>&gt;2&lt;/<span style="color:#f92672">li</span>&gt;
+            &lt;<span style="color:#f92672">li</span>&gt;3&lt;/<span style="color:#f92672">li</span>&gt;
+        &lt;/<span style="color:#f92672">ul</span>&gt;
+        &lt;<span style="color:#f92672">ol</span>&gt;
+            &lt;<span style="color:#f92672">li</span> <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;active&#34;</span>&gt;1&lt;/<span style="color:#f92672">li</span>&gt;
+            &lt;<span style="color:#f92672">li</span>&gt;2&lt;/<span style="color:#f92672">li</span>&gt;
+            &lt;<span style="color:#f92672">li</span>&gt;3&lt;/<span style="color:#f92672">li</span>&gt;
+        &lt;/<span style="color:#f92672">ol</span>&gt;
+    &lt;/<span style="color:#f92672">div</span>&gt;
+&lt;/<span style="color:#f92672">body</span>&gt;
+
+&lt;<span style="color:#f92672">script</span>&gt;
+    <span style="color:#66d9ef">let</span> <span style="color:#a6e22e">btns</span> <span style="color:#f92672">=</span> document.<span style="color:#a6e22e">querySelectorAll</span>(<span style="color:#e6db74">&#39;ul &gt; li&#39;</span>);
+    <span style="color:#66d9ef">let</span> <span style="color:#a6e22e">tabs</span> <span style="color:#f92672">=</span> document.<span style="color:#a6e22e">querySelectorAll</span>(<span style="color:#e6db74">&#39;ol &gt; li&#39;</span>);
+
+    <span style="color:#a6e22e">btns</span>.<span style="color:#a6e22e">forEach</span>(<span style="color:#66d9ef">function</span>(<span style="color:#a6e22e">item</span>, <span style="color:#a6e22e">index</span>) {
+
+        <span style="color:#a6e22e">item</span>.<span style="color:#a6e22e">onclick</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">function</span>() {
+            <span style="color:#a6e22e">btns</span>.<span style="color:#a6e22e">forEach</span>(<span style="color:#66d9ef">function</span>(<span style="color:#a6e22e">b</span>, <span style="color:#a6e22e">i</span>) {
+                <span style="color:#a6e22e">b</span>.<span style="color:#a6e22e">className</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;&#39;</span>;
+                <span style="color:#a6e22e">tabs</span>[<span style="color:#a6e22e">i</span>].<span style="color:#a6e22e">className</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;&#39;</span>;
+            })
+            <span style="color:#a6e22e">item</span>.<span style="color:#a6e22e">className</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;active&#39;</span>;
+            <span style="color:#a6e22e">tabs</span>[<span style="color:#a6e22e">index</span>].<span style="color:#a6e22e">className</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;active&#39;</span>;
+        }
+    });
+&lt;/<span style="color:#f92672">script</span>&gt;
+</code></pre></div><h3 id="返回顶部">返回顶部</h3>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html">&lt;<span style="color:#f92672">style</span>&gt;
+        <span style="color:#f92672">*</span> {
+            <span style="color:#66d9ef">margin</span>: <span style="color:#ae81ff">0</span>;
+            <span style="color:#66d9ef">padding</span>: <span style="color:#ae81ff">0</span>;
+        }
+        
+        <span style="color:#f92672">body</span> {
+            <span style="color:#66d9ef">height</span>: <span style="color:#ae81ff">3000</span><span style="color:#66d9ef">px</span>;
+        }
+        
+        .<span style="color:#a6e22e">topBar</span> {
+            <span style="color:#66d9ef">width</span>: <span style="color:#ae81ff">100</span><span style="color:#66d9ef">%</span>;
+            <span style="color:#66d9ef">height</span>: <span style="color:#ae81ff">50</span><span style="color:#66d9ef">px</span>;
+            <span style="color:#66d9ef">line-height</span>: <span style="color:#ae81ff">50</span><span style="color:#66d9ef">px</span>;
+            <span style="color:#66d9ef">text-align</span>: <span style="color:#66d9ef">center</span>;
+            <span style="color:#66d9ef">color</span>: <span style="color:#ae81ff">#fff</span>;
+            <span style="color:#66d9ef">background-color</span>: <span style="color:#66d9ef">skyblue</span>;
+            <span style="color:#66d9ef">position</span>: <span style="color:#66d9ef">fixed</span>;
+            <span style="color:#66d9ef">font-size</span>: <span style="color:#ae81ff">30</span><span style="color:#66d9ef">px</span>;
+            <span style="color:#66d9ef">left</span>: <span style="color:#ae81ff">0</span>;
+            <span style="color:#66d9ef">top</span>: <span style="color:#ae81ff">0</span>;
+            <span style="color:#66d9ef">display</span>: <span style="color:#66d9ef">none</span>;
+        }
+        
+        .<span style="color:#a6e22e">topBar</span>.<span style="color:#a6e22e">active</span> {
+            <span style="color:#66d9ef">display</span>: <span style="color:#66d9ef">block</span>;
+            <span style="color:#66d9ef">transition</span>: <span style="color:#ae81ff">1</span><span style="color:#66d9ef">s</span> <span style="color:#66d9ef">ease</span><span style="color:#f92672">-</span>in-out;
+        }
+        
+        .<span style="color:#a6e22e">goTop</span> {
+            <span style="color:#66d9ef">width</span>: <span style="color:#ae81ff">50</span><span style="color:#66d9ef">px</span>;
+            <span style="color:#66d9ef">height</span>: <span style="color:#ae81ff">50</span><span style="color:#66d9ef">px</span>;
+            <span style="color:#66d9ef">line-height</span>: <span style="color:#ae81ff">25</span><span style="color:#66d9ef">px</span>;
+            <span style="color:#66d9ef">font-size</span>: <span style="color:#ae81ff">20</span><span style="color:#66d9ef">px</span>;
+            <span style="color:#66d9ef">color</span>: <span style="color:#ae81ff">#fff</span>;
+            <span style="color:#66d9ef">background-color</span>: <span style="color:#66d9ef">pink</span>;
+            <span style="color:#66d9ef">position</span>: <span style="color:#66d9ef">fixed</span>;
+            <span style="color:#66d9ef">bottom</span>: <span style="color:#ae81ff">50</span><span style="color:#66d9ef">px</span>;
+            <span style="color:#66d9ef">right</span>: <span style="color:#ae81ff">50</span><span style="color:#66d9ef">px</span>;
+            <span style="color:#66d9ef">text-align</span>: <span style="color:#66d9ef">center</span>;
+            <span style="color:#66d9ef">display</span>: <span style="color:#66d9ef">none</span>;
+        }
+        
+        .<span style="color:#a6e22e">goTop</span>.<span style="color:#a6e22e">active</span> {
+            <span style="color:#66d9ef">display</span>: <span style="color:#66d9ef">block</span>;
+        }
+    &lt;/<span style="color:#f92672">style</span>&gt;
+&lt;/<span style="color:#f92672">head</span>&gt;
+
+&lt;<span style="color:#f92672">body</span>&gt;
+    &lt;<span style="color:#f92672">div</span> <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;topBar&#34;</span>&gt;顶部&lt;/<span style="color:#f92672">div</span>&gt;
+    &lt;<span style="color:#f92672">div</span> <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;goTop&#34;</span>&gt;回到顶部&lt;/<span style="color:#f92672">div</span>&gt;
+    &lt;<span style="color:#f92672">script</span>&gt;
+        <span style="color:#66d9ef">let</span> <span style="color:#a6e22e">topBar</span> <span style="color:#f92672">=</span> document.<span style="color:#a6e22e">querySelector</span>(<span style="color:#e6db74">&#39;.topBar&#39;</span>);
+        <span style="color:#66d9ef">let</span> <span style="color:#a6e22e">goTop</span> <span style="color:#f92672">=</span> document.<span style="color:#a6e22e">querySelector</span>(<span style="color:#e6db74">&#39;.goTop&#39;</span>);
+        window.<span style="color:#a6e22e">onscroll</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">function</span>() {
+
+            <span style="color:#66d9ef">let</span> <span style="color:#a6e22e">scollTop</span> <span style="color:#f92672">=</span> document.<span style="color:#a6e22e">documentElement</span>.<span style="color:#a6e22e">scrollTop</span> <span style="color:#f92672">||</span> document.<span style="color:#a6e22e">body</span>.<span style="color:#a6e22e">scrollTop</span>;
+            <span style="color:#66d9ef">if</span> (<span style="color:#a6e22e">scollTop</span> <span style="color:#f92672">&gt;=</span> <span style="color:#ae81ff">300</span>) {
+                <span style="color:#75715e">// topBar.className = &#39;topBar active&#39;;
+</span><span style="color:#75715e"></span>                <span style="color:#75715e">// goTop.className = &#39;goTop active&#39;;
+</span><span style="color:#75715e"></span>                <span style="color:#a6e22e">topBar</span>.<span style="color:#a6e22e">classList</span>.<span style="color:#a6e22e">add</span>(<span style="color:#e6db74">&#39;active&#39;</span>);
+                <span style="color:#a6e22e">goTop</span>.<span style="color:#a6e22e">classList</span>.<span style="color:#a6e22e">add</span>(<span style="color:#e6db74">&#39;active&#39;</span>);
+            } <span style="color:#66d9ef">else</span> {
+                <span style="color:#75715e">// topBar.className = &#39;topBar&#39;;
+</span><span style="color:#75715e"></span>                <span style="color:#75715e">// goTop.className = &#39;goTop&#39;;
+</span><span style="color:#75715e"></span>                <span style="color:#a6e22e">topBar</span>.<span style="color:#a6e22e">classList</span>.<span style="color:#a6e22e">remove</span>(<span style="color:#e6db74">&#39;active&#39;</span>);
+                <span style="color:#a6e22e">goTop</span>.<span style="color:#a6e22e">classList</span>.<span style="color:#a6e22e">remove</span>(<span style="color:#e6db74">&#39;active&#39;</span>);
+            }
+        }
+        <span style="color:#a6e22e">goTop</span>.<span style="color:#a6e22e">onclick</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">function</span>() {
+            window.<span style="color:#a6e22e">scrollTo</span>({
+                <span style="color:#a6e22e">top</span><span style="color:#f92672">:</span> <span style="color:#ae81ff">0</span>,
+                <span style="color:#a6e22e">behavior</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;smooth&#39;</span>
+            })
+        }
+    &lt;/<span style="color:#f92672">script</span>&gt;
+&lt;/<span style="color:#f92672">body</span>&gt;
+</code></pre></div><h3 id="操作元素样式">操作元素样式</h3>
+<ul>
+<li>样式
+<ul>
+<li>行内样式</li>
+<li>非行内样式</li>
+</ul>
+</li>
+<li>元素.style
+<ul>
+<li>console.log(div.style)</li>
+<li>只能获取到行内样式</li>
+<li>div.style.width</li>
+</ul>
+</li>
+<li>获取非行内样式
+<ul>
+<li>window.getComputedStyle() 方法(标准浏览器)
+<ul>
+<li>window.getComputedStyle(要获取样式的元素)</li>
+<li>返回一个对象，里面包含所有可以设置的样式，每一个样式都有值，如果没有设置则返回默认值</li>
+</ul>
+</li>
+<li>currentStyle 属性 (IE低版本)</li>
+<li>通过点操作符获取样式的时候，如果样式名带有横线，则用驼峰命名法，如 background-color对应backgroundColor</li>
+<li>如果是数组关联语法，则可以写横线, 如style[&lsquo;background-color&rsquo;]</li>
+</ul>
+</li>
+<li>短路表达式：方法或属性执行没有问题，只是拿不到值得时候||</li>
+</ul>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#66d9ef">function</span> <span style="color:#a6e22e">getStyle</span>(<span style="color:#a6e22e">ele</span>, <span style="color:#a6e22e">style</span>){
+    <span style="color:#66d9ef">if</span> (<span style="color:#e6db74">&#39;getComputedStyle&#39;</span> <span style="color:#66d9ef">in</span> window){
+        <span style="color:#66d9ef">return</span> window.<span style="color:#a6e22e">getComputedStyle</span>(<span style="color:#a6e22e">ele</span>)[<span style="color:#a6e22e">style</span>];
+    }
+    <span style="color:#66d9ef">else</span>{
+        <span style="color:#a6e22e">retuen</span> <span style="color:#a6e22e">ele</span>.<span style="color:#a6e22e">currentStyle</span>[<span style="color:#a6e22e">style</span>];
+    }
+}
+</code></pre></div><ul>
+<li>设置元素样式只能设置元素行内样式
+<ul>
+<li>元素.style.样式名 = &lsquo;value‘</li>
+</ul>
+</li>
+</ul>
+<h3 id="dom节点">DOM节点</h3>
+<ul>
+<li>DOM节点就是构成我们页面的每一个组成部分</li>
+<li>元素/注释/文本等内容都是一个个节点</li>
+<li>常用的四种节点
+<ul>
+<li>元素节点：页面中的每一个标签</li>
+<li>文本节点：卸载标签里的文本内容</li>
+<li>属性节点：写在元素上的每一个属性</li>
+<li>注释节点：页面中书写的注释内容</li>
+</ul>
+</li>
+<li>document
+<ul>
+<li>是一个页面中最大的节点，只能有一个</li>
+<li>承载所有节点的容器，不属于元素</li>
+<li>根节点</li>
+</ul>
+</li>
+<li>html
+<ul>
+<li>一个页面中最大的元素节点</li>
+<li>承载所有其他节点</li>
+<li>根元素节点</li>
+</ul>
+</li>
+<li>元素节点
+<ul>
+<li>head/body/div/&hellip;.</li>
+<li>只是不同标签在页面中表现形式不一样</li>
+<li>特点：只是页面的标签</li>
+</ul>
+</li>
+<li>文本节点
+<ul>
+<li>每一段文本内容都是一个文本节点</li>
+<li>包含换行和空格</li>
+<li>一般作为元素节点的子节点存在，用来表示该元素节点在页面上显示的内容</li>
+</ul>
+</li>
+<li>属性节点
+<ul>
+<li>属性节点不作为独立节点出现，必须依赖元素节点</li>
+<li>如果没有元素，属性节点就是文本</li>
+</ul>
+</li>
+<li>注释节点
+<ul>
+<li>作为独立节点出现</li>
+<li>作为说明文本使用</li>
+</ul>
+</li>
+<li>节点操作
+<ul>
+<li>不光操作元素，还要操作 注释节点 文本节点 属性节点</li>
+<li>获取节点(包括但不限于元素节点)</li>
+<li>创建节点(通过JS语法来创造一个标签/文本/注释)
+<ul>
+<li>把我们创造的节点插入另一个节点中，出现父子结构</li>
+</ul>
+</li>
+<li>删除节点(把一个已经存在的节点移除)</li>
+<li>替换节点(创造一个节点去替换一个已经存在的节点)</li>
+<li>克隆节点(把一个已经存在的节点复制一份一模一样的)</li>
+</ul>
+</li>
+</ul>
+<h3 id="获取节点">获取节点</h3>
+<ul>
+<li>获得节点的属性
+<ul>
+<li>childNodes
+<ul>
+<li>语法：元素.childNodes</li>
+<li>得到元素所有的子节点</li>
+</ul>
+</li>
+<li>children
+<ul>
+<li>语法：元素.children</li>
+<li>得到子节点的所有元素节点</li>
+</ul>
+</li>
+<li>firstChild
+<ul>
+<li>语法：元素.firstChild</li>
+<li>得到元素的第一个子节点</li>
+</ul>
+</li>
+<li>firstElementChild
+<ul>
+<li>语法：元素.firstElementChild</li>
+<li>得到元素第一个子元素节点</li>
+</ul>
+</li>
+<li>lastChild
+<ul>
+<li>语法：元素.lastChild</li>
+<li>得到元素的最后一个子节点</li>
+</ul>
+</li>
+<li>lastElementChild
+<ul>
+<li>语法：元素.lastElementChild</li>
+<li>得到元素最后一个子元素节点</li>
+</ul>
+</li>
+<li>perviousSibling
+<ul>
+<li>语法：元素.perviousSibling</li>
+<li>得到元素的上一个兄弟节点</li>
+</ul>
+</li>
+<li>perviousElementSibling
+<ul>
+<li>语法：元素.perviousElementSibling</li>
+<li>得到元素的上一个兄弟元素</li>
+</ul>
+</li>
+<li>nextSibling
+<ul>
+<li>语法：元素.nextSibling</li>
+<li>得到元素的下一个兄弟节点</li>
+</ul>
+</li>
+<li>nextElementSibling
+<ul>
+<li>语法：元素.nextSibling</li>
+<li>得到元素的下一个兄弟元素</li>
+</ul>
+</li>
+<li>parentNode
+<ul>
+<li>语法：元素.parentNode</li>
+<li>得到该元素的父节点</li>
+<li>父节点：大部分时间是元素，有时候是document</li>
+</ul>
+</li>
+<li>parentElement
+<ul>
+<li>语法：元素.parentElement</li>
+<li>得到该元素的父元素节点</li>
+</ul>
+</li>
+<li>attributes
+<ul>
+<li>语法：元素.attributes</li>
+<li>得到元素的所有属性节点</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html">&lt;<span style="color:#f92672">body</span>&gt;
+    &lt;<span style="color:#f92672">p</span>&gt;div上面&lt;/<span style="color:#f92672">p</span>&gt;
+    &lt;<span style="color:#f92672">div</span>&gt;
+        hello
+        &lt;<span style="color:#f92672">p</span>&gt;你好&lt;/<span style="color:#f92672">p</span>&gt;
+        world
+        &lt;<span style="color:#f92672">p</span>&gt;世界&lt;/<span style="color:#f92672">p</span>&gt;
+        <span style="color:#75715e">&lt;!--  --&gt;</span>
+    &lt;/<span style="color:#f92672">div</span>&gt;
+    &lt;<span style="color:#f92672">p</span>&gt;div下面&lt;/<span style="color:#f92672">p</span>&gt;
+    &lt;<span style="color:#f92672">script</span>&gt;
+        <span style="color:#75715e">// 获取节点
+</span><span style="color:#75715e"></span>        <span style="color:#66d9ef">let</span> <span style="color:#a6e22e">div</span> <span style="color:#f92672">=</span> document.<span style="color:#a6e22e">querySelector</span>(<span style="color:#e6db74">&#39;div&#39;</span>);
+        <span style="color:#75715e">// 1. childNodes
+</span><span style="color:#75715e"></span>        <span style="color:#75715e">// let child = div.childNodes;
+</span><span style="color:#75715e"></span>
+        <span style="color:#75715e">// 2. children
+</span><span style="color:#75715e"></span>        <span style="color:#75715e">// let childEle = div.children;
+</span><span style="color:#75715e"></span>        <span style="color:#75715e">// console.log(childEle);
+</span><span style="color:#75715e"></span>
+        <span style="color:#75715e">// 3. firstChild
+</span><span style="color:#75715e"></span>        <span style="color:#75715e">// let first = div.firstChild;
+</span><span style="color:#75715e"></span>        <span style="color:#75715e">// console.log(first);
+</span><span style="color:#75715e"></span>
+        <span style="color:#75715e">// 4. firstElementChild
+</span><span style="color:#75715e"></span>        <span style="color:#75715e">// let first = div.firstElementChild;
+</span><span style="color:#75715e"></span>        <span style="color:#75715e">// console.log(first);
+</span><span style="color:#75715e"></span>
+        <span style="color:#75715e">// 5. lastChild
+</span><span style="color:#75715e"></span>        <span style="color:#75715e">// let last = div.lastChild;
+</span><span style="color:#75715e"></span>        <span style="color:#75715e">// console.log(last);
+</span><span style="color:#75715e"></span>
+        <span style="color:#75715e">// 6. lastElementChild
+</span><span style="color:#75715e"></span>        <span style="color:#75715e">// let lastEle = div.lastElementChild;
+</span><span style="color:#75715e"></span>        <span style="color:#75715e">// console.log(lastEle);
+</span><span style="color:#75715e"></span>
+        <span style="color:#75715e">// 7. perviousSibling
+</span><span style="color:#75715e"></span>        <span style="color:#75715e">// let pers = div.previousSibling
+</span><span style="color:#75715e"></span>        <span style="color:#75715e">// console.log(pers);
+</span><span style="color:#75715e"></span>
+        <span style="color:#75715e">// 8. perviousElementSibling
+</span><span style="color:#75715e"></span>        <span style="color:#75715e">// let peres = div.previousElementSibling
+</span><span style="color:#75715e"></span>        <span style="color:#75715e">// console.log(peres);
+</span><span style="color:#75715e"></span>
+        <span style="color:#75715e">// 9. nextSibling
+</span><span style="color:#75715e"></span>        <span style="color:#75715e">// let nextS = div.nextSibling
+</span><span style="color:#75715e"></span>        <span style="color:#75715e">// console.log(nextS);
+</span><span style="color:#75715e"></span>
+        <span style="color:#75715e">// 10. nextElementSibling
+</span><span style="color:#75715e"></span>        <span style="color:#75715e">// let nextEleS = div.nextElementSibling
+</span><span style="color:#75715e"></span>        <span style="color:#75715e">// console.log(nextEleS);
+</span><span style="color:#75715e"></span>
+        <span style="color:#75715e">// 11. parentNode
+</span><span style="color:#75715e"></span>        <span style="color:#75715e">// let parent = div.parentNode;
+</span><span style="color:#75715e"></span>        <span style="color:#75715e">// console.log(parent);
+</span><span style="color:#75715e"></span>
+        <span style="color:#75715e">// 12. parentElement
+</span><span style="color:#75715e"></span>        <span style="color:#75715e">// let parentEle = div.parentElement;
+</span><span style="color:#75715e"></span>        <span style="color:#75715e">// console.log(parentEle);
+</span><span style="color:#75715e"></span>    &lt;/<span style="color:#f92672">script</span>&gt;
+&lt;/<span style="color:#f92672">body</span>&gt;
+</code></pre></div><h3 id="创建节点">创建节点</h3>
+<ul>
+<li>createElement()
+<ul>
+<li>语法：document.createElement(&lsquo;标签名&rsquo;)</li>
+<li>返回值：一个元素节点</li>
+</ul>
+</li>
+<li>createTextNode()
+<ul>
+<li>语法：document.createTextNode(&lsquo;文本内容&rsquo;)</li>
+<li>返回值：一个文本节点，不是字符串</li>
+</ul>
+</li>
+<li>createComment()
+<ul>
+<li>语法：document.createComment(&lsquo;注释内容&rsquo;)</li>
+<li>返回值：一个注释节点</li>
+</ul>
+</li>
+<li>createAttribute()
+<ul>
+<li>语法：document.createAttribute(&lsquo;属性名&rsquo;)
+<ul>
+<li>添加属性值，节点.value = &lsquo;属性值&rsquo;</li>
+</ul>
+</li>
+<li>返回值：一个属性节点</li>
+</ul>
+</li>
+</ul>
+<p>后面三个用的少</p>
+<h3 id="插入节点">插入节点</h3>
+<ul>
+<li>appendChild()
+<ul>
+<li>语法：父节点.appendChild(子节点)</li>
+<li>作用：把子节点插入到父节点里面，放在最后一个节点的位置</li>
+</ul>
+</li>
+<li>insertBefore()
+<ul>
+<li>语法：父节点.insertBefore(要插入的子节点, 哪一个子节点前面)</li>
+<li>作用：把子节点插入到指定父节点的指定子节点前面</li>
+</ul>
+</li>
+</ul>
+<h3 id="删除节点">删除节点</h3>
+<ul>
+<li>删除一个已经存在的节点 或者 可以在创建的节点里面删除</li>
+<li>removeChild()
+<ul>
+<li>语法：父节点.removeChild(子节点)</li>
+<li>作用：把子节点从父节点里面移出</li>
+</ul>
+</li>
+<li>remove()
+<ul>
+<li>语法：节点.remove()</li>
+<li>作用：把自己移出父节点</li>
+</ul>
+</li>
+</ul>
+<h3 id="替换节点">替换节点</h3>
+<ul>
+<li>用一个节点替换一个已经存在的节点</li>
+<li>replaceChild()
+<ul>
+<li>语法：父节点.replaceChild(新节点, 旧节点)</li>
+<li>作用：在父节点下，用新节点替换旧节点</li>
+</ul>
+</li>
+</ul>
+<h3 id="克隆节点">克隆节点</h3>
+<ul>
+<li>把某一个节点复制一个一模一样的</li>
+<li>cloneNode()
+<ul>
+<li>语法：节点.cloneNode(参数)
+<ul>
+<li>参数选填，默认是 false</li>
+</ul>
+</li>
+<li>返回值：一个克隆好的节点</li>
+</ul>
+</li>
+</ul>
+<h3 id="带有添加和删除功能的表格">带有添加和删除功能的表格</h3>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html">&lt;<span style="color:#f92672">style</span>&gt;
+        <span style="color:#f92672">*</span> {
+            <span style="color:#66d9ef">margin</span>: <span style="color:#ae81ff">0</span>;
+            <span style="color:#66d9ef">padding</span>: <span style="color:#ae81ff">0</span>;
+        }
+        
+        <span style="color:#f92672">form</span> {
+            <span style="color:#66d9ef">width</span>: <span style="color:#ae81ff">300</span><span style="color:#66d9ef">px</span>;
+            <span style="color:#66d9ef">padding</span>: <span style="color:#ae81ff">20</span><span style="color:#66d9ef">px</span>;
+            <span style="color:#66d9ef">margin</span>: <span style="color:#ae81ff">10</span><span style="color:#66d9ef">px</span>;
+            <span style="color:#66d9ef">border</span>: <span style="color:#ae81ff">10</span><span style="color:#66d9ef">px</span> <span style="color:#66d9ef">solid</span> <span style="color:#66d9ef">skyblue</span>;
+        }
+        
+        <span style="color:#f92672">form</span><span style="color:#f92672">&gt;</span><span style="color:#f92672">button</span> {
+            <span style="color:#66d9ef">width</span>: <span style="color:#ae81ff">100</span><span style="color:#66d9ef">%</span>;
+            <span style="color:#66d9ef">height</span>: <span style="color:#ae81ff">30</span><span style="color:#66d9ef">px</span>;
+            <span style="color:#66d9ef">margin</span>: <span style="color:#ae81ff">10</span><span style="color:#66d9ef">px</span> <span style="color:#ae81ff">0</span>;
+        }
+        
+        <span style="color:#f92672">table</span> {
+            <span style="color:#66d9ef">width</span>: <span style="color:#ae81ff">300</span><span style="color:#66d9ef">px</span>;
+            <span style="color:#66d9ef">margin</span>: <span style="color:#ae81ff">30</span><span style="color:#66d9ef">px</span>;
+            <span style="color:#66d9ef">border</span>: <span style="color:#ae81ff">2</span><span style="color:#66d9ef">px</span> <span style="color:#66d9ef">solid</span> <span style="color:#66d9ef">pink</span>;
+            <span style="color:#66d9ef">text-align</span>: <span style="color:#66d9ef">center</span>;
+        }
+        
+        <span style="color:#f92672">table</span><span style="color:#f92672">&gt;</span><span style="color:#f92672">tbody</span><span style="color:#f92672">&gt;</span><span style="color:#f92672">tr</span>:<span style="color:#a6e22e">nth-child</span><span style="color:#f92672">(</span><span style="color:#f92672">odd</span><span style="color:#f92672">)</span> {
+            <span style="color:#66d9ef">background-color</span>: <span style="color:#ae81ff">#ccc</span>;
+        }
+        
+        <span style="color:#f92672">table</span><span style="color:#f92672">&gt;</span><span style="color:#f92672">tbody</span><span style="color:#f92672">&gt;</span><span style="color:#f92672">tr</span>:<span style="color:#a6e22e">nth-child</span><span style="color:#f92672">(</span><span style="color:#f92672">even</span><span style="color:#f92672">)</span> {
+            <span style="color:#66d9ef">background-color</span>: <span style="color:#66d9ef">orange</span>;
+        }
+    &lt;/<span style="color:#f92672">style</span>&gt;
+&lt;/<span style="color:#f92672">head</span>&gt;
+
+&lt;<span style="color:#f92672">body</span>&gt;
+    &lt;<span style="color:#f92672">form</span> <span style="color:#a6e22e">action</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;&#34;</span>&gt;
+        姓名：&lt;<span style="color:#f92672">input</span> <span style="color:#a6e22e">type</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;text&#34;</span> <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;username&#34;</span>&gt;
+        &lt;<span style="color:#f92672">br</span>&gt; 年龄：
+        &lt;<span style="color:#f92672">input</span> <span style="color:#a6e22e">type</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;text&#34;</span> <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;age&#34;</span>&gt;
+        &lt;<span style="color:#f92672">br</span>&gt; 性别：
+        &lt;<span style="color:#f92672">input</span> <span style="color:#a6e22e">type</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;text&#34;</span> <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;gender&#34;</span>&gt;
+        &lt;<span style="color:#f92672">br</span>&gt; 操作：
+        &lt;<span style="color:#f92672">button</span> <span style="color:#a6e22e">type</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;button&#34;</span> <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;add&#34;</span>&gt;添加&lt;/<span style="color:#f92672">button</span>&gt;
+        &lt;<span style="color:#f92672">br</span>&gt;
+    &lt;/<span style="color:#f92672">form</span>&gt;
+    &lt;<span style="color:#f92672">table</span> <span style="color:#a6e22e">cellspacing</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;0&#34;</span>&gt;
+        &lt;<span style="color:#f92672">thead</span>&gt;
+            &lt;<span style="color:#f92672">th</span>&gt;姓名&lt;/<span style="color:#f92672">th</span>&gt;
+            &lt;<span style="color:#f92672">th</span>&gt;年龄&lt;/<span style="color:#f92672">th</span>&gt;
+            &lt;<span style="color:#f92672">th</span>&gt;性别&lt;/<span style="color:#f92672">th</span>&gt;
+            &lt;<span style="color:#f92672">th</span>&gt;操作&lt;/<span style="color:#f92672">th</span>&gt;
+        &lt;/<span style="color:#f92672">thead</span>&gt;
+        &lt;<span style="color:#f92672">tbody</span>&gt;
+            &lt;<span style="color:#f92672">tr</span>&gt;
+                &lt;<span style="color:#f92672">td</span>&gt;张三&lt;/<span style="color:#f92672">td</span>&gt;
+                &lt;<span style="color:#f92672">td</span>&gt;18&lt;/<span style="color:#f92672">td</span>&gt;
+                &lt;<span style="color:#f92672">td</span>&gt;男&lt;/<span style="color:#f92672">td</span>&gt;
+                &lt;<span style="color:#f92672">td</span>&gt;&lt;<span style="color:#f92672">button</span> <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;del&#34;</span>&gt;删除&lt;/<span style="color:#f92672">button</span>&gt;&lt;/<span style="color:#f92672">td</span>&gt;
+            &lt;/<span style="color:#f92672">tr</span>&gt;
+            &lt;<span style="color:#f92672">tr</span>&gt;
+                &lt;<span style="color:#f92672">td</span>&gt;张四&lt;/<span style="color:#f92672">td</span>&gt;
+                &lt;<span style="color:#f92672">td</span>&gt;20&lt;/<span style="color:#f92672">td</span>&gt;
+                &lt;<span style="color:#f92672">td</span>&gt;女&lt;/<span style="color:#f92672">td</span>&gt;
+                &lt;<span style="color:#f92672">td</span>&gt;&lt;<span style="color:#f92672">button</span> <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;del&#34;</span>&gt;删除&lt;/<span style="color:#f92672">button</span>&gt;&lt;/<span style="color:#f92672">td</span>&gt;
+            &lt;/<span style="color:#f92672">tr</span>&gt;
+            &lt;<span style="color:#f92672">tr</span>&gt;
+                &lt;<span style="color:#f92672">td</span>&gt;张五&lt;/<span style="color:#f92672">td</span>&gt;
+                &lt;<span style="color:#f92672">td</span>&gt;22&lt;/<span style="color:#f92672">td</span>&gt;
+                &lt;<span style="color:#f92672">td</span>&gt;男&lt;/<span style="color:#f92672">td</span>&gt;
+                &lt;<span style="color:#f92672">td</span>&gt;&lt;<span style="color:#f92672">button</span> <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;del&#34;</span>&gt;删除&lt;/<span style="color:#f92672">button</span>&gt;&lt;/<span style="color:#f92672">td</span>&gt;
+            &lt;/<span style="color:#f92672">tr</span>&gt;
+        &lt;/<span style="color:#f92672">tbody</span>&gt;
+    &lt;/<span style="color:#f92672">table</span>&gt;
+
+    &lt;<span style="color:#f92672">script</span>&gt;
+        <span style="color:#75715e">// 分析逻辑
+</span><span style="color:#75715e"></span>        <span style="color:#75715e">/*
+</span><span style="color:#75715e">            1. 点击添加按钮的时候
+</span><span style="color:#75715e">             =&gt; 拿到文本框的内容
+</span><span style="color:#75715e">             =&gt; 组装一个 tr 标签出来
+</span><span style="color:#75715e">             =&gt; 插入到 tbody 里面
+</span><span style="color:#75715e">            2. 点击每一个删除按钮的时候
+</span><span style="color:#75715e">             =&gt; 找到当前删除按钮所在的 tr 标签，并移除
+</span><span style="color:#75715e">            
+</span><span style="color:#75715e">        */</span>
+
+        <span style="color:#75715e">// 1. 获取元素
+</span><span style="color:#75715e"></span>        <span style="color:#66d9ef">let</span> <span style="color:#a6e22e">usernameInp</span> <span style="color:#f92672">=</span> document.<span style="color:#a6e22e">querySelector</span>(<span style="color:#e6db74">&#39;.username&#39;</span>);
+        <span style="color:#66d9ef">let</span> <span style="color:#a6e22e">ageInp</span> <span style="color:#f92672">=</span> document.<span style="color:#a6e22e">querySelector</span>(<span style="color:#e6db74">&#39;.age&#39;</span>);
+        <span style="color:#66d9ef">let</span> <span style="color:#a6e22e">genderInp</span> <span style="color:#f92672">=</span> document.<span style="color:#a6e22e">querySelector</span>(<span style="color:#e6db74">&#39;.gender&#39;</span>);
+        <span style="color:#66d9ef">let</span> <span style="color:#a6e22e">addBtn</span> <span style="color:#f92672">=</span> document.<span style="color:#a6e22e">querySelector</span>(<span style="color:#e6db74">&#39;.add&#39;</span>);
+        <span style="color:#66d9ef">let</span> <span style="color:#a6e22e">tbody</span> <span style="color:#f92672">=</span> document.<span style="color:#a6e22e">querySelector</span>(<span style="color:#e6db74">&#39;tbody&#39;</span>);
+        <span style="color:#66d9ef">let</span> <span style="color:#a6e22e">dels</span> <span style="color:#f92672">=</span> document.<span style="color:#a6e22e">querySelectorAll</span>(<span style="color:#e6db74">&#39;.del&#39;</span>);
+
+        <span style="color:#75715e">// 2. 添加业务逻辑
+</span><span style="color:#75715e"></span>        <span style="color:#75715e">// 2.1 给 添加按钮 绑定点击事件
+</span><span style="color:#75715e"></span>        <span style="color:#a6e22e">addBtn</span>.<span style="color:#a6e22e">onclick</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">function</span>() {
+            <span style="color:#75715e">// 2.2 获取内容
+</span><span style="color:#75715e"></span>            <span style="color:#66d9ef">let</span> <span style="color:#a6e22e">username</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">usernameInp</span>.<span style="color:#a6e22e">value</span>;
+            <span style="color:#66d9ef">let</span> <span style="color:#a6e22e">age</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">ageInp</span>.<span style="color:#a6e22e">value</span>;
+            <span style="color:#66d9ef">let</span> <span style="color:#a6e22e">gender</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">genderInp</span>.<span style="color:#a6e22e">value</span>;
+
+            <span style="color:#75715e">// 2.3 判断非空
+</span><span style="color:#75715e"></span>            <span style="color:#66d9ef">if</span> (<span style="color:#a6e22e">username</span> <span style="color:#f92672">===</span> <span style="color:#e6db74">&#39;&#39;</span> <span style="color:#f92672">||</span> <span style="color:#a6e22e">age</span> <span style="color:#f92672">===</span> <span style="color:#e6db74">&#39;&#39;</span> <span style="color:#f92672">||</span> <span style="color:#a6e22e">gender</span> <span style="color:#f92672">===</span> <span style="color:#e6db74">&#39;&#39;</span>) {
+                <span style="color:#a6e22e">alert</span>(<span style="color:#e6db74">&#39;请完整填写表单&#39;</span>);
+                <span style="color:#66d9ef">return</span>;
+            }
+
+            <span style="color:#75715e">// 2.4 组装一个合法的节点
+</span><span style="color:#75715e"></span>            <span style="color:#66d9ef">let</span> <span style="color:#a6e22e">tr</span> <span style="color:#f92672">=</span> document.<span style="color:#a6e22e">createElement</span>(<span style="color:#e6db74">&#39;tr&#39;</span>);
+            <span style="color:#66d9ef">let</span> <span style="color:#a6e22e">td1</span> <span style="color:#f92672">=</span> document.<span style="color:#a6e22e">createElement</span>(<span style="color:#e6db74">&#39;td&#39;</span>);
+            <span style="color:#66d9ef">let</span> <span style="color:#a6e22e">td2</span> <span style="color:#f92672">=</span> document.<span style="color:#a6e22e">createElement</span>(<span style="color:#e6db74">&#39;td&#39;</span>);
+            <span style="color:#66d9ef">let</span> <span style="color:#a6e22e">td3</span> <span style="color:#f92672">=</span> document.<span style="color:#a6e22e">createElement</span>(<span style="color:#e6db74">&#39;td&#39;</span>);
+            <span style="color:#66d9ef">let</span> <span style="color:#a6e22e">td4</span> <span style="color:#f92672">=</span> document.<span style="color:#a6e22e">createElement</span>(<span style="color:#e6db74">&#39;td&#39;</span>);
+            <span style="color:#66d9ef">let</span> <span style="color:#a6e22e">button</span> <span style="color:#f92672">=</span> document.<span style="color:#a6e22e">createElement</span>(<span style="color:#e6db74">&#39;button&#39;</span>);
+
+            <span style="color:#a6e22e">td1</span>.<span style="color:#a6e22e">innerHTML</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">username</span>;
+            <span style="color:#a6e22e">td2</span>.<span style="color:#a6e22e">innerHTML</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">age</span>;
+            <span style="color:#a6e22e">td3</span>.<span style="color:#a6e22e">innerHTML</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">gender</span>;
+            <span style="color:#a6e22e">button</span>.<span style="color:#a6e22e">innerHTML</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;删除&#39;</span>;
+
+            <span style="color:#a6e22e">button</span>.<span style="color:#a6e22e">onclick</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">function</span>() {
+                <span style="color:#66d9ef">let</span> <span style="color:#a6e22e">tr</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">parentElement</span>.<span style="color:#a6e22e">parentElement</span>;
+                <span style="color:#75715e">// 把找到的 tr 删除
+</span><span style="color:#75715e"></span>                <span style="color:#a6e22e">tr</span>.<span style="color:#a6e22e">remove</span>();
+            }
+
+            <span style="color:#a6e22e">tr</span>.<span style="color:#a6e22e">appendChild</span>(<span style="color:#a6e22e">td1</span>);
+            <span style="color:#a6e22e">tr</span>.<span style="color:#a6e22e">appendChild</span>(<span style="color:#a6e22e">td2</span>);
+            <span style="color:#a6e22e">tr</span>.<span style="color:#a6e22e">appendChild</span>(<span style="color:#a6e22e">td3</span>);
+            <span style="color:#a6e22e">td4</span>.<span style="color:#a6e22e">appendChild</span>(<span style="color:#a6e22e">button</span>);
+            <span style="color:#a6e22e">tr</span>.<span style="color:#a6e22e">appendChild</span>(<span style="color:#a6e22e">td4</span>);
+            <span style="color:#a6e22e">tbody</span>.<span style="color:#a6e22e">appendChild</span>(<span style="color:#a6e22e">tr</span>);
+
+            <span style="color:#75715e">// 2.5 表单置空
+</span><span style="color:#75715e"></span>            <span style="color:#a6e22e">usernameInp</span>.<span style="color:#a6e22e">value</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;&#39;</span>;
+            <span style="color:#a6e22e">ageInp</span>.<span style="color:#a6e22e">value</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;&#39;</span>;
+            <span style="color:#a6e22e">genderInp</span>.<span style="color:#a6e22e">value</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;&#39;</span>;
+        }
+
+        <span style="color:#75715e">// 3. 删除的业务逻辑
+</span><span style="color:#75715e"></span>        <span style="color:#a6e22e">dels</span>.<span style="color:#a6e22e">forEach</span>(<span style="color:#66d9ef">function</span>(<span style="color:#a6e22e">btn</span>) {
+            <span style="color:#75715e">// 3.1 给每个delBtn添加点击事件
+</span><span style="color:#75715e"></span>            <span style="color:#a6e22e">btn</span>.<span style="color:#a6e22e">onclick</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">function</span>() {
+                <span style="color:#66d9ef">let</span> <span style="color:#a6e22e">tr</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">parentElement</span>.<span style="color:#a6e22e">parentElement</span>;
+                <span style="color:#75715e">// 把找到的 tr 删除
+</span><span style="color:#75715e"></span>                <span style="color:#a6e22e">tr</span>.<span style="color:#a6e22e">remove</span>();
+            }
+        })
+    &lt;/<span style="color:#f92672">script</span>&gt;
+&lt;/<span style="color:#f92672">body</span>&gt;
+</code></pre></div><h3 id="动态创建表格">动态创建表格</h3>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html">&lt;<span style="color:#f92672">body</span>&gt;
+    &lt;<span style="color:#f92672">table</span>&gt;
+        &lt;<span style="color:#f92672">thead</span>&gt;
+            &lt;<span style="color:#f92672">tr</span>&gt;
+                &lt;<span style="color:#f92672">th</span>&gt;姓名&lt;/<span style="color:#f92672">th</span>&gt;
+                &lt;<span style="color:#f92672">th</span>&gt;年龄&lt;/<span style="color:#f92672">th</span>&gt;
+                &lt;<span style="color:#f92672">th</span>&gt;性别&lt;/<span style="color:#f92672">th</span>&gt;
+            &lt;/<span style="color:#f92672">tr</span>&gt;
+        &lt;/<span style="color:#f92672">thead</span>&gt;
+        &lt;<span style="color:#f92672">tbody</span>&gt;
+            &lt;<span style="color:#f92672">tr</span>&gt;
+                &lt;<span style="color:#f92672">td</span>&gt;张三&lt;/<span style="color:#f92672">td</span>&gt;
+                &lt;<span style="color:#f92672">td</span>&gt;18&lt;/<span style="color:#f92672">td</span>&gt;
+                &lt;<span style="color:#f92672">td</span>&gt;男&lt;/<span style="color:#f92672">td</span>&gt;
+            &lt;/<span style="color:#f92672">tr</span>&gt;
+            &lt;<span style="color:#f92672">tr</span>&gt;
+                &lt;<span style="color:#f92672">td</span>&gt;张三&lt;/<span style="color:#f92672">td</span>&gt;
+                &lt;<span style="color:#f92672">td</span>&gt;18&lt;/<span style="color:#f92672">td</span>&gt;
+                &lt;<span style="color:#f92672">td</span>&gt;男&lt;/<span style="color:#f92672">td</span>&gt;
+            &lt;/<span style="color:#f92672">tr</span>&gt;
+            &lt;<span style="color:#f92672">tr</span>&gt;
+                &lt;<span style="color:#f92672">td</span>&gt;张三&lt;/<span style="color:#f92672">td</span>&gt;
+                &lt;<span style="color:#f92672">td</span>&gt;18&lt;/<span style="color:#f92672">td</span>&gt;
+                &lt;<span style="color:#f92672">td</span>&gt;男&lt;/<span style="color:#f92672">td</span>&gt;
+            &lt;/<span style="color:#f92672">tr</span>&gt;
+        &lt;/<span style="color:#f92672">tbody</span>&gt;
+    &lt;/<span style="color:#f92672">table</span>&gt;
+
+    &lt;<span style="color:#f92672">script</span>&gt;
+        <span style="color:#75715e">// 动态创建表格
+</span><span style="color:#75715e"></span>        <span style="color:#66d9ef">let</span> <span style="color:#a6e22e">userList</span> <span style="color:#f92672">=</span> [{
+            <span style="color:#a6e22e">name</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;张三&#39;</span>,
+            <span style="color:#a6e22e">age</span><span style="color:#f92672">:</span> <span style="color:#ae81ff">18</span>,
+            <span style="color:#a6e22e">gender</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;男&#39;</span>
+        }, {
+            <span style="color:#a6e22e">name</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;张四&#39;</span>,
+            <span style="color:#a6e22e">age</span><span style="color:#f92672">:</span> <span style="color:#ae81ff">20</span>,
+            <span style="color:#a6e22e">gender</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;女&#39;</span>
+        }, {
+            <span style="color:#a6e22e">name</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;张五&#39;</span>,
+            <span style="color:#a6e22e">age</span><span style="color:#f92672">:</span> <span style="color:#ae81ff">22</span>,
+            <span style="color:#a6e22e">gender</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;男&#39;</span>
+        }]
+
+        <span style="color:#75715e">// 0. 获取元素
+</span><span style="color:#75715e"></span>        <span style="color:#66d9ef">let</span> <span style="color:#a6e22e">tbody</span> <span style="color:#f92672">=</span> document.<span style="color:#a6e22e">querySelector</span>(<span style="color:#e6db74">&#39;tbody&#39;</span>);
+
+
+        <span style="color:#66d9ef">let</span> <span style="color:#a6e22e">frg</span> <span style="color:#f92672">=</span> document.<span style="color:#a6e22e">createDocumentFragment</span>();
+        <span style="color:#75715e">// let div = document.createElement(&#39;div&#39;);
+</span><span style="color:#75715e"></span>        <span style="color:#75715e">// 1. 遍历数组
+</span><span style="color:#75715e"></span>        <span style="color:#a6e22e">userList</span>.<span style="color:#a6e22e">forEach</span>(<span style="color:#66d9ef">function</span>(<span style="color:#a6e22e">user</span>) {
+            <span style="color:#75715e">// 创建 tr
+</span><span style="color:#75715e"></span>            <span style="color:#66d9ef">let</span> <span style="color:#a6e22e">tr</span> <span style="color:#f92672">=</span> document.<span style="color:#a6e22e">createElement</span>(<span style="color:#e6db74">&#39;tr&#39;</span>);
+            <span style="color:#75715e">// 填充 tr 的内容
+</span><span style="color:#75715e"></span>            <span style="color:#a6e22e">tr</span>.<span style="color:#a6e22e">innerHTML</span> <span style="color:#f92672">=</span>
+                <span style="color:#e6db74">`
+</span><span style="color:#e6db74">            &lt;td&gt;</span><span style="color:#e6db74">${</span><span style="color:#a6e22e">user</span>.<span style="color:#a6e22e">name</span><span style="color:#e6db74">}</span><span style="color:#e6db74">&lt;/td&gt;
+</span><span style="color:#e6db74">            &lt;td&gt;</span><span style="color:#e6db74">${</span><span style="color:#a6e22e">user</span>.<span style="color:#a6e22e">age</span><span style="color:#e6db74">}</span><span style="color:#e6db74">&lt;/td&gt;
+</span><span style="color:#e6db74">            &lt;td&gt;</span><span style="color:#e6db74">${</span><span style="color:#a6e22e">user</span>.<span style="color:#a6e22e">gender</span><span style="color:#e6db74">}</span><span style="color:#e6db74">&lt;/td&gt;
+</span><span style="color:#e6db74">            `</span>;
+            <span style="color:#75715e">// div.appendChild(tr);
+</span><span style="color:#75715e"></span>            <span style="color:#a6e22e">frg</span>.<span style="color:#a6e22e">appendChild</span>(<span style="color:#a6e22e">tr</span>);
+
+        })
+        <span style="color:#a6e22e">tbody</span>.<span style="color:#a6e22e">appendChild</span>(<span style="color:#a6e22e">frg</span>);
+    &lt;/<span style="color:#f92672">script</span>&gt;
+&lt;/<span style="color:#f92672">body</span>&gt;
+</code></pre></div><ul>
+<li>操作 DOM 越多，性能越差</li>
+<li>文档碎片(筐)
+<ul>
+<li>我们可以用JS创建一个文档碎片节点</li>
+<li>可以承载节点</li>
+<li>当你把筐向页面添加的时候
+<ul>
+<li>筐是不会进入页面的，而是把筐里面的内容倒进去</li>
+</ul>
+</li>
+<li>语法：document.createDocumentFragment()</li>
+<li>返回值：一个文档碎片节点</li>
+</ul>
+</li>
+</ul>
+<h3 id="获取元素尺寸">获取元素尺寸</h3>
+<ul>
+<li>元素的占地面积</li>
+<li>占地面积：内容区域 + padding + border</li>
+<li>两组方式
+<ul>
+<li>offsetWidth 和 offsetHeight
+<ul>
+<li>语法
+<ul>
+<li>元素.offsetWidth</li>
+<li>元素.offsetHeight</li>
+</ul>
+</li>
+<li>得到元素 内容 + padding +border 的尺寸</li>
+<li>注意：display:none 的时候得到的时候是0</li>
+<li>因为这个时候不占位</li>
+</ul>
+</li>
+<li>clinetWidth 和 clinetHeight
+<ul>
+<li>语法
+<ul>
+<li>元素.clientWidth</li>
+<li>元素.clientHeight</li>
+</ul>
+</li>
+<li>得到元素 内容 + padding 区域的尺寸</li>
+<li>注意：display：none 以后是 0</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h3 id="获取元素偏移量">获取元素偏移量</h3>
+<ul>
+<li>获取元素偏移量
+<ul>
+<li>一个元素相对于参考系的坐标位置</li>
+</ul>
+</li>
+<li>offsetParent
+<ul>
+<li>语法：元素.offsetParent</li>
+<li>拿到该元素获取偏移量的时候的参考父级
+<ul>
+<li>当你想给这个元素设置一个绝对定位的时候会根据谁定位，他的offsetParent 就是谁</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>offsetLeft 和 offsetTop
+<ul>
+<li>语法：元素.offsetLeft 和 元素.offsetTop</li>
+<li>得到对于参考父级的左边和上边的偏移量</li>
+</ul>
+</li>
+</ul>
+<h3 id="获取浏览器窗口尺寸">获取浏览器窗口尺寸</h3>
+<ul>
+<li>获取浏览器窗口尺寸
+<ul>
+<li>BOM 级别的获取
+<ul>
+<li>innerWidth</li>
+<li>innerHeight</li>
+<li>拿到的是包含滚动条的尺寸</li>
+</ul>
+</li>
+<li>DOM 级别的的获取
+<ul>
+<li>其实就是获取页面的那一部分尺寸</li>
+<li>document.documentElement.clientWidth</li>
+<li>document.documentElement.clientHeight</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#75715e">// 获取浏览器尺寸
+</span><span style="color:#75715e">// 包括滚动条
+</span><span style="color:#75715e"></span><span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#e6db74">&#39;BOM: &#39;</span>);
+<span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#e6db74">&#39;width: &#39;</span>, window.<span style="color:#a6e22e">innerWidth</span>);
+<span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#e6db74">&#39;height: &#39;</span>, window.<span style="color:#a6e22e">innerHeight</span>);
+
+<span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#e6db74">&#39;DOM: &#39;</span>);
+<span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#e6db74">&#39;width: &#39;</span>, document.<span style="color:#a6e22e">documentElement</span>.<span style="color:#a6e22e">clientWidth</span>);
+<span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#e6db74">&#39;height: &#39;</span>, document.<span style="color:#a6e22e">documentElement</span>.<span style="color:#a6e22e">clientHeight</span>);
+</code></pre></div><h3 id="元素的常用事件">元素的常用事件</h3>
+<ul>
+<li>事件分类
+<ul>
+<li>鼠标事件</li>
+<li>键盘事件</li>
+<li>浏览器事件</li>
+<li>表单时间</li>
+<li>拖拽事件</li>
+<li>触摸事件(移动端)</li>
+<li>其他事件</li>
+</ul>
+</li>
+<li>JS里面的所有原生事件没有大写字母</li>
+<li>鼠标事件
+<ul>
+<li>click（鼠标左键单击）</li>
+<li>dblclick（鼠标左键双击）</li>
+<li>contextmenu(鼠标右键单击)</li>
+<li>mousewheel(滚轮滚动事件)</li>
+<li>上面是四个基本事件</li>
+<li>mousedown(鼠标按下)
+<ul>
+<li>不光是左键，右键也可以，滚轮键也可以，侧键也可以(有时候不可)</li>
+</ul>
+</li>
+<li>mouseup(鼠标抬起)
+<ul>
+<li>不光是左键，右键也可以，滚轮键也可以，侧键也可以(有时候不可)</li>
+</ul>
+</li>
+<li>mousemove(鼠标移动)</li>
+<li>mouseover</li>
+<li>mouseout</li>
+<li>mouseover</li>
+<li>mouseout</li>
+<li>mouseenter</li>
+<li>mouseleave</li>
+<li>&hellip;</li>
+</ul>
+</li>
+<li>键盘事件
+<ul>
+<li>不是所有元素都能触发</li>
+<li>表单元素(有选中效果)，document，window</li>
+<li>keydown(键盘按下, 中文输入法下也有效果)</li>
+<li>keyup(键盘抬起)</li>
+<li>keypress(键盘按下, 必须要能够准确嵌入到文本框里的，键入的内容要与你按下的内容一致)</li>
+</ul>
+</li>
+<li>浏览器事件
+<ul>
+<li>load(页面加载完毕)</li>
+<li>scroll(滚动)</li>
+<li>resize(窗口尺寸改变)</li>
+<li>offline(网络断开)</li>
+<li>online(网络恢复)</li>
+<li>hashchange(hash值改变的时候)</li>
+<li>&hellip;</li>
+</ul>
+</li>
+<li>表单事件
+<ul>
+<li>表单时间绑定给 表单元素 和 form标签 的</li>
+<li>change(表单内容改变，当表单失去焦点的时候和聚焦的时候不一样)</li>
+<li>input(输入内容)</li>
+<li>focus(表单聚焦)</li>
+<li>blur(表单失焦)</li>
+<li>submit(表单提交事件)
+<ul>
+<li>绑定给 form 标签使用的</li>
+</ul>
+</li>
+<li>reset(表单重置事件)
+<ul>
+<li>时间是绑定给 form 标签使用的</li>
+<li>当你点击 reset 按钮才能触发</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>拖拽事件
+<ul>
+<li>一般元素想触发拖拽行为，要给元素加一个属性（img自带）</li>
+<li>draggable = &ldquo;true&rdquo;</li>
+<li>需要两个元素才能完成一个完整的拖拽
+<ul>
+<li>拖拽元素</li>
+<li>目标元素</li>
+</ul>
+</li>
+<li>dragstart(拖拽开始)
+<ul>
+<li>绑定给拖拽元素的</li>
+</ul>
+</li>
+<li>drag(拖拽移动)
+<ul>
+<li>绑定给拖拽元素的</li>
+</ul>
+</li>
+<li>dragend(拖拽结束)
+<ul>
+<li>绑定给拖拽的元素的</li>
+</ul>
+</li>
+<li>dragenter(拖拽进入目标元素)(光标)
+<ul>
+<li>绑定给目标元素</li>
+</ul>
+</li>
+<li>dragleave(拖拽离开目标元素)
+<ul>
+<li>绑定给目标元素</li>
+</ul>
+</li>
+<li>dragover(脱妆元素在目标元素里面移动)
+<ul>
+<li>绑定给目标元素</li>
+</ul>
+</li>
+<li>drop(拖拽元素在目标元素内放手)
+<ul>
+<li>绑定给目标元素</li>
+<li>必须要在 dragover 里面阻止默认行为</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>触摸事件
+<ul>
+<li>只能在移动端使用</li>
+<li>touchstart(触摸开始)</li>
+<li>touchmove(触摸结束)</li>
+<li>touchend(触摸开始)</li>
+</ul>
+</li>
+<li>其他事件
+<ul>
+<li>transitionend(过度结束)
+<ul>
+<li>当你有过渡属性的时候</li>
+<li>过渡结束触发</li>
+<li>过渡结束触发，你过渡几个属性触发多少次</li>
+</ul>
+</li>
+<li>selectstart(开始选择)
+<ul>
+<li>当你想在页面中框选文档的时候触发</li>
+</ul>
+</li>
+<li>visibilitychange(窗口显示和隐藏)
+<ul>
+<li>只能绑定给document</li>
+</ul>
+</li>
+<li>&hellip;&hellip;</li>
+</ul>
+</li>
+</ul>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html"><span style="color:#75715e">&lt;!DOCTYPE html&gt;</span>
+&lt;<span style="color:#f92672">html</span> <span style="color:#a6e22e">lang</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;en&#34;</span>&gt;
+
+&lt;<span style="color:#f92672">head</span>&gt;
+    &lt;<span style="color:#f92672">meta</span> <span style="color:#a6e22e">charset</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;UTF-8&#34;</span>&gt;
+    &lt;<span style="color:#f92672">meta</span> <span style="color:#a6e22e">name</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;viewport&#34;</span> <span style="color:#a6e22e">content</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;width=device-width, initial-scale=1.0&#34;</span>&gt;
+    &lt;<span style="color:#f92672">title</span>&gt;Document&lt;/<span style="color:#f92672">title</span>&gt;
+    &lt;<span style="color:#f92672">style</span>&gt;
+        <span style="color:#f92672">*</span> {
+            <span style="color:#66d9ef">margin</span>: <span style="color:#ae81ff">0</span>;
+            <span style="color:#66d9ef">padding</span>: <span style="color:#ae81ff">0</span>;
+        }
+        
+        .<span style="color:#a6e22e">div</span> {
+            <span style="color:#66d9ef">width</span>: <span style="color:#ae81ff">200</span><span style="color:#66d9ef">px</span>;
+            <span style="color:#66d9ef">height</span>: <span style="color:#ae81ff">200</span><span style="color:#66d9ef">px</span>;
+            <span style="color:#66d9ef">background-color</span>: <span style="color:#66d9ef">skyblue</span>;
+            <span style="color:#66d9ef">transition</span>: <span style="color:#66d9ef">all</span> <span style="color:#ae81ff">3</span><span style="color:#66d9ef">s</span> <span style="color:#66d9ef">linear</span>;
+        }
+        
+        .<span style="color:#a6e22e">dragp</span> {
+            <span style="color:#66d9ef">width</span>: <span style="color:#ae81ff">200</span><span style="color:#66d9ef">px</span>;
+            <span style="color:#66d9ef">height</span>: <span style="color:#ae81ff">200</span><span style="color:#66d9ef">px</span>;
+            <span style="color:#66d9ef">background-color</span>: <span style="color:#66d9ef">red</span>;
+        }
+        <span style="color:#75715e">/* .div:hover {
+</span><span style="color:#75715e">            width: 500px;
+</span><span style="color:#75715e">            height: 500px;
+</span><span style="color:#75715e">        } */</span>
+    &lt;/<span style="color:#f92672">style</span>&gt;
+
+&lt;/<span style="color:#f92672">head</span>&gt;
+
+&lt;<span style="color:#f92672">body</span>&gt;
+    <span style="color:#75715e">&lt;!-- &lt;div class=&#34;div&#34;&gt;&lt;/div&gt;
+</span><span style="color:#75715e">    &lt;form action=&#34;&#34;&gt;
+</span><span style="color:#75715e">        &lt;input type=&#34;text&#34; name=&#34;aaa&#34;&gt;
+</span><span style="color:#75715e">        &lt;button&gt;提交&lt;/button&gt;
+</span><span style="color:#75715e">        &lt;input type=&#34;reset&#34;&gt;
+</span><span style="color:#75715e">    &lt;/form&gt; --&gt;</span>
+    &lt;<span style="color:#f92672">div</span> <span style="color:#a6e22e">draggable</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;true&#34;</span> <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;dragdiv div&#34;</span>&gt;
+    &lt;/<span style="color:#f92672">div</span>&gt;
+    qwertyuiop
+    &lt;<span style="color:#f92672">p</span> <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;dragp&#34;</span>&gt;&lt;/<span style="color:#f92672">p</span>&gt;
+    &lt;<span style="color:#f92672">script</span>&gt;
+        <span style="color:#75715e">// 获取元素
+</span><span style="color:#75715e"></span>        <span style="color:#66d9ef">let</span> <span style="color:#a6e22e">div</span> <span style="color:#f92672">=</span> document.<span style="color:#a6e22e">querySelector</span>(<span style="color:#e6db74">&#39;.div&#39;</span>);
+
+        <span style="color:#75715e">// 1. 鼠标事件
+</span><span style="color:#75715e"></span>        <span style="color:#75715e">// 1.1 click
+</span><span style="color:#75715e"></span>        <span style="color:#75715e">// div.onclick = function() {
+</span><span style="color:#75715e"></span>        <span style="color:#75715e">//     console.log(&#39;左键单击&#39;);
+</span><span style="color:#75715e"></span>        <span style="color:#75715e">// }
+</span><span style="color:#75715e"></span>
+        <span style="color:#75715e">// 1.2 dblclick
+</span><span style="color:#75715e"></span>        <span style="color:#75715e">// div.ondblclick = function() {
+</span><span style="color:#75715e"></span>        <span style="color:#75715e">//     console.log(&#39;左键双击&#39;);
+</span><span style="color:#75715e"></span>        <span style="color:#75715e">// }
+</span><span style="color:#75715e"></span>
+        <span style="color:#75715e">// 1.3 contextmenu
+</span><span style="color:#75715e"></span>        <span style="color:#75715e">// div.oncontextmenu = function() {
+</span><span style="color:#75715e"></span>        <span style="color:#75715e">//     console.log(&#39;右键单击&#39;);
+</span><span style="color:#75715e"></span>        <span style="color:#75715e">// }
+</span><span style="color:#75715e"></span>
+        <span style="color:#75715e">// 1.4 mousewheel（没有鼠标，测试不了）
+</span><span style="color:#75715e"></span>        <span style="color:#75715e">// div.onmousewheel = function() {
+</span><span style="color:#75715e"></span>        <span style="color:#75715e">//     console.log(&#39;滚轮事件&#39;);
+</span><span style="color:#75715e"></span>        <span style="color:#75715e">// }
+</span><span style="color:#75715e"></span>
+        <span style="color:#75715e">// 1.5 mousedown
+</span><span style="color:#75715e"></span>        <span style="color:#75715e">// div.onmousedown = function() {
+</span><span style="color:#75715e"></span>        <span style="color:#75715e">//     console.log(&#39;鼠标按下&#39;);
+</span><span style="color:#75715e"></span>        <span style="color:#75715e">// }
+</span><span style="color:#75715e"></span>
+        <span style="color:#75715e">// 1.6 mouseup
+</span><span style="color:#75715e"></span>        <span style="color:#75715e">// div.onmouseup = function() {
+</span><span style="color:#75715e"></span>        <span style="color:#75715e">//     console.log(&#39;鼠标抬起&#39;);
+</span><span style="color:#75715e"></span>        <span style="color:#75715e">// }
+</span><span style="color:#75715e"></span>
+        <span style="color:#75715e">// 1.7 mousemove
+</span><span style="color:#75715e"></span>        <span style="color:#75715e">// div.onmousemove = function() {
+</span><span style="color:#75715e"></span>        <span style="color:#75715e">//     console.log(&#39;鼠标移动&#39;);
+</span><span style="color:#75715e"></span>        <span style="color:#75715e">// }
+</span><span style="color:#75715e"></span>
+        <span style="color:#75715e">// 1.8 mouseover
+</span><span style="color:#75715e"></span>        <span style="color:#75715e">// div.onmouseover = function() {
+</span><span style="color:#75715e"></span>        <span style="color:#75715e">//     console.log(&#39;鼠标移入&#39;);
+</span><span style="color:#75715e"></span>        <span style="color:#75715e">// }
+</span><span style="color:#75715e"></span>
+        <span style="color:#75715e">// 1.9 mouseout
+</span><span style="color:#75715e"></span>        <span style="color:#75715e">// div.onmouseout = function() {
+</span><span style="color:#75715e"></span>        <span style="color:#75715e">//     console.log(&#39;鼠标移出&#39;);
+</span><span style="color:#75715e"></span>        <span style="color:#75715e">// }
+</span><span style="color:#75715e"></span>
+        <span style="color:#75715e">// 1.10 mouseenter
+</span><span style="color:#75715e"></span>        <span style="color:#75715e">// div.onmouseenter =function (){
+</span><span style="color:#75715e"></span>        <span style="color:#75715e">//     console.log(&#39;鼠标移入&#39;);
+</span><span style="color:#75715e"></span>        <span style="color:#75715e">// }
+</span><span style="color:#75715e"></span>
+        <span style="color:#75715e">// 1.11 mouseleave
+</span><span style="color:#75715e"></span>        <span style="color:#75715e">// div.onmouseleave = function (){
+</span><span style="color:#75715e"></span>        <span style="color:#75715e">//     console.log(&#39;鼠标移出&#39;);
+</span><span style="color:#75715e"></span>        <span style="color:#75715e">// }
+</span><span style="color:#75715e"></span>
+
+        <span style="color:#75715e">// 获取元素
+</span><span style="color:#75715e"></span>        <span style="color:#66d9ef">let</span> <span style="color:#a6e22e">inp</span> <span style="color:#f92672">=</span> document.<span style="color:#a6e22e">querySelector</span>(<span style="color:#e6db74">&#39;input&#39;</span>);
+
+        <span style="color:#75715e">// 键盘事件
+</span><span style="color:#75715e"></span>        <span style="color:#75715e">// 2.1 keydown
+</span><span style="color:#75715e"></span>        <span style="color:#75715e">// inp.onkeydown = function() {
+</span><span style="color:#75715e"></span>        <span style="color:#75715e">//     console.log(&#39;键盘按下&#39;);
+</span><span style="color:#75715e"></span>        <span style="color:#75715e">// }
+</span><span style="color:#75715e"></span>
+        <span style="color:#75715e">// 2.2 keyup
+</span><span style="color:#75715e"></span>        <span style="color:#75715e">// inp.onkeyup = function() {
+</span><span style="color:#75715e"></span>        <span style="color:#75715e">//     console.log(&#39;键盘抬起&#39;);
+</span><span style="color:#75715e"></span>        <span style="color:#75715e">// }
+</span><span style="color:#75715e"></span>
+        <span style="color:#75715e">// 2.3 keypress
+</span><span style="color:#75715e"></span>        <span style="color:#75715e">// inp.onkeypress = function() {
+</span><span style="color:#75715e"></span>        <span style="color:#75715e">//     console.log(&#39;键盘按下&#39;);
+</span><span style="color:#75715e"></span>        <span style="color:#75715e">// }
+</span><span style="color:#75715e"></span>
+        <span style="color:#75715e">// 3. 浏览器事件
+</span><span style="color:#75715e"></span>        <span style="color:#75715e">// 3.4 offline
+</span><span style="color:#75715e"></span>        <span style="color:#75715e">// window.onoffline = function() {
+</span><span style="color:#75715e"></span>        <span style="color:#75715e">//     console.log(&#39;断网了&#39;);
+</span><span style="color:#75715e"></span>        <span style="color:#75715e">// }
+</span><span style="color:#75715e"></span>
+        <span style="color:#75715e">// 3.5 online
+</span><span style="color:#75715e"></span>        <span style="color:#75715e">// window.ononlone = function() {
+</span><span style="color:#75715e"></span>        <span style="color:#75715e">//     console.log(&#39;网络恢复了&#39;);
+</span><span style="color:#75715e"></span>        <span style="color:#75715e">// }
+</span><span style="color:#75715e"></span>
+        <span style="color:#75715e">// 3.6 hashchange
+</span><span style="color:#75715e"></span>        <span style="color:#75715e">// window.onhashchange = function() {
+</span><span style="color:#75715e"></span>        <span style="color:#75715e">//     console.log(&#39;hash值改变了&#39;);
+</span><span style="color:#75715e"></span>        <span style="color:#75715e">// }
+</span><span style="color:#75715e"></span>
+
+        <span style="color:#75715e">// let inp = document.querySelector(&#39;input&#39;);
+</span><span style="color:#75715e"></span>        <span style="color:#66d9ef">let</span> <span style="color:#a6e22e">form</span> <span style="color:#f92672">=</span> document.<span style="color:#a6e22e">querySelector</span>(<span style="color:#e6db74">&#39;form&#39;</span>);
+        <span style="color:#75715e">// 4. 表单时间
+</span><span style="color:#75715e"></span>        <span style="color:#75715e">// 4.1 change
+</span><span style="color:#75715e"></span>        <span style="color:#75715e">// inp.onchange = function() {
+</span><span style="color:#75715e"></span>        <span style="color:#75715e">//     console.log(&#39;表单发生改变&#39;);
+</span><span style="color:#75715e"></span>        <span style="color:#75715e">// }
+</span><span style="color:#75715e"></span>
+        <span style="color:#75715e">// 4.2 input
+</span><span style="color:#75715e"></span>        <span style="color:#75715e">// inp.oninput = function() {
+</span><span style="color:#75715e"></span>        <span style="color:#75715e">//     console.log(&#39;输入事件&#39;);
+</span><span style="color:#75715e"></span>        <span style="color:#75715e">// }
+</span><span style="color:#75715e"></span>
+        <span style="color:#75715e">// 4.3 focus
+</span><span style="color:#75715e"></span>        <span style="color:#75715e">// inp.onfocus = function() {
+</span><span style="color:#75715e"></span>        <span style="color:#75715e">//     console.log(&#39;聚焦&#39;);
+</span><span style="color:#75715e"></span>        <span style="color:#75715e">// }
+</span><span style="color:#75715e"></span>
+        <span style="color:#75715e">// 4.4 blur
+</span><span style="color:#75715e"></span>        <span style="color:#75715e">// inp.onblur = function() {
+</span><span style="color:#75715e"></span>        <span style="color:#75715e">//     console.log(&#39;失焦&#39;);
+</span><span style="color:#75715e"></span>        <span style="color:#75715e">// }
+</span><span style="color:#75715e"></span>
+        <span style="color:#75715e">// 4.5 submit
+</span><span style="color:#75715e"></span>        <span style="color:#75715e">// form.onsubmit = function() {
+</span><span style="color:#75715e"></span>        <span style="color:#75715e">//     console.log(&#39;表单提交&#39;);
+</span><span style="color:#75715e"></span>        <span style="color:#75715e">//     // 阻止提交
+</span><span style="color:#75715e"></span>        <span style="color:#75715e">//     return false;
+</span><span style="color:#75715e"></span>        <span style="color:#75715e">// }
+</span><span style="color:#75715e"></span>
+        <span style="color:#75715e">// 4.6 reset
+</span><span style="color:#75715e"></span>        <span style="color:#75715e">// form.onreset = function() {
+</span><span style="color:#75715e"></span>        <span style="color:#75715e">//     console.log(&#39;表单重置&#39;);
+</span><span style="color:#75715e"></span>        <span style="color:#75715e">// }
+</span><span style="color:#75715e"></span>
+        <span style="color:#75715e">// 5. 拖拽事件
+</span><span style="color:#75715e"></span>        <span style="color:#66d9ef">let</span> <span style="color:#a6e22e">dragdiv</span> <span style="color:#f92672">=</span> document.<span style="color:#a6e22e">querySelector</span>(<span style="color:#e6db74">&#39;.dragdiv&#39;</span>);
+        <span style="color:#66d9ef">let</span> <span style="color:#a6e22e">p</span> <span style="color:#f92672">=</span> document.<span style="color:#a6e22e">querySelector</span>(<span style="color:#e6db74">&#39;.dragp&#39;</span>);
+
+        <span style="color:#75715e">// 5.1 dragstart
+</span><span style="color:#75715e"></span>        <span style="color:#75715e">// dragdiv.ondragstart = function() {
+</span><span style="color:#75715e"></span>        <span style="color:#75715e">//     console.log(&#39;开始拖拽&#39;);
+</span><span style="color:#75715e"></span>        <span style="color:#75715e">// }
+</span><span style="color:#75715e"></span>
+        <span style="color:#75715e">// 5.2 drag
+</span><span style="color:#75715e"></span>        <span style="color:#75715e">// dragdiv.ondrag = function() {
+</span><span style="color:#75715e"></span>        <span style="color:#75715e">//     console.log(&#39;正在拖拽&#39;);
+</span><span style="color:#75715e"></span>        <span style="color:#75715e">// }
+</span><span style="color:#75715e"></span>
+        <span style="color:#75715e">// 5.3 dragend
+</span><span style="color:#75715e"></span>        <span style="color:#75715e">// dragdiv.ondragend = function() {
+</span><span style="color:#75715e"></span>        <span style="color:#75715e">//     console.log(&#39;拖拽结束&#39;);
+</span><span style="color:#75715e"></span>        <span style="color:#75715e">// }
+</span><span style="color:#75715e"></span>
+        <span style="color:#75715e">// 5.4 dragenter(光标)
+</span><span style="color:#75715e"></span>        <span style="color:#75715e">// p.ondragenter = function() {
+</span><span style="color:#75715e"></span>        <span style="color:#75715e">//     console.log(&#39;光标进入&#39;);
+</span><span style="color:#75715e"></span>        <span style="color:#75715e">// }
+</span><span style="color:#75715e"></span>
+        <span style="color:#75715e">// 5.5 dragleave
+</span><span style="color:#75715e"></span>        <span style="color:#75715e">// p.ondragleave = function() {
+</span><span style="color:#75715e"></span>        <span style="color:#75715e">//     console.log(&#39;光标离开&#39;);
+</span><span style="color:#75715e"></span>        <span style="color:#75715e">// }
+</span><span style="color:#75715e"></span>
+        <span style="color:#75715e">// 5.6 dragover
+</span><span style="color:#75715e"></span>        <span style="color:#75715e">// p.ondragover = function(e) {
+</span><span style="color:#75715e"></span>        <span style="color:#75715e">//         // 阻止默认行为
+</span><span style="color:#75715e"></span>        <span style="color:#75715e">//         e.preventDefault();
+</span><span style="color:#75715e"></span>        <span style="color:#75715e">//         console.log(&#39;在目标元素中移动&#39;);
+</span><span style="color:#75715e"></span>        <span style="color:#75715e">// }
+</span><span style="color:#75715e"></span>
+        <span style="color:#75715e">// 5.7 drop
+</span><span style="color:#75715e"></span>        <span style="color:#75715e">// p.ondrop = function() {
+</span><span style="color:#75715e"></span>        <span style="color:#75715e">//     console.log(&#39;在目标元素内放手&#39;);
+</span><span style="color:#75715e"></span>        <span style="color:#75715e">// }
+</span><span style="color:#75715e"></span>
+        <span style="color:#75715e">// 6. 触摸事件
+</span><span style="color:#75715e"></span>        <span style="color:#75715e">// 6.1 touchstart
+</span><span style="color:#75715e"></span>        <span style="color:#75715e">// div.ontouchstart = function() {
+</span><span style="color:#75715e"></span>        <span style="color:#75715e">//     console.log(&#39;触摸开始&#39;);
+</span><span style="color:#75715e"></span>        <span style="color:#75715e">// }
+</span><span style="color:#75715e"></span>
+        <span style="color:#75715e">// 6.2 touchmove
+</span><span style="color:#75715e"></span>        <span style="color:#75715e">// div.ontouchmove = function() {
+</span><span style="color:#75715e"></span>        <span style="color:#75715e">//     console.log(&#39;触摸移动&#39;);
+</span><span style="color:#75715e"></span>        <span style="color:#75715e">// }
+</span><span style="color:#75715e"></span>
+        <span style="color:#75715e">// 6.3 touchend
+</span><span style="color:#75715e"></span>        <span style="color:#75715e">// div.ontouchend = function() {
+</span><span style="color:#75715e"></span>        <span style="color:#75715e">//     console.log(&#39;触摸结束&#39;);
+</span><span style="color:#75715e"></span>        <span style="color:#75715e">// }
+</span><span style="color:#75715e"></span>
+        <span style="color:#75715e">// 7.  其他事件
+</span><span style="color:#75715e"></span>        <span style="color:#75715e">// 7.1 transitionend
+</span><span style="color:#75715e"></span>        <span style="color:#75715e">// div.ontransitionend = function() {
+</span><span style="color:#75715e"></span>        <span style="color:#75715e">//     console.log(&#39;过渡结束&#39;);
+</span><span style="color:#75715e"></span>        <span style="color:#75715e">// }
+</span><span style="color:#75715e"></span>
+        <span style="color:#75715e">// 7.2 selectstart
+</span><span style="color:#75715e"></span>        <span style="color:#75715e">// document.onselectstart = function(e) {
+</span><span style="color:#75715e"></span>        <span style="color:#75715e">//     // 清除默认事件
+</span><span style="color:#75715e"></span>        <span style="color:#75715e">//     e.preventDefault();
+</span><span style="color:#75715e"></span>        <span style="color:#75715e">//     console.log(&#39;请支付后复制&#39;);
+</span><span style="color:#75715e"></span>        <span style="color:#75715e">// }
+</span><span style="color:#75715e"></span>
+        <span style="color:#75715e">// 7.3 visibilitychange
+</span><span style="color:#75715e"></span>        <span style="color:#75715e">// document.onvisibilitychange = function() {
+</span><span style="color:#75715e"></span>        <span style="color:#75715e">//     console.log(&#39;显示状态改变了&#39;);
+</span><span style="color:#75715e"></span>        <span style="color:#75715e">// }
+</span><span style="color:#75715e"></span>    &lt;/<span style="color:#f92672">script</span>&gt;
+&lt;/<span style="color:#f92672">body</span>&gt;
+&lt;/<span style="color:#f92672">html</span>&gt;
+</code></pre></div><h3 id="二级菜单渲染">二级菜单渲染</h3>
+<h3 id="选择器">选择器</h3>
+
+    </div>
+    <div class="post-footer">
+      
+    </div>
+  </article>
+
+    </main>
+</body>
+
+</html>
