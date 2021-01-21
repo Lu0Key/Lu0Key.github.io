@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Posts on 洛七的摸鱼小池塘</title>
-    <link>http://example.org/post/</link>
+    <link>https://Lu0key.github.io/post/</link>
     <description>Recent content in Posts on 洛七的摸鱼小池塘</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Thu, 21 Jan 2021 11:15:13 +0800</lastBuildDate><atom:link href="http://example.org/post/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Thu, 21 Jan 2021 11:15:13 +0800</lastBuildDate><atom:link href="https://Lu0key.github.io/post/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>First Blog</title>
-      <link>http://example.org/post/blog/</link>
+      <link>https://Lu0key.github.io/post/blog/</link>
       <pubDate>Thu, 21 Jan 2021 11:15:13 +0800</pubDate>
       
-      <guid>http://example.org/post/blog/</guid>
+      <guid>https://Lu0key.github.io/post/blog/</guid>
       <description>Hello world 第一篇Hugo博客
 hugo 本地启动
 hugo server -t themename --bulidDrafts hugo 创建新文章
