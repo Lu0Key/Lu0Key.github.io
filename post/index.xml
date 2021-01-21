@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Posts on 洛七的摸鱼池塘</title>
-    <link>http://example.org/post/</link>
+    <link>https://Lu0key.github.io/post/</link>
     <description>Recent content in Posts on 洛七的摸鱼池塘</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Thu, 21 Jan 2021 14:41:37 +0800</lastBuildDate><atom:link href="http://example.org/post/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Thu, 21 Jan 2021 14:41:37 +0800</lastBuildDate><atom:link href="https://Lu0key.github.io/post/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Js Dom</title>
-      <link>http://example.org/post/js-dom/</link>
+      <link>https://Lu0key.github.io/post/js-dom/</link>
       <pubDate>Thu, 21 Jan 2021 14:41:37 +0800</pubDate>
       
-      <guid>http://example.org/post/js-dom/</guid>
+      <guid>https://Lu0key.github.io/post/js-dom/</guid>
       <description>DOM DOM 树   DOM
  DOM 树 获取DOM元素 元素的属性 操作元素类名 操作文本内容 全选 选项卡 返回顶部 操作元素样式 DOM节点 获取节点 创建节点 插入节点 删除节点 替换节点 克隆节点 带有添加和删除功能的表格 动态创建表格 获取元素尺寸 获取元素偏移量 获取浏览器窗口尺寸 元素的常用事件 二级菜单渲染 选择器    doucument object model文档对象模型
   操作页面元素的属性与方法
@@ -24,10 +24,10 @@
     
     <item>
       <title>Test Mathjax</title>
-      <link>http://example.org/post/test-mathjax/</link>
+      <link>https://Lu0key.github.io/post/test-mathjax/</link>
       <pubDate>Thu, 21 Jan 2021 13:37:06 +0800</pubDate>
       
-      <guid>http://example.org/post/test-mathjax/</guid>
+      <guid>https://Lu0key.github.io/post/test-mathjax/</guid>
       <description>测试数学公式 行内公式: $a^2+b^2=c^2$
 块状公式: $$ E=mc^2 $$
 显示公式参考：https://note.qidong.name/2018/03/hugo-mathjax/</description>
@@ -35,10 +35,10 @@
     
     <item>
       <title>First Blog</title>
-      <link>http://example.org/post/blog/</link>
+      <link>https://Lu0key.github.io/post/blog/</link>
       <pubDate>Thu, 21 Jan 2021 11:15:13 +0800</pubDate>
       
-      <guid>http://example.org/post/blog/</guid>
+      <guid>https://Lu0key.github.io/post/blog/</guid>
       <description>Hello world 第一篇Hugo博客
 下载主题
 git clone https://github.com/lxndrblz/anatole.git themes/anatole  hugo 本地启动
