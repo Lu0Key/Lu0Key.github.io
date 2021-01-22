@@ -26,7 +26,7 @@ git add . 将git仓库和云端仓库关联
 git remote add [shortname] [url] 比如我的就是
 git remote add origin https://github.com/Lu0key/Lu0key.github.io.git 最后推至云端
 git push -u origin master  之后修改博客后，再推到GitHub上需要
-hugo --theme=anatole --baseUrl=&amp;#34;https://Lu0key.github.io/&amp;#34; --buildDrafts cd public git add . git commit -m &amp;#34;message&amp;#34; git push </description>
+hugo --theme=m10c --baseUrl=&amp;#34;https://Lu0key.github.io/&amp;#34; --buildDrafts cd public git add . git commit -m &amp;#34;message&amp;#34; git push </description>
     </item>
     
   </channel>

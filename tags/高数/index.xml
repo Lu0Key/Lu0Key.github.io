@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>高数 on 洛七的摸鱼池塘</title>
+    <link>http://example.org/tags/%E9%AB%98%E6%95%B0/</link>
+    <description>Recent content in 高数 on 洛七的摸鱼池塘</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Fri, 22 Jan 2021 16:04:02 +0800</lastBuildDate><atom:link href="http://example.org/tags/%E9%AB%98%E6%95%B0/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Euler积分</title>
+      <link>http://example.org/post/euler%E7%A7%AF%E5%88%86/</link>
+      <pubDate>Fri, 22 Jan 2021 16:04:02 +0800</pubDate>
+      
+      <guid>http://example.org/post/euler%E7%A7%AF%E5%88%86/</guid>
+      <description>Beta 函数 形如
+$\displaystyle \text{B}(p,q)=\int_0^1x^{p-1}(1-x)^{q-1}\text{d}x$
+的含参变量积分称为 Beta 函数，或 第一类 Euler 积分。
+Beta 函数 $\text{B}(p,q)$ 的定义域为 $(0,+\infty)\times(0,+\infty)$
+性质 1 连续性 $\text{B}(p,q)$ 在 $(0,+\infty)\times(0,+\infty)$ 上连续.
+2 对称性 $\text{B}(p,q)=\text{B}(q,p),;p&amp;gt;0,;q&amp;gt;0$
+3 递推公式 $\text{B}(p,q)=\dfrac{q-1}{p+q-1}\text{B}(p,q-1),;p&amp;gt;0,;q&amp;gt;1$
+可由对称性与递推公式得到，
+当 $p&amp;gt;1,;q&amp;gt;1$ 时，有
+$\text{B}(p,q)=\dfrac{(p-1)(q-1)}{(p+q-1)(p+q-2)}\text{B}(p-1,q-1)$
+其他表示 1 作变量代换 $x=\cos^2\varphi$，得到
+$\text{B}(p,q)=2\displaystyle\int_0^{\frac\pi2}\cos^{2p-1}\varphi\sin^{2q-1}\varphi;\text{d}\varphi$
+易知
+$\text{B}\left(\dfrac{1}{2},\dfrac{1}{2}\right)=\pi$
+2 作变量代换 $x=\dfrac{1}{1+t}$，得到
+$\begin{aligned} \text{B}(p,q)=&amp;amp;\int_0^{+\infty}\dfrac{t^{q-1}}{(1+t)^{p+q}}\text{d}t\
+=&amp;amp;\int_0^{1}\dfrac{t^{q-1}}{(1+t)^{p+q}}\text{d}t+\int_1^{+\infty}\dfrac{t^{q-1}}{(1+t)^{p+q}}\text{d}t \end{aligned}$
+对后一个积分作变量代换 $t=\dfrac{1}{u}$，得到
+$\displaystyle\int_1^{+\infty}\dfrac{t^{q-1}}{(1+t)^{p+q}}\text{d}t=\int_0^1\dfrac{u^{p-1}}{(1+u)^{p+q}}\text{d}u$
+于是
+$\displaystyle\text{B}(p,q)=\int_0^1\dfrac{t^{q-1}+t^{p-1}}{(1+t)^{p+q}}\text{d}t$
+ Gamma 函数 形如
+$\displaystyle\Gamma(s)=\int_0^{+\infty}x^{s-1}e^{-x}\text{d}x$
+的含参变量积分称为 Gamma 函数 或 第二类 Euler 积分.
+$\Gamma(s)$ 的定义域为 $(0,+\infty)$
+性质 1 连续性与可导性 $\Gamma(s)$ 在 $(0,+\infty)$ 上连续且任意阶可导.</description>
+    </item>
+    
+  </channel>
+</rss>
