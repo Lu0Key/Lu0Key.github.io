@@ -1,0 +1,169 @@
+<!doctype html>
+<html lang="en-us">
+
+<head>
+    
+<script>
+    MathJax = {
+        tex: {
+            inlineMath: [
+                ["$", "$"]
+            ],
+        },
+        displayMath: [
+            ["$$", "$$"],
+            ["\[", "\]"],
+        ],
+        svg: {
+            fontCache: "global",
+        },
+    };
+</script>
+<script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+<script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+
+    <title>函数的不可积问题 // 洛七的摸鱼池塘</title>
+    <link rel="shortcut icon" href="%20/favicon.ico%20" />
+    <meta charset="utf-8" /> <meta name="generator" content="Hugo 0.80.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="author" content="洛七" />
+    <meta name="description" content="" /> <link rel="stylesheet" href="https://Lu0key.github.io/css/main.min.88e7083eff65effb7485b6e6f38d10afbec25093a6fac42d734ce9024d3defbd.css" />  <meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="函数的不可积问题"/>
+<meta name="twitter:description" content="函数的“不可积”问题 这里的“不可积”指的是原函数不能表示成初等函数的形式
+基本是搬运，但是忘记出处了
+常见的“不可积”的例子 三角积分类 $\displaystyle\int\dfrac{\sin x}{x^n}\text{d}x,;\int\dfrac{\cos x}{x^n}\text{d}x,;\int\dfrac{\tan x}{x^n},;\int x^n\tan x\text{d}x$
+$\displaystyle\int\left(\dfrac{x}{\sin x}\right)^n\text{d}x,;\int\left(\dfrac{x}{\cos x}\right)^n\text{d}x,;\int\left(\dfrac{x}{\tan x}\right)^n\text{d}x$
+菲涅尔积分类型 $\displaystyle\int\sin x^2\text{d}x,;\int\cos x^2\text{d}x,;\int\tan x^2\text{d}x$
+贝塞尔积分 $\displaystyle\int\cos(x\sin x)\text{d}x$
+Laplace 积分 $\displaystyle\int\dfrac{\cos\beta x}{1&#43;x^2}\text{d}x$
+高斯积分类 $\displaystyle\int e^{ax^2&#43;bx&#43;c}\text{d}x$
+$\displaystyle\int x^ne^{ax^2&#43;bx&#43;c}\text{d}x$
+指数积分类型 $\displaystyle\int\dfrac{e^{ax}}{x}\text{d}x,;\int\dfrac{e^{ax}}{a&#43;x^n}\text{d}x,;\int\dfrac{x^n}{1\pm e^x}\text{d}x$
+对数积分类型 $\displaystyle\int\dfrac{\text{d}x}{\ln x},;\int\dfrac{\ln x\text{d}x}{1&#43;x^2},;\int\ln\sin x\text{d}x,;\int\ln\cos x\text{d}x,;\int\ln\tan x\text{d}x$
+$\displaystyle\int\ln(a&#43;b\sin x)\text{d}x,;\int\ln(a&#43;b\cos x)\text{d}x,\int\ln(a&#43;b\tan x)\text{d}x$
+$\displaystyle\int\ln\ln\sin x\text{d}x,;\int\ln\ln\cos x\text{d}x,;\int\ln\ln\tan x\text{d}x$
+椭圆积分类 $\displaystyle\int\dfrac{1}{\sqrt{1-k^2\sin^2x}}\text{d}x,;\int\sqrt{1-k^2\sin^2x}\text{d}x$
+$\displaystyle\int\dfrac{1}{\sqrt{1\pm x^n}}\text{d}x,;\int\sqrt{1\pm x^n}\text{d}x;(n\geqslant3)$
+常见的特殊函数 Beta 函数 $\displaystyle\text{B}(p,q)=\int_0^1x^{p-1}(1-x)^{q-1}\text{d}x=\dfrac{\Gamma(p)\Gamma(q)}{\Gamma(p&#43;q)},;(p,q&gt;0)$
+Gamma 函数 $\displaystyle\Gamma(s)=\int_0^{&#43;\infty}x^{s-1}e^{-x}\text{d}x,;(s&gt;0)$
+误差函数 $\displaystyle\text{erf}(x)=\dfrac{2}{\sqrt{\pi}}\int_0^xe^{-x^2}\text{d}x$
+互补误差函数 $\displaystyle \text{erfc}(x)=1-\text{erf}(x)=\dfrac{2}{\sqrt{\pi}}\int_x^{&#43;\infty}e^{-x^2}\text{d}x$
+zeta 函数 $\displaystyle\zeta(s)=\sum_{k=1}^{\infty}\dfrac{1}{k^s}$"/>
+ <meta property="og:title" content="函数的不可积问题" />
+<meta property="og:description" content="函数的“不可积”问题 这里的“不可积”指的是原函数不能表示成初等函数的形式
+基本是搬运，但是忘记出处了
+常见的“不可积”的例子 三角积分类 $\displaystyle\int\dfrac{\sin x}{x^n}\text{d}x,;\int\dfrac{\cos x}{x^n}\text{d}x,;\int\dfrac{\tan x}{x^n},;\int x^n\tan x\text{d}x$
+$\displaystyle\int\left(\dfrac{x}{\sin x}\right)^n\text{d}x,;\int\left(\dfrac{x}{\cos x}\right)^n\text{d}x,;\int\left(\dfrac{x}{\tan x}\right)^n\text{d}x$
+菲涅尔积分类型 $\displaystyle\int\sin x^2\text{d}x,;\int\cos x^2\text{d}x,;\int\tan x^2\text{d}x$
+贝塞尔积分 $\displaystyle\int\cos(x\sin x)\text{d}x$
+Laplace 积分 $\displaystyle\int\dfrac{\cos\beta x}{1&#43;x^2}\text{d}x$
+高斯积分类 $\displaystyle\int e^{ax^2&#43;bx&#43;c}\text{d}x$
+$\displaystyle\int x^ne^{ax^2&#43;bx&#43;c}\text{d}x$
+指数积分类型 $\displaystyle\int\dfrac{e^{ax}}{x}\text{d}x,;\int\dfrac{e^{ax}}{a&#43;x^n}\text{d}x,;\int\dfrac{x^n}{1\pm e^x}\text{d}x$
+对数积分类型 $\displaystyle\int\dfrac{\text{d}x}{\ln x},;\int\dfrac{\ln x\text{d}x}{1&#43;x^2},;\int\ln\sin x\text{d}x,;\int\ln\cos x\text{d}x,;\int\ln\tan x\text{d}x$
+$\displaystyle\int\ln(a&#43;b\sin x)\text{d}x,;\int\ln(a&#43;b\cos x)\text{d}x,\int\ln(a&#43;b\tan x)\text{d}x$
+$\displaystyle\int\ln\ln\sin x\text{d}x,;\int\ln\ln\cos x\text{d}x,;\int\ln\ln\tan x\text{d}x$
+椭圆积分类 $\displaystyle\int\dfrac{1}{\sqrt{1-k^2\sin^2x}}\text{d}x,;\int\sqrt{1-k^2\sin^2x}\text{d}x$
+$\displaystyle\int\dfrac{1}{\sqrt{1\pm x^n}}\text{d}x,;\int\sqrt{1\pm x^n}\text{d}x;(n\geqslant3)$
+常见的特殊函数 Beta 函数 $\displaystyle\text{B}(p,q)=\int_0^1x^{p-1}(1-x)^{q-1}\text{d}x=\dfrac{\Gamma(p)\Gamma(q)}{\Gamma(p&#43;q)},;(p,q&gt;0)$
+Gamma 函数 $\displaystyle\Gamma(s)=\int_0^{&#43;\infty}x^{s-1}e^{-x}\text{d}x,;(s&gt;0)$
+误差函数 $\displaystyle\text{erf}(x)=\dfrac{2}{\sqrt{\pi}}\int_0^xe^{-x^2}\text{d}x$
+互补误差函数 $\displaystyle \text{erfc}(x)=1-\text{erf}(x)=\dfrac{2}{\sqrt{\pi}}\int_x^{&#43;\infty}e^{-x^2}\text{d}x$
+zeta 函数 $\displaystyle\zeta(s)=\sum_{k=1}^{\infty}\dfrac{1}{k^s}$" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://Lu0key.github.io/post/%E5%87%BD%E6%95%B0%E7%9A%84%E4%B8%8D%E5%8F%AF%E7%A7%AF%E9%97%AE%E9%A2%98/" />
+<meta property="article:published_time" content="2021-01-22T20:32:15+08:00" />
+<meta property="article:modified_time" content="2021-01-22T20:32:15+08:00" />
+
+
+</head>
+
+<body>
+    <header class="app-header">
+        <a href="https://Lu0key.github.io/"><img class="app-header-avatar" src="/avatar.jpg" alt="洛七" /></a>
+        <h1>洛七的摸鱼池塘</h1>
+        <nav class="app-header-menu">
+            <a class="app-header-menu-item" href="/tags/">Tags</a>
+        </nav>
+        <p>即将没书读的咸鱼</p>
+        <div class="app-header-social">
+            
+        </div>
+    </header>
+    <main class="app-container">
+        
+  <article class="post">
+    <header class="post-header">
+      <h1 class ="post-title">函数的不可积问题</h1>
+      <div class="post-meta">
+        <div>
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-calendar">
+  <title>calendar</title>
+  <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line>
+</svg>
+          Jan 22, 2021
+        </div>
+        <div>
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-clock">
+  <title>clock</title>
+  <circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline>
+</svg>
+          1 min read
+        </div>
+      </div>
+    </header>
+    <div class="post-content">
+      <h1 id="函数的不可积问题">函数的“不可积”问题</h1>
+<p>这里的“不可积”指的是原函数不能表示成初等函数的形式<br>
+基本是搬运，但是忘记出处了</p>
+<h2 id="常见的不可积的例子">常见的“不可积”的例子</h2>
+<h3 id="三角积分类">三角积分类</h3>
+<p>$\displaystyle\int\dfrac{\sin x}{x^n}\text{d}x,;\int\dfrac{\cos x}{x^n}\text{d}x,;\int\dfrac{\tan x}{x^n},;\int x^n\tan x\text{d}x$</p>
+<p>$\displaystyle\int\left(\dfrac{x}{\sin x}\right)^n\text{d}x,;\int\left(\dfrac{x}{\cos x}\right)^n\text{d}x,;\int\left(\dfrac{x}{\tan x}\right)^n\text{d}x$</p>
+<h4 id="菲涅尔积分类型">菲涅尔积分类型</h4>
+<p>$\displaystyle\int\sin x^2\text{d}x,;\int\cos x^2\text{d}x,;\int\tan x^2\text{d}x$</p>
+<h4 id="贝塞尔积分">贝塞尔积分</h4>
+<p>$\displaystyle\int\cos(x\sin x)\text{d}x$</p>
+<h4 id="laplace-积分">Laplace 积分</h4>
+<p>$\displaystyle\int\dfrac{\cos\beta x}{1+x^2}\text{d}x$</p>
+<h3 id="高斯积分类">高斯积分类</h3>
+<p>$\displaystyle\int e^{ax^2+bx+c}\text{d}x$</p>
+<p>$\displaystyle\int x^ne^{ax^2+bx+c}\text{d}x$</p>
+<h3 id="指数积分类型">指数积分类型</h3>
+<p>$\displaystyle\int\dfrac{e^{ax}}{x}\text{d}x,;\int\dfrac{e^{ax}}{a+x^n}\text{d}x,;\int\dfrac{x^n}{1\pm e^x}\text{d}x$</p>
+<h3 id="对数积分类型">对数积分类型</h3>
+<p>$\displaystyle\int\dfrac{\text{d}x}{\ln x},;\int\dfrac{\ln x\text{d}x}{1+x^2},;\int\ln\sin x\text{d}x,;\int\ln\cos x\text{d}x,;\int\ln\tan x\text{d}x$</p>
+<p>$\displaystyle\int\ln(a+b\sin x)\text{d}x,;\int\ln(a+b\cos x)\text{d}x,\int\ln(a+b\tan x)\text{d}x$</p>
+<p>$\displaystyle\int\ln\ln\sin x\text{d}x,;\int\ln\ln\cos x\text{d}x,;\int\ln\ln\tan x\text{d}x$</p>
+<h3 id="椭圆积分类">椭圆积分类</h3>
+<p>$\displaystyle\int\dfrac{1}{\sqrt{1-k^2\sin^2x}}\text{d}x,;\int\sqrt{1-k^2\sin^2x}\text{d}x$</p>
+<p>$\displaystyle\int\dfrac{1}{\sqrt{1\pm x^n}}\text{d}x,;\int\sqrt{1\pm x^n}\text{d}x;(n\geqslant3)$</p>
+<h2 id="常见的特殊函数">常见的特殊函数</h2>
+<h3 id="beta-函数">Beta 函数</h3>
+<p>$\displaystyle\text{B}(p,q)=\int_0^1x^{p-1}(1-x)^{q-1}\text{d}x=\dfrac{\Gamma(p)\Gamma(q)}{\Gamma(p+q)},;(p,q&gt;0)$</p>
+<h3 id="gamma-函数">Gamma 函数</h3>
+<p>$\displaystyle\Gamma(s)=\int_0^{+\infty}x^{s-1}e^{-x}\text{d}x,;(s&gt;0)$</p>
+<h3 id="误差函数">误差函数</h3>
+<p>$\displaystyle\text{erf}(x)=\dfrac{2}{\sqrt{\pi}}\int_0^xe^{-x^2}\text{d}x$</p>
+<h3 id="互补误差函数">互补误差函数</h3>
+<p>$\displaystyle \text{erfc}(x)=1-\text{erf}(x)=\dfrac{2}{\sqrt{\pi}}\int_x^{+\infty}e^{-x^2}\text{d}x$</p>
+<h3 id="zeta-函数">zeta 函数</h3>
+<p>$\displaystyle\zeta(s)=\sum_{k=1}^{\infty}\dfrac{1}{k^s}$</p>
+<h3 id="狄拉克雷-eta-函数">狄拉克雷 eta 函数</h3>
+<p>$\displaystyle\eta(s)=\sum_{k=1}^{\infty}(-1)^{k-1}\dfrac{1}{k^s}=(1-2^{1-s})\zeta(s)$</p>
+<h3 id="多重对数函数-polylog">多重对数函数 Polylog</h3>
+<p>$\displaystyle\text{Li}<em>n(x)=\sum</em>{k=1}^{\infty}\dfrac{x^k}{k^n}$</p>
+<p>果然考试周就是不务正业</p>
+<p>还有超几何分布函数，惠特克函数，贝塞尔函数，椭圆函数</p>
+<p>更多的特殊函数可以参考 <a href="https://book.douban.com/subject/1231554/">特殊函数概论(王竹溪)</a></p>
+
+    </div>
+    <div class="post-footer">
+      
+    </div>
+  </article>
+
+    </main>
+</body>
+
+</html>

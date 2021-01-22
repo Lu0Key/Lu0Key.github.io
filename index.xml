@@ -6,7 +6,35 @@
     <description>Recent content on 洛七的摸鱼池塘</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Fri, 22 Jan 2021 19:09:34 +0800</lastBuildDate><atom:link href="https://Lu0key.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Fri, 22 Jan 2021 20:32:15 +0800</lastBuildDate><atom:link href="https://Lu0key.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>函数的不可积问题</title>
+      <link>https://Lu0key.github.io/post/%E5%87%BD%E6%95%B0%E7%9A%84%E4%B8%8D%E5%8F%AF%E7%A7%AF%E9%97%AE%E9%A2%98/</link>
+      <pubDate>Fri, 22 Jan 2021 20:32:15 +0800</pubDate>
+      
+      <guid>https://Lu0key.github.io/post/%E5%87%BD%E6%95%B0%E7%9A%84%E4%B8%8D%E5%8F%AF%E7%A7%AF%E9%97%AE%E9%A2%98/</guid>
+      <description>函数的“不可积”问题 这里的“不可积”指的是原函数不能表示成初等函数的形式
+基本是搬运，但是忘记出处了
+常见的“不可积”的例子 三角积分类 $\displaystyle\int\dfrac{\sin x}{x^n}\text{d}x,;\int\dfrac{\cos x}{x^n}\text{d}x,;\int\dfrac{\tan x}{x^n},;\int x^n\tan x\text{d}x$
+$\displaystyle\int\left(\dfrac{x}{\sin x}\right)^n\text{d}x,;\int\left(\dfrac{x}{\cos x}\right)^n\text{d}x,;\int\left(\dfrac{x}{\tan x}\right)^n\text{d}x$
+菲涅尔积分类型 $\displaystyle\int\sin x^2\text{d}x,;\int\cos x^2\text{d}x,;\int\tan x^2\text{d}x$
+贝塞尔积分 $\displaystyle\int\cos(x\sin x)\text{d}x$
+Laplace 积分 $\displaystyle\int\dfrac{\cos\beta x}{1+x^2}\text{d}x$
+高斯积分类 $\displaystyle\int e^{ax^2+bx+c}\text{d}x$
+$\displaystyle\int x^ne^{ax^2+bx+c}\text{d}x$
+指数积分类型 $\displaystyle\int\dfrac{e^{ax}}{x}\text{d}x,;\int\dfrac{e^{ax}}{a+x^n}\text{d}x,;\int\dfrac{x^n}{1\pm e^x}\text{d}x$
+对数积分类型 $\displaystyle\int\dfrac{\text{d}x}{\ln x},;\int\dfrac{\ln x\text{d}x}{1+x^2},;\int\ln\sin x\text{d}x,;\int\ln\cos x\text{d}x,;\int\ln\tan x\text{d}x$
+$\displaystyle\int\ln(a+b\sin x)\text{d}x,;\int\ln(a+b\cos x)\text{d}x,\int\ln(a+b\tan x)\text{d}x$
+$\displaystyle\int\ln\ln\sin x\text{d}x,;\int\ln\ln\cos x\text{d}x,;\int\ln\ln\tan x\text{d}x$
+椭圆积分类 $\displaystyle\int\dfrac{1}{\sqrt{1-k^2\sin^2x}}\text{d}x,;\int\sqrt{1-k^2\sin^2x}\text{d}x$
+$\displaystyle\int\dfrac{1}{\sqrt{1\pm x^n}}\text{d}x,;\int\sqrt{1\pm x^n}\text{d}x;(n\geqslant3)$
+常见的特殊函数 Beta 函数 $\displaystyle\text{B}(p,q)=\int_0^1x^{p-1}(1-x)^{q-1}\text{d}x=\dfrac{\Gamma(p)\Gamma(q)}{\Gamma(p+q)},;(p,q&amp;gt;0)$
+Gamma 函数 $\displaystyle\Gamma(s)=\int_0^{+\infty}x^{s-1}e^{-x}\text{d}x,;(s&amp;gt;0)$
+误差函数 $\displaystyle\text{erf}(x)=\dfrac{2}{\sqrt{\pi}}\int_0^xe^{-x^2}\text{d}x$
+互补误差函数 $\displaystyle \text{erfc}(x)=1-\text{erf}(x)=\dfrac{2}{\sqrt{\pi}}\int_x^{+\infty}e^{-x^2}\text{d}x$
+zeta 函数 $\displaystyle\zeta(s)=\sum_{k=1}^{\infty}\dfrac{1}{k^s}$</description>
+    </item>
+    
     <item>
       <title>王道考研 数据结构 绪论</title>
       <link>https://Lu0key.github.io/post/%E7%8E%8B%E9%81%93%E8%80%83%E7%A0%94-%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84-%E7%BB%AA%E8%AE%BA/</link>
