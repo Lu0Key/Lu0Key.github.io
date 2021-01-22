@@ -14,11 +14,14 @@
       
       <guid>https://Lu0key.github.io/post/%E4%B8%8A%E4%BA%A4%E8%80%83%E7%A0%94%E6%95%B0%E5%88%86%E4%B8%80%E9%A2%98/</guid>
       <description>2021 上海交通大学硕士研究生入学考试数学分析第7题
-$\begin{aligned} &amp;amp;\lim_{x\to\infty}\dfrac{(1+\frac{1}{x})^x-e}{\sin\dfrac{1}{x}}\
-=&amp;amp;e\lim_{x\to\infty}\dfrac{e^{x\ln(1+\frac{1}{x})-1}-1}{\dfrac{1}{x}}\
-=&amp;amp;e\lim_{x\to\infty}x[x\ln(1+\dfrac{1}{x})-1]\
-=&amp;amp;e\lim_{x\to\infty}x[x(\dfrac{1}{x}-\dfrac{1}{2x^2}+o(\dfrac{1}{x^3}))-1]\
-=&amp;amp;-\dfrac{e}{2} \end{aligned}$</description>
+求极限
+$$ \lim_{x\to\infty}\dfrac{(1+\frac{1}{x})^x-e}{\sin\dfrac{1}{x}}
+$$
+Solution: $$\begin{aligned} &amp;amp;\lim_{x\to\infty}\dfrac{(1+\frac{1}{x})^x-e}{\sin\dfrac{1}{x}}\\
+=&amp;amp;e\lim_{x\to\infty}\dfrac{e^{x\ln(1+\frac{1}{x})-1}-1}{\dfrac{1}{x}}\\
+=&amp;amp;e\lim_{x\to\infty}x[x\ln(1+\dfrac{1}{x})-1]\\
+=&amp;amp;e\lim_{x\to\infty}x[x(\dfrac{1}{x}-\dfrac{1}{2x^2}+o(\dfrac{1}{x^3}))-1]\\
+=&amp;amp;-\dfrac{e}{2} \end{aligned}$$</description>
     </item>
     
   </channel>
