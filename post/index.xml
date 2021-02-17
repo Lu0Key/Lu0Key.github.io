@@ -6,7 +6,25 @@
     <description>Recent content in Posts on 洛七的摸鱼池塘</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Mon, 15 Feb 2021 22:05:30 +0800</lastBuildDate><atom:link href="https://Lu0key.github.io/post/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Wed, 17 Feb 2021 22:18:45 +0800</lastBuildDate><atom:link href="https://Lu0key.github.io/post/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Spring5</title>
+      <link>https://Lu0key.github.io/post/spring5/</link>
+      <pubDate>Wed, 17 Feb 2021 22:18:45 +0800</pubDate>
+      
+      <guid>https://Lu0key.github.io/post/spring5/</guid>
+      <description>Spring Spring 简介  Spring理念：使现有的技术 更加容易使用，本身是一个大杂烩  SSH：Struct2+Spring+Hibernate
+SSM：SpringMVC+Spring+Mybatis
+官网：https://spring.io/projects/spring-framework
+官方下载地址：https://repo.spring.io/release/org/springframework/spring/ Github：https://github.com/spring-projects/spring-framework
+&amp;lt;!-- https://mvnrepository.com/artifact/org.springframework/spring-webmvc --&amp;gt; &amp;lt;dependency&amp;gt; &amp;lt;groupId&amp;gt;org.springframework&amp;lt;/groupId&amp;gt; &amp;lt;artifactId&amp;gt;spring-webmvc&amp;lt;/artifactId&amp;gt; &amp;lt;version&amp;gt;5.2.12.RELEASE&amp;lt;/version&amp;gt; &amp;lt;/dependency&amp;gt; &amp;lt;!-- https://mvnrepository.com/artifact/org.springframework/spring-jdbc --&amp;gt; &amp;lt;dependency&amp;gt; &amp;lt;groupId&amp;gt;org.springframework&amp;lt;/groupId&amp;gt; &amp;lt;artifactId&amp;gt;spring-jdbc&amp;lt;/artifactId&amp;gt; &amp;lt;version&amp;gt;5.2.12.RELEASE&amp;lt;/version&amp;gt; &amp;lt;/dependency&amp;gt; 优点  Spring是一个开源的免费的框架(容器) Spring是一个轻量级、非入侵式的框架 控制反转(IOC)，面向切面编程(AOP) 支持事务的处理，对框架整合的支持  总结：Spring是一个轻量级的控制反转(IOC)和面向切面变成(AOP)的框架！
+组成 拓展  SpringBoot  一个快速开发的脚手架 基于SpringBoot可以快速地开发单个微服务、 约定大于配置   SpringCloud  SpringCloud 是基于 SpringBoot实现的    因为现在大多数公司都在使用SpringBoot进行快速开发，学习SpingBoot的前提，需要完全掌握Spring和SpringMVC。承上启下的作用
+弊端：发展了太久之后，违背了原来的理念，配置十分繁琐，人称“配置地狱”
+IOC理论推导  UserDao接口 UserDaoImpl 实现类 UserService 业务接口 UserServiceImpl 业务实现  在我们之前的业务中，用户的需求可能会影响我们原来的代码，我们需要根据用户的需求去修改原代码，如果程序代码量十分大，修改一次的成本十分高昂
+我们使用一个Set接口实现，已经发生了革命性的变化
+private UserDao userDao; public void setUserDao(UserDao userdao) { this.</description>
+    </item>
+    
     <item>
       <title>Mybatis</title>
       <link>https://Lu0key.github.io/post/mybatis/</link>

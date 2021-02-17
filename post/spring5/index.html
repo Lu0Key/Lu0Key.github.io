@@ -1,0 +1,1233 @@
+<!doctype html>
+<html lang="en-us">
+
+<head>
+    
+    <title>Spring5 // 洛七的摸鱼池塘</title>
+    <link rel="shortcut icon" href="%20/favicon.ico%20" />
+    <meta charset="utf-8" /> <meta name="generator" content="Hugo 0.80.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="author" content="洛七" />
+    <meta name="description" content="" /> <link rel="stylesheet" href="https://Lu0key.github.io/css/main.min.88e7083eff65effb7485b6e6f38d10afbec25093a6fac42d734ce9024d3defbd.css" />  <meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Spring5"/>
+<meta name="twitter:description" content="Spring Spring 简介  Spring理念：使现有的技术 更加容易使用，本身是一个大杂烩  SSH：Struct2&#43;Spring&#43;Hibernate
+SSM：SpringMVC&#43;Spring&#43;Mybatis
+官网：https://spring.io/projects/spring-framework
+官方下载地址：https://repo.spring.io/release/org/springframework/spring/ Github：https://github.com/spring-projects/spring-framework
+&lt;!-- https://mvnrepository.com/artifact/org.springframework/spring-webmvc --&gt; &lt;dependency&gt; &lt;groupId&gt;org.springframework&lt;/groupId&gt; &lt;artifactId&gt;spring-webmvc&lt;/artifactId&gt; &lt;version&gt;5.2.12.RELEASE&lt;/version&gt; &lt;/dependency&gt; &lt;!-- https://mvnrepository.com/artifact/org.springframework/spring-jdbc --&gt; &lt;dependency&gt; &lt;groupId&gt;org.springframework&lt;/groupId&gt; &lt;artifactId&gt;spring-jdbc&lt;/artifactId&gt; &lt;version&gt;5.2.12.RELEASE&lt;/version&gt; &lt;/dependency&gt; 优点  Spring是一个开源的免费的框架(容器) Spring是一个轻量级、非入侵式的框架 控制反转(IOC)，面向切面编程(AOP) 支持事务的处理，对框架整合的支持  总结：Spring是一个轻量级的控制反转(IOC)和面向切面变成(AOP)的框架！
+组成 拓展  SpringBoot  一个快速开发的脚手架 基于SpringBoot可以快速地开发单个微服务、 约定大于配置   SpringCloud  SpringCloud 是基于 SpringBoot实现的    因为现在大多数公司都在使用SpringBoot进行快速开发，学习SpingBoot的前提，需要完全掌握Spring和SpringMVC。承上启下的作用
+弊端：发展了太久之后，违背了原来的理念，配置十分繁琐，人称“配置地狱”
+IOC理论推导  UserDao接口 UserDaoImpl 实现类 UserService 业务接口 UserServiceImpl 业务实现  在我们之前的业务中，用户的需求可能会影响我们原来的代码，我们需要根据用户的需求去修改原代码，如果程序代码量十分大，修改一次的成本十分高昂
+我们使用一个Set接口实现，已经发生了革命性的变化
+private UserDao userDao; public void setUserDao(UserDao userdao) { this."/>
+ <meta property="og:title" content="Spring5" />
+<meta property="og:description" content="Spring Spring 简介  Spring理念：使现有的技术 更加容易使用，本身是一个大杂烩  SSH：Struct2&#43;Spring&#43;Hibernate
+SSM：SpringMVC&#43;Spring&#43;Mybatis
+官网：https://spring.io/projects/spring-framework
+官方下载地址：https://repo.spring.io/release/org/springframework/spring/ Github：https://github.com/spring-projects/spring-framework
+&lt;!-- https://mvnrepository.com/artifact/org.springframework/spring-webmvc --&gt; &lt;dependency&gt; &lt;groupId&gt;org.springframework&lt;/groupId&gt; &lt;artifactId&gt;spring-webmvc&lt;/artifactId&gt; &lt;version&gt;5.2.12.RELEASE&lt;/version&gt; &lt;/dependency&gt; &lt;!-- https://mvnrepository.com/artifact/org.springframework/spring-jdbc --&gt; &lt;dependency&gt; &lt;groupId&gt;org.springframework&lt;/groupId&gt; &lt;artifactId&gt;spring-jdbc&lt;/artifactId&gt; &lt;version&gt;5.2.12.RELEASE&lt;/version&gt; &lt;/dependency&gt; 优点  Spring是一个开源的免费的框架(容器) Spring是一个轻量级、非入侵式的框架 控制反转(IOC)，面向切面编程(AOP) 支持事务的处理，对框架整合的支持  总结：Spring是一个轻量级的控制反转(IOC)和面向切面变成(AOP)的框架！
+组成 拓展  SpringBoot  一个快速开发的脚手架 基于SpringBoot可以快速地开发单个微服务、 约定大于配置   SpringCloud  SpringCloud 是基于 SpringBoot实现的    因为现在大多数公司都在使用SpringBoot进行快速开发，学习SpingBoot的前提，需要完全掌握Spring和SpringMVC。承上启下的作用
+弊端：发展了太久之后，违背了原来的理念，配置十分繁琐，人称“配置地狱”
+IOC理论推导  UserDao接口 UserDaoImpl 实现类 UserService 业务接口 UserServiceImpl 业务实现  在我们之前的业务中，用户的需求可能会影响我们原来的代码，我们需要根据用户的需求去修改原代码，如果程序代码量十分大，修改一次的成本十分高昂
+我们使用一个Set接口实现，已经发生了革命性的变化
+private UserDao userDao; public void setUserDao(UserDao userdao) { this." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://Lu0key.github.io/post/spring5/" />
+<meta property="article:published_time" content="2021-02-17T22:18:45+08:00" />
+<meta property="article:modified_time" content="2021-02-17T22:18:45+08:00" />
+
+
+</head>
+
+<body>
+    <header class="app-header">
+        <a href="https://Lu0key.github.io/"><img class="app-header-avatar" src="/avatar.jpg" alt="洛七" /></a>
+        <h1>洛七的摸鱼池塘</h1>
+        <nav class="app-header-menu">
+            <a class="app-header-menu-item" href="/tags/">Tags</a>
+        </nav>
+        <p>即将没书读的咸鱼</p>
+        <div class="app-header-social">
+            
+        </div>
+    </header>
+    <main class="app-container">
+        
+  <article class="post">
+    <header class="post-header">
+      <h1 class ="post-title">Spring5</h1>
+      <div class="post-meta">
+        <div>
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-calendar">
+  <title>calendar</title>
+  <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line>
+</svg>
+          Feb 17, 2021
+        </div>
+        <div>
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-clock">
+  <title>clock</title>
+  <circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline>
+</svg>
+          9 min read
+        </div>
+        <div>
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-tag">
+  <title>tag</title>
+  <path d="M20.59 13.41l-7.17 7.17a2 2 0 0 1-2.83 0L2 12V2h10l8.59 8.59a2 2 0 0 1 0 2.82z"></path><line x1="7" y1="7" x2="7" y2="7"></line>
+</svg>
+              <a class="tag" href="https://Lu0key.github.io/tags/spring/">Spring</a>
+              <a class="tag" href="https://Lu0key.github.io/tags/mybatis/">MyBatis</a>
+        </div>
+      </div>
+    </header>
+    <div class="post-content">
+      <h1 id="spring">Spring</h1>
+<h2 id="spring-1">Spring</h2>
+<h3 id="简介">简介</h3>
+<ul>
+<li>Spring理念：使现有的技术 更加容易使用，本身是一个大杂烩</li>
+</ul>
+<p>SSH：Struct2+Spring+Hibernate<br>
+SSM：SpringMVC+Spring+Mybatis</p>
+<p>官网：https://spring.io/projects/spring-framework<br>
+官方下载地址：https://repo.spring.io/release/org/springframework/spring/ <br>
+Github：https://github.com/spring-projects/spring-framework</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-xml" data-lang="xml"><span style="color:#75715e">&lt;!-- https://mvnrepository.com/artifact/org.springframework/spring-webmvc --&gt;</span>
+<span style="color:#f92672">&lt;dependency&gt;</span>
+    <span style="color:#f92672">&lt;groupId&gt;</span>org.springframework<span style="color:#f92672">&lt;/groupId&gt;</span>
+    <span style="color:#f92672">&lt;artifactId&gt;</span>spring-webmvc<span style="color:#f92672">&lt;/artifactId&gt;</span>
+    <span style="color:#f92672">&lt;version&gt;</span>5.2.12.RELEASE<span style="color:#f92672">&lt;/version&gt;</span>
+<span style="color:#f92672">&lt;/dependency&gt;</span>
+</code></pre></div><div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-xml" data-lang="xml"><span style="color:#75715e">&lt;!-- https://mvnrepository.com/artifact/org.springframework/spring-jdbc --&gt;</span>
+<span style="color:#f92672">&lt;dependency&gt;</span>
+    <span style="color:#f92672">&lt;groupId&gt;</span>org.springframework<span style="color:#f92672">&lt;/groupId&gt;</span>
+    <span style="color:#f92672">&lt;artifactId&gt;</span>spring-jdbc<span style="color:#f92672">&lt;/artifactId&gt;</span>
+    <span style="color:#f92672">&lt;version&gt;</span>5.2.12.RELEASE<span style="color:#f92672">&lt;/version&gt;</span>
+<span style="color:#f92672">&lt;/dependency&gt;</span>
+</code></pre></div><h3 id="优点">优点</h3>
+<ul>
+<li>Spring是一个开源的免费的框架(容器)</li>
+<li>Spring是一个轻量级、非入侵式的框架</li>
+<li>控制反转(IOC)，面向切面编程(AOP)</li>
+<li>支持事务的处理，对框架整合的支持</li>
+</ul>
+<p>总结：Spring是一个轻量级的控制反转(IOC)和面向切面变成(AOP)的框架！</p>
+<h3 id="组成">组成</h3>
+<p><img src="https://images2017.cnblogs.com/blog/1219227/201709/1219227-20170930225010356-45057485.gif" alt=""></p>
+<h3 id="拓展">拓展</h3>
+<ul>
+<li>SpringBoot
+<ul>
+<li>一个快速开发的脚手架</li>
+<li>基于SpringBoot可以快速地开发单个微服务、</li>
+<li>约定大于配置</li>
+</ul>
+</li>
+<li>SpringCloud
+<ul>
+<li>SpringCloud 是基于 SpringBoot实现的</li>
+</ul>
+</li>
+</ul>
+<p>因为现在大多数公司都在使用SpringBoot进行快速开发，学习SpingBoot的前提，需要完全掌握Spring和SpringMVC。承上启下的作用</p>
+<p>弊端：发展了太久之后，违背了原来的理念，配置十分繁琐，人称“配置地狱”</p>
+<h2 id="ioc理论推导">IOC理论推导</h2>
+<ol>
+<li>UserDao接口</li>
+<li>UserDaoImpl 实现类</li>
+<li>UserService 业务接口</li>
+<li>UserServiceImpl 业务实现</li>
+</ol>
+<p>在我们之前的业务中，用户的需求可能会影响我们原来的代码，我们需要根据用户的需求去修改原代码，如果程序代码量十分大，修改一次的成本十分高昂</p>
+<p>我们使用一个Set接口实现，已经发生了革命性的变化</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#66d9ef">private</span> UserDao userDao<span style="color:#f92672">;</span>
+
+<span style="color:#66d9ef">public</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">setUserDao</span><span style="color:#f92672">(</span>UserDao userdao<span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
+    <span style="color:#66d9ef">this</span><span style="color:#f92672">.</span><span style="color:#a6e22e">userDao</span> <span style="color:#f92672">=</span> userdao<span style="color:#f92672">;</span>
+<span style="color:#f92672">}</span>
+</code></pre></div><ul>
+<li>之前，程序是主动创建对象，控制权在程序员手上</li>
+<li>使用了Set注入之后，程序不再具有主动性，而是变成了被动的接受对象</li>
+</ul>
+<p>这种思想，从本质上解决了问题，程序员不用再去管理对象的创建，系统的耦合性大大降低，可以更加专注地在业务上的实现上，这是IOC的原型</p>
+<h3 id="ioc本质">IoC本质</h3>
+<p>控制反转IoC(Inversion of Control)，是一种设计思想，DI(依赖注入)是实现IoC的一种方法，也有人认为DI只是IoC的另一种说法。没有IoC的程序中，我们使用面向对象编程，对象的创建与对象间的依赖关系完全硬编码在程序中，对象的创建由程序自己控制，控制反转后将对象的创建转移给第三方，个人认为所谓控制反转就是：获得依赖对象的方式反转了</p>
+<p>采用XML方式配置Bean的时候，Bean的定义信息是和实现分离的，而采用注解的方式可以把二者合为一体，Bean的定义信息直接以注解的形式定义在实现类中，从而达到了零配置的目的</p>
+<p>控制反转是一种通过描述(XML或注解)并通过第三方去生产或获取特定对象的方式。在Spring中实现控制反转的是IoC容器，其实现方法是依赖注入(Dependency Injection,DI).</p>
+<h2 id="hellespring">HelleSpring</h2>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-xml" data-lang="xml"><span style="color:#75715e">&lt;?xml version=&#34;1.0&#34; encoding=&#34;UTF-8&#34;?&gt;</span>
+<span style="color:#f92672">&lt;beans</span> <span style="color:#a6e22e">xmlns=</span><span style="color:#e6db74">&#34;http://www.springframework.org/schema/beans&#34;</span>
+       <span style="color:#a6e22e">xmlns:xsi=</span><span style="color:#e6db74">&#34;http://www.w3.org/2001/XMLSchema-instance&#34;</span>
+       <span style="color:#a6e22e">xsi:schemaLocation=</span><span style="color:#e6db74">&#34;http://www.springframework.org/schema/beans
+</span><span style="color:#e6db74">        https://www.springframework.org/schema/beans/spring-beans.xsd&#34;</span><span style="color:#f92672">&gt;</span>
+
+    <span style="color:#75715e">&lt;!--  使用Spring来创建对象，在Spring中这些都成为Bean
+</span><span style="color:#75715e">      类型 变量名 = new 类型();
+</span><span style="color:#75715e">      bean = 对象   new Hello();
+</span><span style="color:#75715e">
+</span><span style="color:#75715e">      id = 变量名
+</span><span style="color:#75715e">      class = new 的对象
+</span><span style="color:#75715e">      property  相当于给对象中的属性设置一个值
+</span><span style="color:#75715e">      --&gt;</span>
+    <span style="color:#f92672">&lt;bean</span> <span style="color:#a6e22e">id=</span><span style="color:#e6db74">&#34;hello&#34;</span> <span style="color:#a6e22e">class=</span><span style="color:#e6db74">&#34;com.luo.pojo.Hello&#34;</span><span style="color:#f92672">&gt;</span>
+        <span style="color:#f92672">&lt;property</span> <span style="color:#a6e22e">name=</span><span style="color:#e6db74">&#34;str&#34;</span> <span style="color:#a6e22e">value=</span><span style="color:#e6db74">&#34;Spring&#34;</span><span style="color:#f92672">/&gt;</span>
+    <span style="color:#f92672">&lt;/bean&gt;</span>
+
+<span style="color:#f92672">&lt;/beans&gt;</span>
+</code></pre></div><div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-xml" data-lang="xml"><span style="color:#f92672">&lt;bean</span> <span style="color:#a6e22e">id=</span><span style="color:#e6db74">&#34;userServiceImpl&#34;</span> <span style="color:#a6e22e">class=</span><span style="color:#e6db74">&#34;com.luo.service.UserServiceImpl&#34;</span><span style="color:#f92672">&gt;</span>
+    <span style="color:#75715e">&lt;!--
+</span><span style="color:#75715e">    ref:引用 Spring 容器中创建好的对象
+</span><span style="color:#75715e">    value：具体的值，基本数据类型
+</span><span style="color:#75715e">    --&gt;</span>
+    <span style="color:#f92672">&lt;property</span> <span style="color:#a6e22e">name=</span><span style="color:#e6db74">&#34;userDao&#34;</span> <span style="color:#a6e22e">ref=</span><span style="color:#e6db74">&#34;oracleImpl&#34;</span><span style="color:#f92672">/&gt;</span>
+<span style="color:#f92672">&lt;/bean&gt;</span>
+</code></pre></div><div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#f92672">package</span> com.luo.pojo<span style="color:#f92672">;</span>
+
+<span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Hello</span> <span style="color:#f92672">{</span>
+
+    <span style="color:#66d9ef">private</span> String str<span style="color:#f92672">;</span>
+
+    <span style="color:#66d9ef">public</span> String <span style="color:#a6e22e">getStr</span><span style="color:#f92672">()</span> <span style="color:#f92672">{</span>
+        <span style="color:#66d9ef">return</span> str<span style="color:#f92672">;</span>
+    <span style="color:#f92672">}</span>
+
+    <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">setStr</span><span style="color:#f92672">(</span>String str<span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
+        <span style="color:#66d9ef">this</span><span style="color:#f92672">.</span><span style="color:#a6e22e">str</span> <span style="color:#f92672">=</span> str<span style="color:#f92672">;</span>
+    <span style="color:#f92672">}</span>
+
+    <span style="color:#a6e22e">@Override</span>
+    <span style="color:#66d9ef">public</span> String <span style="color:#a6e22e">toString</span><span style="color:#f92672">()</span> <span style="color:#f92672">{</span>
+        <span style="color:#66d9ef">return</span> <span style="color:#e6db74">&#34;Hello{&#34;</span> <span style="color:#f92672">+</span>
+                <span style="color:#e6db74">&#34;str=&#39;&#34;</span> <span style="color:#f92672">+</span> str <span style="color:#f92672">+</span> <span style="color:#e6db74">&#39;\&#39;&#39;</span> <span style="color:#f92672">+</span>
+                <span style="color:#e6db74">&#39;}&#39;</span><span style="color:#f92672">;</span>
+    <span style="color:#f92672">}</span>
+<span style="color:#f92672">}</span>
+</code></pre></div><div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#a6e22e">@Test</span>
+<span style="color:#66d9ef">public</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">test</span><span style="color:#f92672">(){</span>
+
+    <span style="color:#75715e">// 获取Spring的上下文对象
+</span><span style="color:#75715e"></span>    ApplicationContext context <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> ClassPathXmlApplicationContext<span style="color:#f92672">(</span><span style="color:#e6db74">&#34;beans.xml&#34;</span><span style="color:#f92672">);</span>
+
+    <span style="color:#75715e">// 我们的对象都在Spring中管理了，我们要使用，直接去里面取就可以
+</span><span style="color:#75715e"></span>    Hello hello <span style="color:#f92672">=</span> <span style="color:#f92672">(</span>Hello<span style="color:#f92672">)</span>context<span style="color:#f92672">.</span><span style="color:#a6e22e">getBean</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;hello&#34;</span><span style="color:#f92672">);</span>
+    System<span style="color:#f92672">.</span><span style="color:#a6e22e">out</span><span style="color:#f92672">.</span><span style="color:#a6e22e">println</span><span style="color:#f92672">(</span>hello<span style="color:#f92672">.</span><span style="color:#a6e22e">toString</span><span style="color:#f92672">());</span>
+<span style="color:#f92672">}</span>
+</code></pre></div><h3 id="思考问题">思考问题？</h3>
+<ul>
+<li>Hello 对象是谁创建的？<br>
+Hello 对象是由Spring创建的</li>
+<li>Hello 对象的属性是怎么设置的？
+Hello 对象的属性是由Spring容器设置的</li>
+</ul>
+<p>这个过程就叫控制反转：<br>
+控制：谁来控制对象的创建，传统应用程序的对象是由程序本身控制创建的，使用Spring后，对象是由Spring来创建的。<br>
+反转：程序本身不创建对象，而变成被动的接受对象。<br>
+依赖注入：就是利用set方法来进行注入的<br>
+IoC是一种编程思想，由主动的编程变成被动的接收</p>
+<p>可以通过new ClassPathXmlApplicationContext去浏览底层源码</p>
+<p>到这个时候，可以彻底不用去程序中改动了，要实现不同的操作，只需要在xml配置文件中进行修改，所谓的IoC，一句话搞定：对象由Spring来创建，管理，装配</p>
+<h2 id="ioc创建对象的方式">IoC创建对象的方式</h2>
+<ol>
+<li>使用无参构造创造对象</li>
+<li>假设我们要使用有参构造对象
+<ol>
+<li>下标赋值</li>
+</ol>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-xml" data-lang="xml"> <span style="color:#f92672">&lt;bean</span> <span style="color:#a6e22e">id=</span><span style="color:#e6db74">&#34;User&#34;</span> <span style="color:#a6e22e">class=</span><span style="color:#e6db74">&#34;com.luo.pojo.User&#34;</span><span style="color:#f92672">&gt;</span>
+     <span style="color:#f92672">&lt;constructor-arg</span> <span style="color:#a6e22e">index=</span><span style="color:#e6db74">&#34;0&#34;</span> <span style="color:#a6e22e">value=</span><span style="color:#e6db74">&#34;洛某&#34;</span><span style="color:#f92672">/&gt;</span>
+ <span style="color:#f92672">&lt;/bean&gt;</span>
+</code></pre></div><ol start="2">
+<li>类型</li>
+</ol>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-xml" data-lang="xml"> <span style="color:#75715e">&lt;!--第二种方式：通过类型创建，不建议使用--&gt;</span>
+ <span style="color:#f92672">&lt;bean</span> <span style="color:#a6e22e">id=</span><span style="color:#e6db74">&#34;user&#34;</span> <span style="color:#a6e22e">class=</span><span style="color:#e6db74">&#34;com.luo.pojo.User&#34;</span><span style="color:#f92672">&gt;</span>
+     <span style="color:#f92672">&lt;constructor-arg</span> <span style="color:#a6e22e">type=</span><span style="color:#e6db74">&#34;java.lang.String&#34;</span> <span style="color:#a6e22e">value=</span><span style="color:#e6db74">&#34;洛某&#34;</span><span style="color:#f92672">/&gt;</span>
+ <span style="color:#f92672">&lt;/bean&gt;</span>
+</code></pre></div><ol start="3">
+<li>参数名</li>
+</ol>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-xml" data-lang="xml"> <span style="color:#75715e">&lt;!--第三种：直接通过参数名来设置--&gt;</span>
+ <span style="color:#f92672">&lt;bean</span> <span style="color:#a6e22e">id=</span><span style="color:#e6db74">&#34;user&#34;</span> <span style="color:#a6e22e">class=</span><span style="color:#e6db74">&#34;com.luo.pojo.User&#34;</span><span style="color:#f92672">&gt;</span>
+     <span style="color:#f92672">&lt;constructor-arg</span> <span style="color:#a6e22e">name=</span><span style="color:#e6db74">&#34;name&#34;</span> <span style="color:#a6e22e">value=</span><span style="color:#e6db74">&#34;洛某&#34;</span><span style="color:#f92672">/&gt;</span>
+ <span style="color:#f92672">&lt;/bean&gt;</span>
+</code></pre></div></li>
+</ol>
+<p>总结：在配置文件加载完成的时候，容器中管理的对象就已经初始化了，并且只有一份实例</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java">User user <span style="color:#f92672">=</span> <span style="color:#f92672">(</span>User<span style="color:#f92672">)</span> context<span style="color:#f92672">.</span><span style="color:#a6e22e">getBean</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;user&#34;</span><span style="color:#f92672">);</span>
+User user2 <span style="color:#f92672">=</span> <span style="color:#f92672">(</span>User<span style="color:#f92672">)</span> context<span style="color:#f92672">.</span><span style="color:#a6e22e">getBean</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;user&#34;</span><span style="color:#f92672">);</span>
+System<span style="color:#f92672">.</span><span style="color:#a6e22e">out</span><span style="color:#f92672">.</span><span style="color:#a6e22e">println</span><span style="color:#f92672">(</span>user <span style="color:#f92672">==</span> user2<span style="color:#f92672">);</span>
+<span style="color:#75715e">// 输出的结果是 true
+</span></code></pre></div><h2 id="spring-配置">Spring 配置</h2>
+<h3 id="别名">别名</h3>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-xml" data-lang="xml"><span style="color:#75715e">&lt;!--别名，如果添加了别名，我们也可以使用别名获取到这个对象--&gt;</span>
+<span style="color:#f92672">&lt;alias</span> <span style="color:#a6e22e">name=</span><span style="color:#e6db74">&#34;user&#34;</span> <span style="color:#a6e22e">alias=</span><span style="color:#e6db74">&#34;akk&#34;</span><span style="color:#f92672">/&gt;</span>
+</code></pre></div><h3 id="bean的配置">Bean的配置</h3>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-xml" data-lang="xml"><span style="color:#75715e">&lt;!--
+</span><span style="color:#75715e">id:bean 的唯一标识符，也就是相当于我们学的对象名
+</span><span style="color:#75715e">class：bean 对象所对应的全限定名：包名+类型
+</span><span style="color:#75715e">name：也是别名，而且name比alias更强，可以同时取多个别名，可以用多种分割符
+</span><span style="color:#75715e">--&gt;</span>
+<span style="color:#f92672">&lt;bean</span> <span style="color:#a6e22e">id=</span><span style="color:#e6db74">&#34;user&#34;</span> <span style="color:#a6e22e">class=</span><span style="color:#e6db74">&#34;com.luo.pojo.User&#34;</span> <span style="color:#a6e22e">name=</span><span style="color:#e6db74">&#34;user2 u2,user3;u4&#34;</span><span style="color:#f92672">&gt;</span>
+    <span style="color:#f92672">&lt;constructor-arg</span> <span style="color:#a6e22e">name=</span><span style="color:#e6db74">&#34;name&#34;</span> <span style="color:#a6e22e">value=</span><span style="color:#e6db74">&#34;洛某&#34;</span><span style="color:#f92672">/&gt;</span>
+<span style="color:#f92672">&lt;/bean&gt;</span>
+</code></pre></div><h3 id="import">import</h3>
+<p>import一般用于团队开发使用，他可以将多个配置文件导入合并为一个<br>
+假设，现在项目中有多个人开发，这三个人负责不同的类开发，不同的类需要注册在不同的bean中，我们可以利用import将所有人的beans.xml合并为一个总的</p>
+<ul>
+<li>
+<p>张依依</p>
+</li>
+<li>
+<p>张二二</p>
+</li>
+<li>
+<p>张珊珊</p>
+</li>
+<li>
+<p>applicationContext.xml</p>
+</li>
+</ul>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-xml" data-lang="xml"><span style="color:#f92672">&lt;import</span> <span style="color:#a6e22e">resource=</span><span style="color:#e6db74">&#34;beans1.xml&#34;</span><span style="color:#f92672">/&gt;</span>
+<span style="color:#f92672">&lt;import</span> <span style="color:#a6e22e">resource=</span><span style="color:#e6db74">&#34;beans2.xml&#34;</span><span style="color:#f92672">/&gt;</span>
+<span style="color:#f92672">&lt;import</span> <span style="color:#a6e22e">resource=</span><span style="color:#e6db74">&#34;beans3.xml&#34;</span><span style="color:#f92672">/&gt;</span>
+</code></pre></div><p>使用的时候直接使用总的配置即可</p>
+<h2 id="依赖注入">依赖注入</h2>
+<h3 id="构造器注入">构造器注入</h3>
+<p>前面已经说过了</p>
+<h3 id="set方式注入重点">Set方式注入【重点】</h3>
+<ul>
+<li>依赖注入：Set注入
+<ul>
+<li>依赖：bean对象的创建依赖于容器</li>
+<li>注入：bean对象中的所有属性，由容器来注入</li>
+</ul>
+</li>
+</ul>
+<p>【环境搭建】</p>
+<ol>
+<li>复杂类型</li>
+</ol>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#f92672">package</span> com.luo.pojo<span style="color:#f92672">;</span>
+
+<span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Address</span> <span style="color:#f92672">{</span>
+    <span style="color:#66d9ef">private</span> String address<span style="color:#f92672">;</span>
+<span style="color:#f92672">}</span>
+<span style="color:#75715e">// 这里省略了get、set、toString
+</span></code></pre></div><ol start="2">
+<li>真实测试环境</li>
+</ol>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#f92672">package</span> com.luo.pojo<span style="color:#f92672">;</span>
+
+<span style="color:#f92672">import</span> java.util.*<span style="color:#f92672">;</span>
+
+<span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Student</span> <span style="color:#f92672">{</span>
+
+    <span style="color:#66d9ef">private</span> String name<span style="color:#f92672">;</span>
+    <span style="color:#66d9ef">private</span> Address address<span style="color:#f92672">;</span>
+    <span style="color:#66d9ef">private</span> String<span style="color:#f92672">[]</span> books<span style="color:#f92672">;</span>
+    <span style="color:#66d9ef">private</span> List<span style="color:#f92672">&lt;</span>String<span style="color:#f92672">&gt;</span> hobbies<span style="color:#f92672">;</span>
+    <span style="color:#66d9ef">private</span> Map<span style="color:#f92672">&lt;</span>String<span style="color:#f92672">,</span>String<span style="color:#f92672">&gt;</span> card<span style="color:#f92672">;</span>
+    <span style="color:#66d9ef">private</span> Set<span style="color:#f92672">&lt;</span>String<span style="color:#f92672">&gt;</span> games<span style="color:#f92672">;</span>
+    <span style="color:#66d9ef">private</span> Properties info<span style="color:#f92672">;</span>
+    <span style="color:#66d9ef">private</span> String wife<span style="color:#f92672">;</span>
+<span style="color:#f92672">}</span>
+<span style="color:#75715e">// 这里省略了get、set、toString
+</span></code></pre></div><ol start="3">
+<li>beans.xml</li>
+</ol>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-xml" data-lang="xml"><span style="color:#75715e">&lt;?xml version=&#34;1.0&#34; encoding=&#34;UTF-8&#34;?&gt;</span>
+<span style="color:#f92672">&lt;beans</span> <span style="color:#a6e22e">xmlns=</span><span style="color:#e6db74">&#34;http://www.springframework.org/schema/beans&#34;</span>
+       <span style="color:#a6e22e">xmlns:xsi=</span><span style="color:#e6db74">&#34;http://www.w3.org/2001/XMLSchema-instance&#34;</span>
+       <span style="color:#a6e22e">xsi:schemaLocation=</span><span style="color:#e6db74">&#34;http://www.springframework.org/schema/beans
+</span><span style="color:#e6db74">        https://www.springframework.org/schema/beans/spring-beans.xsd&#34;</span><span style="color:#f92672">&gt;</span>
+
+    <span style="color:#f92672">&lt;bean</span> <span style="color:#a6e22e">id=</span><span style="color:#e6db74">&#34;student&#34;</span> <span style="color:#a6e22e">class=</span><span style="color:#e6db74">&#34;com.luo.pojo.Student&#34;</span><span style="color:#f92672">&gt;</span>
+        <span style="color:#75715e">&lt;!--第一种，普通值注入 value--&gt;</span>
+        <span style="color:#f92672">&lt;property</span> <span style="color:#a6e22e">name=</span><span style="color:#e6db74">&#34;name&#34;</span> <span style="color:#a6e22e">value=</span><span style="color:#e6db74">&#34;洛某&#34;</span><span style="color:#f92672">/&gt;</span>
+    <span style="color:#f92672">&lt;/bean&gt;</span>
+<span style="color:#f92672">&lt;/beans&gt;</span>
+</code></pre></div><ol start="4">
+<li>测试类</li>
+</ol>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#a6e22e">@Test</span>
+<span style="color:#66d9ef">public</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">test</span><span style="color:#f92672">(){</span>
+    ApplicationContext context <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> ClassPathXmlApplicationContext<span style="color:#f92672">(</span><span style="color:#e6db74">&#34;beans.xml&#34;</span><span style="color:#f92672">);</span>
+    Student student <span style="color:#f92672">=</span> <span style="color:#f92672">(</span>Student<span style="color:#f92672">)</span> context<span style="color:#f92672">.</span><span style="color:#a6e22e">getBean</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;student&#34;</span><span style="color:#f92672">);</span>
+    System<span style="color:#f92672">.</span><span style="color:#a6e22e">out</span><span style="color:#f92672">.</span><span style="color:#a6e22e">println</span><span style="color:#f92672">(</span>student<span style="color:#f92672">.</span><span style="color:#a6e22e">getName</span><span style="color:#f92672">());</span>
+<span style="color:#f92672">}</span>
+</code></pre></div><p>完善注入信息</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-xml" data-lang="xml"><span style="color:#75715e">&lt;?xml version=&#34;1.0&#34; encoding=&#34;UTF-8&#34;?&gt;</span>
+<span style="color:#f92672">&lt;beans</span> <span style="color:#a6e22e">xmlns=</span><span style="color:#e6db74">&#34;http://www.springframework.org/schema/beans&#34;</span>
+       <span style="color:#a6e22e">xmlns:xsi=</span><span style="color:#e6db74">&#34;http://www.w3.org/2001/XMLSchema-instance&#34;</span>
+       <span style="color:#a6e22e">xsi:schemaLocation=</span><span style="color:#e6db74">&#34;http://www.springframework.org/schema/beans
+</span><span style="color:#e6db74">        https://www.springframework.org/schema/beans/spring-beans.xsd&#34;</span><span style="color:#f92672">&gt;</span>
+
+    <span style="color:#f92672">&lt;bean</span> <span style="color:#a6e22e">id=</span><span style="color:#e6db74">&#34;address&#34;</span> <span style="color:#a6e22e">class=</span><span style="color:#e6db74">&#34;com.luo.pojo.Address&#34;</span><span style="color:#f92672">&gt;</span>
+        <span style="color:#f92672">&lt;property</span> <span style="color:#a6e22e">name=</span><span style="color:#e6db74">&#34;address&#34;</span> <span style="color:#a6e22e">value=</span><span style="color:#e6db74">&#34;济南&#34;</span><span style="color:#f92672">/&gt;</span>
+    <span style="color:#f92672">&lt;/bean&gt;</span>
+
+    <span style="color:#f92672">&lt;bean</span> <span style="color:#a6e22e">id=</span><span style="color:#e6db74">&#34;student&#34;</span> <span style="color:#a6e22e">class=</span><span style="color:#e6db74">&#34;com.luo.pojo.Student&#34;</span><span style="color:#f92672">&gt;</span>
+        <span style="color:#75715e">&lt;!--第一种，普通值注入 value--&gt;</span>
+        <span style="color:#f92672">&lt;property</span> <span style="color:#a6e22e">name=</span><span style="color:#e6db74">&#34;name&#34;</span> <span style="color:#a6e22e">value=</span><span style="color:#e6db74">&#34;洛某&#34;</span><span style="color:#f92672">/&gt;</span>
+
+        <span style="color:#75715e">&lt;!--第二种，Bean注入，ref--&gt;</span>
+        <span style="color:#f92672">&lt;property</span> <span style="color:#a6e22e">name=</span><span style="color:#e6db74">&#34;address&#34;</span> <span style="color:#a6e22e">ref=</span><span style="color:#e6db74">&#34;address&#34;</span><span style="color:#f92672">/&gt;</span>
+
+        <span style="color:#75715e">&lt;!--数组--&gt;</span>
+        <span style="color:#f92672">&lt;property</span> <span style="color:#a6e22e">name=</span><span style="color:#e6db74">&#34;books&#34;</span><span style="color:#f92672">&gt;</span>
+            <span style="color:#f92672">&lt;array&gt;</span>
+                <span style="color:#f92672">&lt;value&gt;</span>《微积分入门》<span style="color:#f92672">&lt;/value&gt;</span>
+                <span style="color:#f92672">&lt;value&gt;</span>《山大日历》<span style="color:#f92672">&lt;/value&gt;</span>
+            <span style="color:#f92672">&lt;/array&gt;</span>
+        <span style="color:#f92672">&lt;/property&gt;</span>
+
+        <span style="color:#75715e">&lt;!--List--&gt;</span>
+        <span style="color:#f92672">&lt;property</span> <span style="color:#a6e22e">name=</span><span style="color:#e6db74">&#34;hobbies&#34;</span><span style="color:#f92672">&gt;</span>
+            <span style="color:#f92672">&lt;list&gt;</span>
+                <span style="color:#f92672">&lt;value&gt;</span>写代码<span style="color:#f92672">&lt;/value&gt;</span>
+                <span style="color:#f92672">&lt;value&gt;</span>睡觉<span style="color:#f92672">&lt;/value&gt;</span>
+            <span style="color:#f92672">&lt;/list&gt;</span>
+        <span style="color:#f92672">&lt;/property&gt;</span>
+
+        <span style="color:#75715e">&lt;!--Map--&gt;</span>
+        <span style="color:#f92672">&lt;property</span> <span style="color:#a6e22e">name=</span><span style="color:#e6db74">&#34;card&#34;</span><span style="color:#f92672">&gt;</span>
+            <span style="color:#f92672">&lt;map&gt;</span>
+                <span style="color:#f92672">&lt;entry</span> <span style="color:#a6e22e">key=</span><span style="color:#e6db74">&#34;会员卡&#34;</span> <span style="color:#a6e22e">value=</span><span style="color:#e6db74">&#34;355555&#34;</span><span style="color:#f92672">/&gt;</span>
+                <span style="color:#f92672">&lt;entry</span> <span style="color:#a6e22e">key=</span><span style="color:#e6db74">&#34;银行卡&#34;</span> <span style="color:#a6e22e">value=</span><span style="color:#e6db74">&#34;asdasd&#34;</span><span style="color:#f92672">/&gt;</span>
+            <span style="color:#f92672">&lt;/map&gt;</span>
+        <span style="color:#f92672">&lt;/property&gt;</span>
+
+        <span style="color:#75715e">&lt;!--Set--&gt;</span>
+        <span style="color:#f92672">&lt;property</span> <span style="color:#a6e22e">name=</span><span style="color:#e6db74">&#34;games&#34;</span><span style="color:#f92672">&gt;</span>
+            <span style="color:#f92672">&lt;set&gt;</span>
+                <span style="color:#f92672">&lt;value&gt;</span>Terraria<span style="color:#f92672">&lt;/value&gt;</span>
+                <span style="color:#f92672">&lt;value&gt;</span>CS:GO<span style="color:#f92672">&lt;/value&gt;</span>
+            <span style="color:#f92672">&lt;/set&gt;</span>
+        <span style="color:#f92672">&lt;/property&gt;</span>
+
+        <span style="color:#75715e">&lt;!--设置null值--&gt;</span>
+        <span style="color:#f92672">&lt;property</span> <span style="color:#a6e22e">name=</span><span style="color:#e6db74">&#34;wife&#34;</span><span style="color:#f92672">&gt;</span>
+            <span style="color:#f92672">&lt;null/&gt;</span>
+        <span style="color:#f92672">&lt;/property&gt;</span>
+
+        <span style="color:#75715e">&lt;!--Properties--&gt;</span>
+        <span style="color:#f92672">&lt;property</span> <span style="color:#a6e22e">name=</span><span style="color:#e6db74">&#34;info&#34;</span><span style="color:#f92672">&gt;</span>
+            <span style="color:#f92672">&lt;props&gt;</span>
+                <span style="color:#f92672">&lt;prop</span> <span style="color:#a6e22e">key=</span><span style="color:#e6db74">&#34;age&#34;</span><span style="color:#f92672">&gt;</span>21<span style="color:#f92672">&lt;/prop&gt;</span>
+                <span style="color:#f92672">&lt;prop</span> <span style="color:#a6e22e">key=</span><span style="color:#e6db74">&#34;gender&#34;</span><span style="color:#f92672">&gt;</span>男<span style="color:#f92672">&lt;/prop&gt;</span>
+                <span style="color:#f92672">&lt;prop</span> <span style="color:#a6e22e">key=</span><span style="color:#e6db74">&#34;学号&#34;</span><span style="color:#f92672">&gt;</span>20000000000<span style="color:#f92672">&lt;/prop&gt;</span>
+            <span style="color:#f92672">&lt;/props&gt;</span>
+        <span style="color:#f92672">&lt;/property&gt;</span>
+    <span style="color:#f92672">&lt;/bean&gt;</span>
+<span style="color:#f92672">&lt;/beans&gt;</span>
+</code></pre></div><h3 id="拓展方式">拓展方式</h3>
+<p>我们可以使用p命名空间和c命令空间进行注入<br>
+<a href="https://docs.spring.io/spring-framework/docs/5.2.12.RELEASE/spring-framework-reference/core.html#beans-p-namespace">官方解释</a></p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-xml" data-lang="xml"><span style="color:#75715e">&lt;?xml version=&#34;1.0&#34; encoding=&#34;UTF-8&#34;?&gt;</span>
+<span style="color:#f92672">&lt;beans</span> <span style="color:#a6e22e">xmlns=</span><span style="color:#e6db74">&#34;http://www.springframework.org/schema/beans&#34;</span>
+       <span style="color:#a6e22e">xmlns:xsi=</span><span style="color:#e6db74">&#34;http://www.w3.org/2001/XMLSchema-instance&#34;</span>
+       <span style="color:#a6e22e">xmlns:p=</span><span style="color:#e6db74">&#34;http://www.springframework.org/schema/p&#34;</span>
+       <span style="color:#a6e22e">xmlns:c=</span><span style="color:#e6db74">&#34;http://www.springframework.org/schema/c&#34;</span>
+       <span style="color:#a6e22e">xsi:schemaLocation=</span><span style="color:#e6db74">&#34;http://www.springframework.org/schema/beans
+</span><span style="color:#e6db74">        https://www.springframework.org/schema/beans/spring-beans.xsd&#34;</span><span style="color:#f92672">&gt;</span>
+
+    <span style="color:#75715e">&lt;!--p命名空间注入，可以直接注入属性的值(property)--&gt;</span>
+    <span style="color:#f92672">&lt;bean</span> <span style="color:#a6e22e">id=</span><span style="color:#e6db74">&#34;user&#34;</span> <span style="color:#a6e22e">class=</span><span style="color:#e6db74">&#34;com.luo.pojo.User&#34;</span> <span style="color:#a6e22e">p:name=</span><span style="color:#e6db74">&#34;洛某&#34;</span> <span style="color:#a6e22e">p:age=</span><span style="color:#e6db74">&#34;21&#34;</span><span style="color:#f92672">/&gt;</span>
+
+    <span style="color:#75715e">&lt;!--c命名空间，通过构造器注入：construct-arg--&gt;</span>
+    <span style="color:#f92672">&lt;bean</span> <span style="color:#a6e22e">id=</span><span style="color:#e6db74">&#34;user2&#34;</span> <span style="color:#a6e22e">class=</span><span style="color:#e6db74">&#34;com.luo.pojo.User&#34;</span> <span style="color:#a6e22e">c:age=</span><span style="color:#e6db74">&#34;22&#34;</span> <span style="color:#a6e22e">c:name=</span><span style="color:#e6db74">&#34;洛某2&#34;</span><span style="color:#f92672">/&gt;</span>
+<span style="color:#f92672">&lt;/beans&gt;</span>
+</code></pre></div><p>测试：</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#a6e22e">@Test</span>
+<span style="color:#66d9ef">public</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">test</span><span style="color:#f92672">(){</span>
+    ApplicationContext context <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> ClassPathXmlApplicationContext<span style="color:#f92672">(</span><span style="color:#e6db74">&#34;beans.xml&#34;</span><span style="color:#f92672">);</span>
+    User user <span style="color:#f92672">=</span> context<span style="color:#f92672">.</span><span style="color:#a6e22e">getBean</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;user&#34;</span><span style="color:#f92672">,</span>User<span style="color:#f92672">.</span><span style="color:#a6e22e">class</span><span style="color:#f92672">);</span>
+    System<span style="color:#f92672">.</span><span style="color:#a6e22e">out</span><span style="color:#f92672">.</span><span style="color:#a6e22e">println</span><span style="color:#f92672">(</span>user<span style="color:#f92672">);</span>
+<span style="color:#f92672">}</span>
+</code></pre></div><p>注意点：p命名和c命名空间不能直接使用，需要导入xml约束</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-xml" data-lang="xml">xmlns:p=&#34;http://www.springframework.org/schema/p&#34;
+xmlns:c=&#34;http://www.springframework.org/schema/c&#34;
+</code></pre></div><h3 id="bean的作用域">Bean的作用域</h3>
+<table>
+<thead>
+<tr>
+<th>Scope</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>singleton</td>
+<td>(Default) Scopes a single bean definition to a single object instance for each Spring IoC container.</td>
+</tr>
+<tr>
+<td>prototype</td>
+<td>Scopes a single bean definition to any number of object instances.</td>
+</tr>
+<tr>
+<td>request</td>
+<td>Scopes a single bean definition to the lifecycle of a single HTTP request. That is, each HTTP request has its own instance of a bean created off the back of a single bean definition. Only valid in the context of a web-aware Spring <code>ApplicationContext</code>.</td>
+</tr>
+<tr>
+<td>session</td>
+<td>Scopes a single bean definition to the lifecycle of an HTTP <code>Session</code>. Only valid in the context of a web-aware Spring <code>ApplicationContext</code>.</td>
+</tr>
+<tr>
+<td>application</td>
+<td>Scopes a single bean definition to the lifecycle of a <code>ServletContext</code>. Only valid in the context of a web-aware Spring <code>ApplicationContext</code>.</td>
+</tr>
+<tr>
+<td>websocket</td>
+<td>Scopes a single bean definition to the lifecycle of a <code>WebSocket</code>. Only valid in the context of a web-aware Spring <code>ApplicationContext</code>.</td>
+</tr>
+</tbody>
+</table>
+<ol>
+<li>单例模式（Spring默认机制）
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-xml" data-lang="xml"><span style="color:#75715e">&lt;!-- 显式表示 --&gt;</span>
+<span style="color:#f92672">&lt;bean</span> <span style="color:#a6e22e">id=</span><span style="color:#e6db74">&#34;user&#34;</span> <span style="color:#a6e22e">class=</span><span style="color:#e6db74">&#34;com.luo.pojo.User&#34;</span> <span style="color:#a6e22e">p:name=</span><span style="color:#e6db74">&#34;洛某&#34;</span> <span style="color:#a6e22e">p:age=</span><span style="color:#e6db74">&#34;21&#34;</span>  <span style="color:#a6e22e">scope=</span><span style="color:#e6db74">&#34;singleton&#34;</span><span style="color:#f92672">/&gt;</span>
+</code></pre></div></li>
+<li>原型模式：每次从容器中get的时候，都会产生一个新对象
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-xml" data-lang="xml"><span style="color:#f92672">&lt;bean</span> <span style="color:#a6e22e">id=</span><span style="color:#e6db74">&#34;user&#34;</span> <span style="color:#a6e22e">class=</span><span style="color:#e6db74">&#34;com.luo.pojo.User&#34;</span> <span style="color:#a6e22e">p:name=</span><span style="color:#e6db74">&#34;洛某&#34;</span> <span style="color:#a6e22e">p:age=</span><span style="color:#e6db74">&#34;21&#34;</span>  <span style="color:#a6e22e">scope=</span><span style="color:#e6db74">&#34;prototype&#34;</span><span style="color:#f92672">/&gt;</span>
+</code></pre></div></li>
+<li>其余的 request、session、application 这些只能在web开发中使用到</li>
+</ol>
+<h2 id="bean的自动装配">Bean的自动装配</h2>
+<ul>
+<li>自动装配是Spring满足bean以来的一种方式</li>
+<li>Spring会在上下文中自动寻找，并自动给bean装配属性</li>
+</ul>
+<p>在Spring中有三种装配的方式</p>
+<ol>
+<li>在xml中显式的配置</li>
+<li>在Java中显式的配置</li>
+<li>隐式的自动装配bean【重要】</li>
+</ol>
+<h3 id="测试">测试</h3>
+<p>环境搭建</p>
+<h3 id="byname自动装配">ByName自动装配</h3>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-xml" data-lang="xml"><span style="color:#f92672">&lt;bean</span> <span style="color:#a6e22e">id=</span><span style="color:#e6db74">&#34;cat&#34;</span> <span style="color:#a6e22e">class=</span><span style="color:#e6db74">&#34;com.luo.pojo.Cat&#34;</span><span style="color:#f92672">/&gt;</span>
+<span style="color:#f92672">&lt;bean</span> <span style="color:#a6e22e">id=</span><span style="color:#e6db74">&#34;dog&#34;</span> <span style="color:#a6e22e">class=</span><span style="color:#e6db74">&#34;com.luo.pojo.Dog&#34;</span><span style="color:#f92672">/&gt;</span>
+
+<span style="color:#75715e">&lt;!--
+</span><span style="color:#75715e">byName: 会自动在容器上下文中查找和自己对象set方法后面的值对应的beanid
+</span><span style="color:#75715e">--&gt;</span>
+<span style="color:#f92672">&lt;bean</span> <span style="color:#a6e22e">id=</span><span style="color:#e6db74">&#34;people&#34;</span> <span style="color:#a6e22e">class=</span><span style="color:#e6db74">&#34;com.luo.pojo.People&#34;</span> <span style="color:#a6e22e">autowire=</span><span style="color:#e6db74">&#34;byName&#34;</span><span style="color:#f92672">&gt;</span>
+    <span style="color:#f92672">&lt;property</span> <span style="color:#a6e22e">name=</span><span style="color:#e6db74">&#34;name&#34;</span> <span style="color:#a6e22e">value=</span><span style="color:#e6db74">&#34;Luo&#34;</span><span style="color:#f92672">/&gt;</span>
+<span style="color:#f92672">&lt;/bean&gt;</span>
+</code></pre></div><h3 id="bytype自动装配">ByType自动装配</h3>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-xml" data-lang="xml"><span style="color:#f92672">&lt;bean</span> <span style="color:#a6e22e">id=</span><span style="color:#e6db74">&#34;cat&#34;</span> <span style="color:#a6e22e">class=</span><span style="color:#e6db74">&#34;com.luo.pojo.Cat&#34;</span><span style="color:#f92672">/&gt;</span>
+<span style="color:#f92672">&lt;bean</span> <span style="color:#a6e22e">id=</span><span style="color:#e6db74">&#34;dog&#34;</span> <span style="color:#a6e22e">class=</span><span style="color:#e6db74">&#34;com.luo.pojo.Dog&#34;</span><span style="color:#f92672">/&gt;</span>
+
+<span style="color:#75715e">&lt;!--
+</span><span style="color:#75715e">byType: 会自动在容器上下文中查找和自己对象属性类型相同bean
+</span><span style="color:#75715e">--&gt;</span>
+<span style="color:#f92672">&lt;bean</span> <span style="color:#a6e22e">id=</span><span style="color:#e6db74">&#34;people&#34;</span> <span style="color:#a6e22e">class=</span><span style="color:#e6db74">&#34;com.luo.pojo.People&#34;</span> <span style="color:#a6e22e">autowire=</span><span style="color:#e6db74">&#34;byType&#34;</span><span style="color:#f92672">&gt;</span>
+    <span style="color:#f92672">&lt;property</span> <span style="color:#a6e22e">name=</span><span style="color:#e6db74">&#34;name&#34;</span> <span style="color:#a6e22e">value=</span><span style="color:#e6db74">&#34;Luo&#34;</span><span style="color:#f92672">/&gt;</span>
+<span style="color:#f92672">&lt;/bean&gt;</span>
+</code></pre></div><p>byName 和 byType 各有优劣</p>
+<ul>
+<li>byname的时候，需要保证所有的bean的id唯一，并且这个bean需要和自动注入的属性的set方法的值一致</li>
+<li>byType的时候，需要保证所有的bean的class唯一，并且这个bean需要和自动注入的属性的类型一致</li>
+</ul>
+<h3 id="使用注解实现自动装配">使用注解实现自动装配</h3>
+<p>Java1.5支持注解，Spring2.5支持注解</p>
+<p>要使用注解须知：</p>
+<ol>
+<li>导入约束
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-xml" data-lang="xml"><span style="color:#75715e">&lt;!-- 需要加入的 --&gt;</span>
+ xmlns:context=&#34;http://www.springframework.org/schema/context&#34;
+ http://www.springframework.org/schema/context
+ https://www.springframework.org/schema/context/spring-context.xsd
+ <span style="color:#f92672">&lt;context:annotation-config/&gt;</span>
+</code></pre></div></li>
+<li>配置注解的支持
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-xml" data-lang="xml"> <span style="color:#75715e">&lt;?xml version=&#34;1.0&#34; encoding=&#34;UTF-8&#34;?&gt;</span>
+ <span style="color:#f92672">&lt;beans</span> <span style="color:#a6e22e">xmlns=</span><span style="color:#e6db74">&#34;http://www.springframework.org/schema/beans&#34;</span>
+     <span style="color:#a6e22e">xmlns:xsi=</span><span style="color:#e6db74">&#34;http://www.w3.org/2001/XMLSchema-instance&#34;</span>
+     <span style="color:#a6e22e">xmlns:context=</span><span style="color:#e6db74">&#34;http://www.springframework.org/schema/context&#34;</span>
+     <span style="color:#a6e22e">xsi:schemaLocation=</span><span style="color:#e6db74">&#34;http://www.springframework.org/schema/beans
+</span><span style="color:#e6db74">         https://www.springframework.org/schema/beans/spring-beans.xsd
+</span><span style="color:#e6db74">         http://www.springframework.org/schema/context
+</span><span style="color:#e6db74">         https://www.springframework.org/schema/context/spring-context.xsd&#34;</span><span style="color:#f92672">&gt;</span>
+
+     <span style="color:#f92672">&lt;context:annotation-config/&gt;</span>
+
+ <span style="color:#f92672">&lt;/beans&gt;</span>
+</code></pre></div></li>
+</ol>
+<p>@Autowired
+直接在属性上使用即可，也可以在set方法上使用<br>
+使用Autowired 我们可以不用编写set方法，前提是你这个自动装配的属性在IOC(Spring)容器中存在，且符合名字byName</p>
+<pre><code>@Nullable    字段标记了这个注解，说明这个字段可以为null
+</code></pre><div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#66d9ef">public</span> <span style="color:#a6e22e">@interface</span> Autowired <span style="color:#f92672">{</span>
+    boolen <span style="color:#a6e22e">required</span><span style="color:#f92672">()</span> <span style="color:#66d9ef">default</span> <span style="color:#66d9ef">true</span><span style="color:#f92672">;</span>
+<span style="color:#f92672">}</span>
+</code></pre></div><p>如果显式地定义了Autowired的required属性为false，表示允许这个在beans中不存在</p>
+<p>当Autowired在beans中同id的bean时且这种类型有多个bean时，就会报错，这个时候我们可以使用注解@Qualifier(value= &ldquo;dog222&rdquo;)</p>
+<p>比如</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-xml" data-lang="xml"><span style="color:#f92672">&lt;bean</span> <span style="color:#a6e22e">id=</span><span style="color:#e6db74">&#34;dog2&#34;</span> <span style="color:#a6e22e">class=</span><span style="color:#e6db74">&#34;com.luo.pojo.Dog&#34;</span><span style="color:#f92672">/&gt;</span>
+<span style="color:#f92672">&lt;bean</span> <span style="color:#a6e22e">id=</span><span style="color:#e6db74">&#34;dog222&#34;</span> <span style="color:#a6e22e">class=</span><span style="color:#e6db74">&#34;com.luo.pojo.Dog&#34;</span><span style="color:#f92672">/&gt;</span>
+</code></pre></div><div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#a6e22e">@Autowired</span>
+<span style="color:#a6e22e">@Qualifier</span><span style="color:#f92672">(</span>value <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;dog222&#34;</span><span style="color:#f92672">)</span>
+<span style="color:#66d9ef">private</span> Dog dog<span style="color:#f92672">;</span>
+</code></pre></div><p>如果@Autowired自动装配的环境比较复杂，自动装配无法通过一个注解【@AutoWired】完成的时候、我们可以使用【@Qualifier(value = &ldquo;xxx&rdquo;)】 去配置@Autowired的使用，指定一个唯一的bean对象注入！</p>
+<p><strong>@Resource注解</strong></p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#a6e22e">@Resource</span><span style="color:#f92672">(</span>name <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;dog222&#34;</span><span style="color:#f92672">)</span>
+<span style="color:#66d9ef">private</span> Dog dog<span style="color:#f92672">;</span>
+</code></pre></div><p>小结：<br>
+@Resource 和 @Autowired 的区别：</p>
+<ul>
+<li>都是用来自动装配的，都可以放在属性字段上</li>
+<li>@Autowired 通过byType 的方式实现，而且 必须要求这个对象存在【常用】</li>
+<li>@Resource 默认通过byname 的方式实现，如果找不到名字，则通过byType实现！如果两个都找不到的情况下就报错</li>
+<li>执行顺序不同：@Autowired 通过byType 的方式实现(实际上两个都会)</li>
+</ul>
+<h2 id="使用注解开发">使用注解开发</h2>
+<p>在Spring4之后，要使用注解开发，必须要保证aop的包的导入 ，使用maven的话导入了webmvc的包会自动导入aop的包，所以不用再次导入</p>
+<p>使用注解需要导入context约束，增加注解的支持</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-xml" data-lang="xml"><span style="color:#75715e">&lt;?xml version=&#34;1.0&#34; encoding=&#34;UTF-8&#34;?&gt;</span>
+<span style="color:#f92672">&lt;beans</span> <span style="color:#a6e22e">xmlns=</span><span style="color:#e6db74">&#34;http://www.springframework.org/schema/beans&#34;</span>
+       <span style="color:#a6e22e">xmlns:xsi=</span><span style="color:#e6db74">&#34;http://www.w3.org/2001/XMLSchema-instance&#34;</span>
+       <span style="color:#a6e22e">xmlns:context=</span><span style="color:#e6db74">&#34;http://www.springframework.org/schema/context&#34;</span>
+       <span style="color:#a6e22e">xsi:schemaLocation=</span><span style="color:#e6db74">&#34;http://www.springframework.org/schema/beans
+</span><span style="color:#e6db74">        https://www.springframework.org/schema/beans/spring-beans.xsd
+</span><span style="color:#e6db74">        http://www.springframework.org/schema/context
+</span><span style="color:#e6db74">        https://www.springframework.org/schema/context/spring-context.xsd&#34;</span><span style="color:#f92672">&gt;</span>
+
+    <span style="color:#f92672">&lt;context:annotation-config/&gt;</span>
+
+<span style="color:#f92672">&lt;/beans&gt;</span>
+</code></pre></div><h3 id="bean">bean</h3>
+<h3 id="属性如何注入">属性如何注入</h3>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#75715e">// 等价于&lt;bean id=&#34;user&#34; class=&#34;com.luo.pojo.User&#34;/&gt;
+</span><span style="color:#75715e">// @Component 组件
+</span><span style="color:#75715e"></span><span style="color:#a6e22e">@Component</span>
+<span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">User</span> <span style="color:#f92672">{</span>
+    <span style="color:#75715e">// 相当于
+</span><span style="color:#75715e"></span>    <span style="color:#75715e">// &lt;property name=&#34;name&#34; value=&#34;Luo&#34;/&gt;
+</span><span style="color:#75715e"></span>    <span style="color:#a6e22e">@Value</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;Luo&#34;</span><span style="color:#f92672">)</span>
+    <span style="color:#66d9ef">public</span> String name<span style="color:#f92672">;</span>
+<span style="color:#f92672">}</span>
+
+</code></pre></div><h3 id="衍生的注解">衍生的注解</h3>
+<p>@Component 有几个衍生注解，我们在web开发中，会按照mvc三层架构分层</p>
+<ul>
+<li>dao【@Repository】</li>
+<li>service【@Service】</li>
+<li>controller【@Controller】</li>
+</ul>
+<p>这四个注解功能都是一样的，都是代表将某个类注册到Spring中，装配Bean</p>
+<h3 id="自动装配置">自动装配置</h3>
+<pre><code>- @Autowired : 自动装配通过类型、名字
+- @Qualifier：如果Autowired不能唯一自动装配上属性，则需要Qualifire(value=&quot;xxx&quot;) 手动指定
+- @Nullable 字段标记了这个注解，说明这个字段可以为null
+- @Resouce ： 自动装配通过名字、类型
+</code></pre><h3 id="作用域">作用域</h3>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#a6e22e">@Component</span>
+<span style="color:#a6e22e">@Scope</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;prototype&#34;</span><span style="color:#f92672">)</span>
+<span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">User</span><span style="color:#f92672">{</span>
+    <span style="color:#75715e">// ...
+</span><span style="color:#75715e"></span><span style="color:#f92672">}</span>
+</code></pre></div><h3 id="小结">小结</h3>
+<p>xml 与 注解：</p>
+<ul>
+<li>xml 更加万能，适用于任何场合！维护简单方便</li>
+<li>注解 不是自己的类是用不了，维护相对复杂</li>
+</ul>
+<p>xml与注解最佳实践：</p>
+<ul>
+<li>xml用来管理bean</li>
+<li>注解只负责完成属性的注入</li>
+<li>我们在使用的过程中，只需要注意一个问题：必须让注解生效，就需要开启注解的支持</li>
+</ul>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-xml" data-lang="xml"><span style="color:#75715e">&lt;!--指定要扫描的包，这个包下的注解就会生效--&gt;</span>
+<span style="color:#f92672">&lt;context:component-scan</span> <span style="color:#a6e22e">base-package=</span><span style="color:#e6db74">&#34;com.luo.pojo&#34;</span><span style="color:#f92672">/&gt;</span>
+<span style="color:#f92672">&lt;context:annotation-config/&gt;</span>
+</code></pre></div><h3 id="使用java-的方式配置spring">使用Java 的方式配置Spring</h3>
+<p>我们现在要完全不使用Spring的xml配置了，全权交给Java来做<br>
+JavaConfig 是 Spring 的一个子项目，在Spring4之后变成了核心功能</p>
+<p>配置类</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#75715e">// 这个也会被Spring 容器接管,注册到容器中，
+</span><span style="color:#75715e">// @Configuration 代表这个是一个配置类，就和之前的beans.xml是一样的
+</span><span style="color:#75715e"></span><span style="color:#a6e22e">@Configuration</span>
+<span style="color:#a6e22e">@ComponentScan</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;com.luo.pojo&#34;</span><span style="color:#f92672">)</span>
+<span style="color:#a6e22e">@Import</span><span style="color:#f92672">(</span>MyConfig2<span style="color:#f92672">.</span><span style="color:#a6e22e">class</span><span style="color:#f92672">)</span>
+<span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">MyConfig</span> <span style="color:#f92672">{</span>
+
+    <span style="color:#75715e">// 注册一个bean，就相当于之前写的一个bean标签
+</span><span style="color:#75715e"></span>    <span style="color:#75715e">// 这个方法的名字就相当于与bean标签中的id属性
+</span><span style="color:#75715e"></span>    <span style="color:#75715e">// 这个方法的返回值就相当于bean标签中的class属性
+</span><span style="color:#75715e"></span>    <span style="color:#a6e22e">@Bean</span>
+    <span style="color:#66d9ef">public</span> User <span style="color:#a6e22e">user</span><span style="color:#f92672">(){</span>
+        <span style="color:#75715e">// 就是要返回要注入到bean的对象
+</span><span style="color:#75715e"></span>        <span style="color:#66d9ef">return</span> <span style="color:#66d9ef">new</span> User<span style="color:#f92672">();</span>
+    <span style="color:#f92672">}</span>
+<span style="color:#f92672">}</span>
+</code></pre></div><p>配置类</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">MyConfig2</span> <span style="color:#f92672">{</span>
+<span style="color:#f92672">}</span>
+</code></pre></div><p>实体类</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#75715e">// 这里这个注解的意思，就是说明这个类被Spring接管了，注册到了容器里
+</span><span style="color:#75715e"></span><span style="color:#a6e22e">@Component</span>
+<span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">User</span> <span style="color:#f92672">{</span>
+    <span style="color:#a6e22e">@Value</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;Luo&#34;</span><span style="color:#f92672">)</span>
+    <span style="color:#66d9ef">private</span> String name<span style="color:#f92672">;</span>
+
+    <span style="color:#66d9ef">public</span> String <span style="color:#a6e22e">getName</span><span style="color:#f92672">()</span> <span style="color:#f92672">{</span>
+        <span style="color:#66d9ef">return</span> name<span style="color:#f92672">;</span>
+    <span style="color:#f92672">}</span>
+
+    <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">setName</span><span style="color:#f92672">(</span>String name<span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
+        <span style="color:#66d9ef">this</span><span style="color:#f92672">.</span><span style="color:#a6e22e">name</span> <span style="color:#f92672">=</span> name<span style="color:#f92672">;</span>
+    <span style="color:#f92672">}</span>
+
+    <span style="color:#a6e22e">@Override</span>
+    <span style="color:#66d9ef">public</span> String <span style="color:#a6e22e">toString</span><span style="color:#f92672">()</span> <span style="color:#f92672">{</span>
+        <span style="color:#66d9ef">return</span> <span style="color:#e6db74">&#34;User{&#34;</span> <span style="color:#f92672">+</span>
+                <span style="color:#e6db74">&#34;name=&#39;&#34;</span> <span style="color:#f92672">+</span> name <span style="color:#f92672">+</span> <span style="color:#e6db74">&#39;\&#39;&#39;</span> <span style="color:#f92672">+</span>
+                <span style="color:#e6db74">&#39;}&#39;</span><span style="color:#f92672">;</span>
+    <span style="color:#f92672">}</span>
+<span style="color:#f92672">}</span>
+</code></pre></div><p>测试</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#a6e22e">@Test</span>
+<span style="color:#66d9ef">public</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">test</span><span style="color:#f92672">(){</span>
+    <span style="color:#75715e">// 如果完全使用了配置类方式去做，我们就只能通过 AnnotationConfig 上下文来获取容器，通过配置类的class对象加载
+</span><span style="color:#75715e"></span>    ApplicationContext context <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> AnnotationConfigApplicationContext<span style="color:#f92672">(</span>MyConfig<span style="color:#f92672">.</span><span style="color:#a6e22e">class</span><span style="color:#f92672">);</span>
+    User user <span style="color:#f92672">=</span> context<span style="color:#f92672">.</span><span style="color:#a6e22e">getBean</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;user&#34;</span><span style="color:#f92672">,</span> User<span style="color:#f92672">.</span><span style="color:#a6e22e">class</span><span style="color:#f92672">);</span>
+
+    System<span style="color:#f92672">.</span><span style="color:#a6e22e">out</span><span style="color:#f92672">.</span><span style="color:#a6e22e">println</span><span style="color:#f92672">(</span>user<span style="color:#f92672">.</span><span style="color:#a6e22e">getName</span><span style="color:#f92672">());</span>
+<span style="color:#f92672">}</span>
+</code></pre></div><p>这种纯Java的配置方式，在SpringBoot中随处可见</p>
+<h2 id="代理模式">代理模式</h2>
+<p>为什么要学习代理模式？<br>
+因为这既是SpringAOP的底层【SpringAOP和SpringMVC】</p>
+<p>代理模式的分类：</p>
+<ul>
+<li>静态代理</li>
+<li>动态代理</li>
+</ul>
+<h3 id="静态代理">静态代理</h3>
+<p>角色分析：</p>
+<ul>
+<li>抽象角色：一般会使用接口或者抽象类来解决</li>
+<li>真实角色：被代理的角色</li>
+<li>代理角色：代理真实角色，代理真实角色后，我们一般会做一些附属操作</li>
+<li>客户：访问代理对象的人</li>
+</ul>
+<p>代码步骤：</p>
+<ol>
+<li>接口
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#75715e">// 租房
+</span><span style="color:#75715e"></span> <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">interface</span> <span style="color:#a6e22e">Rent</span> <span style="color:#f92672">{</span>
+     <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">rent</span><span style="color:#f92672">();</span>
+ <span style="color:#f92672">}</span>
+</code></pre></div></li>
+<li>真实角色
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#75715e">// 房东
+</span><span style="color:#75715e"></span> <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Host</span> <span style="color:#66d9ef">implements</span> Rent<span style="color:#f92672">{</span>
+     <span style="color:#a6e22e">@Override</span>
+     <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">rent</span><span style="color:#f92672">()</span> <span style="color:#f92672">{</span>
+         System<span style="color:#f92672">.</span><span style="color:#a6e22e">out</span><span style="color:#f92672">.</span><span style="color:#a6e22e">println</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;房东要出租房子&#34;</span><span style="color:#f92672">);</span>
+     <span style="color:#f92672">}</span>
+ <span style="color:#f92672">}</span>
+</code></pre></div></li>
+<li>代理角色
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#f92672">package</span> com.luo.demo01<span style="color:#f92672">;</span>
+ <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Proxy</span> <span style="color:#66d9ef">implements</span> Rent<span style="color:#f92672">{</span>
+     <span style="color:#66d9ef">private</span> Host host<span style="color:#f92672">;</span>
+     <span style="color:#66d9ef">public</span> <span style="color:#a6e22e">Proxy</span><span style="color:#f92672">()</span> <span style="color:#f92672">{</span>
+     <span style="color:#f92672">}</span>
+     <span style="color:#66d9ef">public</span> <span style="color:#a6e22e">Proxy</span><span style="color:#f92672">(</span>Host host<span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
+         <span style="color:#66d9ef">this</span><span style="color:#f92672">.</span><span style="color:#a6e22e">host</span> <span style="color:#f92672">=</span> host<span style="color:#f92672">;</span>
+     <span style="color:#f92672">}</span>
+     <span style="color:#a6e22e">@Override</span>
+     <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">rent</span><span style="color:#f92672">()</span> <span style="color:#f92672">{</span>
+         seeHouse<span style="color:#f92672">();</span>
+         host<span style="color:#f92672">.</span><span style="color:#a6e22e">rent</span><span style="color:#f92672">();</span>
+         heTong<span style="color:#f92672">();</span>
+         fare<span style="color:#f92672">();</span>
+     <span style="color:#f92672">}</span>
+     <span style="color:#75715e">// 看房
+</span><span style="color:#75715e"></span>     <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">seeHouse</span><span style="color:#f92672">(){</span>
+         System<span style="color:#f92672">.</span><span style="color:#a6e22e">out</span><span style="color:#f92672">.</span><span style="color:#a6e22e">println</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;中介带你看房&#34;</span><span style="color:#f92672">);</span>
+     <span style="color:#f92672">}</span>
+     <span style="color:#75715e">// 合同
+</span><span style="color:#75715e"></span>     <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">heTong</span><span style="color:#f92672">(){</span>
+         System<span style="color:#f92672">.</span><span style="color:#a6e22e">out</span><span style="color:#f92672">.</span><span style="color:#a6e22e">println</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;签合同&#34;</span><span style="color:#f92672">);</span>
+     <span style="color:#f92672">}</span>
+     <span style="color:#75715e">// 收中介费
+</span><span style="color:#75715e"></span>     <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">fare</span><span style="color:#f92672">(){</span>
+         System<span style="color:#f92672">.</span><span style="color:#a6e22e">out</span><span style="color:#f92672">.</span><span style="color:#a6e22e">println</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;收中介费&#34;</span><span style="color:#f92672">);</span>
+     <span style="color:#f92672">}</span>
+ <span style="color:#f92672">}</span>
+</code></pre></div></li>
+<li>客户端访问代理角色
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Client</span> <span style="color:#f92672">{</span>
+     <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">static</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">main</span><span style="color:#f92672">(</span>String<span style="color:#f92672">[]</span> args<span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
+         Host host <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> Host<span style="color:#f92672">();</span>
+         <span style="color:#75715e">// 代理,中介帮租房子，代理一般会有一些附属操作
+</span><span style="color:#75715e"></span>         Proxy proxy <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> Proxy<span style="color:#f92672">(</span>host<span style="color:#f92672">);</span>
+
+         proxy<span style="color:#f92672">.</span><span style="color:#a6e22e">rent</span><span style="color:#f92672">();</span>
+     <span style="color:#f92672">}</span>
+ <span style="color:#f92672">}</span>
+
+</code></pre></div></li>
+</ol>
+<p>代理模式的好处：</p>
+<ul>
+<li>可以使真实角色的操作更加纯粹，不用去关注一些公共的业务</li>
+<li>公共也就交给代理角色，实现了业务的分工</li>
+<li>公共业务发生拓展的时候，方便集中管理</li>
+</ul>
+<p>缺点：</p>
+<ul>
+<li>一个真实角色就会产生一个代理觉得，代码量会变多，开发效率会变低</li>
+</ul>
+<p>在不改变原有代码的前提下增加新功能</p>
+<h3 id="加深理解">加深理解</h3>
+<p>接口</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">interface</span> <span style="color:#a6e22e">UserService</span> <span style="color:#f92672">{</span>
+    <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">add</span><span style="color:#f92672">();</span>
+    <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">delete</span><span style="color:#f92672">();</span>
+    <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">update</span><span style="color:#f92672">();</span>
+    <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">query</span><span style="color:#f92672">();</span>
+<span style="color:#f92672">}</span>
+</code></pre></div><p>实现类</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">UserServiceImpl</span> <span style="color:#66d9ef">implements</span> UserService<span style="color:#f92672">{</span>
+    <span style="color:#a6e22e">@Override</span>
+    <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">add</span><span style="color:#f92672">()</span> <span style="color:#f92672">{</span>
+        System<span style="color:#f92672">.</span><span style="color:#a6e22e">out</span><span style="color:#f92672">.</span><span style="color:#a6e22e">println</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;增加了一个用户&#34;</span><span style="color:#f92672">);</span>
+    <span style="color:#f92672">}</span>
+
+    <span style="color:#a6e22e">@Override</span>
+    <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">delete</span><span style="color:#f92672">()</span> <span style="color:#f92672">{</span>
+        System<span style="color:#f92672">.</span><span style="color:#a6e22e">out</span><span style="color:#f92672">.</span><span style="color:#a6e22e">println</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;删除了一个用户&#34;</span><span style="color:#f92672">);</span>
+    <span style="color:#f92672">}</span>
+
+    <span style="color:#a6e22e">@Override</span>
+    <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">update</span><span style="color:#f92672">()</span> <span style="color:#f92672">{</span>
+        System<span style="color:#f92672">.</span><span style="color:#a6e22e">out</span><span style="color:#f92672">.</span><span style="color:#a6e22e">println</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;修改了一个用户&#34;</span><span style="color:#f92672">);</span>
+    <span style="color:#f92672">}</span>
+
+    <span style="color:#a6e22e">@Override</span>
+    <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">query</span><span style="color:#f92672">()</span> <span style="color:#f92672">{</span>
+        System<span style="color:#f92672">.</span><span style="color:#a6e22e">out</span><span style="color:#f92672">.</span><span style="color:#a6e22e">println</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;查询了一个用户&#34;</span><span style="color:#f92672">);</span>
+    <span style="color:#f92672">}</span>
+<span style="color:#f92672">}</span>
+</code></pre></div><p>代理</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">UserServiceImplProxy</span> <span style="color:#66d9ef">implements</span> UserService<span style="color:#f92672">{</span>
+
+    <span style="color:#66d9ef">private</span> UserServiceImpl userService<span style="color:#f92672">;</span>
+
+    <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">setUserService</span><span style="color:#f92672">(</span>UserServiceImpl userService<span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
+        <span style="color:#66d9ef">this</span><span style="color:#f92672">.</span><span style="color:#a6e22e">userService</span> <span style="color:#f92672">=</span> userService<span style="color:#f92672">;</span>
+    <span style="color:#f92672">}</span>
+
+    <span style="color:#a6e22e">@Override</span>
+    <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">add</span><span style="color:#f92672">()</span> <span style="color:#f92672">{</span>
+        log<span style="color:#f92672">(</span><span style="color:#e6db74">&#34;add&#34;</span><span style="color:#f92672">);</span>
+        userService<span style="color:#f92672">.</span><span style="color:#a6e22e">add</span><span style="color:#f92672">();</span>
+    <span style="color:#f92672">}</span>
+
+    <span style="color:#a6e22e">@Override</span>
+    <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">delete</span><span style="color:#f92672">()</span> <span style="color:#f92672">{</span>
+        log<span style="color:#f92672">(</span><span style="color:#e6db74">&#34;delete&#34;</span><span style="color:#f92672">);</span>
+        userService<span style="color:#f92672">.</span><span style="color:#a6e22e">delete</span><span style="color:#f92672">();</span>
+    <span style="color:#f92672">}</span>
+
+    <span style="color:#a6e22e">@Override</span>
+    <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">update</span><span style="color:#f92672">()</span> <span style="color:#f92672">{</span>
+        log<span style="color:#f92672">(</span><span style="color:#e6db74">&#34;update&#34;</span><span style="color:#f92672">);</span>
+        userService<span style="color:#f92672">.</span><span style="color:#a6e22e">update</span><span style="color:#f92672">();</span>
+    <span style="color:#f92672">}</span>
+
+    <span style="color:#a6e22e">@Override</span>
+    <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">query</span><span style="color:#f92672">()</span> <span style="color:#f92672">{</span>
+        log<span style="color:#f92672">(</span><span style="color:#e6db74">&#34;query&#34;</span><span style="color:#f92672">);</span>
+        userService<span style="color:#f92672">.</span><span style="color:#a6e22e">query</span><span style="color:#f92672">();</span>
+    <span style="color:#f92672">}</span>
+
+    <span style="color:#75715e">// 日志方法
+</span><span style="color:#75715e"></span>    <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">log</span><span style="color:#f92672">(</span>String msg<span style="color:#f92672">){</span>
+        System<span style="color:#f92672">.</span><span style="color:#a6e22e">out</span><span style="color:#f92672">.</span><span style="color:#a6e22e">println</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;[DEBUG]使用了&#34;</span><span style="color:#f92672">+</span>msg<span style="color:#f92672">+</span><span style="color:#e6db74">&#34;方法&#34;</span><span style="color:#f92672">);</span>
+    <span style="color:#f92672">}</span>
+<span style="color:#f92672">}</span>
+</code></pre></div><p>真实角色</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Client</span> <span style="color:#f92672">{</span>
+    <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">static</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">main</span><span style="color:#f92672">(</span>String<span style="color:#f92672">[]</span> args<span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
+
+        UserServiceImpl userService <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> UserServiceImpl<span style="color:#f92672">();</span>
+
+        UserServiceImplProxy proxy <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> UserServiceImplProxy<span style="color:#f92672">();</span>
+        proxy<span style="color:#f92672">.</span><span style="color:#a6e22e">setUserService</span><span style="color:#f92672">(</span>userService<span style="color:#f92672">);</span>
+        proxy<span style="color:#f92672">.</span><span style="color:#a6e22e">add</span><span style="color:#f92672">();</span>
+    <span style="color:#f92672">}</span>
+<span style="color:#f92672">}</span>
+</code></pre></div><h3 id="动态代理">动态代理</h3>
+<ul>
+<li>动态代理和静态代理角色一样</li>
+<li>动态代理的代理类是动态生成的，不是我们直接写好的</li>
+<li>动态代理分为两大类：基于接口的动态代理，基于类的动态代理
+<ul>
+<li>基于接口&ndash;&gt; JDK 动态代理</li>
+<li>基于类  &ndash;&gt; cglib</li>
+<li>Java字节码实现：javasist</li>
+</ul>
+</li>
+</ul>
+<p>需要了解两个类：Proxy：代理，InvocationHandler：调用处理程序</p>
+<p>动态代理的好处：</p>
+<ul>
+<li>可以使真实角色的操作更加纯粹！不用去关注一些公共的业务</li>
+<li>公共业务交给代理角色，实现了业务的分工</li>
+<li>公共业务发生拓展的时候，方便集中管理</li>
+<li>一个动态代理类代理的是一个接口，一般就是对应的一类业务</li>
+<li>一个动态代理类可以代理多个类，只要是实现了同一个接口即可</li>
+</ul>
+<h2 id="aop">AOP</h2>
+<h3 id="什么是aop">什么是AOP</h3>
+<p>AOP(Aspect Oriented Programming)意为：面向切面编程，通过预编译方式和运行期动态代理实现程序功能的统一维护的一种技术。AOP是OOP的延续，是软件开发中的一个热点，也是Spring框架中的一个重要内容，是函数式编程的一种衍生范型。利用AOP可以对业务逻辑的各个部分进行隔离，从而使得业务逻辑各部分之间的耦合度降低，提高程序的可重用性，同时提高了开发的效率</p>
+<h3 id="aop在spring中的作用">AOP在Spring中的作用</h3>
+<p>提供声明式事务；允许用户自定义切面</p>
+<ul>
+<li>横切关注点：跨越应用程序多个模块的方法或功能。即是，与我们业务逻辑无关的，但是我们需要关注的部分，就是横切关注点。如日志，安全，缓存，事务等等&hellip;</li>
+<li>切面(ASPECT)：横切关注点 被模块化的特殊对象。即，他是一个类</li>
+<li>通知(Advice)：切面必须要完成的工作。即，他是类中的一个方法</li>
+<li>目标(Target)：被通知对象</li>
+<li>代理(Proxy)： 向目标对象应用通知之后创建的对象</li>
+<li>切入点(PointCut)：切面通知执行的“地点”的定义</li>
+<li>连接点(JointPoint)：与切入点匹配的执行点</li>
+</ul>
+<h3 id="使用spring实现aop">使用Spring实现Aop</h3>
+<p>使用AOP需要依赖一个包</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-xml" data-lang="xml"><span style="color:#75715e">&lt;!-- https://mvnrepository.com/artifact/org.aspectj/aspectjweaver --&gt;</span>
+<span style="color:#f92672">&lt;dependency&gt;</span>
+    <span style="color:#f92672">&lt;groupId&gt;</span>org.aspectj<span style="color:#f92672">&lt;/groupId&gt;</span>
+    <span style="color:#f92672">&lt;artifactId&gt;</span>aspectjweaver<span style="color:#f92672">&lt;/artifactId&gt;</span>
+    <span style="color:#f92672">&lt;version&gt;</span>1.9.6<span style="color:#f92672">&lt;/version&gt;</span>
+<span style="color:#f92672">&lt;/dependency&gt;</span>
+</code></pre></div><p>方式一：使用Spring的API接口 【主要是SpringAPI接口实现】</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-xml" data-lang="xml"><span style="color:#75715e">&lt;!--方式一：使用原生Spring API接口--&gt;</span>
+<span style="color:#75715e">&lt;!--配置aop：需要导入aop的约束--&gt;</span>
+<span style="color:#f92672">&lt;aop:config&gt;</span>
+    <span style="color:#75715e">&lt;!--
+</span><span style="color:#75715e">    切入点:
+</span><span style="color:#75715e">    expression:表达式 execution(要执行的为止 * * * * * )
+</span><span style="color:#75715e">    --&gt;</span>
+    <span style="color:#f92672">&lt;aop:pointcut</span> <span style="color:#a6e22e">id=</span><span style="color:#e6db74">&#34;pointcut&#34;</span> <span style="color:#a6e22e">expression=</span><span style="color:#e6db74">&#34;execution(* com.luo.service.UserServiceImpl.*(..))&#34;</span><span style="color:#f92672">/&gt;</span>
+
+    <span style="color:#75715e">&lt;!--执行环绕增加--&gt;</span>
+    <span style="color:#f92672">&lt;aop:advisor</span> <span style="color:#a6e22e">advice-ref=</span><span style="color:#e6db74">&#34;log&#34;</span> <span style="color:#a6e22e">pointcut-ref=</span><span style="color:#e6db74">&#34;pointcut&#34;</span><span style="color:#f92672">/&gt;</span>
+    <span style="color:#f92672">&lt;aop:advisor</span> <span style="color:#a6e22e">advice-ref=</span><span style="color:#e6db74">&#34;afterLog&#34;</span> <span style="color:#a6e22e">pointcut-ref=</span><span style="color:#e6db74">&#34;pointcut&#34;</span><span style="color:#f92672">/&gt;</span>
+<span style="color:#f92672">&lt;/aop:config&gt;</span>
+</code></pre></div><p>方式二：自定义类来实现AOP 【主要是切面定义】</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">DiyPointCut</span> <span style="color:#f92672">{</span>
+    <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">before</span><span style="color:#f92672">(){</span>
+        System<span style="color:#f92672">.</span><span style="color:#a6e22e">out</span><span style="color:#f92672">.</span><span style="color:#a6e22e">println</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;==============方法执行前==============&#34;</span><span style="color:#f92672">);</span>
+    <span style="color:#f92672">}</span>
+
+    <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">after</span><span style="color:#f92672">(){</span>
+        System<span style="color:#f92672">.</span><span style="color:#a6e22e">out</span><span style="color:#f92672">.</span><span style="color:#a6e22e">println</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;==============方法执行后==============&#34;</span><span style="color:#f92672">);</span>
+    <span style="color:#f92672">}</span>
+<span style="color:#f92672">}</span>
+</code></pre></div><div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-xml" data-lang="xml"><span style="color:#75715e">&lt;!--方式二：自定义类--&gt;</span>
+<span style="color:#f92672">&lt;bean</span> <span style="color:#a6e22e">id=</span><span style="color:#e6db74">&#34;diyPointcut&#34;</span> <span style="color:#a6e22e">class=</span><span style="color:#e6db74">&#34;com.luo.diy.DiyPointCut&#34;</span><span style="color:#f92672">/&gt;</span>
+
+<span style="color:#f92672">&lt;aop:config&gt;</span>
+    <span style="color:#75715e">&lt;!--自定义切面，ref 要引用的类--&gt;</span>
+    <span style="color:#f92672">&lt;aop:aspect</span> <span style="color:#a6e22e">ref=</span><span style="color:#e6db74">&#34;diyPointcut&#34;</span><span style="color:#f92672">&gt;</span>
+        <span style="color:#75715e">&lt;!--切入点--&gt;</span>
+        <span style="color:#f92672">&lt;aop:pointcut</span> <span style="color:#a6e22e">id=</span><span style="color:#e6db74">&#34;point&#34;</span> <span style="color:#a6e22e">expression=</span><span style="color:#e6db74">&#34;execution(* com.luo.service.UserServiceImpl.*(..))&#34;</span><span style="color:#f92672">/&gt;</span>
+        <span style="color:#75715e">&lt;!--通知--&gt;</span>
+        <span style="color:#f92672">&lt;aop:before</span> <span style="color:#a6e22e">method=</span><span style="color:#e6db74">&#34;before&#34;</span> <span style="color:#a6e22e">pointcut-ref=</span><span style="color:#e6db74">&#34;point&#34;</span><span style="color:#f92672">/&gt;</span>
+        <span style="color:#f92672">&lt;aop:after</span> <span style="color:#a6e22e">method=</span><span style="color:#e6db74">&#34;after&#34;</span> <span style="color:#a6e22e">pointcut-ref=</span><span style="color:#e6db74">&#34;point&#34;</span><span style="color:#f92672">/&gt;</span>
+    <span style="color:#f92672">&lt;/aop:aspect&gt;</span>
+<span style="color:#f92672">&lt;/aop:config&gt;</span>
+</code></pre></div><p>方式三：使用注解实现</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#75715e">// 标注这个类是一个切面
+</span><span style="color:#75715e"></span><span style="color:#a6e22e">@Aspect</span>
+<span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">AnnotationPointCut</span> <span style="color:#f92672">{</span>
+
+    <span style="color:#a6e22e">@Before</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;execution(* com.luo.service.UserServiceImpl.*(..))&#34;</span><span style="color:#f92672">)</span>
+    <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">before</span><span style="color:#f92672">(){</span>
+        System<span style="color:#f92672">.</span><span style="color:#a6e22e">out</span><span style="color:#f92672">.</span><span style="color:#a6e22e">println</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;==============方法执行前111==============&#34;</span><span style="color:#f92672">);</span>
+    <span style="color:#f92672">}</span>
+
+    <span style="color:#a6e22e">@After</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;execution(* com.luo.service.UserServiceImpl.*(..))&#34;</span><span style="color:#f92672">)</span>
+    <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">after</span><span style="color:#f92672">(){</span>
+        System<span style="color:#f92672">.</span><span style="color:#a6e22e">out</span><span style="color:#f92672">.</span><span style="color:#a6e22e">println</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;==============方法执行后111==============&#34;</span><span style="color:#f92672">);</span>
+    <span style="color:#f92672">}</span>
+
+    <span style="color:#75715e">// 在环绕增强中，我们可以定义一个参数，代表我们要获取处理切入的点
+</span><span style="color:#75715e"></span>    <span style="color:#a6e22e">@Around</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;execution(* com.luo.service.UserServiceImpl.*(..))&#34;</span><span style="color:#f92672">)</span>
+    <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">around</span><span style="color:#f92672">(</span>ProceedingJoinPoint jp<span style="color:#f92672">)</span> <span style="color:#66d9ef">throws</span> Throwable <span style="color:#f92672">{</span>
+        System<span style="color:#f92672">.</span><span style="color:#a6e22e">out</span><span style="color:#f92672">.</span><span style="color:#a6e22e">println</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;环绕前&#34;</span><span style="color:#f92672">);</span>
+        <span style="color:#75715e">// 获得签名
+</span><span style="color:#75715e"></span>        <span style="color:#75715e">//System.out.println(&#34;signature:&#34;+jp.getSignature());
+</span><span style="color:#75715e"></span>        <span style="color:#75715e">// 执行方法
+</span><span style="color:#75715e"></span>        jp<span style="color:#f92672">.</span><span style="color:#a6e22e">proceed</span><span style="color:#f92672">();</span>
+
+        System<span style="color:#f92672">.</span><span style="color:#a6e22e">out</span><span style="color:#f92672">.</span><span style="color:#a6e22e">println</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;环绕后&#34;</span><span style="color:#f92672">);</span>
+    <span style="color:#f92672">}</span>
+<span style="color:#f92672">}</span>
+</code></pre></div><div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-xml" data-lang="xml"><span style="color:#f92672">&lt;bean</span> <span style="color:#a6e22e">id=</span><span style="color:#e6db74">&#34;annotationPointCut&#34;</span> <span style="color:#a6e22e">class=</span><span style="color:#e6db74">&#34;com.luo.diy.AnnotationPointCut&#34;</span><span style="color:#f92672">/&gt;</span>
+<span style="color:#75715e">&lt;!--开启注解支持--&gt;</span>
+<span style="color:#f92672">&lt;aop:aspectj-autoproxy/&gt;</span>
+</code></pre></div><h2 id="整合mybatis">整合MyBatis</h2>
+<p>步骤：</p>
+<ol>
+<li>导入相关jar包
+<ul>
+<li>junit</li>
+<li>mybatis</li>
+<li>mysql数据库</li>
+<li>Spring数据库</li>
+<li>aop织入</li>
+<li>mybatis-Spring【之前没导入过的】</li>
+</ul>
+</li>
+<li>编写测试文件</li>
+<li>测试</li>
+</ol>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-xml" data-lang="xml"><span style="color:#f92672">&lt;dependencies&gt;</span>
+    <span style="color:#75715e">&lt;!-- https://mvnrepository.com/artifact/org.springframework/spring-webmvc --&gt;</span>
+    <span style="color:#f92672">&lt;dependency&gt;</span>
+        <span style="color:#f92672">&lt;groupId&gt;</span>org.springframework<span style="color:#f92672">&lt;/groupId&gt;</span>
+        <span style="color:#f92672">&lt;artifactId&gt;</span>spring-webmvc<span style="color:#f92672">&lt;/artifactId&gt;</span>
+        <span style="color:#f92672">&lt;version&gt;</span>5.2.12.RELEASE<span style="color:#f92672">&lt;/version&gt;</span>
+    <span style="color:#f92672">&lt;/dependency&gt;</span>
+    <span style="color:#f92672">&lt;dependency&gt;</span>
+        <span style="color:#f92672">&lt;groupId&gt;</span>junit<span style="color:#f92672">&lt;/groupId&gt;</span>
+        <span style="color:#f92672">&lt;artifactId&gt;</span>junit<span style="color:#f92672">&lt;/artifactId&gt;</span>
+        <span style="color:#f92672">&lt;version&gt;</span>4.12<span style="color:#f92672">&lt;/version&gt;</span>
+        <span style="color:#f92672">&lt;scope&gt;</span>test<span style="color:#f92672">&lt;/scope&gt;</span>
+    <span style="color:#f92672">&lt;/dependency&gt;</span>
+    <span style="color:#f92672">&lt;dependency&gt;</span>
+        <span style="color:#f92672">&lt;groupId&gt;</span>mysql<span style="color:#f92672">&lt;/groupId&gt;</span>
+        <span style="color:#f92672">&lt;artifactId&gt;</span>mysql-connector-java<span style="color:#f92672">&lt;/artifactId&gt;</span>
+        <span style="color:#f92672">&lt;version&gt;</span>8.0.21<span style="color:#f92672">&lt;/version&gt;</span>
+    <span style="color:#f92672">&lt;/dependency&gt;</span>
+    <span style="color:#f92672">&lt;dependency&gt;</span>
+        <span style="color:#f92672">&lt;groupId&gt;</span>org.mybatis<span style="color:#f92672">&lt;/groupId&gt;</span>
+        <span style="color:#f92672">&lt;artifactId&gt;</span>mybatis<span style="color:#f92672">&lt;/artifactId&gt;</span>
+        <span style="color:#f92672">&lt;version&gt;</span>3.5.3<span style="color:#f92672">&lt;/version&gt;</span>
+    <span style="color:#f92672">&lt;/dependency&gt;</span>
+    <span style="color:#f92672">&lt;dependency&gt;</span>
+        <span style="color:#f92672">&lt;groupId&gt;</span>org.springframework<span style="color:#f92672">&lt;/groupId&gt;</span>
+        <span style="color:#f92672">&lt;artifactId&gt;</span>spring-webmvc<span style="color:#f92672">&lt;/artifactId&gt;</span>
+        <span style="color:#f92672">&lt;version&gt;</span>5.2.12.RELEASE<span style="color:#f92672">&lt;/version&gt;</span>
+    <span style="color:#f92672">&lt;/dependency&gt;</span>
+    <span style="color:#75715e">&lt;!-- https://mvnrepository.com/artifact/org.springframework/spring-jdbc --&gt;</span>
+    <span style="color:#f92672">&lt;dependency&gt;</span>
+        <span style="color:#f92672">&lt;groupId&gt;</span>org.springframework<span style="color:#f92672">&lt;/groupId&gt;</span>
+        <span style="color:#f92672">&lt;artifactId&gt;</span>spring-jdbc<span style="color:#f92672">&lt;/artifactId&gt;</span>
+        <span style="color:#f92672">&lt;version&gt;</span>5.2.12.RELEASE<span style="color:#f92672">&lt;/version&gt;</span>
+    <span style="color:#f92672">&lt;/dependency&gt;</span>
+    <span style="color:#75715e">&lt;!-- https://mvnrepository.com/artifact/org.aspectj/aspectjweaver --&gt;</span>
+    <span style="color:#f92672">&lt;dependency&gt;</span>
+        <span style="color:#f92672">&lt;groupId&gt;</span>org.aspectj<span style="color:#f92672">&lt;/groupId&gt;</span>
+        <span style="color:#f92672">&lt;artifactId&gt;</span>aspectjweaver<span style="color:#f92672">&lt;/artifactId&gt;</span>
+        <span style="color:#f92672">&lt;version&gt;</span>1.9.6<span style="color:#f92672">&lt;/version&gt;</span>
+    <span style="color:#f92672">&lt;/dependency&gt;</span>
+    <span style="color:#75715e">&lt;!-- https://mvnrepository.com/artifact/org.mybatis/mybatis-spring --&gt;</span>
+    <span style="color:#f92672">&lt;dependency&gt;</span>
+        <span style="color:#f92672">&lt;groupId&gt;</span>org.mybatis<span style="color:#f92672">&lt;/groupId&gt;</span>
+        <span style="color:#f92672">&lt;artifactId&gt;</span>mybatis-spring<span style="color:#f92672">&lt;/artifactId&gt;</span>
+        <span style="color:#f92672">&lt;version&gt;</span>2.0.6<span style="color:#f92672">&lt;/version&gt;</span>
+    <span style="color:#f92672">&lt;/dependency&gt;</span>
+    <span style="color:#f92672">&lt;dependency&gt;</span>
+        <span style="color:#f92672">&lt;groupId&gt;</span>org.projectlombok<span style="color:#f92672">&lt;/groupId&gt;</span>
+        <span style="color:#f92672">&lt;artifactId&gt;</span>lombok<span style="color:#f92672">&lt;/artifactId&gt;</span>
+        <span style="color:#f92672">&lt;version&gt;</span>1.18.10<span style="color:#f92672">&lt;/version&gt;</span>
+    <span style="color:#f92672">&lt;/dependency&gt;</span>
+<span style="color:#f92672">&lt;/dependencies&gt;</span>
+</code></pre></div><h3 id="回忆mybatis">回忆MyBatis</h3>
+<ol>
+<li>编写实体类</li>
+<li>编写核心配置文件</li>
+<li>编写接口</li>
+<li>编写Mapper.xml</li>
+<li>测试</li>
+</ol>
+<h3 id="mybatis-spring">MyBatis-Spring</h3>
+<ol>
+<li>编写数据源</li>
+<li>SqlSessionFactory</li>
+<li>SqlSessionTemplate</li>
+<li>需要给接口加实现类【比Mybatis多的】</li>
+<li>将自己写的实现类，注入到Spring中</li>
+<li>测试使用即可</li>
+</ol>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">UserMapperImpl</span> <span style="color:#66d9ef">extends</span> SqlSessionDaoSupport <span style="color:#66d9ef">implements</span> UserMapper<span style="color:#f92672">{</span>
+
+    <span style="color:#a6e22e">@Override</span>
+    <span style="color:#66d9ef">public</span> List<span style="color:#f92672">&lt;</span>User<span style="color:#f92672">&gt;</span> <span style="color:#a6e22e">selectUser</span><span style="color:#f92672">()</span> <span style="color:#f92672">{</span>
+        <span style="color:#66d9ef">return</span> getSqlSession<span style="color:#f92672">().</span><span style="color:#a6e22e">getMapper</span><span style="color:#f92672">(</span>UserMapper<span style="color:#f92672">.</span><span style="color:#a6e22e">class</span><span style="color:#f92672">).</span><span style="color:#a6e22e">selectUser</span><span style="color:#f92672">();</span>
+    <span style="color:#f92672">}</span>
+<span style="color:#f92672">}</span>
+</code></pre></div><p><code>spring-dao.xml</code></p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-xml" data-lang="xml"><span style="color:#75715e">&lt;!--
+</span><span style="color:#75715e">DataSource:使用Spring的数据源替换MyBatis的配置 c3p0 dbcp druid
+</span><span style="color:#75715e">我们这里使用 Spring 提供的JDBC：org.springframework.jdbc.datasource.DriverManagerDataSource
+</span><span style="color:#75715e">--&gt;</span>
+<span style="color:#f92672">&lt;bean</span> <span style="color:#a6e22e">id=</span><span style="color:#e6db74">&#34;datasource&#34;</span> <span style="color:#a6e22e">class=</span><span style="color:#e6db74">&#34;org.springframework.jdbc.datasource.DriverManagerDataSource&#34;</span><span style="color:#f92672">&gt;</span>
+    <span style="color:#f92672">&lt;property</span> <span style="color:#a6e22e">name=</span><span style="color:#e6db74">&#34;driverClassName&#34;</span> <span style="color:#a6e22e">value=</span><span style="color:#e6db74">&#34;com.mysql.cj.jdbc.Driver&#34;</span><span style="color:#f92672">/&gt;</span>
+    <span style="color:#f92672">&lt;property</span> <span style="color:#a6e22e">name=</span><span style="color:#e6db74">&#34;url&#34;</span> <span style="color:#a6e22e">value=</span><span style="color:#e6db74">&#34;jdbc:mysql://localhost:3306/mybatis?userSSL=false&amp;amp;useUnicode=true&amp;amp;characterEncoding=UTF-8&amp;amp;serverTimezone=UTC&#34;</span><span style="color:#f92672">/&gt;</span>
+    <span style="color:#f92672">&lt;property</span> <span style="color:#a6e22e">name=</span><span style="color:#e6db74">&#34;username&#34;</span> <span style="color:#a6e22e">value=</span><span style="color:#e6db74">&#34;root&#34;</span><span style="color:#f92672">/&gt;</span>
+    <span style="color:#f92672">&lt;property</span> <span style="color:#a6e22e">name=</span><span style="color:#e6db74">&#34;password&#34;</span> <span style="color:#a6e22e">value=</span><span style="color:#e6db74">&#34;123456&#34;</span><span style="color:#f92672">/&gt;</span>
+<span style="color:#f92672">&lt;/bean&gt;</span>
+
+<span style="color:#75715e">&lt;!--sqlSessionFactory--&gt;</span>
+<span style="color:#f92672">&lt;bean</span> <span style="color:#a6e22e">id=</span><span style="color:#e6db74">&#34;sqlSessionFactory&#34;</span> <span style="color:#a6e22e">class=</span><span style="color:#e6db74">&#34;org.mybatis.spring.SqlSessionFactoryBean&#34;</span><span style="color:#f92672">&gt;</span>
+    <span style="color:#f92672">&lt;property</span> <span style="color:#a6e22e">name=</span><span style="color:#e6db74">&#34;dataSource&#34;</span> <span style="color:#a6e22e">ref=</span><span style="color:#e6db74">&#34;datasource&#34;</span><span style="color:#f92672">/&gt;</span>
+    <span style="color:#75715e">&lt;!--绑定MyBatis配置文件--&gt;</span>
+    <span style="color:#f92672">&lt;property</span> <span style="color:#a6e22e">name=</span><span style="color:#e6db74">&#34;configLocation&#34;</span> <span style="color:#a6e22e">value=</span><span style="color:#e6db74">&#34;classpath:mybatis-config.xml&#34;</span><span style="color:#f92672">/&gt;</span>
+    <span style="color:#f92672">&lt;property</span> <span style="color:#a6e22e">name=</span><span style="color:#e6db74">&#34;mapperLocations&#34;</span> <span style="color:#a6e22e">value=</span><span style="color:#e6db74">&#34;classpath:com/luo/mapper/*.xml&#34;</span><span style="color:#f92672">/&gt;</span>
+<span style="color:#f92672">&lt;/bean&gt;</span>
+
+<span style="color:#75715e">&lt;!--SqlSessionTemplate：就是我们使用的sqlSession--&gt;</span>
+<span style="color:#f92672">&lt;bean</span> <span style="color:#a6e22e">id=</span><span style="color:#e6db74">&#34;sqlSession&#34;</span> <span style="color:#a6e22e">class=</span><span style="color:#e6db74">&#34;org.mybatis.spring.SqlSessionTemplate&#34;</span><span style="color:#f92672">&gt;</span>
+    <span style="color:#75715e">&lt;!--只能使用构造器注入sqlSessionFactory，因为它没有set方法--&gt;</span>
+    <span style="color:#f92672">&lt;constructor-arg</span> <span style="color:#a6e22e">index=</span><span style="color:#e6db74">&#34;0&#34;</span> <span style="color:#a6e22e">ref=</span><span style="color:#e6db74">&#34;sqlSessionFactory&#34;</span><span style="color:#f92672">/&gt;</span>
+<span style="color:#f92672">&lt;/bean&gt;</span>
+</code></pre></div><p><code>applicationContext.xml</code></p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-xml" data-lang="xml"><span style="color:#f92672">&lt;import</span> <span style="color:#a6e22e">resource=</span><span style="color:#e6db74">&#34;spring-dao.xml&#34;</span><span style="color:#f92672">/&gt;</span>
+
+
+<span style="color:#75715e">&lt;!----&gt;</span>
+<span style="color:#f92672">&lt;bean</span> <span style="color:#a6e22e">id=</span><span style="color:#e6db74">&#34;userMapper&#34;</span> <span style="color:#a6e22e">class=</span><span style="color:#e6db74">&#34;com.luo.mapper.UserMapperImpl&#34;</span><span style="color:#f92672">&gt;</span>
+    <span style="color:#f92672">&lt;constructor-arg</span> <span style="color:#a6e22e">name=</span><span style="color:#e6db74">&#34;sqlSession&#34;</span> <span style="color:#a6e22e">ref=</span><span style="color:#e6db74">&#34;sqlSession&#34;</span><span style="color:#f92672">/&gt;</span>
+<span style="color:#f92672">&lt;/bean&gt;</span>
+</code></pre></div><p><code>UserMapperImpl.java</code></p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">UserMapperImpl</span> <span style="color:#66d9ef">implements</span> UserMapper<span style="color:#f92672">{</span>
+
+    <span style="color:#75715e">// 在原来我们所有的操作，都使用sqlSession来执行，
+</span><span style="color:#75715e"></span>    <span style="color:#75715e">// 现在都是用sqlSessionTemplate
+</span><span style="color:#75715e"></span>    <span style="color:#66d9ef">private</span> SqlSessionTemplate sqlSession<span style="color:#f92672">;</span>
+
+    <span style="color:#66d9ef">public</span> <span style="color:#a6e22e">UserMapperImpl</span><span style="color:#f92672">(</span>SqlSessionTemplate sqlSession<span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
+        <span style="color:#66d9ef">this</span><span style="color:#f92672">.</span><span style="color:#a6e22e">sqlSession</span> <span style="color:#f92672">=</span> sqlSession<span style="color:#f92672">;</span>
+    <span style="color:#f92672">}</span>
+
+    <span style="color:#a6e22e">@Override</span>
+    <span style="color:#66d9ef">public</span> List<span style="color:#f92672">&lt;</span>User<span style="color:#f92672">&gt;</span> <span style="color:#a6e22e">selectUser</span><span style="color:#f92672">()</span> <span style="color:#f92672">{</span>
+        UserMapper mapper <span style="color:#f92672">=</span> sqlSession<span style="color:#f92672">.</span><span style="color:#a6e22e">getMapper</span><span style="color:#f92672">(</span>UserMapper<span style="color:#f92672">.</span><span style="color:#a6e22e">class</span><span style="color:#f92672">);</span>
+        <span style="color:#66d9ef">return</span> mapper<span style="color:#f92672">.</span><span style="color:#a6e22e">selectUser</span><span style="color:#f92672">();</span>
+    <span style="color:#f92672">}</span>
+<span style="color:#f92672">}</span>
+</code></pre></div><p>也可以用继承的方式</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">UserMapperImpl2</span> <span style="color:#66d9ef">extends</span> SqlSessionDaoSupport <span style="color:#66d9ef">implements</span> UserMapper<span style="color:#f92672">{</span>
+
+    <span style="color:#a6e22e">@Override</span>
+    <span style="color:#66d9ef">public</span> List<span style="color:#f92672">&lt;</span>User<span style="color:#f92672">&gt;</span> <span style="color:#a6e22e">selectUser</span><span style="color:#f92672">()</span> <span style="color:#f92672">{</span>
+        <span style="color:#66d9ef">return</span> getSqlSession<span style="color:#f92672">().</span><span style="color:#a6e22e">getMapper</span><span style="color:#f92672">(</span>UserMapper<span style="color:#f92672">.</span><span style="color:#a6e22e">class</span><span style="color:#f92672">).</span><span style="color:#a6e22e">selectUser</span><span style="color:#f92672">();</span>
+    <span style="color:#f92672">}</span>
+<span style="color:#f92672">}</span>
+</code></pre></div><p>当然用这种方式在注册的时候就会有所变化</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-xml" data-lang="xml"><span style="color:#f92672">&lt;bean</span> <span style="color:#a6e22e">id=</span><span style="color:#e6db74">&#34;userMapper2&#34;</span> <span style="color:#a6e22e">class=</span><span style="color:#e6db74">&#34;com.luo.mapper.UserMapperImpl2&#34;</span><span style="color:#f92672">&gt;</span>
+    <span style="color:#f92672">&lt;property</span> <span style="color:#a6e22e">name=</span><span style="color:#e6db74">&#34;sqlSessionFactory&#34;</span> <span style="color:#a6e22e">ref=</span><span style="color:#e6db74">&#34;sqlSessionFactory&#34;</span><span style="color:#f92672">/&gt;</span>
+<span style="color:#f92672">&lt;/bean&gt;</span>
+</code></pre></div><p>虽然UserMapperImpl2本身没有需要注入的值，但是他继承的父类有需要注入的值，因此要需要上面这种写法<br>
+使用继承的方式就不需要下面的这个注入了</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-xml" data-lang="xml"><span style="color:#75715e">&lt;!--SqlSessionTemplate：就是我们使用的sqlSession--&gt;</span>
+<span style="color:#f92672">&lt;bean</span> <span style="color:#a6e22e">id=</span><span style="color:#e6db74">&#34;sqlSession&#34;</span> <span style="color:#a6e22e">class=</span><span style="color:#e6db74">&#34;org.mybatis.spring.SqlSessionTemplate&#34;</span><span style="color:#f92672">&gt;</span>
+    <span style="color:#75715e">&lt;!--只能使用构造器注入sqlSessionFactory，因为它没有set方法--&gt;</span>
+    <span style="color:#f92672">&lt;constructor-arg</span> <span style="color:#a6e22e">name=</span><span style="color:#e6db74">&#34;sqlSessionFactory&#34;</span> <span style="color:#a6e22e">ref=</span><span style="color:#e6db74">&#34;sqlSessionFactory&#34;</span><span style="color:#f92672">/&gt;</span>
+<span style="color:#f92672">&lt;/bean&gt;</span>
+</code></pre></div><h2 id="声明式事务">声明式事务</h2>
+<h3 id="回顾事务">回顾事务</h3>
+<ul>
+<li>要么都成功，要么都失败</li>
+<li>事务在项目开发中，十分的重要，涉及到数据的一致性问题，不能马虎</li>
+<li>确保完整性和一致性</li>
+</ul>
+<p>事务ACID原则：</p>
+<ul>
+<li>原子性</li>
+<li>一致性</li>
+<li>隔离性
+<ul>
+<li>多个业务可能操作同一个资源，防止数据损坏</li>
+</ul>
+</li>
+<li>持久性
+<ul>
+<li>事务一旦提交，无论系统发生什么问题，结果都不会再被影响，被持久化地写到存储器中</li>
+</ul>
+</li>
+</ul>
+<h3 id="spring中的事务管理">Spring中的事务管理</h3>
+<ul>
+<li>声明式事务：AOP</li>
+<li>编程式事务：需要在代码中，进行事务的管理</li>
+</ul>
+<p>为什么需要事务？</p>
+<ul>
+<li>如果不配置事务，可能存在数据提交不一致的情况下</li>
+<li>如果我们不在Spring中去配置声明事务，我们就需要在代码中手动配置事务</li>
+<li>事务在项目的开发中十分重要，涉及到数据的一致性和完整性，不容马虎</li>
+</ul>
+<p>需要开启事务就要加入配置(记得要导入编织包)</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-xml" data-lang="xml"><span style="color:#75715e">&lt;!--配置声明式事务--&gt;</span>
+<span style="color:#f92672">&lt;bean</span> <span style="color:#a6e22e">id=</span><span style="color:#e6db74">&#34;transactionManager&#34;</span> <span style="color:#a6e22e">class=</span><span style="color:#e6db74">&#34;org.springframework.jdbc.datasource.DataSourceTransactionManager&#34;</span><span style="color:#f92672">&gt;</span>
+    <span style="color:#f92672">&lt;property</span> <span style="color:#a6e22e">name=</span><span style="color:#e6db74">&#34;dataSource&#34;</span> <span style="color:#a6e22e">ref=</span><span style="color:#e6db74">&#34;dataSource&#34;</span><span style="color:#f92672">/&gt;</span>
+<span style="color:#f92672">&lt;/bean&gt;</span>
+
+
+<span style="color:#75715e">&lt;!--结合AOP实现事务的织入--&gt;</span>
+<span style="color:#75715e">&lt;!--配置事务通知--&gt;</span>
+<span style="color:#f92672">&lt;tx:advice</span> <span style="color:#a6e22e">id=</span><span style="color:#e6db74">&#34;txAdvice&#34;</span> <span style="color:#a6e22e">transaction-manager=</span><span style="color:#e6db74">&#34;transactionManager&#34;</span><span style="color:#f92672">&gt;</span>
+    <span style="color:#75715e">&lt;!--给哪些方法配置事务--&gt;</span>
+    <span style="color:#75715e">&lt;!--配置事务的传播特性: propagation--&gt;</span>
+    <span style="color:#f92672">&lt;tx:attributes&gt;</span>
+        <span style="color:#f92672">&lt;tx:method</span> <span style="color:#a6e22e">name=</span><span style="color:#e6db74">&#34;add&#34;</span> <span style="color:#a6e22e">propagation=</span><span style="color:#e6db74">&#34;REQUIRED&#34;</span><span style="color:#f92672">/&gt;</span>
+        <span style="color:#f92672">&lt;tx:method</span> <span style="color:#a6e22e">name=</span><span style="color:#e6db74">&#34;delete&#34;</span> <span style="color:#a6e22e">propagation=</span><span style="color:#e6db74">&#34;REQUIRED&#34;</span><span style="color:#f92672">/&gt;</span>
+        <span style="color:#f92672">&lt;tx:method</span> <span style="color:#a6e22e">name=</span><span style="color:#e6db74">&#34;update&#34;</span> <span style="color:#a6e22e">propagation=</span><span style="color:#e6db74">&#34;REQUIRED&#34;</span><span style="color:#f92672">/&gt;</span>
+        <span style="color:#f92672">&lt;tx:method</span> <span style="color:#a6e22e">name=</span><span style="color:#e6db74">&#34;query&#34;</span> <span style="color:#a6e22e">read-only=</span><span style="color:#e6db74">&#34;true&#34;</span><span style="color:#f92672">/&gt;</span>
+        <span style="color:#75715e">&lt;!--所有方法--&gt;</span>
+        <span style="color:#f92672">&lt;tx:method</span> <span style="color:#a6e22e">name=</span><span style="color:#e6db74">&#34;*&#34;</span><span style="color:#f92672">/&gt;</span>
+    <span style="color:#f92672">&lt;/tx:attributes&gt;</span>
+<span style="color:#f92672">&lt;/tx:advice&gt;</span>
+
+
+<span style="color:#f92672">&lt;aop:config&gt;</span>
+    <span style="color:#f92672">&lt;aop:pointcut</span> <span style="color:#a6e22e">id=</span><span style="color:#e6db74">&#34;txPointCut&#34;</span> <span style="color:#a6e22e">expression=</span><span style="color:#e6db74">&#34;execution(* com.luo.mapper.*.*(..))&#34;</span><span style="color:#f92672">/&gt;</span>
+    <span style="color:#f92672">&lt;aop:advisor</span> <span style="color:#a6e22e">advice-ref=</span><span style="color:#e6db74">&#34;txAdvice&#34;</span> <span style="color:#a6e22e">pointcut-ref=</span><span style="color:#e6db74">&#34;txPointCut&#34;</span><span style="color:#f92672">/&gt;</span>
+<span style="color:#f92672">&lt;/aop:config&gt;</span>
+</code></pre></div><p>在<code>tx:attributes</code>中配置你想要开启事务的方法有哪些，比如下面这个例子</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">UserMapperImpl</span> <span style="color:#66d9ef">extends</span> SqlSessionDaoSupport <span style="color:#66d9ef">implements</span> UserMapper<span style="color:#f92672">{</span>
+
+    <span style="color:#a6e22e">@Override</span>
+    <span style="color:#66d9ef">public</span> List<span style="color:#f92672">&lt;</span>User<span style="color:#f92672">&gt;</span> <span style="color:#a6e22e">selectUser</span><span style="color:#f92672">()</span> <span style="color:#f92672">{</span>
+        UserMapper userMapper <span style="color:#f92672">=</span> getSqlSession<span style="color:#f92672">().</span><span style="color:#a6e22e">getMapper</span><span style="color:#f92672">(</span>UserMapper<span style="color:#f92672">.</span><span style="color:#a6e22e">class</span><span style="color:#f92672">);</span>
+        User user <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> User<span style="color:#f92672">(</span>8<span style="color:#f92672">,</span> <span style="color:#e6db74">&#34;张疤&#34;</span><span style="color:#f92672">,</span> <span style="color:#e6db74">&#34;123&#34;</span><span style="color:#f92672">);</span>
+        userMapper<span style="color:#f92672">.</span><span style="color:#a6e22e">addUser</span><span style="color:#f92672">(</span>user<span style="color:#f92672">);</span>
+        userMapper<span style="color:#f92672">.</span><span style="color:#a6e22e">deleteUser</span><span style="color:#f92672">(</span>7<span style="color:#f92672">);</span>
+        <span style="color:#66d9ef">return</span> getSqlSession<span style="color:#f92672">().</span><span style="color:#a6e22e">getMapper</span><span style="color:#f92672">(</span>UserMapper<span style="color:#f92672">.</span><span style="color:#a6e22e">class</span><span style="color:#f92672">).</span><span style="color:#a6e22e">selectUser</span><span style="color:#f92672">();</span>
+    <span style="color:#f92672">}</span>
+
+    <span style="color:#a6e22e">@Override</span>
+    <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">int</span> <span style="color:#a6e22e">addUser</span><span style="color:#f92672">(</span>User user<span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
+        <span style="color:#66d9ef">return</span> getSqlSession<span style="color:#f92672">().</span><span style="color:#a6e22e">getMapper</span><span style="color:#f92672">(</span>UserMapper<span style="color:#f92672">.</span><span style="color:#a6e22e">class</span><span style="color:#f92672">).</span><span style="color:#a6e22e">addUser</span><span style="color:#f92672">(</span>user<span style="color:#f92672">);</span>
+    <span style="color:#f92672">}</span>
+
+    <span style="color:#a6e22e">@Override</span>
+    <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">int</span> <span style="color:#a6e22e">deleteUser</span><span style="color:#f92672">(</span><span style="color:#66d9ef">int</span> id<span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
+        <span style="color:#66d9ef">return</span> getSqlSession<span style="color:#f92672">().</span><span style="color:#a6e22e">getMapper</span><span style="color:#f92672">(</span>UserMapper<span style="color:#f92672">.</span><span style="color:#a6e22e">class</span><span style="color:#f92672">).</span><span style="color:#a6e22e">deleteUser</span><span style="color:#f92672">(</span>id<span style="color:#f92672">);</span>
+    <span style="color:#f92672">}</span>
+<span style="color:#f92672">}</span>
+</code></pre></div><p>为了方便测试，所以写的令人感觉很蠢，在UserMapper.xml中故意将deleteUser的SQL语句写错了，因此到userMapper.deleteUser执行的时候就会报错，如果没有开启事务，“张疤”会被插入到数据库中，我们在<code>tx:attributes</code>中添加<code>&lt;tx:method name=&quot;selectUser&quot; propagation=&quot;REQUIRED&quot;/&gt;</code>就可以让这个方法开启事务，当方法执行失败的时候就会回滚，如果方法很多，不想一个一个方法开启事务，也可以<code>&lt;tx:method name=&quot;*&quot;/&gt;</code>让全部的方法都开启事务</p>
+
+    </div>
+    <div class="post-footer">
+      
+    </div>
+  </article>
+
+    </main>
+</body>
+
+</html>
