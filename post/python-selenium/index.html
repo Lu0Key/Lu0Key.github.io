@@ -1,0 +1,131 @@
+<!doctype html>
+<html lang="en-us">
+
+<head>
+    
+    <title>Python Selenium 笔记 // 洛七的摸鱼池塘</title>
+    <link rel="shortcut icon" href="%20/favicon.ico%20" />
+    <meta charset="utf-8" /> <meta name="generator" content="Hugo 0.80.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="author" content="洛七" />
+    <meta name="description" content="" /> <link rel="stylesheet" href="https://Lu0key.github.io/css/main.min.88e7083eff65effb7485b6e6f38d10afbec25093a6fac42d734ce9024d3defbd.css" />  <meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Python Selenium 笔记"/>
+<meta name="twitter:description" content="Python Selenium 笔记 这里用的是Firefox的 webdriver
+browser = webdriver.Firefox(executable_path =r&#34;D:\geckodriver&#34;) 通过get打开网页
+browser.get(&#34;https://www.baidu.com&#34;) 窗口最大化
+browser.maximize_window() 输入内容
+browser.find_element_by_id(&#34;un&#34;).send_keys(&#34;学号&#34;) 点击事件
+browser.find_element_by_id(&#34;index_login_btn&#34;).click() close 和 quit 的区别
+# close 是关闭当前tab browser.close() # quit 是关闭整个浏览器 browser.quit() 在自动化操作的时候可能会遇到多个标签页，这里我还不是很清楚，一个标签页对应一个句柄
+# 获得所有句柄 handles = browser.window_handles # 获得当前句柄 currentWin = browser.current_window_handle 因为我在使用的时候，最多只会遇到两个标签页，多的标签页可以直接close掉，因此没有深究怎么切换到指定的标签页的方法，只要每次产生新的标签页的时候，我就把当前的标签页关掉，然后获得新标签页的句柄(因为只有一个标签页，因此句柄也只有一个)
+# 假装这里打开了新的标签页 # 关闭当前标签页 browser.close() # 获得所有句柄(这时只有1个) handles = browser.window_handles # 切换到这个句柄上 browser.switch_to.window(handles[0]) 当页面中有iframe标签的时候，选择器无法选择到iframe中的内容，因此要切换到iframe内
+# 这里只要获得了对应的iframe标签即可，比如用id也可以 iframe = browser.find_elements_by_tag_name(&#34;iframe&#34;)[0] # 切换到iframe中就可以用css选择器之类的去获取元素 browser.switch_to.frame(iframe) # 对iframe中的内容操作完了，返回原页面 browser.switch_to.default_content() "/>
+ <meta property="og:title" content="Python Selenium 笔记" />
+<meta property="og:description" content="Python Selenium 笔记 这里用的是Firefox的 webdriver
+browser = webdriver.Firefox(executable_path =r&#34;D:\geckodriver&#34;) 通过get打开网页
+browser.get(&#34;https://www.baidu.com&#34;) 窗口最大化
+browser.maximize_window() 输入内容
+browser.find_element_by_id(&#34;un&#34;).send_keys(&#34;学号&#34;) 点击事件
+browser.find_element_by_id(&#34;index_login_btn&#34;).click() close 和 quit 的区别
+# close 是关闭当前tab browser.close() # quit 是关闭整个浏览器 browser.quit() 在自动化操作的时候可能会遇到多个标签页，这里我还不是很清楚，一个标签页对应一个句柄
+# 获得所有句柄 handles = browser.window_handles # 获得当前句柄 currentWin = browser.current_window_handle 因为我在使用的时候，最多只会遇到两个标签页，多的标签页可以直接close掉，因此没有深究怎么切换到指定的标签页的方法，只要每次产生新的标签页的时候，我就把当前的标签页关掉，然后获得新标签页的句柄(因为只有一个标签页，因此句柄也只有一个)
+# 假装这里打开了新的标签页 # 关闭当前标签页 browser.close() # 获得所有句柄(这时只有1个) handles = browser.window_handles # 切换到这个句柄上 browser.switch_to.window(handles[0]) 当页面中有iframe标签的时候，选择器无法选择到iframe中的内容，因此要切换到iframe内
+# 这里只要获得了对应的iframe标签即可，比如用id也可以 iframe = browser.find_elements_by_tag_name(&#34;iframe&#34;)[0] # 切换到iframe中就可以用css选择器之类的去获取元素 browser.switch_to.frame(iframe) # 对iframe中的内容操作完了，返回原页面 browser.switch_to.default_content() " />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://Lu0key.github.io/post/python-selenium/" />
+<meta property="article:published_time" content="2021-02-28T19:30:33+08:00" />
+<meta property="article:modified_time" content="2021-02-28T19:30:33+08:00" />
+
+
+</head>
+
+<body>
+    <header class="app-header">
+        <a href="https://Lu0key.github.io/"><img class="app-header-avatar" src="/avatar.jpg" alt="洛七" /></a>
+        <h1>洛七的摸鱼池塘</h1>
+        <nav class="app-header-menu">
+            <a class="app-header-menu-item" href="/tags/">Tags</a>
+        </nav>
+        <p>即将没书读的咸鱼</p>
+        <div class="app-header-social">
+            
+        </div>
+    </header>
+    <main class="app-container">
+        
+  <article class="post">
+    <header class="post-header">
+      <h1 class ="post-title">Python Selenium 笔记</h1>
+      <div class="post-meta">
+        <div>
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-calendar">
+  <title>calendar</title>
+  <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line>
+</svg>
+          Feb 28, 2021
+        </div>
+        <div>
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-clock">
+  <title>clock</title>
+  <circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline>
+</svg>
+          1 min read
+        </div>
+        <div>
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-tag">
+  <title>tag</title>
+  <path d="M20.59 13.41l-7.17 7.17a2 2 0 0 1-2.83 0L2 12V2h10l8.59 8.59a2 2 0 0 1 0 2.82z"></path><line x1="7" y1="7" x2="7" y2="7"></line>
+</svg>
+              <a class="tag" href="https://Lu0key.github.io/tags/python/">python</a>
+              <a class="tag" href="https://Lu0key.github.io/tags/selenium/">selenium</a>
+        </div>
+      </div>
+    </header>
+    <div class="post-content">
+      <h1 id="python-selenium-笔记">Python Selenium 笔记</h1>
+<p>这里用的是Firefox的 webdriver</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">browser <span style="color:#f92672">=</span> webdriver<span style="color:#f92672">.</span>Firefox(executable_path <span style="color:#f92672">=</span><span style="color:#e6db74">r</span><span style="color:#e6db74">&#34;D:\geckodriver&#34;</span>)
+</code></pre></div><p>通过get打开网页</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">browser<span style="color:#f92672">.</span>get(<span style="color:#e6db74">&#34;https://www.baidu.com&#34;</span>)
+</code></pre></div><p>窗口最大化</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">browser<span style="color:#f92672">.</span>maximize_window()
+</code></pre></div><p>输入内容</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">browser<span style="color:#f92672">.</span>find_element_by_id(<span style="color:#e6db74">&#34;un&#34;</span>)<span style="color:#f92672">.</span>send_keys(<span style="color:#e6db74">&#34;学号&#34;</span>)
+</code></pre></div><p>点击事件</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">browser<span style="color:#f92672">.</span>find_element_by_id(<span style="color:#e6db74">&#34;index_login_btn&#34;</span>)<span style="color:#f92672">.</span>click()
+</code></pre></div><p>close 和 quit 的区别</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#75715e"># close 是关闭当前tab</span>
+browser<span style="color:#f92672">.</span>close()
+<span style="color:#75715e"># quit 是关闭整个浏览器</span>
+browser<span style="color:#f92672">.</span>quit()
+</code></pre></div><p>在自动化操作的时候可能会遇到多个标签页，这里我还不是很清楚，一个标签页对应一个句柄</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#75715e"># 获得所有句柄</span>
+handles <span style="color:#f92672">=</span> browser<span style="color:#f92672">.</span>window_handles
+<span style="color:#75715e"># 获得当前句柄</span>
+currentWin <span style="color:#f92672">=</span> browser<span style="color:#f92672">.</span>current_window_handle
+</code></pre></div><p>因为我在使用的时候，最多只会遇到两个标签页，多的标签页可以直接close掉，因此没有深究怎么切换到指定的标签页的方法，只要每次产生新的标签页的时候，我就把当前的标签页关掉，然后获得新标签页的句柄(因为只有一个标签页，因此句柄也只有一个)</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#75715e"># 假装这里打开了新的标签页</span>
+<span style="color:#75715e"># 关闭当前标签页</span>
+browser<span style="color:#f92672">.</span>close()
+<span style="color:#75715e"># 获得所有句柄(这时只有1个)</span>
+handles <span style="color:#f92672">=</span> browser<span style="color:#f92672">.</span>window_handles
+<span style="color:#75715e"># 切换到这个句柄上</span>
+browser<span style="color:#f92672">.</span>switch_to<span style="color:#f92672">.</span>window(handles[<span style="color:#ae81ff">0</span>])
+</code></pre></div><p>当页面中有iframe标签的时候，选择器无法选择到iframe中的内容，因此要切换到iframe内</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#75715e"># 这里只要获得了对应的iframe标签即可，比如用id也可以</span>
+iframe <span style="color:#f92672">=</span> browser<span style="color:#f92672">.</span>find_elements_by_tag_name(<span style="color:#e6db74">&#34;iframe&#34;</span>)[<span style="color:#ae81ff">0</span>]
+<span style="color:#75715e"># 切换到iframe中就可以用css选择器之类的去获取元素</span>
+browser<span style="color:#f92672">.</span>switch_to<span style="color:#f92672">.</span>frame(iframe)
+<span style="color:#75715e"># 对iframe中的内容操作完了，返回原页面</span>
+browser<span style="color:#f92672">.</span>switch_to<span style="color:#f92672">.</span>default_content()
+</code></pre></div>
+    </div>
+    <div class="post-footer">
+      
+    </div>
+  </article>
+
+    </main>
+</body>
+
+</html>
