@@ -6,7 +6,19 @@
     <description>Recent content in Posts on 洛七的摸鱼池塘</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Wed, 17 Feb 2021 22:18:45 +0800</lastBuildDate><atom:link href="https://Lu0key.github.io/post/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 28 Feb 2021 18:37:37 +0800</lastBuildDate><atom:link href="https://Lu0key.github.io/post/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Python Wr Excel</title>
+      <link>https://Lu0key.github.io/post/python-wr-excel/</link>
+      <pubDate>Sun, 28 Feb 2021 18:37:37 +0800</pubDate>
+      
+      <guid>https://Lu0key.github.io/post/python-wr-excel/</guid>
+      <description>Python 处理excel 老师需要找出哪些同学在网上填了返校申请，因为有几百个人，所以比较难以肉眼看出来
+这里我们假设填了信息的人可以导出名字，和整个年级的名单
+这样我们就有两个表了，代码如下
+import xlrd # 总的人名 name_set = [] # 填报的人 name_data = [] # 没填报的人 other = [] set_excel = xlrd.open_workbook(&amp;#39;C:\\Users\\Luokey\\Desktop\\set.xlsx&amp;#39;) set_sheet = set_excel.sheets()[0] print(set_sheet.name) print(&amp;#34;=============&amp;#34;) # 这里实际上是从第二行开始，到第一列的最后一个元素 for i in range(1,len(set_sheet.col_slice(0, start_rowx=0, end_rowx=None))): name = set_sheet.cell_value(i, 0) name_set.append(name) print(name_set) print(len(name_set)) data_excel = xlrd.open_workbook(&amp;#39;C:\\Users\\Luokey\\Desktop\\data.xlsx&amp;#39;) data_sheet = data_excel.sheets()[0] print(&amp;#34;=============&amp;#34;) # 这里实际上是从第二行开始，到第一列的最后一个元素 for i in range(1,len(data_sheet.col_slice(0, start_rowx=0, end_rowx=None))): name = data_sheet.cell_value(i, 0) name_data.append(name) print(&amp;#34;======没提交的名单=======&amp;#34;) for name in name_set: if name not in name_data: print(name) other.</description>
+    </item>
+    
     <item>
       <title>Spring5</title>
       <link>https://Lu0key.github.io/post/spring5/</link>

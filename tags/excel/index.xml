@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>python on 洛七的摸鱼池塘</title>
-    <link>https://Lu0key.github.io/tags/python/</link>
-    <description>Recent content in python on 洛七的摸鱼池塘</description>
+    <title>excel on 洛七的摸鱼池塘</title>
+    <link>https://Lu0key.github.io/tags/excel/</link>
+    <description>Recent content in excel on 洛七的摸鱼池塘</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Sun, 28 Feb 2021 18:37:37 +0800</lastBuildDate><atom:link href="https://Lu0key.github.io/tags/python/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 28 Feb 2021 18:37:37 +0800</lastBuildDate><atom:link href="https://Lu0key.github.io/tags/excel/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Python Wr Excel</title>
       <link>https://Lu0key.github.io/post/python-wr-excel/</link>
@@ -17,15 +17,6 @@
 这里我们假设填了信息的人可以导出名字，和整个年级的名单
 这样我们就有两个表了，代码如下
 import xlrd # 总的人名 name_set = [] # 填报的人 name_data = [] # 没填报的人 other = [] set_excel = xlrd.open_workbook(&amp;#39;C:\\Users\\Luokey\\Desktop\\set.xlsx&amp;#39;) set_sheet = set_excel.sheets()[0] print(set_sheet.name) print(&amp;#34;=============&amp;#34;) # 这里实际上是从第二行开始，到第一列的最后一个元素 for i in range(1,len(set_sheet.col_slice(0, start_rowx=0, end_rowx=None))): name = set_sheet.cell_value(i, 0) name_set.append(name) print(name_set) print(len(name_set)) data_excel = xlrd.open_workbook(&amp;#39;C:\\Users\\Luokey\\Desktop\\data.xlsx&amp;#39;) data_sheet = data_excel.sheets()[0] print(&amp;#34;=============&amp;#34;) # 这里实际上是从第二行开始，到第一列的最后一个元素 for i in range(1,len(data_sheet.col_slice(0, start_rowx=0, end_rowx=None))): name = data_sheet.cell_value(i, 0) name_data.append(name) print(&amp;#34;======没提交的名单=======&amp;#34;) for name in name_set: if name not in name_data: print(name) other.</description>
-    </item>
-    
-    <item>
-      <title>Python Flask 入门</title>
-      <link>https://Lu0key.github.io/post/python-flask-%E5%85%A5%E9%97%A8/</link>
-      <pubDate>Fri, 22 Jan 2021 16:01:50 +0800</pubDate>
-      
-      <guid>https://Lu0key.github.io/post/python-flask-%E5%85%A5%E9%97%A8/</guid>
-      <description>Flask  Flask  特点 list  example   tuple(元组)  “可变的” tuple  tips     循环  range() continue  example   break   dict set  常用函数   定义函数  tips 空函数 参数检查 多个返回值 默认参数  坑   可变参数 关键字参数 命名关键词参数   参数组合还没看&amp;hellip;..  递归函数  tips   尾递归 切片 Slice 切片   Iteration 迭代  如何判断一个对象是否可迭代 如何同时迭代索引和元素   列表生成式 generator 生成器 迭代器 高阶函数 map/reduce filter sorted 返回函数 闭包(Closure) 匿名函数lambda 装饰器(Decorator) 偏函数 Partial function 模块 Module  作用域 安装第三方库   OOP 访问限制 继承和多态 获取对象信息 实例属性和类属性 使用__slots__ 使用@property 多重继承 定制类  __iter__ __getattr__ __call__   枚举类 待解决问题    特点 123</description>
     </item>
     
   </channel>

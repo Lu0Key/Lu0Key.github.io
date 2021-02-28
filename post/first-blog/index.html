@@ -93,13 +93,13 @@ hugo --theme=m10c --baseUrl=&#34;https://Lu0key.github.io/&#34; --buildDrafts cd
       <h1 id="hello-world">Hello world</h1>
 <p>第一篇Hugo博客</p>
 <p>下载主题</p>
-<pre><code class="language-git" data-lang="git">git clone https://github.com/lxndrblz/m10c.git themes/m10c
-</code></pre><hr>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">git clone https://github.com/lxndrblz/m10c.git themes/m10c
+</code></pre></div><hr>
 <p>hugo 本地启动</p>
-<pre><code class="language-git" data-lang="git">hugo server -t themename --bulidDrafts
-</code></pre><p>hugo 创建新文章</p>
-<pre><code class="language-git" data-lang="git">hugo new post/blogname.md
-</code></pre><h2 id="推到github远端服务器">推到Github远端服务器</h2>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">hugo server -t themename --bulidDrafts
+</code></pre></div><p>hugo 创建新文章</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">hugo new post/blogname.md
+</code></pre></div><h2 id="推到github远端服务器">推到Github远端服务器</h2>
 <p>创建名为 <code>[github用户名].github.io</code> 的仓库</p>
 <p>blog目录下</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">hugo --theme<span style="color:#f92672">=</span>m10c --baseUrl<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;https://Lu0key.github.io/&#34;</span> --buildDrafts
@@ -108,8 +108,8 @@ hugo --theme=m10c --baseUrl=&#34;https://Lu0key.github.io/&#34; --buildDrafts cd
 </code></pre></div><p>初始化git仓库</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">git init
 </code></pre></div><p>将所有文件添加入暂存区</p>
-<pre><code>git add .
-</code></pre><p>将git仓库和云端仓库关联</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">git add .
+</code></pre></div><p>将git仓库和云端仓库关联</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">git remote add <span style="color:#f92672">[</span>shortname<span style="color:#f92672">]</span> <span style="color:#f92672">[</span>url<span style="color:#f92672">]</span>
 </code></pre></div><p>比如我的就是</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">git remote add origin https://github.com/Lu0key/Lu0key.github.io.git
