@@ -6,7 +6,48 @@
     <description>Recent content in 数据结构 on 洛七的摸鱼池塘</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Fri, 22 Jan 2021 19:09:34 +0800</lastBuildDate><atom:link href="https://Lu0key.github.io/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 01 Mar 2021 08:22:55 +0800</lastBuildDate><atom:link href="https://Lu0key.github.io/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>王道考研 数据结构 图</title>
+      <link>https://Lu0key.github.io/post/%E7%8E%8B%E9%81%93%E8%80%83%E7%A0%94-%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84-%E5%9B%BE/</link>
+      <pubDate>Mon, 01 Mar 2021 08:22:55 +0800</pubDate>
+      
+      <guid>https://Lu0key.github.io/post/%E7%8E%8B%E9%81%93%E8%80%83%E7%A0%94-%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84-%E5%9B%BE/</guid>
+      <description>图  图  定义 图的存储  临接矩阵 邻接表 十字链表法 邻接多重表   基本操作 图的遍历  广度优先遍历 深度优先遍历   最小生成树 最短路径问题 Dijkstra算法 Floyd算法 有向无环图(DAG) 拓扑排序 关键路径    定义 图G由顶点集V和边集E组成，记为G=(V, E)，其中V(G) 表示图G中顶点的有限非空集；E(G) 表示图G 中顶点之间的关系（边）集合。若 $V={v_1, v_2, &amp;hellip;, v_n}$，则用 $|V|$ 表示图G 中顶点的个数，也称图G 的阶，$E={(u, v)|u\in V, v\in V}$，用 $|E|$ 表示图G中边的条数。
+G：Graph
+V：Vertex
+E：Edge
+线性表可以是空表，树可以是空树，但图不可以是空的，即V一定是非空集
+e.g.
+V:车站，E：铁路
+社交软件中的好友关系可以看成是一种无向图
+微博中的粉丝关系可以看作是一种有向图
+若 E 是无向边（简称边）的有限集合时，则图 G 为无向图。边是顶点的无序对，记为 $(v, w)$ 或 $(w, v)$，因为 $(v, w)=(w, v)$，其中v，w 是顶点。可以说顶点w和顶点v互为邻接点。边 $(v, w)$ 依附于顶点 $w$ 和 $v$，或者说边 $(v, w)$ 和顶点 v、w 相关联。</description>
+    </item>
+    
+    <item>
+      <title>王道考研 数据结构 串</title>
+      <link>https://Lu0key.github.io/post/%E7%8E%8B%E9%81%93%E8%80%83%E7%A0%94-%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84-%E4%B8%B2/</link>
+      <pubDate>Sat, 06 Feb 2021 22:10:51 +0800</pubDate>
+      
+      <guid>https://Lu0key.github.io/post/%E7%8E%8B%E9%81%93%E8%80%83%E7%A0%94-%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84-%E4%B8%B2/</guid>
+      <description>串  串  定义 存储结构  顺序存储 链式存储   基本操作  求子串 比较字符串 定位操作   朴素模式匹配算法 KMP 算法 KMP算法优化    定义 串，即字符串（String）是由零个或者多个字符组成的有限序列。一般记为 S = &amp;lsquo;a1a2&amp;hellip;a_n&amp;rsquo; ($n\geqslant0$)
+其中，S是串名，单引号括起来的字符序列是串的值；$a_i$可以是字母、数字或者其他字符；串中字符的个数n称为串的长度。n=0 时的串称为空串（用 $\varnothing$ 表示）
+字串：串中任意个连续的字符组成的子序列
+主串：包含字串的串
+字符在主串中的位置：字符在串中的序号
+字串在主串中的位置：字串的第一个字符在主串中的位置
+位序是从1开始，而不是0开始
+串是一种特殊的线性表，数据元素之间呈线性关系
+串的数据对象限定为字符集（如中文字符、英文字符、数字字符、标点字符等）
+串的基本操作，如增删改查通常以字串为操作对象
+串的基本操作
+ StrAssign(&amp;amp;T, chars)：赋值操作，把串T赋值为chars StrCopy(&amp;amp;T, S)：复制操作。由串S复制得到串T StrEmpty(S)：判空操作。若S为空串，则返回true，否则返回false StrLength(S)：求串长，返回串S的元素个数 ClearString(&amp;amp;S)：清空操作。将S清为空串 DestroyString(&amp;amp;S)：销毁串。将串S销毁，回收存储空间 Concat(&amp;amp;T, S1, S2)：串联接。用T返回由S1和S2联接而成的新串 SubString(&amp;amp;sub, S, pos, len)：求字串，用sub但会串S的第pos个字符起长度为len的子串 Index(S, T)：定位操作。若主串S中存在与串T值相同的子串，则返回它在主串S中第一次出现的位置；否则函数值为0 StrCompare(S, T)：比较操作。若S&amp;gt;T，则返回值&amp;gt;0，若S=T，则返回值=0，若S&amp;lt; T，则返回值&amp;lt;0  这个比较是一个字符一个字符比较的，那字符怎么比较呢？
+ASCII字符编码，将数字与字符一一对应，因此比较字符实际上就是比较字符对应的数字
+乱码问题：
+不同的编码规则可能会导致乱码</description>
+    </item>
+    
     <item>
       <title>王道考研 数据结构 绪论</title>
       <link>https://Lu0key.github.io/post/%E7%8E%8B%E9%81%93%E8%80%83%E7%A0%94-%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84-%E7%BB%AA%E8%AE%BA/</link>
