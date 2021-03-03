@@ -6,7 +6,19 @@
     <description>Recent content in Posts on 洛七的摸鱼池塘</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Mon, 01 Mar 2021 08:27:27 +0800</lastBuildDate><atom:link href="https://Lu0key.github.io/post/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Thu, 04 Mar 2021 00:20:24 +0800</lastBuildDate><atom:link href="https://Lu0key.github.io/post/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Test</title>
+      <link>https://Lu0key.github.io/post/test/</link>
+      <pubDate>Thu, 04 Mar 2021 00:20:24 +0800</pubDate>
+      
+      <guid>https://Lu0key.github.io/post/test/</guid>
+      <description>测试 Github 的免费图床 这个是图片用https://carbon.now.sh/生成的
+别的搜到的一些不太喜欢,比如http://www.planetb.ca/syntax-highlight-word
+vscode 有个插件 Polacode，但是不知道为什么没用成功，下次再试试，左上角三个点是模仿苹果的，Polacode没有这三个点，好了先到这里，晚安
+如果图床好用了，明天就谢谢listings的笔记</description>
+    </item>
+    
     <item>
       <title>王道考研 数据结构 查找</title>
       <link>https://Lu0key.github.io/post/%E7%8E%8B%E9%81%93%E8%80%83%E7%A0%94-%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84-%E6%9F%A5%E6%89%BE/</link>
