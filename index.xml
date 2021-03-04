@@ -6,17 +6,38 @@
     <description>Recent content on 洛七的摸鱼池塘</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Thu, 04 Mar 2021 00:20:24 +0800</lastBuildDate><atom:link href="https://Lu0key.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Thu, 04 Mar 2021 19:37:06 +0800</lastBuildDate><atom:link href="https://Lu0key.github.io/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>Test</title>
-      <link>https://Lu0key.github.io/post/test/</link>
+      <title>Listings 笔记</title>
+      <link>https://Lu0key.github.io/post/listings-%E7%AC%94%E8%AE%B0/</link>
+      <pubDate>Thu, 04 Mar 2021 19:37:06 +0800</pubDate>
+      
+      <guid>https://Lu0key.github.io/post/listings-%E7%AC%94%E8%AE%B0/</guid>
+      <description>listings 笔记 虽然是使用listings宏包，但是在使用环境的时候是使用lstlisting
+basicstyle = &amp;lt;basic style&amp;gt;
+可以在每个列表的开头选择. 你可以使用 \footnotesize, \small, \itshape, \ttfamily,或者其他的. The last token of &amp;lt;basic style&amp;gt; 的最后一个标记不能读取以下任何字符(这一句翻译的怪怪的).
+如果你发现你的代码没有自动换行，可以加上这句
+breaklines=true 我们再设定一下代码块的语言和样式
+language=Java, keywordstyle={\bfseries\color{NavyBlue}} 这边要把xcolor宏包引入
+如果你觉得listings自带的关键字不够，可以自己手动添加关键字
+morekeywords={String} 有些不是关键字，但是是重要的类，可以使用强调(同样的，想要强调明显，也需要给强调设置样式)
+emph={Controller,@RequestParam,CommonsMultipartFile,HttpServletRequest,IOException,@Controller,OutputStream, InputStream, @RequestMapping, HttpServletResponse,@PostMapping,File}, emphstyle={\bfseries\color{Tan}} 这时候我们会发现不仅下面的代码强调了，连导入的包中对应的词都强调了，这是我们不想看见的，因此我们可以使用
+alsoletter{.} 这样前面有点的强调字就不会被记录在被强调的里面了
+效果如图
+除此之外，我们还可以设置这些
+backgroundcolor={\color{yellow!40!white}}, % 设置背景颜色 frame=shadowbox, % 设置边框 rulecolor={\color{purple}}, % 设置边框线条颜色 rulesepcolor={\color{orange}}, % 设置边框线条和代码块间的颜色 framesep=1em, % 设置代码块和边框的距离 numbers=left, % 设置代码行数的位置 numbersep=2em, % 设置代码行数离代码的距离 numberstyle={\sffamily\footnotesize} % 设置代码行数的样式 最后的效果如图所示， 如果我们需要写很多的代码块，那我们可以把公共的部分放在最前面的 \lstset 中</description>
+    </item>
+    
+    <item>
+      <title>Test Image Bed</title>
+      <link>https://Lu0key.github.io/post/test-image-bed/</link>
       <pubDate>Thu, 04 Mar 2021 00:20:24 +0800</pubDate>
       
-      <guid>https://Lu0key.github.io/post/test/</guid>
+      <guid>https://Lu0key.github.io/post/test-image-bed/</guid>
       <description>测试 Github 的免费图床 这个是图片用https://carbon.now.sh/生成的
 别的搜到的一些不太喜欢,比如http://www.planetb.ca/syntax-highlight-word
 vscode 有个插件 Polacode，但是不知道为什么没用成功，下次再试试，左上角三个点是模仿苹果的，Polacode没有这三个点，好了先到这里，晚安
-如果图床好用了，明天就谢谢listings的笔记</description>
+如果图床好用了，明天就写listings的笔记</description>
     </item>
     
     <item>

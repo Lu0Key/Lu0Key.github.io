@@ -1,0 +1,134 @@
+<!doctype html>
+<html lang="en-us">
+
+<head>
+    
+    <title>Listings 笔记 // 洛七的摸鱼池塘</title>
+    <link rel="shortcut icon" href="%20/favicon.ico%20" />
+    <meta charset="utf-8" /> <meta name="generator" content="Hugo 0.80.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="author" content="洛七" />
+    <meta name="description" content="" /> <link rel="stylesheet" href="https://Lu0key.github.io/css/main.min.88e7083eff65effb7485b6e6f38d10afbec25093a6fac42d734ce9024d3defbd.css" />  <meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Listings 笔记"/>
+<meta name="twitter:description" content="listings 笔记 虽然是使用listings宏包，但是在使用环境的时候是使用lstlisting
+basicstyle = &lt;basic style&gt;
+可以在每个列表的开头选择. 你可以使用 \footnotesize, \small, \itshape, \ttfamily,或者其他的. The last token of &lt;basic style&gt; 的最后一个标记不能读取以下任何字符(这一句翻译的怪怪的).
+如果你发现你的代码没有自动换行，可以加上这句
+breaklines=true 我们再设定一下代码块的语言和样式
+language=Java, keywordstyle={\bfseries\color{NavyBlue}} 这边要把xcolor宏包引入
+如果你觉得listings自带的关键字不够，可以自己手动添加关键字
+morekeywords={String} 有些不是关键字，但是是重要的类，可以使用强调(同样的，想要强调明显，也需要给强调设置样式)
+emph={Controller,@RequestParam,CommonsMultipartFile,HttpServletRequest,IOException,@Controller,OutputStream, InputStream, @RequestMapping, HttpServletResponse,@PostMapping,File}, emphstyle={\bfseries\color{Tan}} 这时候我们会发现不仅下面的代码强调了，连导入的包中对应的词都强调了，这是我们不想看见的，因此我们可以使用
+alsoletter{.} 这样前面有点的强调字就不会被记录在被强调的里面了
+效果如图
+除此之外，我们还可以设置这些
+backgroundcolor={\color{yellow!40!white}}, % 设置背景颜色 frame=shadowbox, % 设置边框 rulecolor={\color{purple}}, % 设置边框线条颜色 rulesepcolor={\color{orange}}, % 设置边框线条和代码块间的颜色 framesep=1em, % 设置代码块和边框的距离 numbers=left, % 设置代码行数的位置 numbersep=2em, % 设置代码行数离代码的距离 numberstyle={\sffamily\footnotesize} % 设置代码行数的样式 最后的效果如图所示， 如果我们需要写很多的代码块，那我们可以把公共的部分放在最前面的 \lstset 中"/>
+ <meta property="og:title" content="Listings 笔记" />
+<meta property="og:description" content="listings 笔记 虽然是使用listings宏包，但是在使用环境的时候是使用lstlisting
+basicstyle = &lt;basic style&gt;
+可以在每个列表的开头选择. 你可以使用 \footnotesize, \small, \itshape, \ttfamily,或者其他的. The last token of &lt;basic style&gt; 的最后一个标记不能读取以下任何字符(这一句翻译的怪怪的).
+如果你发现你的代码没有自动换行，可以加上这句
+breaklines=true 我们再设定一下代码块的语言和样式
+language=Java, keywordstyle={\bfseries\color{NavyBlue}} 这边要把xcolor宏包引入
+如果你觉得listings自带的关键字不够，可以自己手动添加关键字
+morekeywords={String} 有些不是关键字，但是是重要的类，可以使用强调(同样的，想要强调明显，也需要给强调设置样式)
+emph={Controller,@RequestParam,CommonsMultipartFile,HttpServletRequest,IOException,@Controller,OutputStream, InputStream, @RequestMapping, HttpServletResponse,@PostMapping,File}, emphstyle={\bfseries\color{Tan}} 这时候我们会发现不仅下面的代码强调了，连导入的包中对应的词都强调了，这是我们不想看见的，因此我们可以使用
+alsoletter{.} 这样前面有点的强调字就不会被记录在被强调的里面了
+效果如图
+除此之外，我们还可以设置这些
+backgroundcolor={\color{yellow!40!white}}, % 设置背景颜色 frame=shadowbox, % 设置边框 rulecolor={\color{purple}}, % 设置边框线条颜色 rulesepcolor={\color{orange}}, % 设置边框线条和代码块间的颜色 framesep=1em, % 设置代码块和边框的距离 numbers=left, % 设置代码行数的位置 numbersep=2em, % 设置代码行数离代码的距离 numberstyle={\sffamily\footnotesize} % 设置代码行数的样式 最后的效果如图所示， 如果我们需要写很多的代码块，那我们可以把公共的部分放在最前面的 \lstset 中" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://Lu0key.github.io/post/listings-%E7%AC%94%E8%AE%B0/" />
+<meta property="article:published_time" content="2021-03-04T19:37:06+08:00" />
+<meta property="article:modified_time" content="2021-03-04T19:37:06+08:00" />
+
+
+</head>
+
+<body>
+    <header class="app-header">
+        <a href="https://Lu0key.github.io/"><img class="app-header-avatar" src="/avatar.jpg" alt="洛七" /></a>
+        <h1>洛七的摸鱼池塘</h1>
+        <nav class="app-header-menu">
+            <a class="app-header-menu-item" href="/tags/">Tags</a>
+        </nav>
+        <p>即将没书读的咸鱼</p>
+        <div class="app-header-social">
+            
+        </div>
+    </header>
+    <main class="app-container">
+        
+  <article class="post">
+    <header class="post-header">
+      <h1 class ="post-title">Listings 笔记</h1>
+      <div class="post-meta">
+        <div>
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-calendar">
+  <title>calendar</title>
+  <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line>
+</svg>
+          Mar 4, 2021
+        </div>
+        <div>
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-clock">
+  <title>clock</title>
+  <circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline>
+</svg>
+          1 min read
+        </div>
+        <div>
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-tag">
+  <title>tag</title>
+  <path d="M20.59 13.41l-7.17 7.17a2 2 0 0 1-2.83 0L2 12V2h10l8.59 8.59a2 2 0 0 1 0 2.82z"></path><line x1="7" y1="7" x2="7" y2="7"></line>
+</svg>
+              <a class="tag" href="https://Lu0key.github.io/tags/latex/">LaTeX</a>
+        </div>
+      </div>
+    </header>
+    <div class="post-content">
+      <h1 id="listings-笔记">listings 笔记</h1>
+<p>虽然是使用listings宏包，但是在使用环境的时候是使用lstlisting</p>
+<p>basicstyle = &lt;basic style&gt;<br>
+可以在每个列表的开头选择. 你可以使用 <code>\footnotesize</code>, <code>\small</code>, <code>\itshape</code>, <code>\ttfamily</code>,或者其他的. The last token of
+&lt;basic style&gt; 的最后一个标记不能读取以下任何字符(这一句翻译的怪怪的).</p>
+<p>如果你发现你的代码没有自动换行，可以加上这句</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-tex" data-lang="tex">breaklines=true
+</code></pre></div><p>我们再设定一下代码块的语言和样式</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-tex" data-lang="tex">language=Java,
+keywordstyle={<span style="color:#66d9ef">\bfseries\color</span>{NavyBlue}}
+</code></pre></div><p>这边要把xcolor宏包引入</p>
+<p>如果你觉得listings自带的关键字不够，可以自己手动添加关键字</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-tex" data-lang="tex">morekeywords={String}
+</code></pre></div><p>有些不是关键字，但是是重要的类，可以使用强调(同样的，想要强调明显，也需要给强调设置样式)</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-tex" data-lang="tex">emph={Controller,@RequestParam,CommonsMultipartFile,HttpServletRequest,IOException,@Controller,OutputStream, InputStream, @RequestMapping, HttpServletResponse,@PostMapping,File},
+emphstyle={<span style="color:#66d9ef">\bfseries\color</span>{Tan}}
+</code></pre></div><p>这时候我们会发现不仅下面的代码强调了，连导入的包中对应的词都强调了，这是我们不想看见的，因此我们可以使用</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-tex" data-lang="tex">alsoletter{.}
+</code></pre></div><p>这样前面有点的强调字就不会被记录在被强调的里面了</p>
+<p><img src="https://raw.githubusercontent.com/Lu0Key/hexo-image/master/imags/2021/20210304204149.png" alt="图裂了"></p>
+<p>效果如图</p>
+<p><img src="https://raw.githubusercontent.com/Lu0Key/hexo-image/master/imags/2021/20210304204427.png" alt="图裂了"></p>
+<p>除此之外，我们还可以设置这些</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-tex" data-lang="tex">backgroundcolor={<span style="color:#66d9ef">\color</span>{yellow!40!white}},  <span style="color:#75715e">% 设置背景颜色
+</span><span style="color:#75715e"></span>frame=shadowbox,                            <span style="color:#75715e">% 设置边框
+</span><span style="color:#75715e"></span>rulecolor={<span style="color:#66d9ef">\color</span>{purple}},                 <span style="color:#75715e">% 设置边框线条颜色
+</span><span style="color:#75715e"></span>rulesepcolor={<span style="color:#66d9ef">\color</span>{orange}},              <span style="color:#75715e">% 设置边框线条和代码块间的颜色
+</span><span style="color:#75715e"></span>framesep=1em,                               <span style="color:#75715e">% 设置代码块和边框的距离
+</span><span style="color:#75715e"></span>numbers=left,                               <span style="color:#75715e">% 设置代码行数的位置
+</span><span style="color:#75715e"></span>numbersep=2em,                              <span style="color:#75715e">% 设置代码行数离代码的距离
+</span><span style="color:#75715e"></span>numberstyle={<span style="color:#66d9ef">\sffamily\footnotesize</span>}        <span style="color:#75715e">% 设置代码行数的样式
+</span></code></pre></div><p>最后的效果如图所示，
+<img src="https://raw.githubusercontent.com/Lu0Key/hexo-image/master/imags/2021/20210304204847.png" alt="图裂了"></p>
+<p>如果我们需要写很多的代码块，那我们可以把公共的部分放在最前面的 <code>\lstset</code> 中</p>
+
+    </div>
+    <div class="post-footer">
+      
+    </div>
+  </article>
+
+    </main>
+</body>
+
+</html>
