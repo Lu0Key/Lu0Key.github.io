@@ -25,7 +25,9 @@ emph={Controller,@RequestParam,CommonsMultipartFile,HttpServletRequest,IOExcepti
 alsoletter{.} 这样前面有点的强调字就不会被记录在被强调的里面了
 效果如图
 除此之外，我们还可以设置这些
-backgroundcolor={\color{yellow!40!white}}, % 设置背景颜色 frame=shadowbox, % 设置边框 rulecolor={\color{purple}}, % 设置边框线条颜色 rulesepcolor={\color{orange}}, % 设置边框线条和代码块间的颜色 framesep=1em, % 设置代码块和边框的距离 numbers=left, % 设置代码行数的位置 numbersep=2em, % 设置代码行数离代码的距离 numberstyle={\sffamily\footnotesize} % 设置代码行数的样式 最后的效果如图所示， 如果我们需要写很多的代码块，那我们可以把公共的部分放在最前面的 \lstset 中</description>
+backgroundcolor={\color{yellow!40!white}}, % 设置背景颜色 frame=shadowbox, % 设置边框 rulecolor={\color{purple}}, % 设置边框线条颜色 rulesepcolor={\color{orange}}, % 设置边框线条和代码块间的颜色 framesep=1em, % 设置代码块和边框的距离 numbers=left, % 设置代码行数的位置 numbersep=2em, % 设置代码行数离代码的距离 numberstyle={\sffamily\footnotesize} % 设置代码行数的样式 最后的效果如图所示， 如果我们需要写很多的代码块，那我们可以把公共的部分放在最前面的 \lstset 中
+listings的demo
+\begin{lstlisting}[ basicstyle=\ttfamily, breaklines=true, language=Java, morekeywords={String}, keywordstyle={\bfseries\color{NavyBlue}}, emph={Controller,@RequestParam,CommonsMultipartFile,HttpServletRequest,IOException,@Controller, OutputStream, InputStream, @RequestMapping, HttpServletResponse,@PostMapping,File}, emphstyle={\bfseries\color{Tan}}, alsoletter={.</description>
     </item>
     
   </channel>

@@ -22,7 +22,9 @@ emph={Controller,@RequestParam,CommonsMultipartFile,HttpServletRequest,IOExcepti
 alsoletter{.} 这样前面有点的强调字就不会被记录在被强调的里面了
 效果如图
 除此之外，我们还可以设置这些
-backgroundcolor={\color{yellow!40!white}}, % 设置背景颜色 frame=shadowbox, % 设置边框 rulecolor={\color{purple}}, % 设置边框线条颜色 rulesepcolor={\color{orange}}, % 设置边框线条和代码块间的颜色 framesep=1em, % 设置代码块和边框的距离 numbers=left, % 设置代码行数的位置 numbersep=2em, % 设置代码行数离代码的距离 numberstyle={\sffamily\footnotesize} % 设置代码行数的样式 最后的效果如图所示， 如果我们需要写很多的代码块，那我们可以把公共的部分放在最前面的 \lstset 中"/>
+backgroundcolor={\color{yellow!40!white}}, % 设置背景颜色 frame=shadowbox, % 设置边框 rulecolor={\color{purple}}, % 设置边框线条颜色 rulesepcolor={\color{orange}}, % 设置边框线条和代码块间的颜色 framesep=1em, % 设置代码块和边框的距离 numbers=left, % 设置代码行数的位置 numbersep=2em, % 设置代码行数离代码的距离 numberstyle={\sffamily\footnotesize} % 设置代码行数的样式 最后的效果如图所示， 如果我们需要写很多的代码块，那我们可以把公共的部分放在最前面的 \lstset 中
+listings的demo
+\begin{lstlisting}[ basicstyle=\ttfamily, breaklines=true, language=Java, morekeywords={String}, keywordstyle={\bfseries\color{NavyBlue}}, emph={Controller,@RequestParam,CommonsMultipartFile,HttpServletRequest,IOException,@Controller, OutputStream, InputStream, @RequestMapping, HttpServletResponse,@PostMapping,File}, emphstyle={\bfseries\color{Tan}}, alsoletter={."/>
  <meta property="og:title" content="Listings 笔记" />
 <meta property="og:description" content="listings 笔记 虽然是使用listings宏包，但是在使用环境的时候是使用lstlisting
 basicstyle = &lt;basic style&gt;
@@ -36,7 +38,9 @@ emph={Controller,@RequestParam,CommonsMultipartFile,HttpServletRequest,IOExcepti
 alsoletter{.} 这样前面有点的强调字就不会被记录在被强调的里面了
 效果如图
 除此之外，我们还可以设置这些
-backgroundcolor={\color{yellow!40!white}}, % 设置背景颜色 frame=shadowbox, % 设置边框 rulecolor={\color{purple}}, % 设置边框线条颜色 rulesepcolor={\color{orange}}, % 设置边框线条和代码块间的颜色 framesep=1em, % 设置代码块和边框的距离 numbers=left, % 设置代码行数的位置 numbersep=2em, % 设置代码行数离代码的距离 numberstyle={\sffamily\footnotesize} % 设置代码行数的样式 最后的效果如图所示， 如果我们需要写很多的代码块，那我们可以把公共的部分放在最前面的 \lstset 中" />
+backgroundcolor={\color{yellow!40!white}}, % 设置背景颜色 frame=shadowbox, % 设置边框 rulecolor={\color{purple}}, % 设置边框线条颜色 rulesepcolor={\color{orange}}, % 设置边框线条和代码块间的颜色 framesep=1em, % 设置代码块和边框的距离 numbers=left, % 设置代码行数的位置 numbersep=2em, % 设置代码行数离代码的距离 numberstyle={\sffamily\footnotesize} % 设置代码行数的样式 最后的效果如图所示， 如果我们需要写很多的代码块，那我们可以把公共的部分放在最前面的 \lstset 中
+listings的demo
+\begin{lstlisting}[ basicstyle=\ttfamily, breaklines=true, language=Java, morekeywords={String}, keywordstyle={\bfseries\color{NavyBlue}}, emph={Controller,@RequestParam,CommonsMultipartFile,HttpServletRequest,IOException,@Controller, OutputStream, InputStream, @RequestMapping, HttpServletResponse,@PostMapping,File}, emphstyle={\bfseries\color{Tan}}, alsoletter={." />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://Lu0key.github.io/post/listings-%E7%AC%94%E8%AE%B0/" />
 <meta property="article:published_time" content="2021-03-04T19:37:06+08:00" />
@@ -75,7 +79,7 @@ backgroundcolor={\color{yellow!40!white}}, % 设置背景颜色 frame=shadowbox,
   <title>clock</title>
   <circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline>
 </svg>
-          1 min read
+          2 min read
         </div>
         <div>
           <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-tag">
@@ -88,7 +92,7 @@ backgroundcolor={\color{yellow!40!white}}, % 设置背景颜色 frame=shadowbox,
     </header>
     <div class="post-content">
       <h1 id="listings-笔记">listings 笔记</h1>
-<p>虽然是使用listings宏包，但是在使用环境的时候是使用lstlisting</p>
+<p>虽然是使用<code>listings</code>宏包，但是在使用环境的时候是使用<code>lstlisting</code></p>
 <p>basicstyle = &lt;basic style&gt;<br>
 可以在每个列表的开头选择. 你可以使用 <code>\footnotesize</code>, <code>\small</code>, <code>\itshape</code>, <code>\ttfamily</code>,或者其他的. The last token of
 &lt;basic style&gt; 的最后一个标记不能读取以下任何字符(这一句翻译的怪怪的).</p>
@@ -121,7 +125,125 @@ emphstyle={<span style="color:#66d9ef">\bfseries\color</span>{Tan}}
 </span></code></pre></div><p>最后的效果如图所示，
 <img src="https://raw.githubusercontent.com/Lu0Key/hexo-image/master/imags/2021/20210304204847.png" alt="图裂了"></p>
 <p>如果我们需要写很多的代码块，那我们可以把公共的部分放在最前面的 <code>\lstset</code> 中</p>
+<p>listings的demo</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-tex" data-lang="tex"><span style="color:#66d9ef">\begin</span>{lstlisting}[
+    basicstyle=<span style="color:#66d9ef">\ttfamily</span>,
+    breaklines=true,
+    language=Java,
+    morekeywords={String},
+    keywordstyle={<span style="color:#66d9ef">\bfseries\color</span>{NavyBlue}},
+    emph={Controller,@RequestParam,CommonsMultipartFile,HttpServletRequest,IOException,@Controller,
+    OutputStream, InputStream, @RequestMapping, HttpServletResponse,@PostMapping,File},
+    emphstyle={<span style="color:#66d9ef">\bfseries\color</span>{Tan}},
+    alsoletter={.},
+    backgroundcolor={<span style="color:#66d9ef">\color</span>{yellow!40!white}},  <span style="color:#75715e">% 设置背景颜色
+</span><span style="color:#75715e"></span>    frame=shadowbox,                            <span style="color:#75715e">% 设置边框
+</span><span style="color:#75715e"></span>    rulecolor={<span style="color:#66d9ef">\color</span>{purple}},                 <span style="color:#75715e">% 设置边框线条颜色
+</span><span style="color:#75715e"></span>    rulesepcolor={<span style="color:#66d9ef">\color</span>{orange}},              <span style="color:#75715e">% 设置边框线条和代码块间的颜色
+</span><span style="color:#75715e"></span>    framesep=1em,                               <span style="color:#75715e">% 设置代码块和边框的距离
+</span><span style="color:#75715e"></span>    numbers=left,                               <span style="color:#75715e">% 设置代码行数的位置
+</span><span style="color:#75715e"></span>    numbersep=2em,                              <span style="color:#75715e">% 设置代码行数离代码的距离
+</span><span style="color:#75715e"></span>    numberstyle={<span style="color:#66d9ef">\sffamily\footnotesize</span>}        <span style="color:#75715e">% 设置代码行数的样式
+</span><span style="color:#75715e"></span>]
+package com.luo.controller;
 
+
+import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.multipart.commons.CommonsMultipartFile;
+
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+import java.io.*;
+import java.net.URLEncoder;
+import java.nio.charset.StandardCharsets;
+
+@Controller
+public class FileController {
+
+
+    @PostMapping(&#34;/upload&#34;)
+    public String upload(@RequestParam(&#34;file&#34;) CommonsMultipartFile file, HttpServletRequest request) throws IOException {
+
+        // 获取文件名：file.getOriginalFilename();
+        String uploadFileName = file.getOriginalFilename();
+
+        // 如果文件名为空，直接回到首页
+        if(&#34;&#34;.equals(uploadFileName)||uploadFileName == null){
+            return &#34;redirect:/index.jsp&#34;;
+        }
+        System.out.println(&#34;上传文件名为：&#34;+uploadFileName);
+
+        // 上传文件路径保存设置
+        //String path = request.getRealPath(&#34;/upload&#34;);
+        String path = request.getSession().getServletContext().getRealPath(&#34;/upload&#34;);
+
+        // 如果路径不存在，创建一个
+        File realPath = new File(path);
+        if(!realPath.exists()){
+            boolean mkdir = realPath.mkdir();
+            if (!mkdir) return &#34;redirect:/index.jsp&#34;;
+        }
+        System.out.println(&#34;上传文件保存地址：&#34;+realPath);
+
+        // 文件输入流
+        InputStream is = file.getInputStream();
+
+        // 文件输出流
+        OutputStream os = new FileOutputStream(new File(realPath,uploadFileName));
+
+        // 读取写出
+        int len=0;
+        byte[] buffer = new byte[1024];
+        while ((len= is.read(buffer))!=-1){
+            os.write(buffer,0,len);
+            os.flush();
+        }
+        os.close();
+        return &#34;redirect:/index.jsp&#34;;
+    }
+
+    @RequestMapping(&#34;/download&#34;)
+    public String downloads(HttpServletRequest request,HttpServletResponse response) throws IOException {
+        // 要下载的图片地址
+        String path = request.getSession().getServletContext().getRealPath(&#34;/upload&#34;);
+        String filename = &#34;18R.py&#34;;
+
+        // 1. 设置 response 响应头
+        // 设置页面不缓存，清空buffer
+        response.reset();
+        // 字符编码
+        response.setCharacterEncoding(&#34;UTF-8&#34;);
+        // 二进制传输数据
+        response.setContentType(&#34;multipart/form-data&#34;);
+        // 设置响应头
+        response.setHeader(&#34;Content-Disposition&#34;,
+                &#34;attachment;filename=&#34;+ URLEncoder.encode(filename, StandardCharsets.UTF_8));
+
+        File file = new File(path,filename);
+        // 2. 读文件--输入流
+        InputStream input = new FileInputStream(file);
+        // 3. 写出文件--输出流
+        OutputStream output = response.getOutputStream();
+
+        byte[] buffer = new byte[1024];
+        int index=0;
+        // 4. 执行写出操作
+        while((index=input.read(buffer))!=-1){
+            output.write(buffer,0,index);
+            output.flush();
+        }
+        output.close();
+        input.close();
+        return null;
+    }
+}
+
+<span style="color:#66d9ef">\end</span>{lstlisting}
+
+</code></pre></div>
     </div>
     <div class="post-footer">
       
