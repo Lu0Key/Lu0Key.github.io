@@ -1,0 +1,162 @@
+<!doctype html>
+<html lang="en-us">
+
+<head>
+    
+    <title>Leetcode 49 Group Anagrams // 洛七的摸鱼池塘</title>
+    <link rel="shortcut icon" href="%20/favicon.ico%20" />
+    <meta charset="utf-8" /> <meta name="generator" content="Hugo 0.80.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="author" content="洛七" />
+    <meta name="description" content="" /> <link rel="stylesheet" href="https://Lu0key.github.io/css/main.min.88e7083eff65effb7485b6e6f38d10afbec25093a6fac42d734ce9024d3defbd.css" />  <meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Leetcode 49 Group Anagrams"/>
+<meta name="twitter:description" content="字母异位词分组(Group Anagrams) 给定一个字符串数组，将字母异位词组合在一起。字母异位词指字母相同，但排列不同的字符串。
+示例:
+输入: [&quot;eat&quot;, &quot;tea&quot;, &quot;tan&quot;, &quot;ate&quot;, &quot;nat&quot;, &quot;bat&quot;] 输出: [ [&quot;ate&quot;,&quot;eat&quot;,&quot;tea&quot;], [&quot;nat&quot;,&quot;tan&quot;], [&quot;bat&quot;] ] 说明：
+ 所有输入均为小写字母。 不考虑答案输出的顺序。  C语言版:
+/** * Return an array of arrays of size *returnSize. * The sizes of the arrays are returned as *returnColumnSizes array. * Note: Both returned array and *columnSizes array must be malloced, assume caller calls free(). */ int cmpChar(const void*a ,const void *b){ return *(const char*)a - *(const char *)b; } typedef struct { char * original; char * sorted; }Pair; int cmpPair(const void * a, const void * b){ const Pair * pa = (const Pair *)a; const Pair * pb = (const Pair *)b; return strcmp(pa-&gt;sorted, pb-&gt;sorted); } char *** groupAnagrams(char ** strs, int strsSize, int* returnSize, int** returnColumnSizes){ Pair* pairs = malloc(sizeof(Pair)*strsSize); for(int i =0;i&lt;strsSize;i&#43;&#43;){ char *sorted_str = malloc(sizeof(char)*strlen(strs[i])&#43;1); strcpy(sorted_str,strs[i]); qsort(sorted_str, strlen(strs[i]),sizeof(char),cmpChar); pairs[i]."/>
+ <meta property="og:title" content="Leetcode 49 Group Anagrams" />
+<meta property="og:description" content="字母异位词分组(Group Anagrams) 给定一个字符串数组，将字母异位词组合在一起。字母异位词指字母相同，但排列不同的字符串。
+示例:
+输入: [&quot;eat&quot;, &quot;tea&quot;, &quot;tan&quot;, &quot;ate&quot;, &quot;nat&quot;, &quot;bat&quot;] 输出: [ [&quot;ate&quot;,&quot;eat&quot;,&quot;tea&quot;], [&quot;nat&quot;,&quot;tan&quot;], [&quot;bat&quot;] ] 说明：
+ 所有输入均为小写字母。 不考虑答案输出的顺序。  C语言版:
+/** * Return an array of arrays of size *returnSize. * The sizes of the arrays are returned as *returnColumnSizes array. * Note: Both returned array and *columnSizes array must be malloced, assume caller calls free(). */ int cmpChar(const void*a ,const void *b){ return *(const char*)a - *(const char *)b; } typedef struct { char * original; char * sorted; }Pair; int cmpPair(const void * a, const void * b){ const Pair * pa = (const Pair *)a; const Pair * pb = (const Pair *)b; return strcmp(pa-&gt;sorted, pb-&gt;sorted); } char *** groupAnagrams(char ** strs, int strsSize, int* returnSize, int** returnColumnSizes){ Pair* pairs = malloc(sizeof(Pair)*strsSize); for(int i =0;i&lt;strsSize;i&#43;&#43;){ char *sorted_str = malloc(sizeof(char)*strlen(strs[i])&#43;1); strcpy(sorted_str,strs[i]); qsort(sorted_str, strlen(strs[i]),sizeof(char),cmpChar); pairs[i]." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://Lu0key.github.io/post/leetcode-49-group-anagrams/" />
+<meta property="article:published_time" content="2021-03-16T16:50:13+08:00" />
+<meta property="article:modified_time" content="2021-03-16T16:50:13+08:00" />
+
+
+</head>
+
+<body>
+    <header class="app-header">
+        <a href="https://Lu0key.github.io/"><img class="app-header-avatar" src="/avatar.jpg" alt="洛七" /></a>
+        <h1>洛七的摸鱼池塘</h1>
+        <nav class="app-header-menu">
+            <a class="app-header-menu-item" href="/tags/">Tags</a>
+        </nav>
+        <p>即将没书读的咸鱼</p>
+        <div class="app-header-social">
+            
+        </div>
+    </header>
+    <main class="app-container">
+        
+  <article class="post">
+    <header class="post-header">
+      <h1 class ="post-title">Leetcode 49 Group Anagrams</h1>
+      <div class="post-meta">
+        <div>
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-calendar">
+  <title>calendar</title>
+  <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line>
+</svg>
+          Mar 16, 2021
+        </div>
+        <div>
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-clock">
+  <title>clock</title>
+  <circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline>
+</svg>
+          2 min read
+        </div>
+        <div>
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-tag">
+  <title>tag</title>
+  <path d="M20.59 13.41l-7.17 7.17a2 2 0 0 1-2.83 0L2 12V2h10l8.59 8.59a2 2 0 0 1 0 2.82z"></path><line x1="7" y1="7" x2="7" y2="7"></line>
+</svg>
+              <a class="tag" href="https://Lu0key.github.io/tags/leetcode/">leetcode</a>
+        </div>
+      </div>
+    </header>
+    <div class="post-content">
+      <h1 id="字母异位词分组group-anagramshttpsleetcode-cncomproblemsgroup-anagrams"><a href="https://leetcode-cn.com/problems/group-anagrams/">字母异位词分组(Group Anagrams)</a></h1>
+<p>给定一个字符串数组，将字母异位词组合在一起。字母异位词指字母相同，但排列不同的字符串。</p>
+<p><strong>示例:</strong></p>
+<pre><code>输入: [&quot;eat&quot;, &quot;tea&quot;, &quot;tan&quot;, &quot;ate&quot;, &quot;nat&quot;, &quot;bat&quot;]
+输出:
+[
+  [&quot;ate&quot;,&quot;eat&quot;,&quot;tea&quot;],
+  [&quot;nat&quot;,&quot;tan&quot;],
+  [&quot;bat&quot;]
+]
+</code></pre><p><strong>说明：</strong></p>
+<ul>
+<li>所有输入均为小写字母。</li>
+<li>不考虑答案输出的顺序。</li>
+</ul>
+<p><strong>C语言版:</strong></p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c" data-lang="c"><span style="color:#75715e">/**
+</span><span style="color:#75715e"> * Return an array of arrays of size *returnSize.
+</span><span style="color:#75715e"> * The sizes of the arrays are returned as *returnColumnSizes array.
+</span><span style="color:#75715e"> * Note: Both returned array and *columnSizes array must be malloced, assume caller calls free().
+</span><span style="color:#75715e"> */</span>
+
+<span style="color:#66d9ef">int</span> <span style="color:#a6e22e">cmpChar</span>(<span style="color:#66d9ef">const</span> <span style="color:#66d9ef">void</span><span style="color:#f92672">*</span>a ,<span style="color:#66d9ef">const</span> <span style="color:#66d9ef">void</span> <span style="color:#f92672">*</span>b){
+    <span style="color:#66d9ef">return</span> <span style="color:#f92672">*</span>(<span style="color:#66d9ef">const</span> <span style="color:#66d9ef">char</span><span style="color:#f92672">*</span>)a <span style="color:#f92672">-</span> <span style="color:#f92672">*</span>(<span style="color:#66d9ef">const</span> <span style="color:#66d9ef">char</span> <span style="color:#f92672">*</span>)b;
+}
+
+<span style="color:#66d9ef">typedef</span> <span style="color:#66d9ef">struct</span> {
+    <span style="color:#66d9ef">char</span> <span style="color:#f92672">*</span> original;
+    <span style="color:#66d9ef">char</span> <span style="color:#f92672">*</span> sorted;
+}Pair;
+
+<span style="color:#66d9ef">int</span> <span style="color:#a6e22e">cmpPair</span>(<span style="color:#66d9ef">const</span> <span style="color:#66d9ef">void</span> <span style="color:#f92672">*</span> a, <span style="color:#66d9ef">const</span> <span style="color:#66d9ef">void</span> <span style="color:#f92672">*</span> b){
+    <span style="color:#66d9ef">const</span> Pair <span style="color:#f92672">*</span> pa <span style="color:#f92672">=</span> (<span style="color:#66d9ef">const</span> Pair <span style="color:#f92672">*</span>)a;
+    <span style="color:#66d9ef">const</span> Pair <span style="color:#f92672">*</span> pb <span style="color:#f92672">=</span> (<span style="color:#66d9ef">const</span> Pair <span style="color:#f92672">*</span>)b;
+    <span style="color:#66d9ef">return</span> strcmp(pa<span style="color:#f92672">-&gt;</span>sorted, pb<span style="color:#f92672">-&gt;</span>sorted);
+}
+
+<span style="color:#66d9ef">char</span> <span style="color:#f92672">***</span> <span style="color:#a6e22e">groupAnagrams</span>(<span style="color:#66d9ef">char</span> <span style="color:#f92672">**</span> strs, <span style="color:#66d9ef">int</span> strsSize, <span style="color:#66d9ef">int</span><span style="color:#f92672">*</span> returnSize, <span style="color:#66d9ef">int</span><span style="color:#f92672">**</span> returnColumnSizes){
+    Pair<span style="color:#f92672">*</span> pairs <span style="color:#f92672">=</span> malloc(<span style="color:#66d9ef">sizeof</span>(Pair)<span style="color:#f92672">*</span>strsSize);
+
+    <span style="color:#66d9ef">for</span>(<span style="color:#66d9ef">int</span> i <span style="color:#f92672">=</span><span style="color:#ae81ff">0</span>;i<span style="color:#f92672">&lt;</span>strsSize;i<span style="color:#f92672">++</span>){
+        <span style="color:#66d9ef">char</span> <span style="color:#f92672">*</span>sorted_str <span style="color:#f92672">=</span> malloc(<span style="color:#66d9ef">sizeof</span>(<span style="color:#66d9ef">char</span>)<span style="color:#f92672">*</span>strlen(strs[i])<span style="color:#f92672">+</span><span style="color:#ae81ff">1</span>);
+        strcpy(sorted_str,strs[i]);
+        qsort(sorted_str, strlen(strs[i]),<span style="color:#66d9ef">sizeof</span>(<span style="color:#66d9ef">char</span>),cmpChar);
+
+        pairs[i].original <span style="color:#f92672">=</span> strs[i];
+        pairs[i].sorted <span style="color:#f92672">=</span> sorted_str;
+    }
+
+    qsort(pairs, strsSize, <span style="color:#66d9ef">sizeof</span>(Pair), cmpPair);
+
+    <span style="color:#66d9ef">char</span> <span style="color:#f92672">***</span> returnResult <span style="color:#f92672">=</span> NULL;
+    <span style="color:#f92672">*</span> returnSize <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>;
+    <span style="color:#f92672">*</span> returnColumnSizes <span style="color:#f92672">=</span> NULL;
+
+    <span style="color:#66d9ef">for</span> (<span style="color:#66d9ef">int</span> i <span style="color:#f92672">=</span><span style="color:#ae81ff">0</span>; i<span style="color:#f92672">&lt;</span>strsSize; i<span style="color:#f92672">++</span>){
+        <span style="color:#66d9ef">if</span>(i<span style="color:#f92672">==</span><span style="color:#ae81ff">0</span><span style="color:#f92672">||</span>strcmp(pairs[i].sorted, pairs[i<span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>].sorted) <span style="color:#f92672">!=</span> <span style="color:#ae81ff">0</span>){
+            <span style="color:#66d9ef">int</span> lastGroupIndex <span style="color:#f92672">=</span> <span style="color:#f92672">*</span>returnSize;
+            returnResult <span style="color:#f92672">=</span> realloc(returnResult, <span style="color:#66d9ef">sizeof</span>(<span style="color:#66d9ef">char</span><span style="color:#f92672">**</span>)<span style="color:#f92672">*</span>(<span style="color:#f92672">*</span>returnSize<span style="color:#f92672">+</span><span style="color:#ae81ff">1</span>));
+            returnResult[lastGroupIndex] <span style="color:#f92672">=</span> malloc(<span style="color:#66d9ef">sizeof</span>(<span style="color:#66d9ef">char</span><span style="color:#f92672">*</span>)<span style="color:#f92672">*</span><span style="color:#ae81ff">1</span>);
+            returnResult[lastGroupIndex][<span style="color:#ae81ff">0</span>] <span style="color:#f92672">=</span> pairs[i].original;
+
+            (<span style="color:#f92672">*</span>returnSize)<span style="color:#f92672">++</span>;
+            <span style="color:#f92672">*</span>returnColumnSizes <span style="color:#f92672">=</span> realloc(<span style="color:#f92672">*</span>returnColumnSizes, <span style="color:#66d9ef">sizeof</span>(<span style="color:#66d9ef">int</span>)<span style="color:#f92672">*</span>(<span style="color:#f92672">*</span>returnSize));
+            (<span style="color:#f92672">*</span>returnColumnSizes)[lastGroupIndex] <span style="color:#f92672">=</span> <span style="color:#ae81ff">1</span>; 
+        }
+        <span style="color:#66d9ef">else</span>{
+            <span style="color:#66d9ef">int</span> lastGroupIndex <span style="color:#f92672">=</span> <span style="color:#f92672">*</span>returnSize <span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>;
+            <span style="color:#66d9ef">int</span> lastGroupSize <span style="color:#f92672">=</span> (<span style="color:#f92672">*</span>returnColumnSizes)[lastGroupIndex];
+            returnResult[lastGroupIndex] <span style="color:#f92672">=</span> 
+                    realloc(returnResult[lastGroupIndex], <span style="color:#66d9ef">sizeof</span>(<span style="color:#66d9ef">char</span><span style="color:#f92672">*</span>)<span style="color:#f92672">*</span>(lastGroupSize<span style="color:#f92672">+</span><span style="color:#ae81ff">1</span>));
+            returnResult[lastGroupIndex][lastGroupSize] <span style="color:#f92672">=</span> pairs[i].original;
+            (<span style="color:#f92672">*</span>returnColumnSizes)[lastGroupIndex] <span style="color:#f92672">=</span> lastGroupSize<span style="color:#f92672">+</span><span style="color:#ae81ff">1</span>;
+        }
+    } 
+    <span style="color:#66d9ef">return</span> returnResult;
+}
+</code></pre></div><p>这题比较难，之后再补详细一点的笔记吧，先留着代码</p>
+
+    </div>
+    <div class="post-footer">
+      
+    </div>
+  </article>
+
+    </main>
+</body>
+
+</html>
