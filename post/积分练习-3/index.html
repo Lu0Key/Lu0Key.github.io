@@ -1,0 +1,206 @@
+<!doctype html>
+<html lang="en-us">
+
+<head>
+    
+<script>
+    MathJax = {
+        tex: {
+            inlineMath: [
+                ["$", "$"]
+            ],
+        },
+        displayMath: [
+            ["$$", "$$"],
+            ["\[", "\]"],
+        ],
+        svg: {
+            fontCache: "global",
+        },
+    };
+</script>
+<script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+<script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+
+    <title>积分练习 3 // 洛七的摸鱼池塘</title>
+    <link rel="shortcut icon" href="%20/favicon.ico%20" />
+    <meta charset="utf-8" /> <meta name="generator" content="Hugo 0.80.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="author" content="洛七" />
+    <meta name="description" content="" /> <link rel="stylesheet" href="https://Lu0key.github.io/css/main.min.88e7083eff65effb7485b6e6f38d10afbec25093a6fac42d734ce9024d3defbd.css" />  <meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="积分练习 3"/>
+<meta name="twitter:description" content="积分练习 3 1 $$ I=\int_2^{\infty}\dfrac{e^{-\sqrt{x}}}{(\sqrt{x}-1)^2}\text{d}x $$
+【Sol】:
+$\begin{aligned} I=&amp;\int_{\sqrt{2}}^{\infty}\dfrac{e^{-x}}{(x-1)^2}(2x\text{d}x)\\
+=&amp;2\int_{\sqrt{2}}^{\infty}\dfrac{xe^{-x}}{(x-1)^2}\text{d}x\\
+=&amp;2\int_{\sqrt{2}-1}^{\infty}\dfrac{x&#43;1}{x^2}e^{-x-1}\text{d}x\\
+=&amp;\dfrac{2}{e}\int_{\sqrt{2}-1}^{\infty}(x&#43;1)e^{-x}\text{d}\left(-\dfrac{1}{x}\right)\\
+=&amp;\dfrac{2}{e}\left[-\dfrac{x&#43;1}{x}e^{-x}\bigg|_{\sqrt{2}-1}^{\infty}&#43;\int_{\sqrt{2}-1}^{\infty}\dfrac{1}{x}(-x)e^{-x}\text{d}x\right]\\
+=&amp;\dfrac{2}{e}\left[\dfrac{\sqrt{2}}{\sqrt{2}-1}e^{1-\sqrt{2}}-\int_{\sqrt{2}-1}^{\infty}e^{-x}\text{d}x\right]\\
+=&amp;\dfrac{2}{e}\left[\sqrt{2}(\sqrt{2}&#43;1)e^{1-\sqrt{2}}-e^{1-\sqrt{2}}\right]\\
+=&amp;2(\sqrt{2}&#43;1)e^{-\sqrt{2}} \end{aligned}$
+ 2 $$ I=\int_0^1\dfrac{1}{1&#43;\sqrt{2x\sqrt{1-x^2}}}\text{d}x $$
+【Sol】:
+利用公式
+$$ \int_0^1f(2x\sqrt{1-x^2})\text{d}x=\int_0^1f(1-x^2)\text{d}x $$ 于是有:
+$\begin{aligned} I=&amp;\int_0^1\dfrac{1}{1&#43;\sqrt{1-x^2}}\text{d}x\\
+=&amp;\int_0^{\frac{\pi}{2}}\dfrac{1}{1&#43;\cos x}\text{d}(\sin x)\\
+=&amp;\int_0^{\frac{\pi}{2}}\left[1-\dfrac{1}{1&#43;\cos x}\right]\text{d}x\
+=&amp;\dfrac{\pi}{2}-\dfrac{\sin x}{1&#43;\cos x}\bigg|_{0}^{\frac{\pi}{2}}\
+=&amp;\dfrac{\pi}{2}-1 \end{aligned}$
+ 3 $$ I=\int_{0}^{2\pi}\dfrac{\sin^2x}{5&#43;4\cos x}\text{d}x=\dfrac{\pi}{4} $$
+【Sol】:
+被积函数是周期为 $2\pi$ 的偶函数，因此可以将区间移动到对称区间 $[-\pi,; \pi]$ 上:
+$$ I=\int_{-\pi}^{\pi}\dfrac{\sin^2x}{5&#43;4\cos x}\text{d}x=2\int_{0}^{\pi}\dfrac{\sin^2x}{5&#43;4\cos x}\text{d}x $$
+又余弦函数在 $[0,; \pi]$ 上不对称，因此
+$\begin{aligned} I=&amp;2\left[\int_0^{\frac{\pi}{2}}\dfrac{\sin^2x}{5&#43;\cos x}\text{d}x&#43;\int_{\frac{\pi}{2}}^{\pi}\dfrac{\sin^2x}{5&#43;4\cos x}\text{d}x\right]\\
+=&amp;2\left[\int_0^{\frac{\pi}{2}}\dfrac{\sin^2x}{5&#43;4\cos x}\text{d}x&#43;\int_{0}^{\frac{\pi}{2}}\dfrac{\cos^2x}{5-4\sin x}\text{d}x\right]\\
+=&amp;2\int_0^{\frac{\pi}{2}}\left[\dfrac{\sin^2x}{5&#43;4\cos x}&#43;\dfrac{\sin^2x}{5-4\cos x}\right]\text{d}x\\"/>
+ <meta property="og:title" content="积分练习 3" />
+<meta property="og:description" content="积分练习 3 1 $$ I=\int_2^{\infty}\dfrac{e^{-\sqrt{x}}}{(\sqrt{x}-1)^2}\text{d}x $$
+【Sol】:
+$\begin{aligned} I=&amp;\int_{\sqrt{2}}^{\infty}\dfrac{e^{-x}}{(x-1)^2}(2x\text{d}x)\\
+=&amp;2\int_{\sqrt{2}}^{\infty}\dfrac{xe^{-x}}{(x-1)^2}\text{d}x\\
+=&amp;2\int_{\sqrt{2}-1}^{\infty}\dfrac{x&#43;1}{x^2}e^{-x-1}\text{d}x\\
+=&amp;\dfrac{2}{e}\int_{\sqrt{2}-1}^{\infty}(x&#43;1)e^{-x}\text{d}\left(-\dfrac{1}{x}\right)\\
+=&amp;\dfrac{2}{e}\left[-\dfrac{x&#43;1}{x}e^{-x}\bigg|_{\sqrt{2}-1}^{\infty}&#43;\int_{\sqrt{2}-1}^{\infty}\dfrac{1}{x}(-x)e^{-x}\text{d}x\right]\\
+=&amp;\dfrac{2}{e}\left[\dfrac{\sqrt{2}}{\sqrt{2}-1}e^{1-\sqrt{2}}-\int_{\sqrt{2}-1}^{\infty}e^{-x}\text{d}x\right]\\
+=&amp;\dfrac{2}{e}\left[\sqrt{2}(\sqrt{2}&#43;1)e^{1-\sqrt{2}}-e^{1-\sqrt{2}}\right]\\
+=&amp;2(\sqrt{2}&#43;1)e^{-\sqrt{2}} \end{aligned}$
+ 2 $$ I=\int_0^1\dfrac{1}{1&#43;\sqrt{2x\sqrt{1-x^2}}}\text{d}x $$
+【Sol】:
+利用公式
+$$ \int_0^1f(2x\sqrt{1-x^2})\text{d}x=\int_0^1f(1-x^2)\text{d}x $$ 于是有:
+$\begin{aligned} I=&amp;\int_0^1\dfrac{1}{1&#43;\sqrt{1-x^2}}\text{d}x\\
+=&amp;\int_0^{\frac{\pi}{2}}\dfrac{1}{1&#43;\cos x}\text{d}(\sin x)\\
+=&amp;\int_0^{\frac{\pi}{2}}\left[1-\dfrac{1}{1&#43;\cos x}\right]\text{d}x\
+=&amp;\dfrac{\pi}{2}-\dfrac{\sin x}{1&#43;\cos x}\bigg|_{0}^{\frac{\pi}{2}}\
+=&amp;\dfrac{\pi}{2}-1 \end{aligned}$
+ 3 $$ I=\int_{0}^{2\pi}\dfrac{\sin^2x}{5&#43;4\cos x}\text{d}x=\dfrac{\pi}{4} $$
+【Sol】:
+被积函数是周期为 $2\pi$ 的偶函数，因此可以将区间移动到对称区间 $[-\pi,; \pi]$ 上:
+$$ I=\int_{-\pi}^{\pi}\dfrac{\sin^2x}{5&#43;4\cos x}\text{d}x=2\int_{0}^{\pi}\dfrac{\sin^2x}{5&#43;4\cos x}\text{d}x $$
+又余弦函数在 $[0,; \pi]$ 上不对称，因此
+$\begin{aligned} I=&amp;2\left[\int_0^{\frac{\pi}{2}}\dfrac{\sin^2x}{5&#43;\cos x}\text{d}x&#43;\int_{\frac{\pi}{2}}^{\pi}\dfrac{\sin^2x}{5&#43;4\cos x}\text{d}x\right]\\
+=&amp;2\left[\int_0^{\frac{\pi}{2}}\dfrac{\sin^2x}{5&#43;4\cos x}\text{d}x&#43;\int_{0}^{\frac{\pi}{2}}\dfrac{\cos^2x}{5-4\sin x}\text{d}x\right]\\
+=&amp;2\int_0^{\frac{\pi}{2}}\left[\dfrac{\sin^2x}{5&#43;4\cos x}&#43;\dfrac{\sin^2x}{5-4\cos x}\right]\text{d}x\\" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://Lu0key.github.io/post/%E7%A7%AF%E5%88%86%E7%BB%83%E4%B9%A0-3/" />
+<meta property="article:published_time" content="2021-03-16T12:21:54+08:00" />
+<meta property="article:modified_time" content="2021-03-16T12:21:54+08:00" />
+
+
+</head>
+
+<body>
+    <header class="app-header">
+        <a href="https://Lu0key.github.io/"><img class="app-header-avatar" src="/avatar.jpg" alt="洛七" /></a>
+        <h1>洛七的摸鱼池塘</h1>
+        <nav class="app-header-menu">
+            <a class="app-header-menu-item" href="/tags/">Tags</a>
+        </nav>
+        <p>即将没书读的咸鱼</p>
+        <div class="app-header-social">
+            
+        </div>
+    </header>
+    <main class="app-container">
+        
+  <article class="post">
+    <header class="post-header">
+      <h1 class ="post-title">积分练习 3</h1>
+      <div class="post-meta">
+        <div>
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-calendar">
+  <title>calendar</title>
+  <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line>
+</svg>
+          Mar 16, 2021
+        </div>
+        <div>
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-clock">
+  <title>clock</title>
+  <circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline>
+</svg>
+          1 min read
+        </div>
+        <div>
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-tag">
+  <title>tag</title>
+  <path d="M20.59 13.41l-7.17 7.17a2 2 0 0 1-2.83 0L2 12V2h10l8.59 8.59a2 2 0 0 1 0 2.82z"></path><line x1="7" y1="7" x2="7" y2="7"></line>
+</svg>
+              <a class="tag" href="https://Lu0key.github.io/tags/%E7%A7%AF%E5%88%86/">积分</a>
+        </div>
+      </div>
+    </header>
+    <div class="post-content">
+      <h1 id="积分练习-3">积分练习 3</h1>
+<h2 id="1">1</h2>
+<p>$$
+I=\int_2^{\infty}\dfrac{e^{-\sqrt{x}}}{(\sqrt{x}-1)^2}\text{d}x
+$$</p>
+<p>【Sol】:<br>
+$\begin{aligned}
+I=&amp;\int_{\sqrt{2}}^{\infty}\dfrac{e^{-x}}{(x-1)^2}(2x\text{d}x)\\<br>
+=&amp;2\int_{\sqrt{2}}^{\infty}\dfrac{xe^{-x}}{(x-1)^2}\text{d}x\\<br>
+=&amp;2\int_{\sqrt{2}-1}^{\infty}\dfrac{x+1}{x^2}e^{-x-1}\text{d}x\\<br>
+=&amp;\dfrac{2}{e}\int_{\sqrt{2}-1}^{\infty}(x+1)e^{-x}\text{d}\left(-\dfrac{1}{x}\right)\\<br>
+=&amp;\dfrac{2}{e}\left[-\dfrac{x+1}{x}e^{-x}\bigg|_{\sqrt{2}-1}^{\infty}+\int_{\sqrt{2}-1}^{\infty}\dfrac{1}{x}(-x)e^{-x}\text{d}x\right]\\<br>
+=&amp;\dfrac{2}{e}\left[\dfrac{\sqrt{2}}{\sqrt{2}-1}e^{1-\sqrt{2}}-\int_{\sqrt{2}-1}^{\infty}e^{-x}\text{d}x\right]\\<br>
+=&amp;\dfrac{2}{e}\left[\sqrt{2}(\sqrt{2}+1)e^{1-\sqrt{2}}-e^{1-\sqrt{2}}\right]\\<br>
+=&amp;2(\sqrt{2}+1)e^{-\sqrt{2}}
+\end{aligned}$</p>
+<hr>
+<h2 id="2">2</h2>
+<p>$$
+I=\int_0^1\dfrac{1}{1+\sqrt{2x\sqrt{1-x^2}}}\text{d}x
+$$</p>
+<p>【Sol】:<br>
+利用公式<br>
+$$
+\int_0^1f(2x\sqrt{1-x^2})\text{d}x=\int_0^1f(1-x^2)\text{d}x
+$$
+于是有:<br>
+$\begin{aligned}
+I=&amp;\int_0^1\dfrac{1}{1+\sqrt{1-x^2}}\text{d}x\\<br>
+=&amp;\int_0^{\frac{\pi}{2}}\dfrac{1}{1+\cos x}\text{d}(\sin x)\\<br>
+=&amp;\int_0^{\frac{\pi}{2}}\left[1-\dfrac{1}{1+\cos x}\right]\text{d}x\<br>
+=&amp;\dfrac{\pi}{2}-\dfrac{\sin x}{1+\cos x}\bigg|_{0}^{\frac{\pi}{2}}\<br>
+=&amp;\dfrac{\pi}{2}-1
+\end{aligned}$</p>
+<hr>
+<h2 id="3">3</h2>
+<p>$$
+I=\int_{0}^{2\pi}\dfrac{\sin^2x}{5+4\cos x}\text{d}x=\dfrac{\pi}{4}
+$$</p>
+<p>【Sol】:<br>
+被积函数是周期为 $2\pi$ 的偶函数，因此可以将区间移动到对称区间 $[-\pi,; \pi]$ 上:<br>
+$$
+I=\int_{-\pi}^{\pi}\dfrac{\sin^2x}{5+4\cos x}\text{d}x=2\int_{0}^{\pi}\dfrac{\sin^2x}{5+4\cos x}\text{d}x
+$$</p>
+<p>又余弦函数在 $[0,; \pi]$ 上不对称，因此<br>
+$\begin{aligned}
+I=&amp;2\left[\int_0^{\frac{\pi}{2}}\dfrac{\sin^2x}{5+\cos x}\text{d}x+\int_{\frac{\pi}{2}}^{\pi}\dfrac{\sin^2x}{5+4\cos x}\text{d}x\right]\\<br>
+=&amp;2\left[\int_0^{\frac{\pi}{2}}\dfrac{\sin^2x}{5+4\cos x}\text{d}x+\int_{0}^{\frac{\pi}{2}}\dfrac{\cos^2x}{5-4\sin x}\text{d}x\right]\\<br>
+=&amp;2\int_0^{\frac{\pi}{2}}\left[\dfrac{\sin^2x}{5+4\cos x}+\dfrac{\sin^2x}{5-4\cos x}\right]\text{d}x\\<br>
+=&amp;2\int_0^{\frac{\pi}{2}}\dfrac{10\sin^2x}{25-16\cos^2x}\text{d}x\\<br>
+=&amp;20\int_0^{\frac{\pi}{2}}\dfrac{1-\cos^2x}{25-16\cos^2x}\text{d}x\\<br>
+=&amp;\dfrac{20}{16}\int_{0}^{\frac{\pi}{2}}\dfrac{25-16\cos^2x-9}{25-16\cos^2x}\text{d}x\\<br>
+=&amp;\dfrac{5}{4}\int_{0}^{\frac{\pi}{2}}\left[1-\dfrac{9}{25-16\cos^2x}\right]\text{d}x\\<br>
+=&amp;\dfrac{5\pi}{8}-\dfrac{45}{4}\int_{0}^{\frac{\pi}{2}}\dfrac{1}{25\sec^2x-16}\text{d}(\tan x)\\<br>
+=&amp;\dfrac{5\pi}{8}-\dfrac{45}{4}\int_0^{\infty}\dfrac{1}{25x^2+9}\text{d}x\\<br>
+=&amp;\dfrac{5\pi}{8}-\dfrac{45}{4}\dfrac{\pi}{30}\\<br>
+=&amp;\dfrac{\pi}{4}
+\end{aligned}$</p>
+<p>这题也可以用留数法</p>
+
+    </div>
+    <div class="post-footer">
+      
+    </div>
+  </article>
+
+    </main>
+</body>
+
+</html>
