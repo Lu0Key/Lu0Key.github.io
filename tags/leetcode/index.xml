@@ -6,7 +6,23 @@
     <description>Recent content in leetcode on 洛七的摸鱼池塘</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Fri, 19 Mar 2021 16:54:41 +0800</lastBuildDate><atom:link href="https://Lu0key.github.io/tags/leetcode/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Fri, 19 Mar 2021 17:42:46 +0800</lastBuildDate><atom:link href="https://Lu0key.github.io/tags/leetcode/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Leetcode Backspace String Compare</title>
+      <link>https://Lu0key.github.io/post/leetcode-backspace-string-compare/</link>
+      <pubDate>Fri, 19 Mar 2021 17:42:46 +0800</pubDate>
+      
+      <guid>https://Lu0key.github.io/post/leetcode-backspace-string-compare/</guid>
+      <description>比较含退格的字符串(Backspace String Compare) 给定 S 和 T 两个字符串，当它们分别被输入到空白的文本编辑器后，判断二者是否相等，并返回结果。 # 代表退格字符。
+注意：如果对空文本输入退格字符，文本继续为空。
+示例 1：
+输入：S = &amp;quot;ab#c&amp;quot;, T = &amp;quot;ad#c&amp;quot; 输出：true 解释：S 和 T 都会变成 “ac”。 示例 2：
+输入：S = &amp;quot;ab##&amp;quot;, T = &amp;quot;c#d#&amp;quot; 输出：true 解释：S 和 T 都会变成 “”。 示例 3：
+输入：S = &amp;quot;a##c&amp;quot;, T = &amp;quot;#a#c&amp;quot; 输出：true 解释：S 和 T 都会变成 “c”。 示例 4：
+输入：S = &amp;quot;a#c&amp;quot;, T = &amp;quot;b&amp;quot; 输出：false 解释：S 会变成 “c”，但 T 仍然是 “b”。 提示：
+ 1 &amp;lt;= S.</description>
+    </item>
+    
     <item>
       <title>Leetcode 876 Middle of the Linked List</title>
       <link>https://Lu0key.github.io/post/leetcode-876-middle-of-the-linked-list/</link>
