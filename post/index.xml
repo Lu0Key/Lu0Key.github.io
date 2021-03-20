@@ -6,7 +6,20 @@
     <description>Recent content in Posts on 洛七的摸鱼池塘</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Fri, 19 Mar 2021 17:42:46 +0800</lastBuildDate><atom:link href="https://Lu0key.github.io/post/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sat, 20 Mar 2021 13:22:09 +0800</lastBuildDate><atom:link href="https://Lu0key.github.io/post/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Leetcode 155 Min Stack</title>
+      <link>https://Lu0key.github.io/post/leetcode-155-min-stack/</link>
+      <pubDate>Sat, 20 Mar 2021 13:22:09 +0800</pubDate>
+      
+      <guid>https://Lu0key.github.io/post/leetcode-155-min-stack/</guid>
+      <description>最小栈(Min Stack) 设计一个支持 push ，pop ，top 操作，并能在常数时间内检索到最小元素的栈。
+push(x) —— 将元素 x 推入栈中。 pop() —— 删除栈顶的元素。 top() —— 获取栈顶元素。 getMin() —— 检索栈中的最小元素。  示例:
+输入： [&amp;quot;MinStack&amp;quot;,&amp;quot;push&amp;quot;,&amp;quot;push&amp;quot;,&amp;quot;push&amp;quot;,&amp;quot;getMin&amp;quot;,&amp;quot;pop&amp;quot;,&amp;quot;top&amp;quot;,&amp;quot;getMin&amp;quot;] [[],[-2],[0],[-3],[],[],[],[]] 输出： [null,null,null,null,-3,null,0,-2] 解释： MinStack minStack = new MinStack(); minStack.push(-2); minStack.push(0); minStack.push(-3); minStack.getMin(); --&amp;gt; 返回 -3. minStack.pop(); minStack.top(); --&amp;gt; 返回 0. minStack.getMin(); --&amp;gt; 返回 -2. 提示：
+ pop、top 和 getMin 操作总是在 非空栈 上调用。  C语言版:
+/** * Your MinStack struct will be instantiated and called as such: * MinStack* obj = minStackCreate(); * minStackPush(obj, val); * minStackPop(obj); * int param_3 = minStackTop(obj); * int param_4 = minStackGetMin(obj); * minStackFree(obj); */ typedef struct { int * data; int * mins; int size; } MinStack; /** initialize your data structure here.</description>
+    </item>
+    
     <item>
       <title>Leetcode Backspace String Compare</title>
       <link>https://Lu0key.github.io/post/leetcode-backspace-string-compare/</link>
