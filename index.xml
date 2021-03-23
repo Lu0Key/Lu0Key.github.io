@@ -6,7 +6,23 @@
     <description>Recent content on 洛七的摸鱼池塘</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Tue, 23 Mar 2021 14:30:43 +0800</lastBuildDate><atom:link href="https://Lu0key.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Tue, 23 Mar 2021 14:39:02 +0800</lastBuildDate><atom:link href="https://Lu0key.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Leetcode 200 岛屿数量</title>
+      <link>https://Lu0key.github.io/post/leetcode-200-number-of-islands/</link>
+      <pubDate>Tue, 23 Mar 2021 14:39:02 +0800</pubDate>
+      
+      <guid>https://Lu0key.github.io/post/leetcode-200-number-of-islands/</guid>
+      <description>岛屿数量(Number of Islands) 给你一个由 &#39;1&#39;（陆地）和 &#39;0&#39;（水）组成的的二维网格，请你计算网格中岛屿的数量。
+岛屿总是被水包围，并且每座岛屿只能由水平方向和/或竖直方向上相邻的陆地连接形成。
+此外，你可以假设该网格的四条边均被水包围。
+示例 1：
+输入：grid = [ [&amp;quot;1&amp;quot;,&amp;quot;1&amp;quot;,&amp;quot;1&amp;quot;,&amp;quot;1&amp;quot;,&amp;quot;0&amp;quot;], [&amp;quot;1&amp;quot;,&amp;quot;1&amp;quot;,&amp;quot;0&amp;quot;,&amp;quot;1&amp;quot;,&amp;quot;0&amp;quot;], [&amp;quot;1&amp;quot;,&amp;quot;1&amp;quot;,&amp;quot;0&amp;quot;,&amp;quot;0&amp;quot;,&amp;quot;0&amp;quot;], [&amp;quot;0&amp;quot;,&amp;quot;0&amp;quot;,&amp;quot;0&amp;quot;,&amp;quot;0&amp;quot;,&amp;quot;0&amp;quot;] ] 输出：1 示例 2：
+输入：grid = [ [&amp;quot;1&amp;quot;,&amp;quot;1&amp;quot;,&amp;quot;0&amp;quot;,&amp;quot;0&amp;quot;,&amp;quot;0&amp;quot;], [&amp;quot;1&amp;quot;,&amp;quot;1&amp;quot;,&amp;quot;0&amp;quot;,&amp;quot;0&amp;quot;,&amp;quot;0&amp;quot;], [&amp;quot;0&amp;quot;,&amp;quot;0&amp;quot;,&amp;quot;1&amp;quot;,&amp;quot;0&amp;quot;,&amp;quot;0&amp;quot;], [&amp;quot;0&amp;quot;,&amp;quot;0&amp;quot;,&amp;quot;0&amp;quot;,&amp;quot;1&amp;quot;,&amp;quot;1&amp;quot;] ] 输出：3 提示：
+ m == grid.length n == grid[i].length 1 &amp;lt;= m, n &amp;lt;= 300 grid[i][j] 的值为 &#39;0&#39; 或 &#39;1&#39;  我们找到一个岛屿之后就把他清零，当所有数字都为0时，就表示结束了
+const char WATER = &amp;#39;0&amp;#39;; const char LAND = &amp;#39;1&amp;#39;; const char NEW = &amp;#39;X&amp;#39;; const char USED = &amp;#39;O&amp;#39;; void floodFill(char** grid,int NUMBER_OF_ROWS,int NUMBER_OF_COLS,int i,int j){ if(i&amp;lt;0 || i&amp;gt;=NUMBER_OF_ROWS || j&amp;lt;0 || j&amp;gt;=NUMBER_OF_COLS||grid[i][j]!</description>
+    </item>
+    
     <item>
       <title>Leetcode 678 有效的括号字符串</title>
       <link>https://Lu0key.github.io/post/leetcode-678-valid-parenthesis-string/</link>
