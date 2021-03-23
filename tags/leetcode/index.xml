@@ -6,9 +6,23 @@
     <description>Recent content in leetcode on 洛七的摸鱼池塘</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Tue, 23 Mar 2021 14:21:07 +0800</lastBuildDate><atom:link href="https://Lu0key.github.io/tags/leetcode/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Tue, 23 Mar 2021 14:24:43 +0800</lastBuildDate><atom:link href="https://Lu0key.github.io/tags/leetcode/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>Leetcode 1046 Last Stone Weight</title>
+      <title>Leetcode 525 连续数组</title>
+      <link>https://Lu0key.github.io/post/leetcode-525-contiguous-array/</link>
+      <pubDate>Tue, 23 Mar 2021 14:24:43 +0800</pubDate>
+      
+      <guid>https://Lu0key.github.io/post/leetcode-525-contiguous-array/</guid>
+      <description>连续数组(Contiguous Array) 给定一个二进制数组, 找到含有相同数量的 0 和 1 的最长连续子数组（的长度）。
+示例 1:
+输入: [0,1] 输出: 2 说明: [0, 1] 是具有相同数量0和1的最长连续子数组。 示例 2:
+输入: [0,1,0] 输出: 2 说明: [0, 1] (或 [1, 0]) 是具有相同数量0和1的最长连续子数组。 注意: 给定的二进制数组的长度不会超过50000。
+最粗暴的方式
+int count0(int i,int j,int *nums) { int count = 0; for (int k =i; k&amp;lt;=j;k++){ if(nums[k] == 0){ count++; } } return count; } int count1(int i,int j,int *nums) { int count = 0; for (int k =i; k&amp;lt;=j;k++){ if(nums[k] == 1){ count++; } } return count; } int findMaxLength(int* nums, int numsSize){ int maxLength = 0; for (int i =0;i&amp;lt;numsSize;i++){ for(int j =i;j&amp;lt;numsSize;j++){ if(count0(i,j,nums) == count1(i,j,nums)){ int length = j-i+1; if (length &amp;gt; maxLength){ maxLength = length; } } } } return maxLength; } 但是这样会超时，毕竟O(n^3)</description>
+    </item>
+    
+    <item>
+      <title>Leetcode 1046 最后一块石头的重量</title>
       <link>https://Lu0key.github.io/post/leetcode-1046-last-stone-weight/</link>
       <pubDate>Tue, 23 Mar 2021 14:21:07 +0800</pubDate>
       
