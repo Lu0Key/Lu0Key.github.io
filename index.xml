@@ -6,7 +6,21 @@
     <description>Recent content on 洛七的摸鱼池塘</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Tue, 23 Mar 2021 14:27:37 +0800</lastBuildDate><atom:link href="https://Lu0key.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Tue, 23 Mar 2021 14:30:43 +0800</lastBuildDate><atom:link href="https://Lu0key.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Leetcode 678 有效的括号字符串</title>
+      <link>https://Lu0key.github.io/post/leetcode-678-valid-parenthesis-string/</link>
+      <pubDate>Tue, 23 Mar 2021 14:30:43 +0800</pubDate>
+      
+      <guid>https://Lu0key.github.io/post/leetcode-678-valid-parenthesis-string/</guid>
+      <description>有效的括号字符串(Valid Parenthesis String) 给定一个只包含三种字符的字符串：（ ，） 和 *，写一个函数来检验这个字符串是否为有效字符串。有效字符串具有如下规则：
+ 任何左括号 ( 必须有相应的右括号 )。 任何右括号 ) 必须有相应的左括号 ( 。 左括号 ( 必须在对应的右括号之前 )。 * 可以被视为单个右括号 ) ，或单个左括号 ( ，或一个空字符串。 一个空字符串也被视为有效字符串。  示例 1:
+输入: &amp;quot;()&amp;quot; 输出: True 示例 2:
+输入: &amp;quot;(*)&amp;quot; 输出: True 示例 3:
+输入: &amp;quot;(*))&amp;quot; 输出: True 注意:
+ 字符串大小将在 [1，100] 范围内。  bool checkVaildSubstring(char * s, int i, int j){ if(i &amp;gt; j) return true; if(s[i] == &amp;#39;)&amp;#39;) { return false; }else if( s[i] == &amp;#39;*&amp;#39;){ if (checkVaildSubstring(s, i+1,j)){ return true; } } for (int k=i+1;k&amp;lt;= j;k++){ if(s[k]==&amp;#39;)&amp;#39; || s[k] == &amp;#39;*&amp;#39;){ if(checkVaildSubstring(s,i+1,k-1) &amp;amp;&amp;amp; checkVaildSubstring(s,k+1,j)){ return true; } } } return false; } bool checkValidString(char * s){ return checkVaildSubstring(s,0,strlen(s)-1); } 这里会因为重复算相同的内容多次导致超时，因此我们可以用一个二维数组将算过的存起来，二维数组的i,j表示从索引i到索引j的这个子串是否计算过</description>
+    </item>
+    
     <item>
       <title>Leetcode 238 除自身以外数组的乘积</title>
       <link>https://Lu0key.github.io/post/leetcode-238-product-of-array-except-self/</link>
