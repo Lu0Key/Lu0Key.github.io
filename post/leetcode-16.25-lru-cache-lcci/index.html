@@ -1,0 +1,195 @@
+<!doctype html>
+<html lang="en-us">
+
+<head>
+    
+    <title>Leetcode 16.25 LRU 缓存 // 洛七的摸鱼池塘</title>
+    <link rel="shortcut icon" href="%20/favicon.ico%20" />
+    <meta charset="utf-8" /> <meta name="generator" content="Hugo 0.80.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="author" content="洛七" />
+    <meta name="description" content="" /> <link rel="stylesheet" href="https://Lu0key.github.io/css/main.min.88e7083eff65effb7485b6e6f38d10afbec25093a6fac42d734ce9024d3defbd.css" />  <meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Leetcode 16.25 LRU 缓存"/>
+<meta name="twitter:description" content="LRU 缓存(LRU Cache) 设计和构建一个“最近最少使用”缓存，该缓存会删除最近最少使用的项目。缓存应该从键映射到值(允许你插入和检索特定键对应的值)，并在初始化时指定最大容量。当缓存被填满时，它应该删除最近最少使用的项目。
+它应该支持以下操作： 获取数据 get 和 写入数据 put 。
+获取数据 get(key) - 如果密钥 (key) 存在于缓存中，则获取密钥的值（总是正数），否则返回 -1。 写入数据 put(key, value) - 如果密钥不存在，则写入其数据值。当缓存容量达到上限时，它应该在写入新数据之前删除最近最少使用的数据值，从而为新的数据值留出空间。
+示例:
+LRUCache cache = new LRUCache( 2 /* 缓存容量 */ ); cache.put(1, 1); cache.put(2, 2); cache.get(1); // 返回 1 cache.put(3, 3); // 该操作会使得密钥 2 作废 cache.get(2); // 返回 -1 (未找到) cache.put(4, 4); // 该操作会使得密钥 1 作废 cache.get(1); // 返回 -1 (未找到) cache.get(3); // 返回 3 cache.get(4); // 返回 4 自己实现一个简单的缓存"/>
+ <meta property="og:title" content="Leetcode 16.25 LRU 缓存" />
+<meta property="og:description" content="LRU 缓存(LRU Cache) 设计和构建一个“最近最少使用”缓存，该缓存会删除最近最少使用的项目。缓存应该从键映射到值(允许你插入和检索特定键对应的值)，并在初始化时指定最大容量。当缓存被填满时，它应该删除最近最少使用的项目。
+它应该支持以下操作： 获取数据 get 和 写入数据 put 。
+获取数据 get(key) - 如果密钥 (key) 存在于缓存中，则获取密钥的值（总是正数），否则返回 -1。 写入数据 put(key, value) - 如果密钥不存在，则写入其数据值。当缓存容量达到上限时，它应该在写入新数据之前删除最近最少使用的数据值，从而为新的数据值留出空间。
+示例:
+LRUCache cache = new LRUCache( 2 /* 缓存容量 */ ); cache.put(1, 1); cache.put(2, 2); cache.get(1); // 返回 1 cache.put(3, 3); // 该操作会使得密钥 2 作废 cache.get(2); // 返回 -1 (未找到) cache.put(4, 4); // 该操作会使得密钥 1 作废 cache.get(1); // 返回 -1 (未找到) cache.get(3); // 返回 3 cache.get(4); // 返回 4 自己实现一个简单的缓存" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://Lu0key.github.io/post/leetcode-16.25-lru-cache-lcci/" />
+<meta property="article:published_time" content="2021-03-23T14:54:41+08:00" />
+<meta property="article:modified_time" content="2021-03-23T14:54:41+08:00" />
+
+
+</head>
+
+<body>
+    <header class="app-header">
+        <a href="https://Lu0key.github.io/"><img class="app-header-avatar" src="/avatar.jpg" alt="洛七" /></a>
+        <h1>洛七的摸鱼池塘</h1>
+        <nav class="app-header-menu">
+            <a class="app-header-menu-item" href="/tags/">Tags</a>
+        </nav>
+        <p>即将没书读的咸鱼</p>
+        <div class="app-header-social">
+            
+        </div>
+    </header>
+    <main class="app-container">
+        
+  <article class="post">
+    <header class="post-header">
+      <h1 class ="post-title">Leetcode 16.25 LRU 缓存</h1>
+      <div class="post-meta">
+        <div>
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-calendar">
+  <title>calendar</title>
+  <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line>
+</svg>
+          Mar 23, 2021
+        </div>
+        <div>
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-clock">
+  <title>clock</title>
+  <circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline>
+</svg>
+          2 min read
+        </div>
+        <div>
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-tag">
+  <title>tag</title>
+  <path d="M20.59 13.41l-7.17 7.17a2 2 0 0 1-2.83 0L2 12V2h10l8.59 8.59a2 2 0 0 1 0 2.82z"></path><line x1="7" y1="7" x2="7" y2="7"></line>
+</svg>
+              <a class="tag" href="https://Lu0key.github.io/tags/leetcode/">leetcode</a>
+        </div>
+      </div>
+    </header>
+    <div class="post-content">
+      <h1 id="lru-缓存lru-cachehttpsleetcode-cncomproblemslru-cache-lcci"><a href="https://leetcode-cn.com/problems/lru-cache-lcci/">LRU 缓存(LRU Cache)</a></h1>
+<p>设计和构建一个“最近最少使用”缓存，该缓存会删除最近最少使用的项目。缓存应该从键映射到值(允许你插入和检索特定键对应的值)，并在初始化时指定最大容量。当缓存被填满时，它应该删除最近最少使用的项目。</p>
+<p>它应该支持以下操作： 获取数据 <code>get</code> 和 写入数据 <code>put</code> 。</p>
+<p>获取数据 <code>get(key)</code> - 如果密钥 (key) 存在于缓存中，则获取密钥的值（总是正数），否则返回 -1。
+写入数据 <code>put(key, value)</code> - 如果密钥不存在，则写入其数据值。当缓存容量达到上限时，它应该在写入新数据之前删除最近最少使用的数据值，从而为新的数据值留出空间。</p>
+<p><strong>示例:</strong></p>
+<pre><code>LRUCache cache = new LRUCache( 2 /* 缓存容量 */ );
+
+cache.put(1, 1);
+cache.put(2, 2);
+cache.get(1);       // 返回  1
+cache.put(3, 3);    // 该操作会使得密钥 2 作废
+cache.get(2);       // 返回 -1 (未找到)
+cache.put(4, 4);    // 该操作会使得密钥 1 作废
+cache.get(1);       // 返回 -1 (未找到)
+cache.get(3);       // 返回  3
+cache.get(4);       // 返回  4
+</code></pre><p>自己实现一个简单的缓存</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c" data-lang="c"><span style="color:#66d9ef">struct</span> Entry{
+    <span style="color:#66d9ef">int</span> key;
+    <span style="color:#66d9ef">int</span> value;
+    <span style="color:#66d9ef">int</span> priority;
+};
+
+<span style="color:#66d9ef">typedef</span> <span style="color:#66d9ef">struct</span> {
+    <span style="color:#66d9ef">struct</span> Entry<span style="color:#f92672">*</span> entries;
+    <span style="color:#66d9ef">int</span> capacity;
+    <span style="color:#75715e">// 越大代表越新
+</span><span style="color:#75715e"></span>    <span style="color:#66d9ef">int</span> currentPriority;
+} LRUCache;
+
+
+LRUCache<span style="color:#f92672">*</span> <span style="color:#a6e22e">lRUCacheCreate</span>(<span style="color:#66d9ef">int</span> capacity) {
+    LRUCache<span style="color:#f92672">*</span> obj <span style="color:#f92672">=</span> malloc(<span style="color:#66d9ef">sizeof</span>(LRUCache));
+    obj<span style="color:#f92672">-&gt;</span>entries <span style="color:#f92672">=</span> calloc(capacity, <span style="color:#66d9ef">sizeof</span>(<span style="color:#66d9ef">struct</span> Entry));
+    obj<span style="color:#f92672">-&gt;</span>capacity <span style="color:#f92672">=</span> capacity;
+    obj<span style="color:#f92672">-&gt;</span>currentPriority <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>;
+    <span style="color:#66d9ef">for</span>(<span style="color:#66d9ef">int</span> i <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>;i <span style="color:#f92672">&lt;</span>capacity; i<span style="color:#f92672">++</span>){
+        obj<span style="color:#f92672">-&gt;</span>entries[i].key <span style="color:#f92672">=</span> <span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>;
+    }
+    <span style="color:#66d9ef">return</span> obj;
+}
+
+<span style="color:#66d9ef">int</span> <span style="color:#a6e22e">lRUCacheGet</span>(LRUCache<span style="color:#f92672">*</span> obj, <span style="color:#66d9ef">int</span> key) {
+    <span style="color:#66d9ef">for</span>(<span style="color:#66d9ef">int</span> i <span style="color:#f92672">=</span><span style="color:#ae81ff">0</span>;i <span style="color:#f92672">&lt;</span> obj<span style="color:#f92672">-&gt;</span>capacity;i<span style="color:#f92672">++</span>){
+        <span style="color:#66d9ef">if</span>(obj<span style="color:#f92672">-&gt;</span>entries[i].key <span style="color:#f92672">==</span> key){
+            obj<span style="color:#f92672">-&gt;</span>currentPriority<span style="color:#f92672">++</span>;
+            obj<span style="color:#f92672">-&gt;</span>entries[i].priority <span style="color:#f92672">=</span> obj<span style="color:#f92672">-&gt;</span>currentPriority;
+            <span style="color:#66d9ef">return</span> obj<span style="color:#f92672">-&gt;</span>entries[i].value;;
+        }
+    }
+    <span style="color:#66d9ef">return</span> <span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>;
+}
+
+<span style="color:#66d9ef">void</span> <span style="color:#a6e22e">lRUCachePut</span>(LRUCache<span style="color:#f92672">*</span> obj, <span style="color:#66d9ef">int</span> key, <span style="color:#66d9ef">int</span> value) {
+    <span style="color:#75715e">// 存在 key
+</span><span style="color:#75715e"></span>    <span style="color:#66d9ef">for</span>(<span style="color:#66d9ef">int</span> i <span style="color:#f92672">=</span><span style="color:#ae81ff">0</span>;i<span style="color:#f92672">&lt;</span> obj<span style="color:#f92672">-&gt;</span>capacity; i<span style="color:#f92672">++</span>){
+        <span style="color:#66d9ef">if</span>(obj<span style="color:#f92672">-&gt;</span>entries[i].key <span style="color:#f92672">==</span> key) {
+            obj<span style="color:#f92672">-&gt;</span>entries[i].value <span style="color:#f92672">=</span> value;
+
+            obj<span style="color:#f92672">-&gt;</span>currentPriority<span style="color:#f92672">++</span>;
+            obj<span style="color:#f92672">-&gt;</span>entries[i].priority <span style="color:#f92672">=</span> obj<span style="color:#f92672">-&gt;</span>currentPriority;
+            <span style="color:#66d9ef">return</span>;
+        }
+    }
+
+    <span style="color:#75715e">// 不存在这个key 且不满
+</span><span style="color:#75715e"></span>    <span style="color:#66d9ef">for</span>(<span style="color:#66d9ef">int</span> i <span style="color:#f92672">=</span><span style="color:#ae81ff">0</span>;i<span style="color:#f92672">&lt;</span>obj<span style="color:#f92672">-&gt;</span>capacity;i<span style="color:#f92672">++</span>){
+        <span style="color:#66d9ef">if</span>(obj<span style="color:#f92672">-&gt;</span>entries[i].key <span style="color:#f92672">==</span> <span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>){
+            obj<span style="color:#f92672">-&gt;</span>entries[i].key <span style="color:#f92672">=</span> key;
+            obj<span style="color:#f92672">-&gt;</span>entries[i].value <span style="color:#f92672">=</span> value;
+
+            obj<span style="color:#f92672">-&gt;</span>currentPriority<span style="color:#f92672">++</span>;
+            obj<span style="color:#f92672">-&gt;</span>entries[i].priority <span style="color:#f92672">=</span> obj<span style="color:#f92672">-&gt;</span>currentPriority;
+            <span style="color:#66d9ef">return</span>;
+        }
+    }
+
+    <span style="color:#75715e">// 不存在这个key，且缓存满了
+</span><span style="color:#75715e"></span>    <span style="color:#66d9ef">int</span> minIndex <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>;
+    <span style="color:#66d9ef">for</span>(<span style="color:#66d9ef">int</span> i <span style="color:#f92672">=</span><span style="color:#ae81ff">1</span>;i <span style="color:#f92672">&lt;</span> obj<span style="color:#f92672">-&gt;</span>capacity; i<span style="color:#f92672">++</span>){
+        <span style="color:#66d9ef">if</span>(obj<span style="color:#f92672">-&gt;</span>entries[i].priority <span style="color:#f92672">&lt;</span> obj<span style="color:#f92672">-&gt;</span>entries[minIndex].priority){
+            minIndex <span style="color:#f92672">=</span> i;
+        }
+    }
+
+    obj<span style="color:#f92672">-&gt;</span>entries[minIndex].key <span style="color:#f92672">=</span> key;
+    obj<span style="color:#f92672">-&gt;</span>entries[minIndex].value <span style="color:#f92672">=</span> value;
+
+    obj<span style="color:#f92672">-&gt;</span>currentPriority<span style="color:#f92672">++</span>;
+    obj<span style="color:#f92672">-&gt;</span>entries[minIndex].priority <span style="color:#f92672">=</span> obj<span style="color:#f92672">-&gt;</span>currentPriority;
+    <span style="color:#66d9ef">return</span>;
+
+}
+
+<span style="color:#66d9ef">void</span> <span style="color:#a6e22e">lRUCacheFree</span>(LRUCache<span style="color:#f92672">*</span> obj) {
+    free(obj<span style="color:#f92672">-&gt;</span>entries);
+    free(obj);
+}
+
+<span style="color:#75715e">/**
+</span><span style="color:#75715e"> * Your LRUCache struct will be instantiated and called as such:
+</span><span style="color:#75715e"> * LRUCache* obj = lRUCacheCreate(capacity);
+</span><span style="color:#75715e"> * int param_1 = lRUCacheGet(obj, key);
+</span><span style="color:#75715e"> 
+</span><span style="color:#75715e"> * lRUCachePut(obj, key, value);
+</span><span style="color:#75715e"> 
+</span><span style="color:#75715e"> * lRUCacheFree(obj);
+</span><span style="color:#75715e">*/</span>
+</code></pre></div><p>key初始化为-1不能省，给的key 有可能是0&hellip;.</p>
+<p>也可以用队列实现，从对头取出，取出后再塞回队尾，妙</p>
+
+    </div>
+    <div class="post-footer">
+      
+    </div>
+  </article>
+
+    </main>
+</body>
+
+</html>
