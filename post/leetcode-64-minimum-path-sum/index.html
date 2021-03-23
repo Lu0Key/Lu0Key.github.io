@@ -1,0 +1,270 @@
+<!doctype html>
+<html lang="en-us">
+
+<head>
+    
+    <title>Leetcode 64 最小路径和 // 洛七的摸鱼池塘</title>
+    <link rel="shortcut icon" href="%20/favicon.ico%20" />
+    <meta charset="utf-8" /> <meta name="generator" content="Hugo 0.80.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="author" content="洛七" />
+    <meta name="description" content="" /> <link rel="stylesheet" href="https://Lu0key.github.io/css/main.min.88e7083eff65effb7485b6e6f38d10afbec25093a6fac42d734ce9024d3defbd.css" />  <meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Leetcode 64 最小路径和"/>
+<meta name="twitter:description" content="最小路径和(Minimum Path Sum) 给定一个包含非负整数的 m x n 网格 grid ，请找出一条从左上角到右下角的路径，使得路径上的数字总和为最小。
+说明： 每次只能向下或者向右移动一步。
+示例 1： 输入：grid = [[1,3,1],[1,5,1],[4,2,1]] 输出：7 解释：因为路径 1→3→1→1→1 的总和最小。 示例 2：
+输入：grid = [[1,2,3],[4,5,6]] 输出：12 提示：
+ m == grid.length n == grid[i].length 1 &lt;= m, n &lt;= 200 0 &lt;= grid[i][j] &lt;= 100  int minPartialPathSum(int** grid,int** path,int ROWS,int COLS,int i,int j){ if (path[i][j]!=-1){ return path[i][j]; } int right = grid[i][j]; int down = grid[i][j]; if (i==ROWS-1&amp;&amp;j==COLS-1){ path[i][j] = grid[i][j]; return grid[i][j]; } if(j&lt;COLS-1){ right &#43;=minPartialPathSum(grid,path,ROWS,COLS,i,j&#43;1); } if(i&lt;ROWS-1){ down &#43;=minPartialPathSum(grid,path,ROWS,COLS,i&#43;1,j); } if (j==COLS-1){ path[i][j] = down; return down; } if (i==ROWS-1){ path[i][j] = right; return right; } int re = right&lt;down?"/>
+ <meta property="og:title" content="Leetcode 64 最小路径和" />
+<meta property="og:description" content="最小路径和(Minimum Path Sum) 给定一个包含非负整数的 m x n 网格 grid ，请找出一条从左上角到右下角的路径，使得路径上的数字总和为最小。
+说明： 每次只能向下或者向右移动一步。
+示例 1： 输入：grid = [[1,3,1],[1,5,1],[4,2,1]] 输出：7 解释：因为路径 1→3→1→1→1 的总和最小。 示例 2：
+输入：grid = [[1,2,3],[4,5,6]] 输出：12 提示：
+ m == grid.length n == grid[i].length 1 &lt;= m, n &lt;= 200 0 &lt;= grid[i][j] &lt;= 100  int minPartialPathSum(int** grid,int** path,int ROWS,int COLS,int i,int j){ if (path[i][j]!=-1){ return path[i][j]; } int right = grid[i][j]; int down = grid[i][j]; if (i==ROWS-1&amp;&amp;j==COLS-1){ path[i][j] = grid[i][j]; return grid[i][j]; } if(j&lt;COLS-1){ right &#43;=minPartialPathSum(grid,path,ROWS,COLS,i,j&#43;1); } if(i&lt;ROWS-1){ down &#43;=minPartialPathSum(grid,path,ROWS,COLS,i&#43;1,j); } if (j==COLS-1){ path[i][j] = down; return down; } if (i==ROWS-1){ path[i][j] = right; return right; } int re = right&lt;down?" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://Lu0key.github.io/post/leetcode-64-minimum-path-sum/" />
+<meta property="article:published_time" content="2021-03-23T14:41:59+08:00" />
+<meta property="article:modified_time" content="2021-03-23T14:41:59+08:00" />
+
+
+</head>
+
+<body>
+    <header class="app-header">
+        <a href="https://Lu0key.github.io/"><img class="app-header-avatar" src="/avatar.jpg" alt="洛七" /></a>
+        <h1>洛七的摸鱼池塘</h1>
+        <nav class="app-header-menu">
+            <a class="app-header-menu-item" href="/tags/">Tags</a>
+        </nav>
+        <p>即将没书读的咸鱼</p>
+        <div class="app-header-social">
+            
+        </div>
+    </header>
+    <main class="app-container">
+        
+  <article class="post">
+    <header class="post-header">
+      <h1 class ="post-title">Leetcode 64 最小路径和</h1>
+      <div class="post-meta">
+        <div>
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-calendar">
+  <title>calendar</title>
+  <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line>
+</svg>
+          Mar 23, 2021
+        </div>
+        <div>
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-clock">
+  <title>clock</title>
+  <circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline>
+</svg>
+          3 min read
+        </div>
+        <div>
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-tag">
+  <title>tag</title>
+  <path d="M20.59 13.41l-7.17 7.17a2 2 0 0 1-2.83 0L2 12V2h10l8.59 8.59a2 2 0 0 1 0 2.82z"></path><line x1="7" y1="7" x2="7" y2="7"></line>
+</svg>
+              <a class="tag" href="https://Lu0key.github.io/tags/leetcode/">leetcode</a>
+        </div>
+      </div>
+    </header>
+    <div class="post-content">
+      <h1 id="最小路径和minimum-path-sumhttpsleetcode-cncomproblemsminimum-path-sum"><a href="https://leetcode-cn.com/problems/minimum-path-sum/">最小路径和(Minimum Path Sum)</a></h1>
+<p>给定一个包含非负整数的 <code>m x n</code> 网格 <code>grid</code> ，请找出一条从左上角到右下角的路径，使得路径上的数字总和为最小。</p>
+<p><strong>说明：</strong> 每次只能向下或者向右移动一步。</p>
+<p><strong>示例 1：</strong>
+<img src="https://raw.githubusercontent.com/Lu0Key/hexo-image/master/imags/2021/minpath.jpg" alt="图裂了"></p>
+<pre><code>输入：grid = [[1,3,1],[1,5,1],[4,2,1]]
+输出：7
+解释：因为路径 1→3→1→1→1 的总和最小。
+</code></pre><p><strong>示例 2：</strong></p>
+<pre><code>输入：grid = [[1,2,3],[4,5,6]]
+输出：12
+</code></pre><p><strong>提示：</strong></p>
+<ul>
+<li><code>m == grid.length</code></li>
+<li><code>n == grid[i].length</code></li>
+<li><code>1 &lt;= m, n &lt;= 200</code></li>
+<li><code>0 &lt;= grid[i][j] &lt;= 100</code></li>
+</ul>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c" data-lang="c"><span style="color:#66d9ef">int</span> <span style="color:#a6e22e">minPartialPathSum</span>(<span style="color:#66d9ef">int</span><span style="color:#f92672">**</span> grid,<span style="color:#66d9ef">int</span><span style="color:#f92672">**</span> path,<span style="color:#66d9ef">int</span> ROWS,<span style="color:#66d9ef">int</span> COLS,<span style="color:#66d9ef">int</span> i,<span style="color:#66d9ef">int</span> j){
+    <span style="color:#66d9ef">if</span> (path[i][j]<span style="color:#f92672">!=-</span><span style="color:#ae81ff">1</span>){
+        <span style="color:#66d9ef">return</span> path[i][j];
+    }
+    <span style="color:#66d9ef">int</span> right <span style="color:#f92672">=</span> grid[i][j];
+    <span style="color:#66d9ef">int</span> down  <span style="color:#f92672">=</span> grid[i][j];
+    <span style="color:#66d9ef">if</span> (i<span style="color:#f92672">==</span>ROWS<span style="color:#f92672">-</span><span style="color:#ae81ff">1</span><span style="color:#f92672">&amp;&amp;</span>j<span style="color:#f92672">==</span>COLS<span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>){
+        path[i][j] <span style="color:#f92672">=</span> grid[i][j];
+        <span style="color:#66d9ef">return</span> grid[i][j];
+    }
+    <span style="color:#66d9ef">if</span>(j<span style="color:#f92672">&lt;</span>COLS<span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>){
+         right <span style="color:#f92672">+=</span>minPartialPathSum(grid,path,ROWS,COLS,i,j<span style="color:#f92672">+</span><span style="color:#ae81ff">1</span>);
+    }
+    <span style="color:#66d9ef">if</span>(i<span style="color:#f92672">&lt;</span>ROWS<span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>){
+        down <span style="color:#f92672">+=</span>minPartialPathSum(grid,path,ROWS,COLS,i<span style="color:#f92672">+</span><span style="color:#ae81ff">1</span>,j);
+    }
+    <span style="color:#66d9ef">if</span> (j<span style="color:#f92672">==</span>COLS<span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>){
+        path[i][j] <span style="color:#f92672">=</span> down;
+        <span style="color:#66d9ef">return</span> down;
+    }
+    <span style="color:#66d9ef">if</span> (i<span style="color:#f92672">==</span>ROWS<span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>){
+        path[i][j] <span style="color:#f92672">=</span> right;
+        <span style="color:#66d9ef">return</span> right;
+    }
+
+    <span style="color:#66d9ef">int</span> re <span style="color:#f92672">=</span> right<span style="color:#f92672">&lt;</span>down<span style="color:#f92672">?</span>right:down;
+    path[i][j]<span style="color:#f92672">=</span>re;
+    <span style="color:#66d9ef">return</span> path[i][j];
+}
+
+<span style="color:#66d9ef">int</span> <span style="color:#a6e22e">minPathSum</span>(<span style="color:#66d9ef">int</span><span style="color:#f92672">**</span> grid, <span style="color:#66d9ef">int</span> gridSize, <span style="color:#66d9ef">int</span><span style="color:#f92672">*</span> gridColSize){
+    <span style="color:#66d9ef">int</span> <span style="color:#f92672">**</span>path <span style="color:#f92672">=</span> malloc(<span style="color:#66d9ef">sizeof</span>(<span style="color:#66d9ef">int</span><span style="color:#f92672">*</span>)<span style="color:#f92672">*</span>gridSize);
+    <span style="color:#66d9ef">for</span>(<span style="color:#66d9ef">int</span> i <span style="color:#f92672">=</span><span style="color:#ae81ff">0</span>;i<span style="color:#f92672">&lt;</span>gridSize;i<span style="color:#f92672">++</span>){
+        path[i]<span style="color:#f92672">=</span>calloc(<span style="color:#f92672">*</span>gridColSize,<span style="color:#66d9ef">sizeof</span>(<span style="color:#66d9ef">int</span>));
+    }
+    <span style="color:#66d9ef">for</span>(<span style="color:#66d9ef">int</span> i <span style="color:#f92672">=</span><span style="color:#ae81ff">0</span>;i<span style="color:#f92672">&lt;</span>gridSize;i<span style="color:#f92672">++</span>){
+        <span style="color:#66d9ef">for</span>(<span style="color:#66d9ef">int</span> j <span style="color:#f92672">=</span><span style="color:#ae81ff">0</span>;j<span style="color:#f92672">&lt;*</span>gridColSize;j<span style="color:#f92672">++</span>){
+            path[i][j]<span style="color:#f92672">=-</span><span style="color:#ae81ff">1</span>;
+        }
+    }
+    <span style="color:#66d9ef">int</span> length <span style="color:#f92672">=</span> minPartialPathSum(grid,path,gridSize,<span style="color:#f92672">*</span>gridColSize,<span style="color:#ae81ff">0</span>,<span style="color:#ae81ff">0</span>);
+    <span style="color:#75715e">// 释放内存
+</span><span style="color:#75715e"></span>    <span style="color:#66d9ef">for</span> (<span style="color:#66d9ef">int</span> i <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>; i <span style="color:#f92672">&lt;</span> gridSize; <span style="color:#f92672">++</span>i) {
+        free(path[i]);
+    }
+    free(path);
+    <span style="color:#66d9ef">return</span> length;
+}
+</code></pre></div><p>完全自己写！</p>
+<p>老师的代码：</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c" data-lang="c"><span style="color:#66d9ef">int</span> <span style="color:#a6e22e">minPartialPathSum</span>(<span style="color:#66d9ef">int</span> <span style="color:#f92672">**</span> grid, <span style="color:#66d9ef">int</span> row ,<span style="color:#66d9ef">int</span> col, <span style="color:#66d9ef">int</span><span style="color:#f92672">**</span> cache){
+    <span style="color:#66d9ef">if</span>(row <span style="color:#f92672">==</span><span style="color:#ae81ff">0</span> <span style="color:#f92672">&amp;&amp;</span> col <span style="color:#f92672">==</span><span style="color:#ae81ff">0</span>){
+        <span style="color:#66d9ef">return</span> grid[<span style="color:#ae81ff">0</span>][<span style="color:#ae81ff">0</span>];
+    }
+    <span style="color:#66d9ef">if</span>(cache[row][col]<span style="color:#f92672">!=</span><span style="color:#ae81ff">0</span>){
+        <span style="color:#66d9ef">return</span> cache[row][col];
+    }
+    <span style="color:#66d9ef">int</span> min <span style="color:#f92672">=</span> INT_MAX;
+    <span style="color:#66d9ef">if</span>(row<span style="color:#f92672">-</span><span style="color:#ae81ff">1</span><span style="color:#f92672">&gt;=</span><span style="color:#ae81ff">0</span>){
+        <span style="color:#66d9ef">int</span> upMin <span style="color:#f92672">=</span> minPartialPathSum(grid, row<span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>,col,cache);
+        <span style="color:#66d9ef">if</span> (upMin <span style="color:#f92672">&lt;</span>min){
+            min <span style="color:#f92672">=</span> upMin;
+        }
+    }
+    <span style="color:#66d9ef">if</span> (col<span style="color:#f92672">-</span><span style="color:#ae81ff">1</span><span style="color:#f92672">&gt;=</span><span style="color:#ae81ff">0</span>){
+        <span style="color:#66d9ef">int</span> leftMin <span style="color:#f92672">=</span> minPartialPathSum(grid,row,col<span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>,cache);
+        <span style="color:#66d9ef">if</span> (leftMin<span style="color:#f92672">&lt;</span>min){
+            min <span style="color:#f92672">=</span> leftMin;
+        }
+    }
+
+    cache[row][col] <span style="color:#f92672">=</span> min <span style="color:#f92672">+</span>grid[row][col];
+    <span style="color:#66d9ef">return</span> cache[row][col];
+}
+<span style="color:#66d9ef">int</span> <span style="color:#a6e22e">minPathSum</span>(<span style="color:#66d9ef">int</span><span style="color:#f92672">**</span> grid, <span style="color:#66d9ef">int</span> gridSize, <span style="color:#66d9ef">int</span><span style="color:#f92672">*</span> gridColSize){
+    <span style="color:#66d9ef">int</span> M <span style="color:#f92672">=</span> gridSize;
+    <span style="color:#66d9ef">int</span> N <span style="color:#f92672">=</span> gridColSize[<span style="color:#ae81ff">0</span>];
+
+    <span style="color:#66d9ef">int</span><span style="color:#f92672">**</span> cache <span style="color:#f92672">=</span> malloc(<span style="color:#66d9ef">sizeof</span>(<span style="color:#66d9ef">int</span><span style="color:#f92672">*</span>)<span style="color:#f92672">*</span>M);
+    <span style="color:#66d9ef">for</span> (<span style="color:#66d9ef">int</span> i<span style="color:#f92672">=</span><span style="color:#ae81ff">0</span>;i<span style="color:#f92672">&lt;</span>M ; i<span style="color:#f92672">++</span>){
+        cache[i] <span style="color:#f92672">=</span> calloc(N,<span style="color:#66d9ef">sizeof</span>(<span style="color:#66d9ef">int</span>));
+    }
+    <span style="color:#66d9ef">int</span> result <span style="color:#f92672">=</span> minPartialPathSum(grid,M<span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>,N<span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>,cache);
+    <span style="color:#66d9ef">for</span> (<span style="color:#66d9ef">int</span> i <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>; i <span style="color:#f92672">&lt;</span> M; <span style="color:#f92672">++</span>i) {
+        free(cache[i]);
+    }
+    free(cache);
+    <span style="color:#66d9ef">return</span> result;
+}
+</code></pre></div><p>不写递归的话</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c" data-lang="c"><span style="color:#66d9ef">int</span> <span style="color:#a6e22e">minPathSum</span>(<span style="color:#66d9ef">int</span><span style="color:#f92672">**</span> grid, <span style="color:#66d9ef">int</span> gridSize, <span style="color:#66d9ef">int</span><span style="color:#f92672">*</span> gridColSize){
+    <span style="color:#66d9ef">int</span> M <span style="color:#f92672">=</span> gridSize;
+    <span style="color:#66d9ef">int</span> N <span style="color:#f92672">=</span> gridColSize[<span style="color:#ae81ff">0</span>];
+
+    <span style="color:#66d9ef">int</span><span style="color:#f92672">**</span> cache <span style="color:#f92672">=</span> malloc(<span style="color:#66d9ef">sizeof</span>(<span style="color:#66d9ef">int</span><span style="color:#f92672">*</span>)<span style="color:#f92672">*</span>M);
+    <span style="color:#66d9ef">for</span> (<span style="color:#66d9ef">int</span> i<span style="color:#f92672">=</span><span style="color:#ae81ff">0</span>;i<span style="color:#f92672">&lt;</span>M ; i<span style="color:#f92672">++</span>){
+        cache[i] <span style="color:#f92672">=</span> calloc(N,<span style="color:#66d9ef">sizeof</span>(<span style="color:#66d9ef">int</span>));
+    }
+    <span style="color:#66d9ef">for</span> (<span style="color:#66d9ef">int</span> row <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>; row <span style="color:#f92672">&lt;</span> M; row<span style="color:#f92672">++</span>) {
+        <span style="color:#66d9ef">for</span> (<span style="color:#66d9ef">int</span> col <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>; col <span style="color:#f92672">&lt;</span> N; col<span style="color:#f92672">++</span>) {
+            <span style="color:#66d9ef">if</span>(row <span style="color:#f92672">==</span><span style="color:#ae81ff">0</span> <span style="color:#f92672">&amp;&amp;</span> col <span style="color:#f92672">==</span><span style="color:#ae81ff">0</span>){
+                cache[row][col] <span style="color:#f92672">=</span> grid[<span style="color:#ae81ff">0</span>][<span style="color:#ae81ff">0</span>];
+                <span style="color:#66d9ef">continue</span>;
+            }
+            <span style="color:#66d9ef">int</span> min <span style="color:#f92672">=</span> INT_MAX;
+            <span style="color:#66d9ef">if</span>(row<span style="color:#f92672">-</span><span style="color:#ae81ff">1</span><span style="color:#f92672">&gt;=</span><span style="color:#ae81ff">0</span>){
+                <span style="color:#66d9ef">int</span> upMin <span style="color:#f92672">=</span> cache[row<span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>][col];
+                <span style="color:#66d9ef">if</span> (upMin <span style="color:#f92672">&lt;</span>min){
+                    min <span style="color:#f92672">=</span> upMin;
+                }
+            }
+            <span style="color:#66d9ef">if</span> (col<span style="color:#f92672">-</span><span style="color:#ae81ff">1</span><span style="color:#f92672">&gt;=</span><span style="color:#ae81ff">0</span>){
+                <span style="color:#66d9ef">int</span> leftMin <span style="color:#f92672">=</span> cache[row][col<span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>];
+                <span style="color:#66d9ef">if</span> (leftMin<span style="color:#f92672">&lt;</span>min){
+                    min <span style="color:#f92672">=</span> leftMin;
+                }
+            }
+
+            cache[row][col] <span style="color:#f92672">=</span> min <span style="color:#f92672">+</span>grid[row][col];
+        }
+    }
+    <span style="color:#66d9ef">int</span> result <span style="color:#f92672">=</span> cache[M<span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>][N<span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>];
+    <span style="color:#66d9ef">for</span> (<span style="color:#66d9ef">int</span> i <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>; i <span style="color:#f92672">&lt;</span> M; <span style="color:#f92672">++</span>i) {
+        free(cache[i]);
+    }
+    free(cache);
+    <span style="color:#66d9ef">return</span> result;
+}
+</code></pre></div><p>下面这个方法更妙，降低空间复杂度</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c" data-lang="c"><span style="color:#66d9ef">int</span> <span style="color:#a6e22e">minPathSum</span>(<span style="color:#66d9ef">int</span><span style="color:#f92672">**</span> grid, <span style="color:#66d9ef">int</span> gridSize, <span style="color:#66d9ef">int</span><span style="color:#f92672">*</span> gridColSize){
+    <span style="color:#66d9ef">int</span> M <span style="color:#f92672">=</span> gridSize;
+    <span style="color:#66d9ef">int</span> N <span style="color:#f92672">=</span> gridColSize[<span style="color:#ae81ff">0</span>];
+
+    <span style="color:#66d9ef">int</span><span style="color:#f92672">**</span> cache <span style="color:#f92672">=</span> malloc(<span style="color:#66d9ef">sizeof</span>(<span style="color:#66d9ef">int</span><span style="color:#f92672">*</span>)<span style="color:#f92672">*</span><span style="color:#ae81ff">2</span>);
+    <span style="color:#66d9ef">for</span> (<span style="color:#66d9ef">int</span> i<span style="color:#f92672">=</span><span style="color:#ae81ff">0</span>;i<span style="color:#f92672">&lt;</span> <span style="color:#ae81ff">2</span> ; i<span style="color:#f92672">++</span>){
+        cache[i] <span style="color:#f92672">=</span> calloc(N,<span style="color:#66d9ef">sizeof</span>(<span style="color:#66d9ef">int</span>));
+    }
+    <span style="color:#66d9ef">for</span> (<span style="color:#66d9ef">int</span> row <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>; row <span style="color:#f92672">&lt;</span> M; row<span style="color:#f92672">++</span>) {
+        <span style="color:#66d9ef">for</span> (<span style="color:#66d9ef">int</span> col <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>; col <span style="color:#f92672">&lt;</span> N; col<span style="color:#f92672">++</span>) {
+            <span style="color:#66d9ef">if</span>(row <span style="color:#f92672">==</span><span style="color:#ae81ff">0</span> <span style="color:#f92672">&amp;&amp;</span> col <span style="color:#f92672">==</span><span style="color:#ae81ff">0</span>){
+                cache[row<span style="color:#f92672">%</span><span style="color:#ae81ff">2</span>][col] <span style="color:#f92672">=</span> grid[<span style="color:#ae81ff">0</span>][<span style="color:#ae81ff">0</span>];
+                <span style="color:#66d9ef">continue</span>;
+            }
+            <span style="color:#66d9ef">int</span> min <span style="color:#f92672">=</span> INT_MAX;
+            <span style="color:#66d9ef">if</span>(row<span style="color:#f92672">-</span><span style="color:#ae81ff">1</span><span style="color:#f92672">&gt;=</span><span style="color:#ae81ff">0</span>){
+                <span style="color:#66d9ef">int</span> upMin <span style="color:#f92672">=</span> cache[(row<span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>)<span style="color:#f92672">%</span><span style="color:#ae81ff">2</span>][col];
+                <span style="color:#66d9ef">if</span> (upMin <span style="color:#f92672">&lt;</span>min){
+                    min <span style="color:#f92672">=</span> upMin;
+                }
+            }
+            <span style="color:#66d9ef">if</span> (col<span style="color:#f92672">-</span><span style="color:#ae81ff">1</span><span style="color:#f92672">&gt;=</span><span style="color:#ae81ff">0</span>){
+                <span style="color:#66d9ef">int</span> leftMin <span style="color:#f92672">=</span> cache[row<span style="color:#f92672">%</span><span style="color:#ae81ff">2</span>][col<span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>];
+                <span style="color:#66d9ef">if</span> (leftMin<span style="color:#f92672">&lt;</span>min){
+                    min <span style="color:#f92672">=</span> leftMin;
+                }
+            }
+
+            cache[row<span style="color:#f92672">%</span><span style="color:#ae81ff">2</span>][col] <span style="color:#f92672">=</span> min <span style="color:#f92672">+</span>grid[row][col];
+        }
+    }
+    <span style="color:#66d9ef">int</span> result <span style="color:#f92672">=</span> cache[(M<span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>)<span style="color:#f92672">%</span><span style="color:#ae81ff">2</span>][N<span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>];
+    <span style="color:#66d9ef">for</span> (<span style="color:#66d9ef">int</span> i <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>; i <span style="color:#f92672">&lt;</span> <span style="color:#ae81ff">2</span>; <span style="color:#f92672">++</span>i) {
+        free(cache[i]);
+    }
+    free(cache);
+    <span style="color:#66d9ef">return</span> result;
+}
+</code></pre></div><p>巧妙！缩小cache的空间，从O(MN) 变成O(N)</p>
+
+    </div>
+    <div class="post-footer">
+      
+    </div>
+  </article>
+
+    </main>
+</body>
+
+</html>
