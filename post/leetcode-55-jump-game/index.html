@@ -3,13 +3,13 @@
 
 <head>
     
-    <title>Leetcode 55 Jump Game // 洛七的摸鱼池塘</title>
+    <title>Leetcode 55 跳跃游戏 // 洛七的摸鱼池塘</title>
     <link rel="shortcut icon" href="%20/favicon.ico%20" />
     <meta charset="utf-8" /> <meta name="generator" content="Hugo 0.80.0" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="author" content="洛七" />
     <meta name="description" content="" /> <link rel="stylesheet" href="https://Lu0key.github.io/css/main.min.88e7083eff65effb7485b6e6f38d10afbec25093a6fac42d734ce9024d3defbd.css" />  <meta name="twitter:card" content="summary"/>
-<meta name="twitter:title" content="Leetcode 55 Jump Game"/>
+<meta name="twitter:title" content="Leetcode 55 跳跃游戏"/>
 <meta name="twitter:description" content="跳跃游戏(Jump Game) 给定一个非负整数数组 nums ，你最初位于数组的 第一个下标 。
 数组中的每个元素代表你在该位置可以跳跃的最大长度。
 判断你是否能够到达最后一个下标。
@@ -17,7 +17,7 @@
 输入：nums = [2,3,1,1,4] 输出：true 解释：可以先跳 1 步，从下标 0 到达下标 1, 然后再从下标 1 跳 3 步到达最后一个下标。 示例 2：
 输入：nums = [3,2,1,0,4] 输出：false 解释：无论怎样，总会到达下标为 3 的位置。但该下标的最大跳跃长度是 0 ， 所以永远不可能到达最后一个下标。 提示：
  1 &lt;= nums.length &lt;= 3 * 10^4 0 &lt;= nums[i] &lt;= 10^5  bool canJump(int* nums, int numsSize){ int start = 0; printf(&#34;%d\n&#34;,start); while(start &lt;numsSize){ int newIndex = -1; if(start&#43;nums[start]&gt;=numsSize-1) return true; for(int i =1;i&lt;=nums[start];i&#43;&#43;){ if(i&#43;nums[start&#43;i]&gt;nums[start]){ if(newIndex == -1){ newIndex = i&#43;start; }else if(i&#43;nums[start &#43;i]&gt;newIndex-start&#43;nums[newIndex]){ newIndex = i&#43;start; } } } if(newIndex == -1) return false; start = newIndex; } return false; } yeah，写出来了，看看老师怎么写的"/>
- <meta property="og:title" content="Leetcode 55 Jump Game" />
+ <meta property="og:title" content="Leetcode 55 跳跃游戏" />
 <meta property="og:description" content="跳跃游戏(Jump Game) 给定一个非负整数数组 nums ，你最初位于数组的 第一个下标 。
 数组中的每个元素代表你在该位置可以跳跃的最大长度。
 判断你是否能够到达最后一个下标。
@@ -49,7 +49,7 @@
         
   <article class="post">
     <header class="post-header">
-      <h1 class ="post-title">Leetcode 55 Jump Game</h1>
+      <h1 class ="post-title">Leetcode 55 跳跃游戏</h1>
       <div class="post-meta">
         <div>
           <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-calendar">
