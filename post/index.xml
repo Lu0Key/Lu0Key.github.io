@@ -6,7 +6,21 @@
     <description>Recent content in Posts on 洛七的摸鱼池塘</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Tue, 23 Mar 2021 14:24:43 +0800</lastBuildDate><atom:link href="https://Lu0key.github.io/post/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Tue, 23 Mar 2021 14:27:37 +0800</lastBuildDate><atom:link href="https://Lu0key.github.io/post/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Leetcode 238 除自身以外数组的乘积</title>
+      <link>https://Lu0key.github.io/post/leetcode-238-product-of-array-except-self/</link>
+      <pubDate>Tue, 23 Mar 2021 14:27:37 +0800</pubDate>
+      
+      <guid>https://Lu0key.github.io/post/leetcode-238-product-of-array-except-self/</guid>
+      <description>除自身以外数组的乘积(Product of Array Except Self) 给你一个长度为 n 的整数数组 nums，其中 n &amp;gt; 1，返回输出数组 output ，其中 output[i] 等于 nums 中除 nums[i] 之外其余各元素的乘积。
+示例:
+输入: [1,2,3,4] 输出: [24,12,8,6] 提示: 题目数据保证数组之中任意元素的全部前缀元素和后缀（甚至是整个数组）的乘积都在 32 位整数范围内。
+说明: 请 不要使用除法，且在 O(n) 时间复杂度内完成此题。
+进阶： 你可以在常数空间复杂度内完成这个题目吗？（ 出于对空间复杂度分析的目的，输出数组不被视为额外空间。）
+/** * Note: The returned array must be malloced, assume caller calls free(). */ int* productExceptSelf(int* nums, int numsSize, int* returnSize){ *returnSize = numsSize; int * result = malloc(sizeof(int)*numsSize); for (int i =0;i&amp;lt;numsSize;i++){ int left = 1; for(int j =0;j&amp;lt;=i-1;j++){ left *= nums[j]; } int right =1; for (int j =i+1;j&amp;lt;numsSize;j++){ right *=nums[j]; } result[i] = left*right; } return result; } int* productExceptSelf(int* nums, int numsSize, int* returnSize){ int *result = malloc(sizeof(int)*numsSize); int *lefts = malloc(sizeof(int)*numsSize); lefts[0]=1; for(int i =1;i&amp;lt;numsSize;i++){ lefts[i] = lefts[i-1]*nums[i-1]; } int *rights = malloc(sizeof(int)*numsSize); rights[numsSize-1]=1; for(int i =numsSize-2;i&amp;gt;=0;i--){ rights[i] = rights[i+1]*nums[i+1]; } // 这个for可以放在上面，right[i] 算完了就可以算result[i]了，然后少一个for循环  for (int i =0;i&amp;lt;numsSize;i++){ result[i] = lefts[i]*rights[i]; } *returnSize = numsSize; return result; } 题目问能不能不要额外的空间，然后返回的空间不算，因此我们先第一步简化</description>
+    </item>
+    
     <item>
       <title>Leetcode 525 连续数组</title>
       <link>https://Lu0key.github.io/post/leetcode-525-contiguous-array/</link>
