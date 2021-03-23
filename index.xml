@@ -6,7 +6,21 @@
     <description>Recent content on 洛七的摸鱼池塘</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Tue, 23 Mar 2021 14:50:23 +0800</lastBuildDate><atom:link href="https://Lu0key.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Tue, 23 Mar 2021 14:52:40 +0800</lastBuildDate><atom:link href="https://Lu0key.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Leetcode 201 数字范围按位与</title>
+      <link>https://Lu0key.github.io/post/leetcode-201-bitwise-and-of-numbers-range/</link>
+      <pubDate>Tue, 23 Mar 2021 14:52:40 +0800</pubDate>
+      
+      <guid>https://Lu0key.github.io/post/leetcode-201-bitwise-and-of-numbers-range/</guid>
+      <description>数字范围按位与(Bitwise AND of Numbers Range) 给你两个整数 left 和 right ，表示区间 [left, right] ，返回此区间内所有数字 按位与 的结果（包含 left 、right 端点）。
+示例 1：
+输入：left = 5, right = 7 输出：4 示例 2：
+输入：left = 0, right = 0 输出：0 示例 3：
+输入：left = 1, right = 2147483647 输出：0 提示：
+ 0 &amp;lt;= left &amp;lt;= right &amp;lt;= 2^31 - 1  int rangeBitwiseAnd(int left, int right){ if(left == 0) return 0; int a = right; for(int i = left;i&amp;lt;right;i++){ a &amp;amp;=i; } return a; } 这样显然会超时</description>
+    </item>
+    
     <item>
       <title>Leetcode 560 和为K的子数组</title>
       <link>https://Lu0key.github.io/post/leetcode-560-subarray-sum-equals-k/</link>
