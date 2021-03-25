@@ -6,7 +6,22 @@
     <description>Recent content in Posts on 洛七的摸鱼池塘</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Thu, 25 Mar 2021 14:28:37 +0800</lastBuildDate><atom:link href="https://Lu0key.github.io/post/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Thu, 25 Mar 2021 14:30:35 +0800</lastBuildDate><atom:link href="https://Lu0key.github.io/post/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Leetcode 169 多数元素</title>
+      <link>https://Lu0key.github.io/post/leetcode-169-majority-element/</link>
+      <pubDate>Thu, 25 Mar 2021 14:30:35 +0800</pubDate>
+      
+      <guid>https://Lu0key.github.io/post/leetcode-169-majority-element/</guid>
+      <description>多数元素(Majority Element) 给定一个大小为 n 的数组，找到其中的多数元素。多数元素是指在数组中出现次数 大于 ⌊ n/2 ⌋ 的元素。
+你可以假设数组是非空的，并且给定的数组总是存在多数元素。
+示例 1：
+输入：[3,2,3] 输出：3 示例 2：
+输入：[2,2,1,1,1,2,2] 输出：2 进阶：
+ 尝试设计时间复杂度为 O(n)、空间复杂度为 O(1) 的算法解决此问题。  int majorityElement(int* nums, int numsSize){ while (true){ int i = rand() % numsSize; int count = 0; for(int j =0 ; j&amp;lt;numsSize; j++){ if(nums[j] == nums[i]){ count++; } } if (count &amp;gt; numsSize/2){ return nums[i]; } } return 0; } 因为有一半以上的概率获得的数字是占一半以上的元素，效率难以评估
+int cmp(const void* a, const void* b){ return *(int *)a- *(int *)b; } int majorityElement(int* nums, int numsSize){ qsort(nums, numsSize, sizeof(int), cmp); return nums[numsSize/2]; } 看到这个题目，应该可以很自然的想到哈希表，但是C本身不自带，手动实现Hash表</description>
+    </item>
+    
     <item>
       <title>Leetcode 387 字符串中的第一个唯一字符</title>
       <link>https://Lu0key.github.io/post/leetcode-387-first-unique-character-in-a-string/</link>
