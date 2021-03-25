@@ -6,7 +6,21 @@
     <description>Recent content in Posts on 洛七的摸鱼池塘</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Thu, 25 Mar 2021 16:51:06 +0800</lastBuildDate><atom:link href="https://Lu0key.github.io/post/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Thu, 25 Mar 2021 16:53:45 +0800</lastBuildDate><atom:link href="https://Lu0key.github.io/post/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Leetcode 540 有序数组中的单一元素</title>
+      <link>https://Lu0key.github.io/post/leetcode-540-single-element-in-a-sorted-array/</link>
+      <pubDate>Thu, 25 Mar 2021 16:53:45 +0800</pubDate>
+      
+      <guid>https://Lu0key.github.io/post/leetcode-540-single-element-in-a-sorted-array/</guid>
+      <description>有序数组中的单一元素(Single Element in a Sorted Array) 给定一个只包含整数的有序数组，每个元素都会出现两次，唯有一个数只会出现一次，找出这个数。
+示例 1:
+输入: [1,1,2,3,3,4,4,8,8] 输出: 2 示例 2:
+输入: [3,3,7,7,10,11,11] 输出: 10 注意: 您的方案应该在 O(log n)时间复杂度和 O(1)空间复杂度中运行。
+int singleNonDuplicate(int* nums, int numsSize){ int ans = nums[0]; for (int i = 1; i &amp;lt; numsSize; ++i) { ans ^= nums[i]; } return ans; } 这个做法和之前的做法是一模一样的，这边应该有更妙的做法，毕竟条件更多了
+int singleNonDuplicate(int* nums, int numsSize){ for (int i = 0; i+1 &amp;lt; numsSize; i+=2) { if (nums[i] != nums[i+1]){ return nums[i]; } } return nums[numsSize-1]; } 这样的做法也是比较简单的，而且不用用到异或，更清楚，但是时间复杂度还是O(n)</description>
+    </item>
+    
     <item>
       <title>Leetcode 733 图像渲染</title>
       <link>https://Lu0key.github.io/post/leetcode-733-flood-fill/</link>
