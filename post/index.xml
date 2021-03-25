@@ -6,7 +6,22 @@
     <description>Recent content in Posts on 洛七的摸鱼池塘</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Thu, 25 Mar 2021 16:53:45 +0800</lastBuildDate><atom:link href="https://Lu0key.github.io/post/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Thu, 25 Mar 2021 16:55:44 +0800</lastBuildDate><atom:link href="https://Lu0key.github.io/post/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Leetcode 438 字符串的排列</title>
+      <link>https://Lu0key.github.io/post/leetcode-438-permutation-in-string/</link>
+      <pubDate>Thu, 25 Mar 2021 16:55:44 +0800</pubDate>
+      
+      <guid>https://Lu0key.github.io/post/leetcode-438-permutation-in-string/</guid>
+      <description>字符串的排列(Permutation in String) 给定两个字符串 s1 和 s2，写一个函数来判断 s2 是否包含 s1 的排列。
+换句话说，第一个字符串的排列之一是第二个字符串的 子串 。
+示例 1：
+输入: s1 = &amp;quot;ab&amp;quot; s2 = &amp;quot;eidbaooo&amp;quot; 输出: True 解释: s2 包含 s1 的排列之一 (&amp;quot;ba&amp;quot;). 示例 2：
+输入: s1= &amp;quot;ab&amp;quot; s2 = &amp;quot;eidboaoo&amp;quot; 输出: False 提示：
+ 输入的字符串只包含小写字母 两个字符串的长度都在 [1, 10,000] 之间。  和上一题几乎一样，甚至更简单
+bool checkInclusion(char * s1, char * s2){ int lenS1 = strlen(s1); int lenS2 = strlen(s2); if (lenS1&amp;gt;lenS2) return false; int Diff[&amp;#39;z&amp;#39;-&amp;#39;a&amp;#39;+1] = {0}; for (int i = 0; i &amp;lt; lenS1; ++i) Diff[s1[i]-&amp;#39;a&amp;#39;]--; for (int i = 0; i &amp;lt; lenS1; ++i) Diff[s2[i]-&amp;#39;a&amp;#39;]++; int diffCount = 0; for (char c = &amp;#39;a&amp;#39;; c &amp;lt;= &amp;#39;z&amp;#39;; c++) { if (Diff[c-&amp;#39;a&amp;#39;] !</description>
+    </item>
+    
     <item>
       <title>Leetcode 540 有序数组中的单一元素</title>
       <link>https://Lu0key.github.io/post/leetcode-540-single-element-in-a-sorted-array/</link>
