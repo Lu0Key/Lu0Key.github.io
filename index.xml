@@ -6,7 +6,19 @@
     <description>Recent content on 洛七的摸鱼池塘</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Thu, 25 Mar 2021 16:38:13 +0800</lastBuildDate><atom:link href="https://Lu0key.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Thu, 25 Mar 2021 16:40:22 +0800</lastBuildDate><atom:link href="https://Lu0key.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Leetcode 1232 缀点成线</title>
+      <link>https://Lu0key.github.io/post/leetcode-1232-check-if-it-is-a-straight-line/</link>
+      <pubDate>Thu, 25 Mar 2021 16:40:22 +0800</pubDate>
+      
+      <guid>https://Lu0key.github.io/post/leetcode-1232-check-if-it-is-a-straight-line/</guid>
+      <description>缀点成线(Check If It Is a Straight Line) 在一个 XY 坐标系中有一些点，我们用数组 coordinates 来分别记录它们的坐标，其中 coordinates[i] = [x, y] 表示横坐标为 x、纵坐标为 y 的点。
+请你来判断，这些点是否在该坐标系中属于同一条直线上，是则返回 true，否则请返回 false。
+示例 1： 输入：coordinates = [[1,2],[2,3],[3,4],[4,5],[5,6],[6,7]] 输出：true 示例 2： 输入：coordinates = [[1,1],[2,2],[3,4],[4,5],[5,6],[7,7]] 输出：false 提示：
+ 2 &amp;lt;= coordinates.length &amp;lt;= 1000 coordinates[i].length == 2 -10^4 &amp;lt;= coordinates[i][0], coordinates[i][1] &amp;lt;= 10^4 coordinates 中不含重复的点  bool checkStraightLine(int** coordinates, int coordinatesSize, int* coordinatesColSize){ for (int i = 0; i &amp;lt; coordinatesSize; ++i) { for (int j = i+1; j &amp;lt; coordinatesSize; ++j) { for (int k = j+1; k &amp;lt; coordinatesSize; ++k) { int x1 = coordinates[i][0]; int y1 = coordinates[i][1]; int x2 = coordinates[j][0]; int y2 = coordinates[j][1]; int x3 = coordinates[k][0]; int y3 = coordinates[k][1]; if ((y2-y1)*(x3-x1) !</description>
+    </item>
+    
     <item>
       <title>Leetcode 993 二叉树的堂兄弟结点</title>
       <link>https://Lu0key.github.io/post/leetcode-993-cousins-in-binary-tree/</link>
