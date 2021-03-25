@@ -6,7 +6,19 @@
     <description>Recent content on 洛七的摸鱼池塘</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Thu, 25 Mar 2021 14:24:40 +0800</lastBuildDate><atom:link href="https://Lu0key.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Thu, 25 Mar 2021 14:28:37 +0800</lastBuildDate><atom:link href="https://Lu0key.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Leetcode 387 字符串中的第一个唯一字符</title>
+      <link>https://Lu0key.github.io/post/leetcode-387-first-unique-character-in-a-string/</link>
+      <pubDate>Thu, 25 Mar 2021 14:28:37 +0800</pubDate>
+      
+      <guid>https://Lu0key.github.io/post/leetcode-387-first-unique-character-in-a-string/</guid>
+      <description>字符串中的第一个唯一字符(First Unique Character in a String) 给定一个字符串，找到它的第一个不重复的字符，并返回它的索引。如果不存在，则返回 -1。
+示例：
+s = &amp;quot;leetcode&amp;quot; 返回 0 s = &amp;quot;loveleetcode&amp;quot; 返回 2 提示： 你可以假定该字符串只包含小写字母。
+int firstUniqChar(char * s){ int sSize = strlen(s); for (int i = 0; i &amp;lt; sSize; i++){ if (s[i] == &amp;#39;-&amp;#39;) continue; bool isUnique = true; for(int j =i+1; j&amp;lt;sSize; j++){ if (s[j] == s[i]){ isUnique = false; s[j] = &amp;#39;-&amp;#39;; } } if (isUnique){ return i; } } return -1; } 这种时间复杂度为O(n^2)</description>
+    </item>
+    
     <item>
       <title>Leetcode 476 数字的补数</title>
       <link>https://Lu0key.github.io/post/leetcode-476-number-complement/</link>
