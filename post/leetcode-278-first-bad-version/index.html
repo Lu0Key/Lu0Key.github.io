@@ -3,19 +3,19 @@
 
 <head>
     
-    <title>Leetcode 278 First Bad Version // 洛七的摸鱼池塘</title>
+    <title>Leetcode 278 第一个错误的版本 // 洛七的摸鱼池塘</title>
     <link rel="shortcut icon" href="%20/favicon.ico%20" />
     <meta charset="utf-8" /> <meta name="generator" content="Hugo 0.80.0" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="author" content="洛七" />
     <meta name="description" content="" /> <link rel="stylesheet" href="https://Lu0key.github.io/css/main.min.88e7083eff65effb7485b6e6f38d10afbec25093a6fac42d734ce9024d3defbd.css" />  <meta name="twitter:card" content="summary"/>
-<meta name="twitter:title" content="Leetcode 278 First Bad Version"/>
+<meta name="twitter:title" content="Leetcode 278 第一个错误的版本"/>
 <meta name="twitter:description" content="第一个错误的版本(First Bad Version) 你是产品经理，目前正在带领一个团队开发新的产品。不幸的是，你的产品的最新版本没有通过质量检测。由于每个版本都是基于之前的版本开发的，所以错误的版本之后的所有版本都是错的。
 假设你有 n 个版本 [1, 2, ..., n]，你想找出导致之后所有版本出错的第一个错误的版本。
 你可以通过调用 bool isBadVersion(version) 接口来判断版本号 version 是否在单元测试中出错。实现一个函数来查找第一个错误的版本。你应该尽量减少对调用 API 的次数。
 示例:
 给定 n = 5，并且 version = 4 是第一个错误的版本。 调用 isBadVersion(3) -&gt; false 调用 isBadVersion(5) -&gt; true 调用 isBadVersion(4) -&gt; true 所以，4 是第一个错误的版本。 // The API isBadVersion is defined for you. // bool isBadVersion(int version);  int firstBadVersion(int n) { for (int ans = 1; ans &lt;=n; ans&#43;&#43;){ if(isBadVersion(ans) &amp;&amp; !isBadVersion(ans-1)){ return ans; } } return 0; } 上面这种方法是最直接的，但是相对的，但是超慢，会超时"/>
- <meta property="og:title" content="Leetcode 278 First Bad Version" />
+ <meta property="og:title" content="Leetcode 278 第一个错误的版本" />
 <meta property="og:description" content="第一个错误的版本(First Bad Version) 你是产品经理，目前正在带领一个团队开发新的产品。不幸的是，你的产品的最新版本没有通过质量检测。由于每个版本都是基于之前的版本开发的，所以错误的版本之后的所有版本都是错的。
 假设你有 n 个版本 [1, 2, ..., n]，你想找出导致之后所有版本出错的第一个错误的版本。
 你可以通过调用 bool isBadVersion(version) 接口来判断版本号 version 是否在单元测试中出错。实现一个函数来查找第一个错误的版本。你应该尽量减少对调用 API 的次数。
@@ -45,7 +45,7 @@
         
   <article class="post">
     <header class="post-header">
-      <h1 class ="post-title">Leetcode 278 First Bad Version</h1>
+      <h1 class ="post-title">Leetcode 278 第一个错误的版本</h1>
       <div class="post-meta">
         <div>
           <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-calendar">
