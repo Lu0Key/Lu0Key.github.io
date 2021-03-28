@@ -26,11 +26,11 @@ $\begin{aligned} &amp;amp;\begin{vmatrix} \sin(\theta_1+\theta_1)&amp;amp;\sin(\
 =&amp;amp;\begin{vmatrix} \sin\theta_1&amp;amp;\cos\theta_1&amp;amp;0&amp;amp;\cdots&amp;amp;0\\
 \sin\theta_2&amp;amp;\cos\theta_2&amp;amp;0&amp;amp;\cdots&amp;amp;0\\
 \vdots&amp;amp;\vdots&amp;amp;\vdots&amp;amp;&amp;amp;\vdots\\
-\sin\theta_n&amp;amp;\cos\theta_n&amp;amp;0&amp;amp;\cdots&amp;amp;0 \end{vmatrix}{n\times n} \cdot \begin{vmatrix} \cos\theta_1&amp;amp;\cos\theta_2&amp;amp;\cdots&amp;amp;\cos\theta_n\\
+\sin\theta_n&amp;amp;\cos\theta_n&amp;amp;0&amp;amp;\cdots&amp;amp;0 \end{vmatrix} _ {n\times n} \cdot \begin{vmatrix} \cos\theta_1&amp;amp;\cos\theta_2&amp;amp;\cdots&amp;amp;\cos\theta_n\\
 \sin\theta_1&amp;amp;\sin\theta_2&amp;amp;\cdots&amp;amp;\sin\theta_n\\
 0&amp;amp;0&amp;amp;\cdots&amp;amp;0\\
 \vdots&amp;amp;\vdots&amp;amp;&amp;amp;\vdots\\
-0&amp;amp;0&amp;amp;\cdots&amp;amp;0 \end{vmatrix}{n\times n}\\
+0&amp;amp;0&amp;amp;\cdots&amp;amp;0 \end{vmatrix}_{n\times n}\\
 =&amp;amp;\begin{cases} -\sin^2(\theta_1-\theta_2),&amp;amp;n=2\\
 0,&amp;amp;n\geqslant3 \end{cases} \end{aligned}$
 因此
