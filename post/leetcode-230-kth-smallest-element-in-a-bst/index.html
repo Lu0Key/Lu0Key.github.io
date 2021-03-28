@@ -140,26 +140,27 @@
     <span style="color:#66d9ef">return</span> search(root,k,<span style="color:#f92672">&amp;</span>size);
 }
 </code></pre></div><p>用递归</p>
-<pre><code class="language-cint" data-lang="cint">    if (root == NULL) {
-        return 0;
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c" data-lang="c"><span style="color:#66d9ef">int</span> <span style="color:#a6e22e">search</span>(<span style="color:#66d9ef">struct</span> TreeNode<span style="color:#f92672">*</span> root, <span style="color:#66d9ef">int</span><span style="color:#f92672">*</span> d){
+    <span style="color:#66d9ef">if</span> (root <span style="color:#f92672">==</span> NULL) {
+        <span style="color:#66d9ef">return</span> <span style="color:#ae81ff">0</span>;
     }
-    int result = search(root-&gt;left, d);
+    <span style="color:#66d9ef">int</span> result <span style="color:#f92672">=</span> search(root<span style="color:#f92672">-&gt;</span>left, d);
 
-    if (*d == 0) {
-        return result;
+    <span style="color:#66d9ef">if</span> (<span style="color:#f92672">*</span>d <span style="color:#f92672">==</span> <span style="color:#ae81ff">0</span>) {
+        <span style="color:#66d9ef">return</span> result;
     }
-    (*d)--;
-    if (*d == 0){
-        return root-&gt;val;
+    (<span style="color:#f92672">*</span>d)<span style="color:#f92672">--</span>;
+    <span style="color:#66d9ef">if</span> (<span style="color:#f92672">*</span>d <span style="color:#f92672">==</span> <span style="color:#ae81ff">0</span>){
+        <span style="color:#66d9ef">return</span> root<span style="color:#f92672">-&gt;</span>val;
     }
-    return search(root-&gt;right,d);
+    <span style="color:#66d9ef">return</span> search(root<span style="color:#f92672">-&gt;</span>right,d);
 }
 
-int kthSmallest(struct TreeNode* root, int k){
-    return search(root,&amp;k);
+<span style="color:#66d9ef">int</span> <span style="color:#a6e22e">kthSmallest</span>(<span style="color:#66d9ef">struct</span> TreeNode<span style="color:#f92672">*</span> root, <span style="color:#66d9ef">int</span> k){
+    <span style="color:#66d9ef">return</span> search(root,<span style="color:#f92672">&amp;</span>k);
 }
 
-</code></pre><p>太猛了</p>
+</code></pre></div><p>太猛了</p>
 
     </div>
     <div class="post-footer">
