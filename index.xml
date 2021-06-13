@@ -6,7 +6,19 @@
     <description>Recent content on 洛七的摸鱼池塘</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Sat, 22 May 2021 01:54:34 +0800</lastBuildDate><atom:link href="https://Lu0key.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 13 Jun 2021 23:21:49 +0800</lastBuildDate><atom:link href="https://Lu0key.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>HashMap源码学习</title>
+      <link>https://Lu0key.github.io/post/hashmap%E6%BA%90%E7%A0%81%E5%AD%A6%E4%B9%A0/</link>
+      <pubDate>Sun, 13 Jun 2021 23:21:49 +0800</pubDate>
+      
+      <guid>https://Lu0key.github.io/post/hashmap%E6%BA%90%E7%A0%81%E5%AD%A6%E4%B9%A0/</guid>
+      <description>HashMap 因为为了翻转课堂专门看了 HashMap 的源码，为了担心以后忘记，写一篇笔记记录下来，如果下面没有特指都是指 JDK 1.8 的源码，JDK 1.7 与 1.8 差别比较大
+介绍 HashMap 的底层是 数组 + 链表 + 红黑树，用一张图就能表示的比较清楚
+这张图有一个问题，不止要链表长度达到 8，还要数组长度达到 64
+常量 // 版本 id，感觉一般没用 private static final long serialVersionUID = 362498820763181265L; // 默认初始化容量，为 16 // 之所以用 1 &amp;lt;&amp;lt; 4 应该是为了表示容量必须是 2 的幂次方 static final int DEFAULT_INITIAL_CAPACITY = 1 &amp;lt;&amp;lt; 4; // aka 16  // 最大容量为 2^30 // 最小为 2 static final int MAXIMUM_CAPACITY = 1 &amp;lt;&amp;lt; 30; // 默认负载因子为 0.</description>
+    </item>
+    
     <item>
       <title>考研英语记录 8</title>
       <link>https://Lu0key.github.io/post/%E8%80%83%E7%A0%94%E8%8B%B1%E8%AF%AD%E8%AE%B0%E5%BD%95-8/</link>
