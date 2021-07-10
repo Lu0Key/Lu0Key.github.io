@@ -6,7 +6,18 @@
     <description>Recent content in 爬虫 on 洛七的摸鱼池塘</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Sat, 10 Jul 2021 23:23:46 +0800</lastBuildDate><atom:link href="https://Lu0key.github.io/tags/%E7%88%AC%E8%99%AB/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 11 Jul 2021 00:23:25 +0800</lastBuildDate><atom:link href="https://Lu0key.github.io/tags/%E7%88%AC%E8%99%AB/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Python 下载图片</title>
+      <link>https://Lu0key.github.io/post/python-download-img/</link>
+      <pubDate>Sun, 11 Jul 2021 00:23:25 +0800</pubDate>
+      
+      <guid>https://Lu0key.github.io/post/python-download-img/</guid>
+      <description>在做Python 爬虫的时候，爬取图片是一个很常用的功能
+# 主要部分代码 with open(filename, &amp;#34;wb&amp;#34;) as f: f.write(resp.content) 比较通用的下载图片代码
+def download_img(url,src,count=0): &amp;#34;&amp;#34;&amp;#34; :param url: 图片地址 :param src: 图片存放的文件夹 :param count: 调用次数，默认为 0 &amp;#34;&amp;#34;&amp;#34; resp = requests.get(url,headers=headers) filename = src + &amp;#34;\\&amp;#34;+ url.split(&amp;#34;/&amp;#34;)[-1] # 判断文件夹存不存在 if not os.path.exists(src): os.makedirs(src) if not os.path.isdir(src): os.makedirs(src) try: # 主要部分 with open(filename, &amp;#34;wb&amp;#34;) as f: f.write(resp.content) resp.close() except: print(&amp;#34;============================================&amp;#34;) print(&amp;#34;Error:&amp;#34;, filename) resp.close() if count&amp;lt;5: download_img(url,src,count+1) else: print(&amp;#34;彻底失败&amp;#34;) </description>
+    </item>
+    
     <item>
       <title>Python 爬虫乱码问题</title>
       <link>https://Lu0key.github.io/post/python-crawler-mistaken-code/</link>
