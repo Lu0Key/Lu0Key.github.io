@@ -6,7 +6,18 @@
     <description>Recent content in Posts on 洛七的摸鱼池塘</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Sun, 13 Jun 2021 23:21:49 +0800</lastBuildDate><atom:link href="https://Lu0key.github.io/post/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sat, 10 Jul 2021 23:23:46 +0800</lastBuildDate><atom:link href="https://Lu0key.github.io/post/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Python 爬虫乱码问题</title>
+      <link>https://Lu0key.github.io/post/python-crawler-mistaken-code/</link>
+      <pubDate>Sat, 10 Jul 2021 23:23:46 +0800</pubDate>
+      
+      <guid>https://Lu0key.github.io/post/python-crawler-mistaken-code/</guid>
+      <description>import requests headers = { &amp;#34;User-Agent&amp;#34;:&amp;#34;Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:89.0) Gecko/20100101 Firefox/89.0&amp;#34; } resp = requests.get(&amp;#34;http://cmathc.cn/&amp;#34;, headers=headers) print(resp.text) 可以很明显看出有乱码，解决的方式非常的简单粗暴
+我们发现，网络返回的字符集类型和推测出来的字符集类型是不一致的，因此我们只要将字符集类型设定为推断出来的字符集类型即可，于是
+import requests headers = { &amp;#34;User-Agent&amp;#34;:&amp;#34;Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:89.0) Gecko/20100101 Firefox/89.0&amp;#34; } resp = requests.get(&amp;#34;http://cmathc.cn/&amp;#34;, headers=headers) resp.encoding = resp.apparent_encoding print(resp.text) 看图可知乱码问题得到了解决</description>
+    </item>
+    
     <item>
       <title>HashMap源码学习</title>
       <link>https://Lu0key.github.io/post/hashmap%E6%BA%90%E7%A0%81%E5%AD%A6%E4%B9%A0/</link>

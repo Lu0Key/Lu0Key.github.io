@@ -355,9 +355,13 @@ $s[0] * 31^{n-1}+s[1] * 31^{n-2}+\cdots + s[n-1]$<br>
 JDK1.8 中，用的是尾插法，结构是 数组+链表+红黑树<br>
 HashMap 是线程不安全的<br>
 JDK1.7 中可能会在扩容的时候产生循环链表，导致死循环，并且也有可能数据丢失<br>
-JDK1.8 中可能会在扩容的时候产生数据覆盖</p>
+JDK1.8 中可能会在扩容的时候产生数据覆盖<br>
+JDK1.7 中 table 是 Entry 数组 <br>
+JDK1.8 中 table 是 Node 数组</p>
 <h2 id="扩容过程">扩容过程</h2>
 <p>1.8 中是懒加载，构造函数的时候并不会创建 table 数组，而是在第一次 put 的时候才创建，如果是链表达到8，且数组长度不到 64 的话，会进行扩容，每次扩容是之前的两倍，其次，如果数组元素达到 &ldquo;数组容量*负载因子&rdquo; 的话也会进行扩容，同样是扩容到原来的两倍.</p>
+<p>在扩容的时候会进行rehash，首先 Node 的新位置索引index一定和原来一样或者是 原来的索引加上原来的长度。这是为什么呢？<br>
+我们来回忆一下算 index 的方法，hash &amp; (length - 1)，假设length = 8，那么位置就是hash值得后三位，那么当扩容之后，位置还是 hash &amp; (newLength - 1)，这时候 newLength = 16，那么“与”运算的结果就是hash值得后四位，那么这个时候新多出来的一位只有可能是0或者1(毕竟是2进制)，那么假设是0，新的索引就和原来一样，如果是1，那么新的索引就是 oldLength + 老的索引，因此这边判断索引的位置实际上就是判断从右到左第4位是 0 还是 1，代码中非常优秀，直接将 hash &amp; oldLength，因为oldLength 只有从右到左第4位 是1，其他都是0，如果“与”运算的结果为0，说明hash值从右到左的第四位为0，否则为 1，这样就可以判断 Node 的新位置在哪里了</p>
 <h2 id="17-线程安全">1.7 线程安全</h2>
 <p>由于扩容的时候需要创建一个新的数组，要把老数组中的元素复制到新数组中，这个过程可能会出现问题，有这样一个函数</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-Java" data-lang="Java"><span style="color:#66d9ef">void</span> <span style="color:#a6e22e">transfer</span><span style="color:#f92672">(</span>Entry<span style="color:#f92672">[]</span> newTable<span style="color:#f92672">,</span> <span style="color:#66d9ef">boolean</span> rehash<span style="color:#f92672">)</span> <span style="color:#f92672">{</span>  
@@ -444,6 +448,8 @@ e=next =null
     <span style="color:#f92672">......</span>
 <span style="color:#f92672">}</span>
 </code></pre></div><p>假设线程A 判断完 tab[i] 为 null 之后时间片用完，开始线程 B，线程 B 在tab[i] 处判断为 null ，于是直接将值放在tab[i] 上，时间片结束后继续线程A，由于上次已经判断完了，于是直接把值赋给 tab[i]，这样就会导致线程B的数据被覆盖</p>
+<h2 id="参考">参考</h2>
+<p>这篇笔记中大部分图都是从网络上别人的博客中搬运来的，但是找不到具体来源了，所以没有附上链接</p>
 
     </div>
     <div class="post-footer">

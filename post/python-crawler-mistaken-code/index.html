@@ -1,0 +1,100 @@
+<!doctype html>
+<html lang="en-us">
+
+<head>
+    
+    <title>Python 爬虫乱码问题 // 洛七的摸鱼池塘</title>
+    <link rel="shortcut icon" href="%20/favicon.ico%20" />
+    <meta charset="utf-8" /> <meta name="generator" content="Hugo 0.80.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="author" content="洛七" />
+    <meta name="description" content="" /> <link rel="stylesheet" href="https://Lu0key.github.io/css/main.min.88e7083eff65effb7485b6e6f38d10afbec25093a6fac42d734ce9024d3defbd.css" />  <meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Python 爬虫乱码问题"/>
+<meta name="twitter:description" content="import requests headers = { &#34;User-Agent&#34;:&#34;Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:89.0) Gecko/20100101 Firefox/89.0&#34; } resp = requests.get(&#34;http://cmathc.cn/&#34;, headers=headers) print(resp.text) 可以很明显看出有乱码，解决的方式非常的简单粗暴
+我们发现，网络返回的字符集类型和推测出来的字符集类型是不一致的，因此我们只要将字符集类型设定为推断出来的字符集类型即可，于是
+import requests headers = { &#34;User-Agent&#34;:&#34;Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:89.0) Gecko/20100101 Firefox/89.0&#34; } resp = requests.get(&#34;http://cmathc.cn/&#34;, headers=headers) resp.encoding = resp.apparent_encoding print(resp.text) 看图可知乱码问题得到了解决"/>
+ <meta property="og:title" content="Python 爬虫乱码问题" />
+<meta property="og:description" content="import requests headers = { &#34;User-Agent&#34;:&#34;Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:89.0) Gecko/20100101 Firefox/89.0&#34; } resp = requests.get(&#34;http://cmathc.cn/&#34;, headers=headers) print(resp.text) 可以很明显看出有乱码，解决的方式非常的简单粗暴
+我们发现，网络返回的字符集类型和推测出来的字符集类型是不一致的，因此我们只要将字符集类型设定为推断出来的字符集类型即可，于是
+import requests headers = { &#34;User-Agent&#34;:&#34;Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:89.0) Gecko/20100101 Firefox/89.0&#34; } resp = requests.get(&#34;http://cmathc.cn/&#34;, headers=headers) resp.encoding = resp.apparent_encoding print(resp.text) 看图可知乱码问题得到了解决" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://Lu0key.github.io/post/python-crawler-mistaken-code/" />
+<meta property="article:published_time" content="2021-07-10T23:23:46+08:00" />
+<meta property="article:modified_time" content="2021-07-10T23:23:46+08:00" />
+
+
+</head>
+
+<body>
+    <header class="app-header">
+        <a href="https://Lu0key.github.io/"><img class="app-header-avatar" src="/avatar.jpg" alt="洛七" /></a>
+        <h1>洛七的摸鱼池塘</h1>
+        <nav class="app-header-menu">
+            <a class="app-header-menu-item" href="/tags/">Tags</a>
+        </nav>
+        <p>即将没书读的咸鱼</p>
+        <div class="app-header-social">
+            
+        </div>
+    </header>
+    <main class="app-container">
+        
+  <article class="post">
+    <header class="post-header">
+      <h1 class ="post-title">Python 爬虫乱码问题</h1>
+      <div class="post-meta">
+        <div>
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-calendar">
+  <title>calendar</title>
+  <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line>
+</svg>
+          Jul 10, 2021
+        </div>
+        <div>
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-clock">
+  <title>clock</title>
+  <circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline>
+</svg>
+          1 min read
+        </div>
+        <div>
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-tag">
+  <title>tag</title>
+  <path d="M20.59 13.41l-7.17 7.17a2 2 0 0 1-2.83 0L2 12V2h10l8.59 8.59a2 2 0 0 1 0 2.82z"></path><line x1="7" y1="7" x2="7" y2="7"></line>
+</svg>
+              <a class="tag" href="https://Lu0key.github.io/tags/python/">Python</a>
+              <a class="tag" href="https://Lu0key.github.io/tags/%E7%88%AC%E8%99%AB/">爬虫</a>
+        </div>
+      </div>
+    </header>
+    <div class="post-content">
+      <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#f92672">import</span> requests
+headers <span style="color:#f92672">=</span> {
+    <span style="color:#e6db74">&#34;User-Agent&#34;</span>:<span style="color:#e6db74">&#34;Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:89.0) Gecko/20100101 Firefox/89.0&#34;</span>
+}
+resp <span style="color:#f92672">=</span> requests<span style="color:#f92672">.</span>get(<span style="color:#e6db74">&#34;http://cmathc.cn/&#34;</span>, headers<span style="color:#f92672">=</span>headers)
+<span style="color:#66d9ef">print</span>(resp<span style="color:#f92672">.</span>text)
+</code></pre></div><p><img src="https://gitee.com/luokey/hexo-image/raw/master/imags/20210710232658.png" alt=""></p>
+<p>可以很明显看出有乱码，解决的方式非常的简单粗暴</p>
+<p><img src="https://gitee.com/luokey/hexo-image/raw/master/imags/20210710233051.png" alt=""></p>
+<p>我们发现，网络返回的字符集类型和推测出来的字符集类型是不一致的，因此我们只要将字符集类型设定为推断出来的字符集类型即可，于是</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#f92672">import</span> requests
+headers <span style="color:#f92672">=</span> {
+    <span style="color:#e6db74">&#34;User-Agent&#34;</span>:<span style="color:#e6db74">&#34;Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:89.0) Gecko/20100101 Firefox/89.0&#34;</span>
+}
+resp <span style="color:#f92672">=</span> requests<span style="color:#f92672">.</span>get(<span style="color:#e6db74">&#34;http://cmathc.cn/&#34;</span>, headers<span style="color:#f92672">=</span>headers)
+resp<span style="color:#f92672">.</span>encoding <span style="color:#f92672">=</span> resp<span style="color:#f92672">.</span>apparent_encoding
+<span style="color:#66d9ef">print</span>(resp<span style="color:#f92672">.</span>text)
+</code></pre></div><p><img src="https://gitee.com/luokey/hexo-image/raw/master/imags/20210710233242.png" alt=""></p>
+<p>看图可知乱码问题得到了解决</p>
+
+    </div>
+    <div class="post-footer">
+      
+    </div>
+  </article>
+
+    </main>
+</body>
+
+</html>
