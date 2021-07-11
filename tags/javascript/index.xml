@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>JavaScript on 洛七的摸鱼池塘</title>
+    <link>https://Lu0key.github.io/tags/javascript/</link>
+    <description>Recent content in JavaScript on 洛七的摸鱼池塘</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Sun, 11 Jul 2021 14:33:19 +0800</lastBuildDate><atom:link href="https://Lu0key.github.io/tags/javascript/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Jquery 二次选择</title>
+      <link>https://Lu0key.github.io/post/jquery-second-choice/</link>
+      <pubDate>Sun, 11 Jul 2021 14:33:19 +0800</pubDate>
+      
+      <guid>https://Lu0key.github.io/post/jquery-second-choice/</guid>
+      <description>进行 DOM 操作的时候，我们有两种方式
+// 原生 let a = document.querySelector(&amp;#34;css selector&amp;#34;); // JQuery let b = $(&amp;#34;css selector&amp;#34;) 如果我们想要对 a 和 b 二次选择怎么办呢？(就是从 a 和 b 中找 DOM 元素)
+// 原生 for (let i =0; i&amp;lt;a.length; i++){ a[i].querySelector(&amp;#34;css selector&amp;#34;); } // JQuery for (let i =0; i&amp;lt;a.length; i++){ $(a[i]).find(&amp;#34;css selector&amp;#34;); } 然后就可以根据情况进行操作了，下面的代码是帮老师写的一键审批脚本
+// 打开批量模式 edit = $(&amp;#34;#batchApprovalShow&amp;#34;) edit.click() // 获取当前页所有审批申请 a = $(&amp;#34;#nowApply &amp;gt; .manage-bar.completed&amp;#34;) // 这个循环是处理页面神奇的错误的 for (let i=0;i&amp;lt;a.length;i++){ $(a[i]).find(&amp;#34;.manage-body &amp;gt; .</description>
+    </item>
+    
+  </channel>
+</rss>
