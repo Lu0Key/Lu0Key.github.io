@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>毕业论文 on 洛七的摸鱼池塘</title>
+    <link>https://Lu0key.github.io/tags/%E6%AF%95%E4%B8%9A%E8%AE%BA%E6%96%87/</link>
+    <description>Recent content in 毕业论文 on 洛七的摸鱼池塘</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Mon, 14 Mar 2022 18:13:13 +0800</lastBuildDate><atom:link href="https://Lu0key.github.io/tags/%E6%AF%95%E4%B8%9A%E8%AE%BA%E6%96%87/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>偏微分方程分类</title>
+      <link>https://Lu0key.github.io/post/22-3-14-%E5%81%8F%E5%BE%AE%E5%88%86%E6%96%B9%E7%A8%8B%E5%88%86%E7%B1%BB/</link>
+      <pubDate>Mon, 14 Mar 2022 18:13:13 +0800</pubDate>
+      
+      <guid>https://Lu0key.github.io/post/22-3-14-%E5%81%8F%E5%BE%AE%E5%88%86%E6%96%B9%E7%A8%8B%E5%88%86%E7%B1%BB/</guid>
+      <description>太久没更了，都快忘了怎么用了，最近要高强度学习，把这个捡起来继续用
+ 偏微分方程概念 关于未知函数 $u(x_1,x_2,\cdots,x_n)$ 的偏微分方程 是一个含有 $u$ 的偏微商的恒等式，其中最高阶微商的阶数叫做该偏微分方程的阶. 例如，二阶偏微分方程的一般形式是
+$$F(x,u,Du,u_{x_1x_1},u_{x_1x_2},\cdots,u_{x_nx_n})=0$$
+其中，$x=(x_1,x_2,\cdots,x_n),;Du=(u_{x_1},u_{x_2},\cdots,u_{x_n})$，$F$ 是关于自变量 $x$ 和未知函数 $u$ 及 $u$ 的有限多个偏微商的已知函数。
+Laplace 算子 $$\Delta=\dfrac{\partial^2}{\partial x_1^2}+\cdots+\dfrac{\partial^2}{\partial x_n^2}$$
+称为 Laplace 算子，也称 调和算子，偏微分方程中最重要的算子之一.
+例子 1 关于函数 $u=u(x_1,x_2,\cdots,x_n,t)$ 的 $n$ 维波动方程是
+$$u_{tt}=a^2\Delta u$$
+其中，$a&amp;gt;0$ 是常数，为一个二阶常系数线性方程.
+2 当一个导热体的密度和比热都是常数时，其温度分布 $u(x,t)$ 满足，热传导方程
+$$u_{t}=k\Delta u$$
+其中，$k&amp;gt;0$ 是常数.
+3 关于函数 $u(x_1,x_2,\cdots,x_n)$ 的 $n$ 维 Laplace 方程，也称调和方程是
+$$\Delta u=u_{x_1x_2}+u_{x_2x_2}+\cdots+u_{x_nx_n}=0.$$
+它的解称为调和函数(重要). 当方程非齐次时，叫做 Poisson(泊松)方程. 通常称为位势方程.
+ 二阶线性方程的一般形式 $$Lu\equiv\sum_{i,j=1}^na^{ij}(x)u_{x_ix_j}+\sum_{i=1}^nb^i(x)u_{x_i}+c(x)u=f(x)$$
+其中 $a^{ij}=a^{ji}$，$i,j=1,2,\cdots,n$，且至少有一个 $a^{ij}$ 不恒为零.
+说到这个，应该讲讲 偏微分方程线性 的概念</description>
+    </item>
+    
+  </channel>
+</rss>
