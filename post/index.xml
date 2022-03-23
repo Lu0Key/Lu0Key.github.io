@@ -6,7 +6,36 @@
     <description>Recent content in Posts on 洛七的摸鱼池塘</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Wed, 23 Mar 2022 22:05:52 +0800</lastBuildDate><atom:link href="https://Lu0key.github.io/post/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Wed, 23 Mar 2022 22:08:32 +0800</lastBuildDate><atom:link href="https://Lu0key.github.io/post/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>数据库系统(4)-关系模型之关系代数</title>
+      <link>https://Lu0key.github.io/post/22-3-23-%E6%95%B0%E6%8D%AE%E5%BA%93%E7%B3%BB%E7%BB%9F-4-%E5%85%B3%E7%B3%BB%E6%A8%A1%E5%9E%8B%E4%B9%8B%E5%85%B3%E7%B3%BB%E4%BB%A3%E6%95%B0/</link>
+      <pubDate>Wed, 23 Mar 2022 22:08:32 +0800</pubDate>
+      
+      <guid>https://Lu0key.github.io/post/22-3-23-%E6%95%B0%E6%8D%AE%E5%BA%93%E7%B3%BB%E7%BB%9F-4-%E5%85%B3%E7%B3%BB%E6%A8%A1%E5%9E%8B%E4%B9%8B%E5%85%B3%E7%B3%BB%E4%BB%A3%E6%95%B0/</guid>
+      <description>关系代数的基本操作 关系代数的拓展操作 关系代数的组合与应用训练 关系代数的复杂拓展操作(选学)  关系代数概述 关系代数运算的特点  基于集合，提供了一系列的关系代数操作：并、差、笛卡尔积、选择、投影和更名等基本操作 以及交、链接和关系除等拓展操作，是一种集合思维的操作语言 关系代数操作以一个或多个关系为输入，结果是一个新的关系 用对关系的运算来表达查询，需要指明所用操作，具有一定的过程性 是一种抽象的语言，是学习其他数据库语言，如SQL等的基础  基本操作 关系代数之基本操作 关系代数运算的约束
+并相容性
+ 参与运算的两个关系及其相关属性之间有一定的对应性、可比性或意义关联性  定义
+关系R与关系S存在相容性，当且仅当：
+ 关系R和关系S的属性数目必须相容 对于任意 i ，关系R的第 i个属性的域必须和关系S的第i个属性的域相同  并
+定义：假设关系R和关系S是并相容的，则关系R与关系S的并运算结果也是一个关系，记作：$R\cup S$，它由或者出现在关系R中，或者出现在关系S中的元组构成。
+并运算是将两个关系的元组合并成一个关系，在合并时去掉重复的元组。
+差
+定义：假设关系 R 和关系 S 时并相容的，则关系 R 与关系S 的差运算结果也是一个关系，记作：R-S，它由踹向那子啊关系R中，但不出现在关系S中的元组构成。
+数学描述：$R-S={t|t\in R ;and; t\not\in S}$，其中 t 是元组
+广义笛卡尔积
+定义：关系$R(&amp;lt;a_1,a_2,\cdots,a_n&amp;gt;)$ 与关系 $S(&amp;lt;b_1,b_2,\cdots,b_m&amp;gt;)$ 的广义笛卡尔积运算结果也是一个关系，记作：$R\times S$，它由关系R中的元组与关系S的元组进行所有可能的拼接(或串接)构成。
+维数是相加
+基数是相乘
+选择
+定义：给定一个关系R，同时给定一个选择的条件condition(简写con)，选择运算结果也是一个关系，记作$\sigma_{com}(R)$，它从关系R中选择除满足给定条件的condition的元组构成
+运算优先级(从高到低)：括弧，比较运算符，非运算，与运算，或运算
+投影(Project)
+定义：给定一个关系R，投影运算结果也是以一个关系，记作 $\prod_A(R)$，它从关系R中选出属性包含在 A中的列构成.
+投影关系，即从给定关系中选出某些列组成新的关系，而选择操作是从给定关系中选出某些行组成新的关系
+例如$\prod_{A_3,A_1}(R)$，选取 $A_3,A_1$ 两列的元组,**投影后会自动去掉重复的元组**</description>
+    </item>
+    
     <item>
       <title>数据库系统(3)-关系模型之基本概念</title>
       <link>https://Lu0key.github.io/post/22-3-23-%E6%95%B0%E6%8D%AE%E5%BA%93%E7%B3%BB%E7%BB%9F-3-%E5%85%B3%E7%B3%BB%E6%A8%A1%E5%9E%8B%E4%B9%8B%E5%9F%BA%E6%9C%AC%E6%A6%82%E5%BF%B5/</link>
