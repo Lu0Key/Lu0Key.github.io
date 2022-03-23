@@ -6,7 +6,32 @@
     <description>Recent content on 洛七的摸鱼池塘</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Wed, 23 Mar 2022 22:02:00 +0800</lastBuildDate><atom:link href="https://Lu0key.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Wed, 23 Mar 2022 22:05:52 +0800</lastBuildDate><atom:link href="https://Lu0key.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>数据库系统(3)-关系模型之基本概念</title>
+      <link>https://Lu0key.github.io/post/22-3-23-%E6%95%B0%E6%8D%AE%E5%BA%93%E7%B3%BB%E7%BB%9F-3-%E5%85%B3%E7%B3%BB%E6%A8%A1%E5%9E%8B%E4%B9%8B%E5%9F%BA%E6%9C%AC%E6%A6%82%E5%BF%B5/</link>
+      <pubDate>Wed, 23 Mar 2022 22:05:52 +0800</pubDate>
+      
+      <guid>https://Lu0key.github.io/post/22-3-23-%E6%95%B0%E6%8D%AE%E5%BA%93%E7%B3%BB%E7%BB%9F-3-%E5%85%B3%E7%B3%BB%E6%A8%A1%E5%9E%8B%E4%B9%8B%E5%9F%BA%E6%9C%AC%E6%A6%82%E5%BF%B5/</guid>
+      <description>关系模型概述？ 什么是关系？ 关系模型中的约束  关系模型简述 提出
+E.F.Codd 在 1970 年提出
+研究
+一个关系(relation) 就是一个Table
+关系模型就是处理Table 的，由三个部分组成：
+ 描述DB各种数据的基本结构形式(Table/Relation) 描述Table与Table之间所可能发生的各种操作(关系运算) 描述这些操作所应遵循的约束条件(完整性约束)  关系模型三要素
+ 基本结构：Relation/Table 基本操作：Relation/Table 基本的  并 Union 差 difference 广义积 product 选择 selection 投影 projection   拓展的：  交 intersection 连接 join 除 division    完整性约束：实体完整性、参照完整性和用户自定义的完整性
+关系模型与关系数据库语言的关系
+关系运算：关系代数和关系演算
+关系演算：元组演算和域演算
+基于关系代数设计的数据库语言(ISBL):用计算机可识别的符号表征关系代数的运算符号
+基于元组演算设计的数据库语言(Ingres系统的QUEL)：用计算机可识别的符号表征元组演算的运算符号
+基于域演算设计的数据库语言示例QBE
+什么是关系 什么是表
+表的基本构成要素
+ 表/关系 列/字段/属性/数据项 列名 列值 标题/模式 行/元组/记录  关系
+“列”的取值范围“域(Domain)”</description>
+    </item>
+    
     <item>
       <title>数据库系统(2)-数据库系统的结构抽象与演变</title>
       <link>https://Lu0key.github.io/post/22-3-23-%E6%95%B0%E6%8D%AE%E5%BA%93%E7%B3%BB%E7%BB%9F-2-%E6%95%B0%E6%8D%AE%E5%BA%93%E7%B3%BB%E7%BB%9F%E7%9A%84%E7%BB%93%E6%9E%84%E6%8A%BD%E8%B1%A1%E4%B8%8E%E6%BC%94%E5%8F%98/</link>
