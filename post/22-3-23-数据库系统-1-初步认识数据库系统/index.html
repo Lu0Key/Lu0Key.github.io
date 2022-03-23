@@ -1,0 +1,152 @@
+<!doctype html>
+<html lang="en-us">
+
+<head>
+    
+    <title>数据库系统-(1)-初步认识数据库系统 // 洛七的摸鱼池塘</title>
+    <link rel="shortcut icon" href="%20/favicon.ico%20" />
+    <meta charset="utf-8" /> <meta name="generator" content="Hugo 0.80.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="author" content="洛七" />
+    <meta name="description" content="" /> <link rel="stylesheet" href="https://Lu0key.github.io/css/main.min.88e7083eff65effb7485b6e6f38d10afbec25093a6fac42d734ce9024d3defbd.css" />  <meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="数据库系统-(1)-初步认识数据库系统"/>
+<meta name="twitter:description" content=" 数据库 数据库语言（SQL） 数据库应用程序 关系数据库  面向对象数据库 XML数据库 NoSQL数据库 其他数据库 数据库设计 数据库应用程序开发 数据库存取与控制    初步认识数据库系统  数据库是电子化信息的集合  Table
+ 列/字段/属性/数据项 行/元组/记录  Table 中描述了一批相互有关联关系的数据
+Database 相互之间有关联关系的 Table 的集合
+数据库系统(工作环境)
+ 数据库(DB)：Database 数据库管理系统(DBMS)：Database Management System(一种软件：Oracle、SQL Server) 数据库应用(DBAP)：Database Application 数据库管理员(DBA)：Database Administrator 计算机基本系统  数据库管理系统的功能：
+ 数据库定义  DDL：数据定义语言   数据库操纵  DML：数据操纵语言   数据库控制  DCL：数据控制语言   数据库维护  转储、恢复、重组、性能检测、分析    SQL：结构化的数据库语言
+ DDL DML DCL  "/>
+ <meta property="og:title" content="数据库系统-(1)-初步认识数据库系统" />
+<meta property="og:description" content=" 数据库 数据库语言（SQL） 数据库应用程序 关系数据库  面向对象数据库 XML数据库 NoSQL数据库 其他数据库 数据库设计 数据库应用程序开发 数据库存取与控制    初步认识数据库系统  数据库是电子化信息的集合  Table
+ 列/字段/属性/数据项 行/元组/记录  Table 中描述了一批相互有关联关系的数据
+Database 相互之间有关联关系的 Table 的集合
+数据库系统(工作环境)
+ 数据库(DB)：Database 数据库管理系统(DBMS)：Database Management System(一种软件：Oracle、SQL Server) 数据库应用(DBAP)：Database Application 数据库管理员(DBA)：Database Administrator 计算机基本系统  数据库管理系统的功能：
+ 数据库定义  DDL：数据定义语言   数据库操纵  DML：数据操纵语言   数据库控制  DCL：数据控制语言   数据库维护  转储、恢复、重组、性能检测、分析    SQL：结构化的数据库语言
+ DDL DML DCL  " />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://Lu0key.github.io/post/22-3-23-%E6%95%B0%E6%8D%AE%E5%BA%93%E7%B3%BB%E7%BB%9F-1-%E5%88%9D%E6%AD%A5%E8%AE%A4%E8%AF%86%E6%95%B0%E6%8D%AE%E5%BA%93%E7%B3%BB%E7%BB%9F/" />
+<meta property="article:published_time" content="2022-03-23T09:04:07+08:00" />
+<meta property="article:modified_time" content="2022-03-23T09:04:07+08:00" />
+
+
+</head>
+
+<body>
+    <header class="app-header">
+        <a href="https://Lu0key.github.io/"><img class="app-header-avatar" src="/avatar.jpg" alt="洛七" /></a>
+        <h1>洛七的摸鱼池塘</h1>
+        <nav class="app-header-menu">
+            <a class="app-header-menu-item" href="/tags/">Tags</a>
+        </nav>
+        <p>即将没书读的咸鱼</p>
+        <div class="app-header-social">
+            
+        </div>
+    </header>
+    <main class="app-container">
+        
+  <article class="post">
+    <header class="post-header">
+      <h1 class ="post-title">数据库系统-(1)-初步认识数据库系统</h1>
+      <div class="post-meta">
+        <div>
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-calendar">
+  <title>calendar</title>
+  <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line>
+</svg>
+          Mar 23, 2022
+        </div>
+        <div>
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-clock">
+  <title>clock</title>
+  <circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline>
+</svg>
+          1 min read
+        </div>
+        <div>
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-tag">
+  <title>tag</title>
+  <path d="M20.59 13.41l-7.17 7.17a2 2 0 0 1-2.83 0L2 12V2h10l8.59 8.59a2 2 0 0 1 0 2.82z"></path><line x1="7" y1="7" x2="7" y2="7"></line>
+</svg>
+              <a class="tag" href="https://Lu0key.github.io/tags/%E6%95%B0%E6%8D%AE%E5%BA%93/">数据库</a>
+        </div>
+      </div>
+    </header>
+    <div class="post-content">
+      <ul>
+<li>数据库</li>
+<li>数据库语言（SQL）</li>
+<li>数据库应用程序</li>
+<li>关系数据库
+<ul>
+<li>面向对象数据库</li>
+<li>XML数据库</li>
+<li>NoSQL数据库</li>
+<li>其他数据库</li>
+<li>数据库设计</li>
+<li>数据库应用程序开发</li>
+<li>数据库存取与控制</li>
+</ul>
+</li>
+</ul>
+<h2 id="初步认识数据库系统">初步认识数据库系统</h2>
+<ul>
+<li>数据库是电子化信息的集合</li>
+</ul>
+<p><strong>Table</strong></p>
+<ul>
+<li>列/字段/属性/数据项</li>
+<li>行/元组/记录</li>
+</ul>
+<p>Table 中描述了一批相互有关联关系的数据<br>
+Database 相互之间有关联关系的 Table 的集合</p>
+<p><strong>数据库系统(工作环境)</strong></p>
+<ul>
+<li>数据库(DB)：Database</li>
+<li>数据库管理系统(DBMS)：Database Management System(一种软件：Oracle、SQL Server)</li>
+<li>数据库应用(DBAP)：Database Application</li>
+<li>数据库管理员(DBA)：Database Administrator</li>
+<li>计算机基本系统</li>
+</ul>
+<p>数据库管理系统的功能：</p>
+<ul>
+<li>数据库定义
+<ul>
+<li>DDL：数据定义语言</li>
+</ul>
+</li>
+<li>数据库操纵
+<ul>
+<li>DML：数据操纵语言</li>
+</ul>
+</li>
+<li>数据库控制
+<ul>
+<li>DCL：数据控制语言</li>
+</ul>
+</li>
+<li>数据库维护
+<ul>
+<li>转储、恢复、重组、性能检测、分析</li>
+</ul>
+</li>
+</ul>
+<p>SQL：结构化的数据库语言</p>
+<ul>
+<li>DDL</li>
+<li>DML</li>
+<li>DCL</li>
+</ul>
+
+    </div>
+    <div class="post-footer">
+      
+    </div>
+  </article>
+
+    </main>
+</body>
+
+</html>
