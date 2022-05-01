@@ -59,7 +59,7 @@ v-text
   <title>clock</title>
   <circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline>
 </svg>
-          8 min read
+          9 min read
         </div>
         <div>
           <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-tag">
@@ -889,6 +889,70 @@ v-text
                     <span style="color:#a6e22e">hobbies</span><span style="color:#f92672">:</span> [],
                     <span style="color:#a6e22e">stars</span><span style="color:#f92672">:</span> [<span style="color:#e6db74">&#34;牛德华&#34;</span>,<span style="color:#e6db74">&#34;周木伦&#34;</span>,<span style="color:#e6db74">&#34;成尤&#34;</span>],
                     <span style="color:#a6e22e">likes</span><span style="color:#f92672">:</span> []
+                }
+            }
+        }).<span style="color:#a6e22e">mount</span>(<span style="color:#e6db74">&#34;#app&#34;</span>);
+    &lt;/<span style="color:#f92672">script</span>&gt;
+&lt;/<span style="color:#f92672">body</span>&gt;
+</code></pre></div><p>结合多选，单选下拉菜单</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html">&lt;<span style="color:#f92672">body</span>&gt;
+    &lt;<span style="color:#f92672">div</span> <span style="color:#a6e22e">id</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;app&#34;</span>&gt;
+        &lt;<span style="color:#f92672">p</span>&gt;选择校区：&lt;/<span style="color:#f92672">p</span>&gt;
+        &lt;<span style="color:#f92672">select</span> <span style="color:#a6e22e">name</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;campus&#34;</span> <span style="color:#a6e22e">v-model</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;campus&#34;</span>&gt;
+            &lt;<span style="color:#f92672">option</span> <span style="color:#a6e22e">value</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;中心&#34;</span>&gt;中心&lt;/<span style="color:#f92672">option</span>&gt;
+            &lt;<span style="color:#f92672">option</span> <span style="color:#a6e22e">value</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;洪楼&#34;</span>&gt;洪楼&lt;/<span style="color:#f92672">option</span>&gt;
+            &lt;<span style="color:#f92672">option</span> <span style="color:#a6e22e">value</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;软件&#34;</span>&gt;软件&lt;/<span style="color:#f92672">option</span>&gt;
+        &lt;/<span style="color:#f92672">select</span>&gt;
+        &lt;<span style="color:#f92672">p</span>&gt;选择的校区： {{ campus }}&lt;/<span style="color:#f92672">p</span>&gt;
+        
+        &lt;<span style="color:#f92672">p</span>&gt;----------------------------------&lt;/<span style="color:#f92672">p</span>&gt;
+        &lt;<span style="color:#f92672">p</span>&gt;选择校区：&lt;/<span style="color:#f92672">p</span>&gt;
+        &lt;<span style="color:#f92672">select</span> <span style="color:#a6e22e">name</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;campus&#34;</span> <span style="color:#a6e22e">v-model</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;campuses&#34;</span> <span style="color:#a6e22e">multiple</span>&gt;
+            &lt;<span style="color:#f92672">option</span> <span style="color:#a6e22e">value</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;中心&#34;</span>&gt;中心&lt;/<span style="color:#f92672">option</span>&gt;
+            &lt;<span style="color:#f92672">option</span> <span style="color:#a6e22e">value</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;洪楼&#34;</span>&gt;洪楼&lt;/<span style="color:#f92672">option</span>&gt;
+            &lt;<span style="color:#f92672">option</span> <span style="color:#a6e22e">value</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;软件&#34;</span>&gt;软件&lt;/<span style="color:#f92672">option</span>&gt;
+        &lt;/<span style="color:#f92672">select</span>&gt;
+
+        &lt;<span style="color:#f92672">p</span>&gt;选择的校区： {{ campuses }}&lt;/<span style="color:#f92672">p</span>&gt;
+    &lt;/<span style="color:#f92672">div</span>&gt;  
+    
+    &lt;<span style="color:#f92672">script</span> <span style="color:#a6e22e">src</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;js/vue.js&#34;</span>&gt;&lt;/<span style="color:#f92672">script</span>&gt;
+    &lt;<span style="color:#f92672">script</span>&gt;
+        <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">app</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">Vue</span>.<span style="color:#a6e22e">createApp</span>({
+            <span style="color:#a6e22e">data</span>() {
+                <span style="color:#66d9ef">return</span> {
+                    <span style="color:#a6e22e">campus</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;中心&#34;</span>,
+                    <span style="color:#a6e22e">campuses</span><span style="color:#f92672">:</span> []
+                }
+            }
+        }).<span style="color:#a6e22e">mount</span>(<span style="color:#e6db74">&#34;#app&#34;</span>);
+    &lt;/<span style="color:#f92672">script</span>&gt;
+&lt;/<span style="color:#f92672">body</span>&gt;
+</code></pre></div><p>修饰符</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html">&lt;<span style="color:#f92672">body</span>&gt;
+    &lt;<span style="color:#f92672">div</span> <span style="color:#a6e22e">id</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;app&#34;</span>&gt;
+        <span style="color:#75715e">&lt;!-- 1. 懒加载 --&gt;</span>
+        &lt;<span style="color:#f92672">input</span> <span style="color:#a6e22e">type</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;text&#34;</span> <span style="color:#a6e22e">v-model</span><span style="color:#960050;background-color:#1e0010">.</span><span style="color:#a6e22e">lazy</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;msg&#34;</span>&gt;
+        &lt;<span style="color:#f92672">h1</span>&gt;{{ msg }}&lt;/<span style="color:#f92672">h1</span>&gt;
+
+        <span style="color:#75715e">&lt;!-- 2. number --&gt;</span>
+        <span style="color:#75715e">&lt;!-- &lt;input type=&#34;number&#34; v-model=&#34;age&#34;&gt; --&gt;</span>
+        &lt;<span style="color:#f92672">input</span> <span style="color:#a6e22e">type</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;number&#34;</span> <span style="color:#a6e22e">v-model</span><span style="color:#960050;background-color:#1e0010">.</span><span style="color:#a6e22e">number</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;age&#34;</span>&gt;
+        &lt;<span style="color:#f92672">h1</span>&gt;{{ age }}--- {{ typeof age }} &lt;/<span style="color:#f92672">h1</span>&gt;
+
+        <span style="color:#75715e">&lt;!-- 3.trim --&gt;</span>
+        &lt;<span style="color:#f92672">input</span> <span style="color:#a6e22e">type</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;text&#34;</span> <span style="color:#a6e22e">v-model</span><span style="color:#960050;background-color:#1e0010">.</span><span style="color:#a6e22e">trim</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;name&#34;</span>&gt;
+        &lt;<span style="color:#f92672">h1</span>&gt;xxx{{ name }}yyy&lt;/<span style="color:#f92672">h1</span>&gt;
+    &lt;/<span style="color:#f92672">div</span>&gt;  
+    
+    &lt;<span style="color:#f92672">script</span> <span style="color:#a6e22e">src</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;js/vue.js&#34;</span>&gt;&lt;/<span style="color:#f92672">script</span>&gt;
+    &lt;<span style="color:#f92672">script</span>&gt;
+        <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">app</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">Vue</span>.<span style="color:#a6e22e">createApp</span>({
+            <span style="color:#a6e22e">data</span>() {
+                <span style="color:#66d9ef">return</span> {
+                   <span style="color:#a6e22e">msg</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;sdu&#34;</span>,
+                   <span style="color:#a6e22e">age</span><span style="color:#f92672">:</span> <span style="color:#ae81ff">0</span>,
+                   <span style="color:#a6e22e">name</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;&#34;</span>
                 }
             }
         }).<span style="color:#a6e22e">mount</span>(<span style="color:#e6db74">&#34;#app&#34;</span>);
