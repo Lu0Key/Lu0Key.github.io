@@ -6,7 +6,25 @@
     <description>Recent content on 洛七的摸鱼池塘</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Sun, 01 May 2022 16:36:02 +0800</lastBuildDate><atom:link href="https://Lu0key.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 01 May 2022 16:38:12 +0800</lastBuildDate><atom:link href="https://Lu0key.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>02 Vue MVC MVP MVVM</title>
+      <link>https://Lu0key.github.io/post/02-vue-mvc-mvp-mvvm/</link>
+      <pubDate>Sun, 01 May 2022 16:38:12 +0800</pubDate>
+      
+      <guid>https://Lu0key.github.io/post/02-vue-mvc-mvp-mvvm/</guid>
+      <description>MVC/MVP/MVVM MVC M:Model 业务模型，数据层，负责数据的处理和获取数据接口层
+V:View 用户界面，视图层，是指用户看到并与之交互的界面。比如网页界面，或软件的客户端界面 C:Controller 控制器，控制器层，他是 Model 和 View 之间的胶水或中间人
+ View 传指令到Controller Controller 完成业务逻辑后，要求 Model 改变状态 Model 将新的数据发送到View，用户的到反馈 所有的信息都是单向的    耦合度低 重用性高 部署快 可维护性高    不适合小型，中型等规模的应用程序 适合后端  MVP MVP是将Controller 改成了 Presenter(广播)，同时改变了通信方向
+P和V双向通信，P和M双向通信，V和M不发生通信
+View 非常薄，不不属任何业务逻辑，被称为被动视图（Passive View），而P非常厚
+MVP用的少，适用于事件驱动的应用架构。
+MVVM MVVM模型将 Presenter层替换成ViewModel，其他与MVP模型基本一致
+于MVP的区别是，采用了双向绑定，视图层的变动，自动反映在ViewModel上，反之亦然，三大主流前端框架都采用了这种方式。
+MVVM中，一个ViewModel和一个View匹配，万泉河View绑定，所有View中的修改变化，都会更新到ViewModel中，同时ViewModel的任何变化都会同步到View上显示。
+  View 前端中主要是指DOM ViewModel  内部实现了数据绑定(Data Bindings)和DOM监听 监听DOM中各种事件出发 根据业务需求改变Model中的数据 是View 和Model 的桥梁    </description>
+    </item>
+    
     <item>
       <title>01 Vue 初体验</title>
       <link>https://Lu0key.github.io/post/01-vue-%E5%88%9D%E4%BD%93%E9%AA%8C/</link>
