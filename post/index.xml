@@ -6,7 +6,20 @@
     <description>Recent content in Posts on 洛七的摸鱼池塘</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Sun, 01 May 2022 16:38:12 +0800</lastBuildDate><atom:link href="https://Lu0key.github.io/post/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 01 May 2022 16:40:37 +0800</lastBuildDate><atom:link href="https://Lu0key.github.io/post/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>03 Vue 基础语法</title>
+      <link>https://Lu0key.github.io/post/03-vue-%E5%9F%BA%E7%A1%80%E8%AF%AD%E6%B3%95/</link>
+      <pubDate>Sun, 01 May 2022 16:40:37 +0800</pubDate>
+      
+      <guid>https://Lu0key.github.io/post/03-vue-%E5%9F%BA%E7%A1%80%E8%AF%AD%E6%B3%95/</guid>
+      <description>基础语法 mustache语法 {{msg}} &amp;lt;!-- 可计算 --&amp;gt; &amp;lt;!-- 可以是表达式，但不能是语句 --&amp;gt; {{msg + site}} {{msg}} {{site}} 双大括号只能作用于标签的内容，不能作为标签的属性
+插值语法 v-once
+&amp;lt;body&amp;gt; &amp;lt;div id=&amp;#34;app&amp;#34;&amp;gt; &amp;lt;h1&amp;gt;会变化：{{ msg }}&amp;lt;/h1&amp;gt; &amp;lt;h1 v-once&amp;gt;不会变化：{{ msg }}&amp;lt;/h1&amp;gt; &amp;lt;/div&amp;gt; &amp;lt;script src=&amp;#34;js/vue.js&amp;#34;&amp;gt;&amp;lt;/script&amp;gt; &amp;lt;script&amp;gt; const app = Vue.createApp({ data() { return { msg: &amp;#34;sdu&amp;#34; } } }).mount(&amp;#34;#app&amp;#34;); &amp;lt;/script&amp;gt; &amp;lt;/body&amp;gt; 还没想到什么常用的应用场景
+v-text
+&amp;lt;body&amp;gt; &amp;lt;div id=&amp;#34;app&amp;#34;&amp;gt; &amp;lt;!-- 这个更灵活 --&amp;gt; &amp;lt;h1&amp;gt;{{ msg }}，你好。&amp;lt;/h1&amp;gt; &amp;lt;p&amp;gt;--------------&amp;lt;/p&amp;gt; &amp;lt;h1 v-text=&amp;#34;msg&amp;#34;&amp;gt;默认内容&amp;lt;/h1&amp;gt; &amp;lt;/div&amp;gt; &amp;lt;script src=&amp;#34;js/vue.js&amp;#34;&amp;gt;&amp;lt;/script&amp;gt; &amp;lt;script&amp;gt; const app = Vue.createApp({ data() { return { msg: &amp;#34;sdu&amp;#34; } } }).</description>
+    </item>
+    
     <item>
       <title>02 Vue MVC MVP MVVM</title>
       <link>https://Lu0key.github.io/post/02-vue-mvc-mvp-mvvm/</link>
