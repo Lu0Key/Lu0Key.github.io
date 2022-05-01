@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>vue on 洛七的摸鱼池塘</title>
+    <link>https://Lu0key.github.io/tags/vue/</link>
+    <description>Recent content in vue on 洛七的摸鱼池塘</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Sun, 01 May 2022 16:31:21 +0800</lastBuildDate><atom:link href="https://Lu0key.github.io/tags/vue/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>00 Vue 安装</title>
+      <link>https://Lu0key.github.io/post/00-vue-%E5%AE%89%E8%A3%85/</link>
+      <pubDate>Sun, 01 May 2022 16:31:21 +0800</pubDate>
+      
+      <guid>https://Lu0key.github.io/post/00-vue-%E5%AE%89%E8%A3%85/</guid>
+      <description>Vue安装 Vue.js官网
+安装nodejs Node.js下载地址
+中文地址
+根据自己的电脑选择对应的LTS就可以
+LTS: Long-term support 长期支持版本
+之后你可能想要升级node的版本，可以供gnvm、nvm之类的应用去管理版本，这个自己查查就好
+vuecli Vue CLI
+下载vue/cli
+根据教程，安装完nodejs后，在cmd中使用npm命令即可下载
+npm install -g @vue/cli # 或者 yarn global add @vue/cli 查看版本
+vue --version # 或者 vue -V 升级版本
+npm update -g @vue/cli # 或者 yarn global upgrade --latest @vue/cli 创建第一个Vue应用 选择一个目录下打开cmd(入股用 powershell ，在你不设置的情况下是默认禁止使用脚本的)
+# vue create [ProjectName] # 比如 vue create vue3Project 会让你选择预设
+ Default ([Vue 3] babel, eslint) Default ([Vue 2] babel, eslint) Manually select features  分别是默认使用Vue3、Vue2、手动设置</description>
+    </item>
+    
+  </channel>
+</rss>
