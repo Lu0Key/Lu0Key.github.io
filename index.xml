@@ -6,7 +6,19 @@
     <description>Recent content on 洛七的摸鱼池塘</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Sat, 07 Jan 2023 19:37:32 +0800</lastBuildDate><atom:link href="https://Lu0key.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sat, 07 Jan 2023 23:24:14 +0800</lastBuildDate><atom:link href="https://Lu0key.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>纪念健康打卡</title>
+      <link>https://Lu0key.github.io/post/%E7%BA%AA%E5%BF%B5%E5%81%A5%E5%BA%B7%E6%89%93%E5%8D%A1/</link>
+      <pubDate>Sat, 07 Jan 2023 23:24:14 +0800</pubDate>
+      
+      <guid>https://Lu0key.github.io/post/%E7%BA%AA%E5%BF%B5%E5%81%A5%E5%BA%B7%E6%89%93%E5%8D%A1/</guid>
+      <description>疫情管控放开了，学校也终于取消健康打卡了，之前写的自动化健康打卡也用不到了，记录一下这个健康打卡引用中遇到的两个新问题
+这里的代码是用selenium实现的，因为懒，不想再分析请求了
+第一个问题：如何发送邮件
+from email.mime.text import MIMEText #纯文本，HTML from email.mime.image import MIMEImage #图片 from email.mime.multipart import MIMEMultipart #多种组合内容 # smtplib 用于邮件的发信动作 import smtplib # email 用于构建邮件内容 from email.mime.text import MIMEText # 构建邮件头 from email.header import Header def sendMail(status): # 发信方的信息：发信邮箱，QQ 邮箱授权码 # 发送方邮箱 from_addr = &amp;#39;xxxxx@qq.com&amp;#39; # 发送方的QQ邮箱授权码 password = &amp;#39;asdfghjkl&amp;#39; # 收信方邮箱 to_addr = &amp;#39;yyyyyy@qq.com&amp;#39; # 发信服务器 # QQ那边设置 smtp_server = &amp;#39;smtp.qq.com&amp;#39; # 邮箱正文内容，第一个参数为内容，第二个参数为格式(plain 为纯文本)，第三个参数为编码 msg = MIMEText(&amp;#39;恭喜你今天的打卡完成啦！&amp;#39;, &amp;#39;plain&amp;#39;, &amp;#39;utf-8&amp;#39;) # 邮件头信息 msg[&amp;#39;From&amp;#39;] = Header(&amp;#39;打卡小助手&amp;#39;) # 发送者 msg[&amp;#39;To&amp;#39;] = Header(&amp;#39;洛七&amp;#39;) # 接收者 subject = &amp;#39;【健康打卡】&amp;#39;+status msg[&amp;#39;Subject&amp;#39;] = Header(subject, &amp;#39;utf-8&amp;#39;) # 邮件主题 try: smtpobj = smtplib.</description>
+    </item>
+    
     <item>
       <title>记录两道行列式</title>
       <link>https://Lu0key.github.io/post/%E8%AE%B0%E5%BD%95%E4%B8%A4%E9%81%93%E8%A1%8C%E5%88%97%E5%BC%8F/</link>
