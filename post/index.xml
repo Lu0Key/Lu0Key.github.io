@@ -6,7 +6,23 @@
     <description>Recent content in Posts on 洛七的摸鱼池塘</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Sun, 01 May 2022 16:40:37 +0800</lastBuildDate><atom:link href="https://Lu0key.github.io/post/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sat, 07 Jan 2023 19:25:29 +0800</lastBuildDate><atom:link href="https://Lu0key.github.io/post/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>线性系统理论 期末突击</title>
+      <link>https://Lu0key.github.io/post/%E7%BA%BF%E6%80%A7%E7%B3%BB%E7%BB%9F%E7%90%86%E8%AE%BA-%E6%9C%9F%E6%9C%AB%E7%AA%81%E5%87%BB/</link>
+      <pubDate>Sat, 07 Jan 2023 19:25:29 +0800</pubDate>
+      
+      <guid>https://Lu0key.github.io/post/%E7%BA%BF%E6%80%A7%E7%B3%BB%E7%BB%9F%E7%90%86%E8%AE%BA-%E6%9C%9F%E6%9C%AB%E7%AA%81%E5%87%BB/</guid>
+      <description>第一章 第二章 第三章 第四章 第五章 第六章  第一章  传递函数 特征多项式 特征方程 系统的极点 系统的零点 零极点相消 传递函数的零点和极点 系统的传递函数矩阵 元传递函数？ 真有理分式矩阵 (严格真与真的)判别方法  【定义1.1】 动力学系统的状态定义为完全的表征系统时间域行为的一个最小内部变量组。
+ 系统的状态变量 初始时刻 系统的状态向量(状态) 状态空间   状态变量组可以完全的表征系统行为的属性 状态变量组的最小性 状态变量组在数学上的特征 状态变量组包含了系统的物理特征 状态变量组选取上的不唯一性  【定理1.1】 系统任意选取的两个状态变量组之间为线性非奇异的关系。
+ 系统的状态方程 输出方程或量测方程 离散时间系统(离散系统) 系统的阶 控制输入向量 输出向量 系统矩阵 输入矩阵 输出矩阵 前馈矩阵 实现问题(不唯一)   【定理1.2】 给定单输入——单输出线性定常系统的输入输出描述 $$ y^{(n)}+a_{n-1}y^{(n-1)}+\cdots+a_1y^{(1)}+a_0y=b_mu^{(m)}+b_{m-1}u^{(m-1)}+\cdots+b_1u^{(1)}+b_0u $$
+或
+$$ g(s)=\dfrac{Y(s)}{U(s)}=\dfrac{b_ms^m+\cdots+b_1s+b_0}{s^n+a_{n-1}s^{n-1}+\cdots+a_1s+a_0} $$
+当 $m&amp;lt;n$ 时，其对应的一个状态空间描述为
+$$ \dot{x}= \begin{bmatrix} 0&amp;amp;1\
+\vdots&amp;amp;&amp;amp;\ddots\</description>
+    </item>
+    
     <item>
       <title>03 Vue 基础语法</title>
       <link>https://Lu0key.github.io/post/03-vue-%E5%9F%BA%E7%A1%80%E8%AF%AD%E6%B3%95/</link>
