@@ -6,7 +6,28 @@
     <description>Recent content in Python on 洛七的摸鱼池塘</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Sun, 11 Jul 2021 00:23:25 +0800</lastBuildDate><atom:link href="https://Lu0key.github.io/tags/python/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 08 Jan 2023 01:38:02 +0800</lastBuildDate><atom:link href="https://Lu0key.github.io/tags/python/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>RGBA图像直接叠加</title>
+      <link>https://Lu0key.github.io/post/rgba%E5%9B%BE%E5%83%8F%E7%9B%B4%E6%8E%A5%E5%8F%A0%E5%8A%A0/</link>
+      <pubDate>Sun, 08 Jan 2023 01:38:02 +0800</pubDate>
+      
+      <guid>https://Lu0key.github.io/post/rgba%E5%9B%BE%E5%83%8F%E7%9B%B4%E6%8E%A5%E5%8F%A0%E5%8A%A0/</guid>
+      <description>因为在做图像补全任务时,想要展示缺陷图像的样子,需要将背景透明的mask图像加到原图像上,生成需要补全的图像.
+原本的mask长这样
+原本的图像长这样
+预期的图片长这样
+省流版: img.alpha_composite(mask)
+我们发现背景是黑色的,一开始想的是创建一个新的图片,和目标图像一样大小,使用mask.getpixel((i,j)) 去获取mask每一个像素点,然后如果获取的黑色的,那就设置新图的像素为原图的像素newImg.putpixel((i,j),originImg.getpixel((i,j))),大概这个思路,因为原图是没有通道的,可能要简单的修改. 之前试过,这个方法是可行的,但是速度太慢了,我要对上百张图片进行这个操作要好久,所以去找别的方法.
+首先我希望把mask盖到原图像上,就像PS一样,透明的部分不会印象下面的内容.因此我先把不透明的mask转化成透明的,因为mask是通用的,所以一张图片的效率低可以接受,以下是代码和效果.
+mask = Image.open(&amp;#34;mask.png&amp;#34;) W, H = mask.size newMask = Image.new(&amp;#34;RGBA&amp;#34;, mask.size, (0, 0, 0, 0)) for i in range(W): for j in range(H): # print(mask.getpixel((i, j))) if mask.getpixel((i, j)) == (255, 255, 255): newMask.putpixel((i, j), (255, 255, 255, 255)) newMask.save(&amp;#34;newMask.png&amp;#34;)  这里才知道 img.size 返回的是先是宽度,然后才是高
+getpixel((i,j)), 这里的i和j也分别是宽的位置和高的位置.
+ 得到了新的mask
+希望把newMask直接盖到原图像上,查了半天,网上要么是一个个像素去判断的,效率难以接受,要么是用Image.blend(image,mask,alpha),这种方法会改变原图像的透明度,效果如此公式:
+$$\text{image} * (1-\text{alpha})+\text{mask} * \text{alpha}$$
+truthImg = Image.open(os.path.join(basepath, &amp;#34;truth&amp;#34;, imgName)) newImg = Image.</description>
+    </item>
+    
     <item>
       <title>Python 下载图片</title>
       <link>https://Lu0key.github.io/post/python-download-img/</link>
