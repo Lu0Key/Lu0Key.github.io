@@ -6,7 +6,18 @@
     <description>Recent content on 洛七的摸鱼池塘</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Sun, 08 Jan 2023 01:38:02 +0800</lastBuildDate><atom:link href="https://Lu0key.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 09 Jan 2023 01:47:56 +0800</lastBuildDate><atom:link href="https://Lu0key.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>科学上网爬虫</title>
+      <link>https://Lu0key.github.io/post/%E7%A7%91%E5%AD%A6%E4%B8%8A%E7%BD%91%E7%88%AC%E8%99%AB/</link>
+      <pubDate>Mon, 09 Jan 2023 01:47:56 +0800</pubDate>
+      
+      <guid>https://Lu0key.github.io/post/%E7%A7%91%E5%AD%A6%E4%B8%8A%E7%BD%91%E7%88%AC%E8%99%AB/</guid>
+      <description>有时候会有需求需要爬需要科学上网才能访问的网站，但是如果开全局模式，访问正常网站就会非常慢，因此需要开PAC模式，但是PAC模式似乎不能直接用 requests 发送请求。
+找了半天，最后发现了PAC模式支持的方式，代码如下
+from pypac import PACSession,get_pac url = &amp;#39;https://xxxxxx.com&amp;#39; # 这个 url 是要看你的科学上网软件来着的 pac = get_pac(url=&amp;#39;http://127.0.0.1:端口/pac/?t=164907&amp;#39;) s = PACSession(pac) #解析pac文件 resp = s.get(url, headers=headers) </description>
+    </item>
+    
     <item>
       <title>RGBA图像直接叠加</title>
       <link>https://Lu0key.github.io/post/rgba%E5%9B%BE%E5%83%8F%E7%9B%B4%E6%8E%A5%E5%8F%A0%E5%8A%A0/</link>
