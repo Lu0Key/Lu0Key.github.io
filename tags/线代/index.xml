@@ -48,46 +48,5 @@ a_{n}^{n-1}&amp;amp;a_{n}^{n-2}b_n&amp;amp;\cdots&amp;amp;a_{n}b_n^{n-2}&amp;amp
 首先引入引理，范德蒙(Vandermonde)行列式:</description>
     </item>
     
-    <item>
-      <title>行列式两例</title>
-      <link>https://Lu0key.github.io/post/%E8%A1%8C%E5%88%97%E5%BC%8F%E4%B8%A4%E4%BE%8B/</link>
-      <pubDate>Sun, 28 Mar 2021 11:25:10 +0800</pubDate>
-      
-      <guid>https://Lu0key.github.io/post/%E8%A1%8C%E5%88%97%E5%BC%8F%E4%B8%A4%E4%BE%8B/</guid>
-      <description>行列式两例 求行列式
-$$ D = \begin{vmatrix} \sin(\theta_1+\theta_1)&amp;amp;\sin(\theta_1+\theta_2)&amp;amp;\cdots&amp;amp;\sin(\theta_1+\theta_n)\\
-\sin(\theta_2+\theta_1)&amp;amp;\sin(\theta_2+\theta_2)&amp;amp;\cdots&amp;amp;\sin(\theta_2+\theta_n)\\
-\vdots&amp;amp;\vdots&amp;amp;&amp;amp;\vdots\\
-\sin(\theta_n+\theta_1)&amp;amp;\sin(\theta_n+\theta_2)&amp;amp;\cdots&amp;amp;\sin(\theta_n+\theta_n) \end{vmatrix} $$
-【Sol】: 当 $n\geqslant2$ 时
-$\begin{aligned} &amp;amp;\begin{vmatrix} \sin(\theta_1+\theta_1)&amp;amp;\sin(\theta_1+\theta_2)&amp;amp;\cdots&amp;amp;\sin(\theta_1+\theta_n)\\
-\sin(\theta_2+\theta_1)&amp;amp;\sin(\theta_2+\theta_2)&amp;amp;\cdots&amp;amp;\sin(\theta_2+\theta_n)\\
-\vdots&amp;amp;\vdots&amp;amp;&amp;amp;\vdots\\
-\sin(\theta_n+\theta_1)&amp;amp;\sin(\theta_n+\theta_2)&amp;amp;\cdots&amp;amp;\sin(\theta_n+\theta_n) \end{vmatrix}\\
-=&amp;amp;\begin{vmatrix} \sin\theta_1&amp;amp;\cos\theta_1&amp;amp;0&amp;amp;\cdots&amp;amp;0\\
-\sin\theta_2&amp;amp;\cos\theta_2&amp;amp;0&amp;amp;\cdots&amp;amp;0\\
-\vdots&amp;amp;\vdots&amp;amp;\vdots&amp;amp;&amp;amp;\vdots\\
-\sin\theta_n&amp;amp;\cos\theta_n&amp;amp;0&amp;amp;\cdots&amp;amp;0 \end{vmatrix} _ {n\times n} \cdot \begin{vmatrix} \cos\theta_1&amp;amp;\cos\theta_2&amp;amp;\cdots&amp;amp;\cos\theta_n\\
-\sin\theta_1&amp;amp;\sin\theta_2&amp;amp;\cdots&amp;amp;\sin\theta_n\\
-0&amp;amp;0&amp;amp;\cdots&amp;amp;0\\
-\vdots&amp;amp;\vdots&amp;amp;&amp;amp;\vdots\\
-0&amp;amp;0&amp;amp;\cdots&amp;amp;0 \end{vmatrix}_{n\times n}\\
-=&amp;amp;\begin{cases} -\sin^2(\theta_1-\theta_2),&amp;amp;n=2\\
-0,&amp;amp;n\geqslant3 \end{cases} \end{aligned}$
-因此
-$$ D= \begin{cases} \sin2\theta_1,&amp;amp;n=1\\
--\sin^2(\theta_1-\theta_2),&amp;amp;n=2\\
-0,&amp;amp;n\geqslant3 \end{cases} $$
- 求行列式
-$$ \begin{vmatrix} a_1^{n-1}&amp;amp;a_1^{n-2}b_1&amp;amp;\cdots&amp;amp;a_1b_1^{n-2}&amp;amp;b_1^{n-1}\\
-a_2^{n-1}&amp;amp;a_2^{n-2}b_2&amp;amp;\cdots&amp;amp;a_2b_2^{n-2}&amp;amp;b_2^{n-1}\\
-\vdots&amp;amp;\vdots&amp;amp;&amp;amp;\vdots&amp;amp;\vdots\\
-a_{n-1}^{n-1}&amp;amp;a_{n-1}^{n-2}b_{n-1}&amp;amp;\cdots&amp;amp;a_{n-1}b_{n-1}^{n-2}&amp;amp;b_{n-1}^{n-1}\\
-a_{n}^{n-1}&amp;amp;a_{n}^{n-2}b_n&amp;amp;\cdots&amp;amp;a_{n}b_n^{n-2}&amp;amp;b_{n}^{n-1} \end{vmatrix} $$
-【Sol】:
-首先引入引理，范德蒙(Vandermonde)行列式:
-$$ D_n = \begin{vmatrix} 1&amp;amp;1&amp;amp;\cdots&amp;amp;1\\</description>
-    </item>
-    
   </channel>
 </rss>

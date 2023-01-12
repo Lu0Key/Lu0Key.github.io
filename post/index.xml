@@ -6,7 +6,20 @@
     <description>Recent content in Posts on 洛七的摸鱼池塘</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Mon, 09 Jan 2023 01:47:56 +0800</lastBuildDate><atom:link href="https://Lu0key.github.io/post/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Thu, 12 Jan 2023 16:28:22 +0800</lastBuildDate><atom:link href="https://Lu0key.github.io/post/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>JSP项目部署</title>
+      <link>https://Lu0key.github.io/post/jsp%E9%A1%B9%E7%9B%AE%E9%83%A8%E7%BD%B2/</link>
+      <pubDate>Thu, 12 Jan 2023 16:28:22 +0800</pubDate>
+      
+      <guid>https://Lu0key.github.io/post/jsp%E9%A1%B9%E7%9B%AE%E9%83%A8%E7%BD%B2/</guid>
+      <description>在写了那么久的JavaWeb项目后，当然是把自己做的项目给别人炫耀一下呀，这时候就要把自己的内容发布到网络上。
+常用的有两种方法，一种是以自己电脑为服务器，用花生壳、ngrok等一些内网穿透工具，让别人可以用浏览器访问，这种方法有一个弊端就是，你的电脑必须要实时联网，一直开机，对于笔记本来说有一些不方便；另一种方法就是搞一台云服务器，比如：阿里云，腾讯云，山大云(逃)，然后将自己的项目部署到云服务器上，这样的话就能解决上述弊端。
+前提：一台服务器，服务器安装了JDK，安装了tomcat，开放了8080端口，教程基于IDEA
+接下来开始教程：
+ 点击 File -&amp;gt; Project Structure(快捷键Ctrl+Shift+Alt+S) 点击左侧的 Project Setting -&amp;gt; Artifacts 点击中间的 + 选择 Web Application: Archive 中你的项目 点击右下角的 Apply 点击 OK 点击 Build -&amp;gt; Build Artifacts, 选择 All Artifacts -&amp;gt; Clean 点击 Build -&amp;gt; Rebuild Project, 点击 Build -&amp;gt; Build Artifacts, 选择 ${项目名}:Web -&amp;gt; Build 在左侧项目结构中找到 out -&amp;gt; artifacts -&amp;gt; ${项目名}_Web -&amp;gt; ${项目名}_Web.war 右键选择 Show in Explorer 将这个 war 包放到服务器 tomcat 目录的 webapps 下  # 假设现在在 webapps 目录下 cd .</description>
+    </item>
+    
     <item>
       <title>科学上网爬虫</title>
       <link>https://Lu0key.github.io/post/%E7%A7%91%E5%AD%A6%E4%B8%8A%E7%BD%91%E7%88%AC%E8%99%AB/</link>
@@ -617,47 +630,6 @@ $x=\dfrac{1}{99+70\sqrt{2}}$  digits(6) vpa(sqrt(2)) % 1.414214 vpa(99+70.*sqrt(
       <guid>https://Lu0key.github.io/post/imageviewer-code/</guid>
       <description>这个代码是直接用核心卷上的
 import javax.swing.*; import java.awt.*; import java.io.File; public class ImageViewer { public static void main(String[] args) { EventQueue.invokeLater(()-&amp;gt;{ JFrame frame = new ImageViewerFrame(); frame.setTitle(&amp;#34;ImageViewer&amp;#34;); frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE); frame.setVisible(true); }); } } class ImageViewerFrame extends JFrame{ private JLabel label; private JFileChooser chooser; private static final int DEFAULT_WIDTH = 300; private static final int DEFAULT_HEIGHT = 400; public ImageViewerFrame(){ setSize(DEFAULT_WIDTH,DEFAULT_HEIGHT); // use a label to display the images  label = new JLabel(); add(label); // set up the file chooser  chooser = new JFileChooser(); chooser.</description>
-    </item>
-    
-    <item>
-      <title>行列式两例</title>
-      <link>https://Lu0key.github.io/post/%E8%A1%8C%E5%88%97%E5%BC%8F%E4%B8%A4%E4%BE%8B/</link>
-      <pubDate>Sun, 28 Mar 2021 11:25:10 +0800</pubDate>
-      
-      <guid>https://Lu0key.github.io/post/%E8%A1%8C%E5%88%97%E5%BC%8F%E4%B8%A4%E4%BE%8B/</guid>
-      <description>行列式两例 求行列式
-$$ D = \begin{vmatrix} \sin(\theta_1+\theta_1)&amp;amp;\sin(\theta_1+\theta_2)&amp;amp;\cdots&amp;amp;\sin(\theta_1+\theta_n)\\
-\sin(\theta_2+\theta_1)&amp;amp;\sin(\theta_2+\theta_2)&amp;amp;\cdots&amp;amp;\sin(\theta_2+\theta_n)\\
-\vdots&amp;amp;\vdots&amp;amp;&amp;amp;\vdots\\
-\sin(\theta_n+\theta_1)&amp;amp;\sin(\theta_n+\theta_2)&amp;amp;\cdots&amp;amp;\sin(\theta_n+\theta_n) \end{vmatrix} $$
-【Sol】: 当 $n\geqslant2$ 时
-$\begin{aligned} &amp;amp;\begin{vmatrix} \sin(\theta_1+\theta_1)&amp;amp;\sin(\theta_1+\theta_2)&amp;amp;\cdots&amp;amp;\sin(\theta_1+\theta_n)\\
-\sin(\theta_2+\theta_1)&amp;amp;\sin(\theta_2+\theta_2)&amp;amp;\cdots&amp;amp;\sin(\theta_2+\theta_n)\\
-\vdots&amp;amp;\vdots&amp;amp;&amp;amp;\vdots\\
-\sin(\theta_n+\theta_1)&amp;amp;\sin(\theta_n+\theta_2)&amp;amp;\cdots&amp;amp;\sin(\theta_n+\theta_n) \end{vmatrix}\\
-=&amp;amp;\begin{vmatrix} \sin\theta_1&amp;amp;\cos\theta_1&amp;amp;0&amp;amp;\cdots&amp;amp;0\\
-\sin\theta_2&amp;amp;\cos\theta_2&amp;amp;0&amp;amp;\cdots&amp;amp;0\\
-\vdots&amp;amp;\vdots&amp;amp;\vdots&amp;amp;&amp;amp;\vdots\\
-\sin\theta_n&amp;amp;\cos\theta_n&amp;amp;0&amp;amp;\cdots&amp;amp;0 \end{vmatrix} _ {n\times n} \cdot \begin{vmatrix} \cos\theta_1&amp;amp;\cos\theta_2&amp;amp;\cdots&amp;amp;\cos\theta_n\\
-\sin\theta_1&amp;amp;\sin\theta_2&amp;amp;\cdots&amp;amp;\sin\theta_n\\
-0&amp;amp;0&amp;amp;\cdots&amp;amp;0\\
-\vdots&amp;amp;\vdots&amp;amp;&amp;amp;\vdots\\
-0&amp;amp;0&amp;amp;\cdots&amp;amp;0 \end{vmatrix}_{n\times n}\\
-=&amp;amp;\begin{cases} -\sin^2(\theta_1-\theta_2),&amp;amp;n=2\\
-0,&amp;amp;n\geqslant3 \end{cases} \end{aligned}$
-因此
-$$ D= \begin{cases} \sin2\theta_1,&amp;amp;n=1\\
--\sin^2(\theta_1-\theta_2),&amp;amp;n=2\\
-0,&amp;amp;n\geqslant3 \end{cases} $$
- 求行列式
-$$ \begin{vmatrix} a_1^{n-1}&amp;amp;a_1^{n-2}b_1&amp;amp;\cdots&amp;amp;a_1b_1^{n-2}&amp;amp;b_1^{n-1}\\
-a_2^{n-1}&amp;amp;a_2^{n-2}b_2&amp;amp;\cdots&amp;amp;a_2b_2^{n-2}&amp;amp;b_2^{n-1}\\
-\vdots&amp;amp;\vdots&amp;amp;&amp;amp;\vdots&amp;amp;\vdots\\
-a_{n-1}^{n-1}&amp;amp;a_{n-1}^{n-2}b_{n-1}&amp;amp;\cdots&amp;amp;a_{n-1}b_{n-1}^{n-2}&amp;amp;b_{n-1}^{n-1}\\
-a_{n}^{n-1}&amp;amp;a_{n}^{n-2}b_n&amp;amp;\cdots&amp;amp;a_{n}b_n^{n-2}&amp;amp;b_{n}^{n-1} \end{vmatrix} $$
-【Sol】:
-首先引入引理，范德蒙(Vandermonde)行列式:
-$$ D_n = \begin{vmatrix} 1&amp;amp;1&amp;amp;\cdots&amp;amp;1\\</description>
     </item>
     
     <item>
