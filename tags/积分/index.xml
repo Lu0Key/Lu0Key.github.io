@@ -6,7 +6,42 @@
     <description>Recent content in 积分 on 洛七的摸鱼池塘</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Tue, 16 Mar 2021 12:21:54 +0800</lastBuildDate><atom:link href="https://Lu0key.github.io/tags/%E7%A7%AF%E5%88%86/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Thu, 12 Jan 2023 16:34:59 +0800</lastBuildDate><atom:link href="https://Lu0key.github.io/tags/%E7%A7%AF%E5%88%86/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>几道积分和级数</title>
+      <link>https://Lu0key.github.io/post/%E5%87%A0%E9%81%93%E7%A7%AF%E5%88%86%E5%92%8C%E7%BA%A7%E6%95%B0/</link>
+      <pubDate>Thu, 12 Jan 2023 16:34:59 +0800</pubDate>
+      
+      <guid>https://Lu0key.github.io/post/%E5%87%A0%E9%81%93%E7%A7%AF%E5%88%86%E5%92%8C%E7%BA%A7%E6%95%B0/</guid>
+      <description>忘记什么时候搞来的积分了，有些好像是积分竞赛的，应该很多都不是我自己做的，只是原来记录的
+$\begin{aligned} &amp;amp;\dfrac{z}{1-z}=\sum_{n=1}^{\infty}z^n\qquad(|z|&amp;lt;1)\\
+&amp;amp;左右两边积分可得;\ln(1-z)=-\sum_{n=1}^\infty\dfrac{z^n}{n}.\\
+&amp;amp;代入z=re^{i\theta},\dfrac{re^{i\theta}}{1-re^{i\theta}}=\sum_{n=1}^{\infty}r^n(\cos n\theta+i\sin n\theta)\\
+&amp;amp;左边=\dfrac{re^{i\theta}}{1-re^{i\theta}}=\dfrac{r\cos\theta+ir\sin\theta}{(1-r\cos\theta)-ir\sin\theta}=\dfrac{(r\cos\theta+ir\sin\theta)[(1-r\cos\theta)+ir\sin\theta]}{(1-r\cos\theta)^2+r^2\sin^2\theta}\\
+&amp;amp;\qquad=\dfrac{r\cos\theta-r^2}{1-2r\cos\theta+r^2}+i\dfrac{r\sin\theta}{1-2r\cos\theta+r^2}\\
+&amp;amp;因此\dfrac{\cos\theta-r}{1-2r\cos\theta+r^2}=\sum_{n=1}^{\infty}r^{n-1}\cos n\theta,\quad \dfrac{\sin\theta}{1-2r\cos\theta+r^2}=\sum_{n=1}^{\infty}r^{n-1}\sin n\theta.\\
+&amp;amp;左右对r积分:\quad\dfrac12\ln(1-2r\cos\theta+r^2)=-\sum_{n=1}^{\infty}r^n\dfrac{\cos n\theta}{n}\cdots①\\
+&amp;amp;\qquad\qquad\qquad\quad \arctan\dfrac{r\sin\theta}{1-r\cos\theta}=\sum_{n=1}^{\infty}r^n\dfrac{\sin n\theta}{n}\cdots②\\
+&amp;amp;将①式中r换为-r得：\\
+&amp;amp;\qquad\qquad r\cos\theta-r^2\dfrac{\cos2\theta}{2}+r^3\dfrac{\cos3\theta}{3}-\cdots=\dfrac12\ln(1+2r\cos\theta+r^2)\\
+&amp;amp;将②式中的r换为-r，\theta换为-\theta得：\\
+&amp;amp;\qquad\qquad r\sin\theta-r^2\dfrac{\sin2\theta}{2}+r^3\dfrac{\sin3\theta}{3}-\cdots=\arctan\dfrac{r\sin\theta}{1+r\cos\theta} \end{aligned}$
+ $ \begin{aligned} \displaystyle&amp;amp;\int\dfrac{\sin \theta}{r^2-2r\cos\theta+1}\text{d}r\\
+=&amp;amp;\int\dfrac{\sin\theta}{(r-\cos\theta)^2+\sin^2\theta}\text{d}(r-\cos\theta)\\
+=&amp;amp;\arctan\dfrac{r-\cos\theta}{\sin \theta} \end{aligned} $
+$ \begin{aligned} \left(\arctan\dfrac{r\sin\theta}{1-r\cos\theta}\right)&#39;=&amp;amp;\dfrac{1}{\left(\dfrac{r\sin\theta}{1-r\cos\theta}\right)^2+1}\cdot\dfrac{\sin\theta(1-r\cos\theta)+\cos\theta\cdot r\sin\theta}{(1-r\cos\theta)^2}\\
+=&amp;amp;\dfrac{\sin\theta}{r^2\sin^2\theta+1-2r\cos\theta+r^2\cos^2\theta}\\
+=&amp;amp;\dfrac{\sin\theta}{1-2r\cos\theta+r^2} \end{aligned} $
+$ \begin{aligned} &amp;amp;\dfrac{\sin\theta}{1-2r\cos\theta+r^2}=\dfrac{\sin\theta}{1-2r\cos\theta+r^2\cos^2\theta+r^2\sin^2\theta}\\
+=&amp;amp;\dfrac{\sin\theta}{(1-r\cos\theta)^2+r^2\sin^2\theta}=\dfrac{\dfrac{\sin\theta}{(1-r\cos\theta)^2}}{1+\left(\dfrac{r\sin\theta}{1-r\cos\theta}\right)^2} \end{aligned} $
+$\displaystyle\int_0^r\dfrac{\dfrac{\sin\theta}{(1-r\cos\theta)^2}}{1+\left(\dfrac{r\sin\theta}{1-r\cos\theta}\right)^2}\text{d}r=\int_0^r\dfrac{1}{1+\left(\dfrac{r\sin\theta}{1-r\cos\theta}\right)^2}\text{d}(\dfrac{r\sin\theta}{1-r\cos\theta})\\=\arctan\dfrac{r\sin\theta}{1-r\cos\theta}$
+$\displaystyle\int_0^1\dfrac{\arctan x}{x\sqrt{1-x^2}}\text{d}x=\int_0^{\frac{\pi}{4}}\dfrac{x}{\tan x}$
+$\displaystyle\lim_{x\to0^+}\ln(1-x)\ln(\tan x)=\lim_{x\to0^+}\ln(1-x)\ln(\sin x)=\lim_{x\to0^+}-x\ln(\sin x)=\lim_{x\to0^+}-\dfrac{\ln(\sin x)}{\frac1x}=\lim_{x\to0^+}\dfrac{\cos x}{\sin x}\cdot x^2=0$
+  $\cos\theta+\dfrac{\cos2\theta}{2}+\dfrac{\cos3\theta}{3}+\dfrac{\cos4\theta}{4}+\cdots$  直接引用昨天的结论：
+$r\cos\theta-r^2\dfrac{\cos2\theta}{2}+r^3\dfrac{\cos3\theta}{3}-\cdots=\dfrac12\ln(1+2r\cos\theta+r^2)\cdots①;$
+把 $r=-1$ 带入 ① 式，得：</description>
+    </item>
+    
     <item>
       <title>积分练习 3</title>
       <link>https://Lu0key.github.io/post/%E7%A7%AF%E5%88%86%E7%BB%83%E4%B9%A0-3/</link>
