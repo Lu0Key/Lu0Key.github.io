@@ -6,7 +6,17 @@
     <description>Recent content in Python on 洛七的摸鱼池塘</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Mon, 09 Jan 2023 01:47:56 +0800</lastBuildDate><atom:link href="https://Lu0key.github.io/tags/python/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Thu, 30 Mar 2023 18:41:44 +0800</lastBuildDate><atom:link href="https://Lu0key.github.io/tags/python/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Images to UByte</title>
+      <link>https://Lu0key.github.io/post/images-to-ubyte/</link>
+      <pubDate>Thu, 30 Mar 2023 18:41:44 +0800</pubDate>
+      
+      <guid>https://Lu0key.github.io/post/images-to-ubyte/</guid>
+      <description>图片数据集合转化为MNIST的UByte.gz格式 因为要使用别人的模型，替换成自己的数据集，但是发现别人的模型用的是MNIST一个t10k-labels-idx1-ubyte 这样名字的数据集，而不是直接的图片，因此为了避免麻烦，我想要把自己的图片数据集转化为这种格式的，找了半天在Github 上找到了，这里只是记录一下，方便下次用
+# https://blog.csdn.net/ycc2011/article/details/88965606 # # This python script converts a sample of the notMNIST dataset into # the same file format used by the MNIST dataset. If you have a program # that uses the MNIST files, you can run this script over notMNIST to # produce a new set of data files that should be compatible with # your program. # # Instructions: # # 1) if you already have a MNIST data/ directory, rename it and create # a new one # # $ mv data data.</description>
+    </item>
+    
     <item>
       <title>科学上网爬虫</title>
       <link>https://Lu0key.github.io/post/%E7%A7%91%E5%AD%A6%E4%B8%8A%E7%BD%91%E7%88%AC%E8%99%AB/</link>
