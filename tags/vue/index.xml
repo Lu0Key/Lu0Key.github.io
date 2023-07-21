@@ -28,14 +28,14 @@ v-text
       <guid>https://Lu0key.github.io/post/02-vue-mvc-mvp-mvvm/</guid>
       <description>MVC/MVP/MVVM MVC M:Model 业务模型，数据层，负责数据的处理和获取数据接口层
 V:View 用户界面，视图层，是指用户看到并与之交互的界面。比如网页界面，或软件的客户端界面 C:Controller 控制器，控制器层，他是 Model 和 View 之间的胶水或中间人
- View 传指令到Controller Controller 完成业务逻辑后，要求 Model 改变状态 Model 将新的数据发送到View，用户的到反馈 所有的信息都是单向的    耦合度低 重用性高 部署快 可维护性高    不适合小型，中型等规模的应用程序 适合后端  MVP MVP是将Controller 改成了 Presenter(广播)，同时改变了通信方向
+View 传指令到Controller Controller 完成业务逻辑后，要求 Model 改变状态 Model 将新的数据发送到View，用户的到反馈 所有的信息都是单向的 耦合度低 重用性高 部署快 可维护性高 不适合小型，中型等规模的应用程序 适合后端 MVP MVP是将Controller 改成了 Presenter(广播)，同时改变了通信方向
 P和V双向通信，P和M双向通信，V和M不发生通信
 View 非常薄，不不属任何业务逻辑，被称为被动视图（Passive View），而P非常厚
 MVP用的少，适用于事件驱动的应用架构。
 MVVM MVVM模型将 Presenter层替换成ViewModel，其他与MVP模型基本一致
 于MVP的区别是，采用了双向绑定，视图层的变动，自动反映在ViewModel上，反之亦然，三大主流前端框架都采用了这种方式。
 MVVM中，一个ViewModel和一个View匹配，万泉河View绑定，所有View中的修改变化，都会更新到ViewModel中，同时ViewModel的任何变化都会同步到View上显示。
-  View 前端中主要是指DOM ViewModel  内部实现了数据绑定(Data Bindings)和DOM监听 监听DOM中各种事件出发 根据业务需求改变Model中的数据 是View 和Model 的桥梁    </description>
+View 前端中主要是指DOM ViewModel 内部实现了数据绑定(Data Bindings)和DOM监听 监听DOM中各种事件出发 根据业务需求改变Model中的数据 是View 和Model 的桥梁 </description>
     </item>
     
     <item>
@@ -44,9 +44,9 @@ MVVM中，一个ViewModel和一个View匹配，万泉河View绑定，所有View�
       <pubDate>Sun, 01 May 2022 16:36:02 +0800</pubDate>
       
       <guid>https://Lu0key.github.io/post/01-vue-%E5%88%9D%E4%BD%93%E9%AA%8C/</guid>
-      <description>初体验 &amp;lt;body&amp;gt; &amp;lt;div id=&amp;#34;app&amp;#34;&amp;gt; &amp;lt;h1&amp;gt;{{message}}&amp;lt;/h1&amp;gt; &amp;lt;/div&amp;gt; &amp;lt;script src=&amp;#34;js/vue.js&amp;#34;&amp;gt;&amp;lt;/script&amp;gt; &amp;lt;script&amp;gt; // 0. 创建实例的全局配置对象  const HelloVue = { // 定义数据  data() { return{ message: &amp;#34;Hello&amp;#34; } } }; //1. 创建Vue的实例对象  const app = Vue.createApp(HelloVue).mount(&amp;#34;#app&amp;#34;); &amp;lt;/script&amp;gt; &amp;lt;/body&amp;gt; vue 是响应式的，数据和页面分离，可以在控制台中
+      <description>初体验 &amp;lt;body&amp;gt; &amp;lt;div id=&amp;#34;app&amp;#34;&amp;gt; &amp;lt;h1&amp;gt;{{message}}&amp;lt;/h1&amp;gt; &amp;lt;/div&amp;gt; &amp;lt;script src=&amp;#34;js/vue.js&amp;#34;&amp;gt;&amp;lt;/script&amp;gt; &amp;lt;script&amp;gt; // 0. 创建实例的全局配置对象 const HelloVue = { // 定义数据 data() { return{ message: &amp;#34;Hello&amp;#34; } } }; //1. 创建Vue的实例对象 const app = Vue.createApp(HelloVue).mount(&amp;#34;#app&amp;#34;); &amp;lt;/script&amp;gt; &amp;lt;/body&amp;gt; vue 是响应式的，数据和页面分离，可以在控制台中
 app.message = &amp;#34;新内容&amp;#34;; 实时无刷新更改页面内容，只解析“#app”内的内容
-&amp;lt;body&amp;gt; &amp;lt;div id=&amp;#34;app&amp;#34;&amp;gt; &amp;lt;div&amp;gt;{{colleges}}&amp;lt;/div&amp;gt; &amp;lt;p&amp;gt;---------------&amp;lt;/p&amp;gt; &amp;lt;ul&amp;gt; &amp;lt;li&amp;gt;{{colleges[0]}}&amp;lt;/li&amp;gt; &amp;lt;li&amp;gt;{{colleges[1]}}&amp;lt;/li&amp;gt; &amp;lt;li&amp;gt;{{colleges[2]}}&amp;lt;/li&amp;gt; &amp;lt;/ul&amp;gt; &amp;lt;p&amp;gt;---------------&amp;lt;/p&amp;gt; &amp;lt;ul&amp;gt; &amp;lt;li v-for=&amp;#34;college in colleges&amp;#34;&amp;gt;{{college}}&amp;lt;/li&amp;gt; &amp;lt;/ul&amp;gt; &amp;lt;/div&amp;gt; &amp;lt;script src=&amp;#34;js/vue.js&amp;#34;&amp;gt;&amp;lt;/script&amp;gt; &amp;lt;script&amp;gt; // 0. 创建实例的全局配置对象  const listApp = { // 定义数据  data() { return{ colleges: [&amp;#34;山大-中心&amp;#34;,&amp;#34;山大-洪楼&amp;#34;,&amp;#34;山大-软件&amp;#34;] } } }; //1.</description>
+&amp;lt;body&amp;gt; &amp;lt;div id=&amp;#34;app&amp;#34;&amp;gt; &amp;lt;div&amp;gt;{{colleges}}&amp;lt;/div&amp;gt; &amp;lt;p&amp;gt;---------------&amp;lt;/p&amp;gt; &amp;lt;ul&amp;gt; &amp;lt;li&amp;gt;{{colleges[0]}}&amp;lt;/li&amp;gt; &amp;lt;li&amp;gt;{{colleges[1]}}&amp;lt;/li&amp;gt; &amp;lt;li&amp;gt;{{colleges[2]}}&amp;lt;/li&amp;gt; &amp;lt;/ul&amp;gt; &amp;lt;p&amp;gt;---------------&amp;lt;/p&amp;gt; &amp;lt;ul&amp;gt; &amp;lt;li v-for=&amp;#34;college in colleges&amp;#34;&amp;gt;{{college}}&amp;lt;/li&amp;gt; &amp;lt;/ul&amp;gt; &amp;lt;/div&amp;gt; &amp;lt;script src=&amp;#34;js/vue.js&amp;#34;&amp;gt;&amp;lt;/script&amp;gt; &amp;lt;script&amp;gt; // 0. 创建实例的全局配置对象 const listApp = { // 定义数据 data() { return{ colleges: [&amp;#34;山大-中心&amp;#34;,&amp;#34;山大-洪楼&amp;#34;,&amp;#34;山大-软件&amp;#34;] } } }; //1.</description>
     </item>
     
     <item>
@@ -68,7 +68,7 @@ npm install -g @vue/cli # 或者 yarn global add @vue/cli 查看版本
 vue --version # 或者 vue -V 升级版本
 npm update -g @vue/cli # 或者 yarn global upgrade --latest @vue/cli 创建第一个Vue应用 选择一个目录下打开cmd(入股用 powershell ，在你不设置的情况下是默认禁止使用脚本的)
 # vue create [ProjectName] # 比如 vue create vue3Project 会让你选择预设
- Default ([Vue 3] babel, eslint) Default ([Vue 2] babel, eslint) Manually select features  分别是默认使用Vue3、Vue2、手动设置</description>
+Default ([Vue 3] babel, eslint) Default ([Vue 2] babel, eslint) Manually select features 分别是默认使用Vue3、Vue2、手动设置</description>
     </item>
     
   </channel>

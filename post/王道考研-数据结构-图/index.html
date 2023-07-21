@@ -1,35 +1,19 @@
 <!doctype html>
 <html lang="en-us">
-
-<head>
-    
-<script>
-    MathJax = {
-        tex: {
-            inlineMath: [
-                ["$", "$"]
-            ],
-        },
-        displayMath: [
-            ["$$", "$$"],
-            ["\[", "\]"],
-        ],
-        svg: {
-            fontCache: "global",
-        },
-    };
-</script>
-<script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
-<script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
-
+  <head>
     <title>王道考研 数据结构 图 // 洛七的摸鱼池塘</title>
-    <link rel="shortcut icon" href="%20/favicon.ico%20" />
-    <meta charset="utf-8" /> <meta name="generator" content="Hugo 0.80.0" />
+    <link rel="shortcut icon" href="/favicon.ico" />
+    <meta charset="utf-8" />
+    <meta name="generator" content="Hugo 0.115.4">
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="author" content="洛七" />
-    <meta name="description" content="" /> <link rel="stylesheet" href="https://Lu0key.github.io/css/main.min.88e7083eff65effb7485b6e6f38d10afbec25093a6fac42d734ce9024d3defbd.css" />  <meta name="twitter:card" content="summary"/>
+    <meta name="description" content="" />
+    <link rel="stylesheet" href="/css/main.min.d08c6ce68432c68a64d84cb426dfdecab702035f91a5d580831f23f76c040a05.css" />
+
+    
+    <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="王道考研 数据结构 图"/>
-<meta name="twitter:description" content="图  图  定义 图的存储  临接矩阵 邻接表 十字链表法 邻接多重表   基本操作 图的遍历  广度优先遍历 深度优先遍历   最小生成树 最短路径问题 Dijkstra算法 Floyd算法 有向无环图(DAG) 拓扑排序 关键路径    定义 图G由顶点集V和边集E组成，记为G=(V, E)，其中V(G) 表示图G中顶点的有限非空集；E(G) 表示图G 中顶点之间的关系（边）集合。若 $V={v_1, v_2, &hellip;, v_n}$，则用 $|V|$ 表示图G 中顶点的个数，也称图G 的阶，$E={(u, v)|u\in V, v\in V}$，用 $|E|$ 表示图G中边的条数。
+<meta name="twitter:description" content="图 图 定义 图的存储 临接矩阵 邻接表 十字链表法 邻接多重表 基本操作 图的遍历 广度优先遍历 深度优先遍历 最小生成树 最短路径问题 Dijkstra算法 Floyd算法 有向无环图(DAG) 拓扑排序 关键路径 定义 图G由顶点集V和边集E组成，记为G=(V, E)，其中V(G) 表示图G中顶点的有限非空集；E(G) 表示图G 中顶点之间的关系（边）集合。若 $V={v_1, v_2, &hellip;, v_n}$，则用 $|V|$ 表示图G 中顶点的个数，也称图G 的阶，$E={(u, v)|u\in V, v\in V}$，用 $|E|$ 表示图G中边的条数。
 G：Graph
 V：Vertex
 E：Edge
@@ -39,8 +23,9 @@ V:车站，E：铁路
 社交软件中的好友关系可以看成是一种无向图
 微博中的粉丝关系可以看作是一种有向图
 若 E 是无向边（简称边）的有限集合时，则图 G 为无向图。边是顶点的无序对，记为 $(v, w)$ 或 $(w, v)$，因为 $(v, w)=(w, v)$，其中v，w 是顶点。可以说顶点w和顶点v互为邻接点。边 $(v, w)$ 依附于顶点 $w$ 和 $v$，或者说边 $(v, w)$ 和顶点 v、w 相关联。"/>
- <meta property="og:title" content="王道考研 数据结构 图" />
-<meta property="og:description" content="图  图  定义 图的存储  临接矩阵 邻接表 十字链表法 邻接多重表   基本操作 图的遍历  广度优先遍历 深度优先遍历   最小生成树 最短路径问题 Dijkstra算法 Floyd算法 有向无环图(DAG) 拓扑排序 关键路径    定义 图G由顶点集V和边集E组成，记为G=(V, E)，其中V(G) 表示图G中顶点的有限非空集；E(G) 表示图G 中顶点之间的关系（边）集合。若 $V={v_1, v_2, &hellip;, v_n}$，则用 $|V|$ 表示图G 中顶点的个数，也称图G 的阶，$E={(u, v)|u\in V, v\in V}$，用 $|E|$ 表示图G中边的条数。
+
+    <meta property="og:title" content="王道考研 数据结构 图" />
+<meta property="og:description" content="图 图 定义 图的存储 临接矩阵 邻接表 十字链表法 邻接多重表 基本操作 图的遍历 广度优先遍历 深度优先遍历 最小生成树 最短路径问题 Dijkstra算法 Floyd算法 有向无环图(DAG) 拓扑排序 关键路径 定义 图G由顶点集V和边集E组成，记为G=(V, E)，其中V(G) 表示图G中顶点的有限非空集；E(G) 表示图G 中顶点之间的关系（边）集合。若 $V={v_1, v_2, &hellip;, v_n}$，则用 $|V|$ 表示图G 中顶点的个数，也称图G 的阶，$E={(u, v)|u\in V, v\in V}$，用 $|E|$ 表示图G中边的条数。
 G：Graph
 V：Vertex
 E：Edge
@@ -51,49 +36,45 @@ V:车站，E：铁路
 微博中的粉丝关系可以看作是一种有向图
 若 E 是无向边（简称边）的有限集合时，则图 G 为无向图。边是顶点的无序对，记为 $(v, w)$ 或 $(w, v)$，因为 $(v, w)=(w, v)$，其中v，w 是顶点。可以说顶点w和顶点v互为邻接点。边 $(v, w)$ 依附于顶点 $w$ 和 $v$，或者说边 $(v, w)$ 和顶点 v、w 相关联。" />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://Lu0key.github.io/post/%E7%8E%8B%E9%81%93%E8%80%83%E7%A0%94-%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84-%E5%9B%BE/" />
+<meta property="og:url" content="https://Lu0key.github.io/post/%E7%8E%8B%E9%81%93%E8%80%83%E7%A0%94-%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84-%E5%9B%BE/" /><meta property="article:section" content="post" />
 <meta property="article:published_time" content="2021-03-01T08:22:55+08:00" />
 <meta property="article:modified_time" content="2021-03-01T08:22:55+08:00" />
 
 
-</head>
-
-<body>
+  </head>
+  <body>
     <header class="app-header">
-        <a href="https://Lu0key.github.io/"><img class="app-header-avatar" src="/avatar.jpg" alt="洛七" /></a>
-        <h1>洛七的摸鱼池塘</h1>
-        <nav class="app-header-menu">
-            <a class="app-header-menu-item" href="/tags/">Tags</a>
-        </nav>
-        <p>即将没书读的咸鱼</p>
-        <div class="app-header-social">
-            
-        </div>
+      <a href="https://Lu0key.github.io/"><img class="app-header-avatar" src="/avatar.jpg" alt="洛七" /></a>
+      <span class="app-header-title">洛七的摸鱼池塘</span>
+      <nav class="app-header-menu">
+          <a class="app-header-menu-item" href="/tags/">Tags</a>
+      </nav>
+      <p>即将没书读的咸鱼</p>
     </header>
     <main class="app-container">
-        
+      
   <article class="post">
     <header class="post-header">
       <h1 class ="post-title">王道考研 数据结构 图</h1>
       <div class="post-meta">
         <div>
-          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-calendar">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-calendar">
   <title>calendar</title>
   <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line>
 </svg>
           Mar 1, 2021
         </div>
         <div>
-          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-clock">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-clock">
   <title>clock</title>
   <circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline>
 </svg>
           6 min read
         </div>
         <div>
-          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-tag">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-tag">
   <title>tag</title>
-  <path d="M20.59 13.41l-7.17 7.17a2 2 0 0 1-2.83 0L2 12V2h10l8.59 8.59a2 2 0 0 1 0 2.82z"></path><line x1="7" y1="7" x2="7" y2="7"></line>
+  <path d="M20.59 13.41l-7.17 7.17a2 2 0 0 1-2.83 0L2 12V2h10l8.59 8.59a2 2 0 0 1 0 2.82z"></path><line x1="7" y1="7" x2="7.01" y2="7"></line>
 </svg>
               <a class="tag" href="https://Lu0key.github.io/tags/%E8%80%83%E7%A0%94/">考研</a>
               <a class="tag" href="https://Lu0key.github.io/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/">数据结构</a>
@@ -196,7 +177,7 @@ V:车站，E：铁路</p>
 </li>
 </ul>
 <p><strong>子图</strong><br>
-设有两个图 G=(V, E) 和 G'=(V', E'),若 V' 是 V 的子集,且 E' 是 E 的子集,则称G' 是 G 的子图<br>
+设有两个图 G=(V, E) 和 G&rsquo;=(V&rsquo;, E&rsquo;),若 V&rsquo; 是 V 的子集,且 E&rsquo; 是 E 的子集,则称G&rsquo; 是 G 的子图<br>
 (子图的前提要求是G&rsquo;必须是一个<strong>图</strong>,并不是随便G的点的子集和边的子集合在一起就是子图,因为边是通过两个点确定的,如果只是取子集的话,可能会出现一条边,但是只有其中一个端点的情况)</p>
 <p><strong>生成子图</strong><br>
 若子图中的点包含了原图中所有的点,则称其为原图G的生成子图.</p>
@@ -231,53 +212,53 @@ n个顶点的树,则必有n-1条边</p>
 <h2 id="图的存储">图的存储</h2>
 <h3 id="临接矩阵">临接矩阵</h3>
 <p>无向图中，若两个顶点之间邻接，则为1，若两个顶点之间不邻接，则为0.</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c" data-lang="c"><span style="color:#75715e">#define MaxVertexNum 100  </span><span style="color:#75715e">// 顶点数目的最大值
-</span><span style="color:#75715e"></span><span style="color:#66d9ef">typedef</span> <span style="color:#66d9ef">struct</span> {
-  <span style="color:#66d9ef">char</span> Vex[MaxVertexNum]; <span style="color:#75715e">// 顶点表（顶点中可以存更复杂的信息）
-</span><span style="color:#75715e"></span>  <span style="color:#66d9ef">int</span> Edge[MaxVertexNum] [MaxVertexNum]; <span style="color:#75715e">// 邻接矩阵，边表（可以用bool型）
-</span><span style="color:#75715e"></span>  <span style="color:#66d9ef">int</span> vexnum, arcnum; <span style="color:#75715e">// 图当前顶点数和边数/弧数
-</span><span style="color:#75715e"></span>} MGraph;
-</code></pre></div><p>结点数为n的图G=(V, E) 的邻接矩阵A是n×n的。将G的顶点编号为 $v_1,v_2,\cdots,v_n$，则
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-c" data-lang="c"><span style="display:flex;"><span><span style="color:#75715e">#define MaxVertexNum 100  </span><span style="color:#75715e">// 顶点数目的最大值
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#66d9ef">typedef</span> <span style="color:#66d9ef">struct</span> {
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">char</span> Vex[MaxVertexNum]; <span style="color:#75715e">// 顶点表（顶点中可以存更复杂的信息）
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>  <span style="color:#66d9ef">int</span> Edge[MaxVertexNum] [MaxVertexNum]; <span style="color:#75715e">// 邻接矩阵，边表（可以用bool型）
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>  <span style="color:#66d9ef">int</span> vexnum, arcnum; <span style="color:#75715e">// 图当前顶点数和边数/弧数
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>} MGraph;
+</span></span></code></pre></div><p>结点数为n的图G=(V, E) 的邻接矩阵A是n×n的。将G的顶点编号为 $v_1,v_2,\cdots,v_n$，则
 $A[i][j]=\begin{cases}
-1, &amp;\text{若}(v_i,v_j)\text{或}&lt;v_i,v_j&gt;\text{是}E(G)\text{中的边}\<br>
-0, &amp;\text{若}(v_i,v_j)\text{或}&lt;v_i,v_j&gt;\text{不是}E(G)\text{中的边}\<br>
+1, &amp;\text{若}(v_i,v_j)\text{或}&lt;v_i,v_j&gt;\text{是}E(G)\text{中的边}\
+0, &amp;\text{若}(v_i,v_j)\text{或}&lt;v_i,v_j&gt;\text{不是}E(G)\text{中的边}\
 \end{cases}$</p>
 <p>对于无向图的度，只要检查第i行或者第i列非零元素的个数即可<br>
 对于有向图的度，出度为第i行非零元素个数，入度为第i列非零元素个数，第i个节点的度为第i行和第i列的非零元素个数之和</p>
 <p><strong>存储带权图</strong><br>
 将1换成对应边的权值，0换成无穷</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c" data-lang="c"><span style="color:#75715e">#define MaxVertexNum 100    </span><span style="color:#75715e">// 顶点数目的最大值
-</span><span style="color:#75715e"></span><span style="color:#75715e">#define INFINITY 最大的int值 </span><span style="color:#75715e">// 宏定义常量“无穷”
-</span><span style="color:#75715e"></span><span style="color:#66d9ef">typedef</span> <span style="color:#66d9ef">char</span> VertexType;    <span style="color:#75715e">// 顶点的数据结构
-</span><span style="color:#75715e"></span><span style="color:#66d9ef">typedef</span> <span style="color:#66d9ef">int</span> EdgeType;       <span style="color:#75715e">// 带权图中边上权值的数据类型
-</span><span style="color:#75715e"></span><span style="color:#66d9ef">typedef</span> <span style="color:#66d9ef">struct</span> {
-  VertexType Vex[MaxVertexNum]; <span style="color:#75715e">// 顶点 
-</span><span style="color:#75715e"></span>  EdgeType Edge[MaxVertexNum] [MaxVertexNum]; <span style="color:#75715e">// 边的权
-</span><span style="color:#75715e"></span>  <span style="color:#66d9ef">int</span> vexnum. arcnum; <span style="color:#75715e">// 图的当前定点数和弧数
-</span><span style="color:#75715e"></span>} MGraph;
-</code></pre></div><p>邻接矩阵法存储带权图可以用0或者无穷来表示两个点之间不存在边</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-c" data-lang="c"><span style="display:flex;"><span><span style="color:#75715e">#define MaxVertexNum 100    </span><span style="color:#75715e">// 顶点数目的最大值
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#75715e">#define INFINITY 最大的int值 </span><span style="color:#75715e">// 宏定义常量“无穷”
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#66d9ef">typedef</span> <span style="color:#66d9ef">char</span> VertexType;    <span style="color:#75715e">// 顶点的数据结构
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#66d9ef">typedef</span> <span style="color:#66d9ef">int</span> EdgeType;       <span style="color:#75715e">// 带权图中边上权值的数据类型
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#66d9ef">typedef</span> <span style="color:#66d9ef">struct</span> {
+</span></span><span style="display:flex;"><span>  VertexType Vex[MaxVertexNum]; <span style="color:#75715e">// 顶点 
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>  EdgeType Edge[MaxVertexNum] [MaxVertexNum]; <span style="color:#75715e">// 边的权
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>  <span style="color:#66d9ef">int</span> vexnum. arcnum; <span style="color:#75715e">// 图的当前定点数和弧数
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>} MGraph;
+</span></span></code></pre></div><p>邻接矩阵法存储带权图可以用0或者无穷来表示两个点之间不存在边</p>
 <p>邻接矩阵的空间复杂度为O(n^2)，适合用于存储稠密图<br>
 易知，无向图的邻接矩阵是对称矩阵，可以压缩存储，只存储上三角区或下三角区（之前有说错如何存储压缩矩阵，简单图中不能直接和自己相连，因此主对角线上的元素都为空）</p>
 <p><strong>邻接矩阵的性质</strong><br>
 设无向图的邻接矩阵为 $\boldsymbol{A}$(矩阵元素为0/1)，则 $\boldsymbol{A}^n$ 的元素 $\boldsymbol{A}^n[i][j]$ 等于由顶点i到顶点j的长度为n的路径的数目</p>
 <h3 id="邻接表">邻接表</h3>
 <p>顶点</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c" data-lang="c"><span style="color:#66d9ef">typedef</span> <span style="color:#66d9ef">struct</span> VNode{
-  VertexType data; <span style="color:#75715e">// 顶点信息
-</span><span style="color:#75715e"></span>  ArcNode <span style="color:#f92672">*</span>first;  <span style="color:#75715e">// 第一条边/弧
-</span><span style="color:#75715e"></span>} VNode, AdjList [MaxVertexNum];
-</code></pre></div><p>用邻接表存储的图</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c" data-lang="c"><span style="color:#66d9ef">typedef</span> <span style="color:#66d9ef">struct</span> {
-  AdjList vertices;
-  <span style="color:#66d9ef">int</span> vexnum, arcnum; <span style="color:#75715e">// 记录了有多少个顶点，多少条弧
-</span><span style="color:#75715e"></span>}ALGraph;
-</code></pre></div><p>边/弧</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c" data-lang="c"><span style="color:#66d9ef">typedef</span> <span style="color:#66d9ef">struct</span> ArcNode {
-  <span style="color:#66d9ef">int</span> adjvex; <span style="color:#75715e">// 当前这条边/弧指向哪个结点
-</span><span style="color:#75715e"></span>  <span style="color:#66d9ef">struct</span> ArcNode <span style="color:#f92672">*</span>next;<span style="color:#75715e">// 指向下一条弧的指针
-</span><span style="color:#75715e"></span>  <span style="color:#75715e">// InfoType info; // 边权值
-</span><span style="color:#75715e"></span>}ArcNode;
-</code></pre></div><p>邻接表法就是我把所有的结点列出来，比如有ABCD四个结点</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-c" data-lang="c"><span style="display:flex;"><span><span style="color:#66d9ef">typedef</span> <span style="color:#66d9ef">struct</span> VNode{
+</span></span><span style="display:flex;"><span>  VertexType data; <span style="color:#75715e">// 顶点信息
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>  ArcNode <span style="color:#f92672">*</span>first;  <span style="color:#75715e">// 第一条边/弧
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>} VNode, AdjList [MaxVertexNum];
+</span></span></code></pre></div><p>用邻接表存储的图</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-c" data-lang="c"><span style="display:flex;"><span><span style="color:#66d9ef">typedef</span> <span style="color:#66d9ef">struct</span> {
+</span></span><span style="display:flex;"><span>  AdjList vertices;
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">int</span> vexnum, arcnum; <span style="color:#75715e">// 记录了有多少个顶点，多少条弧
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>}ALGraph;
+</span></span></code></pre></div><p>边/弧</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-c" data-lang="c"><span style="display:flex;"><span><span style="color:#66d9ef">typedef</span> <span style="color:#66d9ef">struct</span> ArcNode {
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">int</span> adjvex; <span style="color:#75715e">// 当前这条边/弧指向哪个结点
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>  <span style="color:#66d9ef">struct</span> ArcNode <span style="color:#f92672">*</span>next;<span style="color:#75715e">// 指向下一条弧的指针
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>  <span style="color:#75715e">// InfoType info; // 边权值
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>}ArcNode;
+</span></span></code></pre></div><p>邻接表法就是我把所有的结点列出来，比如有ABCD四个结点</p>
 <table>
 <thead>
 <tr>
@@ -561,43 +542,43 @@ $A[i][j]=\begin{cases}
 <li>标记哪些顶点被访问过</li>
 <li>需要一个辅助队列</li>
 </ol>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c" data-lang="c"><span style="color:#75715e">// 标记访问数组
-</span><span style="color:#75715e"></span><span style="color:#66d9ef">bool</span> visited [MAX_VERTEX_NUM]; 
-
-<span style="color:#75715e">// 广度优先遍历
-</span><span style="color:#75715e">// 从顶点v出发，广度优先遍历图G
-</span><span style="color:#75715e"></span><span style="color:#66d9ef">void</span> <span style="color:#a6e22e">BFS</span>(Graph G, <span style="color:#66d9ef">int</span> v){
-  visit(v);
-  visited[v] <span style="color:#f92672">=</span> TRUE;<span style="color:#75715e">//对v做已访问标记
-</span><span style="color:#75715e"></span>  Enqueue(Q, v);    <span style="color:#75715e">// 顶点v入队列
-</span><span style="color:#75715e"></span>  <span style="color:#66d9ef">while</span>(<span style="color:#f92672">!</span>isEmpty(Q)){
-    DeQueue(Q, v);
-    <span style="color:#66d9ef">for</span>(w<span style="color:#f92672">=</span>FisrtNeighbor(G,v);w<span style="color:#f92672">&gt;</span><span style="color:#ae81ff">0</span>;w<span style="color:#f92672">=</span>NextNeighbor(G,v,w)){
-      <span style="color:#75715e">// 检测v所有邻接点
-</span><span style="color:#75715e"></span>      <span style="color:#66d9ef">if</span>(<span style="color:#f92672">!</span>visited[w]){ <span style="color:#75715e">// w为v的尚未访问的邻接顶点
-</span><span style="color:#75715e"></span>        visit(w);  <span style="color:#75715e">// 访问顶点w
-</span><span style="color:#75715e"></span>        visited[w] <span style="color:#f92672">=</span> TRUE;<span style="color:#75715e">// 对w做已访问标记
-</span><span style="color:#75715e"></span>        EnQueue(Q,w);<span style="color:#75715e">// 顶点w入队列
-</span><span style="color:#75715e"></span>      }
-    }
-  }
-}
-</code></pre></div><p>同一个图的邻接矩阵表示方式唯一，因此广度优先遍历序列唯一<br>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-c" data-lang="c"><span style="display:flex;"><span><span style="color:#75715e">// 标记访问数组
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#66d9ef">bool</span> visited [MAX_VERTEX_NUM]; 
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">// 广度优先遍历
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">// 从顶点v出发，广度优先遍历图G
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#66d9ef">void</span> <span style="color:#a6e22e">BFS</span>(Graph G, <span style="color:#66d9ef">int</span> v){
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">visit</span>(v);
+</span></span><span style="display:flex;"><span>  visited[v] <span style="color:#f92672">=</span> TRUE;<span style="color:#75715e">//对v做已访问标记
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>  <span style="color:#a6e22e">Enqueue</span>(Q, v);    <span style="color:#75715e">// 顶点v入队列
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>  <span style="color:#66d9ef">while</span>(<span style="color:#f92672">!</span><span style="color:#a6e22e">isEmpty</span>(Q)){
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">DeQueue</span>(Q, v);
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">for</span>(w<span style="color:#f92672">=</span><span style="color:#a6e22e">FisrtNeighbor</span>(G,v);w<span style="color:#f92672">&gt;</span><span style="color:#ae81ff">0</span>;w<span style="color:#f92672">=</span><span style="color:#a6e22e">NextNeighbor</span>(G,v,w)){
+</span></span><span style="display:flex;"><span>      <span style="color:#75715e">// 检测v所有邻接点
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>      <span style="color:#66d9ef">if</span>(<span style="color:#f92672">!</span>visited[w]){ <span style="color:#75715e">// w为v的尚未访问的邻接顶点
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>        <span style="color:#a6e22e">visit</span>(w);  <span style="color:#75715e">// 访问顶点w
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>        visited[w] <span style="color:#f92672">=</span> TRUE;<span style="color:#75715e">// 对w做已访问标记
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>        <span style="color:#a6e22e">EnQueue</span>(Q,w);<span style="color:#75715e">// 顶点w入队列
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>      }
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>  }
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p>同一个图的邻接矩阵表示方式唯一，因此广度优先遍历序列唯一<br>
 同一个图的邻接表表示方式不唯一，因此广度优先遍历序列不唯一</p>
 <p>这个算法有一个问题，如果是非连通图，则无法遍历完所有结点，所以可以进行一定的改进</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c" data-lang="c"><span style="color:#75715e">// 对图G 进项广度优先遍历
-</span><span style="color:#75715e"></span><span style="color:#66d9ef">void</span> <span style="color:#a6e22e">BFSTraverse</span>(Graph G){
-  <span style="color:#66d9ef">for</span> (i<span style="color:#f92672">=</span><span style="color:#ae81ff">0</span>;i<span style="color:#f92672">&lt;</span>G.vexnum;i<span style="color:#f92672">++</span>){
-    <span style="color:#75715e">// 初始化标记数组
-</span><span style="color:#75715e"></span>    visited[i] <span style="color:#f92672">=</span> FALSE;
-  }
-  InitQueue(Q);
-  <span style="color:#66d9ef">for</span>(i<span style="color:#f92672">=</span><span style="color:#ae81ff">0</span>;i<span style="color:#f92672">&lt;</span>G.vexnum;i<span style="color:#f92672">++</span>){
-    <span style="color:#66d9ef">if</span>(<span style="color:#f92672">!</span>visited[i])
-      BFS(G,i);
-  }
-}
-</code></pre></div><p>对于无向图，调用BFS函数的次数=连通分量数</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-c" data-lang="c"><span style="display:flex;"><span><span style="color:#75715e">// 对图G 进项广度优先遍历
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#66d9ef">void</span> <span style="color:#a6e22e">BFSTraverse</span>(Graph G){
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">for</span> (i<span style="color:#f92672">=</span><span style="color:#ae81ff">0</span>;i<span style="color:#f92672">&lt;</span>G.vexnum;i<span style="color:#f92672">++</span>){
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">// 初始化标记数组
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>    visited[i] <span style="color:#f92672">=</span> FALSE;
+</span></span><span style="display:flex;"><span>  }
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">InitQueue</span>(Q);
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">for</span>(i<span style="color:#f92672">=</span><span style="color:#ae81ff">0</span>;i<span style="color:#f92672">&lt;</span>G.vexnum;i<span style="color:#f92672">++</span>){
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">if</span>(<span style="color:#f92672">!</span>visited[i])
+</span></span><span style="display:flex;"><span>      <span style="color:#a6e22e">BFS</span>(G,i);
+</span></span><span style="display:flex;"><span>  }
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p>对于无向图，调用BFS函数的次数=连通分量数</p>
 <p>这边其实还是有一些小问题，但是无伤大雅，比如这个队列Q应该定义为全局变量</p>
 <p><strong>广度优先生成树</strong><br>
 连通图根据广度优先遍历的过程得到的，保留广度优先遍历时经过的边，即可得到一个广度优先生成树，如果是非连通图则可得到广度优先生成森林</p>
@@ -605,30 +586,30 @@ $A[i][j]=\begin{cases}
 <h3 id="深度优先遍历">深度优先遍历</h3>
 <p>树也有深度优先遍历：先根遍历和后根遍历，图的深度优先算法与树的先根遍历更相似</p>
 <p>由于树的特性，访问到的结点一定是之前没有访问过的，因此和广度优先算法一样，也是需要一个visited数组来存储是否有被访问过</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c" data-lang="c"><span style="color:#66d9ef">bool</span> visited[MAX_VERTEX_NUM]; <span style="color:#75715e">// 访问标记数组
-</span><span style="color:#75715e"></span>
-<span style="color:#66d9ef">void</span> <span style="color:#a6e22e">DFS</span>(Graph G, <span style="color:#66d9ef">int</span> v) {
-  <span style="color:#75715e">// 访问顶点 v
-</span><span style="color:#75715e"></span>  visit(v);
-  <span style="color:#75715e">// 设已访问标记
-</span><span style="color:#75715e"></span>  visited[v] <span style="color:#f92672">=</span> TRUE;
-  <span style="color:#66d9ef">for</span> (w <span style="color:#f92672">=</span> FirstNeighbor(G,v);w<span style="color:#f92672">&gt;=</span><span style="color:#ae81ff">0</span>;w<span style="color:#f92672">=</span>NextNeighbor(G,v,w)){
-    <span style="color:#75715e">// w 为u的尚未访问的邻接顶点
-</span><span style="color:#75715e"></span>    <span style="color:#66d9ef">if</span>(<span style="color:#f92672">!</span>visited[w]){
-      DFS(G,w);
-    }
-  }
-}
-</code></pre></div><p>同样的，如果是非连通图，还需要加上</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c" data-lang="c"><span style="color:#66d9ef">void</span> <span style="color:#a6e22e">DFSTraverse</span>(Graph G) {
-  <span style="color:#66d9ef">for</span> (v<span style="color:#f92672">=</span><span style="color:#ae81ff">0</span>;v<span style="color:#f92672">&lt;</span>G.vexnum; v<span style="color:#f92672">++</span>)
-    visited[v] <span style="color:#f92672">=</span> FALSE;
-  <span style="color:#66d9ef">for</span> (v<span style="color:#f92672">=</span><span style="color:#ae81ff">0</span>;v<span style="color:#f92672">&lt;</span>G.vexnum; v<span style="color:#f92672">++</span>){
-    <span style="color:#66d9ef">if</span> (<span style="color:#f92672">!</span>visited[v])
-      DFS(G, v);
-  }
-}
-</code></pre></div><p>与广度优先遍历相同的，如果存储方式是邻接矩阵的话，遍历序列是唯一的，如果存储方式是邻接表的话，遍历序列是不唯一的</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-c" data-lang="c"><span style="display:flex;"><span><span style="color:#66d9ef">bool</span> visited[MAX_VERTEX_NUM]; <span style="color:#75715e">// 访问标记数组
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">void</span> <span style="color:#a6e22e">DFS</span>(Graph G, <span style="color:#66d9ef">int</span> v) {
+</span></span><span style="display:flex;"><span>  <span style="color:#75715e">// 访问顶点 v
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>  <span style="color:#a6e22e">visit</span>(v);
+</span></span><span style="display:flex;"><span>  <span style="color:#75715e">// 设已访问标记
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>  visited[v] <span style="color:#f92672">=</span> TRUE;
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">for</span> (w <span style="color:#f92672">=</span> <span style="color:#a6e22e">FirstNeighbor</span>(G,v);w<span style="color:#f92672">&gt;=</span><span style="color:#ae81ff">0</span>;w<span style="color:#f92672">=</span><span style="color:#a6e22e">NextNeighbor</span>(G,v,w)){
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">// w 为u的尚未访问的邻接顶点
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>    <span style="color:#66d9ef">if</span>(<span style="color:#f92672">!</span>visited[w]){
+</span></span><span style="display:flex;"><span>      <span style="color:#a6e22e">DFS</span>(G,w);
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>  }
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p>同样的，如果是非连通图，还需要加上</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-c" data-lang="c"><span style="display:flex;"><span><span style="color:#66d9ef">void</span> <span style="color:#a6e22e">DFSTraverse</span>(Graph G) {
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">for</span> (v<span style="color:#f92672">=</span><span style="color:#ae81ff">0</span>;v<span style="color:#f92672">&lt;</span>G.vexnum; v<span style="color:#f92672">++</span>)
+</span></span><span style="display:flex;"><span>    visited[v] <span style="color:#f92672">=</span> FALSE;
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">for</span> (v<span style="color:#f92672">=</span><span style="color:#ae81ff">0</span>;v<span style="color:#f92672">&lt;</span>G.vexnum; v<span style="color:#f92672">++</span>){
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">if</span> (<span style="color:#f92672">!</span>visited[v])
+</span></span><span style="display:flex;"><span>      <span style="color:#a6e22e">DFS</span>(G, v);
+</span></span><span style="display:flex;"><span>  }
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p>与广度优先遍历相同的，如果存储方式是邻接矩阵的话，遍历序列是唯一的，如果存储方式是邻接表的话，遍历序列是不唯一的</p>
 <p>深度优先生成树和广度优先生成树类似，深度优先生成森林和广度优先生成森林类似</p>
 <p>调用深度优先遍历的次数=连通分量的个数</p>
 <h2 id="最小生成树">最小生成树</h2>
@@ -671,29 +652,29 @@ $A[i][j]=\begin{cases}
 </ul>
 <p>无权图其实可以看做一种特殊的带权图，只是每条边的权值都为1，或者看成相同的权值</p>
 <p>求顶点 u 到其他顶点的最短路径</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c" data-lang="c"><span style="color:#66d9ef">void</span> <span style="color:#a6e22e">BFS_MIN_Distance</span>(Graph G, <span style="color:#66d9ef">int</span> u){
-  <span style="color:#75715e">// d[i] 表示u到i结点的最短路径
-</span><span style="color:#75715e"></span>  <span style="color:#66d9ef">for</span>(<span style="color:#66d9ef">int</span> i<span style="color:#f92672">=</span><span style="color:#ae81ff">0</span>;i<span style="color:#f92672">&lt;</span>G.vexnum; i<span style="color:#f92672">++</span>) {
-    d[i] <span style="color:#f92672">=</span> <span style="color:#960050;background-color:#1e0010">∞</span>;<span style="color:#75715e">//初始化路径长度，无穷只是表意，但是实际上不可以存无穷，实际可以写-1
-</span><span style="color:#75715e"></span>    path[i] <span style="color:#f92672">=</span> <span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>;<span style="color:#75715e">//最短路径从哪个顶点过来
-</span><span style="color:#75715e"></span>  }
-  d[u]<span style="color:#f92672">=</span><span style="color:#ae81ff">0</span>;
-  visited[u] <span style="color:#f92672">=</span> FALSE;
-  EnQueue(Q, u);
-  <span style="color:#66d9ef">while</span>(<span style="color:#f92672">!</span>isEmpty(Q)) {
-    <span style="color:#75715e">// 队头元素 u 出队
-</span><span style="color:#75715e"></span>    DeQueue(Q, u);
-    <span style="color:#66d9ef">for</span> (w<span style="color:#f92672">=</span>FirstNeighbor(G,u);w<span style="color:#f92672">&gt;=</span><span style="color:#ae81ff">0</span>;w<span style="color:#f92672">=</span>NextNeighbor(G,u,w)){
-      <span style="color:#66d9ef">if</span>(<span style="color:#f92672">!</span>visited[w]){
-        d[w] <span style="color:#f92672">=</span>d[u]<span style="color:#f92672">+</span><span style="color:#ae81ff">1</span>;
-        path[w] <span style="color:#f92672">=</span> u;
-        visited[w] <span style="color:#f92672">=</span> TRUE;
-        EnQueue(Q,w);
-      }
-    }
-  }
-}
-</code></pre></div><h2 id="dijkstra算法">Dijkstra算法</h2>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-c" data-lang="c"><span style="display:flex;"><span><span style="color:#66d9ef">void</span> <span style="color:#a6e22e">BFS_MIN_Distance</span>(Graph G, <span style="color:#66d9ef">int</span> u){
+</span></span><span style="display:flex;"><span>  <span style="color:#75715e">// d[i] 表示u到i结点的最短路径
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>  <span style="color:#66d9ef">for</span>(<span style="color:#66d9ef">int</span> i<span style="color:#f92672">=</span><span style="color:#ae81ff">0</span>;i<span style="color:#f92672">&lt;</span>G.vexnum; i<span style="color:#f92672">++</span>) {
+</span></span><span style="display:flex;"><span>    d[i] <span style="color:#f92672">=</span> <span style="color:#960050;background-color:#1e0010">∞</span>;<span style="color:#75715e">//初始化路径长度，无穷只是表意，但是实际上不可以存无穷，实际可以写-1
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>    path[i] <span style="color:#f92672">=</span> <span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>;<span style="color:#75715e">//最短路径从哪个顶点过来
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>  }
+</span></span><span style="display:flex;"><span>  d[u]<span style="color:#f92672">=</span><span style="color:#ae81ff">0</span>;
+</span></span><span style="display:flex;"><span>  visited[u] <span style="color:#f92672">=</span> FALSE;
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">EnQueue</span>(Q, u);
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">while</span>(<span style="color:#f92672">!</span><span style="color:#a6e22e">isEmpty</span>(Q)) {
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">// 队头元素 u 出队
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>    <span style="color:#a6e22e">DeQueue</span>(Q, u);
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">for</span> (w<span style="color:#f92672">=</span><span style="color:#a6e22e">FirstNeighbor</span>(G,u);w<span style="color:#f92672">&gt;=</span><span style="color:#ae81ff">0</span>;w<span style="color:#f92672">=</span><span style="color:#a6e22e">NextNeighbor</span>(G,u,w)){
+</span></span><span style="display:flex;"><span>      <span style="color:#66d9ef">if</span>(<span style="color:#f92672">!</span>visited[w]){
+</span></span><span style="display:flex;"><span>        d[w] <span style="color:#f92672">=</span>d[u]<span style="color:#f92672">+</span><span style="color:#ae81ff">1</span>;
+</span></span><span style="display:flex;"><span>        path[w] <span style="color:#f92672">=</span> u;
+</span></span><span style="display:flex;"><span>        visited[w] <span style="color:#f92672">=</span> TRUE;
+</span></span><span style="display:flex;"><span>        <span style="color:#a6e22e">EnQueue</span>(Q,w);
+</span></span><span style="display:flex;"><span>      }
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>  }
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><h2 id="dijkstra算法">Dijkstra算法</h2>
 <p>BFS算法的局限性，是默认权相同<br>
 带权路径长度：当图是带权图时，一条路径上所有边的权值之和，称为该路径的带权路径长度，简称路径长度</p>
 <p><strong>声明</strong>：Dijkstra算法不适用于负权图，后面再举例，现在我们先假设都是正权图</p>
@@ -719,7 +700,7 @@ $A[i][j]=\begin{cases}
 <p>每次更新都会将final中的一个点转化为true，因此只需要更新n-1次，就能获得指定点到所有点的最短距离</p>
 <p>整个算法的时间复杂度为 O(n^2)</p>
 <p>Dijkstra算法不适用于负权图，例子如下</p>
-<pre><code class="language-mermaid" data-lang="mermaid">graph LR
+<pre tabindex="0"><code class="language-mermaid" data-lang="mermaid">graph LR
 A((A)) --10--&gt; B((B))
 B -- -5--&gt; C((C))
 A --7--&gt; C
@@ -785,7 +766,7 @@ A --7--&gt; C
 </tr>
 </tbody>
 </table>
-<p>因为C不能到B，因此继续选择final为false，dist最小的B，再次更新 </p>
+<p>因为C不能到B，因此继续选择final为false，dist最小的B，再次更新</p>
 <table>
 <thead>
 <tr>
@@ -821,22 +802,22 @@ A --7--&gt; C
 <p>用于求解每一对顶点之间的最短路径 <br>
 使用动态规划思想，将问题的求解分为多个阶段</p>
 <p>初始化矩阵A，和path矩阵，初始化时，假设不能再任何点中转，计算两个点之间的距离，A是路径长度，如果两个点之间不能直接相连，那么路径长度为无穷，path存两个点之间的中转点，一开始全是-1</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c" data-lang="c"><span style="color:#75715e">// 考虑以V_k作为中转点
-</span><span style="color:#75715e">// 把每个点加入中转点可选项
-</span><span style="color:#75715e"></span><span style="color:#66d9ef">for</span> (<span style="color:#66d9ef">int</span> k<span style="color:#f92672">=</span><span style="color:#ae81ff">0</span>; k<span style="color:#f92672">&lt;</span>n; k<span style="color:#f92672">++</span>) {
-  <span style="color:#960050;background-color:#1e0010">接下来遍历整个矩阵</span>
-  <span style="color:#66d9ef">for</span> (<span style="color:#66d9ef">int</span> i<span style="color:#f92672">=</span><span style="color:#ae81ff">0</span>; i<span style="color:#f92672">&lt;</span>n; i<span style="color:#f92672">++</span>) {
-    <span style="color:#66d9ef">for</span> (<span style="color:#66d9ef">int</span> j<span style="color:#f92672">=</span><span style="color:#ae81ff">0</span>; j<span style="color:#f92672">&lt;</span>n; j<span style="color:#f92672">++</span>) {
-      <span style="color:#66d9ef">if</span> (A[i] [j]<span style="color:#f92672">&gt;</span>A[i][k]<span style="color:#f92672">+</span>A[k][k]){
-        A[i][j] <span style="color:#f92672">=</span> A[i][k]<span style="color:#f92672">+</span>A[k][j];
-        path[i][j] <span style="color:#f92672">=</span> k;
-      }
-    }
-  }
-}
-</code></pre></div><p>时间复杂度为 O(n^3)，空间复杂度为 O(n^2)</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-c" data-lang="c"><span style="display:flex;"><span><span style="color:#75715e">// 考虑以V_k作为中转点
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">// 把每个点加入中转点可选项
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#66d9ef">for</span> (<span style="color:#66d9ef">int</span> k<span style="color:#f92672">=</span><span style="color:#ae81ff">0</span>; k<span style="color:#f92672">&lt;</span>n; k<span style="color:#f92672">++</span>) {
+</span></span><span style="display:flex;"><span>  <span style="color:#960050;background-color:#1e0010">接下来遍历整个矩阵</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">for</span> (<span style="color:#66d9ef">int</span> i<span style="color:#f92672">=</span><span style="color:#ae81ff">0</span>; i<span style="color:#f92672">&lt;</span>n; i<span style="color:#f92672">++</span>) {
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">for</span> (<span style="color:#66d9ef">int</span> j<span style="color:#f92672">=</span><span style="color:#ae81ff">0</span>; j<span style="color:#f92672">&lt;</span>n; j<span style="color:#f92672">++</span>) {
+</span></span><span style="display:flex;"><span>      <span style="color:#66d9ef">if</span> (A[i] [j]<span style="color:#f92672">&gt;</span>A[i][k]<span style="color:#f92672">+</span>A[k][k]){
+</span></span><span style="display:flex;"><span>        A[i][j] <span style="color:#f92672">=</span> A[i][k]<span style="color:#f92672">+</span>A[k][j];
+</span></span><span style="display:flex;"><span>        path[i][j] <span style="color:#f92672">=</span> k;
+</span></span><span style="display:flex;"><span>      }
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>  }
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p>时间复杂度为 O(n^3)，空间复杂度为 O(n^2)</p>
 <p>Floyd算法可以解决一些带负权值的图，但是无法解决带有“负权回路”的图这种图可能没有最短路径</p>
-<pre><code class="language-mermaid" data-lang="mermaid">graph LR
+<pre tabindex="0"><code class="language-mermaid" data-lang="mermaid">graph LR
 A((A)) -- -9--&gt; B((B))
 B --3--&gt; C((C))
 C --5--&gt; A
@@ -893,7 +874,7 @@ C --5--&gt; A
 <p>在树中有时候会出现完全相同的部分，为了节省空间，我们可以只存一份，两个结点都指向这一份，形成有向无环图，因为结点永远向下指(可能说起来不严谨)，因此永远都不会形成环</p>
 <p>例如：<br>
 表达式 (x+y)*((x+y)/x)，用树表达为</p>
-<pre><code class="language-mermaid" data-lang="mermaid">graph TD;
+<pre tabindex="0"><code class="language-mermaid" data-lang="mermaid">graph TD;
 A((*)) --&gt; B((+));
 A --&gt; C((/));
 B --&gt; X((x));
@@ -903,7 +884,7 @@ C --&gt; X2((x));
 D --&gt; X3((x));
 D --&gt; Y2((y));
 </code></pre><p>我们会发现其中有一些子树是完全一样的，我们可以只保留一份，比如</p>
-<pre><code class="language-mermaid" data-lang="mermaid">graph TD;
+<pre tabindex="0"><code class="language-mermaid" data-lang="mermaid">graph TD;
 A((*)) --&gt; B((+));
 A --&gt; C((/));
 B --&gt; X((x));
@@ -911,7 +892,7 @@ B --&gt; Y((y));
 C --&gt; B;
 C --&gt; X2((x));
 </code></pre><p>其实仔细观察，会发现单独的两个x也是重复的结点，因此我们可以再次改造</p>
-<pre><code class="language-mermaid" data-lang="mermaid">graph TD;
+<pre tabindex="0"><code class="language-mermaid" data-lang="mermaid">graph TD;
 A((*)) --&gt; B((+));
 A --&gt; C((/));
 B --&gt; X((x));
@@ -933,63 +914,63 @@ C --&gt; X;
 <li>从网中删除该顶点和所有以它为起点的有向边</li>
 <li>重复上面两个步骤知道当前AOV网为空或当前网中不存在无前驱的顶点为止</li>
 </ul>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c" data-lang="c"><span style="color:#66d9ef">bool</span> <span style="color:#a6e22e">TopologicSort</span> (Graph G) {
-  <span style="color:#75715e">// 初始化栈，用于存储入度为0的顶点
-</span><span style="color:#75715e"></span>  InitStack(S);
-  <span style="color:#66d9ef">for</span> (<span style="color:#66d9ef">int</span> i<span style="color:#f92672">=</span><span style="color:#ae81ff">0</span>; i<span style="color:#f92672">&lt;</span>G.vexnum; i<span style="color:#f92672">++</span>) {
-    <span style="color:#66d9ef">if</span> (indegree[i]<span style="color:#f92672">==</span><span style="color:#ae81ff">0</span>)
-      <span style="color:#75715e">// 将所有入度为0的顶点进栈
-</span><span style="color:#75715e"></span>      Push(S, i);
-  }
-  <span style="color:#75715e">// 计数，记录当前已经输出的顶点数
-</span><span style="color:#75715e"></span>  <span style="color:#66d9ef">int</span> count <span style="color:#f92672">=</span><span style="color:#ae81ff">0</span>;
-  <span style="color:#75715e">// 栈不空，则存在入度为0的顶点
-</span><span style="color:#75715e"></span>  <span style="color:#66d9ef">while</span>(<span style="color:#f92672">!</span>isEmpty(S)){
-    <span style="color:#75715e">// 栈顶元素出栈
-</span><span style="color:#75715e"></span>    Pop(S, i);
-    <span style="color:#75715e">// 输出顶点i
-</span><span style="color:#75715e"></span>    print[count<span style="color:#f92672">++</span>] <span style="color:#f92672">=</span> i;
-    <span style="color:#75715e">// 这里假设图用邻接表存储
-</span><span style="color:#75715e"></span>    <span style="color:#66d9ef">for</span> (p<span style="color:#f92672">=</span>G.vertices[i].firstarc;p;p<span style="color:#f92672">-&gt;</span>nextarc) {
-      <span style="color:#75715e">// 将所有i指向的顶点的入度减1，并且将入减为0的顶点压入栈S
-</span><span style="color:#75715e"></span>      v <span style="color:#f92672">=</span> p<span style="color:#f92672">-&gt;</span>adjvex;
-      <span style="color:#66d9ef">if</span> (<span style="color:#f92672">!</span>(<span style="color:#f92672">--</span>indegree[v]))
-        <span style="color:#75715e">// 入度为0，则压入栈
-</span><span style="color:#75715e"></span>        Push(S, v);
-    }
-  }
-  <span style="color:#66d9ef">if</span>(count <span style="color:#f92672">&lt;</span> G.vexnum)
-    <span style="color:#75715e">// 排序失败，说明有回路
-</span><span style="color:#75715e"></span>    <span style="color:#66d9ef">return</span> false;
-  <span style="color:#66d9ef">else</span> 
-    <span style="color:#75715e">// 拓扑排序成功
-</span><span style="color:#75715e"></span>    <span style="color:#66d9ef">return</span> true;
-}
-</code></pre></div><p><strong>逆拓扑排序</strong><br>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-c" data-lang="c"><span style="display:flex;"><span><span style="color:#66d9ef">bool</span> <span style="color:#a6e22e">TopologicSort</span> (Graph G) {
+</span></span><span style="display:flex;"><span>  <span style="color:#75715e">// 初始化栈，用于存储入度为0的顶点
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>  <span style="color:#a6e22e">InitStack</span>(S);
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">for</span> (<span style="color:#66d9ef">int</span> i<span style="color:#f92672">=</span><span style="color:#ae81ff">0</span>; i<span style="color:#f92672">&lt;</span>G.vexnum; i<span style="color:#f92672">++</span>) {
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">if</span> (indegree[i]<span style="color:#f92672">==</span><span style="color:#ae81ff">0</span>)
+</span></span><span style="display:flex;"><span>      <span style="color:#75715e">// 将所有入度为0的顶点进栈
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>      <span style="color:#a6e22e">Push</span>(S, i);
+</span></span><span style="display:flex;"><span>  }
+</span></span><span style="display:flex;"><span>  <span style="color:#75715e">// 计数，记录当前已经输出的顶点数
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>  <span style="color:#66d9ef">int</span> count <span style="color:#f92672">=</span><span style="color:#ae81ff">0</span>;
+</span></span><span style="display:flex;"><span>  <span style="color:#75715e">// 栈不空，则存在入度为0的顶点
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>  <span style="color:#66d9ef">while</span>(<span style="color:#f92672">!</span><span style="color:#a6e22e">isEmpty</span>(S)){
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">// 栈顶元素出栈
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>    <span style="color:#a6e22e">Pop</span>(S, i);
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">// 输出顶点i
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>    print[count<span style="color:#f92672">++</span>] <span style="color:#f92672">=</span> i;
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">// 这里假设图用邻接表存储
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>    <span style="color:#66d9ef">for</span> (p<span style="color:#f92672">=</span>G.vertices[i].firstarc;p;p<span style="color:#f92672">-&gt;</span>nextarc) {
+</span></span><span style="display:flex;"><span>      <span style="color:#75715e">// 将所有i指向的顶点的入度减1，并且将入减为0的顶点压入栈S
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>      v <span style="color:#f92672">=</span> p<span style="color:#f92672">-&gt;</span>adjvex;
+</span></span><span style="display:flex;"><span>      <span style="color:#66d9ef">if</span> (<span style="color:#f92672">!</span>(<span style="color:#f92672">--</span>indegree[v]))
+</span></span><span style="display:flex;"><span>        <span style="color:#75715e">// 入度为0，则压入栈
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>        <span style="color:#a6e22e">Push</span>(S, v);
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>  }
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">if</span>(count <span style="color:#f92672">&lt;</span> G.vexnum)
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">// 排序失败，说明有回路
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>    <span style="color:#66d9ef">return</span> false;
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">else</span> 
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">// 拓扑排序成功
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>    <span style="color:#66d9ef">return</span> true;
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p><strong>逆拓扑排序</strong><br>
 拓扑排序是删除入度为0的顶点，逆拓扑排序是删除出度为0的顶点，用邻接表实现会比较麻烦，可以考虑逆邻接表或者邻接矩阵</p>
 <p>还可以用DFS算法实现逆拓扑排序</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c" data-lang="c"><span style="color:#75715e">// 对图G进行深度优先遍历
-</span><span style="color:#75715e"></span><span style="color:#66d9ef">void</span> <span style="color:#a6e22e">DFSTraverse</span> (Graph G) {
-  <span style="color:#66d9ef">int</span> v;
-  <span style="color:#66d9ef">for</span> (v<span style="color:#f92672">=</span><span style="color:#ae81ff">0</span>; v<span style="color:#f92672">&lt;</span>G.vexnum; v<span style="color:#f92672">++</span>)
-    <span style="color:#75715e">// 初始化
-</span><span style="color:#75715e"></span>    visited[v] <span style="color:#f92672">=</span> FALSE;
-  <span style="color:#66d9ef">for</span> (v<span style="color:#f92672">=</span><span style="color:#ae81ff">0</span>; v<span style="color:#f92672">&lt;</span>G.vexnum; v<span style="color:#f92672">++</span>)
-    <span style="color:#66d9ef">if</span> (<span style="color:#f92672">!</span>visited[v])
-      DFS(G, v);
-}
-
-<span style="color:#66d9ef">void</span> <span style="color:#a6e22e">DFS</span>(Graph G, <span style="color:#66d9ef">int</span> v){
-  <span style="color:#75715e">// 从顶点v出发，深度优先遍历图G
-</span><span style="color:#75715e"></span>  visited[v] <span style="color:#f92672">=</span> TRUE;
-  <span style="color:#66d9ef">for</span> (w<span style="color:#f92672">=</span> FisrtNeighbor(G,v); w<span style="color:#f92672">&gt;=</span><span style="color:#ae81ff">0</span>; w<span style="color:#f92672">=</span>NextNeighbor(G,v,w))
-    <span style="color:#66d9ef">if</span> (<span style="color:#f92672">!</span>visited[w])
-      <span style="color:#75715e">// w 为 u 尚未访问的邻接顶点
-</span><span style="color:#75715e"></span>      DFS(G, w);
-  
-  print(v); <span style="color:#75715e">// 输出顶点，这里有点不严谨，只是为了表意
-</span><span style="color:#75715e"></span>}
-</code></pre></div><p>推出调用栈之前才会输出v，这里事实上没有对回路进行判断</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-c" data-lang="c"><span style="display:flex;"><span><span style="color:#75715e">// 对图G进行深度优先遍历
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#66d9ef">void</span> <span style="color:#a6e22e">DFSTraverse</span> (Graph G) {
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">int</span> v;
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">for</span> (v<span style="color:#f92672">=</span><span style="color:#ae81ff">0</span>; v<span style="color:#f92672">&lt;</span>G.vexnum; v<span style="color:#f92672">++</span>)
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">// 初始化
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>    visited[v] <span style="color:#f92672">=</span> FALSE;
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">for</span> (v<span style="color:#f92672">=</span><span style="color:#ae81ff">0</span>; v<span style="color:#f92672">&lt;</span>G.vexnum; v<span style="color:#f92672">++</span>)
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">if</span> (<span style="color:#f92672">!</span>visited[v])
+</span></span><span style="display:flex;"><span>      <span style="color:#a6e22e">DFS</span>(G, v);
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">void</span> <span style="color:#a6e22e">DFS</span>(Graph G, <span style="color:#66d9ef">int</span> v){
+</span></span><span style="display:flex;"><span>  <span style="color:#75715e">// 从顶点v出发，深度优先遍历图G
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>  visited[v] <span style="color:#f92672">=</span> TRUE;
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">for</span> (w<span style="color:#f92672">=</span> <span style="color:#a6e22e">FisrtNeighbor</span>(G,v); w<span style="color:#f92672">&gt;=</span><span style="color:#ae81ff">0</span>; w<span style="color:#f92672">=</span><span style="color:#a6e22e">NextNeighbor</span>(G,v,w))
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">if</span> (<span style="color:#f92672">!</span>visited[w])
+</span></span><span style="display:flex;"><span>      <span style="color:#75715e">// w 为 u 尚未访问的邻接顶点
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>      <span style="color:#a6e22e">DFS</span>(G, w);
+</span></span><span style="display:flex;"><span>  
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">print</span>(v); <span style="color:#75715e">// 输出顶点，这里有点不严谨，只是为了表意
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>}
+</span></span></code></pre></div><p>推出调用栈之前才会输出v，这里事实上没有对回路进行判断</p>
 <h2 id="关键路径">关键路径</h2>
 <p>AOE网(Activity On Edge Network)<br>
 在带权有向图中，以顶点表示事件，以有向边表示活动，以边上的权值表示完成该活动的开销(如：完成活动所需的时间)，称之为用边表示活动的网络，简称AOE网</p>
@@ -1014,6 +995,5 @@ C --&gt; X;
   </article>
 
     </main>
-</body>
-
+  </body>
 </html>

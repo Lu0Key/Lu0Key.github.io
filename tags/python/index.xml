@@ -41,12 +41,12 @@ from pypac import PACSession,get_pac url = &amp;#39;https://xxxxxx.com&amp;#39; 
 省流版: img.alpha_composite(mask)
 我们发现背景是黑色的,一开始想的是创建一个新的图片,和目标图像一样大小,使用mask.getpixel((i,j)) 去获取mask每一个像素点,然后如果获取的黑色的,那就设置新图的像素为原图的像素newImg.putpixel((i,j),originImg.getpixel((i,j))),大概这个思路,因为原图是没有通道的,可能要简单的修改. 之前试过,这个方法是可行的,但是速度太慢了,我要对上百张图片进行这个操作要好久,所以去找别的方法.
 首先我希望把mask盖到原图像上,就像PS一样,透明的部分不会印象下面的内容.因此我先把不透明的mask转化成透明的,因为mask是通用的,所以一张图片的效率低可以接受,以下是代码和效果.
-mask = Image.open(&amp;#34;mask.png&amp;#34;) W, H = mask.size newMask = Image.new(&amp;#34;RGBA&amp;#34;, mask.size, (0, 0, 0, 0)) for i in range(W): for j in range(H): # print(mask.getpixel((i, j))) if mask.getpixel((i, j)) == (255, 255, 255): newMask.putpixel((i, j), (255, 255, 255, 255)) newMask.save(&amp;#34;newMask.png&amp;#34;)  这里才知道 img.size 返回的是先是宽度,然后才是高
+mask = Image.open(&amp;#34;mask.png&amp;#34;) W, H = mask.size newMask = Image.new(&amp;#34;RGBA&amp;#34;, mask.size, (0, 0, 0, 0)) for i in range(W): for j in range(H): # print(mask.getpixel((i, j))) if mask.getpixel((i, j)) == (255, 255, 255): newMask.putpixel((i, j), (255, 255, 255, 255)) newMask.save(&amp;#34;newMask.png&amp;#34;) 这里才知道 img.size 返回的是先是宽度,然后才是高
 getpixel((i,j)), 这里的i和j也分别是宽的位置和高的位置.
- 得到了新的mask
+得到了新的mask
 希望把newMask直接盖到原图像上,查了半天,网上要么是一个个像素去判断的,效率难以接受,要么是用Image.blend(image,mask,alpha),这种方法会改变原图像的透明度,效果如此公式:
 $$\text{image} * (1-\text{alpha})+\text{mask} * \text{alpha}$$
-truthImg = Image.open(os.path.join(basepath, &amp;#34;truth&amp;#34;, imgName)) newImg = Image.</description>
+truthImg = Image.open(os.path.join(basepath, &amp;#34;truth&amp;#34;, imgName)) newImg = Image.new(&amp;#39;RGBA&amp;#39;, truthImg.</description>
     </item>
     
     <item>
@@ -107,7 +107,7 @@ import xlrd # 总的人名 name_set = [] # 填报的人 name_data = [] # 没填�
       <pubDate>Fri, 22 Jan 2021 16:01:50 +0800</pubDate>
       
       <guid>https://Lu0key.github.io/post/python-flask-%E5%85%A5%E9%97%A8/</guid>
-      <description>Flask  Flask  特点 list  example   tuple(元组)  “可变的” tuple  tips     循环  range() continue  example   break   dict set  常用函数   定义函数  tips 空函数 参数检查 多个返回值 默认参数  坑   可变参数 关键字参数 命名关键词参数   参数组合还没看&amp;hellip;..  递归函数  tips   尾递归 切片 Slice 切片   Iteration 迭代  如何判断一个对象是否可迭代 如何同时迭代索引和元素   列表生成式 generator 生成器 迭代器 高阶函数 map/reduce filter sorted 返回函数 闭包(Closure) 匿名函数lambda 装饰器(Decorator) 偏函数 Partial function 模块 Module  作用域 安装第三方库   OOP 访问限制 继承和多态 获取对象信息 实例属性和类属性 使用__slots__ 使用@property 多重继承 定制类  __iter__ __getattr__ __call__   枚举类 待解决问题    特点 123</description>
+      <description>Flask Flask 特点 list example tuple(元组) “可变的” tuple tips 循环 range() continue example break dict set 常用函数 定义函数 tips 空函数 参数检查 多个返回值 默认参数 坑 可变参数 关键字参数 命名关键词参数 参数组合还没看&amp;hellip;.. 递归函数 tips 尾递归 切片 Slice 切片 Iteration 迭代 如何判断一个对象是否可迭代 如何同时迭代索引和元素 列表生成式 generator 生成器 迭代器 高阶函数 map/reduce filter sorted 返回函数 闭包(Closure) 匿名函数lambda 装饰器(Decorator) 偏函数 Partial function 模块 Module 作用域 安装第三方库 OOP 访问限制 继承和多态 获取对象信息 实例属性和类属性 使用__slots__ 使用@property 多重继承 定制类 __iter__ __getattr__ __call__ 枚举类 待解决问题 特点 123</description>
     </item>
     
   </channel>

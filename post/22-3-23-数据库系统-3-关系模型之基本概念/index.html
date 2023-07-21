@@ -1,41 +1,25 @@
 <!doctype html>
 <html lang="en-us">
-
-<head>
-    
-<script>
-    MathJax = {
-        tex: {
-            inlineMath: [
-                ["$", "$"]
-            ],
-        },
-        displayMath: [
-            ["$$", "$$"],
-            ["\[", "\]"],
-        ],
-        svg: {
-            fontCache: "global",
-        },
-    };
-</script>
-<script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
-<script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
-
+  <head>
     <title>数据库系统(3)-关系模型之基本概念 // 洛七的摸鱼池塘</title>
-    <link rel="shortcut icon" href="%20/favicon.ico%20" />
-    <meta charset="utf-8" /> <meta name="generator" content="Hugo 0.80.0" />
+    <link rel="shortcut icon" href="/favicon.ico" />
+    <meta charset="utf-8" />
+    <meta name="generator" content="Hugo 0.115.4">
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="author" content="洛七" />
-    <meta name="description" content="" /> <link rel="stylesheet" href="https://Lu0key.github.io/css/main.min.88e7083eff65effb7485b6e6f38d10afbec25093a6fac42d734ce9024d3defbd.css" />  <meta name="twitter:card" content="summary"/>
+    <meta name="description" content="" />
+    <link rel="stylesheet" href="/css/main.min.d08c6ce68432c68a64d84cb426dfdecab702035f91a5d580831f23f76c040a05.css" />
+
+    
+    <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="数据库系统(3)-关系模型之基本概念"/>
-<meta name="twitter:description" content="关系模型概述？ 什么是关系？ 关系模型中的约束  关系模型简述 提出
+<meta name="twitter:description" content="关系模型概述？ 什么是关系？ 关系模型中的约束 关系模型简述 提出
 E.F.Codd 在 1970 年提出
 研究
 一个关系(relation) 就是一个Table
 关系模型就是处理Table 的，由三个部分组成：
- 描述DB各种数据的基本结构形式(Table/Relation) 描述Table与Table之间所可能发生的各种操作(关系运算) 描述这些操作所应遵循的约束条件(完整性约束)  关系模型三要素
- 基本结构：Relation/Table 基本操作：Relation/Table 基本的  并 Union 差 difference 广义积 product 选择 selection 投影 projection   拓展的：  交 intersection 连接 join 除 division    完整性约束：实体完整性、参照完整性和用户自定义的完整性
+描述DB各种数据的基本结构形式(Table/Relation) 描述Table与Table之间所可能发生的各种操作(关系运算) 描述这些操作所应遵循的约束条件(完整性约束) 关系模型三要素
+基本结构：Relation/Table 基本操作：Relation/Table 基本的 并 Union 差 difference 广义积 product 选择 selection 投影 projection 拓展的： 交 intersection 连接 join 除 division 完整性约束：实体完整性、参照完整性和用户自定义的完整性
 关系模型与关系数据库语言的关系
 关系运算：关系代数和关系演算
 关系演算：元组演算和域演算
@@ -44,16 +28,19 @@ E.F.Codd 在 1970 年提出
 基于域演算设计的数据库语言示例QBE
 什么是关系 什么是表
 表的基本构成要素
- 表/关系 列/字段/属性/数据项 列名 列值 标题/模式 行/元组/记录  关系
-“列”的取值范围“域(Domain)”"/>
- <meta property="og:title" content="数据库系统(3)-关系模型之基本概念" />
-<meta property="og:description" content="关系模型概述？ 什么是关系？ 关系模型中的约束  关系模型简述 提出
+表/关系 列/字段/属性/数据项 列名 列值 标题/模式 行/元组/记录 关系
+“列”的取值范围“域(Domain)”
+域(Domain) 一组值的集合，这组值具有相同的数据类型 集合中元素的个数称为域的基数(Cardinality) 一组域 $D_1,D_2,\cdots,D_n$ 的笛卡尔积为： $D_1\times D_2\times\cdots D_n={(d_1,d_2,\cdots,d_n)|d_i \in D_i,;i=1,\cdots,n}$
+笛卡尔积的每个元素 $(d_1,d_2,\cdots,d_n)$ 称作一个 n-元组(n-tuple)"/>
+
+    <meta property="og:title" content="数据库系统(3)-关系模型之基本概念" />
+<meta property="og:description" content="关系模型概述？ 什么是关系？ 关系模型中的约束 关系模型简述 提出
 E.F.Codd 在 1970 年提出
 研究
 一个关系(relation) 就是一个Table
 关系模型就是处理Table 的，由三个部分组成：
- 描述DB各种数据的基本结构形式(Table/Relation) 描述Table与Table之间所可能发生的各种操作(关系运算) 描述这些操作所应遵循的约束条件(完整性约束)  关系模型三要素
- 基本结构：Relation/Table 基本操作：Relation/Table 基本的  并 Union 差 difference 广义积 product 选择 selection 投影 projection   拓展的：  交 intersection 连接 join 除 division    完整性约束：实体完整性、参照完整性和用户自定义的完整性
+描述DB各种数据的基本结构形式(Table/Relation) 描述Table与Table之间所可能发生的各种操作(关系运算) 描述这些操作所应遵循的约束条件(完整性约束) 关系模型三要素
+基本结构：Relation/Table 基本操作：Relation/Table 基本的 并 Union 差 difference 广义积 product 选择 selection 投影 projection 拓展的： 交 intersection 连接 join 除 division 完整性约束：实体完整性、参照完整性和用户自定义的完整性
 关系模型与关系数据库语言的关系
 关系运算：关系代数和关系演算
 关系演算：元组演算和域演算
@@ -62,52 +49,50 @@ E.F.Codd 在 1970 年提出
 基于域演算设计的数据库语言示例QBE
 什么是关系 什么是表
 表的基本构成要素
- 表/关系 列/字段/属性/数据项 列名 列值 标题/模式 行/元组/记录  关系
-“列”的取值范围“域(Domain)”" />
+表/关系 列/字段/属性/数据项 列名 列值 标题/模式 行/元组/记录 关系
+“列”的取值范围“域(Domain)”
+域(Domain) 一组值的集合，这组值具有相同的数据类型 集合中元素的个数称为域的基数(Cardinality) 一组域 $D_1,D_2,\cdots,D_n$ 的笛卡尔积为： $D_1\times D_2\times\cdots D_n={(d_1,d_2,\cdots,d_n)|d_i \in D_i,;i=1,\cdots,n}$
+笛卡尔积的每个元素 $(d_1,d_2,\cdots,d_n)$ 称作一个 n-元组(n-tuple)" />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://Lu0key.github.io/post/22-3-23-%E6%95%B0%E6%8D%AE%E5%BA%93%E7%B3%BB%E7%BB%9F-3-%E5%85%B3%E7%B3%BB%E6%A8%A1%E5%9E%8B%E4%B9%8B%E5%9F%BA%E6%9C%AC%E6%A6%82%E5%BF%B5/" />
+<meta property="og:url" content="https://Lu0key.github.io/post/22-3-23-%E6%95%B0%E6%8D%AE%E5%BA%93%E7%B3%BB%E7%BB%9F-3-%E5%85%B3%E7%B3%BB%E6%A8%A1%E5%9E%8B%E4%B9%8B%E5%9F%BA%E6%9C%AC%E6%A6%82%E5%BF%B5/" /><meta property="article:section" content="post" />
 <meta property="article:published_time" content="2022-03-23T22:05:52+08:00" />
 <meta property="article:modified_time" content="2022-03-23T22:05:52+08:00" />
 
 
-</head>
-
-<body>
+  </head>
+  <body>
     <header class="app-header">
-        <a href="https://Lu0key.github.io/"><img class="app-header-avatar" src="/avatar.jpg" alt="洛七" /></a>
-        <h1>洛七的摸鱼池塘</h1>
-        <nav class="app-header-menu">
-            <a class="app-header-menu-item" href="/tags/">Tags</a>
-        </nav>
-        <p>即将没书读的咸鱼</p>
-        <div class="app-header-social">
-            
-        </div>
+      <a href="https://Lu0key.github.io/"><img class="app-header-avatar" src="/avatar.jpg" alt="洛七" /></a>
+      <span class="app-header-title">洛七的摸鱼池塘</span>
+      <nav class="app-header-menu">
+          <a class="app-header-menu-item" href="/tags/">Tags</a>
+      </nav>
+      <p>即将没书读的咸鱼</p>
     </header>
     <main class="app-container">
-        
+      
   <article class="post">
     <header class="post-header">
       <h1 class ="post-title">数据库系统(3)-关系模型之基本概念</h1>
       <div class="post-meta">
         <div>
-          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-calendar">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-calendar">
   <title>calendar</title>
   <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line>
 </svg>
           Mar 23, 2022
         </div>
         <div>
-          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-clock">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-clock">
   <title>clock</title>
   <circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline>
 </svg>
           1 min read
         </div>
         <div>
-          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-tag">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-tag">
   <title>tag</title>
-  <path d="M20.59 13.41l-7.17 7.17a2 2 0 0 1-2.83 0L2 12V2h10l8.59 8.59a2 2 0 0 1 0 2.82z"></path><line x1="7" y1="7" x2="7" y2="7"></line>
+  <path d="M20.59 13.41l-7.17 7.17a2 2 0 0 1-2.83 0L2 12V2h10l8.59 8.59a2 2 0 0 1 0 2.82z"></path><line x1="7" y1="7" x2="7.01" y2="7"></line>
 </svg>
               <a class="tag" href="https://Lu0key.github.io/tags/%E6%95%B0%E6%8D%AE%E5%BA%93/">数据库</a>
         </div>
@@ -268,6 +253,5 @@ DBMS 以<strong>主码</strong>为主要线索管理关系中的各个元组</p>
   </article>
 
     </main>
-</body>
-
+  </body>
 </html>

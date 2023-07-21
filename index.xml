@@ -6,7 +6,16 @@
     <description>Recent content on 洛七的摸鱼池塘</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Thu, 30 Mar 2023 18:41:44 +0800</lastBuildDate><atom:link href="https://Lu0key.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Fri, 21 Jul 2023 18:27:05 +0800</lastBuildDate><atom:link href="https://Lu0key.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Linux 创建新用户</title>
+      <link>https://Lu0key.github.io/post/linux-%E5%88%9B%E5%BB%BA%E6%96%B0%E7%94%A8%E6%88%B7/</link>
+      <pubDate>Fri, 21 Jul 2023 18:27:05 +0800</pubDate>
+      
+      <guid>https://Lu0key.github.io/post/linux-%E5%88%9B%E5%BB%BA%E6%96%B0%E7%94%A8%E6%88%B7/</guid>
+      <description>sudo adduser xxx # 指定主目录 # 例如 # sudo adduser xxx --home /new_home/xxx # 输入密码 sudo chmod 755 /home/xxx su xxx # 输入密码 ssh-keygen # 一路回车 cd ~/.ssh cat id_rsa.pub &amp;gt;&amp;gt; authorized_keys chmod 777 ~/.ssh chmod 777 ~/.ssh/id_rsa # 然后把 id_rsa 下载下来 chmod 600 ~/.ssh/id_rsa chmod 700 ~/.ssh chmod 600 ~/.ssh/authorized_keys 然后就可以根据 id_rsa 登录了.</description>
+    </item>
+    
     <item>
       <title>Images to UByte</title>
       <link>https://Lu0key.github.io/post/images-to-ubyte/</link>
@@ -24,32 +33,17 @@
       
       <guid>https://Lu0key.github.io/post/%E5%87%A0%E9%81%93%E7%A7%AF%E5%88%86%E5%92%8C%E7%BA%A7%E6%95%B0/</guid>
       <description>忘记什么时候搞来的积分了，有些好像是积分竞赛的，应该很多都不是我自己做的，只是原来记录的
-$\begin{aligned} &amp;amp;\dfrac{z}{1-z}=\sum_{n=1}^{\infty}z^n\qquad(|z|&amp;lt;1)\\
-&amp;amp;左右两边积分可得;\ln(1-z)=-\sum_{n=1}^\infty\dfrac{z^n}{n}.\\
-&amp;amp;代入z=re^{i\theta},\dfrac{re^{i\theta}}{1-re^{i\theta}}=\sum_{n=1}^{\infty}r^n(\cos n\theta+i\sin n\theta)\\
-&amp;amp;左边=\dfrac{re^{i\theta}}{1-re^{i\theta}}=\dfrac{r\cos\theta+ir\sin\theta}{(1-r\cos\theta)-ir\sin\theta}=\dfrac{(r\cos\theta+ir\sin\theta)[(1-r\cos\theta)+ir\sin\theta]}{(1-r\cos\theta)^2+r^2\sin^2\theta}\\
-&amp;amp;\qquad=\dfrac{r\cos\theta-r^2}{1-2r\cos\theta+r^2}+i\dfrac{r\sin\theta}{1-2r\cos\theta+r^2}\\
-&amp;amp;因此\dfrac{\cos\theta-r}{1-2r\cos\theta+r^2}=\sum_{n=1}^{\infty}r^{n-1}\cos n\theta,\quad \dfrac{\sin\theta}{1-2r\cos\theta+r^2}=\sum_{n=1}^{\infty}r^{n-1}\sin n\theta.\\
-&amp;amp;左右对r积分:\quad\dfrac12\ln(1-2r\cos\theta+r^2)=-\sum_{n=1}^{\infty}r^n\dfrac{\cos n\theta}{n}\cdots①\\
-&amp;amp;\qquad\qquad\qquad\quad \arctan\dfrac{r\sin\theta}{1-r\cos\theta}=\sum_{n=1}^{\infty}r^n\dfrac{\sin n\theta}{n}\cdots②\\
-&amp;amp;将①式中r换为-r得：\\
-&amp;amp;\qquad\qquad r\cos\theta-r^2\dfrac{\cos2\theta}{2}+r^3\dfrac{\cos3\theta}{3}-\cdots=\dfrac12\ln(1+2r\cos\theta+r^2)\\
-&amp;amp;将②式中的r换为-r，\theta换为-\theta得：\\
-&amp;amp;\qquad\qquad r\sin\theta-r^2\dfrac{\sin2\theta}{2}+r^3\dfrac{\sin3\theta}{3}-\cdots=\arctan\dfrac{r\sin\theta}{1+r\cos\theta} \end{aligned}$
- $ \begin{aligned} \displaystyle&amp;amp;\int\dfrac{\sin \theta}{r^2-2r\cos\theta+1}\text{d}r\\
-=&amp;amp;\int\dfrac{\sin\theta}{(r-\cos\theta)^2+\sin^2\theta}\text{d}(r-\cos\theta)\\
-=&amp;amp;\arctan\dfrac{r-\cos\theta}{\sin \theta} \end{aligned} $
-$ \begin{aligned} \left(\arctan\dfrac{r\sin\theta}{1-r\cos\theta}\right)&#39;=&amp;amp;\dfrac{1}{\left(\dfrac{r\sin\theta}{1-r\cos\theta}\right)^2+1}\cdot\dfrac{\sin\theta(1-r\cos\theta)+\cos\theta\cdot r\sin\theta}{(1-r\cos\theta)^2}\\
-=&amp;amp;\dfrac{\sin\theta}{r^2\sin^2\theta+1-2r\cos\theta+r^2\cos^2\theta}\\
-=&amp;amp;\dfrac{\sin\theta}{1-2r\cos\theta+r^2} \end{aligned} $
-$ \begin{aligned} &amp;amp;\dfrac{\sin\theta}{1-2r\cos\theta+r^2}=\dfrac{\sin\theta}{1-2r\cos\theta+r^2\cos^2\theta+r^2\sin^2\theta}\\
-=&amp;amp;\dfrac{\sin\theta}{(1-r\cos\theta)^2+r^2\sin^2\theta}=\dfrac{\dfrac{\sin\theta}{(1-r\cos\theta)^2}}{1+\left(\dfrac{r\sin\theta}{1-r\cos\theta}\right)^2} \end{aligned} $
+$\begin{aligned} &amp;amp;\dfrac{z}{1-z}=\sum_{n=1}^{\infty}z^n\qquad(|z|&amp;lt;1)\\ &amp;amp;左右两边积分可得;\ln(1-z)=-\sum_{n=1}^\infty\dfrac{z^n}{n}.\\ &amp;amp;代入z=re^{i\theta},\dfrac{re^{i\theta}}{1-re^{i\theta}}=\sum_{n=1}^{\infty}r^n(\cos n\theta+i\sin n\theta)\\ &amp;amp;左边=\dfrac{re^{i\theta}}{1-re^{i\theta}}=\dfrac{r\cos\theta+ir\sin\theta}{(1-r\cos\theta)-ir\sin\theta}=\dfrac{(r\cos\theta+ir\sin\theta)[(1-r\cos\theta)+ir\sin\theta]}{(1-r\cos\theta)^2+r^2\sin^2\theta}\\ &amp;amp;\qquad=\dfrac{r\cos\theta-r^2}{1-2r\cos\theta+r^2}+i\dfrac{r\sin\theta}{1-2r\cos\theta+r^2}\\ &amp;amp;因此\dfrac{\cos\theta-r}{1-2r\cos\theta+r^2}=\sum_{n=1}^{\infty}r^{n-1}\cos n\theta,\quad \dfrac{\sin\theta}{1-2r\cos\theta+r^2}=\sum_{n=1}^{\infty}r^{n-1}\sin n\theta.\\ &amp;amp;左右对r积分:\quad\dfrac12\ln(1-2r\cos\theta+r^2)=-\sum_{n=1}^{\infty}r^n\dfrac{\cos n\theta}{n}\cdots①\\ &amp;amp;\qquad\qquad\qquad\quad \arctan\dfrac{r\sin\theta}{1-r\cos\theta}=\sum_{n=1}^{\infty}r^n\dfrac{\sin n\theta}{n}\cdots②\\ &amp;amp;将①式中r换为-r得：\\ &amp;amp;\qquad\qquad r\cos\theta-r^2\dfrac{\cos2\theta}{2}+r^3\dfrac{\cos3\theta}{3}-\cdots=\dfrac12\ln(1+2r\cos\theta+r^2)\\ &amp;amp;将②式中的r换为-r，\theta换为-\theta得：\\ &amp;amp;\qquad\qquad r\sin\theta-r^2\dfrac{\sin2\theta}{2}+r^3\dfrac{\sin3\theta}{3}-\cdots=\arctan\dfrac{r\sin\theta}{1+r\cos\theta} \end{aligned}$
+$ \begin{aligned} \displaystyle&amp;amp;\int\dfrac{\sin \theta}{r^2-2r\cos\theta+1}\text{d}r\\ =&amp;amp;\int\dfrac{\sin\theta}{(r-\cos\theta)^2+\sin^2\theta}\text{d}(r-\cos\theta)\\ =&amp;amp;\arctan\dfrac{r-\cos\theta}{\sin \theta} \end{aligned} $
+$ \begin{aligned} \left(\arctan\dfrac{r\sin\theta}{1-r\cos\theta}\right)&amp;rsquo;=&amp;amp;\dfrac{1}{\left(\dfrac{r\sin\theta}{1-r\cos\theta}\right)^2+1}\cdot\dfrac{\sin\theta(1-r\cos\theta)+\cos\theta\cdot r\sin\theta}{(1-r\cos\theta)^2}\\ =&amp;amp;\dfrac{\sin\theta}{r^2\sin^2\theta+1-2r\cos\theta+r^2\cos^2\theta}\\ =&amp;amp;\dfrac{\sin\theta}{1-2r\cos\theta+r^2} \end{aligned} $
+$ \begin{aligned} &amp;amp;\dfrac{\sin\theta}{1-2r\cos\theta+r^2}=\dfrac{\sin\theta}{1-2r\cos\theta+r^2\cos^2\theta+r^2\sin^2\theta}\\ =&amp;amp;\dfrac{\sin\theta}{(1-r\cos\theta)^2+r^2\sin^2\theta}=\dfrac{\dfrac{\sin\theta}{(1-r\cos\theta)^2}}{1+\left(\dfrac{r\sin\theta}{1-r\cos\theta}\right)^2} \end{aligned} $
 $\displaystyle\int_0^r\dfrac{\dfrac{\sin\theta}{(1-r\cos\theta)^2}}{1+\left(\dfrac{r\sin\theta}{1-r\cos\theta}\right)^2}\text{d}r=\int_0^r\dfrac{1}{1+\left(\dfrac{r\sin\theta}{1-r\cos\theta}\right)^2}\text{d}(\dfrac{r\sin\theta}{1-r\cos\theta})\\=\arctan\dfrac{r\sin\theta}{1-r\cos\theta}$
 $\displaystyle\int_0^1\dfrac{\arctan x}{x\sqrt{1-x^2}}\text{d}x=\int_0^{\frac{\pi}{4}}\dfrac{x}{\tan x}$
 $\displaystyle\lim_{x\to0^+}\ln(1-x)\ln(\tan x)=\lim_{x\to0^+}\ln(1-x)\ln(\sin x)=\lim_{x\to0^+}-x\ln(\sin x)=\lim_{x\to0^+}-\dfrac{\ln(\sin x)}{\frac1x}=\lim_{x\to0^+}\dfrac{\cos x}{\sin x}\cdot x^2=0$
-  $\cos\theta+\dfrac{\cos2\theta}{2}+\dfrac{\cos3\theta}{3}+\dfrac{\cos4\theta}{4}+\cdots$  直接引用昨天的结论：
+$\cos\theta+\dfrac{\cos2\theta}{2}+\dfrac{\cos3\theta}{3}+\dfrac{\cos4\theta}{4}+\cdots$ 直接引用昨天的结论：
 $r\cos\theta-r^2\dfrac{\cos2\theta}{2}+r^3\dfrac{\cos3\theta}{3}-\cdots=\dfrac12\ln(1+2r\cos\theta+r^2)\cdots①;$
-把 $r=-1$ 带入 ① 式，得：</description>
+把 $r=-1$ 带入 ① 式，得：
+$-\cos\theta-\dfrac{\cos2\theta}{2}-\dfrac{\cos3\theta}{3}-\cdots=\dfrac12\ln(2-2r\cos\theta)=\ln(2\sin\dfrac{\theta}{2})$</description>
     </item>
     
     <item>
@@ -62,7 +56,7 @@ $r\cos\theta-r^2\dfrac{\cos2\theta}{2}+r^3\dfrac{\cos3\theta}{3}-\cdots=\dfrac12
 常用的有两种方法，一种是以自己电脑为服务器，用花生壳、ngrok等一些内网穿透工具，让别人可以用浏览器访问，这种方法有一个弊端就是，你的电脑必须要实时联网，一直开机，对于笔记本来说有一些不方便；另一种方法就是搞一台云服务器，比如：阿里云，腾讯云，山大云(逃)，然后将自己的项目部署到云服务器上，这样的话就能解决上述弊端。
 前提：一台服务器，服务器安装了JDK，安装了tomcat，开放了8080端口，教程基于IDEA
 接下来开始教程：
- 点击 File -&amp;gt; Project Structure(快捷键Ctrl+Shift+Alt+S) 点击左侧的 Project Setting -&amp;gt; Artifacts 点击中间的 + 选择 Web Application: Archive 中你的项目 点击右下角的 Apply 点击 OK 点击 Build -&amp;gt; Build Artifacts, 选择 All Artifacts -&amp;gt; Clean 点击 Build -&amp;gt; Rebuild Project, 点击 Build -&amp;gt; Build Artifacts, 选择 ${项目名}:Web -&amp;gt; Build 在左侧项目结构中找到 out -&amp;gt; artifacts -&amp;gt; ${项目名}_Web -&amp;gt; ${项目名}_Web.war 右键选择 Show in Explorer 将这个 war 包放到服务器 tomcat 目录的 webapps 下  # 假设现在在 webapps 目录下 cd .</description>
+点击 File -&amp;gt; Project Structure(快捷键Ctrl+Shift+Alt+S) 点击左侧的 Project Setting -&amp;gt; Artifacts 点击中间的 + 选择 Web Application: Archive 中你的项目 点击右下角的 Apply 点击 OK 点击 Build -&amp;gt; Build Artifacts, 选择 All Artifacts -&amp;gt; Clean 点击 Build -&amp;gt; Rebuild Project, 点击 Build -&amp;gt; Build Artifacts, 选择 ${项目名}:Web -&amp;gt; Build 在左侧项目结构中找到 out -&amp;gt; artifacts -&amp;gt; ${项目名}_Web -&amp;gt; ${项目名}_Web.war 右键选择 Show in Explorer 将这个 war 包放到服务器 tomcat 目录的 webapps 下 # 假设现在在 webapps 目录下 cd .</description>
     </item>
     
     <item>
@@ -89,12 +83,12 @@ from pypac import PACSession,get_pac url = &amp;#39;https://xxxxxx.com&amp;#39; 
 省流版: img.alpha_composite(mask)
 我们发现背景是黑色的,一开始想的是创建一个新的图片,和目标图像一样大小,使用mask.getpixel((i,j)) 去获取mask每一个像素点,然后如果获取的黑色的,那就设置新图的像素为原图的像素newImg.putpixel((i,j),originImg.getpixel((i,j))),大概这个思路,因为原图是没有通道的,可能要简单的修改. 之前试过,这个方法是可行的,但是速度太慢了,我要对上百张图片进行这个操作要好久,所以去找别的方法.
 首先我希望把mask盖到原图像上,就像PS一样,透明的部分不会印象下面的内容.因此我先把不透明的mask转化成透明的,因为mask是通用的,所以一张图片的效率低可以接受,以下是代码和效果.
-mask = Image.open(&amp;#34;mask.png&amp;#34;) W, H = mask.size newMask = Image.new(&amp;#34;RGBA&amp;#34;, mask.size, (0, 0, 0, 0)) for i in range(W): for j in range(H): # print(mask.getpixel((i, j))) if mask.getpixel((i, j)) == (255, 255, 255): newMask.putpixel((i, j), (255, 255, 255, 255)) newMask.save(&amp;#34;newMask.png&amp;#34;)  这里才知道 img.size 返回的是先是宽度,然后才是高
+mask = Image.open(&amp;#34;mask.png&amp;#34;) W, H = mask.size newMask = Image.new(&amp;#34;RGBA&amp;#34;, mask.size, (0, 0, 0, 0)) for i in range(W): for j in range(H): # print(mask.getpixel((i, j))) if mask.getpixel((i, j)) == (255, 255, 255): newMask.putpixel((i, j), (255, 255, 255, 255)) newMask.save(&amp;#34;newMask.png&amp;#34;) 这里才知道 img.size 返回的是先是宽度,然后才是高
 getpixel((i,j)), 这里的i和j也分别是宽的位置和高的位置.
- 得到了新的mask
+得到了新的mask
 希望把newMask直接盖到原图像上,查了半天,网上要么是一个个像素去判断的,效率难以接受,要么是用Image.blend(image,mask,alpha),这种方法会改变原图像的透明度,效果如此公式:
 $$\text{image} * (1-\text{alpha})+\text{mask} * \text{alpha}$$
-truthImg = Image.open(os.path.join(basepath, &amp;#34;truth&amp;#34;, imgName)) newImg = Image.</description>
+truthImg = Image.open(os.path.join(basepath, &amp;#34;truth&amp;#34;, imgName)) newImg = Image.new(&amp;#39;RGBA&amp;#39;, truthImg.</description>
     </item>
     
     <item>
@@ -117,37 +111,16 @@ from email.mime.text import MIMEText #纯文本，HTML from email.mime.image imp
       <guid>https://Lu0key.github.io/post/%E8%AE%B0%E5%BD%95%E4%B8%A4%E9%81%93%E8%A1%8C%E5%88%97%E5%BC%8F/</guid>
       <description>最近在清理电脑，发现有些题目之前写的，没有保存，这里记录一下
 求行列式
-$$ D = \begin{vmatrix} \sin(\theta_1+\theta_1)&amp;amp;\sin(\theta_1+\theta_2)&amp;amp;\cdots&amp;amp;\sin(\theta_1+\theta_n)\\
-\sin(\theta_2+\theta_1)&amp;amp;\sin(\theta_2+\theta_2)&amp;amp;\cdots&amp;amp;\sin(\theta_2+\theta_n)\\
-\vdots&amp;amp;\vdots&amp;amp;&amp;amp;\vdots\\
-\sin(\theta_n+\theta_1)&amp;amp;\sin(\theta_n+\theta_2)&amp;amp;\cdots&amp;amp;\sin(\theta_n+\theta_n) \end{vmatrix} $$
+$$ D = \begin{vmatrix} \sin(\theta_1+\theta_1)&amp;amp;\sin(\theta_1+\theta_2)&amp;amp;\cdots&amp;amp;\sin(\theta_1+\theta_n)\\ \sin(\theta_2+\theta_1)&amp;amp;\sin(\theta_2+\theta_2)&amp;amp;\cdots&amp;amp;\sin(\theta_2+\theta_n)\\ \vdots&amp;amp;\vdots&amp;amp;&amp;amp;\vdots\\ \sin(\theta_n+\theta_1)&amp;amp;\sin(\theta_n+\theta_2)&amp;amp;\cdots&amp;amp;\sin(\theta_n+\theta_n) \end{vmatrix} $$
 【Sol】: 当 $n\geqslant2$ 时
-$$ \begin{aligned} &amp;amp;\begin{vmatrix} \sin(\theta_1+\theta_1)&amp;amp;\sin(\theta_1+\theta_2)&amp;amp;\cdots&amp;amp;\sin(\theta_1+\theta_n)\\
-\sin(\theta_2+\theta_1)&amp;amp;\sin(\theta_2+\theta_2)&amp;amp;\cdots&amp;amp;\sin(\theta_2+\theta_n)\\
-\vdots&amp;amp;\vdots&amp;amp;&amp;amp;\vdots\\
-\sin(\theta_n+\theta_1)&amp;amp;\sin(\theta_n+\theta_2)&amp;amp;\cdots&amp;amp;\sin(\theta_n+\theta_n) \end{vmatrix}\\
-=&amp;amp;\begin{vmatrix} \sin\theta_1&amp;amp;\cos\theta_1&amp;amp;0&amp;amp;\cdots&amp;amp;0\\
-\sin\theta_2&amp;amp;\cos\theta_2&amp;amp;0&amp;amp;\cdots&amp;amp;0\\
-\vdots&amp;amp;\vdots&amp;amp;\vdots&amp;amp;&amp;amp;\vdots\\
-\sin\theta_n&amp;amp;\cos\theta_n&amp;amp;0&amp;amp;\cdots&amp;amp;0 \end{vmatrix}_ {n \times n} \cdot \begin{vmatrix} \cos\theta_1&amp;amp;\cos\theta_2&amp;amp;\cdots&amp;amp;\cos\theta_n\\
-\sin\theta_1&amp;amp;\sin\theta_2&amp;amp;\cdots&amp;amp;\sin\theta_n\\
-0&amp;amp;0&amp;amp;\cdots&amp;amp;0\\
-\vdots&amp;amp;\vdots&amp;amp;&amp;amp;\vdots\\
-0&amp;amp;0&amp;amp;\cdots&amp;amp;0 \end{vmatrix}_{n\times n}\\
-=&amp;amp;\begin{cases} -\sin^2(\theta_1-\theta_2),&amp;amp;n=2\\
-0,&amp;amp;n\geqslant3 \end{cases} \end{aligned} $$
+$$ \begin{aligned} &amp;amp;\begin{vmatrix} \sin(\theta_1+\theta_1)&amp;amp;\sin(\theta_1+\theta_2)&amp;amp;\cdots&amp;amp;\sin(\theta_1+\theta_n)\\ \sin(\theta_2+\theta_1)&amp;amp;\sin(\theta_2+\theta_2)&amp;amp;\cdots&amp;amp;\sin(\theta_2+\theta_n)\\ \vdots&amp;amp;\vdots&amp;amp;&amp;amp;\vdots\\ \sin(\theta_n+\theta_1)&amp;amp;\sin(\theta_n+\theta_2)&amp;amp;\cdots&amp;amp;\sin(\theta_n+\theta_n) \end{vmatrix}\\ =&amp;amp;\begin{vmatrix} \sin\theta_1&amp;amp;\cos\theta_1&amp;amp;0&amp;amp;\cdots&amp;amp;0\\ \sin\theta_2&amp;amp;\cos\theta_2&amp;amp;0&amp;amp;\cdots&amp;amp;0\\ \vdots&amp;amp;\vdots&amp;amp;\vdots&amp;amp;&amp;amp;\vdots\\ \sin\theta_n&amp;amp;\cos\theta_n&amp;amp;0&amp;amp;\cdots&amp;amp;0 \end{vmatrix}_ {n \times n} \cdot \begin{vmatrix} \cos\theta_1&amp;amp;\cos\theta_2&amp;amp;\cdots&amp;amp;\cos\theta_n\\ \sin\theta_1&amp;amp;\sin\theta_2&amp;amp;\cdots&amp;amp;\sin\theta_n\\ 0&amp;amp;0&amp;amp;\cdots&amp;amp;0\\ \vdots&amp;amp;\vdots&amp;amp;&amp;amp;\vdots\\ 0&amp;amp;0&amp;amp;\cdots&amp;amp;0 \end{vmatrix}_{n\times n}\\ =&amp;amp;\begin{cases} -\sin^2(\theta_1-\theta_2),&amp;amp;n=2\\ 0,&amp;amp;n\geqslant3 \end{cases} \end{aligned} $$
 因此
-$$ D= \begin{cases} \sin2\theta_1,&amp;amp;n=1\\
--\sin^2(\theta_1-\theta_2),&amp;amp;n=2\\
-0,&amp;amp;n\geqslant3 \end{cases} $$
- 求行列式
-$$ \begin{vmatrix} a_1^{n-1}&amp;amp;a_1^{n-2}b_1&amp;amp;\cdots&amp;amp;a_1b_1^{n-2}&amp;amp;b_1^{n-1}\\
-a_2^{n-1}&amp;amp;a_2^{n-2}b_2&amp;amp;\cdots&amp;amp;a_2b_2^{n-2}&amp;amp;b_2^{n-1}\\
-\vdots&amp;amp;\vdots&amp;amp;&amp;amp;\vdots&amp;amp;\vdots\\
-a_{n-1}^{n-1}&amp;amp;a_{n-1}^{n-2}b_{n-1}&amp;amp;\cdots&amp;amp;a_{n-1}b_{n-1}^{n-2}&amp;amp;b_{n-1}^{n-1}\\
-a_{n}^{n-1}&amp;amp;a_{n}^{n-2}b_n&amp;amp;\cdots&amp;amp;a_{n}b_n^{n-2}&amp;amp;b_{n}^{n-1} \end{vmatrix} $$
+$$ D= \begin{cases} \sin2\theta_1,&amp;amp;n=1\\ -\sin^2(\theta_1-\theta_2),&amp;amp;n=2\\ 0,&amp;amp;n\geqslant3 \end{cases} $$
+求行列式
+$$ \begin{vmatrix} a_1^{n-1}&amp;amp;a_1^{n-2}b_1&amp;amp;\cdots&amp;amp;a_1b_1^{n-2}&amp;amp;b_1^{n-1}\\ a_2^{n-1}&amp;amp;a_2^{n-2}b_2&amp;amp;\cdots&amp;amp;a_2b_2^{n-2}&amp;amp;b_2^{n-1}\\ \vdots&amp;amp;\vdots&amp;amp;&amp;amp;\vdots&amp;amp;\vdots\\ a_{n-1}^{n-1}&amp;amp;a_{n-1}^{n-2}b_{n-1}&amp;amp;\cdots&amp;amp;a_{n-1}b_{n-1}^{n-2}&amp;amp;b_{n-1}^{n-1}\\ a_{n}^{n-1}&amp;amp;a_{n}^{n-2}b_n&amp;amp;\cdots&amp;amp;a_{n}b_n^{n-2}&amp;amp;b_{n}^{n-1} \end{vmatrix} $$
 【Sol】:
-首先引入引理，范德蒙(Vandermonde)行列式:</description>
+首先引入引理，范德蒙(Vandermonde)行列式:
+$$ D_n=\begin{vmatrix} 1&amp;amp;1&amp;amp;\cdots&amp;amp;1\\ x_1&amp;amp;x_2&amp;amp;\cdots&amp;amp;x_n\\ \cdots&amp;amp;\cdots&amp;amp;&amp;amp;\cdots\\ x_1^{n-2}&amp;amp;x_2^{n-2}&amp;amp;\cdots&amp;amp;x_{n}^{n-2}\\ x_1^{n-1}&amp;amp;x_{2}^{n-1}&amp;amp;\cdots&amp;amp;x_{n}^{n-1} \end{vmatrix} = \prod_{1\leqslant i&amp;lt;j\leqslant n}(x_j-x_i) $$</description>
     </item>
     
     <item>
@@ -156,14 +129,14 @@ a_{n}^{n-1}&amp;amp;a_{n}^{n-2}b_n&amp;amp;\cdots&amp;amp;a_{n}b_n^{n-2}&amp;amp
       <pubDate>Sat, 07 Jan 2023 19:25:29 +0800</pubDate>
       
       <guid>https://Lu0key.github.io/post/%E7%BA%BF%E6%80%A7%E7%B3%BB%E7%BB%9F%E7%90%86%E8%AE%BA-%E6%9C%9F%E6%9C%AB%E7%AA%81%E5%87%BB/</guid>
-      <description>第一章 第二章 第三章 第四章 第五章 第六章  第一章  传递函数 特征多项式 特征方程 系统的极点 系统的零点 零极点相消 传递函数的零点和极点 系统的传递函数矩阵 元传递函数？ 真有理分式矩阵 (严格真与真的)判别方法  【定义1.1】 动力学系统的状态定义为完全的表征系统时间域行为的一个最小内部变量组。
- 系统的状态变量 初始时刻 系统的状态向量(状态) 状态空间   状态变量组可以完全的表征系统行为的属性 状态变量组的最小性 状态变量组在数学上的特征 状态变量组包含了系统的物理特征 状态变量组选取上的不唯一性  【定理1.1】 系统任意选取的两个状态变量组之间为线性非奇异的关系。
- 系统的状态方程 输出方程或量测方程 离散时间系统(离散系统) 系统的阶 控制输入向量 输出向量 系统矩阵 输入矩阵 输出矩阵 前馈矩阵 实现问题(不唯一)   【定理1.2】 给定单输入——单输出线性定常系统的输入输出描述 $$ y^{(n)}+a_{n-1}y^{(n-1)}+\cdots+a_1y^{(1)}+a_0y=b_mu^{(m)}+b_{m-1}u^{(m-1)}+\cdots+b_1u^{(1)}+b_0u $$
+      <description>第一章 第二章 第三章 第四章 第五章 第六章 第一章 传递函数 特征多项式 特征方程 系统的极点 系统的零点 零极点相消 传递函数的零点和极点 系统的传递函数矩阵 元传递函数？ 真有理分式矩阵 (严格真与真的)判别方法 【定义1.1】 动力学系统的状态定义为完全的表征系统时间域行为的一个最小内部变量组。
+系统的状态变量 初始时刻 系统的状态向量(状态) 状态空间 状态变量组可以完全的表征系统行为的属性 状态变量组的最小性 状态变量组在数学上的特征 状态变量组包含了系统的物理特征 状态变量组选取上的不唯一性 【定理1.1】 系统任意选取的两个状态变量组之间为线性非奇异的关系。
+系统的状态方程 输出方程或量测方程 离散时间系统(离散系统) 系统的阶 控制输入向量 输出向量 系统矩阵 输入矩阵 输出矩阵 前馈矩阵 实现问题(不唯一) 【定理1.2】 给定单输入——单输出线性定常系统的输入输出描述 $$ y^{(n)}+a_{n-1}y^{(n-1)}+\cdots+a_1y^{(1)}+a_0y=b_mu^{(m)}+b_{m-1}u^{(m-1)}+\cdots+b_1u^{(1)}+b_0u $$
 或
 $$ g(s)=\dfrac{Y(s)}{U(s)}=\dfrac{b_ms^m+\cdots+b_1s+b_0}{s^n+a_{n-1}s^{n-1}+\cdots+a_1s+a_0} $$
 当 $m&amp;lt;n$ 时，其对应的一个状态空间描述为
-$$ \dot{x}= \begin{bmatrix} 0&amp;amp;1\
-\vdots&amp;amp;&amp;amp;\ddots\</description>
+$$ \dot{x}= \begin{bmatrix} 0&amp;amp;1\ \vdots&amp;amp;&amp;amp;\ddots\ 0&amp;amp;&amp;amp;&amp;amp;1\ -a_0&amp;amp;-a_1&amp;amp;\cdots&amp;amp;-a_{n-1} \end{bmatrix}x+ \begin{bmatrix} 0\\vdots\0\1 \end{bmatrix}u, $$
+$$ y=\begin{bmatrix} b_0&amp;amp;b_1&amp;amp;\cdots&amp;amp;b_m&amp;amp;0&amp;amp;\cdots&amp;amp;0 \end{bmatrix}x.</description>
     </item>
     
     <item>
@@ -187,14 +160,14 @@ v-text
       <guid>https://Lu0key.github.io/post/02-vue-mvc-mvp-mvvm/</guid>
       <description>MVC/MVP/MVVM MVC M:Model 业务模型，数据层，负责数据的处理和获取数据接口层
 V:View 用户界面，视图层，是指用户看到并与之交互的界面。比如网页界面，或软件的客户端界面 C:Controller 控制器，控制器层，他是 Model 和 View 之间的胶水或中间人
- View 传指令到Controller Controller 完成业务逻辑后，要求 Model 改变状态 Model 将新的数据发送到View，用户的到反馈 所有的信息都是单向的    耦合度低 重用性高 部署快 可维护性高    不适合小型，中型等规模的应用程序 适合后端  MVP MVP是将Controller 改成了 Presenter(广播)，同时改变了通信方向
+View 传指令到Controller Controller 完成业务逻辑后，要求 Model 改变状态 Model 将新的数据发送到View，用户的到反馈 所有的信息都是单向的 耦合度低 重用性高 部署快 可维护性高 不适合小型，中型等规模的应用程序 适合后端 MVP MVP是将Controller 改成了 Presenter(广播)，同时改变了通信方向
 P和V双向通信，P和M双向通信，V和M不发生通信
 View 非常薄，不不属任何业务逻辑，被称为被动视图（Passive View），而P非常厚
 MVP用的少，适用于事件驱动的应用架构。
 MVVM MVVM模型将 Presenter层替换成ViewModel，其他与MVP模型基本一致
 于MVP的区别是，采用了双向绑定，视图层的变动，自动反映在ViewModel上，反之亦然，三大主流前端框架都采用了这种方式。
 MVVM中，一个ViewModel和一个View匹配，万泉河View绑定，所有View中的修改变化，都会更新到ViewModel中，同时ViewModel的任何变化都会同步到View上显示。
-  View 前端中主要是指DOM ViewModel  内部实现了数据绑定(Data Bindings)和DOM监听 监听DOM中各种事件出发 根据业务需求改变Model中的数据 是View 和Model 的桥梁    </description>
+View 前端中主要是指DOM ViewModel 内部实现了数据绑定(Data Bindings)和DOM监听 监听DOM中各种事件出发 根据业务需求改变Model中的数据 是View 和Model 的桥梁 </description>
     </item>
     
     <item>
@@ -203,9 +176,9 @@ MVVM中，一个ViewModel和一个View匹配，万泉河View绑定，所有View�
       <pubDate>Sun, 01 May 2022 16:36:02 +0800</pubDate>
       
       <guid>https://Lu0key.github.io/post/01-vue-%E5%88%9D%E4%BD%93%E9%AA%8C/</guid>
-      <description>初体验 &amp;lt;body&amp;gt; &amp;lt;div id=&amp;#34;app&amp;#34;&amp;gt; &amp;lt;h1&amp;gt;{{message}}&amp;lt;/h1&amp;gt; &amp;lt;/div&amp;gt; &amp;lt;script src=&amp;#34;js/vue.js&amp;#34;&amp;gt;&amp;lt;/script&amp;gt; &amp;lt;script&amp;gt; // 0. 创建实例的全局配置对象  const HelloVue = { // 定义数据  data() { return{ message: &amp;#34;Hello&amp;#34; } } }; //1. 创建Vue的实例对象  const app = Vue.createApp(HelloVue).mount(&amp;#34;#app&amp;#34;); &amp;lt;/script&amp;gt; &amp;lt;/body&amp;gt; vue 是响应式的，数据和页面分离，可以在控制台中
+      <description>初体验 &amp;lt;body&amp;gt; &amp;lt;div id=&amp;#34;app&amp;#34;&amp;gt; &amp;lt;h1&amp;gt;{{message}}&amp;lt;/h1&amp;gt; &amp;lt;/div&amp;gt; &amp;lt;script src=&amp;#34;js/vue.js&amp;#34;&amp;gt;&amp;lt;/script&amp;gt; &amp;lt;script&amp;gt; // 0. 创建实例的全局配置对象 const HelloVue = { // 定义数据 data() { return{ message: &amp;#34;Hello&amp;#34; } } }; //1. 创建Vue的实例对象 const app = Vue.createApp(HelloVue).mount(&amp;#34;#app&amp;#34;); &amp;lt;/script&amp;gt; &amp;lt;/body&amp;gt; vue 是响应式的，数据和页面分离，可以在控制台中
 app.message = &amp;#34;新内容&amp;#34;; 实时无刷新更改页面内容，只解析“#app”内的内容
-&amp;lt;body&amp;gt; &amp;lt;div id=&amp;#34;app&amp;#34;&amp;gt; &amp;lt;div&amp;gt;{{colleges}}&amp;lt;/div&amp;gt; &amp;lt;p&amp;gt;---------------&amp;lt;/p&amp;gt; &amp;lt;ul&amp;gt; &amp;lt;li&amp;gt;{{colleges[0]}}&amp;lt;/li&amp;gt; &amp;lt;li&amp;gt;{{colleges[1]}}&amp;lt;/li&amp;gt; &amp;lt;li&amp;gt;{{colleges[2]}}&amp;lt;/li&amp;gt; &amp;lt;/ul&amp;gt; &amp;lt;p&amp;gt;---------------&amp;lt;/p&amp;gt; &amp;lt;ul&amp;gt; &amp;lt;li v-for=&amp;#34;college in colleges&amp;#34;&amp;gt;{{college}}&amp;lt;/li&amp;gt; &amp;lt;/ul&amp;gt; &amp;lt;/div&amp;gt; &amp;lt;script src=&amp;#34;js/vue.js&amp;#34;&amp;gt;&amp;lt;/script&amp;gt; &amp;lt;script&amp;gt; // 0. 创建实例的全局配置对象  const listApp = { // 定义数据  data() { return{ colleges: [&amp;#34;山大-中心&amp;#34;,&amp;#34;山大-洪楼&amp;#34;,&amp;#34;山大-软件&amp;#34;] } } }; //1.</description>
+&amp;lt;body&amp;gt; &amp;lt;div id=&amp;#34;app&amp;#34;&amp;gt; &amp;lt;div&amp;gt;{{colleges}}&amp;lt;/div&amp;gt; &amp;lt;p&amp;gt;---------------&amp;lt;/p&amp;gt; &amp;lt;ul&amp;gt; &amp;lt;li&amp;gt;{{colleges[0]}}&amp;lt;/li&amp;gt; &amp;lt;li&amp;gt;{{colleges[1]}}&amp;lt;/li&amp;gt; &amp;lt;li&amp;gt;{{colleges[2]}}&amp;lt;/li&amp;gt; &amp;lt;/ul&amp;gt; &amp;lt;p&amp;gt;---------------&amp;lt;/p&amp;gt; &amp;lt;ul&amp;gt; &amp;lt;li v-for=&amp;#34;college in colleges&amp;#34;&amp;gt;{{college}}&amp;lt;/li&amp;gt; &amp;lt;/ul&amp;gt; &amp;lt;/div&amp;gt; &amp;lt;script src=&amp;#34;js/vue.js&amp;#34;&amp;gt;&amp;lt;/script&amp;gt; &amp;lt;script&amp;gt; // 0. 创建实例的全局配置对象 const listApp = { // 定义数据 data() { return{ colleges: [&amp;#34;山大-中心&amp;#34;,&amp;#34;山大-洪楼&amp;#34;,&amp;#34;山大-软件&amp;#34;] } } }; //1.</description>
     </item>
     
     <item>
@@ -227,7 +200,7 @@ npm install -g @vue/cli # 或者 yarn global add @vue/cli 查看版本
 vue --version # 或者 vue -V 升级版本
 npm update -g @vue/cli # 或者 yarn global upgrade --latest @vue/cli 创建第一个Vue应用 选择一个目录下打开cmd(入股用 powershell ，在你不设置的情况下是默认禁止使用脚本的)
 # vue create [ProjectName] # 比如 vue create vue3Project 会让你选择预设
- Default ([Vue 3] babel, eslint) Default ([Vue 2] babel, eslint) Manually select features  分别是默认使用Vue3、Vue2、手动设置</description>
+Default ([Vue 3] babel, eslint) Default ([Vue 2] babel, eslint) Manually select features 分别是默认使用Vue3、Vue2、手动设置</description>
     </item>
     
     <item>
@@ -236,11 +209,11 @@ npm update -g @vue/cli # 或者 yarn global upgrade --latest @vue/cli 创建第�
       <pubDate>Wed, 23 Mar 2022 22:08:32 +0800</pubDate>
       
       <guid>https://Lu0key.github.io/post/22-3-23-%E6%95%B0%E6%8D%AE%E5%BA%93%E7%B3%BB%E7%BB%9F-4-%E5%85%B3%E7%B3%BB%E6%A8%A1%E5%9E%8B%E4%B9%8B%E5%85%B3%E7%B3%BB%E4%BB%A3%E6%95%B0/</guid>
-      <description>关系代数的基本操作 关系代数的拓展操作 关系代数的组合与应用训练 关系代数的复杂拓展操作(选学)  关系代数概述 关系代数运算的特点  基于集合，提供了一系列的关系代数操作：并、差、笛卡尔积、选择、投影和更名等基本操作 以及交、链接和关系除等拓展操作，是一种集合思维的操作语言 关系代数操作以一个或多个关系为输入，结果是一个新的关系 用对关系的运算来表达查询，需要指明所用操作，具有一定的过程性 是一种抽象的语言，是学习其他数据库语言，如SQL等的基础  基本操作 关系代数之基本操作 关系代数运算的约束
+      <description>关系代数的基本操作 关系代数的拓展操作 关系代数的组合与应用训练 关系代数的复杂拓展操作(选学) 关系代数概述 关系代数运算的特点 基于集合，提供了一系列的关系代数操作：并、差、笛卡尔积、选择、投影和更名等基本操作 以及交、链接和关系除等拓展操作，是一种集合思维的操作语言 关系代数操作以一个或多个关系为输入，结果是一个新的关系 用对关系的运算来表达查询，需要指明所用操作，具有一定的过程性 是一种抽象的语言，是学习其他数据库语言，如SQL等的基础 基本操作 关系代数之基本操作 关系代数运算的约束
 并相容性
- 参与运算的两个关系及其相关属性之间有一定的对应性、可比性或意义关联性  定义
+参与运算的两个关系及其相关属性之间有一定的对应性、可比性或意义关联性 定义
 关系R与关系S存在相容性，当且仅当：
- 关系R和关系S的属性数目必须相容 对于任意 i ，关系R的第 i个属性的域必须和关系S的第i个属性的域相同  并
+关系R和关系S的属性数目必须相容 对于任意 i ，关系R的第 i个属性的域必须和关系S的第i个属性的域相同 并
 定义：假设关系R和关系S是并相容的，则关系R与关系S的并运算结果也是一个关系，记作：$R\cup S$，它由或者出现在关系R中，或者出现在关系S中的元组构成。
 并运算是将两个关系的元组合并成一个关系，在合并时去掉重复的元组。
 差
@@ -256,7 +229,11 @@ npm update -g @vue/cli # 或者 yarn global upgrade --latest @vue/cli 创建第�
 投影(Project)
 定义：给定一个关系R，投影运算结果也是以一个关系，记作 $\prod_A(R)$，它从关系R中选出属性包含在 A中的列构成.
 投影关系，即从给定关系中选出某些列组成新的关系，而选择操作是从给定关系中选出某些行组成新的关系
-例如$\prod_{A_3,A_1}(R)$，选取 $A_3,A_1$ 两列的元组,**投影后会自动去掉重复的元组**</description>
+例如$\prod_{A_3,A_1}(R)$，选取 $A_3,A_1$ 两列的元组,投影后会自动去掉重复的元组
+交(Intersection)
+定义：假设关系R和关系S是并相容的，则关系R与关系S的交运算结果也是一个关系，记作 $R\cap S$，它由同时出现在关系R和关系S中的元组构成
+$R\cap S=R-(R-S)=S-(S-R)$
+$\theta$-连接(theta-join)</description>
     </item>
     
     <item>
@@ -265,13 +242,13 @@ npm update -g @vue/cli # 或者 yarn global upgrade --latest @vue/cli 创建第�
       <pubDate>Wed, 23 Mar 2022 22:05:52 +0800</pubDate>
       
       <guid>https://Lu0key.github.io/post/22-3-23-%E6%95%B0%E6%8D%AE%E5%BA%93%E7%B3%BB%E7%BB%9F-3-%E5%85%B3%E7%B3%BB%E6%A8%A1%E5%9E%8B%E4%B9%8B%E5%9F%BA%E6%9C%AC%E6%A6%82%E5%BF%B5/</guid>
-      <description>关系模型概述？ 什么是关系？ 关系模型中的约束  关系模型简述 提出
+      <description>关系模型概述？ 什么是关系？ 关系模型中的约束 关系模型简述 提出
 E.F.Codd 在 1970 年提出
 研究
 一个关系(relation) 就是一个Table
 关系模型就是处理Table 的，由三个部分组成：
- 描述DB各种数据的基本结构形式(Table/Relation) 描述Table与Table之间所可能发生的各种操作(关系运算) 描述这些操作所应遵循的约束条件(完整性约束)  关系模型三要素
- 基本结构：Relation/Table 基本操作：Relation/Table 基本的  并 Union 差 difference 广义积 product 选择 selection 投影 projection   拓展的：  交 intersection 连接 join 除 division    完整性约束：实体完整性、参照完整性和用户自定义的完整性
+描述DB各种数据的基本结构形式(Table/Relation) 描述Table与Table之间所可能发生的各种操作(关系运算) 描述这些操作所应遵循的约束条件(完整性约束) 关系模型三要素
+基本结构：Relation/Table 基本操作：Relation/Table 基本的 并 Union 差 difference 广义积 product 选择 selection 投影 projection 拓展的： 交 intersection 连接 join 除 division 完整性约束：实体完整性、参照完整性和用户自定义的完整性
 关系模型与关系数据库语言的关系
 关系运算：关系代数和关系演算
 关系演算：元组演算和域演算
@@ -280,8 +257,10 @@ E.F.Codd 在 1970 年提出
 基于域演算设计的数据库语言示例QBE
 什么是关系 什么是表
 表的基本构成要素
- 表/关系 列/字段/属性/数据项 列名 列值 标题/模式 行/元组/记录  关系
-“列”的取值范围“域(Domain)”</description>
+表/关系 列/字段/属性/数据项 列名 列值 标题/模式 行/元组/记录 关系
+“列”的取值范围“域(Domain)”
+域(Domain) 一组值的集合，这组值具有相同的数据类型 集合中元素的个数称为域的基数(Cardinality) 一组域 $D_1,D_2,\cdots,D_n$ 的笛卡尔积为： $D_1\times D_2\times\cdots D_n={(d_1,d_2,\cdots,d_n)|d_i \in D_i,;i=1,\cdots,n}$
+笛卡尔积的每个元素 $(d_1,d_2,\cdots,d_n)$ 称作一个 n-元组(n-tuple)</description>
     </item>
     
     <item>
@@ -290,17 +269,25 @@ E.F.Codd 在 1970 年提出
       <pubDate>Wed, 23 Mar 2022 22:02:00 +0800</pubDate>
       
       <guid>https://Lu0key.github.io/post/22-3-23-%E6%95%B0%E6%8D%AE%E5%BA%93%E7%B3%BB%E7%BB%9F-2-%E6%95%B0%E6%8D%AE%E5%BA%93%E7%B3%BB%E7%BB%9F%E7%9A%84%E7%BB%93%E6%9E%84%E6%8A%BD%E8%B1%A1%E4%B8%8E%E6%BC%94%E5%8F%98/</guid>
-      <description>三级模式与两层映像 物理独立性和逻辑独立性 数据-&amp;gt; 模式 -&amp;gt; 数据模型 网状/层次模型 -&amp;gt; 关系模型 -&amp;gt; OO 数据模型  数据库系统的标准结构 DBMS 管理数据的三个层次
- External Level = User Level  某一用户能够看到与处理的数据，全局数据的一部分   Conceptual Level = Logic Level  从全局角度理解/管理的数据，含相应的关联约束   Internal Level = Physical Level  存储在介质上的数据，含存储路径、存储方式、索引方式等     模式(Schema)
+      <description>三级模式与两层映像 物理独立性和逻辑独立性 数据-&amp;gt; 模式 -&amp;gt; 数据模型 网状/层次模型 -&amp;gt; 关系模型 -&amp;gt; OO 数据模型 数据库系统的标准结构 DBMS 管理数据的三个层次
+External Level = User Level 某一用户能够看到与处理的数据，全局数据的一部分 Conceptual Level = Logic Level 从全局角度理解/管理的数据，含相应的关联约束 Internal Level = Physical Level 存储在介质上的数据，含存储路径、存储方式、索引方式等 模式(Schema)
 对数据库中数据所进行的一种结构性的描述所观察到数据的结构信息
-  视图(View)/数据(Data)
+视图(View)/数据(Data)
 某一表现形式下表现出来的数据库中的数据
- 模式：数据的结构
+模式：数据的结构
 视图：展现的数据
 模式是对数据的抽象
 三级模式(三级视图) ExternalSchema &amp;mdash; (External) View
- 某一用户能够看到与处理的数据的结构描述
- (Conceptual) Schema &amp;mdash; Conceptual View</description>
+某一用户能够看到与处理的数据的结构描述
+(Conceptual) Schema &amp;mdash; Conceptual View
+从全局角度理解/管理的数据的结构描述，含相应的关联约束，体现在数据之间的内在本质联系
+Internal Schema &amp;mdash; Internal View
+存储在介质上的数据的结构描述，含存储路径、存储方式、索引方式
+说到View一般默认外部试图，Schema 默认概念模式
+两层映像 映像：将一种模式映射为另一种结构，中间映射的过程称为映像
+E-C Mapping:External Schema-Conceptual Schema Mapping
+将外模式映射为概念模式，从而实现数据概念视图向外部视图的转换
+便于用户观察和使用</description>
     </item>
     
     <item>
@@ -309,13 +296,13 @@ E.F.Codd 在 1970 年提出
       <pubDate>Wed, 23 Mar 2022 09:04:07 +0800</pubDate>
       
       <guid>https://Lu0key.github.io/post/22-3-23-%E6%95%B0%E6%8D%AE%E5%BA%93%E7%B3%BB%E7%BB%9F-1-%E5%88%9D%E6%AD%A5%E8%AE%A4%E8%AF%86%E6%95%B0%E6%8D%AE%E5%BA%93%E7%B3%BB%E7%BB%9F/</guid>
-      <description> 数据库 数据库语言（SQL） 数据库应用程序 关系数据库  面向对象数据库 XML数据库 NoSQL数据库 其他数据库 数据库设计 数据库应用程序开发 数据库存取与控制    初步认识数据库系统  数据库是电子化信息的集合  Table
- 列/字段/属性/数据项 行/元组/记录  Table 中描述了一批相互有关联关系的数据
+      <description> 数据库 数据库语言（SQL） 数据库应用程序 关系数据库 面向对象数据库 XML数据库 NoSQL数据库 其他数据库 数据库设计 数据库应用程序开发 数据库存取与控制 初步认识数据库系统 数据库是电子化信息的集合 Table
+列/字段/属性/数据项 行/元组/记录 Table 中描述了一批相互有关联关系的数据
 Database 相互之间有关联关系的 Table 的集合
 数据库系统(工作环境)
- 数据库(DB)：Database 数据库管理系统(DBMS)：Database Management System(一种软件：Oracle、SQL Server) 数据库应用(DBAP)：Database Application 数据库管理员(DBA)：Database Administrator 计算机基本系统  数据库管理系统的功能：
- 数据库定义  DDL：数据定义语言   数据库操纵  DML：数据操纵语言   数据库控制  DCL：数据控制语言   数据库维护  转储、恢复、重组、性能检测、分析    SQL：结构化的数据库语言
- DDL DML DCL  </description>
+数据库(DB)：Database 数据库管理系统(DBMS)：Database Management System(一种软件：Oracle、SQL Server) 数据库应用(DBAP)：Database Application 数据库管理员(DBA)：Database Administrator 计算机基本系统 数据库管理系统的功能：
+数据库定义 DDL：数据定义语言 数据库操纵 DML：数据操纵语言 数据库控制 DCL：数据控制语言 数据库维护 转储、恢复、重组、性能检测、分析 SQL：结构化的数据库语言
+DDL DML DCL </description>
     </item>
     
     <item>
@@ -326,16 +313,16 @@ Database 相互之间有关联关系的 Table 的集合
       <guid>https://Lu0key.github.io/post/22-3-18-%E6%95%B0%E6%8D%AE%E5%BA%93%E5%A4%8D%E8%AF%95%E6%9E%81%E9%99%90%E5%AD%A6%E4%B9%A0/</guid>
       <description>因为是突然自学，所以就可能顺序会比较 随意 乱.
 绪论 四个基本概念
- 数据：描述事物的符号记录 数据库：概括地讲，数据库具有永久存储、有组织和可共享的三个基本特点  数据库是长期存储在计算机内、有组织的、可共享的大量数据的集合。数据库中的数据按一定的数据模型组织、描述和存储，具有较小的冗余度、较高的数据独立性和易拓展性，并可为各种用户共享。   数据库管理系统：是位于用户和操作系统之间的一层数据管理软件，和操作系统一样是计算机的基础软件  主要功能： 数据定义功能 数据组织、存储和管理 数据操纵功能 数据库的事务管理和运行管理 数据库的建立和维护功能 其他功能(数据转换功能，互访和互操作功能)   数据库系统：是由数据库、数据库管理系统(及其应用开发工具)、应用程序和数据库管理员(DBA)组成的存储、管理、处理和维护数据的系统。  注意：数据库系统是最大的范围
+数据：描述事物的符号记录 数据库：概括地讲，数据库具有永久存储、有组织和可共享的三个基本特点 数据库是长期存储在计算机内、有组织的、可共享的大量数据的集合。数据库中的数据按一定的数据模型组织、描述和存储，具有较小的冗余度、较高的数据独立性和易拓展性，并可为各种用户共享。 数据库管理系统：是位于用户和操作系统之间的一层数据管理软件，和操作系统一样是计算机的基础软件 主要功能： 数据定义功能 数据组织、存储和管理 数据操纵功能 数据库的事务管理和运行管理 数据库的建立和维护功能 其他功能(数据转换功能，互访和互操作功能) 数据库系统：是由数据库、数据库管理系统(及其应用开发工具)、应用程序和数据库管理员(DBA)组成的存储、管理、处理和维护数据的系统。 注意：数据库系统是最大的范围
 数据库的发展阶段
- 人工管理阶段：数据不保存、不共享、不具有独立性 文件系统阶段：可保存，但共享性差，冗余度大，独立性差 数据库管理系统：数据库系统的出现使信息系统从以加工数据的程序为中心转向围绕共享的数据库为中心的新阶段  实现整体数据的结构化
+人工管理阶段：数据不保存、不共享、不具有独立性 文件系统阶段：可保存，但共享性差，冗余度大，独立性差 数据库管理系统：数据库系统的出现使信息系统从以加工数据的程序为中心转向围绕共享的数据库为中心的新阶段 实现整体数据的结构化
 数据的共享性高、冗余度低：数据共享可以大大减少数据冗余，节约存储空间
 数据独立性高：
 物理独立性：是指用户的应用程序与数据库中数据的物理存储是相互独立的
 逻辑独立性：是指用户的应用程序与数据库的逻辑逻辑是相互独立的
 数据由数据库管理系统统一管理和控制
 数据模型
- 概念模型：也称信息模型，他是按用户观点来对数据和信息建模，用于数据库设计  基本概念
+概念模型：也称信息模型，他是按用户观点来对数据和信息建模，用于数据库设计 基本概念
 实体：客观存在并可相互区别的事物：人
 属性：实体所具有的某一特性：人的鼻子、嘴巴
 码：唯一标识实体的属性：学号
@@ -344,12 +331,28 @@ Database 相互之间有关联关系的 Table 的集合
 联系：实体之间的联系通常是指不同实体集之间的联系，实体之间的联系有一对一，一对多，多对多等
 概念模型的一种表示方法：实体-联系方法，用E-R图来描述现实世界的概念模型，E-R方法也称为E-R模型。
 逻辑模型：它是按计算机系统的观点对数据建模，主要用于数据库管理系统的实现，包括：
- 层次模型 网状模型 关系模型  物理模型：是对数据最底层的抽象，他描述数据在系统内部的表示方法和存取方法，或在磁盘或磁带上的存储方式和存取方法，是面向计算机系统的
+层次模型 网状模型 关系模型 物理模型：是对数据最底层的抽象，他描述数据在系统内部的表示方法和存取方法，或在磁盘或磁带上的存储方式和存取方法，是面向计算机系统的
 联系：实体内部之间的联系通常是指实体各属性之间的联系
 常用的数据模型
- 层次模型 网状模型 关系模型 面向对象数据模型 对象关系数据模型 半结构化数据模型  关系：一个关系对应通常说的一张表
+层次模型 网状模型 关系模型 面向对象数据模型 对象关系数据模型 半结构化数据模型 关系：一个关系对应通常说的一张表
 元组：表中的一行
-属性：表中的一列</description>
+属性：表中的一列
+码：也称码键，表中某个属性组
+域：是一组具有相同数据类型的值的集合
+分量：元组中的一个属性
+数据库系统的结构
+模式数据库中全体数据的逻辑结构和特征的描述，它仅仅涉及型的描述，不涉及具体的值，其一个具体值称为模式的一个实例
+模式是相对稳定的，实例是相对变动的
+三级模式结构：外模式+模式+内模式
+外模式：也称子模式或用户模式，他是数据库用户(包括应用程序员和最终用户)能够看见和使用的局部数据的逻辑结构和特征的描述；是数据库用户的数据视图，是与某一应用有关的数据的逻辑表示。
+模式：也成为逻辑模式，是数据库中全体数据的逻辑结构和特征的描述，是所有用户的公共数据视图
+内模式：也称存储模式，一个数据库只有一个内模式，它是数据物理结构和存储方式的描述，是数据在数据库内部的组织方式
+二级映像
+外模式/模式映像：当模式改变时，由数据库管理员对各个外模式/模式映像作相应改变，可使外模式保持不变，应用程序不必修改，保证了数据与程序的逻辑独立性
+模式/内模式映像：放数据库的存储结构改变时，由数据库管理员对模式/内模式作相应改变，可以使模式保持不变，从而应用程序也不用改变，保证了数据与程序的物理独立性
+数据与程序之间的独立性使得数据的定义和描述可以从应用程序中分离出去。另外，由于数据的存取由数据库管理系统管理，从而简化了应用程序的编制，大大减少了应用程序的维护和修改。
+数据库系统的组成
+硬件平台及数据库：足够大内存、磁盘或磁盘阵列等设备，较高的通道能力以提高数据的传送率</description>
     </item>
     
     <item>
@@ -359,7 +362,7 @@ Database 相互之间有关联关系的 Table 的集合
       
       <guid>https://Lu0key.github.io/post/22-3-14-%E5%81%8F%E5%BE%AE%E5%88%86%E6%96%B9%E7%A8%8B%E5%88%86%E7%B1%BB/</guid>
       <description>太久没更了，都快忘了怎么用了，最近要高强度学习，把这个捡起来继续用
- 偏微分方程概念 关于未知函数 $u(x_1,x_2,\cdots,x_n)$ 的偏微分方程 是一个含有 $u$ 的偏微商的恒等式，其中最高阶微商的阶数叫做该偏微分方程的阶. 例如，二阶偏微分方程的一般形式是
+偏微分方程概念 关于未知函数 $u(x_1,x_2,\cdots,x_n)$ 的偏微分方程 是一个含有 $u$ 的偏微商的恒等式，其中最高阶微商的阶数叫做该偏微分方程的阶. 例如，二阶偏微分方程的一般形式是
 $$F(x,u,Du,u_{x_1x_1},u_{x_1x_2},\cdots,u_{x_nx_n})=0$$
 其中，$x=(x_1,x_2,\cdots,x_n),;Du=(u_{x_1},u_{x_2},\cdots,u_{x_n})$，$F$ 是关于自变量 $x$ 和未知函数 $u$ 及 $u$ 的有限多个偏微商的已知函数。
 Laplace 算子 $$\Delta=\dfrac{\partial^2}{\partial x_1^2}+\cdots+\dfrac{\partial^2}{\partial x_n^2}$$
@@ -373,9 +376,10 @@ $$u_{t}=k\Delta u$$
 3 关于函数 $u(x_1,x_2,\cdots,x_n)$ 的 $n$ 维 Laplace 方程，也称调和方程是
 $$\Delta u=u_{x_1x_2}+u_{x_2x_2}+\cdots+u_{x_nx_n}=0.$$
 它的解称为调和函数(重要). 当方程非齐次时，叫做 Poisson(泊松)方程. 通常称为位势方程.
- 二阶线性方程的一般形式 $$Lu\equiv\sum_{i,j=1}^na^{ij}(x)u_{x_ix_j}+\sum_{i=1}^nb^i(x)u_{x_i}+c(x)u=f(x)$$
+二阶线性方程的一般形式 $$Lu\equiv\sum_{i,j=1}^na^{ij}(x)u_{x_ix_j}+\sum_{i=1}^nb^i(x)u_{x_i}+c(x)u=f(x)$$
 其中 $a^{ij}=a^{ji}$，$i,j=1,2,\cdots,n$，且至少有一个 $a^{ij}$ 不恒为零.
-说到这个，应该讲讲 偏微分方程线性 的概念</description>
+说到这个，应该讲讲 偏微分方程线性 的概念
+线性与非线性 如果偏微分方程或方程组关于未知函数及其所有偏微商是线性的，则称它为现行的，否则称为非线性的.</description>
     </item>
     
     <item>
@@ -421,7 +425,7 @@ import requests headers = { &amp;#34;User-Agent&amp;#34;:&amp;#34;Mozilla/5.0 (W
       <description>HashMap 因为为了翻转课堂专门看了 HashMap 的源码，为了担心以后忘记，写一篇笔记记录下来，如果下面没有特指都是指 JDK 1.8 的源码，JDK 1.7 与 1.8 差别比较大
 介绍 HashMap 的底层是 数组 + 链表 + 红黑树，用一张图就能表示的比较清楚
 这张图有一个问题，不止要链表长度达到 8，还要数组长度达到 64
-常量 // 版本 id，感觉一般没用 private static final long serialVersionUID = 362498820763181265L; // 默认初始化容量，为 16 // 之所以用 1 &amp;lt;&amp;lt; 4 应该是为了表示容量必须是 2 的幂次方 static final int DEFAULT_INITIAL_CAPACITY = 1 &amp;lt;&amp;lt; 4; // aka 16  // 最大容量为 2^30 // 最小为 2 static final int MAXIMUM_CAPACITY = 1 &amp;lt;&amp;lt; 30; // 默认负载因子为 0.</description>
+常量 // 版本 id，感觉一般没用 private static final long serialVersionUID = 362498820763181265L; // 默认初始化容量，为 16 // 之所以用 1 &amp;lt;&amp;lt; 4 应该是为了表示容量必须是 2 的幂次方 static final int DEFAULT_INITIAL_CAPACITY = 1 &amp;lt;&amp;lt; 4; // aka 16 // 最大容量为 2^30 // 最小为 2 static final int MAXIMUM_CAPACITY = 1 &amp;lt;&amp;lt; 30; // 默认负载因子为 0.</description>
     </item>
     
     <item>
@@ -596,9 +600,18 @@ door to door 挨家挨户
 down adj. 沮丧的
 a white elephant 无用的；无用的东西；沉重的负担
 every other day 每隔一天
-eyeable 可见的；赏心悦目的    中文 英文     界 kingdom   门 phylum   纲 class   目 order   科 family   属 genus   种 species    live v. 实况转播的
+eyeable 可见的；赏心悦目的
+中文 英文 界 kingdom 门 phylum 纲 class 目 order 科 family 属 genus 种 species live v. 实况转播的
 make sense 有道理；有意义
-make up 弥补；组成；化妆；整理；编造/捏造</description>
+make up 弥补；组成；化妆；整理；编造/捏造
+man v. 操作;工作
+milk v. 榨取
+mum adj. 沉默的；不说话的
+plane n. 平面
+please v. 使欢喜；取悦
+police v. 维持治安；管理；监督
+arm v. 武装
+the upper arm 上臂</description>
     </item>
     
     <item>
@@ -638,7 +651,7 @@ schedule v. 安排</description>
       
       <guid>https://Lu0key.github.io/post/%E7%A7%91%E5%AD%A6%E8%AE%A1%E7%AE%97-4-7/</guid>
       <description>4.7 画出过结点 (0,3),(1,1),(2,4),(3,1),(4,2),(5,0) 的三次样条的图像。边条件为：
- 两端点的二阶导数(特别包括取0值的自然样条)  hold on; x0 = [0,1,2,3,4,5]; y0 = [3,1,4,1,2,0]; plot(x0,y0,&amp;#39;o&amp;#39;); % 两端点的二阶导数值 secDerLeft = 0; secDerRight= 0; % 直接用 csape 函数 % cs0 = csape(x0,y0,&amp;#39;variational&amp;#39;); % yy = ppval(cs0,linspace(0,5,100)); % plot(linspace(0,5,100),yy,&amp;#39;r--&amp;#39;); % [2,2] 表示两个都是二阶导的值 cs = csape(x0,[secDerLeft,y0,secDerRight],[2,2]); xxt = linspace(-1,6,100); yyt=ppval(cs,xxt); plot(xxt,yyt,&amp;#39;r--&amp;#39;); hold off; % 改好了 % 默认h_i 恒等于 1 hold on; x0 = [0,1,2,3,4,5]; y0 = [3,1,4,1,2,0]; plot(x0,y0,&amp;#39;o&amp;#39;); b = zeros(length(x0),1); A = zeros(length(x0)); for i=2:length(x0)-1 b(i) = 6.</description>
+两端点的二阶导数(特别包括取0值的自然样条) hold on; x0 = [0,1,2,3,4,5]; y0 = [3,1,4,1,2,0]; plot(x0,y0,&amp;#39;o&amp;#39;); % 两端点的二阶导数值 secDerLeft = 0; secDerRight= 0; % 直接用 csape 函数 % cs0 = csape(x0,y0,&amp;#39;variational&amp;#39;); % yy = ppval(cs0,linspace(0,5,100)); % plot(linspace(0,5,100),yy,&amp;#39;r--&amp;#39;); % [2,2] 表示两个都是二阶导的值 cs = csape(x0,[secDerLeft,y0,secDerRight],[2,2]); xxt = linspace(-1,6,100); yyt=ppval(cs,xxt); plot(xxt,yyt,&amp;#39;r--&amp;#39;); hold off; % 改好了 % 默认h_i 恒等于 1 hold on; x0 = [0,1,2,3,4,5]; y0 = [3,1,4,1,2,0]; plot(x0,y0,&amp;#39;o&amp;#39;); b = zeros(length(x0),1); A = zeros(length(x0)); for i=2:length(x0)-1 b(i) = 6.</description>
     </item>
     
     <item>
@@ -647,9 +660,10 @@ schedule v. 安排</description>
       <pubDate>Tue, 11 May 2021 08:57:54 +0800</pubDate>
       
       <guid>https://Lu0key.github.io/post/%E7%A7%91%E5%AD%A6%E8%AE%A1%E7%AE%97-3-24/</guid>
-      <description>3.24    (分段)线性插值基函数的表示
+      <description>3.24 (分段)线性插值基函数的表示
 不妨认为直接整数为插值接点
-% 可以画图多次(以叠加的方式) hold on; % 这个代码默认结点间隔为 1，只需要改下面这一行代码即可 xNode = linspace(0,5,6); for i=1:length(xNode) if length(xNode)&amp;lt;2 break; end r = rand(); g = rand(); b = rand(); if i == 1 x = linspace(0,xNode(2),100); y = (x-xNode(2))./(xNode(1)-xNode(2)); plot(x,y,&amp;#39;Color&amp;#39;,[r,g,b]); elseif i == length(xNode) x = linspace(xNode(i-1),xNode(i),100); y = (x-xNode(i-1))./(xNode(i)-xNode(i-1)); plot(x,y,&amp;#39;Color&amp;#39;,[r,g,b]); else x = linspace(xNode(i-1),xNode(i),100); y = (x-xNode(i-1))./(xNode(i)-xNode(i-1)); plot(x,y,&amp;#39;Color&amp;#39;,[r,g,b]); x = linspace(xNode(i),xNode(i+1),100); y = (x-xNode(i+1))./(xNode(i)-xNode(i+1)); plot(x,y,&amp;#39;Color&amp;#39;,[r,g,b]); end end (分段)二次插值基函数的表示</description>
+% 可以画图多次(以叠加的方式) hold on; % 这个代码默认结点间隔为 1，只需要改下面这一行代码即可 xNode = linspace(0,5,6); for i=1:length(xNode) if length(xNode)&amp;lt;2 break; end r = rand(); g = rand(); b = rand(); if i == 1 x = linspace(0,xNode(2),100); y = (x-xNode(2))./(xNode(1)-xNode(2)); plot(x,y,&amp;#39;Color&amp;#39;,[r,g,b]); elseif i == length(xNode) x = linspace(xNode(i-1),xNode(i),100); y = (x-xNode(i-1))./(xNode(i)-xNode(i-1)); plot(x,y,&amp;#39;Color&amp;#39;,[r,g,b]); else x = linspace(xNode(i-1),xNode(i),100); y = (x-xNode(i-1))./(xNode(i)-xNode(i-1)); plot(x,y,&amp;#39;Color&amp;#39;,[r,g,b]); x = linspace(xNode(i),xNode(i+1),100); y = (x-xNode(i+1))./(xNode(i)-xNode(i+1)); plot(x,y,&amp;#39;Color&amp;#39;,[r,g,b]); end end (分段)二次插值基函数的表示
+hold on; xNode = linspace(0,2,3); for i=1:length(xNode) if length(xNode)&amp;lt;2 break; end r = rand();g = rand();b = rand(); if i == 1 x = linspace(xNode(1),xNode(2),100); mid1 = (xNode(1)+xNode(2)).</description>
     </item>
     
     <item>
@@ -660,11 +674,12 @@ schedule v. 安排</description>
       <guid>https://Lu0key.github.io/post/%E7%A7%91%E5%AD%A6%E8%AE%A1%E7%AE%97-3-10/</guid>
       <description>3.10 科学计算引论-实验
 分析计算 $\left(\dfrac{\sqrt{2}-1}{\sqrt{2}+1}\right)^3$ 的几种算式的误差。
-((sqrt(2)-1)./(sqrt(2)+1))^3 % 0.005050633883347  第一种方法
-$x=(\sqrt{2}-1)^6$  digits(6) % 设置有效位为6位 vpa(sqrt(2)-1) % 0.414214 vpa(0.414214.^6) % 0.00505067 abs(((sqrt(2)-1)./(sqrt(2)+1))^3-0.00505067) % 绝对误差为 3.611665341102244e-08 第二种方法
-$x=99-70\sqrt{2}$  digits(6) vpa(sqrt(2)) % 1.414214 vpa(99-70.*sqrt(2)) % 0.00505063 abs(((sqrt(2)-1)./(sqrt(2)+1))^3-0.00505063) % 绝对误差为 3.883346588740011e-09 第三种方法
-$x=\left(\dfrac{1}{\sqrt{2}+1}\right)^6$  digits(6) vpa(sqrt(2)) % 2.41421 vpa(1./2.41421) % 0.414214 vpa(0.414214.^6) % 0.00505067 abs(((sqrt(2)-1)./(sqrt(2)+1))^3-0.00505067) % 绝对误差为 3.611665341102244e-08 第四种方法
-$x=\dfrac{1}{99+70\sqrt{2}}$  digits(6) vpa(sqrt(2)) % 1.414214 vpa(99+70.*sqrt(2)) % 197.995 vpa(1./197.995) % 0.00505063 abs(((sqrt(2)-1)./(sqrt(2)+1))^3-0.00505063) % 绝对误差为 3.</description>
+((sqrt(2)-1)./(sqrt(2)+1))^3 % 0.005050633883347 第一种方法
+$x=(\sqrt{2}-1)^6$ digits(6) % 设置有效位为6位 vpa(sqrt(2)-1) % 0.414214 vpa(0.414214.^6) % 0.00505067 abs(((sqrt(2)-1)./(sqrt(2)+1))^3-0.00505067) % 绝对误差为 3.611665341102244e-08 第二种方法
+$x=99-70\sqrt{2}$ digits(6) vpa(sqrt(2)) % 1.414214 vpa(99-70.*sqrt(2)) % 0.00505063 abs(((sqrt(2)-1)./(sqrt(2)+1))^3-0.00505063) % 绝对误差为 3.883346588740011e-09 第三种方法
+$x=\left(\dfrac{1}{\sqrt{2}+1}\right)^6$ digits(6) vpa(sqrt(2)) % 2.41421 vpa(1./2.41421) % 0.414214 vpa(0.414214.^6) % 0.00505067 abs(((sqrt(2)-1)./(sqrt(2)+1))^3-0.00505067) % 绝对误差为 3.611665341102244e-08 第四种方法
+$x=\dfrac{1}{99+70\sqrt{2}}$ digits(6) vpa(sqrt(2)) % 1.414214 vpa(99+70.*sqrt(2)) % 197.995 vpa(1./197.995) % 0.00505063 abs(((sqrt(2)-1)./(sqrt(2)+1))^3-0.00505063) % 绝对误差为 3.883346588740011e-09 由此看出第二、四种算式误差较小，第一、三种算式舍入运算次数较多，因此误差较大
+【科学计算 3-24】</description>
     </item>
     
     <item>
@@ -674,7 +689,7 @@ $x=\dfrac{1}{99+70\sqrt{2}}$  digits(6) vpa(sqrt(2)) % 1.414214 vpa(99+70.*sqrt(
       
       <guid>https://Lu0key.github.io/post/imageviewer-code/</guid>
       <description>这个代码是直接用核心卷上的
-import javax.swing.*; import java.awt.*; import java.io.File; public class ImageViewer { public static void main(String[] args) { EventQueue.invokeLater(()-&amp;gt;{ JFrame frame = new ImageViewerFrame(); frame.setTitle(&amp;#34;ImageViewer&amp;#34;); frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE); frame.setVisible(true); }); } } class ImageViewerFrame extends JFrame{ private JLabel label; private JFileChooser chooser; private static final int DEFAULT_WIDTH = 300; private static final int DEFAULT_HEIGHT = 400; public ImageViewerFrame(){ setSize(DEFAULT_WIDTH,DEFAULT_HEIGHT); // use a label to display the images  label = new JLabel(); add(label); // set up the file chooser  chooser = new JFileChooser(); chooser.</description>
+import javax.swing.*; import java.awt.*; import java.io.File; public class ImageViewer { public static void main(String[] args) { EventQueue.invokeLater(()-&amp;gt;{ JFrame frame = new ImageViewerFrame(); frame.setTitle(&amp;#34;ImageViewer&amp;#34;); frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE); frame.setVisible(true); }); } } class ImageViewerFrame extends JFrame{ private JLabel label; private JFileChooser chooser; private static final int DEFAULT_WIDTH = 300; private static final int DEFAULT_HEIGHT = 400; public ImageViewerFrame(){ setSize(DEFAULT_WIDTH,DEFAULT_HEIGHT); // use a label to display the images label = new JLabel(); add(label); // set up the file chooser chooser = new JFileChooser(); chooser.</description>
     </item>
     
     <item>
@@ -687,7 +702,7 @@ import javax.swing.*; import java.awt.*; import java.io.File; public class Image
 示例 1:
 输入: 2 输出: [0,1,1] 示例 2:
 输入: 5 输出: [0,1,1,2,1,2] 进阶:
- 给出时间复杂度为**O(n*sizeof(integer))的解答非常容易。但你可以在线性时间O(n)**内用一趟扫描做到吗？ 要求算法的空间复杂度为O(n)。 你能进一步完善解法吗？要求在C++或任何其他语言中不使用任何内置函数（如 C++ 中的 __builtin_popcount）来执行此操作。。  /** * Note: The returned array must be malloced, assume caller calls free(). */ int* countBits(int num, int* returnSize){ int* ret = malloc(sizeof(int)*(num+1)); *returnSize = num+1; for (int i = 0; i &amp;lt;= num; ++i) { int count = 0; for (int offset = 30; offset &amp;gt;= 0 ; offset--) { int mask = 1&amp;lt;&amp;lt;offset; if ((i &amp;amp; mask)&amp;gt;0){ count++; } } ret[i] = count; } return ret; } 更猛的方法orz</description>
+给出时间复杂度为**O(n*sizeof(integer))的解答非常容易。但你可以在线性时间O(n)**内用一趟扫描做到吗？ 要求算法的空间复杂度为O(n)。 你能进一步完善解法吗？要求在C++或任何其他语言中不使用任何内置函数（如 C++ 中的 __builtin_popcount）来执行此操作。。 /** * Note: The returned array must be malloced, assume caller calls free(). */ int* countBits(int num, int* returnSize){ int* ret = malloc(sizeof(int)*(num+1)); *returnSize = num+1; for (int i = 0; i &amp;lt;= num; ++i) { int count = 0; for (int offset = 30; offset &amp;gt;= 0 ; offset--) { int mask = 1&amp;lt;&amp;lt;offset; if ((i &amp;amp; mask)&amp;gt;0){ count++; } } ret[i] = count; } return ret; } 更猛的方法orz</description>
     </item>
     
     <item>
@@ -712,9 +727,9 @@ import javax.swing.*; import java.awt.*; import java.io.File; public class Image
       <guid>https://Lu0key.github.io/post/leetcode-451-sort-characters-by-frequency/</guid>
       <description>根据字符出现频率排序(Sort Characters By Frequency) 给定一个字符串，请将字符串里的字符按照出现的频率降序排列。
 示例 1:
-输入: &amp;quot;tree&amp;quot; 输出: &amp;quot;eert&amp;quot; 解释: &#39;e&#39;出现两次，&#39;r&#39;和&#39;t&#39;都只出现一次。 因此&#39;e&#39;必须出现在&#39;r&#39;和&#39;t&#39;之前。此外，&amp;quot;eetr&amp;quot;也是一个有效的答案。 示例 2:
-输入: &amp;quot;cccaaa&amp;quot; 输出: &amp;quot;cccaaa&amp;quot; 解释: &#39;c&#39;和&#39;a&#39;都出现三次。此外，&amp;quot;aaaccc&amp;quot;也是有效的答案。 注意&amp;quot;cacaca&amp;quot;是不正确的，因为相同的字母必须放在一起。 示例 3:
-输入: &amp;quot;Aabb&amp;quot; 输出: &amp;quot;bbAa&amp;quot; 解释: 此外，&amp;quot;bbaA&amp;quot;也是一个有效的答案，但&amp;quot;Aabb&amp;quot;是不正确的。 注意&#39;A&#39;和&#39;a&#39;被认为是两种不同的字符。 char * frequencySort(char * s){ int count[128] = {0}; for (int i = 0; i &amp;lt; strlen(s); ++i) { count[s[i]]++; } for (int k = 0; k &amp;lt; strlen(s); ++k) { for (int i = 0; i+1 &amp;lt; strlen(s); ++i) { if(count[s[i]] &amp;lt; count[s[i+1]] || count[s[i]] == count[s[i+1]] &amp;amp;&amp;amp; s[i] &amp;gt; s[i+1]){ char temp = s[i]; s[i] = s[i+1]; s[i+1] = temp; } } } return s; } 可以用，但是会TLE，一般遇到排序的时候，如果没有用快排，而是用冒泡排序这种O(n^2)时间复杂度的算法，都很可能会超时</description>
+输入: &amp;#34;tree&amp;#34; 输出: &amp;#34;eert&amp;#34; 解释: &amp;#39;e&amp;#39;出现两次，&amp;#39;r&amp;#39;和&amp;#39;t&amp;#39;都只出现一次。 因此&amp;#39;e&amp;#39;必须出现在&amp;#39;r&amp;#39;和&amp;#39;t&amp;#39;之前。此外，&amp;#34;eetr&amp;#34;也是一个有效的答案。 示例 2:
+输入: &amp;#34;cccaaa&amp;#34; 输出: &amp;#34;cccaaa&amp;#34; 解释: &amp;#39;c&amp;#39;和&amp;#39;a&amp;#39;都出现三次。此外，&amp;#34;aaaccc&amp;#34;也是有效的答案。 注意&amp;#34;cacaca&amp;#34;是不正确的，因为相同的字母必须放在一起。 示例 3:
+输入: &amp;#34;Aabb&amp;#34; 输出: &amp;#34;bbAa&amp;#34; 解释: 此外，&amp;#34;bbaA&amp;#34;也是一个有效的答案，但&amp;#34;Aabb&amp;#34;是不正确的。 注意&amp;#39;A&amp;#39;和&amp;#39;a&amp;#39;被认为是两种不同的字符。 char * frequencySort(char * s){ int count[128] = {0}; for (int i = 0; i &amp;lt; strlen(s); ++i) { count[s[i]]++; } for (int k = 0; k &amp;lt; strlen(s); ++k) { for (int i = 0; i+1 &amp;lt; strlen(s); ++i) { if(count[s[i]] &amp;lt; count[s[i+1]] || count[s[i]] == count[s[i+1]] &amp;amp;&amp;amp; s[i] &amp;gt; s[i+1]){ char temp = s[i]; s[i] = s[i+1]; s[i+1] = temp; } } } return s; } 可以用，但是会TLE，一般遇到排序的时候，如果没有用快排，而是用冒泡排序这种O(n^2)时间复杂度的算法，都很可能会超时</description>
     </item>
     
     <item>
@@ -725,7 +740,7 @@ import javax.swing.*; import java.awt.*; import java.io.File; public class Image
       <guid>https://Lu0key.github.io/post/leetcode-230-kth-smallest-element-in-a-bst/</guid>
       <description>二叉搜索树中第K小的元素(Kth Smallest Element in a BST) 给定一个二叉搜索树的根节点 root ，和一个整数 k ，请你设计一个算法查找其中第 k 个最小元素（从 1 开始计数）。
 示例 1： 输入：root = [3,1,4,null,2], k = 1 输出：1 示例 2： 输入：root = [5,3,6,2,4,null,null,1], k = 3 输出：3 提示：
- 树中的节点数为 n 。 1 &amp;lt;= k &amp;lt;= n &amp;lt;= 10^4 0 &amp;lt;= Node.val &amp;lt;= 10^4  **进阶：**如果二叉搜索树经常被修改（插入/删除操作）并且你需要频繁地查找第 k 小的值，你将如何优化算法？
+树中的节点数为 n 。 1 &amp;lt;= k &amp;lt;= n &amp;lt;= 10^4 0 &amp;lt;= Node.val &amp;lt;= 10^4 **进阶：**如果二叉搜索树经常被修改（插入/删除操作）并且你需要频繁地查找第 k 小的值，你将如何优化算法？
 /** * Definition for a binary tree node. * struct TreeNode { * int val; * struct TreeNode *left; * struct TreeNode *right; * }; */ int getSize(struct TreeNode* root){ if (root == NULL) return 0; return getSize(root-&amp;gt;left)+getSize(root-&amp;gt;right)+1; } int kthSmallest(struct TreeNode* root, int k){ int leftSize = getSize(root-&amp;gt;left); if (k &amp;lt;= leftSize){ return kthSmallest(root-&amp;gt;left, k); } if (k &amp;lt;= leftSize+1){ return root-&amp;gt;val; } return kthSmallest(root-&amp;gt;right,k-leftSize-1); } 好爽，这个比较简单，写的很爽，可能因为简单？</description>
     </item>
     
@@ -738,9 +753,9 @@ import javax.swing.*; import java.awt.*; import java.io.File; public class Image
       <description>找到字符串中所有字母异位词(Find All Anagrams in a String) 给定一个字符串 s 和一个非空字符串 p，找到 s 中所有是 p 的字母异位词的子串，返回这些子串的起始索引。
 字符串只包含小写英文字母，并且字符串 s 和 p 的长度都不超过 20100。
 说明：
- 字母异位词指字母相同，但排列不同的字符串。 不考虑答案输出的顺序。  示例 1:
-输入: s: &amp;quot;cbaebabacd&amp;quot; p: &amp;quot;abc&amp;quot; 输出: [0, 6] 解释: 起始索引等于 0 的子串是 &amp;quot;cba&amp;quot;, 它是 &amp;quot;abc&amp;quot; 的字母异位词。 起始索引等于 6 的子串是 &amp;quot;bac&amp;quot;, 它是 &amp;quot;abc&amp;quot; 的字母异位词。 示例 2:
-输入: s: &amp;quot;abab&amp;quot; p: &amp;quot;ab&amp;quot; 输出: [0, 1, 2] 解释: 起始索引等于 0 的子串是 &amp;quot;ab&amp;quot;, 它是 &amp;quot;ab&amp;quot; 的字母异位词。 起始索引等于 1 的子串是 &amp;quot;ba&amp;quot;, 它是 &amp;quot;ab&amp;quot; 的字母异位词。 起始索引等于 2 的子串是 &amp;quot;ab&amp;quot;, 它是 &amp;quot;ab&amp;quot; 的字母异位词。 /** * Note: The returned array must be malloced, assume caller calls free().</description>
+字母异位词指字母相同，但排列不同的字符串。 不考虑答案输出的顺序。 示例 1:
+输入: s: &amp;#34;cbaebabacd&amp;#34; p: &amp;#34;abc&amp;#34; 输出: [0, 6] 解释: 起始索引等于 0 的子串是 &amp;#34;cba&amp;#34;, 它是 &amp;#34;abc&amp;#34; 的字母异位词。 起始索引等于 6 的子串是 &amp;#34;bac&amp;#34;, 它是 &amp;#34;abc&amp;#34; 的字母异位词。 示例 2:
+输入: s: &amp;#34;abab&amp;#34; p: &amp;#34;ab&amp;#34; 输出: [0, 1, 2] 解释: 起始索引等于 0 的子串是 &amp;#34;ab&amp;#34;, 它是 &amp;#34;ab&amp;#34; 的字母异位词。 起始索引等于 1 的子串是 &amp;#34;ba&amp;#34;, 它是 &amp;#34;ab&amp;#34; 的字母异位词。 起始索引等于 2 的子串是 &amp;#34;ab&amp;#34;, 它是 &amp;#34;ab&amp;#34; 的字母异位词。 /** * Note: The returned array must be malloced, assume caller calls free().</description>
     </item>
     
     <item>
@@ -752,9 +767,9 @@ import javax.swing.*; import java.awt.*; import java.io.File; public class Image
       <description>字符串的排列(Permutation in String) 给定两个字符串 s1 和 s2，写一个函数来判断 s2 是否包含 s1 的排列。
 换句话说，第一个字符串的排列之一是第二个字符串的 子串 。
 示例 1：
-输入: s1 = &amp;quot;ab&amp;quot; s2 = &amp;quot;eidbaooo&amp;quot; 输出: True 解释: s2 包含 s1 的排列之一 (&amp;quot;ba&amp;quot;). 示例 2：
-输入: s1= &amp;quot;ab&amp;quot; s2 = &amp;quot;eidboaoo&amp;quot; 输出: False 提示：
- 输入的字符串只包含小写字母 两个字符串的长度都在 [1, 10,000] 之间。  和上一题几乎一样，甚至更简单
+输入: s1 = &amp;#34;ab&amp;#34; s2 = &amp;#34;eidbaooo&amp;#34; 输出: True 解释: s2 包含 s1 的排列之一 (&amp;#34;ba&amp;#34;). 示例 2：
+输入: s1= &amp;#34;ab&amp;#34; s2 = &amp;#34;eidboaoo&amp;#34; 输出: False 提示：
+输入的字符串只包含小写字母 两个字符串的长度都在 [1, 10,000] 之间。 和上一题几乎一样，甚至更简单
 bool checkInclusion(char * s1, char * s2){ int lenS1 = strlen(s1); int lenS2 = strlen(s2); if (lenS1&amp;gt;lenS2) return false; int Diff[&amp;#39;z&amp;#39;-&amp;#39;a&amp;#39;+1] = {0}; for (int i = 0; i &amp;lt; lenS1; ++i) Diff[s1[i]-&amp;#39;a&amp;#39;]--; for (int i = 0; i &amp;lt; lenS1; ++i) Diff[s2[i]-&amp;#39;a&amp;#39;]++; int diffCount = 0; for (char c = &amp;#39;a&amp;#39;; c &amp;lt;= &amp;#39;z&amp;#39;; c++) { if (Diff[c-&amp;#39;a&amp;#39;] !</description>
     </item>
     
@@ -784,7 +799,7 @@ int singleNonDuplicate(int* nums, int numsSize){ for (int i = 0; i+1 &amp;lt; nu
 最后返回经过上色渲染后的图像。
 示例 1:
 输入: image = [[1,1,1],[1,1,0],[1,0,1]] sr = 1, sc = 1, newColor = 2 输出: [[2,2,2],[2,2,0],[2,0,1]] 解析: 在图像的正中间，(坐标(sr,sc)=(1,1)), 在路径上所有符合条件的像素点的颜色都被更改成2。 注意，右下角的像素没有更改为2， 因为它不是在上下左右四个方向上与初始点相连的像素点。 注意:
- image 和 image[0] 的长度在范围 [1, 50] 内。 给出的初始点将满足 0 &amp;lt;= sr &amp;lt; image.length 和 0 &amp;lt;= sc &amp;lt; image[0].length。 image[i][j] 和 newColor 表示的颜色值在范围 [0, 65535]内。  /** * Return an array of arrays of size *returnSize.</description>
+image 和 image[0] 的长度在范围 [1, 50] 内。 给出的初始点将满足 0 &amp;lt;= sr &amp;lt; image.length 和 0 &amp;lt;= sc &amp;lt; image[0].length。 image[i][j] 和 newColor 表示的颜色值在范围 [0, 65535]内。 /** * Return an array of arrays of size *returnSize.</description>
     </item>
     
     <item>
@@ -795,7 +810,7 @@ int singleNonDuplicate(int* nums, int numsSize){ for (int i = 0; i+1 &amp;lt; nu
       <guid>https://Lu0key.github.io/post/leetcode-997-find-the-town-judge/</guid>
       <description>找到小镇的法官((Find the Town Judge) 在一个小镇里，按从 1 到 N 标记了 N 个人。传言称，这些人中有一个是小镇上的秘密法官。
 如果小镇的法官真的存在，那么：
-1. 小镇的法官不相信任何人。 2. 每个人（除了小镇法官外）都信任小镇的法官。 3. 只有一个人同时满足属性 1 和属性 2 。  给定数组 trust，该数组由信任对 trust[i] = [a, b] 组成，表示标记为 a 的人信任标记为 b 的人。
+1. 小镇的法官不相信任何人。 2. 每个人（除了小镇法官外）都信任小镇的法官。 3. 只有一个人同时满足属性 1 和属性 2 。 给定数组 trust，该数组由信任对 trust[i] = [a, b] 组成，表示标记为 a 的人信任标记为 b 的人。
 如果小镇存在秘密法官并且可以确定他的身份，请返回该法官的标记。否则，返回 -1。
 示例 1：
 输入：N = 2, trust = [[1,2]] 输出：2 示例 2：
@@ -815,7 +830,8 @@ int singleNonDuplicate(int* nums, int numsSize){ for (int i = 0; i+1 &amp;lt; nu
 示例 1：
 输入：num = 16 输出：true 示例 2：
 输入：num = 14 输出：false 提示：
- 1 &amp;lt;= num &amp;lt;= 2^31 - 1  bool isPerfectSquare(int num){ for (int i = 0; i &amp;lt; 46341; ++i) { if (i*i == num) return true; if (i*i &amp;gt; num) return false; } return false; } 暴力！因为46341的平方会超过整数的最大值，因此我们用46341，或者用long long 之类的</description>
+1 &amp;lt;= num &amp;lt;= 2^31 - 1 bool isPerfectSquare(int num){ for (int i = 0; i &amp;lt; 46341; ++i) { if (i*i == num) return true; if (i*i &amp;gt; num) return false; } return false; } 暴力！因为46341的平方会超过整数的最大值，因此我们用46341，或者用long long 之类的
+bool isPerfectSquare(int num){ long long d = 2; long long s = 1; while (s &amp;lt; num){ s += d + 1; d += 2; } return s == num; } 奇妙的代码，不过这样还是O(n^(1/2)) 的时间复杂度</description>
     </item>
     
     <item>
@@ -827,7 +843,7 @@ int singleNonDuplicate(int* nums, int numsSize){ for (int i = 0; i+1 &amp;lt; nu
       <description>缀点成线(Check If It Is a Straight Line) 在一个 XY 坐标系中有一些点，我们用数组 coordinates 来分别记录它们的坐标，其中 coordinates[i] = [x, y] 表示横坐标为 x、纵坐标为 y 的点。
 请你来判断，这些点是否在该坐标系中属于同一条直线上，是则返回 true，否则请返回 false。
 示例 1： 输入：coordinates = [[1,2],[2,3],[3,4],[4,5],[5,6],[6,7]] 输出：true 示例 2： 输入：coordinates = [[1,1],[2,2],[3,4],[4,5],[5,6],[7,7]] 输出：false 提示：
- 2 &amp;lt;= coordinates.length &amp;lt;= 1000 coordinates[i].length == 2 -10^4 &amp;lt;= coordinates[i][0], coordinates[i][1] &amp;lt;= 10^4 coordinates 中不含重复的点  bool checkStraightLine(int** coordinates, int coordinatesSize, int* coordinatesColSize){ for (int i = 0; i &amp;lt; coordinatesSize; ++i) { for (int j = i+1; j &amp;lt; coordinatesSize; ++j) { for (int k = j+1; k &amp;lt; coordinatesSize; ++k) { int x1 = coordinates[i][0]; int y1 = coordinates[i][1]; int x2 = coordinates[j][0]; int y2 = coordinates[j][1]; int x3 = coordinates[k][0]; int y3 = coordinates[k][1]; if ((y2-y1)*(x3-x1) !</description>
+2 &amp;lt;= coordinates.length &amp;lt;= 1000 coordinates[i].length == 2 -10^4 &amp;lt;= coordinates[i][0], coordinates[i][1] &amp;lt;= 10^4 coordinates 中不含重复的点 bool checkStraightLine(int** coordinates, int coordinatesSize, int* coordinatesColSize){ for (int i = 0; i &amp;lt; coordinatesSize; ++i) { for (int j = i+1; j &amp;lt; coordinatesSize; ++j) { for (int k = j+1; k &amp;lt; coordinatesSize; ++k) { int x1 = coordinates[i][0]; int y1 = coordinates[i][1]; int x2 = coordinates[j][0]; int y2 = coordinates[j][1]; int x3 = coordinates[k][0]; int y3 = coordinates[k][1]; if ((y2-y1)*(x3-x1) !</description>
     </item>
     
     <item>
@@ -841,7 +857,7 @@ int singleNonDuplicate(int* nums, int numsSize){ for (int i = 0; i+1 &amp;lt; nu
 我们给出了具有唯一值的二叉树的根节点 root ，以及树中两个不同节点的值 x 和 y 。
 只有与值 x 和 y 对应的节点是堂兄弟节点时，才返回 true 。否则，返回 false。
 示例 1： 输入：root = [1,2,3,4], x = 4, y = 3 输出：false 示例 2： 输入：root = [1,2,3,null,4,null,5], x = 5, y = 4 输出：true 示例 3： 输入：root = [1,2,3,null,4], x = 2, y = 3 输出：false 提示：
- 二叉树的节点数介于 2 到 100 之间。 每个节点的值都是唯一的、范围为 1 到 100 的整数。  /** * Definition for a binary tree node.</description>
+二叉树的节点数介于 2 到 100 之间。 每个节点的值都是唯一的、范围为 1 到 100 的整数。 /** * Definition for a binary tree node.</description>
     </item>
     
     <item>
@@ -855,7 +871,7 @@ int singleNonDuplicate(int* nums, int numsSize){ for (int i = 0; i+1 &amp;lt; nu
 示例 1：
 输入：[3,2,3] 输出：3 示例 2：
 输入：[2,2,1,1,1,2,2] 输出：2 进阶：
- 尝试设计时间复杂度为 O(n)、空间复杂度为 O(1) 的算法解决此问题。  int majorityElement(int* nums, int numsSize){ while (true){ int i = rand() % numsSize; int count = 0; for(int j =0 ; j&amp;lt;numsSize; j++){ if(nums[j] == nums[i]){ count++; } } if (count &amp;gt; numsSize/2){ return nums[i]; } } return 0; } 因为有一半以上的概率获得的数字是占一半以上的元素，效率难以评估
+尝试设计时间复杂度为 O(n)、空间复杂度为 O(1) 的算法解决此问题。 int majorityElement(int* nums, int numsSize){ while (true){ int i = rand() % numsSize; int count = 0; for(int j =0 ; j&amp;lt;numsSize; j++){ if(nums[j] == nums[i]){ count++; } } if (count &amp;gt; numsSize/2){ return nums[i]; } } return 0; } 因为有一半以上的概率获得的数字是占一半以上的元素，效率难以评估
 int cmp(const void* a, const void* b){ return *(int *)a- *(int *)b; } int majorityElement(int* nums, int numsSize){ qsort(nums, numsSize, sizeof(int), cmp); return nums[numsSize/2]; } 看到这个题目，应该可以很自然的想到哈希表，但是C本身不自带，手动实现Hash表</description>
     </item>
     
@@ -867,7 +883,7 @@ int cmp(const void* a, const void* b){ return *(int *)a- *(int *)b; } int majori
       <guid>https://Lu0key.github.io/post/leetcode-387-first-unique-character-in-a-string/</guid>
       <description>字符串中的第一个唯一字符(First Unique Character in a String) 给定一个字符串，找到它的第一个不重复的字符，并返回它的索引。如果不存在，则返回 -1。
 示例：
-s = &amp;quot;leetcode&amp;quot; 返回 0 s = &amp;quot;loveleetcode&amp;quot; 返回 2 提示： 你可以假定该字符串只包含小写字母。
+s = &amp;#34;leetcode&amp;#34; 返回 0 s = &amp;#34;loveleetcode&amp;#34; 返回 2 提示： 你可以假定该字符串只包含小写字母。
 int firstUniqChar(char * s){ int sSize = strlen(s); for (int i = 0; i &amp;lt; sSize; i++){ if (s[i] == &amp;#39;-&amp;#39;) continue; bool isUnique = true; for(int j =i+1; j&amp;lt;sSize; j++){ if (s[j] == s[i]){ isUnique = false; s[j] = &amp;#39;-&amp;#39;; } } if (isUnique){ return i; } } return -1; } 这种时间复杂度为O(n^2)</description>
     </item>
     
@@ -881,7 +897,7 @@ int firstUniqChar(char * s){ int sSize = strlen(s); for (int i = 0; i &amp;lt; s
 示例 1：
 输入：num = 5 输出：2 解释：5 的二进制表示为 101（没有前导零位），其补数为 010。所以你需要输出 2 。 示例 2：
 输入：num = 1 输出：0 解释：1 的二进制表示为 1（没有前导零位），其补数为 0。所以你需要输出 0 。 提示：
- 给定的整数 num 保证在 32 位带符号整数的范围内。 num &amp;gt;= 1 你可以假定二进制数不包含前导零位。 本题与 1009 https://leetcode-cn.com/problems/complement-of-base-10-integer/ 相同  int findComplement(int num){ int firstOnePosition = -1; int ans = 0; for (int i =30; i&amp;gt;=0; i--){ int mask = (1 &amp;lt;&amp;lt; i); if(firstOnePosition&amp;lt;0 &amp;amp;&amp;amp; (num &amp;amp; mask)!</description>
+给定的整数 num 保证在 32 位带符号整数的范围内。 num &amp;gt;= 1 你可以假定二进制数不包含前导零位。 本题与 1009 https://leetcode-cn.com/problems/complement-of-base-10-integer/ 相同 int findComplement(int num){ int firstOnePosition = -1; int ans = 0; for (int i =30; i&amp;gt;=0; i--){ int mask = (1 &amp;lt;&amp;lt; i); if(firstOnePosition&amp;lt;0 &amp;amp;&amp;amp; (num &amp;amp; mask)!</description>
     </item>
     
     <item>
@@ -893,10 +909,10 @@ int firstUniqChar(char * s){ int sSize = strlen(s); for (int i = 0; i &amp;lt; s
       <description>赎金信(Ransom Not) 给定一个赎金信 (ransom) 字符串和一个杂志(magazine)字符串，判断第一个字符串 ransom 能不能由第二个字符串 magazines 里面的字符构成。如果可以构成，返回 true ；否则返回 false。
 (题目说明：为了不暴露赎金信字迹，要从杂志上搜索各个需要的字母，组成单词来表达意思。杂志字符串中的每个字符只能在赎金信字符串中使用一次。)
 示例 1：
-输入：ransomNote = &amp;quot;a&amp;quot;, magazine = &amp;quot;b&amp;quot; 输出：false 示例 2：
-输入：ransomNote = &amp;quot;aa&amp;quot;, magazine = &amp;quot;ab&amp;quot; 输出：false 示例 3：
-输入：ransomNote = &amp;quot;aa&amp;quot;, magazine = &amp;quot;aab&amp;quot; 输出：true 提示：
- 你可以假设两个字符串均只含有小写字母。  bool canConstruct(char * ransomNote, char * magazine){ int ransomNoteSize = strlen(ransomNote); int magazineSize = strlen(magazine); for(int i =0;i&amp;lt; ransomNoteSize; i++){ bool isFound = false; for(int j = 0; j &amp;lt; magazineSize; j++) { if(magazine[j] == ransomNote[i]) { isFound = true; magazine[j] = &amp;#39;-&amp;#39;; break; } } if (!</description>
+输入：ransomNote = &amp;#34;a&amp;#34;, magazine = &amp;#34;b&amp;#34; 输出：false 示例 2：
+输入：ransomNote = &amp;#34;aa&amp;#34;, magazine = &amp;#34;ab&amp;#34; 输出：false 示例 3：
+输入：ransomNote = &amp;#34;aa&amp;#34;, magazine = &amp;#34;aab&amp;#34; 输出：true 提示：
+你可以假设两个字符串均只含有小写字母。 bool canConstruct(char * ransomNote, char * magazine){ int ransomNoteSize = strlen(ransomNote); int magazineSize = strlen(magazine); for(int i =0;i&amp;lt; ransomNoteSize; i++){ bool isFound = false; for(int j = 0; j &amp;lt; magazineSize; j++) { if(magazine[j] == ransomNote[i]) { isFound = true; magazine[j] = &amp;#39;-&amp;#39;; break; } } if (!</description>
     </item>
     
     <item>
@@ -909,7 +925,7 @@ int firstUniqChar(char * s){ int sSize = strlen(s); for (int i = 0; i &amp;lt; s
 假设你有 n 个版本 [1, 2, ..., n]，你想找出导致之后所有版本出错的第一个错误的版本。
 你可以通过调用 bool isBadVersion(version) 接口来判断版本号 version 是否在单元测试中出错。实现一个函数来查找第一个错误的版本。你应该尽量减少对调用 API 的次数。
 示例:
-给定 n = 5，并且 version = 4 是第一个错误的版本。 调用 isBadVersion(3) -&amp;gt; false 调用 isBadVersion(5) -&amp;gt; true 调用 isBadVersion(4) -&amp;gt; true 所以，4 是第一个错误的版本。 // The API isBadVersion is defined for you. // bool isBadVersion(int version);  int firstBadVersion(int n) { for (int ans = 1; ans &amp;lt;=n; ans++){ if(isBadVersion(ans) &amp;amp;&amp;amp; !isBadVersion(ans-1)){ return ans; } } return 0; } 上面这种方法是最直接的，但是相对的，但是超慢，会超时</description>
+给定 n = 5，并且 version = 4 是第一个错误的版本。 调用 isBadVersion(3) -&amp;gt; false 调用 isBadVersion(5) -&amp;gt; true 调用 isBadVersion(4) -&amp;gt; true 所以，4 是第一个错误的版本。 // The API isBadVersion is defined for you. // bool isBadVersion(int version); int firstBadVersion(int n) { for (int ans = 1; ans &amp;lt;=n; ans++){ if(isBadVersion(ans) &amp;amp;&amp;amp; !isBadVersion(ans-1)){ return ans; } } return 0; } 上面这种方法是最直接的，但是相对的，但是超慢，会超时</description>
     </item>
     
     <item>
@@ -922,7 +938,7 @@ int firstUniqChar(char * s){ int sSize = strlen(s); for (int i = 0; i &amp;lt; s
 路径和 是路径中各节点值的总和。
 给你一个二叉树的根节点 root ，返回其 最大路径和 。
 示例 1： 输入：root = [1,2,3] 输出：6 解释：最优路径是 2 -&amp;gt; 1 -&amp;gt; 3 ，路径和为 2 + 1 + 3 = 6 示例 2： 输入：root = [-10,9,20,null,null,15,7] 输出：42 解释：最优路径是 15 -&amp;gt; 20 -&amp;gt; 7 ，路径和为 15 + 20 + 7 = 42 提示：
- 树中节点数目范围是 [1, 3 * 10^4] -1000 &amp;lt;= Node.val &amp;lt;= 1000  /** * Definition for a binary tree node.</description>
+树中节点数目范围是 [1, 3 * 10^4] -1000 &amp;lt;= Node.val &amp;lt;= 1000 /** * Definition for a binary tree node.</description>
     </item>
     
     <item>
@@ -933,10 +949,10 @@ int firstUniqChar(char * s){ int sSize = strlen(s); for (int i = 0; i &amp;lt; s
       <guid>https://Lu0key.github.io/post/leetcode-221-maximal-square/</guid>
       <description>最大正方形(Maximal Square) 在一个由 &#39;0&#39; 和 &#39;1&#39; 组成的二维矩阵内，找到只包含 &#39;1&#39; 的最大正方形，并返回其面积。
 示例 1：
-输入：matrix = [[&amp;quot;1&amp;quot;,&amp;quot;0&amp;quot;,&amp;quot;1&amp;quot;,&amp;quot;0&amp;quot;,&amp;quot;0&amp;quot;],[&amp;quot;1&amp;quot;,&amp;quot;0&amp;quot;,&amp;quot;1&amp;quot;,&amp;quot;1&amp;quot;,&amp;quot;1&amp;quot;],[&amp;quot;1&amp;quot;,&amp;quot;1&amp;quot;,&amp;quot;1&amp;quot;,&amp;quot;1&amp;quot;,&amp;quot;1&amp;quot;],[&amp;quot;1&amp;quot;,&amp;quot;0&amp;quot;,&amp;quot;0&amp;quot;,&amp;quot;1&amp;quot;,&amp;quot;0&amp;quot;]] 输出：4 示例 2：
-输入：matrix = [[&amp;quot;0&amp;quot;,&amp;quot;1&amp;quot;],[&amp;quot;1&amp;quot;,&amp;quot;0&amp;quot;]] 输出：1 示例 3：
-输入：matrix = [[&amp;quot;0&amp;quot;]] 输出：0 提示：
- m == matrix.length n == matrix[i].length 1 &amp;lt;= m, n &amp;lt;= 300 matrix[i][j] 为 &#39;0&#39; 或 &#39;1&#39;  int min(int a, int b){ if (a&amp;lt;b){ return a; }else{ return b; } } bool noZero(char** matrix, int row ,int col ,int size){ for(int dr = 0;dr &amp;lt; size;dr++){ for(int dc = 0;dc &amp;lt; size; dc++){ if(matrix[row+dr][col+dc] == &amp;#39;0&amp;#39;){ return false; } } } return true; } int maximalSquare(char** matrix, int matrixSize, int* matrixColSize){ // if (matrixSize == 0) return 0;  int rows = matrixSize; int cols = matrixColSize[0]; int maxSize = 0; for(int row =0 ;row &amp;lt; rows;row++){ for(int col = 0;col&amp;lt;cols; col++){ for(int size =1;size&amp;lt;=min(rows-row,cols-col);size++){ if(noZero(matrix, row, col, size) &amp;amp;&amp;amp; size &amp;gt; maxSize){ maxSize = size; } } } } return maxSize * maxSize; } 勉强过了</description>
+输入：matrix = [[&amp;#34;1&amp;#34;,&amp;#34;0&amp;#34;,&amp;#34;1&amp;#34;,&amp;#34;0&amp;#34;,&amp;#34;0&amp;#34;],[&amp;#34;1&amp;#34;,&amp;#34;0&amp;#34;,&amp;#34;1&amp;#34;,&amp;#34;1&amp;#34;,&amp;#34;1&amp;#34;],[&amp;#34;1&amp;#34;,&amp;#34;1&amp;#34;,&amp;#34;1&amp;#34;,&amp;#34;1&amp;#34;,&amp;#34;1&amp;#34;],[&amp;#34;1&amp;#34;,&amp;#34;0&amp;#34;,&amp;#34;0&amp;#34;,&amp;#34;1&amp;#34;,&amp;#34;0&amp;#34;]] 输出：4 示例 2：
+输入：matrix = [[&amp;#34;0&amp;#34;,&amp;#34;1&amp;#34;],[&amp;#34;1&amp;#34;,&amp;#34;0&amp;#34;]] 输出：1 示例 3：
+输入：matrix = [[&amp;#34;0&amp;#34;]] 输出：0 提示：
+m == matrix.length n == matrix[i].length 1 &amp;lt;= m, n &amp;lt;= 300 matrix[i][j] 为 &#39;0&#39; 或 &#39;1&#39; int min(int a, int b){ if (a&amp;lt;b){ return a; }else{ return b; } } bool noZero(char** matrix, int row ,int col ,int size){ for(int dr = 0;dr &amp;lt; size;dr++){ for(int dc = 0;dc &amp;lt; size; dc++){ if(matrix[row+dr][col+dc] == &amp;#39;0&amp;#39;){ return false; } } } return true; } int maximalSquare(char** matrix, int matrixSize, int* matrixColSize){ // if (matrixSize == 0) return 0; int rows = matrixSize; int cols = matrixColSize[0]; int maxSize = 0; for(int row =0 ;row &amp;lt; rows;row++){ for(int col = 0;col&amp;lt;cols; col++){ for(int size =1;size&amp;lt;=min(rows-row,cols-col);size++){ if(noZero(matrix, row, col, size) &amp;amp;&amp;amp; size &amp;gt; maxSize){ maxSize = size; } } } } return maxSize * maxSize; } 勉强过了</description>
     </item>
     
     <item>
@@ -949,10 +965,10 @@ int firstUniqChar(char * s){ int sSize = strlen(s); for (int i = 0; i &amp;lt; s
 一个字符串的 子序列 是指这样一个新的字符串：它是由原字符串在不改变字符的相对顺序的情况下删除某些字符（也可以不删除任何字符）后组成的新字符串。 例如，&amp;ldquo;ace&amp;rdquo; 是 &amp;ldquo;abcde&amp;rdquo; 的子序列，但 &amp;ldquo;aec&amp;rdquo; 不是 &amp;ldquo;abcde&amp;rdquo; 的子序列。两个字符串的「公共子序列」是这两个字符串所共同拥有的子序列。
 若这两个字符串没有公共子序列，则返回 0。
 示例 1:
-输入：text1 = &amp;quot;abcde&amp;quot;, text2 = &amp;quot;ace&amp;quot; 输出：3 解释：最长公共子序列是 &amp;quot;ace&amp;quot;，它的长度为 3。 示例 2:
-输入：text1 = &amp;quot;abc&amp;quot;, text2 = &amp;quot;abc&amp;quot; 输出：3 解释：最长公共子序列是 &amp;quot;abc&amp;quot;，它的长度为 3。 示例 3:
-输入：text1 = &amp;quot;abc&amp;quot;, text2 = &amp;quot;def&amp;quot; 输出：0 解释：两个字符串没有公共子序列，返回 0。 提示:
- 1 &amp;lt;= text1.length &amp;lt;= 1000 1 &amp;lt;= text2.length &amp;lt;= 1000 输入的字符串只含有小写英文字符。  int lcs(char* text1, char* text2, int m, int n) { if(m == 0||n == 0) return 0; if(text1[m-1] == text2[n-1]) { return lcs(text1,text2,m-1,n-1)+1; }else { int discard1 = lcs(text1, text2, m-1, n); int discard2 = lcs(text1, text2, m, n-1); if(discard1 &amp;gt; discard2){ return discard1; }else { return discard2; } } } int longestCommonSubsequence(char* text1, char* text2){ int len1 = strlen(text1); int len2 = strlen(text2); return lcs(text1, text2, len1, len2); } 但是这种方法显然会爆炸，递归太多，超时</description>
+输入：text1 = &amp;#34;abcde&amp;#34;, text2 = &amp;#34;ace&amp;#34; 输出：3 解释：最长公共子序列是 &amp;#34;ace&amp;#34;，它的长度为 3。 示例 2:
+输入：text1 = &amp;#34;abc&amp;#34;, text2 = &amp;#34;abc&amp;#34; 输出：3 解释：最长公共子序列是 &amp;#34;abc&amp;#34;，它的长度为 3。 示例 3:
+输入：text1 = &amp;#34;abc&amp;#34;, text2 = &amp;#34;def&amp;#34; 输出：0 解释：两个字符串没有公共子序列，返回 0。 提示:
+1 &amp;lt;= text1.length &amp;lt;= 1000 1 &amp;lt;= text2.length &amp;lt;= 1000 输入的字符串只含有小写英文字符。 int lcs(char* text1, char* text2, int m, int n) { if(m == 0||n == 0) return 0; if(text1[m-1] == text2[n-1]) { return lcs(text1,text2,m-1,n-1)+1; }else { int discard1 = lcs(text1, text2, m-1, n); int discard2 = lcs(text1, text2, m, n-1); if(discard1 &amp;gt; discard2){ return discard1; }else { return discard2; } } } int longestCommonSubsequence(char* text1, char* text2){ int len1 = strlen(text1); int len2 = strlen(text2); return lcs(text1, text2, len1, len2); } 但是这种方法显然会爆炸，递归太多，超时</description>
     </item>
     
     <item>
@@ -967,7 +983,7 @@ int firstUniqChar(char * s){ int sSize = strlen(s); for (int i = 0; i &amp;lt; s
 示例 1：
 输入：nums = [2,3,1,1,4] 输出：true 解释：可以先跳 1 步，从下标 0 到达下标 1, 然后再从下标 1 跳 3 步到达最后一个下标。 示例 2：
 输入：nums = [3,2,1,0,4] 输出：false 解释：无论怎样，总会到达下标为 3 的位置。但该下标的最大跳跃长度是 0 ， 所以永远不可能到达最后一个下标。 提示：
- 1 &amp;lt;= nums.length &amp;lt;= 3 * 10^4 0 &amp;lt;= nums[i] &amp;lt;= 10^5  bool canJump(int* nums, int numsSize){ int start = 0; printf(&amp;#34;%d\n&amp;#34;,start); while(start &amp;lt;numsSize){ int newIndex = -1; if(start+nums[start]&amp;gt;=numsSize-1) return true; for(int i =1;i&amp;lt;=nums[start];i++){ if(i+nums[start+i]&amp;gt;nums[start]){ if(newIndex == -1){ newIndex = i+start; }else if(i+nums[start +i]&amp;gt;newIndex-start+nums[newIndex]){ newIndex = i+start; } } } if(newIndex == -1) return false; start = newIndex; } return false; } yeah，写出来了，看看老师怎么写的</description>
+1 &amp;lt;= nums.length &amp;lt;= 3 * 10^4 0 &amp;lt;= nums[i] &amp;lt;= 10^5 bool canJump(int* nums, int numsSize){ int start = 0; printf(&amp;#34;%d\n&amp;#34;,start); while(start &amp;lt;numsSize){ int newIndex = -1; if(start+nums[start]&amp;gt;=numsSize-1) return true; for(int i =1;i&amp;lt;=nums[start];i++){ if(i+nums[start+i]&amp;gt;nums[start]){ if(newIndex == -1){ newIndex = i+start; }else if(i+nums[start +i]&amp;gt;newIndex-start+nums[newIndex]){ newIndex = i+start; } } } if(newIndex == -1) return false; start = newIndex; } return false; } yeah，写出来了，看看老师怎么写的</description>
     </item>
     
     <item>
@@ -994,7 +1010,7 @@ LRUCache cache = new LRUCache( 2 /* 缓存容量 */ ); cache.put(1, 1); cache.pu
 输入：left = 5, right = 7 输出：4 示例 2：
 输入：left = 0, right = 0 输出：0 示例 3：
 输入：left = 1, right = 2147483647 输出：0 提示：
- 0 &amp;lt;= left &amp;lt;= right &amp;lt;= 2^31 - 1  int rangeBitwiseAnd(int left, int right){ if(left == 0) return 0; int a = right; for(int i = left;i&amp;lt;right;i++){ a &amp;amp;=i; } return a; } 这样显然会超时</description>
+0 &amp;lt;= left &amp;lt;= right &amp;lt;= 2^31 - 1 int rangeBitwiseAnd(int left, int right){ if(left == 0) return 0; int a = right; for(int i = left;i&amp;lt;right;i++){ a &amp;amp;=i; } return a; } 这样显然会超时</description>
     </item>
     
     <item>
@@ -1006,7 +1022,7 @@ LRUCache cache = new LRUCache( 2 /* 缓存容量 */ ); cache.put(1, 1); cache.pu
       <description>和为K的子数组(Subarray Sum Equals K) 给定一个整数数组和一个整数 k，你需要找到该数组中和为 k 的连续的子数组的个数。
 示例 1 :
 输入:nums = [1,1,1], k = 2 输出: 2 , [1,1] 与 [1,1] 为两种不同的情况。 说明 :
- 数组的长度为 [1, 20,000]。 数组中元素的范围是 [-1000, 1000] ，且整数 k 的范围是 [-1e7, 1e7]。  int subarraySum(int* nums, int numsSize, int k){ int count = 0; for(int i =0;i&amp;lt;numsSize;i++){ int sum = 0; for(int j=i;j&amp;lt;numsSize;j++){ sum+=nums[j]; if(sum == k){ count++; } } } return count; } O(n^2) 会超时哦</description>
+数组的长度为 [1, 20,000]。 数组中元素的范围是 [-1000, 1000] ，且整数 k 的范围是 [-1e7, 1e7]。 int subarraySum(int* nums, int numsSize, int k){ int count = 0; for(int i =0;i&amp;lt;numsSize;i++){ int sum = 0; for(int j=i;j&amp;lt;numsSize;j++){ sum+=nums[j]; if(sum == k){ count++; } } } return count; } O(n^2) 会超时哦</description>
     </item>
     
     <item>
@@ -1020,7 +1036,7 @@ LRUCache cache = new LRUCache( 2 /* 缓存容量 */ ); cache.put(1, 1); cache.pu
 题目保证，对于给定的测试用例，总能找到满足要求的二叉搜索树。
 示例：
 输入：[8,5,1,7,10,12] 输出：[8,5,10,1,7,null,12] 提示：
- 1 &amp;lt;= preorder.length &amp;lt; = 100 1 &amp;lt;= preorder[i] &amp;lt;= 10^8 preorder 中的值互不相同  /** * Definition for a binary tree node. * struct TreeNode { * int val; * struct TreeNode *left; * struct TreeNode *right; * }; */ struct TreeNode* bstFromPreorderRanged(int* preorder, int start, int end){ if(start == end) return NULL; struct TreeNode* root = malloc(sizeof(struct TreeNode)); root-&amp;gt;val = preorder[start]; int i = start+1; while (i&amp;lt;end &amp;amp;&amp;amp; preorder[i]&amp;lt;root-&amp;gt;val){ i++; } root-&amp;gt;left = bstFromPreorderRanged(preorder, start+1, i); root-&amp;gt;right = bstFromPreorderRanged(preorder,i,end); return root; } struct TreeNode* bstFromPreorder(int* preorder, int preorderSize){ return bstFromPreorderRanged(preorder,0,preorderSize); } 提高效率</description>
+1 &amp;lt;= preorder.length &amp;lt; = 100 1 &amp;lt;= preorder[i] &amp;lt;= 10^8 preorder 中的值互不相同 /** * Definition for a binary tree node. * struct TreeNode { * int val; * struct TreeNode *left; * struct TreeNode *right; * }; */ struct TreeNode* bstFromPreorderRanged(int* preorder, int start, int end){ if(start == end) return NULL; struct TreeNode* root = malloc(sizeof(struct TreeNode)); root-&amp;gt;val = preorder[start]; int i = start+1; while (i&amp;lt;end &amp;amp;&amp;amp; preorder[i]&amp;lt;root-&amp;gt;val){ i++; } root-&amp;gt;left = bstFromPreorderRanged(preorder, start+1, i); root-&amp;gt;right = bstFromPreorderRanged(preorder,i,end); return root; } struct TreeNode* bstFromPreorder(int* preorder, int preorderSize){ return bstFromPreorderRanged(preorder,0,preorderSize); } 提高效率</description>
     </item>
     
     <item>
@@ -1048,7 +1064,7 @@ LRUCache cache = new LRUCache( 2 /* 缓存容量 */ ); cache.put(1, 1); cache.pu
 说明： 每次只能向下或者向右移动一步。
 示例 1： 输入：grid = [[1,3,1],[1,5,1],[4,2,1]] 输出：7 解释：因为路径 1→3→1→1→1 的总和最小。 示例 2：
 输入：grid = [[1,2,3],[4,5,6]] 输出：12 提示：
- m == grid.length n == grid[i].length 1 &amp;lt;= m, n &amp;lt;= 200 0 &amp;lt;= grid[i][j] &amp;lt;= 100  int minPartialPathSum(int** grid,int** path,int ROWS,int COLS,int i,int j){ if (path[i][j]!=-1){ return path[i][j]; } int right = grid[i][j]; int down = grid[i][j]; if (i==ROWS-1&amp;amp;&amp;amp;j==COLS-1){ path[i][j] = grid[i][j]; return grid[i][j]; } if(j&amp;lt;COLS-1){ right +=minPartialPathSum(grid,path,ROWS,COLS,i,j+1); } if(i&amp;lt;ROWS-1){ down +=minPartialPathSum(grid,path,ROWS,COLS,i+1,j); } if (j==COLS-1){ path[i][j] = down; return down; } if (i==ROWS-1){ path[i][j] = right; return right; } int re = right&amp;lt;down?</description>
+m == grid.length n == grid[i].length 1 &amp;lt;= m, n &amp;lt;= 200 0 &amp;lt;= grid[i][j] &amp;lt;= 100 int minPartialPathSum(int** grid,int** path,int ROWS,int COLS,int i,int j){ if (path[i][j]!=-1){ return path[i][j]; } int right = grid[i][j]; int down = grid[i][j]; if (i==ROWS-1&amp;amp;&amp;amp;j==COLS-1){ path[i][j] = grid[i][j]; return grid[i][j]; } if(j&amp;lt;COLS-1){ right +=minPartialPathSum(grid,path,ROWS,COLS,i,j+1); } if(i&amp;lt;ROWS-1){ down +=minPartialPathSum(grid,path,ROWS,COLS,i+1,j); } if (j==COLS-1){ path[i][j] = down; return down; } if (i==ROWS-1){ path[i][j] = right; return right; } int re = right&amp;lt;down?</description>
     </item>
     
     <item>
@@ -1061,9 +1077,9 @@ LRUCache cache = new LRUCache( 2 /* 缓存容量 */ ); cache.put(1, 1); cache.pu
 岛屿总是被水包围，并且每座岛屿只能由水平方向和/或竖直方向上相邻的陆地连接形成。
 此外，你可以假设该网格的四条边均被水包围。
 示例 1：
-输入：grid = [ [&amp;quot;1&amp;quot;,&amp;quot;1&amp;quot;,&amp;quot;1&amp;quot;,&amp;quot;1&amp;quot;,&amp;quot;0&amp;quot;], [&amp;quot;1&amp;quot;,&amp;quot;1&amp;quot;,&amp;quot;0&amp;quot;,&amp;quot;1&amp;quot;,&amp;quot;0&amp;quot;], [&amp;quot;1&amp;quot;,&amp;quot;1&amp;quot;,&amp;quot;0&amp;quot;,&amp;quot;0&amp;quot;,&amp;quot;0&amp;quot;], [&amp;quot;0&amp;quot;,&amp;quot;0&amp;quot;,&amp;quot;0&amp;quot;,&amp;quot;0&amp;quot;,&amp;quot;0&amp;quot;] ] 输出：1 示例 2：
-输入：grid = [ [&amp;quot;1&amp;quot;,&amp;quot;1&amp;quot;,&amp;quot;0&amp;quot;,&amp;quot;0&amp;quot;,&amp;quot;0&amp;quot;], [&amp;quot;1&amp;quot;,&amp;quot;1&amp;quot;,&amp;quot;0&amp;quot;,&amp;quot;0&amp;quot;,&amp;quot;0&amp;quot;], [&amp;quot;0&amp;quot;,&amp;quot;0&amp;quot;,&amp;quot;1&amp;quot;,&amp;quot;0&amp;quot;,&amp;quot;0&amp;quot;], [&amp;quot;0&amp;quot;,&amp;quot;0&amp;quot;,&amp;quot;0&amp;quot;,&amp;quot;1&amp;quot;,&amp;quot;1&amp;quot;] ] 输出：3 提示：
- m == grid.length n == grid[i].length 1 &amp;lt;= m, n &amp;lt;= 300 grid[i][j] 的值为 &#39;0&#39; 或 &#39;1&#39;  我们找到一个岛屿之后就把他清零，当所有数字都为0时，就表示结束了
+输入：grid = [ [&amp;#34;1&amp;#34;,&amp;#34;1&amp;#34;,&amp;#34;1&amp;#34;,&amp;#34;1&amp;#34;,&amp;#34;0&amp;#34;], [&amp;#34;1&amp;#34;,&amp;#34;1&amp;#34;,&amp;#34;0&amp;#34;,&amp;#34;1&amp;#34;,&amp;#34;0&amp;#34;], [&amp;#34;1&amp;#34;,&amp;#34;1&amp;#34;,&amp;#34;0&amp;#34;,&amp;#34;0&amp;#34;,&amp;#34;0&amp;#34;], [&amp;#34;0&amp;#34;,&amp;#34;0&amp;#34;,&amp;#34;0&amp;#34;,&amp;#34;0&amp;#34;,&amp;#34;0&amp;#34;] ] 输出：1 示例 2：
+输入：grid = [ [&amp;#34;1&amp;#34;,&amp;#34;1&amp;#34;,&amp;#34;0&amp;#34;,&amp;#34;0&amp;#34;,&amp;#34;0&amp;#34;], [&amp;#34;1&amp;#34;,&amp;#34;1&amp;#34;,&amp;#34;0&amp;#34;,&amp;#34;0&amp;#34;,&amp;#34;0&amp;#34;], [&amp;#34;0&amp;#34;,&amp;#34;0&amp;#34;,&amp;#34;1&amp;#34;,&amp;#34;0&amp;#34;,&amp;#34;0&amp;#34;], [&amp;#34;0&amp;#34;,&amp;#34;0&amp;#34;,&amp;#34;0&amp;#34;,&amp;#34;1&amp;#34;,&amp;#34;1&amp;#34;] ] 输出：3 提示：
+m == grid.length n == grid[i].length 1 &amp;lt;= m, n &amp;lt;= 300 grid[i][j] 的值为 &#39;0&#39; 或 &#39;1&#39; 我们找到一个岛屿之后就把他清零，当所有数字都为0时，就表示结束了
 const char WATER = &amp;#39;0&amp;#39;; const char LAND = &amp;#39;1&amp;#39;; const char NEW = &amp;#39;X&amp;#39;; const char USED = &amp;#39;O&amp;#39;; void floodFill(char** grid,int NUMBER_OF_ROWS,int NUMBER_OF_COLS,int i,int j){ if(i&amp;lt;0 || i&amp;gt;=NUMBER_OF_ROWS || j&amp;lt;0 || j&amp;gt;=NUMBER_OF_COLS||grid[i][j]!</description>
     </item>
     
@@ -1074,11 +1090,11 @@ const char WATER = &amp;#39;0&amp;#39;; const char LAND = &amp;#39;1&amp;#39;; c
       
       <guid>https://Lu0key.github.io/post/leetcode-678-valid-parenthesis-string/</guid>
       <description>有效的括号字符串(Valid Parenthesis String) 给定一个只包含三种字符的字符串：（ ，） 和 *，写一个函数来检验这个字符串是否为有效字符串。有效字符串具有如下规则：
- 任何左括号 ( 必须有相应的右括号 )。 任何右括号 ) 必须有相应的左括号 ( 。 左括号 ( 必须在对应的右括号之前 )。 * 可以被视为单个右括号 ) ，或单个左括号 ( ，或一个空字符串。 一个空字符串也被视为有效字符串。  示例 1:
-输入: &amp;quot;()&amp;quot; 输出: True 示例 2:
-输入: &amp;quot;(*)&amp;quot; 输出: True 示例 3:
-输入: &amp;quot;(*))&amp;quot; 输出: True 注意:
- 字符串大小将在 [1，100] 范围内。  bool checkVaildSubstring(char * s, int i, int j){ if(i &amp;gt; j) return true; if(s[i] == &amp;#39;)&amp;#39;) { return false; }else if( s[i] == &amp;#39;*&amp;#39;){ if (checkVaildSubstring(s, i+1,j)){ return true; } } for (int k=i+1;k&amp;lt;= j;k++){ if(s[k]==&amp;#39;)&amp;#39; || s[k] == &amp;#39;*&amp;#39;){ if(checkVaildSubstring(s,i+1,k-1) &amp;amp;&amp;amp; checkVaildSubstring(s,k+1,j)){ return true; } } } return false; } bool checkValidString(char * s){ return checkVaildSubstring(s,0,strlen(s)-1); } 这里会因为重复算相同的内容多次导致超时，因此我们可以用一个二维数组将算过的存起来，二维数组的i,j表示从索引i到索引j的这个子串是否计算过</description>
+任何左括号 ( 必须有相应的右括号 )。 任何右括号 ) 必须有相应的左括号 ( 。 左括号 ( 必须在对应的右括号之前 )。 * 可以被视为单个右括号 ) ，或单个左括号 ( ，或一个空字符串。 一个空字符串也被视为有效字符串。 示例 1:
+输入: &amp;#34;()&amp;#34; 输出: True 示例 2:
+输入: &amp;#34;(*)&amp;#34; 输出: True 示例 3:
+输入: &amp;#34;(*))&amp;#34; 输出: True 注意:
+字符串大小将在 [1，100] 范围内。 bool checkVaildSubstring(char * s, int i, int j){ if(i &amp;gt; j) return true; if(s[i] == &amp;#39;)&amp;#39;) { return false; }else if( s[i] == &amp;#39;*&amp;#39;){ if (checkVaildSubstring(s, i+1,j)){ return true; } } for (int k=i+1;k&amp;lt;= j;k++){ if(s[k]==&amp;#39;)&amp;#39; || s[k] == &amp;#39;*&amp;#39;){ if(checkVaildSubstring(s,i+1,k-1) &amp;amp;&amp;amp; checkVaildSubstring(s,k+1,j)){ return true; } } } return false; } bool checkValidString(char * s){ return checkVaildSubstring(s,0,strlen(s)-1); } 这里会因为重复算相同的内容多次导致超时，因此我们可以用一个二维数组将算过的存起来，二维数组的i,j表示从索引i到索引j的这个子串是否计算过</description>
     </item>
     
     <item>
@@ -1092,7 +1108,7 @@ const char WATER = &amp;#39;0&amp;#39;; const char LAND = &amp;#39;1&amp;#39;; c
 输入: [1,2,3,4] 输出: [24,12,8,6] 提示: 题目数据保证数组之中任意元素的全部前缀元素和后缀（甚至是整个数组）的乘积都在 32 位整数范围内。
 说明: 请 不要使用除法，且在 O(n) 时间复杂度内完成此题。
 进阶： 你可以在常数空间复杂度内完成这个题目吗？（ 出于对空间复杂度分析的目的，输出数组不被视为额外空间。）
-/** * Note: The returned array must be malloced, assume caller calls free(). */ int* productExceptSelf(int* nums, int numsSize, int* returnSize){ *returnSize = numsSize; int * result = malloc(sizeof(int)*numsSize); for (int i =0;i&amp;lt;numsSize;i++){ int left = 1; for(int j =0;j&amp;lt;=i-1;j++){ left *= nums[j]; } int right =1; for (int j =i+1;j&amp;lt;numsSize;j++){ right *=nums[j]; } result[i] = left*right; } return result; } int* productExceptSelf(int* nums, int numsSize, int* returnSize){ int *result = malloc(sizeof(int)*numsSize); int *lefts = malloc(sizeof(int)*numsSize); lefts[0]=1; for(int i =1;i&amp;lt;numsSize;i++){ lefts[i] = lefts[i-1]*nums[i-1]; } int *rights = malloc(sizeof(int)*numsSize); rights[numsSize-1]=1; for(int i =numsSize-2;i&amp;gt;=0;i--){ rights[i] = rights[i+1]*nums[i+1]; } // 这个for可以放在上面，right[i] 算完了就可以算result[i]了，然后少一个for循环  for (int i =0;i&amp;lt;numsSize;i++){ result[i] = lefts[i]*rights[i]; } *returnSize = numsSize; return result; } 题目问能不能不要额外的空间，然后返回的空间不算，因此我们先第一步简化</description>
+/** * Note: The returned array must be malloced, assume caller calls free(). */ int* productExceptSelf(int* nums, int numsSize, int* returnSize){ *returnSize = numsSize; int * result = malloc(sizeof(int)*numsSize); for (int i =0;i&amp;lt;numsSize;i++){ int left = 1; for(int j =0;j&amp;lt;=i-1;j++){ left *= nums[j]; } int right =1; for (int j =i+1;j&amp;lt;numsSize;j++){ right *=nums[j]; } result[i] = left*right; } return result; } int* productExceptSelf(int* nums, int numsSize, int* returnSize){ int *result = malloc(sizeof(int)*numsSize); int *lefts = malloc(sizeof(int)*numsSize); lefts[0]=1; for(int i =1;i&amp;lt;numsSize;i++){ lefts[i] = lefts[i-1]*nums[i-1]; } int *rights = malloc(sizeof(int)*numsSize); rights[numsSize-1]=1; for(int i =numsSize-2;i&amp;gt;=0;i--){ rights[i] = rights[i+1]*nums[i+1]; } // 这个for可以放在上面，right[i] 算完了就可以算result[i]了，然后少一个for循环 for (int i =0;i&amp;lt;numsSize;i++){ result[i] = lefts[i]*rights[i]; } *returnSize = numsSize; return result; } 题目问能不能不要额外的空间，然后返回的空间不算，因此我们先第一步简化</description>
     </item>
     
     <item>
@@ -1117,10 +1133,10 @@ int count0(int i,int j,int *nums) { int count = 0; for (int k =i; k&amp;lt;=j;k+
       <guid>https://Lu0key.github.io/post/leetcode-1046-last-stone-weight/</guid>
       <description>最后一块石头的重量(Last Stone Weight) 有一堆石头，每块石头的重量都是正整数。
 每一回合，从中选出两块 最重的 石头，然后将它们一起粉碎。假设石头的重量分别为 x 和 y，且 x &amp;lt;= y。那么粉碎的可能结果如下：
- 如果 x == y，那么两块石头都会被完全粉碎； 如果 x != y，那么重量为 x 的石头将会完全粉碎，而重量为 y 的石头新重量为 y-x。  最后，最多只会剩下一块石头。返回此石头的重量。如果没有石头剩下，就返回 0。
+如果 x == y，那么两块石头都会被完全粉碎； 如果 x != y，那么重量为 x 的石头将会完全粉碎，而重量为 y 的石头新重量为 y-x。 最后，最多只会剩下一块石头。返回此石头的重量。如果没有石头剩下，就返回 0。
 示例：
 输入：[2,7,4,1,8,1] 输出：1 解释： 先选出 7 和 8，得到 1，所以数组转换为 [2,4,1,1,1]， 再选出 2 和 4，得到 2，所以数组转换为 [2,1,1,1]， 接着是 2 和 1，得到 1，所以数组转换为 [1,1,1]， 最后选出 1 和 1，得到 0，最终数组转换为 [1]，这就是最后剩下那块石头的重量。 提示：
- 1 &amp;lt;= stones.length &amp;lt;= 30 1 &amp;lt;= stones[i] &amp;lt;= 1000  int extractMax(int *stones, int stonesSize) { int max = stones[0]; // 获取最大数  for (int i=1;i&amp;lt;stonesSize;i++){ if (stones[i]&amp;gt;max){ max = stones[i]; } } // 将第一个最大数位置置为0  for(int i =0;i&amp;lt;stonesSize;i++){ if(stones[i] == max){ stones[i]=0; break; } } return max; } void insert(int *stones, int stonesSize, int value) { for (int i =0;i&amp;lt;stonesSize;i++){ if(stones[i] == 0){ stones[i] = value; break; } } } int lastStoneWeight(int* stones, int stonesSize){ while(true) { // 第一大  int y = extractMax(stones, stonesSize); // 第二大  int x = extractMax(stones, stonesSize); if(x == 0) { return y; } if(x!</description>
+1 &amp;lt;= stones.length &amp;lt;= 30 1 &amp;lt;= stones[i] &amp;lt;= 1000 int extractMax(int *stones, int stonesSize) { int max = stones[0]; // 获取最大数 for (int i=1;i&amp;lt;stonesSize;i++){ if (stones[i]&amp;gt;max){ max = stones[i]; } } // 将第一个最大数位置置为0 for(int i =0;i&amp;lt;stonesSize;i++){ if(stones[i] == max){ stones[i]=0; break; } } return max; } void insert(int *stones, int stonesSize, int value) { for (int i =0;i&amp;lt;stonesSize;i++){ if(stones[i] == 0){ stones[i] = value; break; } } } int lastStoneWeight(int* stones, int stonesSize){ while(true) { // 第一大 int y = extractMax(stones, stonesSize); // 第二大 int x = extractMax(stones, stonesSize); if(x == 0) { return y; } if(x!</description>
     </item>
     
     <item>
@@ -1131,7 +1147,7 @@ int count0(int i,int j,int *nums) { int count = 0; for (int k =i; k&amp;lt;=j;k+
       <guid>https://Lu0key.github.io/post/leetcode-543-diameter-of-binary-tree/</guid>
       <description>二叉树的直径(Diameter of Binary Tree) 给定一棵二叉树，你需要计算它的直径长度。一棵二叉树的直径长度是任意两个结点路径长度中的最大值。这条路径可能穿过也可能不穿过根结点。
 示例 : 给定二叉树
- 1 / \ 2 3 / \ 4 5 返回 3, 它的长度是路径 [4,2,1,3] 或者 [5,2,1,3]。
+1 / \ 2 3 / \ 4 5 返回 3, 它的长度是路径 [4,2,1,3] 或者 [5,2,1,3]。
 注意：两结点之间的路径长度是以它们之间边的数目表示。
 /** * Definition for a binary tree node. * struct TreeNode { * int val; * struct TreeNode *left; * struct TreeNode *right; * }; */ int maxDepth(struct TreeNode * root){ if (root == NULL) return 0; int leftMax = maxDepth(root-&amp;gt;left); int rightMax = maxDepth(root-&amp;gt;right); if(leftMax&amp;gt;rightMax){ return leftMax+1; } return rightMax+1; } int diameterOfBinaryTree(struct TreeNode* root){ if (root == NULL) return 0; int middle = maxDepth(root-&amp;gt;left) + maxDepth(root-&amp;gt;right); int left = diameterOfBinaryTree(root-&amp;gt;left); int right = diameterOfBinaryTree(root-&amp;gt;right); int max = middle; if (left &amp;gt; max){ max = left; } if(right &amp;gt; max){ max = right; } return max; } 二叉树的最大深度(Maximum Depth of Binary Tree) 给定一个二叉树，找出其最大深度。</description>
     </item>
@@ -1143,9 +1159,9 @@ int count0(int i,int j,int *nums) { int count = 0; for (int k =i; k&amp;lt;=j;k+
       
       <guid>https://Lu0key.github.io/post/leetcode-155-min-stack/</guid>
       <description>最小栈(Min Stack) 设计一个支持 push ，pop ，top 操作，并能在常数时间内检索到最小元素的栈。
-push(x) —— 将元素 x 推入栈中。 pop() —— 删除栈顶的元素。 top() —— 获取栈顶元素。 getMin() —— 检索栈中的最小元素。  示例:
-输入： [&amp;quot;MinStack&amp;quot;,&amp;quot;push&amp;quot;,&amp;quot;push&amp;quot;,&amp;quot;push&amp;quot;,&amp;quot;getMin&amp;quot;,&amp;quot;pop&amp;quot;,&amp;quot;top&amp;quot;,&amp;quot;getMin&amp;quot;] [[],[-2],[0],[-3],[],[],[],[]] 输出： [null,null,null,null,-3,null,0,-2] 解释： MinStack minStack = new MinStack(); minStack.push(-2); minStack.push(0); minStack.push(-3); minStack.getMin(); --&amp;gt; 返回 -3. minStack.pop(); minStack.top(); --&amp;gt; 返回 0. minStack.getMin(); --&amp;gt; 返回 -2. 提示：
- pop、top 和 getMin 操作总是在 非空栈 上调用。  C语言版:
+push(x) —— 将元素 x 推入栈中。 pop() —— 删除栈顶的元素。 top() —— 获取栈顶元素。 getMin() —— 检索栈中的最小元素。 示例:
+输入： [&amp;#34;MinStack&amp;#34;,&amp;#34;push&amp;#34;,&amp;#34;push&amp;#34;,&amp;#34;push&amp;#34;,&amp;#34;getMin&amp;#34;,&amp;#34;pop&amp;#34;,&amp;#34;top&amp;#34;,&amp;#34;getMin&amp;#34;] [[],[-2],[0],[-3],[],[],[],[]] 输出： [null,null,null,null,-3,null,0,-2] 解释： MinStack minStack = new MinStack(); minStack.push(-2); minStack.push(0); minStack.push(-3); minStack.getMin(); --&amp;gt; 返回 -3. minStack.pop(); minStack.top(); --&amp;gt; 返回 0. minStack.getMin(); --&amp;gt; 返回 -2. 提示：
+pop、top 和 getMin 操作总是在 非空栈 上调用。 C语言版:
 /** * Your MinStack struct will be instantiated and called as such: * MinStack* obj = minStackCreate(); * minStackPush(obj, val); * minStackPop(obj); * int param_3 = minStackTop(obj); * int param_4 = minStackGetMin(obj); * minStackFree(obj); */ typedef struct { int * data; int * mins; int size; } MinStack; /** initialize your data structure here.</description>
     </item>
     
@@ -1158,11 +1174,11 @@ push(x) —— 将元素 x 推入栈中。 pop() —— 删除栈顶的元素。
       <description>比较含退格的字符串(Backspace String Compare) 给定 S 和 T 两个字符串，当它们分别被输入到空白的文本编辑器后，判断二者是否相等，并返回结果。 # 代表退格字符。
 注意：如果对空文本输入退格字符，文本继续为空。
 示例 1：
-输入：S = &amp;quot;ab#c&amp;quot;, T = &amp;quot;ad#c&amp;quot; 输出：true 解释：S 和 T 都会变成 “ac”。 示例 2：
-输入：S = &amp;quot;ab##&amp;quot;, T = &amp;quot;c#d#&amp;quot; 输出：true 解释：S 和 T 都会变成 “”。 示例 3：
-输入：S = &amp;quot;a##c&amp;quot;, T = &amp;quot;#a#c&amp;quot; 输出：true 解释：S 和 T 都会变成 “c”。 示例 4：
-输入：S = &amp;quot;a#c&amp;quot;, T = &amp;quot;b&amp;quot; 输出：false 解释：S 会变成 “c”，但 T 仍然是 “b”。 提示：
- 1 &amp;lt;= S.</description>
+输入：S = &amp;#34;ab#c&amp;#34;, T = &amp;#34;ad#c&amp;#34; 输出：true 解释：S 和 T 都会变成 “ac”。 示例 2：
+输入：S = &amp;#34;ab##&amp;#34;, T = &amp;#34;c#d#&amp;#34; 输出：true 解释：S 和 T 都会变成 “”。 示例 3：
+输入：S = &amp;#34;a##c&amp;#34;, T = &amp;#34;#a#c&amp;#34; 输出：true 解释：S 和 T 都会变成 “c”。 示例 4：
+输入：S = &amp;#34;a#c&amp;#34;, T = &amp;#34;b&amp;#34; 输出：false 解释：S 会变成 “c”，但 T 仍然是 “b”。 提示：
+1 &amp;lt;= S.</description>
     </item>
     
     <item>
@@ -1176,7 +1192,7 @@ push(x) —— 将元素 x 推入栈中。 pop() —— 删除栈顶的元素。
 示例 1：
 输入：[1,2,3,4,5] 输出：此列表中的结点 3 (序列化形式：[3,4,5]) 返回的结点值为 3 。 (测评系统对该结点序列化表述是 [3,4,5])。 注意，我们返回了一个 ListNode 类型的对象 ans，这样： ans.val = 3, ans.next.val = 4, ans.next.next.val = 5, 以及 ans.next.next.next = NULL. 示例 2：
 输入：[1,2,3,4,5,6] 输出：此列表中的结点 4 (序列化形式：[4,5,6]) 由于该列表有两个中间结点，值分别为 3 和 4，我们返回第二个结点。 提示：
- 给定链表的结点数介于 1 和 100 之间。  C语言版:
+给定链表的结点数介于 1 和 100 之间。 C语言版:
 /** * Definition for singly-linked list. * struct ListNode { * int val; * struct ListNode *next; * }; */ struct ListNode * middleNode(struct ListNode* head){ int length = 1; struct ListNode* curr = head; while(curr-&amp;gt;next!</description>
     </item>
     
@@ -1188,8 +1204,8 @@ push(x) —— 将元素 x 推入栈中。 pop() —— 删除栈顶的元素。
       <guid>https://Lu0key.github.io/post/leetcode-49-group-anagrams/</guid>
       <description>字母异位词分组(Group Anagrams) 给定一个字符串数组，将字母异位词组合在一起。字母异位词指字母相同，但排列不同的字符串。
 示例:
-输入: [&amp;quot;eat&amp;quot;, &amp;quot;tea&amp;quot;, &amp;quot;tan&amp;quot;, &amp;quot;ate&amp;quot;, &amp;quot;nat&amp;quot;, &amp;quot;bat&amp;quot;] 输出: [ [&amp;quot;ate&amp;quot;,&amp;quot;eat&amp;quot;,&amp;quot;tea&amp;quot;], [&amp;quot;nat&amp;quot;,&amp;quot;tan&amp;quot;], [&amp;quot;bat&amp;quot;] ] 说明：
- 所有输入均为小写字母。 不考虑答案输出的顺序。  C语言版:
+输入: [&amp;#34;eat&amp;#34;, &amp;#34;tea&amp;#34;, &amp;#34;tan&amp;#34;, &amp;#34;ate&amp;#34;, &amp;#34;nat&amp;#34;, &amp;#34;bat&amp;#34;] 输出: [ [&amp;#34;ate&amp;#34;,&amp;#34;eat&amp;#34;,&amp;#34;tea&amp;#34;], [&amp;#34;nat&amp;#34;,&amp;#34;tan&amp;#34;], [&amp;#34;bat&amp;#34;] ] 说明：
+所有输入均为小写字母。 不考虑答案输出的顺序。 C语言版:
 /** * Return an array of arrays of size *returnSize. * The sizes of the arrays are returned as *returnColumnSizes array. * Note: Both returned array and *columnSizes array must be malloced, assume caller calls free(). */ int cmpChar(const void*a ,const void *b){ return *(const char*)a - *(const char *)b; } typedef struct { char * original; char * sorted; }Pair; int cmpPair(const void * a, const void * b){ const Pair * pa = (const Pair *)a; const Pair * pb = (const Pair *)b; return strcmp(pa-&amp;gt;sorted, pb-&amp;gt;sorted); } char *** groupAnagrams(char ** strs, int strsSize, int* returnSize, int** returnColumnSizes){ Pair* pairs = malloc(sizeof(Pair)*strsSize); for(int i =0;i&amp;lt;strsSize;i++){ char *sorted_str = malloc(sizeof(char)*strlen(strs[i])+1); strcpy(sorted_str,strs[i]); qsort(sorted_str, strlen(strs[i]),sizeof(char),cmpChar); pairs[i].</description>
     </item>
     
@@ -1201,31 +1217,18 @@ push(x) —— 将元素 x 推入栈中。 pop() —— 删除栈顶的元素。
       <guid>https://Lu0key.github.io/post/%E7%A7%AF%E5%88%86%E7%BB%83%E4%B9%A0-3/</guid>
       <description>积分练习 3 1 $$ I=\int_2^{\infty}\dfrac{e^{-\sqrt{x}}}{(\sqrt{x}-1)^2}\text{d}x $$
 【Sol】:
-$\begin{aligned} I=&amp;amp;\int_{\sqrt{2}}^{\infty}\dfrac{e^{-x}}{(x-1)^2}(2x\text{d}x)\\
-=&amp;amp;2\int_{\sqrt{2}}^{\infty}\dfrac{xe^{-x}}{(x-1)^2}\text{d}x\\
-=&amp;amp;2\int_{\sqrt{2}-1}^{\infty}\dfrac{x+1}{x^2}e^{-x-1}\text{d}x\\
-=&amp;amp;\dfrac{2}{e}\int_{\sqrt{2}-1}^{\infty}(x+1)e^{-x}\text{d}\left(-\dfrac{1}{x}\right)\\
-=&amp;amp;\dfrac{2}{e}\left[-\dfrac{x+1}{x}e^{-x}\bigg|_{\sqrt{2}-1}^{\infty}+\int_{\sqrt{2}-1}^{\infty}\dfrac{1}{x}(-x)e^{-x}\text{d}x\right]\\
-=&amp;amp;\dfrac{2}{e}\left[\dfrac{\sqrt{2}}{\sqrt{2}-1}e^{1-\sqrt{2}}-\int_{\sqrt{2}-1}^{\infty}e^{-x}\text{d}x\right]\\
-=&amp;amp;\dfrac{2}{e}\left[\sqrt{2}(\sqrt{2}+1)e^{1-\sqrt{2}}-e^{1-\sqrt{2}}\right]\\
-=&amp;amp;2(\sqrt{2}+1)e^{-\sqrt{2}} \end{aligned}$
- 2 $$ I=\int_0^1\dfrac{1}{1+\sqrt{2x\sqrt{1-x^2}}}\text{d}x $$
+$\begin{aligned} I=&amp;amp;\int_{\sqrt{2}}^{\infty}\dfrac{e^{-x}}{(x-1)^2}(2x\text{d}x)\\ =&amp;amp;2\int_{\sqrt{2}}^{\infty}\dfrac{xe^{-x}}{(x-1)^2}\text{d}x\\ =&amp;amp;2\int_{\sqrt{2}-1}^{\infty}\dfrac{x+1}{x^2}e^{-x-1}\text{d}x\\ =&amp;amp;\dfrac{2}{e}\int_{\sqrt{2}-1}^{\infty}(x+1)e^{-x}\text{d}\left(-\dfrac{1}{x}\right)\\ =&amp;amp;\dfrac{2}{e}\left[-\dfrac{x+1}{x}e^{-x}\bigg|{\sqrt{2}-1}^{\infty}+\int{\sqrt{2}-1}^{\infty}\dfrac{1}{x}(-x)e^{-x}\text{d}x\right]\\ =&amp;amp;\dfrac{2}{e}\left[\dfrac{\sqrt{2}}{\sqrt{2}-1}e^{1-\sqrt{2}}-\int_{\sqrt{2}-1}^{\infty}e^{-x}\text{d}x\right]\\ =&amp;amp;\dfrac{2}{e}\left[\sqrt{2}(\sqrt{2}+1)e^{1-\sqrt{2}}-e^{1-\sqrt{2}}\right]\\ =&amp;amp;2(\sqrt{2}+1)e^{-\sqrt{2}} \end{aligned}$
+2 $$ I=\int_0^1\dfrac{1}{1+\sqrt{2x\sqrt{1-x^2}}}\text{d}x $$
 【Sol】:
 利用公式
 $$ \int_0^1f(2x\sqrt{1-x^2})\text{d}x=\int_0^1f(1-x^2)\text{d}x $$ 于是有:
-$\begin{aligned} I=&amp;amp;\int_0^1\dfrac{1}{1+\sqrt{1-x^2}}\text{d}x\\
-=&amp;amp;\int_0^{\frac{\pi}{2}}\dfrac{1}{1+\cos x}\text{d}(\sin x)\\
-=&amp;amp;\int_0^{\frac{\pi}{2}}\left[1-\dfrac{1}{1+\cos x}\right]\text{d}x\
-=&amp;amp;\dfrac{\pi}{2}-\dfrac{\sin x}{1+\cos x}\bigg|_{0}^{\frac{\pi}{2}}\
-=&amp;amp;\dfrac{\pi}{2}-1 \end{aligned}$
- 3 $$ I=\int_{0}^{2\pi}\dfrac{\sin^2x}{5+4\cos x}\text{d}x=\dfrac{\pi}{4} $$
+$\begin{aligned} I=&amp;amp;\int_0^1\dfrac{1}{1+\sqrt{1-x^2}}\text{d}x\\ =&amp;amp;\int_0^{\frac{\pi}{2}}\dfrac{1}{1+\cos x}\text{d}(\sin x)\\ =&amp;amp;\int_0^{\frac{\pi}{2}}\left[1-\dfrac{1}{1+\cos x}\right]\text{d}x\ =&amp;amp;\dfrac{\pi}{2}-\dfrac{\sin x}{1+\cos x}\bigg|_{0}^{\frac{\pi}{2}}\ =&amp;amp;\dfrac{\pi}{2}-1 \end{aligned}$
+3 $$ I=\int_{0}^{2\pi}\dfrac{\sin^2x}{5+4\cos x}\text{d}x=\dfrac{\pi}{4} $$
 【Sol】:
 被积函数是周期为 $2\pi$ 的偶函数，因此可以将区间移动到对称区间 $[-\pi,; \pi]$ 上:
 $$ I=\int_{-\pi}^{\pi}\dfrac{\sin^2x}{5+4\cos x}\text{d}x=2\int_{0}^{\pi}\dfrac{\sin^2x}{5+4\cos x}\text{d}x $$
 又余弦函数在 $[0,; \pi]$ 上不对称，因此
-$\begin{aligned} I=&amp;amp;2\left[\int_0^{\frac{\pi}{2}}\dfrac{\sin^2x}{5+\cos x}\text{d}x+\int_{\frac{\pi}{2}}^{\pi}\dfrac{\sin^2x}{5+4\cos x}\text{d}x\right]\\
-=&amp;amp;2\left[\int_0^{\frac{\pi}{2}}\dfrac{\sin^2x}{5+4\cos x}\text{d}x+\int_{0}^{\frac{\pi}{2}}\dfrac{\cos^2x}{5-4\sin x}\text{d}x\right]\\
-=&amp;amp;2\int_0^{\frac{\pi}{2}}\left[\dfrac{\sin^2x}{5+4\cos x}+\dfrac{\sin^2x}{5-4\cos x}\right]\text{d}x\\</description>
+$\begin{aligned} I=&amp;amp;2\left[\int_0^{\frac{\pi}{2}}\dfrac{\sin^2x}{5+\cos x}\text{d}x+\int_{\frac{\pi}{2}}^{\pi}\dfrac{\sin^2x}{5+4\cos x}\text{d}x\right]\\ =&amp;amp;2\left[\int_0^{\frac{\pi}{2}}\dfrac{\sin^2x}{5+4\cos x}\text{d}x+\int_{0}^{\frac{\pi}{2}}\dfrac{\cos^2x}{5-4\sin x}\text{d}x\right]\\ =&amp;amp;2\int_0^{\frac{\pi}{2}}\left[\dfrac{\sin^2x}{5+4\cos x}+\dfrac{\sin^2x}{5-4\cos x}\right]\text{d}x\\ =&amp;amp;2\int_0^{\frac{\pi}{2}}\dfrac{10\sin^2x}{25-16\cos^2x}\text{d}x\\ =&amp;amp;20\int_0^{\frac{\pi}{2}}\dfrac{1-\cos^2x}{25-16\cos^2x}\text{d}x\\ =&amp;amp;\dfrac{20}{16}\int_{0}^{\frac{\pi}{2}}\dfrac{25-16\cos^2x-9}{25-16\cos^2x}\text{d}x\\ =&amp;amp;\dfrac{5}{4}\int_{0}^{\frac{\pi}{2}}\left[1-\dfrac{9}{25-16\cos^2x}\right]\text{d}x\\ =&amp;amp;\dfrac{5\pi}{8}-\dfrac{45}{4}\int_{0}^{\frac{\pi}{2}}\dfrac{1}{25\sec^2x-16}\text{d}(\tan x)\\ =&amp;amp;\dfrac{5\pi}{8}-\dfrac{45}{4}\int_0^{\infty}\dfrac{1}{25x^2+9}\text{d}x\\ =&amp;amp;\dfrac{5\pi}{8}-\dfrac{45}{4}\dfrac{\pi}{30}\\ =&amp;amp;\dfrac{\pi}{4} \end{aligned}$</description>
     </item>
     
     <item>
@@ -1251,10 +1254,10 @@ $\begin{aligned} I=&amp;amp;2\left[\int_0^{\frac{\pi}{2}}\dfrac{\sin^2x}{5+\cos 
       <description>移动零(Move Zeroes) 给定一个数组 nums，编写一个函数将所有 0 移动到数组的末尾，同时保持非零元素的相对顺序。
 示例:
 输入: [0,1,0,3,12] 输出: [1,3,12,0,0] 说明:
- 必须在原数组上操作，不能拷贝额外的数组。 尽量减少操作次数。  C语言版本:
+必须在原数组上操作，不能拷贝额外的数组。 尽量减少操作次数。 C语言版本:
 void moveZeroes(int* nums, int numsSize){ while(true){ int count = 0; for (int i =0;i+1&amp;lt;numsSize;i++) { if(nums[i]==0 &amp;amp;&amp;amp; nums[i+1]!=0) { count++; int temp = nums[i]; nums[i] = nums[i+1]; nums[i+1] = temp; break; } } if (count==0)break; } } 这样会超时，去掉第一个break就能过
 模仿冒泡排序:
-void moveZeroes(int* nums, int numsSize){ for (int k=0;k&amp;lt;numsSize;k++){ for(int i=0;i+1&amp;lt;numsSize;i++){ if(nums[i] == 0 &amp;amp;&amp;amp; nums[i+1] !</description>
+void moveZeroes(int* nums, int numsSize){ for (int k=0;k&amp;lt;numsSize;k++){ for(int i=0;i+1&amp;lt;numsSize;i++){ if(nums[i] == 0 &amp;amp;&amp;amp; nums[i+1] !=0){ nums[i]= nums[i+1]; nums[i+1]=0; } } } } 但是这种方法会更慢</description>
     </item>
     
     <item>
@@ -1270,7 +1273,7 @@ void moveZeroes(int* nums, int numsSize){ for (int k=0;k&amp;lt;numsSize;k++){ f
 输入：nums = [0] 输出：0 示例 4：
 输入：nums = [-1] 输出：-1 示例 5：
 输入：nums = [-100000] 输出：-100000 提示：
- $1\leqslant nums.length \leqslant 3 * 10^5$ $-10^5 \leqslant nums[i] \leqslant 10^5$  进阶：如果你已经实现复杂度为 O(n) 的解法，尝试使用更为精妙的 分治法 求解。
+$1\leqslant nums.length \leqslant 3 * 10^5$ $-10^5 \leqslant nums[i] \leqslant 10^5$ 进阶：如果你已经实现复杂度为 O(n) 的解法，尝试使用更为精妙的 分治法 求解。
 C语言版本:
 int maxSubArray(int* nums, int numsSize){ int max=nums[0]; for (int i=0; i &amp;lt;numsSize;i++) { for (int j =i;j&amp;lt;numsSize;j++){ int sum = 0; for (int k =i;k&amp;lt;=j;k++){ sum += nums[k]; } if (sum&amp;gt;max){ max = sum; } } } return max; } 用这种方法会超时</description>
     </item>
@@ -1283,7 +1286,7 @@ int maxSubArray(int* nums, int numsSize){ int max=nums[0]; for (int i=0; i &amp;
       <guid>https://Lu0key.github.io/post/leetcode-202-happy-number/</guid>
       <description>快乐数(Happy Number) 编写一个算法来判断一个数 n 是不是快乐数。
 「快乐数」定义为：
- 对于一个正整数，每一次将该数替换为它每个位置上的数字的平方和。 然后重复这个过程直到这个数变为 1，也可能是 无限循环 但始终变不到 1。 如果 可以变为 1，那么这个数就是快乐数。  如果 n 是快乐数就返回 true ；不是，则返回 false 。
+对于一个正整数，每一次将该数替换为它每个位置上的数字的平方和。 然后重复这个过程直到这个数变为 1，也可能是 无限循环 但始终变不到 1。 如果 可以变为 1，那么这个数就是快乐数。 如果 n 是快乐数就返回 true ；不是，则返回 false 。
 示例 1：
 输入：19 输出：true 解释： 1² + 9² = 82 8² + 2² = 68 6² + 8² = 100 1² + 0² + 0² = 1 示例 2：
 输入：n = 2 解释： 2² = 4 4² = 16 1² + 6² = 37 3² + 7² = 58 5² + 8² = 89 8² + 9² = 145 1² + 4² + 5² = 42 4² + 2² = 20 2² + 0² = 4 循环了，永远不会到1 输出：false 提示：</description>
@@ -1314,27 +1317,16 @@ int singleNumber(int* nums, int numsSize){ int n =nums[0]; for (int i =1;i&amp;l
       <description>两道有意思的数列极限 1 设 $a_1=\sqrt{\dfrac{1}{2}},\; a_n=\sqrt{\dfrac{1+a_{n-1}}{2}}$，求 $\displaystyle\lim_{n\to\infty}a_1a_2\cdots a_n$.
 【Sol】: $a_!=\cos\dfrac{\pi}{4},\;a_2=\sqrt{\dfrac{1+\cos\frac{\pi}{4}}{2}}=\sqrt{\cos^2\dfrac{\pi}{4\cdot2}}=\cos\dfrac{\pi}{4\cdot2},\;a_3\sqrt{\dfrac{1+a_3}{2}}=\cos\dfrac{\pi}{4\cdot2^2},\;\cdots,\;a_n=\cos\dfrac{\pi}{4\cdot2^{n-1}}$
 因此
-$\begin{aligned} &amp;amp;\lim_{n\to\infty}a_1a_2\cdots a_n\\
-=&amp;amp;\lim_{n\to\infty}\cos\dfrac{\pi}{4}\cdot\cos\dfrac{\pi}{4\cdot2}\cdot\cdots\cos\dfrac{\pi}{4\cdot2^{n-1}}\\
-=&amp;amp;\lim_{n\to\infty}\dfrac{\cos\dfrac{\pi}{4}\cdot\cos\dfrac{\pi}{4\cdot2}\cdot\cdots\cos\dfrac{\pi}{4\cdot2^{n-1}}(2\sin\dfrac{\pi}{4\cdot2^{n-1}})}{2\sin\dfrac{\pi}{4\cdot2^{n-1}}}\\
-=&amp;amp;\lim_{n\to\infty}\dfrac{\cos\dfrac{\pi}{4}\cdot\cos\dfrac{\pi}{4\cdot2}\cdot\cdots\cos\dfrac{\pi}{4\cdot2^{n-2}}\cdot\sin\dfrac{\pi}{4\cdot2^{n-2}}}{2\sin\dfrac{\pi}{4\cdot2^{n-1}}}\\
-=&amp;amp;\lim_{n\to\infty}\dfrac{\sin\dfrac{\pi}{2}}{2^{n}\sin\dfrac{\pi}{4\cdot2^{n-1}}}\\
-=&amp;amp;\lim_{n\to\infty}\dfrac{1}{2^n\cdot\dfrac{\pi}{2^{n+1}}}\\
-=&amp;amp;\dfrac{2}{\pi} \end{aligned}$
+$\begin{aligned} &amp;amp;\lim_{n\to\infty}a_1a_2\cdots a_n\\ =&amp;amp;\lim_{n\to\infty}\cos\dfrac{\pi}{4}\cdot\cos\dfrac{\pi}{4\cdot2}\cdot\cdots\cos\dfrac{\pi}{4\cdot2^{n-1}}\\ =&amp;amp;\lim_{n\to\infty}\dfrac{\cos\dfrac{\pi}{4}\cdot\cos\dfrac{\pi}{4\cdot2}\cdot\cdots\cos\dfrac{\pi}{4\cdot2^{n-1}}(2\sin\dfrac{\pi}{4\cdot2^{n-1}})}{2\sin\dfrac{\pi}{4\cdot2^{n-1}}}\\ =&amp;amp;\lim_{n\to\infty}\dfrac{\cos\dfrac{\pi}{4}\cdot\cos\dfrac{\pi}{4\cdot2}\cdot\cdots\cos\dfrac{\pi}{4\cdot2^{n-2}}\cdot\sin\dfrac{\pi}{4\cdot2^{n-2}}}{2\sin\dfrac{\pi}{4\cdot2^{n-1}}}\\ =&amp;amp;\lim_{n\to\infty}\dfrac{\sin\dfrac{\pi}{2}}{2^{n}\sin\dfrac{\pi}{4\cdot2^{n-1}}}\\ =&amp;amp;\lim_{n\to\infty}\dfrac{1}{2^n\cdot\dfrac{\pi}{2^{n+1}}}\\ =&amp;amp;\dfrac{2}{\pi} \end{aligned}$
 这里将 $\sqrt{\dfrac{1}{2}}=\cos\dfrac{\pi}{4}$ 如果是第一次见的话可能比较难以想到.
- 2 设 $a_1=1,\;a_n=a_{n-1}+\dfrac{1}{a_{n-1}}(n\geqslant2)$，求
+2 设 $a_1=1,\;a_n=a_{n-1}+\dfrac{1}{a_{n-1}}(n\geqslant2)$，求
 $$ \lim_{n\to\infty}\dfrac{\sqrt{2n}(a_n-\sqrt{2n})}{\ln n} $$
 【Sol】:
 (1) 由于 $a_1&amp;gt;0$ 因此 ${a_n}$ 为单调递增序列，且趋向于无穷大.
 $a_{n+1}^2=a_{n}^2+\dfrac{1}{a_{n}^2}+2$
 (2) $\displaystyle\lim_{n\to\infty}\dfrac{a_{n}^2}{2n}\xlongequal{\text{Stolz}}\lim_{n\to\infty}\dfrac{a_{n+1}^2-a_{n}^2}{2}=\lim_{n\to\infty}\dfrac{\dfrac{1}{a_n}^2+2}{2}=1\Rightarrow \lim_{n\to\infty}\dfrac{a_n}{\sqrt{2n}}=1$.
 (3)
-$\begin{aligned} &amp;amp;\lim_{n\to\infty}\dfrac{\sqrt{2n}(a_n-\sqrt{2n})}{\ln n}\\
-=&amp;amp;\lim_{n\to\infty}\dfrac{\sqrt{2n}(a_{n}^2-2n)}{\ln n(a_n+\sqrt{2n})}\\
-=&amp;amp;\lim_{n\to\infty}\dfrac{\sqrt{2n}}{a_n+\sqrt{2n}}\cdot\lim_{n\to\infty}\dfrac{a_n^2-2n}{\ln n}\\
-\xlongequal{\text{Stolz}}&amp;amp;\dfrac{1}{2}\lim_{n\to\infty}\dfrac{a_{n+1}^2-a_{n}^2-2}{\ln(n+1)-\ln n}\\
-=&amp;amp;\dfrac{1}{2}\lim_{n\to\infty}\dfrac{\dfrac{1}{a_n^2}}{\dfrac{1}{n}}\\
-=&amp;amp;\dfrac{1}{2}\lim_{n\to\infty}\dfrac{n}{a_n^2}=\dfrac{1}{2}\times\dfrac{1}{2}=\dfrac{1}{4} \end{aligned}$
+$\begin{aligned} &amp;amp;\lim_{n\to\infty}\dfrac{\sqrt{2n}(a_n-\sqrt{2n})}{\ln n}\\ =&amp;amp;\lim_{n\to\infty}\dfrac{\sqrt{2n}(a_{n}^2-2n)}{\ln n(a_n+\sqrt{2n})}\\ =&amp;amp;\lim_{n\to\infty}\dfrac{\sqrt{2n}}{a_n+\sqrt{2n}}\cdot\lim_{n\to\infty}\dfrac{a_n^2-2n}{\ln n}\\ \xlongequal{\text{Stolz}}&amp;amp;\dfrac{1}{2}\lim_{n\to\infty}\dfrac{a_{n+1}^2-a_{n}^2-2}{\ln(n+1)-\ln n}\\ =&amp;amp;\dfrac{1}{2}\lim_{n\to\infty}\dfrac{\dfrac{1}{a_n^2}}{\dfrac{1}{n}}\\ =&amp;amp;\dfrac{1}{2}\lim_{n\to\infty}\dfrac{n}{a_n^2}=\dfrac{1}{2}\times\dfrac{1}{2}=\dfrac{1}{4} \end{aligned}$
 这题的解答来自一位群友，MSE上有老哥写的更长的渐进展开.</description>
     </item>
     
@@ -1344,32 +1336,20 @@ $\begin{aligned} &amp;amp;\lim_{n\to\infty}\dfrac{\sqrt{2n}(a_n-\sqrt{2n})}{\ln 
       <pubDate>Tue, 09 Mar 2021 23:08:29 +0800</pubDate>
       
       <guid>https://Lu0key.github.io/post/%E7%A7%AF%E5%88%86%E7%BB%83%E4%B9%A0-2/</guid>
-      <description>积分练习 2 1 求积分 $$ I=\int_0^1\dfrac{x\ln(1+x)}{(1+x^2)^2}\text{d}x\
-$$
+      <description>积分练习 2 1 求积分 $$ I=\int_0^1\dfrac{x\ln(1+x)}{(1+x^2)^2}\text{d}x\ $$
 【Sol】:
-$\begin{aligned} I=&amp;amp;\int_0^1\ln(1+x)\text{d}\left[-\dfrac{1}{2(1+x^2)} \right]\\
-=&amp;amp;-\dfrac{\ln(1+x)}{2(1+x^2)}\bigg|_0^1+\dfrac{1}{2}\int_0^1\dfrac{1}{(1+x^2)(1+x)}\text{d}x\\
-=&amp;amp;-\dfrac{1}{4}\ln2+\dfrac{1}{4}\int_0^1\left[\dfrac{1}{1+x}+\dfrac{1-x}{1+x^2} \right]\\
-=&amp;amp;-\dfrac{1}{4}\ln2+\dfrac{1}{4}\left[\ln(1+x)+\arctan x-\dfrac{1}{2}\ln(1+x^2) \right]\bigg|_0^1\\
-=&amp;amp;-\dfrac{1}{8}\ln2+\dfrac{\pi}{16} \end{aligned}$
- 2 求积分 $$ I=\int_0^{\infty} \dfrac{e^{-x}-e^{-2x}}{x}\sin x\text{d}x $$
+$\begin{aligned} I=&amp;amp;\int_0^1\ln(1+x)\text{d}\left[-\dfrac{1}{2(1+x^2)} \right]\\ =&amp;amp;-\dfrac{\ln(1+x)}{2(1+x^2)}\bigg|_0^1+\dfrac{1}{2}\int_0^1\dfrac{1}{(1+x^2)(1+x)}\text{d}x\\ =&amp;amp;-\dfrac{1}{4}\ln2+\dfrac{1}{4}\int_0^1\left[\dfrac{1}{1+x}+\dfrac{1-x}{1+x^2} \right]\\ =&amp;amp;-\dfrac{1}{4}\ln2+\dfrac{1}{4}\left[\ln(1+x)+\arctan x-\dfrac{1}{2}\ln(1+x^2) \right]\bigg|_0^1\\ =&amp;amp;-\dfrac{1}{8}\ln2+\dfrac{\pi}{16} \end{aligned}$
+2 求积分 $$ I=\int_0^{\infty} \dfrac{e^{-x}-e^{-2x}}{x}\sin x\text{d}x $$
 【Sol】: 用拉普拉斯变换求
 令 $f(x)=(e^{-x}-e^{-2x})\sin x$
 $F(x)=\dfrac{1}{(x+1)^2+1}-\dfrac{1}{(x+2)^2+1}$
-$\begin{aligned} I=&amp;amp;\int_0^{\infty}\left[\dfrac{1}{(x+1)^2+1}-\dfrac{1}{(x+2)^2+1} \right]\text{d}x\\
-=&amp;amp;\left[\arctan(x+1)-\arctan(x+2) \right]\bigg|_{0}^{\infty}\\
-=&amp;amp;\arctan 2-\dfrac{\pi}{4} \end{aligned}$
- 3 求积分
+$\begin{aligned} I=&amp;amp;\int_0^{\infty}\left[\dfrac{1}{(x+1)^2+1}-\dfrac{1}{(x+2)^2+1} \right]\text{d}x\\ =&amp;amp;\left[\arctan(x+1)-\arctan(x+2) \right]\bigg|_{0}^{\infty}\\ =&amp;amp;\arctan 2-\dfrac{\pi}{4} \end{aligned}$
+3 求积分
 $$ I=\int_0^1\dfrac{\ln(x+\sqrt{1-x^2})}{x}\text{d}x $$
 【Sol】: 考虑含参积分
 $\displaystyle I(a)=\int_0^1\dfrac{\ln(xa+\sqrt{1-x^2})}{x}\text{d}x,;;I=I(1)$
-$\begin{aligned} I(0)=&amp;amp;\int_0^{1}\dfrac{\ln\sqrt{1-x^2}}{x}\text{d}x\\
-=&amp;amp;\dfrac{1}{2}\left[\int_0^1\dfrac{\ln(1+x)}{x}\text{d}x+\int_0^{1}\dfrac{\ln(1-x)}{x}\text{d}x \right]\\
-=&amp;amp;\dfrac{1}{2}\left[\dfrac{\pi^2}{12}-\dfrac{\pi^2}{6} \right]\\
-=&amp;amp;-\dfrac{\pi^2}{24} \end{aligned}$
-$\begin{aligned} I&#39;(a)=&amp;amp;\int_0^1\dfrac{1}{xa+\sqrt{1-x^2}}\text{d}x\\
-=&amp;amp;\int_0^{\frac{\pi}{2}}\dfrac{1}{a\sin t+\cos t}\cos t\text{d}t\\
-=&amp;amp;\dfrac{1}{a^2+1}\left[ \int_0^{\frac{\pi}{2}}\dfrac{(a\sin t+\cos t)+a(a\cos t-\sin t)}{a\sin t+\cos t}\text{d}t\right]\\</description>
+$\begin{aligned} I(0)=&amp;amp;\int_0^{1}\dfrac{\ln\sqrt{1-x^2}}{x}\text{d}x\\ =&amp;amp;\dfrac{1}{2}\left[\int_0^1\dfrac{\ln(1+x)}{x}\text{d}x+\int_0^{1}\dfrac{\ln(1-x)}{x}\text{d}x \right]\\ =&amp;amp;\dfrac{1}{2}\left[\dfrac{\pi^2}{12}-\dfrac{\pi^2}{6} \right]\\ =&amp;amp;-\dfrac{\pi^2}{24} \end{aligned}$
+$\begin{aligned} I&amp;rsquo;(a)=&amp;amp;\int_0^1\dfrac{1}{xa+\sqrt{1-x^2}}\text{d}x\\ =&amp;amp;\int_0^{\frac{\pi}{2}}\dfrac{1}{a\sin t+\cos t}\cos t\text{d}t\\ =&amp;amp;\dfrac{1}{a^2+1}\left[ \int_0^{\frac{\pi}{2}}\dfrac{(a\sin t+\cos t)+a(a\cos t-\sin t)}{a\sin t+\cos t}\text{d}t\right]\\ =&amp;amp;\dfrac{1}{a^2+1}\left[\dfrac{\pi}{2}+a\ln a \right] \end{aligned}$</description>
     </item>
     
     <item>
@@ -1380,21 +1360,12 @@ $\begin{aligned} I&#39;(a)=&amp;amp;\int_0^1\dfrac{1}{xa+\sqrt{1-x^2}}\text{d}x\
       <guid>https://Lu0key.github.io/post/%E7%A7%AF%E5%88%86%E7%BB%83%E4%B9%A0-1/</guid>
       <description>积分练习 1 1 求积分 $$ I=\int_0^{\frac{\pi}{2}}\sin x\ln\sin x\text{d}x $$
 【Sol】:
-$\begin{aligned} I=&amp;amp;\int_0^{\frac{\pi}{2}}\cos x\ln\cos x\text{d}x\\
-=&amp;amp;\int_0^{\frac{\pi}{2}}\ln\cos x\text{d}(\sin x-1)\\
-=&amp;amp;(\sin x-1)\ln\cos x\bigg|_{0}^{\frac{\pi}{2}}-\int_0^{\frac{\pi}{2}}(\sin x-1)\text{d}(\ln \cos x)\\
-=&amp;amp;0-0-\int_0^{\frac{\pi}{2}}\sin x\text{d}(\ln\cos x)+\ln\cos x\bigg|_0^{\frac{\pi}{2}} \end{aligned}$
+$\begin{aligned} I=&amp;amp;\int_0^{\frac{\pi}{2}}\cos x\ln\cos x\text{d}x\\ =&amp;amp;\int_0^{\frac{\pi}{2}}\ln\cos x\text{d}(\sin x-1)\\ =&amp;amp;(\sin x-1)\ln\cos x\bigg|_{0}^{\frac{\pi}{2}}-\int_0^{\frac{\pi}{2}}(\sin x-1)\text{d}(\ln \cos x)\\ =&amp;amp;0-0-\int_0^{\frac{\pi}{2}}\sin x\text{d}(\ln\cos x)+\ln\cos x\bigg|_0^{\frac{\pi}{2}} \end{aligned}$
 令 $\displaystyle J=-\int_0^{\frac{\pi}{2}}\sin x\text{d}(\ln\cos x)$
-$\begin{aligned} J=&amp;amp;\int_0^{\frac{\pi}{2}}\sin x\tan x\text{d}x\\
-=&amp;amp;\int_0^{\frac{\pi}{2}}\dfrac{\sin^2x}{\cos x}\text{d}x\\
-=&amp;amp;\int_0^{\frac{\pi}{2}}\dfrac{1-\cos^2x}{\cos x}\text{d}x\\
-=&amp;amp;\left[\ln|\sec x+\tan x|-\sin x\right]\bigg|_0^{\frac{\pi}{2}} \end{aligned}$
+$\begin{aligned} J=&amp;amp;\int_0^{\frac{\pi}{2}}\sin x\tan x\text{d}x\\ =&amp;amp;\int_0^{\frac{\pi}{2}}\dfrac{\sin^2x}{\cos x}\text{d}x\\ =&amp;amp;\int_0^{\frac{\pi}{2}}\dfrac{1-\cos^2x}{\cos x}\text{d}x\\ =&amp;amp;\left[\ln|\sec x+\tan x|-\sin x\right]\bigg|_0^{\frac{\pi}{2}} \end{aligned}$
 因此
-$\begin{aligned} I=&amp;amp;J+\ln\cos x\bigg|_ 0^{\frac{\pi}{2}}\\
-=&amp;amp;\left[\ln|\sec x+\tan x|-\sin x\right] \bigg|_{0}^{ \frac{\pi}{2}} +\ln\cos x\bigg|_{0}^{\frac{\pi}{2}}\\
-=&amp;amp;\left[\ln|1+\sin x|-\sin x\right]\bigg|_0^{\frac{\pi}{2}}\\
-=&amp;amp;\ln 2-1 \end{aligned}$
- 2 $$ I=\int_0^1\dfrac{x\ln x}{\sqrt{1-x^2}}\text{d}x $$</description>
+$\begin{aligned} I=&amp;amp;J+\ln\cos x\bigg|_ 0^{\frac{\pi}{2}}\\ =&amp;amp;\left[\ln|\sec x+\tan x|-\sin x\right] \bigg|{0}^{ \frac{\pi}{2}} +\ln\cos x\bigg|{0}^{\frac{\pi}{2}}\\ =&amp;amp;\left[\ln|1+\sin x|-\sin x\right]\bigg|_0^{\frac{\pi}{2}}\\ =&amp;amp;\ln 2-1 \end{aligned}$
+2 $$ I=\int_0^1\dfrac{x\ln x}{\sqrt{1-x^2}}\text{d}x $$</description>
     </item>
     
     <item>
@@ -1438,11 +1409,11 @@ vscode 有个插件 Polacode，但是不知道为什么没用成功，下次再�
       <pubDate>Mon, 01 Mar 2021 08:27:27 +0800</pubDate>
       
       <guid>https://Lu0key.github.io/post/%E7%8E%8B%E9%81%93%E8%80%83%E7%A0%94-%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84-%E6%9F%A5%E6%89%BE/</guid>
-      <description>查找  查找  基本概念 顺序查找 折半查找 分块查找 B树 B树的插入和删除  插入 删除   B+树 散列查找  散列表(Hash Table) 开放定址法 平方探测法 伪随机序列法 再散列法      基本概念 查找：在数据集合中寻找满足某种条件的数据元素的过程称为查找
+      <description>查找 查找 基本概念 顺序查找 折半查找 分块查找 B树 B树的插入和删除 插入 删除 B+树 散列查找 散列表(Hash Table) 开放定址法 平方探测法 伪随机序列法 再散列法 基本概念 查找：在数据集合中寻找满足某种条件的数据元素的过程称为查找
 查找表(查找结构)：用于查找的数据集合称为查找表，它由同一类型的数据元素(或记录组成)
 关键字：数据元素中唯一标识该元素的某个数据项的值，使用基于关键字的查找，查找结果应该是唯一的(比如学号)
 常见操作
- 查找符合条件的数据元素 插入、删除某个数据元素  如果只进行操作1——静态查找表即可
+查找符合条件的数据元素 插入、删除某个数据元素 如果只进行操作1——静态查找表即可
 也要进行操作2——动态查找表
 评价指标
 查找长度：在查找运算中，需要对比关键字的次数称为查找长度
@@ -1454,7 +1425,7 @@ ASL的数量级放映了查找算法时间复杂度
 顺序查找 顺序查找，又叫“线性查找”，通常用于线性表(顺序表、链表)
 算法思想：从头到尾一个一个对比
 顺序查找的实现
-// 查找表的数据结构(顺序表) typedef struct { // 动态数组的基址(剩下靠偏移量)  Elemtypr *elem; // 表的长度  int TableLen; }SSTable; // 顺序查找 int Search_Seq(SSTable ST, ElemType key) { int i; // for循环空语句  for (i=0;i&amp;lt;ST.</description>
+// 查找表的数据结构(顺序表) typedef struct { // 动态数组的基址(剩下靠偏移量) Elemtypr *elem; // 表的长度 int TableLen; }SSTable; // 顺序查找 int Search_Seq(SSTable ST, ElemType key) { int i; // for循环空语句 for (i=0;i&amp;lt;ST.TableLen &amp;amp;&amp;amp; ST.elem[i] != key; i++); // 查找成功，则返回元素下标；查找失败，则返回-1 return i==ST.</description>
     </item>
     
     <item>
@@ -1463,7 +1434,7 @@ ASL的数量级放映了查找算法时间复杂度
       <pubDate>Mon, 01 Mar 2021 08:22:55 +0800</pubDate>
       
       <guid>https://Lu0key.github.io/post/%E7%8E%8B%E9%81%93%E8%80%83%E7%A0%94-%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84-%E5%9B%BE/</guid>
-      <description>图  图  定义 图的存储  临接矩阵 邻接表 十字链表法 邻接多重表   基本操作 图的遍历  广度优先遍历 深度优先遍历   最小生成树 最短路径问题 Dijkstra算法 Floyd算法 有向无环图(DAG) 拓扑排序 关键路径    定义 图G由顶点集V和边集E组成，记为G=(V, E)，其中V(G) 表示图G中顶点的有限非空集；E(G) 表示图G 中顶点之间的关系（边）集合。若 $V={v_1, v_2, &amp;hellip;, v_n}$，则用 $|V|$ 表示图G 中顶点的个数，也称图G 的阶，$E={(u, v)|u\in V, v\in V}$，用 $|E|$ 表示图G中边的条数。
+      <description>图 图 定义 图的存储 临接矩阵 邻接表 十字链表法 邻接多重表 基本操作 图的遍历 广度优先遍历 深度优先遍历 最小生成树 最短路径问题 Dijkstra算法 Floyd算法 有向无环图(DAG) 拓扑排序 关键路径 定义 图G由顶点集V和边集E组成，记为G=(V, E)，其中V(G) 表示图G中顶点的有限非空集；E(G) 表示图G 中顶点之间的关系（边）集合。若 $V={v_1, v_2, &amp;hellip;, v_n}$，则用 $|V|$ 表示图G 中顶点的个数，也称图G 的阶，$E={(u, v)|u\in V, v\in V}$，用 $|E|$ 表示图G中边的条数。
 G：Graph
 V：Vertex
 E：Edge
@@ -1511,16 +1482,17 @@ import xlrd # 总的人名 name_set = [] # 填报的人 name_data = [] # 没填�
       <pubDate>Wed, 17 Feb 2021 22:18:45 +0800</pubDate>
       
       <guid>https://Lu0key.github.io/post/spring5/</guid>
-      <description>Spring Spring 简介  Spring理念：使现有的技术 更加容易使用，本身是一个大杂烩  SSH：Struct2+Spring+Hibernate
+      <description>Spring Spring 简介 Spring理念：使现有的技术 更加容易使用，本身是一个大杂烩 SSH：Struct2+Spring+Hibernate
 SSM：SpringMVC+Spring+Mybatis
 官网：https://spring.io/projects/spring-framework
 官方下载地址：https://repo.spring.io/release/org/springframework/spring/ Github：https://github.com/spring-projects/spring-framework
-&amp;lt;!-- https://mvnrepository.com/artifact/org.springframework/spring-webmvc --&amp;gt; &amp;lt;dependency&amp;gt; &amp;lt;groupId&amp;gt;org.springframework&amp;lt;/groupId&amp;gt; &amp;lt;artifactId&amp;gt;spring-webmvc&amp;lt;/artifactId&amp;gt; &amp;lt;version&amp;gt;5.2.12.RELEASE&amp;lt;/version&amp;gt; &amp;lt;/dependency&amp;gt; &amp;lt;!-- https://mvnrepository.com/artifact/org.springframework/spring-jdbc --&amp;gt; &amp;lt;dependency&amp;gt; &amp;lt;groupId&amp;gt;org.springframework&amp;lt;/groupId&amp;gt; &amp;lt;artifactId&amp;gt;spring-jdbc&amp;lt;/artifactId&amp;gt; &amp;lt;version&amp;gt;5.2.12.RELEASE&amp;lt;/version&amp;gt; &amp;lt;/dependency&amp;gt; 优点  Spring是一个开源的免费的框架(容器) Spring是一个轻量级、非入侵式的框架 控制反转(IOC)，面向切面编程(AOP) 支持事务的处理，对框架整合的支持  总结：Spring是一个轻量级的控制反转(IOC)和面向切面变成(AOP)的框架！
-组成 拓展  SpringBoot  一个快速开发的脚手架 基于SpringBoot可以快速地开发单个微服务、 约定大于配置   SpringCloud  SpringCloud 是基于 SpringBoot实现的    因为现在大多数公司都在使用SpringBoot进行快速开发，学习SpingBoot的前提，需要完全掌握Spring和SpringMVC。承上启下的作用
+&amp;lt;!-- https://mvnrepository.com/artifact/org.springframework/spring-webmvc --&amp;gt; &amp;lt;dependency&amp;gt; &amp;lt;groupId&amp;gt;org.springframework&amp;lt;/groupId&amp;gt; &amp;lt;artifactId&amp;gt;spring-webmvc&amp;lt;/artifactId&amp;gt; &amp;lt;version&amp;gt;5.2.12.RELEASE&amp;lt;/version&amp;gt; &amp;lt;/dependency&amp;gt; &amp;lt;!-- https://mvnrepository.com/artifact/org.springframework/spring-jdbc --&amp;gt; &amp;lt;dependency&amp;gt; &amp;lt;groupId&amp;gt;org.springframework&amp;lt;/groupId&amp;gt; &amp;lt;artifactId&amp;gt;spring-jdbc&amp;lt;/artifactId&amp;gt; &amp;lt;version&amp;gt;5.2.12.RELEASE&amp;lt;/version&amp;gt; &amp;lt;/dependency&amp;gt; 优点 Spring是一个开源的免费的框架(容器) Spring是一个轻量级、非入侵式的框架 控制反转(IOC)，面向切面编程(AOP) 支持事务的处理，对框架整合的支持 总结：Spring是一个轻量级的控制反转(IOC)和面向切面变成(AOP)的框架！
+组成 拓展 SpringBoot 一个快速开发的脚手架 基于SpringBoot可以快速地开发单个微服务、 约定大于配置 SpringCloud SpringCloud 是基于 SpringBoot实现的 因为现在大多数公司都在使用SpringBoot进行快速开发，学习SpingBoot的前提，需要完全掌握Spring和SpringMVC。承上启下的作用
 弊端：发展了太久之后，违背了原来的理念，配置十分繁琐，人称“配置地狱”
-IOC理论推导  UserDao接口 UserDaoImpl 实现类 UserService 业务接口 UserServiceImpl 业务实现  在我们之前的业务中，用户的需求可能会影响我们原来的代码，我们需要根据用户的需求去修改原代码，如果程序代码量十分大，修改一次的成本十分高昂
+IOC理论推导 UserDao接口 UserDaoImpl 实现类 UserService 业务接口 UserServiceImpl 业务实现 在我们之前的业务中，用户的需求可能会影响我们原来的代码，我们需要根据用户的需求去修改原代码，如果程序代码量十分大，修改一次的成本十分高昂
 我们使用一个Set接口实现，已经发生了革命性的变化
-private UserDao userDao; public void setUserDao(UserDao userdao) { this.</description>
+private UserDao userDao; public void setUserDao(UserDao userdao) { this.userDao = userdao; } 之前，程序是主动创建对象，控制权在程序员手上 使用了Set注入之后，程序不再具有主动性，而是变成了被动的接受对象 这种思想，从本质上解决了问题，程序员不用再去管理对象的创建，系统的耦合性大大降低，可以更加专注地在业务上的实现上，这是IOC的原型
+IoC本质 控制反转IoC(Inversion of Control)，是一种设计思想，DI(依赖注入)是实现IoC的一种方法，也有人认为DI只是IoC的另一种说法。没有IoC的程序中，我们使用面向对象编程，对象的创建与对象间的依赖关系完全硬编码在程序中，对象的创建由程序自己控制，控制反转后将对象的创建转移给第三方，个人认为所谓控制反转就是：获得依赖对象的方式反转了</description>
     </item>
     
     <item>
@@ -1530,10 +1502,13 @@ private UserDao userDao; public void setUserDao(UserDao userdao) { this.</descri
       
       <guid>https://Lu0key.github.io/post/mybatis/</guid>
       <description>MyBatis MyBatis官网
-简介 什么是MaBatis？  MyBatis 是一款优秀的持久层框架 它支持自定义 SQL、存储过程以及高级映射。 MyBatis 免除了几乎所有的 JDBC 代码以及设置参数和获取结果集的工作。 MyBatis 可以通过简单的 XML 或注解来配置和映射原始类型、接口和 Java POJO（Plain Old Java Objects，普通老式 Java 对象）为数据库中的记录。  如何获得MyBatis？
- github maven  &amp;lt;!-- https://mvnrepository.com/artifact/org.mybatis/mybatis --&amp;gt; &amp;lt;dependency&amp;gt; &amp;lt;groupId&amp;gt;org.mybatis&amp;lt;/groupId&amp;gt; &amp;lt;artifactId&amp;gt;mybatis&amp;lt;/artifactId&amp;gt; &amp;lt;version&amp;gt;3.5.2&amp;lt;/version&amp;gt; &amp;lt;/dependency&amp;gt; 持久化 数据持久化
- 持久化就是将程序的数据在持久状态和瞬时状态转化的过程 内存：断电即失 数据库(JDBC)、IO文件持久化  为什么需要持久化？
- 有一些数据，不能让他丢掉 内存太贵了  持久层  完成持久化工作的代码块 层界限十分明显  为什么需要MyBatis？  方便 传统的JDBC代码太复杂了。简化，框架 帮助程序员将数据存入到数据库中 不用MyBatis也可以，MyBatis更容易上手。技术没有高低之分 优点  sql和代码分离 更容易单元测试 提供xml标签，支持编写动态sql    最重要的一点：使用的人多</description>
+简介 什么是MaBatis？ MyBatis 是一款优秀的持久层框架 它支持自定义 SQL、存储过程以及高级映射。 MyBatis 免除了几乎所有的 JDBC 代码以及设置参数和获取结果集的工作。 MyBatis 可以通过简单的 XML 或注解来配置和映射原始类型、接口和 Java POJO（Plain Old Java Objects，普通老式 Java 对象）为数据库中的记录。 如何获得MyBatis？
+github maven &amp;lt;!-- https://mvnrepository.com/artifact/org.mybatis/mybatis --&amp;gt; &amp;lt;dependency&amp;gt; &amp;lt;groupId&amp;gt;org.mybatis&amp;lt;/groupId&amp;gt; &amp;lt;artifactId&amp;gt;mybatis&amp;lt;/artifactId&amp;gt; &amp;lt;version&amp;gt;3.5.2&amp;lt;/version&amp;gt; &amp;lt;/dependency&amp;gt; 持久化 数据持久化
+持久化就是将程序的数据在持久状态和瞬时状态转化的过程 内存：断电即失 数据库(JDBC)、IO文件持久化 为什么需要持久化？
+有一些数据，不能让他丢掉 内存太贵了 持久层 完成持久化工作的代码块 层界限十分明显 为什么需要MyBatis？ 方便 传统的JDBC代码太复杂了。简化，框架 帮助程序员将数据存入到数据库中 不用MyBatis也可以，MyBatis更容易上手。技术没有高低之分 优点 sql和代码分离 更容易单元测试 提供xml标签，支持编写动态sql 最重要的一点：使用的人多
+第一个MyBatis程序 思路：搭建环境&amp;ndash;&amp;gt;导入MyBatis&amp;ndash;&amp;gt;编写代码&amp;ndash;&amp;gt;测试
+搭建环境 搭建数据库
+CREATE DATABASE `mybatis`; USE `mysqtis`; CREATE TABLE `user`( `id` INT(20) NOT NULL PRIMARY KEY, `name` VARCHAR(30) DEFAULT NULL, `pwd` VARCHAR(30) DEFAULT NULL )ENGINE=INNODB DEFAULT CHARSET=utf8; INSERT INTO `user`(`id`,`name`,`pwd`) VALUES (1,&amp;#39;你好&amp;#39;,&amp;#39;123231&amp;#39;), (2,&amp;#39;asd&amp;#39;,&amp;#39;adsas&amp;#39;), (3,&amp;#39;aaaaa&amp;#39;,&amp;#39;aaasd123&amp;#39;) 新建一个项目</description>
     </item>
     
     <item>
@@ -1542,7 +1517,7 @@ private UserDao userDao; public void setUserDao(UserDao userdao) { this.</descri
       <pubDate>Sat, 06 Feb 2021 22:10:51 +0800</pubDate>
       
       <guid>https://Lu0key.github.io/post/%E7%8E%8B%E9%81%93%E8%80%83%E7%A0%94-%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84-%E4%B8%B2/</guid>
-      <description>串  串  定义 存储结构  顺序存储 链式存储   基本操作  求子串 比较字符串 定位操作   朴素模式匹配算法 KMP 算法 KMP算法优化    定义 串，即字符串（String）是由零个或者多个字符组成的有限序列。一般记为 S = &amp;lsquo;a1a2&amp;hellip;a_n&amp;rsquo; ($n\geqslant0$)
+      <description>串 串 定义 存储结构 顺序存储 链式存储 基本操作 求子串 比较字符串 定位操作 朴素模式匹配算法 KMP 算法 KMP算法优化 定义 串，即字符串（String）是由零个或者多个字符组成的有限序列。一般记为 S = &amp;lsquo;a1a2&amp;hellip;a_n&amp;rsquo; ($n\geqslant0$)
 其中，S是串名，单引号括起来的字符序列是串的值；$a_i$可以是字母、数字或者其他字符；串中字符的个数n称为串的长度。n=0 时的串称为空串（用 $\varnothing$ 表示）
 字串：串中任意个连续的字符组成的子序列
 主串：包含字串的串
@@ -1553,10 +1528,12 @@ private UserDao userDao; public void setUserDao(UserDao userdao) { this.</descri
 串的数据对象限定为字符集（如中文字符、英文字符、数字字符、标点字符等）
 串的基本操作，如增删改查通常以字串为操作对象
 串的基本操作
- StrAssign(&amp;amp;T, chars)：赋值操作，把串T赋值为chars StrCopy(&amp;amp;T, S)：复制操作。由串S复制得到串T StrEmpty(S)：判空操作。若S为空串，则返回true，否则返回false StrLength(S)：求串长，返回串S的元素个数 ClearString(&amp;amp;S)：清空操作。将S清为空串 DestroyString(&amp;amp;S)：销毁串。将串S销毁，回收存储空间 Concat(&amp;amp;T, S1, S2)：串联接。用T返回由S1和S2联接而成的新串 SubString(&amp;amp;sub, S, pos, len)：求字串，用sub但会串S的第pos个字符起长度为len的子串 Index(S, T)：定位操作。若主串S中存在与串T值相同的子串，则返回它在主串S中第一次出现的位置；否则函数值为0 StrCompare(S, T)：比较操作。若S&amp;gt;T，则返回值&amp;gt;0，若S=T，则返回值=0，若S&amp;lt; T，则返回值&amp;lt;0  这个比较是一个字符一个字符比较的，那字符怎么比较呢？
+StrAssign(&amp;amp;T, chars)：赋值操作，把串T赋值为chars StrCopy(&amp;amp;T, S)：复制操作。由串S复制得到串T StrEmpty(S)：判空操作。若S为空串，则返回true，否则返回false StrLength(S)：求串长，返回串S的元素个数 ClearString(&amp;amp;S)：清空操作。将S清为空串 DestroyString(&amp;amp;S)：销毁串。将串S销毁，回收存储空间 Concat(&amp;amp;T, S1, S2)：串联接。用T返回由S1和S2联接而成的新串 SubString(&amp;amp;sub, S, pos, len)：求字串，用sub但会串S的第pos个字符起长度为len的子串 Index(S, T)：定位操作。若主串S中存在与串T值相同的子串，则返回它在主串S中第一次出现的位置；否则函数值为0 StrCompare(S, T)：比较操作。若S&amp;gt;T，则返回值&amp;gt;0，若S=T，则返回值=0，若S&amp;lt; T，则返回值&amp;lt;0 这个比较是一个字符一个字符比较的，那字符怎么比较呢？
 ASCII字符编码，将数字与字符一一对应，因此比较字符实际上就是比较字符对应的数字
 乱码问题：
-不同的编码规则可能会导致乱码</description>
+不同的编码规则可能会导致乱码
+存储结构 顺序存储 静态数组实现（定长顺序存储）
+#define MAXLEN 255 // 预定义最大串为255 typedef struct{ char ch[MAXLEN];// 每个分量存储一个字符 int length; // 串的实际长度 }SString; 动态数组实现（堆分配存储）</description>
     </item>
     
     <item>
@@ -1565,11 +1542,21 @@ ASCII字符编码，将数字与字符一一对应，因此比较字符实际上
       <pubDate>Sat, 06 Feb 2021 22:08:19 +0800</pubDate>
       
       <guid>https://Lu0key.github.io/post/%E7%8E%8B%E9%81%93%E8%80%83%E7%A0%94-%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84-%E6%A0%88%E5%92%8C%E9%98%9F%E5%88%97/</guid>
-      <description>栈和队列  栈和队列  定义 顺序栈  顺序栈-进栈 顺序表-出栈 顺序栈-读栈 顺序栈-共享栈 栈的链式实现   队列  队列-顺序存储 队列-入队 队列-出队 队列的链式实现 双端队列   栈-括号匹配 栈-表达式求值  原理 代码   栈的应用-递归 队列的应用 特殊矩阵的压缩存储  对称矩阵 三角矩阵 三对角矩阵 稀疏矩阵      定义 栈(stack) 是只允许一端进行插入或删除操作的线性表（是同一端）.
+      <description>栈和队列 栈和队列 定义 顺序栈 顺序栈-进栈 顺序表-出栈 顺序栈-读栈 顺序栈-共享栈 栈的链式实现 队列 队列-顺序存储 队列-入队 队列-出队 队列的链式实现 双端队列 栈-括号匹配 栈-表达式求值 原理 代码 栈的应用-递归 队列的应用 特殊矩阵的压缩存储 对称矩阵 三角矩阵 三对角矩阵 稀疏矩阵 定义 栈(stack) 是只允许一端进行插入或删除操作的线性表（是同一端）.
 重要术语
- 栈顶 栈底 空栈  特点：LIFO（Last In First Out）后进的先出
+栈顶 栈底 空栈 特点：LIFO（Last In First Out）后进的先出
 基本操作
- InitStack(&amp;amp; S)：初始化栈。构造一个空栈S，分配内存空间。 DestroyStack(&amp;amp; S)：销毁栈。销毁并释放栈S所占的内存空间。 Push(&amp;amp;S, x)：进栈，若栈S未满，则将x加入使之成为新栈顶。 Pop(&amp;amp;S, &amp;amp;x)：出栈，若栈S非空，则弹出栈顶元素，并用x返回 GetTop(S, &amp;amp;x)：读栈顶元素。若栈S非空，则用x返回栈顶元素  栈的差一般只访问栈顶元素   StackEmpty(S)：判断一个栈S是否为空，若为空，则返回true，否则返回false。  常考题型：判断合法的出栈的顺序（要满足先进后出，后进先出）</description>
+InitStack(&amp;amp; S)：初始化栈。构造一个空栈S，分配内存空间。 DestroyStack(&amp;amp; S)：销毁栈。销毁并释放栈S所占的内存空间。 Push(&amp;amp;S, x)：进栈，若栈S未满，则将x加入使之成为新栈顶。 Pop(&amp;amp;S, &amp;amp;x)：出栈，若栈S非空，则弹出栈顶元素，并用x返回 GetTop(S, &amp;amp;x)：读栈顶元素。若栈S非空，则用x返回栈顶元素 栈的差一般只访问栈顶元素 StackEmpty(S)：判断一个栈S是否为空，若为空，则返回true，否则返回false。 常考题型：判断合法的出栈的顺序（要满足先进后出，后进先出）
+n个不同元素进栈，出栈元素不同排列的个数为 $\dfrac{1}{n+1}C_{2n}^{n}$。
+上述公式成为卡特兰(Catalan)数，可用数学归纳法法证明。
+例如：有3个数据元素abc，有 $\dfrac{1}{4}\cdot\dfrac{654}{123}=5$ 种可能
+a进a出b进b出c进c出
+ab进b出c进c出
+abc进cba出
+a进a出bc进cb出
+ab进ba出c进c出
+顺序栈 定义
+#define MaxSize 10 // 定义栈中元素的最大个数 typedef struct{ ElemType data[MaxSize]; // 静态数组存放栈中元素 int top; // 栈顶指针 }SqStack; 初始化栈：</description>
     </item>
     
     <item>
@@ -1578,7 +1565,11 @@ ASCII字符编码，将数字与字符一一对应，因此比较字符实际上
       <pubDate>Sat, 06 Feb 2021 21:43:51 +0800</pubDate>
       
       <guid>https://Lu0key.github.io/post/%E7%8E%8B%E9%81%93%E8%80%83%E7%A0%94-%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84-%E7%BA%BF%E6%80%A7%E8%A1%A8/</guid>
-      <description>线性表  线性表  定义 基本操作  其他常用操作 注 为什么需要实现基本操作   顺序表  顺序表的实现-静态分配 顺序表的实现-动态分配 特点 顺序表-插入 顺序表-删除 顺序表-按位查找 顺序表-按值查找 按值查找的时间复杂度   链表  定义 单链表-初始化 单链表-按位序插入 单链表-后插操作 单链表-前插操作 单链表-按位序删除 单链表-删除指定结点 单链表-按位查找 单链表-按值查找 单链表-获取长度 单链表-尾插法 单链表-头插法   双链表  初始化 双链表-插入 双链表-删除 双链表-遍历   循环链表  循环单链表 循环双链表   静态链表  静态链表-定义   顺序表和链表的比较    定义 线性表(Linear List)是具有相同数据类型的 n ($n\geqslant0$) 个数据元素的有限序列，其中 n 为表长，当 n=0 时线性表是一个空表。若用 L 命名线性表，则一般表示为 $$ L=(a_1, a_2,\cdots,a_j, a_{j+1},\cdots,a_n) $$ 相同：意味着每个数据元素所占空间一样大</description>
+      <description>线性表 线性表 定义 基本操作 其他常用操作 注 为什么需要实现基本操作 顺序表 顺序表的实现-静态分配 顺序表的实现-动态分配 特点 顺序表-插入 顺序表-删除 顺序表-按位查找 顺序表-按值查找 按值查找的时间复杂度 链表 定义 单链表-初始化 单链表-按位序插入 单链表-后插操作 单链表-前插操作 单链表-按位序删除 单链表-删除指定结点 单链表-按位查找 单链表-按值查找 单链表-获取长度 单链表-尾插法 单链表-头插法 双链表 初始化 双链表-插入 双链表-删除 双链表-遍历 循环链表 循环单链表 循环双链表 静态链表 静态链表-定义 顺序表和链表的比较 定义 线性表(Linear List)是具有相同数据类型的 n ($n\geqslant0$) 个数据元素的有限序列，其中 n 为表长，当 n=0 时线性表是一个空表。若用 L 命名线性表，则一般表示为 $$ L=(a_1, a_2,\cdots,a_j, a_{j+1},\cdots,a_n) $$ 相同：意味着每个数据元素所占空间一样大
+有限序列：意味着所有按大小增加的整数不是一个线性表
+$a_i$ 是线性表中“第 i 个” , 是元素线性表中的位序
+$a_1$ 是表头元素，$a_n$ 是表尾元素. 有前继，后继的概念
+基本操作 InitList(&amp;amp;L):初始化表</description>
     </item>
     
     <item>
@@ -1589,7 +1580,7 @@ ASCII字符编码，将数字与字符一一对应，因此比较字符实际上
       <guid>https://Lu0key.github.io/post/git-commit%E9%94%99%E8%AF%AF%E4%BF%AE%E6%94%B9/</guid>
       <description>git commit错误修改 在 git commit -m &amp;quot;message&amp;quot; 时，我们有时会不小心把 message 的信息写错，要怎么修改呢？
 这时候分为两种情况
- 已经git push了 还没git push  还没push 这种情况比较简单，直接使用
+已经git push了 还没git push 还没push 这种情况比较简单，直接使用
 git commit --amend 进入vim界面，按i进入insert模式，修改完错误的message后，按esc，输入:wq保存退出即可，最后再push
 通过
 git log 可以看到记录是修改后的message
@@ -1613,11 +1604,7 @@ git push -f 查看git log会发现已经修改好了</description>
 求极限
 $$ \lim_{x\to\infty}\dfrac{(1+\frac{1}{x})^x-e}{\sin\dfrac{1}{x}}
 $$
-Solution: $$\begin{aligned} &amp;amp;\lim_{x\to\infty}\dfrac{(1+\frac{1}{x})^x-e}{\sin\dfrac{1}{x}}\\
-=&amp;amp;e\lim_{x\to\infty}\dfrac{e^{x\ln(1+\frac{1}{x})-1}-1}{\dfrac{1}{x}}\\
-=&amp;amp;e\lim_{x\to\infty}x[x\ln(1+\dfrac{1}{x})-1]\\
-=&amp;amp;e\lim_{x\to\infty}x[x(\dfrac{1}{x}-\dfrac{1}{2x^2}+o(\dfrac{1}{x^3}))-1]\\
-=&amp;amp;-\dfrac{e}{2} \end{aligned}$$</description>
+Solution: $$\begin{aligned} &amp;amp;\lim_{x\to\infty}\dfrac{(1+\frac{1}{x})^x-e}{\sin\dfrac{1}{x}}\\ =&amp;amp;e\lim_{x\to\infty}\dfrac{e^{x\ln(1+\frac{1}{x})-1}-1}{\dfrac{1}{x}}\\ =&amp;amp;e\lim_{x\to\infty}x[x\ln(1+\dfrac{1}{x})-1]\\ =&amp;amp;e\lim_{x\to\infty}x[x(\dfrac{1}{x}-\dfrac{1}{2x^2}+o(\dfrac{1}{x^3}))-1]\\ =&amp;amp;-\dfrac{e}{2} \end{aligned}$$</description>
     </item>
     
     <item>
@@ -1654,15 +1641,23 @@ zeta 函数 $\displaystyle\zeta(s)=\sum_{k=1}^{\infty}\dfrac{1}{k^s}$</descripti
       <pubDate>Fri, 22 Jan 2021 19:09:34 +0800</pubDate>
       
       <guid>https://Lu0key.github.io/post/%E7%8E%8B%E9%81%93%E8%80%83%E7%A0%94-%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84-%E7%BB%AA%E8%AE%BA/</guid>
-      <description>绪论 学什么  如何用程序代码把现实世界的问题信息化 如何用计算机高效地处理这些信息从而创造价值  基本概念 数据  数据是信息的载体，是描述客观事物属性的数、字符及所有能输入到计算机中并被计算机程序识别和处理的符号的集合。数据是计算机程序加工的原料。
- 数据元素、数据项  数据元素是数据的基本单位，通常作为一个整体进行考虑和处理。
+      <description>绪论 学什么 如何用程序代码把现实世界的问题信息化 如何用计算机高效地处理这些信息从而创造价值 基本概念 数据 数据是信息的载体，是描述客观事物属性的数、字符及所有能输入到计算机中并被计算机程序识别和处理的符号的集合。数据是计算机程序加工的原料。
+数据元素、数据项 数据元素是数据的基本单位，通常作为一个整体进行考虑和处理。
 一个数据元素可由若干个数据项组成，数据项是构成数据元素的不可分割的最小单位。
- 数据结构、数据对象  结构 是各个元素之间的关系
+数据结构、数据对象 结构 是各个元素之间的关系
 数据结构 是相互之间存在一种或者多种特定关系的数据元素的集合。
 数据对象 是具有相同性质的数据元素的集合，是数据的一个子集。
- 数据结构的三要素   逻辑结构
- 集合  各个元素同属一个集合，别无其他关系   线性结构  数据元素之间是一对一的关系，除了第一个元素，所有元素都有唯一前驱，除了最后一个元素，所有元素都有唯一后继   树形结构  数据元素之间是一对多的关系   图状结构（网状结构）  数据元素之间是多对多的关系      物理结构（存储结构）
- 顺序存储  存储位置相邻   链式存储  借助元素存储地址的指针来辨识元素之间的逻辑关系   索引存储  索引表，索引表中的每项称为索引项(关键字，地址)   散列存储  通过元素的关键字直接计算出该元素的存储地址，又称哈希（Hash）存储      数据的运算</description>
+数据结构的三要素 逻辑结构
+集合 各个元素同属一个集合，别无其他关系 线性结构 数据元素之间是一对一的关系，除了第一个元素，所有元素都有唯一前驱，除了最后一个元素，所有元素都有唯一后继 树形结构 数据元素之间是一对多的关系 图状结构（网状结构） 数据元素之间是多对多的关系 物理结构（存储结构）
+顺序存储 存储位置相邻 链式存储 借助元素存储地址的指针来辨识元素之间的逻辑关系 索引存储 索引表，索引表中的每项称为索引项(关键字，地址) 散列存储 通过元素的关键字直接计算出该元素的存储地址，又称哈希（Hash）存储 数据的运算
+运算的实现是针对存储结构的 若采用顺序存储，则各个数据元素在物理上必须是连续的；若采用非顺序存储，则各个数据元素在物理上可以是离散的。
+数据的存储结构会影响存储空间分配的方便程度
+数据类型、抽象数据类型：
+数据类型 是一个值的集合和定义在此集合上的一组操作的总称。
+原子类型。其值不可再分的数据类型。 结构类型。其值可以再分解为若干成分的数据类型。 抽象数据类型(Abstract Data Type, ADT) 是抽象数据组织与之相关的操作。
+算法 算法的特性：
+有穷性 必须在执行有穷步之后结束，且每一步都可以在有穷时间内完成。 算法必须是有穷的，而程序可以是无穷的 确定性 相同的输入只能得到相同的输出 可行性 算法中描述的操作都可以通过已经实现的基本运算执行有限次来实现 输入 一个算法有零个或者多个输入，这些输入取自于某个特定的对象的集合。 输出 一个算个有一个或者多个输出，这些输出是与输入有着某种特定关系的量。 “好”的算法的特性：
+正确性 算法应能够正确地解决求解问题。 可读性 算法应具有良好的可读性，以帮助人们理解（无歧义） 健壮性 输入非法数据时，算法能适当地做出反应或进行处理，而不会产生莫名其妙的输出结果。 高效率与低存储量需求 时、空间复杂度低 时间复杂度 无法运行结束统计运行时间来判断算法的时间开销，比如：导弹发射之类的。并且在结束之前你不知道他还要运行多久，因此希望算法复杂度能够在运行前计算出来</description>
     </item>
     
     <item>
@@ -1686,13 +1681,12 @@ $\text{B}(p,q)=2\displaystyle\int_0^{\frac\pi2}\cos^{2p-1}\varphi\sin^{2q-1}\var
 易知
 $\text{B}\left(\dfrac{1}{2},\dfrac{1}{2}\right)=\pi$
 2 作变量代换 $x=\dfrac{1}{1+t}$，得到
-$\begin{aligned} \text{B}(p,q)=&amp;amp;\int_0^{+\infty}\dfrac{t^{q-1}}{(1+t)^{p+q}}\text{d}t\
-=&amp;amp;\int_0^{1}\dfrac{t^{q-1}}{(1+t)^{p+q}}\text{d}t+\int_1^{+\infty}\dfrac{t^{q-1}}{(1+t)^{p+q}}\text{d}t \end{aligned}$
+$\begin{aligned} \text{B}(p,q)=&amp;amp;\int_0^{+\infty}\dfrac{t^{q-1}}{(1+t)^{p+q}}\text{d}t\ =&amp;amp;\int_0^{1}\dfrac{t^{q-1}}{(1+t)^{p+q}}\text{d}t+\int_1^{+\infty}\dfrac{t^{q-1}}{(1+t)^{p+q}}\text{d}t \end{aligned}$
 对后一个积分作变量代换 $t=\dfrac{1}{u}$，得到
 $\displaystyle\int_1^{+\infty}\dfrac{t^{q-1}}{(1+t)^{p+q}}\text{d}t=\int_0^1\dfrac{u^{p-1}}{(1+u)^{p+q}}\text{d}u$
 于是
 $\displaystyle\text{B}(p,q)=\int_0^1\dfrac{t^{q-1}+t^{p-1}}{(1+t)^{p+q}}\text{d}t$
- Gamma 函数 形如
+Gamma 函数 形如
 $\displaystyle\Gamma(s)=\int_0^{+\infty}x^{s-1}e^{-x}\text{d}x$
 的含参变量积分称为 Gamma 函数 或 第二类 Euler 积分.
 $\Gamma(s)$ 的定义域为 $(0,+\infty)$
@@ -1705,7 +1699,7 @@ $\Gamma(s)$ 的定义域为 $(0,+\infty)$
       <pubDate>Fri, 22 Jan 2021 16:01:50 +0800</pubDate>
       
       <guid>https://Lu0key.github.io/post/python-flask-%E5%85%A5%E9%97%A8/</guid>
-      <description>Flask  Flask  特点 list  example   tuple(元组)  “可变的” tuple  tips     循环  range() continue  example   break   dict set  常用函数   定义函数  tips 空函数 参数检查 多个返回值 默认参数  坑   可变参数 关键字参数 命名关键词参数   参数组合还没看&amp;hellip;..  递归函数  tips   尾递归 切片 Slice 切片   Iteration 迭代  如何判断一个对象是否可迭代 如何同时迭代索引和元素   列表生成式 generator 生成器 迭代器 高阶函数 map/reduce filter sorted 返回函数 闭包(Closure) 匿名函数lambda 装饰器(Decorator) 偏函数 Partial function 模块 Module  作用域 安装第三方库   OOP 访问限制 继承和多态 获取对象信息 实例属性和类属性 使用__slots__ 使用@property 多重继承 定制类  __iter__ __getattr__ __call__   枚举类 待解决问题    特点 123</description>
+      <description>Flask Flask 特点 list example tuple(元组) “可变的” tuple tips 循环 range() continue example break dict set 常用函数 定义函数 tips 空函数 参数检查 多个返回值 默认参数 坑 可变参数 关键字参数 命名关键词参数 参数组合还没看&amp;hellip;.. 递归函数 tips 尾递归 切片 Slice 切片 Iteration 迭代 如何判断一个对象是否可迭代 如何同时迭代索引和元素 列表生成式 generator 生成器 迭代器 高阶函数 map/reduce filter sorted 返回函数 闭包(Closure) 匿名函数lambda 装饰器(Decorator) 偏函数 Partial function 模块 Module 作用域 安装第三方库 OOP 访问限制 继承和多态 获取对象信息 实例属性和类属性 使用__slots__ 使用@property 多重继承 定制类 __iter__ __getattr__ __call__ 枚举类 待解决问题 特点 123</description>
     </item>
     
     <item>
@@ -1714,13 +1708,13 @@ $\Gamma(s)$ 的定义域为 $(0,+\infty)$
       <pubDate>Thu, 21 Jan 2021 14:41:37 +0800</pubDate>
       
       <guid>https://Lu0key.github.io/post/js-dom/</guid>
-      <description>DOM DOM 树   DOM
- DOM 树 获取DOM元素 元素的属性 操作元素类名 操作文本内容 全选 选项卡 返回顶部 操作元素样式 DOM节点 获取节点 创建节点 插入节点 删除节点 替换节点 克隆节点 带有添加和删除功能的表格 动态创建表格 获取元素尺寸 获取元素偏移量 获取浏览器窗口尺寸 元素的常用事件 二级菜单渲染 选择器    doucument object model文档对象模型
-  操作页面元素的属性与方法
-  DOM树
-  DOM 的顶级是 document，可能会有更高的节点window，看情况
-  可以操作各种标签，文本，属性， 样式
-  获取DOM元素  非常规标签  html/head/body  document.documentElement document.head document.body     常规标签  能用常规标签的方法去获取非常规标签，知识一般不这样用   getElementById()  语法：查找范围.</description>
+      <description>DOM DOM 树 DOM
+DOM 树 获取DOM元素 元素的属性 操作元素类名 操作文本内容 全选 选项卡 返回顶部 操作元素样式 DOM节点 获取节点 创建节点 插入节点 删除节点 替换节点 克隆节点 带有添加和删除功能的表格 动态创建表格 获取元素尺寸 获取元素偏移量 获取浏览器窗口尺寸 元素的常用事件 二级菜单渲染 选择器 doucument object model文档对象模型
+操作页面元素的属性与方法
+DOM树
+DOM 的顶级是 document，可能会有更高的节点window，看情况
+可以操作各种标签，文本，属性， 样式
+获取DOM元素 非常规标签 html/head/body document.documentElement document.head document.body 常规标签 能用常规标签的方法去获取非常规标签，知识一般不这样用 getElementById() 语法：查找范围.getElementById(&amp;lsquo;id名称&amp;rsquo;) 返回值： 元素 或者null getElementsByTagName() 语法：查找范围.getElementsByTagName(&amp;lsquo;标签名&amp;rsquo;) 返回值 所有范围内这个标签名组成的一个伪数组 或者空的伪数组 getElementsByClassName() 语法：查找范围.getElementsByClassName(&amp;lsquo;类名&amp;rsquo;) 返回值 所有范围内这个组成的一个伪数组 或者空的伪数组 getElementsByName() 语法：查找范围.getElementsByName(&amp;lsquo;元素name属性的值&amp;rsquo;) 返回值 所有范围内这个元素name属性的值组成的一个伪数组 或者空的伪数组 querySelector() 语法：查找范围.querySelector(&amp;lsquo;选择器&amp;rsquo;) 返回值 如果找到选择器匹配的内容，则返回第一个 null IE低版本不支持 querySelectorAll() 语法：查找范围.</description>
     </item>
     
     <item>
@@ -1742,7 +1736,7 @@ $\Gamma(s)$ 的定义域为 $(0,+\infty)$
       <guid>https://Lu0key.github.io/post/first-blog/</guid>
       <description>Hello world 第一篇Hugo博客
 下载主题
-git clone https://github.com/lxndrblz/m10c.git themes/m10c  hugo 本地启动
+git clone https://github.com/lxndrblz/m10c.git themes/m10c hugo 本地启动
 hugo server -t themename --bulidDrafts hugo 创建新文章
 hugo new post/blogname.md 推到Github远端服务器 创建名为 [github用户名].github.io 的仓库
 blog目录下
@@ -1752,7 +1746,7 @@ git init 将所有文件添加入暂存区
 git add . 将git仓库和云端仓库关联
 git remote add [shortname] [url] 比如我的就是
 git remote add origin https://github.com/Lu0key/Lu0key.github.io.git 最后推至云端
-git push -u origin master  之后修改博客后，再推到GitHub上需要
+git push -u origin master 之后修改博客后，再推到GitHub上需要
 hugo --theme=m10c --baseUrl=&amp;#34;https://Lu0key.github.io/&amp;#34; --buildDrafts cd public git add . git commit -m &amp;#34;message&amp;#34; git push </description>
     </item>
     

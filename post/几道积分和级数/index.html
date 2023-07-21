@@ -1,133 +1,84 @@
 <!doctype html>
 <html lang="en-us">
-
-<head>
-    
-<script>
-    MathJax = {
-        tex: {
-            inlineMath: [
-                ["$", "$"]
-            ],
-        },
-        displayMath: [
-            ["$$", "$$"],
-            ["\[", "\]"],
-        ],
-        svg: {
-            fontCache: "global",
-        },
-    };
-</script>
-<script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
-<script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
-
+  <head>
     <title>几道积分和级数 // 洛七的摸鱼池塘</title>
-    <link rel="shortcut icon" href="%20/favicon.ico%20" />
-    <meta charset="utf-8" /> <meta name="generator" content="Hugo 0.80.0" />
+    <link rel="shortcut icon" href="/favicon.ico" />
+    <meta charset="utf-8" />
+    <meta name="generator" content="Hugo 0.115.4">
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="author" content="洛七" />
-    <meta name="description" content="" /> <link rel="stylesheet" href="https://Lu0key.github.io/css/main.min.88e7083eff65effb7485b6e6f38d10afbec25093a6fac42d734ce9024d3defbd.css" />  <meta name="twitter:card" content="summary"/>
+    <meta name="description" content="" />
+    <link rel="stylesheet" href="/css/main.min.d08c6ce68432c68a64d84cb426dfdecab702035f91a5d580831f23f76c040a05.css" />
+
+    
+    <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="几道积分和级数"/>
 <meta name="twitter:description" content="忘记什么时候搞来的积分了，有些好像是积分竞赛的，应该很多都不是我自己做的，只是原来记录的
-$\begin{aligned} &amp;\dfrac{z}{1-z}=\sum_{n=1}^{\infty}z^n\qquad(|z|&lt;1)\\
-&amp;左右两边积分可得;\ln(1-z)=-\sum_{n=1}^\infty\dfrac{z^n}{n}.\\
-&amp;代入z=re^{i\theta},\dfrac{re^{i\theta}}{1-re^{i\theta}}=\sum_{n=1}^{\infty}r^n(\cos n\theta&#43;i\sin n\theta)\\
-&amp;左边=\dfrac{re^{i\theta}}{1-re^{i\theta}}=\dfrac{r\cos\theta&#43;ir\sin\theta}{(1-r\cos\theta)-ir\sin\theta}=\dfrac{(r\cos\theta&#43;ir\sin\theta)[(1-r\cos\theta)&#43;ir\sin\theta]}{(1-r\cos\theta)^2&#43;r^2\sin^2\theta}\\
-&amp;\qquad=\dfrac{r\cos\theta-r^2}{1-2r\cos\theta&#43;r^2}&#43;i\dfrac{r\sin\theta}{1-2r\cos\theta&#43;r^2}\\
-&amp;因此\dfrac{\cos\theta-r}{1-2r\cos\theta&#43;r^2}=\sum_{n=1}^{\infty}r^{n-1}\cos n\theta,\quad \dfrac{\sin\theta}{1-2r\cos\theta&#43;r^2}=\sum_{n=1}^{\infty}r^{n-1}\sin n\theta.\\
-&amp;左右对r积分:\quad\dfrac12\ln(1-2r\cos\theta&#43;r^2)=-\sum_{n=1}^{\infty}r^n\dfrac{\cos n\theta}{n}\cdots①\\
-&amp;\qquad\qquad\qquad\quad \arctan\dfrac{r\sin\theta}{1-r\cos\theta}=\sum_{n=1}^{\infty}r^n\dfrac{\sin n\theta}{n}\cdots②\\
-&amp;将①式中r换为-r得：\\
-&amp;\qquad\qquad r\cos\theta-r^2\dfrac{\cos2\theta}{2}&#43;r^3\dfrac{\cos3\theta}{3}-\cdots=\dfrac12\ln(1&#43;2r\cos\theta&#43;r^2)\\
-&amp;将②式中的r换为-r，\theta换为-\theta得：\\
-&amp;\qquad\qquad r\sin\theta-r^2\dfrac{\sin2\theta}{2}&#43;r^3\dfrac{\sin3\theta}{3}-\cdots=\arctan\dfrac{r\sin\theta}{1&#43;r\cos\theta} \end{aligned}$
- $ \begin{aligned} \displaystyle&amp;\int\dfrac{\sin \theta}{r^2-2r\cos\theta&#43;1}\text{d}r\\
-=&amp;\int\dfrac{\sin\theta}{(r-\cos\theta)^2&#43;\sin^2\theta}\text{d}(r-\cos\theta)\\
-=&amp;\arctan\dfrac{r-\cos\theta}{\sin \theta} \end{aligned} $
-$ \begin{aligned} \left(\arctan\dfrac{r\sin\theta}{1-r\cos\theta}\right)&#39;=&amp;\dfrac{1}{\left(\dfrac{r\sin\theta}{1-r\cos\theta}\right)^2&#43;1}\cdot\dfrac{\sin\theta(1-r\cos\theta)&#43;\cos\theta\cdot r\sin\theta}{(1-r\cos\theta)^2}\\
-=&amp;\dfrac{\sin\theta}{r^2\sin^2\theta&#43;1-2r\cos\theta&#43;r^2\cos^2\theta}\\
-=&amp;\dfrac{\sin\theta}{1-2r\cos\theta&#43;r^2} \end{aligned} $
-$ \begin{aligned} &amp;\dfrac{\sin\theta}{1-2r\cos\theta&#43;r^2}=\dfrac{\sin\theta}{1-2r\cos\theta&#43;r^2\cos^2\theta&#43;r^2\sin^2\theta}\\
-=&amp;\dfrac{\sin\theta}{(1-r\cos\theta)^2&#43;r^2\sin^2\theta}=\dfrac{\dfrac{\sin\theta}{(1-r\cos\theta)^2}}{1&#43;\left(\dfrac{r\sin\theta}{1-r\cos\theta}\right)^2} \end{aligned} $
+$\begin{aligned} &amp;\dfrac{z}{1-z}=\sum_{n=1}^{\infty}z^n\qquad(|z|&lt;1)\\ &amp;左右两边积分可得;\ln(1-z)=-\sum_{n=1}^\infty\dfrac{z^n}{n}.\\ &amp;代入z=re^{i\theta},\dfrac{re^{i\theta}}{1-re^{i\theta}}=\sum_{n=1}^{\infty}r^n(\cos n\theta&#43;i\sin n\theta)\\ &amp;左边=\dfrac{re^{i\theta}}{1-re^{i\theta}}=\dfrac{r\cos\theta&#43;ir\sin\theta}{(1-r\cos\theta)-ir\sin\theta}=\dfrac{(r\cos\theta&#43;ir\sin\theta)[(1-r\cos\theta)&#43;ir\sin\theta]}{(1-r\cos\theta)^2&#43;r^2\sin^2\theta}\\ &amp;\qquad=\dfrac{r\cos\theta-r^2}{1-2r\cos\theta&#43;r^2}&#43;i\dfrac{r\sin\theta}{1-2r\cos\theta&#43;r^2}\\ &amp;因此\dfrac{\cos\theta-r}{1-2r\cos\theta&#43;r^2}=\sum_{n=1}^{\infty}r^{n-1}\cos n\theta,\quad \dfrac{\sin\theta}{1-2r\cos\theta&#43;r^2}=\sum_{n=1}^{\infty}r^{n-1}\sin n\theta.\\ &amp;左右对r积分:\quad\dfrac12\ln(1-2r\cos\theta&#43;r^2)=-\sum_{n=1}^{\infty}r^n\dfrac{\cos n\theta}{n}\cdots①\\ &amp;\qquad\qquad\qquad\quad \arctan\dfrac{r\sin\theta}{1-r\cos\theta}=\sum_{n=1}^{\infty}r^n\dfrac{\sin n\theta}{n}\cdots②\\ &amp;将①式中r换为-r得：\\ &amp;\qquad\qquad r\cos\theta-r^2\dfrac{\cos2\theta}{2}&#43;r^3\dfrac{\cos3\theta}{3}-\cdots=\dfrac12\ln(1&#43;2r\cos\theta&#43;r^2)\\ &amp;将②式中的r换为-r，\theta换为-\theta得：\\ &amp;\qquad\qquad r\sin\theta-r^2\dfrac{\sin2\theta}{2}&#43;r^3\dfrac{\sin3\theta}{3}-\cdots=\arctan\dfrac{r\sin\theta}{1&#43;r\cos\theta} \end{aligned}$
+$ \begin{aligned} \displaystyle&amp;\int\dfrac{\sin \theta}{r^2-2r\cos\theta&#43;1}\text{d}r\\ =&amp;\int\dfrac{\sin\theta}{(r-\cos\theta)^2&#43;\sin^2\theta}\text{d}(r-\cos\theta)\\ =&amp;\arctan\dfrac{r-\cos\theta}{\sin \theta} \end{aligned} $
+$ \begin{aligned} \left(\arctan\dfrac{r\sin\theta}{1-r\cos\theta}\right)&rsquo;=&amp;\dfrac{1}{\left(\dfrac{r\sin\theta}{1-r\cos\theta}\right)^2&#43;1}\cdot\dfrac{\sin\theta(1-r\cos\theta)&#43;\cos\theta\cdot r\sin\theta}{(1-r\cos\theta)^2}\\ =&amp;\dfrac{\sin\theta}{r^2\sin^2\theta&#43;1-2r\cos\theta&#43;r^2\cos^2\theta}\\ =&amp;\dfrac{\sin\theta}{1-2r\cos\theta&#43;r^2} \end{aligned} $
+$ \begin{aligned} &amp;\dfrac{\sin\theta}{1-2r\cos\theta&#43;r^2}=\dfrac{\sin\theta}{1-2r\cos\theta&#43;r^2\cos^2\theta&#43;r^2\sin^2\theta}\\ =&amp;\dfrac{\sin\theta}{(1-r\cos\theta)^2&#43;r^2\sin^2\theta}=\dfrac{\dfrac{\sin\theta}{(1-r\cos\theta)^2}}{1&#43;\left(\dfrac{r\sin\theta}{1-r\cos\theta}\right)^2} \end{aligned} $
 $\displaystyle\int_0^r\dfrac{\dfrac{\sin\theta}{(1-r\cos\theta)^2}}{1&#43;\left(\dfrac{r\sin\theta}{1-r\cos\theta}\right)^2}\text{d}r=\int_0^r\dfrac{1}{1&#43;\left(\dfrac{r\sin\theta}{1-r\cos\theta}\right)^2}\text{d}(\dfrac{r\sin\theta}{1-r\cos\theta})\\=\arctan\dfrac{r\sin\theta}{1-r\cos\theta}$
 $\displaystyle\int_0^1\dfrac{\arctan x}{x\sqrt{1-x^2}}\text{d}x=\int_0^{\frac{\pi}{4}}\dfrac{x}{\tan x}$
 $\displaystyle\lim_{x\to0^&#43;}\ln(1-x)\ln(\tan x)=\lim_{x\to0^&#43;}\ln(1-x)\ln(\sin x)=\lim_{x\to0^&#43;}-x\ln(\sin x)=\lim_{x\to0^&#43;}-\dfrac{\ln(\sin x)}{\frac1x}=\lim_{x\to0^&#43;}\dfrac{\cos x}{\sin x}\cdot x^2=0$
-  $\cos\theta&#43;\dfrac{\cos2\theta}{2}&#43;\dfrac{\cos3\theta}{3}&#43;\dfrac{\cos4\theta}{4}&#43;\cdots$  直接引用昨天的结论：
+$\cos\theta&#43;\dfrac{\cos2\theta}{2}&#43;\dfrac{\cos3\theta}{3}&#43;\dfrac{\cos4\theta}{4}&#43;\cdots$ 直接引用昨天的结论：
 $r\cos\theta-r^2\dfrac{\cos2\theta}{2}&#43;r^3\dfrac{\cos3\theta}{3}-\cdots=\dfrac12\ln(1&#43;2r\cos\theta&#43;r^2)\cdots①;$
-把 $r=-1$ 带入 ① 式，得："/>
- <meta property="og:title" content="几道积分和级数" />
+把 $r=-1$ 带入 ① 式，得：
+$-\cos\theta-\dfrac{\cos2\theta}{2}-\dfrac{\cos3\theta}{3}-\cdots=\dfrac12\ln(2-2r\cos\theta)=\ln(2\sin\dfrac{\theta}{2})$"/>
+
+    <meta property="og:title" content="几道积分和级数" />
 <meta property="og:description" content="忘记什么时候搞来的积分了，有些好像是积分竞赛的，应该很多都不是我自己做的，只是原来记录的
-$\begin{aligned} &amp;\dfrac{z}{1-z}=\sum_{n=1}^{\infty}z^n\qquad(|z|&lt;1)\\
-&amp;左右两边积分可得;\ln(1-z)=-\sum_{n=1}^\infty\dfrac{z^n}{n}.\\
-&amp;代入z=re^{i\theta},\dfrac{re^{i\theta}}{1-re^{i\theta}}=\sum_{n=1}^{\infty}r^n(\cos n\theta&#43;i\sin n\theta)\\
-&amp;左边=\dfrac{re^{i\theta}}{1-re^{i\theta}}=\dfrac{r\cos\theta&#43;ir\sin\theta}{(1-r\cos\theta)-ir\sin\theta}=\dfrac{(r\cos\theta&#43;ir\sin\theta)[(1-r\cos\theta)&#43;ir\sin\theta]}{(1-r\cos\theta)^2&#43;r^2\sin^2\theta}\\
-&amp;\qquad=\dfrac{r\cos\theta-r^2}{1-2r\cos\theta&#43;r^2}&#43;i\dfrac{r\sin\theta}{1-2r\cos\theta&#43;r^2}\\
-&amp;因此\dfrac{\cos\theta-r}{1-2r\cos\theta&#43;r^2}=\sum_{n=1}^{\infty}r^{n-1}\cos n\theta,\quad \dfrac{\sin\theta}{1-2r\cos\theta&#43;r^2}=\sum_{n=1}^{\infty}r^{n-1}\sin n\theta.\\
-&amp;左右对r积分:\quad\dfrac12\ln(1-2r\cos\theta&#43;r^2)=-\sum_{n=1}^{\infty}r^n\dfrac{\cos n\theta}{n}\cdots①\\
-&amp;\qquad\qquad\qquad\quad \arctan\dfrac{r\sin\theta}{1-r\cos\theta}=\sum_{n=1}^{\infty}r^n\dfrac{\sin n\theta}{n}\cdots②\\
-&amp;将①式中r换为-r得：\\
-&amp;\qquad\qquad r\cos\theta-r^2\dfrac{\cos2\theta}{2}&#43;r^3\dfrac{\cos3\theta}{3}-\cdots=\dfrac12\ln(1&#43;2r\cos\theta&#43;r^2)\\
-&amp;将②式中的r换为-r，\theta换为-\theta得：\\
-&amp;\qquad\qquad r\sin\theta-r^2\dfrac{\sin2\theta}{2}&#43;r^3\dfrac{\sin3\theta}{3}-\cdots=\arctan\dfrac{r\sin\theta}{1&#43;r\cos\theta} \end{aligned}$
- $ \begin{aligned} \displaystyle&amp;\int\dfrac{\sin \theta}{r^2-2r\cos\theta&#43;1}\text{d}r\\
-=&amp;\int\dfrac{\sin\theta}{(r-\cos\theta)^2&#43;\sin^2\theta}\text{d}(r-\cos\theta)\\
-=&amp;\arctan\dfrac{r-\cos\theta}{\sin \theta} \end{aligned} $
-$ \begin{aligned} \left(\arctan\dfrac{r\sin\theta}{1-r\cos\theta}\right)&#39;=&amp;\dfrac{1}{\left(\dfrac{r\sin\theta}{1-r\cos\theta}\right)^2&#43;1}\cdot\dfrac{\sin\theta(1-r\cos\theta)&#43;\cos\theta\cdot r\sin\theta}{(1-r\cos\theta)^2}\\
-=&amp;\dfrac{\sin\theta}{r^2\sin^2\theta&#43;1-2r\cos\theta&#43;r^2\cos^2\theta}\\
-=&amp;\dfrac{\sin\theta}{1-2r\cos\theta&#43;r^2} \end{aligned} $
-$ \begin{aligned} &amp;\dfrac{\sin\theta}{1-2r\cos\theta&#43;r^2}=\dfrac{\sin\theta}{1-2r\cos\theta&#43;r^2\cos^2\theta&#43;r^2\sin^2\theta}\\
-=&amp;\dfrac{\sin\theta}{(1-r\cos\theta)^2&#43;r^2\sin^2\theta}=\dfrac{\dfrac{\sin\theta}{(1-r\cos\theta)^2}}{1&#43;\left(\dfrac{r\sin\theta}{1-r\cos\theta}\right)^2} \end{aligned} $
+$\begin{aligned} &amp;\dfrac{z}{1-z}=\sum_{n=1}^{\infty}z^n\qquad(|z|&lt;1)\\ &amp;左右两边积分可得;\ln(1-z)=-\sum_{n=1}^\infty\dfrac{z^n}{n}.\\ &amp;代入z=re^{i\theta},\dfrac{re^{i\theta}}{1-re^{i\theta}}=\sum_{n=1}^{\infty}r^n(\cos n\theta&#43;i\sin n\theta)\\ &amp;左边=\dfrac{re^{i\theta}}{1-re^{i\theta}}=\dfrac{r\cos\theta&#43;ir\sin\theta}{(1-r\cos\theta)-ir\sin\theta}=\dfrac{(r\cos\theta&#43;ir\sin\theta)[(1-r\cos\theta)&#43;ir\sin\theta]}{(1-r\cos\theta)^2&#43;r^2\sin^2\theta}\\ &amp;\qquad=\dfrac{r\cos\theta-r^2}{1-2r\cos\theta&#43;r^2}&#43;i\dfrac{r\sin\theta}{1-2r\cos\theta&#43;r^2}\\ &amp;因此\dfrac{\cos\theta-r}{1-2r\cos\theta&#43;r^2}=\sum_{n=1}^{\infty}r^{n-1}\cos n\theta,\quad \dfrac{\sin\theta}{1-2r\cos\theta&#43;r^2}=\sum_{n=1}^{\infty}r^{n-1}\sin n\theta.\\ &amp;左右对r积分:\quad\dfrac12\ln(1-2r\cos\theta&#43;r^2)=-\sum_{n=1}^{\infty}r^n\dfrac{\cos n\theta}{n}\cdots①\\ &amp;\qquad\qquad\qquad\quad \arctan\dfrac{r\sin\theta}{1-r\cos\theta}=\sum_{n=1}^{\infty}r^n\dfrac{\sin n\theta}{n}\cdots②\\ &amp;将①式中r换为-r得：\\ &amp;\qquad\qquad r\cos\theta-r^2\dfrac{\cos2\theta}{2}&#43;r^3\dfrac{\cos3\theta}{3}-\cdots=\dfrac12\ln(1&#43;2r\cos\theta&#43;r^2)\\ &amp;将②式中的r换为-r，\theta换为-\theta得：\\ &amp;\qquad\qquad r\sin\theta-r^2\dfrac{\sin2\theta}{2}&#43;r^3\dfrac{\sin3\theta}{3}-\cdots=\arctan\dfrac{r\sin\theta}{1&#43;r\cos\theta} \end{aligned}$
+$ \begin{aligned} \displaystyle&amp;\int\dfrac{\sin \theta}{r^2-2r\cos\theta&#43;1}\text{d}r\\ =&amp;\int\dfrac{\sin\theta}{(r-\cos\theta)^2&#43;\sin^2\theta}\text{d}(r-\cos\theta)\\ =&amp;\arctan\dfrac{r-\cos\theta}{\sin \theta} \end{aligned} $
+$ \begin{aligned} \left(\arctan\dfrac{r\sin\theta}{1-r\cos\theta}\right)&rsquo;=&amp;\dfrac{1}{\left(\dfrac{r\sin\theta}{1-r\cos\theta}\right)^2&#43;1}\cdot\dfrac{\sin\theta(1-r\cos\theta)&#43;\cos\theta\cdot r\sin\theta}{(1-r\cos\theta)^2}\\ =&amp;\dfrac{\sin\theta}{r^2\sin^2\theta&#43;1-2r\cos\theta&#43;r^2\cos^2\theta}\\ =&amp;\dfrac{\sin\theta}{1-2r\cos\theta&#43;r^2} \end{aligned} $
+$ \begin{aligned} &amp;\dfrac{\sin\theta}{1-2r\cos\theta&#43;r^2}=\dfrac{\sin\theta}{1-2r\cos\theta&#43;r^2\cos^2\theta&#43;r^2\sin^2\theta}\\ =&amp;\dfrac{\sin\theta}{(1-r\cos\theta)^2&#43;r^2\sin^2\theta}=\dfrac{\dfrac{\sin\theta}{(1-r\cos\theta)^2}}{1&#43;\left(\dfrac{r\sin\theta}{1-r\cos\theta}\right)^2} \end{aligned} $
 $\displaystyle\int_0^r\dfrac{\dfrac{\sin\theta}{(1-r\cos\theta)^2}}{1&#43;\left(\dfrac{r\sin\theta}{1-r\cos\theta}\right)^2}\text{d}r=\int_0^r\dfrac{1}{1&#43;\left(\dfrac{r\sin\theta}{1-r\cos\theta}\right)^2}\text{d}(\dfrac{r\sin\theta}{1-r\cos\theta})\\=\arctan\dfrac{r\sin\theta}{1-r\cos\theta}$
 $\displaystyle\int_0^1\dfrac{\arctan x}{x\sqrt{1-x^2}}\text{d}x=\int_0^{\frac{\pi}{4}}\dfrac{x}{\tan x}$
 $\displaystyle\lim_{x\to0^&#43;}\ln(1-x)\ln(\tan x)=\lim_{x\to0^&#43;}\ln(1-x)\ln(\sin x)=\lim_{x\to0^&#43;}-x\ln(\sin x)=\lim_{x\to0^&#43;}-\dfrac{\ln(\sin x)}{\frac1x}=\lim_{x\to0^&#43;}\dfrac{\cos x}{\sin x}\cdot x^2=0$
-  $\cos\theta&#43;\dfrac{\cos2\theta}{2}&#43;\dfrac{\cos3\theta}{3}&#43;\dfrac{\cos4\theta}{4}&#43;\cdots$  直接引用昨天的结论：
+$\cos\theta&#43;\dfrac{\cos2\theta}{2}&#43;\dfrac{\cos3\theta}{3}&#43;\dfrac{\cos4\theta}{4}&#43;\cdots$ 直接引用昨天的结论：
 $r\cos\theta-r^2\dfrac{\cos2\theta}{2}&#43;r^3\dfrac{\cos3\theta}{3}-\cdots=\dfrac12\ln(1&#43;2r\cos\theta&#43;r^2)\cdots①;$
-把 $r=-1$ 带入 ① 式，得：" />
+把 $r=-1$ 带入 ① 式，得：
+$-\cos\theta-\dfrac{\cos2\theta}{2}-\dfrac{\cos3\theta}{3}-\cdots=\dfrac12\ln(2-2r\cos\theta)=\ln(2\sin\dfrac{\theta}{2})$" />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://Lu0key.github.io/post/%E5%87%A0%E9%81%93%E7%A7%AF%E5%88%86%E5%92%8C%E7%BA%A7%E6%95%B0/" />
+<meta property="og:url" content="https://Lu0key.github.io/post/%E5%87%A0%E9%81%93%E7%A7%AF%E5%88%86%E5%92%8C%E7%BA%A7%E6%95%B0/" /><meta property="article:section" content="post" />
 <meta property="article:published_time" content="2023-01-12T16:34:59+08:00" />
 <meta property="article:modified_time" content="2023-01-12T16:34:59+08:00" />
 
 
-</head>
-
-<body>
+  </head>
+  <body>
     <header class="app-header">
-        <a href="https://Lu0key.github.io/"><img class="app-header-avatar" src="/avatar.jpg" alt="洛七" /></a>
-        <h1>洛七的摸鱼池塘</h1>
-        <nav class="app-header-menu">
-            <a class="app-header-menu-item" href="/tags/">Tags</a>
-        </nav>
-        <p>即将没书读的咸鱼</p>
-        <div class="app-header-social">
-            
-        </div>
+      <a href="https://Lu0key.github.io/"><img class="app-header-avatar" src="/avatar.jpg" alt="洛七" /></a>
+      <span class="app-header-title">洛七的摸鱼池塘</span>
+      <nav class="app-header-menu">
+          <a class="app-header-menu-item" href="/tags/">Tags</a>
+      </nav>
+      <p>即将没书读的咸鱼</p>
     </header>
     <main class="app-container">
-        
+      
   <article class="post">
     <header class="post-header">
       <h1 class ="post-title">几道积分和级数</h1>
       <div class="post-meta">
         <div>
-          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-calendar">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-calendar">
   <title>calendar</title>
   <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line>
 </svg>
           Jan 12, 2023
         </div>
         <div>
-          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-clock">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-clock">
   <title>clock</title>
   <circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline>
 </svg>
           2 min read
         </div>
         <div>
-          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-tag">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-tag">
   <title>tag</title>
-  <path d="M20.59 13.41l-7.17 7.17a2 2 0 0 1-2.83 0L2 12V2h10l8.59 8.59a2 2 0 0 1 0 2.82z"></path><line x1="7" y1="7" x2="7" y2="7"></line>
+  <path d="M20.59 13.41l-7.17 7.17a2 2 0 0 1-2.83 0L2 12V2h10l8.59 8.59a2 2 0 0 1 0 2.82z"></path><line x1="7" y1="7" x2="7.01" y2="7"></line>
 </svg>
               <a class="tag" href="https://Lu0key.github.io/tags/%E9%AB%98%E6%95%B0/">高数</a>
               <a class="tag" href="https://Lu0key.github.io/tags/%E7%A7%AF%E5%88%86/">积分</a>
@@ -138,37 +89,37 @@ $r\cos\theta-r^2\dfrac{\cos2\theta}{2}&#43;r^3\dfrac{\cos3\theta}{3}-\cdots=\dfr
       <hr>
 <p>忘记什么时候搞来的积分了，有些好像是积分竞赛的，应该很多都不是我自己做的，只是原来记录的</p>
 <p>$\begin{aligned}
-&amp;\dfrac{z}{1-z}=\sum_{n=1}^{\infty}z^n\qquad(|z|&lt;1)\\<br>
-&amp;左右两边积分可得;\ln(1-z)=-\sum_{n=1}^\infty\dfrac{z^n}{n}.\\<br>
-&amp;代入z=re^{i\theta},\dfrac{re^{i\theta}}{1-re^{i\theta}}=\sum_{n=1}^{\infty}r^n(\cos n\theta+i\sin n\theta)\\<br>
-&amp;左边=\dfrac{re^{i\theta}}{1-re^{i\theta}}=\dfrac{r\cos\theta+ir\sin\theta}{(1-r\cos\theta)-ir\sin\theta}=\dfrac{(r\cos\theta+ir\sin\theta)[(1-r\cos\theta)+ir\sin\theta]}{(1-r\cos\theta)^2+r^2\sin^2\theta}\\<br>
-&amp;\qquad=\dfrac{r\cos\theta-r^2}{1-2r\cos\theta+r^2}+i\dfrac{r\sin\theta}{1-2r\cos\theta+r^2}\\<br>
-&amp;因此\dfrac{\cos\theta-r}{1-2r\cos\theta+r^2}=\sum_{n=1}^{\infty}r^{n-1}\cos n\theta,\quad \dfrac{\sin\theta}{1-2r\cos\theta+r^2}=\sum_{n=1}^{\infty}r^{n-1}\sin n\theta.\\<br>
-&amp;左右对r积分:\quad\dfrac12\ln(1-2r\cos\theta+r^2)=-\sum_{n=1}^{\infty}r^n\dfrac{\cos n\theta}{n}\cdots①\\<br>
-&amp;\qquad\qquad\qquad\quad \arctan\dfrac{r\sin\theta}{1-r\cos\theta}=\sum_{n=1}^{\infty}r^n\dfrac{\sin n\theta}{n}\cdots②\\<br>
-&amp;将①式中r换为-r得：\\<br>
-&amp;\qquad\qquad r\cos\theta-r^2\dfrac{\cos2\theta}{2}+r^3\dfrac{\cos3\theta}{3}-\cdots=\dfrac12\ln(1+2r\cos\theta+r^2)\\<br>
-&amp;将②式中的r换为-r，\theta换为-\theta得：\\<br>
+&amp;\dfrac{z}{1-z}=\sum_{n=1}^{\infty}z^n\qquad(|z|&lt;1)\\
+&amp;左右两边积分可得;\ln(1-z)=-\sum_{n=1}^\infty\dfrac{z^n}{n}.\\
+&amp;代入z=re^{i\theta},\dfrac{re^{i\theta}}{1-re^{i\theta}}=\sum_{n=1}^{\infty}r^n(\cos n\theta+i\sin n\theta)\\
+&amp;左边=\dfrac{re^{i\theta}}{1-re^{i\theta}}=\dfrac{r\cos\theta+ir\sin\theta}{(1-r\cos\theta)-ir\sin\theta}=\dfrac{(r\cos\theta+ir\sin\theta)[(1-r\cos\theta)+ir\sin\theta]}{(1-r\cos\theta)^2+r^2\sin^2\theta}\\
+&amp;\qquad=\dfrac{r\cos\theta-r^2}{1-2r\cos\theta+r^2}+i\dfrac{r\sin\theta}{1-2r\cos\theta+r^2}\\
+&amp;因此\dfrac{\cos\theta-r}{1-2r\cos\theta+r^2}=\sum_{n=1}^{\infty}r^{n-1}\cos n\theta,\quad \dfrac{\sin\theta}{1-2r\cos\theta+r^2}=\sum_{n=1}^{\infty}r^{n-1}\sin n\theta.\\
+&amp;左右对r积分:\quad\dfrac12\ln(1-2r\cos\theta+r^2)=-\sum_{n=1}^{\infty}r^n\dfrac{\cos n\theta}{n}\cdots①\\
+&amp;\qquad\qquad\qquad\quad \arctan\dfrac{r\sin\theta}{1-r\cos\theta}=\sum_{n=1}^{\infty}r^n\dfrac{\sin n\theta}{n}\cdots②\\
+&amp;将①式中r换为-r得：\\
+&amp;\qquad\qquad r\cos\theta-r^2\dfrac{\cos2\theta}{2}+r^3\dfrac{\cos3\theta}{3}-\cdots=\dfrac12\ln(1+2r\cos\theta+r^2)\\
+&amp;将②式中的r换为-r，\theta换为-\theta得：\\
 &amp;\qquad\qquad r\sin\theta-r^2\dfrac{\sin2\theta}{2}+r^3\dfrac{\sin3\theta}{3}-\cdots=\arctan\dfrac{r\sin\theta}{1+r\cos\theta}
 \end{aligned}$</p>
 <hr>
 <p>$
 \begin{aligned}
-\displaystyle&amp;\int\dfrac{\sin \theta}{r^2-2r\cos\theta+1}\text{d}r\\<br>
-=&amp;\int\dfrac{\sin\theta}{(r-\cos\theta)^2+\sin^2\theta}\text{d}(r-\cos\theta)\\<br>
+\displaystyle&amp;\int\dfrac{\sin \theta}{r^2-2r\cos\theta+1}\text{d}r\\
+=&amp;\int\dfrac{\sin\theta}{(r-\cos\theta)^2+\sin^2\theta}\text{d}(r-\cos\theta)\\
 =&amp;\arctan\dfrac{r-\cos\theta}{\sin \theta}
 \end{aligned}
 $</p>
 <p>$
 \begin{aligned}
-\left(\arctan\dfrac{r\sin\theta}{1-r\cos\theta}\right)'=&amp;\dfrac{1}{\left(\dfrac{r\sin\theta}{1-r\cos\theta}\right)^2+1}\cdot\dfrac{\sin\theta(1-r\cos\theta)+\cos\theta\cdot r\sin\theta}{(1-r\cos\theta)^2}\\<br>
-=&amp;\dfrac{\sin\theta}{r^2\sin^2\theta+1-2r\cos\theta+r^2\cos^2\theta}\\<br>
+\left(\arctan\dfrac{r\sin\theta}{1-r\cos\theta}\right)&rsquo;=&amp;\dfrac{1}{\left(\dfrac{r\sin\theta}{1-r\cos\theta}\right)^2+1}\cdot\dfrac{\sin\theta(1-r\cos\theta)+\cos\theta\cdot r\sin\theta}{(1-r\cos\theta)^2}\\
+=&amp;\dfrac{\sin\theta}{r^2\sin^2\theta+1-2r\cos\theta+r^2\cos^2\theta}\\
 =&amp;\dfrac{\sin\theta}{1-2r\cos\theta+r^2}
 \end{aligned}
 $</p>
 <p>$
 \begin{aligned}
-&amp;\dfrac{\sin\theta}{1-2r\cos\theta+r^2}=\dfrac{\sin\theta}{1-2r\cos\theta+r^2\cos^2\theta+r^2\sin^2\theta}\\<br>
+&amp;\dfrac{\sin\theta}{1-2r\cos\theta+r^2}=\dfrac{\sin\theta}{1-2r\cos\theta+r^2\cos^2\theta+r^2\sin^2\theta}\\
 =&amp;\dfrac{\sin\theta}{(1-r\cos\theta)^2+r^2\sin^2\theta}=\dfrac{\dfrac{\sin\theta}{(1-r\cos\theta)^2}}{1+\left(\dfrac{r\sin\theta}{1-r\cos\theta}\right)^2}
 \end{aligned}
 $</p>
@@ -267,78 +218,78 @@ $$\int_0^{\frac\pi4}\ln(\cos x)\text{d}x=\dfrac{G}{2}-\dfrac{\pi}{4}\ln2$$
 $$I=\dfrac{3\pi^2\ln2}{64}-\dfrac{G}{8}$$</p>
 <p>$\displaystyle\int_0^{\pi}\ln(\sin x+\sqrt{1+\sin^2x})\text{d}x$</p>
 <p>$\begin{aligned}
-I=&amp;\int_0^\pi\ln(\sin x+\sqrt{1+\sin^2x})\text{d}x\\<br>
-=&amp;2\int_0^{\frac\pi2}\ln(\sin x+\sqrt{1+\sin^2x})\text{d}x\\<br>
-=&amp;2\int_0^{\frac\pi2}\ln(1+\sqrt{1+\frac{1}{\sin^2x}})\text{d}x-\pi\ln2\\<br>
-I(a)=&amp;2\int_0^{\frac\pi2}\ln(1+\sqrt{1+\frac{a}{\sin^2x}})\text{d}x\\<br>
-I'(a)=&amp;\int_0^{\frac\pi2}\dfrac{\frac1{\sin^2x}}{\sqrt{1+\frac{a}{\sin^2x}}+1+\frac{a}{\sin^2x}}\text{d}x\quad t=\cot x\\<br>
-=&amp;\int_0^{+\infty}\dfrac{\text{d}t}{\sqrt{(1+a)+at^2}+(1+a)+at^2}\\<br>
-&amp;\qquad\quad t=\sqrt{\dfrac{1+a}{a}}\tan u\\<br>
-=&amp;\dfrac{\pi-2\arctan \frac1{\sqrt a }}{2a}\\<br>
-=&amp;\dfrac{\arctan \sqrt a }{a}\\<br>
-I=&amp;I(1)-\pi\ln2=\int_0^1\dfrac{\arctan \sqrt a }{a}\text{d}a+\pi\ln2-\pi\ln2\\<br>
-=&amp;\int_0^1\dfrac{\arctan\sqrt{a}}{a}\text{d}a=2\int_0^1\dfrac{\arctan t}{t}\text{d}t\\<br>
+I=&amp;\int_0^\pi\ln(\sin x+\sqrt{1+\sin^2x})\text{d}x\\
+=&amp;2\int_0^{\frac\pi2}\ln(\sin x+\sqrt{1+\sin^2x})\text{d}x\\
+=&amp;2\int_0^{\frac\pi2}\ln(1+\sqrt{1+\frac{1}{\sin^2x}})\text{d}x-\pi\ln2\\
+I(a)=&amp;2\int_0^{\frac\pi2}\ln(1+\sqrt{1+\frac{a}{\sin^2x}})\text{d}x\\
+I&rsquo;(a)=&amp;\int_0^{\frac\pi2}\dfrac{\frac1{\sin^2x}}{\sqrt{1+\frac{a}{\sin^2x}}+1+\frac{a}{\sin^2x}}\text{d}x\quad t=\cot x\\
+=&amp;\int_0^{+\infty}\dfrac{\text{d}t}{\sqrt{(1+a)+at^2}+(1+a)+at^2}\\
+&amp;\qquad\quad t=\sqrt{\dfrac{1+a}{a}}\tan u\\
+=&amp;\dfrac{\pi-2\arctan \frac1{\sqrt a }}{2a}\\
+=&amp;\dfrac{\arctan \sqrt a }{a}\\
+I=&amp;I(1)-\pi\ln2=\int_0^1\dfrac{\arctan \sqrt a }{a}\text{d}a+\pi\ln2-\pi\ln2\\
+=&amp;\int_0^1\dfrac{\arctan\sqrt{a}}{a}\text{d}a=2\int_0^1\dfrac{\arctan t}{t}\text{d}t\\
 &amp;=2G
 \end{aligned}$</p>
 <p>$\displaystyle\int_{-\infty}^{+\infty}\dfrac{\text{sech}; x}{x^2+\pi^2}\text{d}x=\dfrac{4}{\pi}-1$</p>
 <p>$\begin{aligned}
-&amp;\int_0^{\infty}\dfrac{\text{d}x}{(x^2+b^2)\cosh ax}\\<br>
-=&amp;\dfrac{\pi}{2a}\int_{-\infty}^{+\infty}\dfrac{\text{d}x}{\left(\pi^2\frac{x^2}{a^2}+b^2\right)\cosh \pi x}\\<br>
-=&amp;\dfrac{\pi}{2a}\cdot\frac{a}{b}\int_{-\infty}^{+\infty}\dfrac{e^{-2abx}}{\cosh \pi x}\text{d}x\\<br>
-=&amp;\dfrac{\pi}{b}\int_0^{\infty}e^{-2abx}\sum_{n=0}^{\infty}2(-1)^ne^{-(2n+1)\pi x}\text{d}x\\<br>
-=&amp;\dfrac{2\pi}{b}\sum_{n=0}^{\infty}\dfrac{(-1)^n}{(2n+1)\pi+2ab}\\<br>
+&amp;\int_0^{\infty}\dfrac{\text{d}x}{(x^2+b^2)\cosh ax}\\
+=&amp;\dfrac{\pi}{2a}\int_{-\infty}^{+\infty}\dfrac{\text{d}x}{\left(\pi^2\frac{x^2}{a^2}+b^2\right)\cosh \pi x}\\
+=&amp;\dfrac{\pi}{2a}\cdot\frac{a}{b}\int_{-\infty}^{+\infty}\dfrac{e^{-2abx}}{\cosh \pi x}\text{d}x\\
+=&amp;\dfrac{\pi}{b}\int_0^{\infty}e^{-2abx}\sum_{n=0}^{\infty}2(-1)^ne^{-(2n+1)\pi x}\text{d}x\\
+=&amp;\dfrac{2\pi}{b}\sum_{n=0}^{\infty}\dfrac{(-1)^n}{(2n+1)\pi+2ab}\\
 =&amp;\dfrac{1}{2b}\left[\psi\left(\dfrac{ab}{2\pi}+\dfrac34\right)-\psi\left(\dfrac{ab}{2\pi}+\frac14\right)\right]
 \end{aligned}$</p>
 <p>$\displaystyle\int_0^{\infty}\dfrac{\cos tx}{\cosh\dfrac{\pi x}{2}(1+x^2)}\text{d}x$</p>
 <p>$\cosh(t)\ln[2\cosh(t)]-t\sinh(t)$</p>
 <p>$\displaystyle\int_0^{\infty}\dfrac{1-\cos x}{x(e^x-1)}\text{d}x$</p>
 <p>$\begin{aligned}
-I=&amp;\int_0^{\infty}\dfrac{1-\cos x}{x(e^x-1)}\text{d}x\\<br>
-I(a)=&amp;\int_0^{\infty}\dfrac{1-\cos ax}{x(e^x-1)}\text{d}x\\<br>
-I'(a)&amp;=\int_0^{\infty}\dfrac{\sin ax}{e^x-1}\text{d}x\\<br>
-=&amp;\int_0^{\infty}\sin ax\cdot\sum_{n=1}^{\infty}e^{-nx}\text{d}x\\<br>
-=&amp;\sum_{n=1}^{\infty}\int_0^{\infty}\sin ax\cdot e^{-nx}\text{d}x\\<br>
+I=&amp;\int_0^{\infty}\dfrac{1-\cos x}{x(e^x-1)}\text{d}x\\
+I(a)=&amp;\int_0^{\infty}\dfrac{1-\cos ax}{x(e^x-1)}\text{d}x\\
+I&rsquo;(a)&amp;=\int_0^{\infty}\dfrac{\sin ax}{e^x-1}\text{d}x\\
+=&amp;\int_0^{\infty}\sin ax\cdot\sum_{n=1}^{\infty}e^{-nx}\text{d}x\\
+=&amp;\sum_{n=1}^{\infty}\int_0^{\infty}\sin ax\cdot e^{-nx}\text{d}x\\
 =&amp;\sum_{n=1}^{\infty}\dfrac{a}{n^2+a^2}
 \end{aligned}$<br>
 $\begin{aligned}
-I=&amp;I(1)=\int_0^{1}\sum_{n=1}^{\infty}\dfrac{a}{n^2+a^2}\\<br>
-=&amp;\dfrac12\sum_{n=1}^{\infty}\ln\left(1+\dfrac1{n^2}\right)\\<br>
+I=&amp;I(1)=\int_0^{1}\sum_{n=1}^{\infty}\dfrac{a}{n^2+a^2}\\
+=&amp;\dfrac12\sum_{n=1}^{\infty}\ln\left(1+\dfrac1{n^2}\right)\\
 =&amp;\dfrac12\ln\left(\dfrac{\sinh x}{x}\right)
 \end{aligned}$</p>
 <p>$\displaystyle\dfrac{\sinh x}{x}=\prod_{k=1}^{\infty}\left(1+\dfrac{x^2}{k^2\pi^2}\right)$</p>
 <p>$\displaystyle\int_0^{\pi}\dfrac{x}{\left(\sin x+\sqrt{2}\right)^2}\text{d}x=\dfrac{(\pi-2)\pi}{2\sqrt{2}}$</p>
 <p>$\begin{aligned}
-I=&amp;\int_0^{\pi}\dfrac{x}{\left(\sin x+\sqrt{2}\right)^2}\text{d}x\\<br>
-=&amp;\dfrac\pi2\int_0^{\pi}\dfrac{\text{d}x}{(\sin x+\sqrt{2})^2}\\<br>
-=&amp;\pi\int_0^{\infty}\dfrac{t^2+1}{\left[2t+\sqrt2(t^2+1)\right]^2}\text{d}t\\<br>
+I=&amp;\int_0^{\pi}\dfrac{x}{\left(\sin x+\sqrt{2}\right)^2}\text{d}x\\
+=&amp;\dfrac\pi2\int_0^{\pi}\dfrac{\text{d}x}{(\sin x+\sqrt{2})^2}\\
+=&amp;\pi\int_0^{\infty}\dfrac{t^2+1}{\left[2t+\sqrt2(t^2+1)\right]^2}\text{d}t\\
 =&amp;\dfrac{\pi(\pi-2)}{2\sqrt{2}}
 \end{aligned}$</p>
 <p>$\displaystyle\int_0^{\infty}\dfrac{\text{d}x}{\left[x^4+(1+2\sqrt{2})x^2+1\right]\left[x^{100}-x^{98}+\cdots+1\right]}=\dfrac{\pi}{2(1+\sqrt{2})}$</p>
 <p>$\begin{aligned}
-I=&amp;\int_0^{\infty}\dfrac{\text{d}x}{\left[x^4+(1+2\sqrt{2})x^2+1\right]\left[x^{100}-x^{98}+\cdots+1\right]}\\<br>
-=&amp;\int_0^{\infty}\dfrac{\frac1{x^2}\text{d}x}{\left[\frac1{x^4}+(1+2\sqrt2)\frac1{x^2}+1\right][\frac1{x^{100}}-\frac1{x^{98}}+\cdots+1]}\\<br>
-=&amp;\int_0^{\infty}\dfrac{x^{102}\text{d}x}{\left[x^4+(1+2\sqrt{2})x^2+1\right]\left[x^{100}-x^{98}+\cdots+1\right]}\\<br>
-2I=&amp;\int_0^{\infty}\dfrac{1+x^{102}\text{d}x}{\left[x^4+(1+2\sqrt{2})x^2+1\right]\left[x^{100}-x^{98}+\cdots+1\right]}\\<br>
-=&amp;\int_0^{\infty}\dfrac{(x^2+1)(x^{100}-x^{98}+\cdots+1)\text{d}x}{\left[x^4+(1+2\sqrt{2})x^2+1\right]\left[x^{100}-x^{98}+\cdots+1\right]}\\<br>
-=&amp;\int_0^{\infty}\dfrac{x^2+1}{x^4+(1+2\sqrt{2})x^2+1}\text{d}x\\<br>
-=&amp;\int_0^{\infty}\dfrac{1+\frac1{x^2}}{x^2+\frac1{x^2}+(1+2\sqrt{2})}\text{d}x\\<br>
-=&amp;\int_0^{\infty}\dfrac{\text{d}(x-\frac1x)}{(x-\frac1x)^2+3+2\sqrt2}\\<br>
-=&amp;\dfrac{1}{1+\sqrt2}\arctan\left(\dfrac{t-\frac1t}{1+\sqrt2}\right)\bigg|_0^{\infty}\\<br>
-=&amp;\dfrac{\pi}{1+\sqrt2}\\<br>
+I=&amp;\int_0^{\infty}\dfrac{\text{d}x}{\left[x^4+(1+2\sqrt{2})x^2+1\right]\left[x^{100}-x^{98}+\cdots+1\right]}\\
+=&amp;\int_0^{\infty}\dfrac{\frac1{x^2}\text{d}x}{\left[\frac1{x^4}+(1+2\sqrt2)\frac1{x^2}+1\right][\frac1{x^{100}}-\frac1{x^{98}}+\cdots+1]}\\
+=&amp;\int_0^{\infty}\dfrac{x^{102}\text{d}x}{\left[x^4+(1+2\sqrt{2})x^2+1\right]\left[x^{100}-x^{98}+\cdots+1\right]}\\
+2I=&amp;\int_0^{\infty}\dfrac{1+x^{102}\text{d}x}{\left[x^4+(1+2\sqrt{2})x^2+1\right]\left[x^{100}-x^{98}+\cdots+1\right]}\\
+=&amp;\int_0^{\infty}\dfrac{(x^2+1)(x^{100}-x^{98}+\cdots+1)\text{d}x}{\left[x^4+(1+2\sqrt{2})x^2+1\right]\left[x^{100}-x^{98}+\cdots+1\right]}\\
+=&amp;\int_0^{\infty}\dfrac{x^2+1}{x^4+(1+2\sqrt{2})x^2+1}\text{d}x\\
+=&amp;\int_0^{\infty}\dfrac{1+\frac1{x^2}}{x^2+\frac1{x^2}+(1+2\sqrt{2})}\text{d}x\\
+=&amp;\int_0^{\infty}\dfrac{\text{d}(x-\frac1x)}{(x-\frac1x)^2+3+2\sqrt2}\\
+=&amp;\dfrac{1}{1+\sqrt2}\arctan\left(\dfrac{t-\frac1t}{1+\sqrt2}\right)\bigg|_0^{\infty}\\
+=&amp;\dfrac{\pi}{1+\sqrt2}\\
 I=&amp;\dfrac{\pi}{2(1+\sqrt2)}
 \end{aligned}$</p>
 <p>$\begin{aligned}
-&amp;\displaystyle\int_0^{\frac\pi4}\left[\dfrac{(1-x^2)\ln(1+x^2)+(1+x^2)-(1-x^2)\ln(1-x^2)}{(1-x^4)(1+x^2)}\right]x\cdot\exp\left[\dfrac{x^2-1}{x^2+1}\right]\text{d}x\\<br>
+&amp;\displaystyle\int_0^{\frac\pi4}\left[\dfrac{(1-x^2)\ln(1+x^2)+(1+x^2)-(1-x^2)\ln(1-x^2)}{(1-x^4)(1+x^2)}\right]x\cdot\exp\left[\dfrac{x^2-1}{x^2+1}\right]\text{d}x\\
 &amp;=-\dfrac14\exp\left[-\dfrac{16-\pi^2}{16+\pi^2}\right]\ln\left[\dfrac{16-\pi^2}{16+\pi^2}\right]
 \end{aligned}$</p>
 <p>$\displaystyle\int_0^{+\infty}\dfrac{e^{-x^2}}{(x^2+\frac12)^2}\text{d}x$</p>
 <p>$\begin{aligned}
-&amp;\int_0^{\infty}\dfrac{e^{-x^2}}{(x^2+\frac12)^2}\text{d}x\\<br>
-=&amp;4\int_0^{\infty}\dfrac{e^{-x^2}}{(2x^2+1)^2}\text{d}x\\<br>
-=&amp;\dfrac{4}{\sqrt{2}}\int_0^{\infty}\dfrac{e^{-\frac{x^2}2}}{(x^2+1)^2}\text{d}x\\<br>
-=&amp;\dfrac{4}{\sqrt{2}}\cdot\dfrac{1}{\Gamma(2)}\int_0^{\infty}t\cdot e^{-t}\text{d}t\int_0^{\infty}e^{-\frac{x^2}2-tx^2}\text{d}x\\<br>
-=&amp;\dfrac{4\sqrt\pi}{\sqrt{2}}\int_0^{\infty}\dfrac{te^{-t}}{\sqrt{4t+2}}\text{d}t\\<br>
-=&amp;\dfrac{4\sqrt\pi}{\sqrt{2}}\cdot\dfrac{1}{2\sqrt{2}}\\<br>
+&amp;\int_0^{\infty}\dfrac{e^{-x^2}}{(x^2+\frac12)^2}\text{d}x\\
+=&amp;4\int_0^{\infty}\dfrac{e^{-x^2}}{(2x^2+1)^2}\text{d}x\\
+=&amp;\dfrac{4}{\sqrt{2}}\int_0^{\infty}\dfrac{e^{-\frac{x^2}2}}{(x^2+1)^2}\text{d}x\\
+=&amp;\dfrac{4}{\sqrt{2}}\cdot\dfrac{1}{\Gamma(2)}\int_0^{\infty}t\cdot e^{-t}\text{d}t\int_0^{\infty}e^{-\frac{x^2}2-tx^2}\text{d}x\\
+=&amp;\dfrac{4\sqrt\pi}{\sqrt{2}}\int_0^{\infty}\dfrac{te^{-t}}{\sqrt{4t+2}}\text{d}t\\
+=&amp;\dfrac{4\sqrt\pi}{\sqrt{2}}\cdot\dfrac{1}{2\sqrt{2}}\\
 =&amp;\sqrt{\pi}
 \end{aligned}$</p>
 
@@ -349,6 +300,5 @@ I=&amp;\dfrac{\pi}{2(1+\sqrt2)}
   </article>
 
     </main>
-</body>
-
+  </body>
 </html>
