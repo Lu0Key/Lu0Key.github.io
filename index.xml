@@ -6,9 +6,20 @@
     <description>Recent content on 洛七的摸鱼池塘</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Wed, 26 Jul 2023 00:58:32 +0800</lastBuildDate><atom:link href="https://Lu0key.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 31 Jul 2023 13:16:20 +0800</lastBuildDate><atom:link href="https://Lu0key.github.io/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>Linux gpu fan control.md</title>
+      <title>Linux 文本文件忙</title>
+      <link>https://Lu0key.github.io/post/linux-%E6%96%87%E6%9C%AC%E6%96%87%E4%BB%B6%E5%BF%99/</link>
+      <pubDate>Mon, 31 Jul 2023 13:16:20 +0800</pubDate>
+      
+      <guid>https://Lu0key.github.io/post/linux-%E6%96%87%E6%9C%AC%E6%96%87%E4%BB%B6%E5%BF%99/</guid>
+      <description>使用 MobaXterm 远程连接服务器的时候, 有时候会手动创建脚本在 windows 上写好了, 然后再直接用 MobaXterm 打开文件复制进去, 然后修改 shell 脚本的权限后去运行脚本. 有时候会出现错误
+-bash: ./xxx.sh: 文本文件忙 这是因为 windows 和 Linux 的换行符不一样导致的, 解决方法是使用 dos2unix 命令
+dos2unix xxx.sh 然后重新运行即可.</description>
+    </item>
+    
+    <item>
+      <title>Linux gpu fan control</title>
       <link>https://Lu0key.github.io/post/linux-gpu-fan-control/</link>
       <pubDate>Wed, 26 Jul 2023 00:58:32 +0800</pubDate>
       

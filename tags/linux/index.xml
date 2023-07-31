@@ -6,15 +6,35 @@
     <description>Recent content in Linux on 洛七的摸鱼池塘</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Wed, 26 Jul 2023 00:58:32 +0800</lastBuildDate><atom:link href="https://Lu0key.github.io/tags/linux/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 31 Jul 2023 13:16:20 +0800</lastBuildDate><atom:link href="https://Lu0key.github.io/tags/linux/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>Linux gpu fan control.md</title>
+      <title>Linux 文本文件忙</title>
+      <link>https://Lu0key.github.io/post/linux-%E6%96%87%E6%9C%AC%E6%96%87%E4%BB%B6%E5%BF%99/</link>
+      <pubDate>Mon, 31 Jul 2023 13:16:20 +0800</pubDate>
+      
+      <guid>https://Lu0key.github.io/post/linux-%E6%96%87%E6%9C%AC%E6%96%87%E4%BB%B6%E5%BF%99/</guid>
+      <description>使用 MobaXterm 远程连接服务器的时候, 有时候会手动创建脚本在 windows 上写好了, 然后再直接用 MobaXterm 打开文件复制进去, 然后修改 shell 脚本的权限后去运行脚本. 有时候会出现错误
+-bash: ./xxx.sh: 文本文件忙 这是因为 windows 和 Linux 的换行符不一样导致的, 解决方法是使用 dos2unix 命令
+dos2unix xxx.sh 然后重新运行即可.</description>
+    </item>
+    
+    <item>
+      <title>Linux gpu fan control</title>
       <link>https://Lu0key.github.io/post/linux-gpu-fan-control/</link>
       <pubDate>Wed, 26 Jul 2023 00:58:32 +0800</pubDate>
       
       <guid>https://Lu0key.github.io/post/linux-gpu-fan-control/</guid>
       <description>用于 Linux 服务器风扇控制, 经常觉得服务器显卡的风扇调度太保守了, 没事就想摸摸看, 然后核心温度才50度, 摸上去都有70多度了, 因此想要自己控制显卡的风扇转速, 狠狠地转！ 有时候核心都快70度了, 风扇转速才70%。
 #!/bin/bash # 查看GPU的index gpu_index_str=$(nvidia-smi --query-gpu=index --format=csv,noheader) gpu_index=($gpu_index_str) # 每一个GPU的风扇设置为手动控制 for index in ${!gpu_index[*]} do nvidia-settings -a &amp;#34;[gpu:$index]/GPUFanControlState=1&amp;#34; done old_speed=-1 # fan_nums 只能通过 nvidia-settings -q all | grep fan # 这边查出来的[fan:num] fan_nums 为最大的 num+1 fan_nums=4 # 然后这边就是GPU核心温度 40°C 以下时, 风扇转速为 60% # 40°C ~ 60°C 时, 风扇转速为 90% # 60°C 以上时, 风扇转速为 100% # 因为懒, 所以不对每一个GPU风扇单独调(实际上是因为我不知道为什么, 明明是三风扇GPU, 但是能控制的风扇都只有两个, 不知道怎么写通用性高的.) while true do temperature_str=$(nvidia-smi --query-gpu=temperature.</description>
+    </item>
+    
+    <item>
+      <title>Linux 创建新用户</title>
+      <link>https://Lu0key.github.io/post/linux-%E5%88%9B%E5%BB%BA%E6%96%B0%E7%94%A8%E6%88%B7/</link>
+      <pubDate>Fri, 21 Jul 2023 18:27:05 +0800</pubDate>
+      
+      <guid>https://Lu0key.github.io/post/linux-%E5%88%9B%E5%BB%BA%E6%96%B0%E7%94%A8%E6%88%B7/</guid>
+      <description>sudo adduser xxx # 指定主目录 # 例如 # sudo adduser xxx --home /new_home/xxx # 输入密码 sudo chmod 755 /home/xxx su xxx # 输入密码 ssh-keygen # 一路回车 cd ~/.ssh cat id_rsa.pub &amp;gt;&amp;gt; authorized_keys chmod 777 ~/.ssh chmod 777 ~/.ssh/id_rsa # 然后把 id_rsa 下载下来 chmod 600 ~/.ssh/id_rsa chmod 700 ~/.ssh chmod 600 ~/.ssh/authorized_keys 然后就可以根据 id_rsa 登录了.</description>
     </item>
     
   </channel>
