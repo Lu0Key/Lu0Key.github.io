@@ -6,7 +6,23 @@
     <description>Recent content in Posts on 洛七的摸鱼池塘</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Mon, 31 Jul 2023 15:03:39 +0800</lastBuildDate><atom:link href="https://Lu0key.github.io/post/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 31 Jul 2023 23:31:10 +0800</lastBuildDate><atom:link href="https://Lu0key.github.io/post/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Linux 更新显卡驱动</title>
+      <link>https://Lu0key.github.io/post/linux-%E6%9B%B4%E6%96%B0%E6%98%BE%E5%8D%A1%E9%A9%B1%E5%8A%A8/</link>
+      <pubDate>Mon, 31 Jul 2023 23:31:10 +0800</pubDate>
+      
+      <guid>https://Lu0key.github.io/post/linux-%E6%9B%B4%E6%96%B0%E6%98%BE%E5%8D%A1%E9%A9%B1%E5%8A%A8/</guid>
+      <description>最近经常更新老机器上的显卡驱动, 记录一下.
+更新显卡驱动 更新CUDA 更新 Cudnn 更新显卡驱动 先去官网下载最新的显卡驱动, 放到服务器上, 然后执行
+sudo chmod u+x ./NNVIDIA-Linux-x86_64-535.86.05.run sudo ./NVIDIA-Linux-x86_64-535.86.05.run 然后一路安装即可, 可能会遇到 X Server 没关闭的错误, 那就执行下面的命令即可.(我是Ubuntu)
+sudo service lightdm stop # or sudo systemctl stop gdm 然后重新执行即可.
+更新 CUDA 先选择cuda, 官网, 我这里依次选择 Linux -&amp;gt; x86_64 -&amp;gt; Ubuntu -&amp;gt; 22.04 -&amp;gt; runfile(local)
+然后会显示两条命令
+wget https://developer.download.nvidia.com/compute/cuda/12.2.0/local_installers/cuda_12.2.0_535.54.03_linux.run sudo sh cuda_12.2.0_535.54.03_linux.run 运行
+wget https://developer.download.nvidia.com/compute/cuda/12.2.0/local_installers/cuda_12.2.0_535.54.03_linux.run # 这里大概要下好几分钟 # 修改权限 sudo chmod u+x ./cuda_12.2.0_535.54.03_linux.run # 执行 sudo ./cuda_12.2.0_535.54.03_linux.run # 依次选择 # continue -&amp;gt; 输入 accept -&amp;gt; 在 Driver 处回车 -&amp;gt; install -&amp;gt; update(yes) # 验证一下装没装上 nvcc -V # nvcc: NVIDIA (R) Cuda compiler driver # Copyright (c) 2005-2023 NVIDIA Corporation # Built on Tue_Jun_13_19:16:58_PDT_2023 # Cuda compilation tools, release 12.</description>
+    </item>
+    
     <item>
       <title>Linux 新增硬盘</title>
       <link>https://Lu0key.github.io/post/linux-%E6%96%B0%E5%A2%9E%E7%A1%AC%E7%9B%98/</link>
