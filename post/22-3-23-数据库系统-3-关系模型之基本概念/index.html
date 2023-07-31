@@ -1,0 +1,257 @@
+<!doctype html>
+<html lang="en-us">
+  <head>
+    <title>数据库系统(3)-关系模型之基本概念 // 洛七的摸鱼池塘</title>
+    <link rel="shortcut icon" href="/favicon.ico" />
+    <meta charset="utf-8" />
+    <meta name="generator" content="Hugo 0.115.4">
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="author" content="洛七" />
+    <meta name="description" content="" />
+    <link rel="stylesheet" href="/css/main.min.d08c6ce68432c68a64d84cb426dfdecab702035f91a5d580831f23f76c040a05.css" />
+
+    
+    <meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="数据库系统(3)-关系模型之基本概念"/>
+<meta name="twitter:description" content="关系模型概述？ 什么是关系？ 关系模型中的约束 关系模型简述 提出
+E.F.Codd 在 1970 年提出
+研究
+一个关系(relation) 就是一个Table
+关系模型就是处理Table 的，由三个部分组成：
+描述DB各种数据的基本结构形式(Table/Relation) 描述Table与Table之间所可能发生的各种操作(关系运算) 描述这些操作所应遵循的约束条件(完整性约束) 关系模型三要素
+基本结构：Relation/Table 基本操作：Relation/Table 基本的 并 Union 差 difference 广义积 product 选择 selection 投影 projection 拓展的： 交 intersection 连接 join 除 division 完整性约束：实体完整性、参照完整性和用户自定义的完整性
+关系模型与关系数据库语言的关系
+关系运算：关系代数和关系演算
+关系演算：元组演算和域演算
+基于关系代数设计的数据库语言(ISBL):用计算机可识别的符号表征关系代数的运算符号
+基于元组演算设计的数据库语言(Ingres系统的QUEL)：用计算机可识别的符号表征元组演算的运算符号
+基于域演算设计的数据库语言示例QBE
+什么是关系 什么是表
+表的基本构成要素
+表/关系 列/字段/属性/数据项 列名 列值 标题/模式 行/元组/记录 关系
+“列”的取值范围“域(Domain)”
+域(Domain) 一组值的集合，这组值具有相同的数据类型 集合中元素的个数称为域的基数(Cardinality) 一组域 $D_1,D_2,\cdots,D_n$ 的笛卡尔积为： $D_1\times D_2\times\cdots D_n={(d_1,d_2,\cdots,d_n)|d_i \in D_i,;i=1,\cdots,n}$
+笛卡尔积的每个元素 $(d_1,d_2,\cdots,d_n)$ 称作一个 n-元组(n-tuple)"/>
+
+    <meta property="og:title" content="数据库系统(3)-关系模型之基本概念" />
+<meta property="og:description" content="关系模型概述？ 什么是关系？ 关系模型中的约束 关系模型简述 提出
+E.F.Codd 在 1970 年提出
+研究
+一个关系(relation) 就是一个Table
+关系模型就是处理Table 的，由三个部分组成：
+描述DB各种数据的基本结构形式(Table/Relation) 描述Table与Table之间所可能发生的各种操作(关系运算) 描述这些操作所应遵循的约束条件(完整性约束) 关系模型三要素
+基本结构：Relation/Table 基本操作：Relation/Table 基本的 并 Union 差 difference 广义积 product 选择 selection 投影 projection 拓展的： 交 intersection 连接 join 除 division 完整性约束：实体完整性、参照完整性和用户自定义的完整性
+关系模型与关系数据库语言的关系
+关系运算：关系代数和关系演算
+关系演算：元组演算和域演算
+基于关系代数设计的数据库语言(ISBL):用计算机可识别的符号表征关系代数的运算符号
+基于元组演算设计的数据库语言(Ingres系统的QUEL)：用计算机可识别的符号表征元组演算的运算符号
+基于域演算设计的数据库语言示例QBE
+什么是关系 什么是表
+表的基本构成要素
+表/关系 列/字段/属性/数据项 列名 列值 标题/模式 行/元组/记录 关系
+“列”的取值范围“域(Domain)”
+域(Domain) 一组值的集合，这组值具有相同的数据类型 集合中元素的个数称为域的基数(Cardinality) 一组域 $D_1,D_2,\cdots,D_n$ 的笛卡尔积为： $D_1\times D_2\times\cdots D_n={(d_1,d_2,\cdots,d_n)|d_i \in D_i,;i=1,\cdots,n}$
+笛卡尔积的每个元素 $(d_1,d_2,\cdots,d_n)$ 称作一个 n-元组(n-tuple)" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://Lu0key.github.io/post/22-3-23-%E6%95%B0%E6%8D%AE%E5%BA%93%E7%B3%BB%E7%BB%9F-3-%E5%85%B3%E7%B3%BB%E6%A8%A1%E5%9E%8B%E4%B9%8B%E5%9F%BA%E6%9C%AC%E6%A6%82%E5%BF%B5/" /><meta property="article:section" content="post" />
+<meta property="article:published_time" content="2022-03-23T22:05:52+08:00" />
+<meta property="article:modified_time" content="2022-03-23T22:05:52+08:00" />
+
+
+  </head>
+  <body>
+    <header class="app-header">
+      <a href="https://Lu0key.github.io/"><img class="app-header-avatar" src="/avatar.jpg" alt="洛七" /></a>
+      <span class="app-header-title">洛七的摸鱼池塘</span>
+      <nav class="app-header-menu">
+          <a class="app-header-menu-item" href="/tags/">Tags</a>
+      </nav>
+      <p>即将没书读的咸鱼</p>
+    </header>
+    <main class="app-container">
+      
+  <article class="post">
+    <header class="post-header">
+      <h1 class ="post-title">数据库系统(3)-关系模型之基本概念</h1>
+      <div class="post-meta">
+        <div>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-calendar">
+  <title>calendar</title>
+  <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line>
+</svg>
+          Mar 23, 2022
+        </div>
+        <div>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-clock">
+  <title>clock</title>
+  <circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline>
+</svg>
+          1 min read
+        </div>
+        <div>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-tag">
+  <title>tag</title>
+  <path d="M20.59 13.41l-7.17 7.17a2 2 0 0 1-2.83 0L2 12V2h10l8.59 8.59a2 2 0 0 1 0 2.82z"></path><line x1="7" y1="7" x2="7.01" y2="7"></line>
+</svg>
+              <a class="tag" href="https://Lu0key.github.io/tags/%E6%95%B0%E6%8D%AE%E5%BA%93/">数据库</a>
+        </div>
+      </div>
+    </header>
+    <div class="post-content">
+      <ul>
+<li>关系模型概述？</li>
+<li>什么是关系？</li>
+<li>关系模型中的约束</li>
+</ul>
+<h2 id="关系模型简述">关系模型简述</h2>
+<p><strong>提出</strong></p>
+<p>E.F.Codd 在 1970 年提出</p>
+<p><strong>研究</strong></p>
+<p>一个关系(relation) 就是一个Table<br>
+关系模型就是处理Table 的，由三个部分组成：</p>
+<ul>
+<li>描述DB各种数据的基本结构形式(Table/Relation)</li>
+<li>描述Table与Table之间所可能发生的各种操作(关系运算)</li>
+<li>描述这些操作所应遵循的约束条件(完整性约束)</li>
+</ul>
+<p><strong>关系模型三要素</strong></p>
+<ul>
+<li>基本结构：Relation/Table</li>
+<li>基本操作：Relation/Table</li>
+<li>基本的
+<ul>
+<li>并 Union</li>
+<li>差 difference</li>
+<li>广义积 product</li>
+<li>选择 selection</li>
+<li>投影 projection</li>
+</ul>
+</li>
+<li>拓展的：
+<ul>
+<li>交 intersection</li>
+<li>连接 join</li>
+<li>除 division</li>
+</ul>
+</li>
+</ul>
+<p>完整性约束：实体完整性、参照完整性和用户自定义的完整性</p>
+<p><strong>关系模型与关系数据库语言的关系</strong></p>
+<p>关系运算：关系代数和关系演算<br>
+关系演算：元组演算和域演算</p>
+<p>基于关系代数设计的数据库语言(ISBL):用计算机可识别的符号表征关系代数的运算符号</p>
+<p>基于元组演算设计的数据库语言(Ingres系统的QUEL)：用计算机可识别的符号表征元组演算的运算符号</p>
+<p>基于域演算设计的数据库语言示例QBE</p>
+<h2 id="什么是关系">什么是关系</h2>
+<p><strong>什么是表</strong></p>
+<p><strong>表的基本构成要素</strong></p>
+<ul>
+<li>表/关系</li>
+<li>列/字段/属性/数据项</li>
+<li>列名</li>
+<li>列值</li>
+<li>标题/模式</li>
+<li>行/元组/记录</li>
+</ul>
+<p><strong>关系</strong></p>
+<p>“列”的取值范围“域(Domain)”</p>
+<ul>
+<li>域(Domain)
+<ul>
+<li>一组值的集合，这组值具有相同的数据类型</li>
+<li>集合中元素的个数称为域的基数(Cardinality)</li>
+</ul>
+</li>
+</ul>
+<p>一组域 $D_1,D_2,\cdots,D_n$ 的笛卡尔积为：
+$D_1\times D_2\times\cdots D_n={(d_1,d_2,\cdots,d_n)|d_i \in D_i,;i=1,\cdots,n}$</p>
+<p>笛卡尔积的每个元素 $(d_1,d_2,\cdots,d_n)$ 称作一个 n-元组(n-tuple)</p>
+<p>元组 $(d_1,d_2,\cdots,d_n)$ 的每一个值 $d_i$ 叫做一个<strong>分量</strong>(component)</p>
+<p>元组 $(d_1,d_2,\cdots,d_n)$ 是从每一个域人去一个值所形成的一种组合，笛卡尔积是所有这种可能组合的集合，即：笛卡尔积是由 $n$ 个域形成的所有<strong>可能的</strong> n-元组的集合</p>
+<p>若 $D_i$ 的基数为 $m_i$，则笛卡尔积的基数，即元组个数为 $m_1\times m_2\times\cdots\times m_n$</p>
+<ul>
+<li>关系(Relation)
+<ul>
+<li>一组域的笛卡尔积的子集</li>
+<li>有某种意义的组合</li>
+<li>笛卡尔积中具有某一方面意义的那些元组被称作一个关系(Relation)</li>
+<li>由于关系的不同列可能来自同一个域，为区分，需要为每一列起一个名字，该名字即为属性名.</li>
+</ul>
+</li>
+</ul>
+<p>关系可用 $R(A_1:D_1,A_2:D_2,\cdots,A_n:D_n)$ 表示，可简记为 $R(A_1,A_2,\cdots,A_n)$，这种描述又被称为 <strong>关系模式</strong>(Schema)或<strong>表标题</strong>(head)</p>
+<p>$R$ 是关系的名字，$A_i$是属性。$D_i$ 是属性所对应的域，$n$ 是关系的<strong>度</strong>或<strong>目</strong>(degree)，关系中元组的数目称为关系的基数(Cardinality)</p>
+<p><img src="https://gitee.com/luokey/hexo-image/raw/master/imags/20220320181208.png" alt=""></p>
+<p>关系模式 $R(A_1:D_1,A_2:D_2,\cdots,A_n:D_n)$ 中属性向域的映像在很多 DBMS 中一般直接说明为属性的类型、长度等</p>
+<blockquote>
+<p>例如<br>
+Student(S# char(8), Sname char(10))</p>
+</blockquote>
+<p><strong>关系模式域关系</strong></p>
+<p>同一关系模式下，可能有很多的关系<br>
+关系模式是关系的结构，关系是关系模式在某一时刻的数据
+关系模式是稳定的，而关系是某一时刻的值，是随时间可能变化的</p>
+<h2 id="关系的特性及相关的概念">关系的特性及相关的概念</h2>
+<p>列是同质：即每一列中的分量来自同一域，是同一类型的数据</p>
+<p>不同的列可以来自同一个域，成其中的每一列为一个属性，不同的属性要给予不同的属性名</p>
+<ul>
+<li>列位置互换性：区分哪一列是靠列名</li>
+<li>行位置互换性：区分哪一列是靠某一或某几列的值(关键字/键字/码字)</li>
+</ul>
+<p>关系是以内容来区分的，而不是属性在关系的位置来区分</p>
+<p>理论上，关系的任意两个元组不能完全相同(集合的要求：集合内不能有相同的两个元素)，<strong>但是</strong>，现实应用中，**表(Table)**可能并不完全遵守这些特性。</p>
+<p>元组相同指两个元组的各个分量完全相同</p>
+<p>属性不可再分特性，又被称为关系第一范式。</p>
+<h2 id="候选码candidate-key候选键">候选码(Candidate Key)/候选键</h2>
+<p>关系中的一个<strong>属性组</strong>，其值能唯一标识一个元组，若从该属性组中去掉任何一个属性，他就不具有这一性质了，这样的属性组称作<strong>候选码</strong>。</p>
+<h3 id="主码primary-key主键">主码(Primary Key)/主键</h3>
+<p>当有多个候选码时，可以选定一个作为主码<br>
+DBMS 以<strong>主码</strong>为主要线索管理关系中的各个元组</p>
+<h3 id="主属性与非主属性">主属性与非主属性</h3>
+<p>包含在任何一个候选码中的属性被称作<strong>主属性</strong>，而其他属性被称作非主属性</p>
+<p>最简单的，候选码只包含一个属性<br>
+最极端的，所有属性构成这个府岸西的候选码，称为全码(All-Key)</p>
+<h3 id="外码foreign-key外键">外码(Foreign Key)/外键</h3>
+<p>关系 R 中的一个属性组，他不是 R 的候选码，但它与另一个关系 S 的候选码相对应，则称这个属性组为 R 的<strong>外键</strong>或<strong>外码</strong></p>
+<p>两个关系(多个关系)通常是靠<strong>外码</strong>连接起来的</p>
+<h2 id="关系模型中的完整性">关系模型中的完整性</h2>
+<ul>
+<li>实体完整性
+<ul>
+<li>关系的主码中的属性值不能为空值</li>
+<li>空值：不知道或无意义的值</li>
+<li>意义：关系中的元组对应到现实世界相互之间可区分的一个个个图，这些个体是通过主码来唯一标识的，若主码为空，则出现不可表示的个体，这是不容许的</li>
+</ul>
+</li>
+<li>参照完整性
+<ul>
+<li>如果关系R1的外码 Fk与关系 R2的主码 Pk相对应，则 R1 中的每一个元组的 Fk 值或者等于 R2 中某个元组的 Pk 值，或者为空值</li>
+</ul>
+</li>
+<li>用户自定义完整性
+<ul>
+<li>用户针对具体的应用环境定义的完整性约束条件</li>
+</ul>
+</li>
+</ul>
+<p>DBMS 对关系完整性的支持<br>
+实体完整性和参照完整性由DBMS系统自动支持</p>
+<ul>
+<li>DBMS提供机制：
+<ul>
+<li>它使用户可以自行定义有关的完整性约束条件</li>
+<li>当有更新操作发生时，DBMS将自动按照完整性约束条件检验更新操作的正确性，即是否符合用户自定义的完整性</li>
+</ul>
+</li>
+</ul>
+
+    </div>
+    <div class="post-footer">
+      
+    </div>
+  </article>
+
+    </main>
+  </body>
+</html>

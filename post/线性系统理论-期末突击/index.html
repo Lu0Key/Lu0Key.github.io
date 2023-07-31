@@ -1,0 +1,979 @@
+<!doctype html>
+<html lang="en-us">
+  <head>
+    <title>线性系统理论 期末突击 // 洛七的摸鱼池塘</title>
+    <link rel="shortcut icon" href="/favicon.ico" />
+    <meta charset="utf-8" />
+    <meta name="generator" content="Hugo 0.115.4">
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="author" content="洛七" />
+    <meta name="description" content="" />
+    <link rel="stylesheet" href="/css/main.min.d08c6ce68432c68a64d84cb426dfdecab702035f91a5d580831f23f76c040a05.css" />
+
+    
+    <meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="线性系统理论 期末突击"/>
+<meta name="twitter:description" content="第一章 第二章 第三章 第四章 第五章 第六章 第一章 传递函数 特征多项式 特征方程 系统的极点 系统的零点 零极点相消 传递函数的零点和极点 系统的传递函数矩阵 元传递函数？ 真有理分式矩阵 (严格真与真的)判别方法 【定义1.1】 动力学系统的状态定义为完全的表征系统时间域行为的一个最小内部变量组。
+系统的状态变量 初始时刻 系统的状态向量(状态) 状态空间 状态变量组可以完全的表征系统行为的属性 状态变量组的最小性 状态变量组在数学上的特征 状态变量组包含了系统的物理特征 状态变量组选取上的不唯一性 【定理1.1】 系统任意选取的两个状态变量组之间为线性非奇异的关系。
+系统的状态方程 输出方程或量测方程 离散时间系统(离散系统) 系统的阶 控制输入向量 输出向量 系统矩阵 输入矩阵 输出矩阵 前馈矩阵 实现问题(不唯一) 【定理1.2】 给定单输入——单输出线性定常系统的输入输出描述 $$ y^{(n)}&#43;a_{n-1}y^{(n-1)}&#43;\cdots&#43;a_1y^{(1)}&#43;a_0y=b_mu^{(m)}&#43;b_{m-1}u^{(m-1)}&#43;\cdots&#43;b_1u^{(1)}&#43;b_0u $$
+或
+$$ g(s)=\dfrac{Y(s)}{U(s)}=\dfrac{b_ms^m&#43;\cdots&#43;b_1s&#43;b_0}{s^n&#43;a_{n-1}s^{n-1}&#43;\cdots&#43;a_1s&#43;a_0} $$
+当 $m&lt;n$ 时，其对应的一个状态空间描述为
+$$ \dot{x}= \begin{bmatrix} 0&amp;1\ \vdots&amp;&amp;\ddots\ 0&amp;&amp;&amp;1\ -a_0&amp;-a_1&amp;\cdots&amp;-a_{n-1} \end{bmatrix}x&#43; \begin{bmatrix} 0\\vdots\0\1 \end{bmatrix}u, $$
+$$ y=\begin{bmatrix} b_0&amp;b_1&amp;\cdots&amp;b_m&amp;0&amp;\cdots&amp;0 \end{bmatrix}x."/>
+
+    <meta property="og:title" content="线性系统理论 期末突击" />
+<meta property="og:description" content="第一章 第二章 第三章 第四章 第五章 第六章 第一章 传递函数 特征多项式 特征方程 系统的极点 系统的零点 零极点相消 传递函数的零点和极点 系统的传递函数矩阵 元传递函数？ 真有理分式矩阵 (严格真与真的)判别方法 【定义1.1】 动力学系统的状态定义为完全的表征系统时间域行为的一个最小内部变量组。
+系统的状态变量 初始时刻 系统的状态向量(状态) 状态空间 状态变量组可以完全的表征系统行为的属性 状态变量组的最小性 状态变量组在数学上的特征 状态变量组包含了系统的物理特征 状态变量组选取上的不唯一性 【定理1.1】 系统任意选取的两个状态变量组之间为线性非奇异的关系。
+系统的状态方程 输出方程或量测方程 离散时间系统(离散系统) 系统的阶 控制输入向量 输出向量 系统矩阵 输入矩阵 输出矩阵 前馈矩阵 实现问题(不唯一) 【定理1.2】 给定单输入——单输出线性定常系统的输入输出描述 $$ y^{(n)}&#43;a_{n-1}y^{(n-1)}&#43;\cdots&#43;a_1y^{(1)}&#43;a_0y=b_mu^{(m)}&#43;b_{m-1}u^{(m-1)}&#43;\cdots&#43;b_1u^{(1)}&#43;b_0u $$
+或
+$$ g(s)=\dfrac{Y(s)}{U(s)}=\dfrac{b_ms^m&#43;\cdots&#43;b_1s&#43;b_0}{s^n&#43;a_{n-1}s^{n-1}&#43;\cdots&#43;a_1s&#43;a_0} $$
+当 $m&lt;n$ 时，其对应的一个状态空间描述为
+$$ \dot{x}= \begin{bmatrix} 0&amp;1\ \vdots&amp;&amp;\ddots\ 0&amp;&amp;&amp;1\ -a_0&amp;-a_1&amp;\cdots&amp;-a_{n-1} \end{bmatrix}x&#43; \begin{bmatrix} 0\\vdots\0\1 \end{bmatrix}u, $$
+$$ y=\begin{bmatrix} b_0&amp;b_1&amp;\cdots&amp;b_m&amp;0&amp;\cdots&amp;0 \end{bmatrix}x." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://Lu0key.github.io/post/%E7%BA%BF%E6%80%A7%E7%B3%BB%E7%BB%9F%E7%90%86%E8%AE%BA-%E6%9C%9F%E6%9C%AB%E7%AA%81%E5%87%BB/" /><meta property="article:section" content="post" />
+<meta property="article:published_time" content="2023-01-07T19:25:29+08:00" />
+<meta property="article:modified_time" content="2023-01-07T19:25:29+08:00" />
+
+
+  </head>
+  <body>
+    <header class="app-header">
+      <a href="https://Lu0key.github.io/"><img class="app-header-avatar" src="/avatar.jpg" alt="洛七" /></a>
+      <span class="app-header-title">洛七的摸鱼池塘</span>
+      <nav class="app-header-menu">
+          <a class="app-header-menu-item" href="/tags/">Tags</a>
+      </nav>
+      <p>即将没书读的咸鱼</p>
+    </header>
+    <main class="app-container">
+      
+  <article class="post">
+    <header class="post-header">
+      <h1 class ="post-title">线性系统理论 期末突击</h1>
+      <div class="post-meta">
+        <div>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-calendar">
+  <title>calendar</title>
+  <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line>
+</svg>
+          Jan 7, 2023
+        </div>
+        <div>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-clock">
+  <title>clock</title>
+  <circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline>
+</svg>
+          9 min read
+        </div>
+      </div>
+    </header>
+    <div class="post-content">
+      <!-- raw HTML omitted -->
+<ul>
+<li><a href="#%E7%AC%AC%E4%B8%80%E7%AB%A0">第一章</a></li>
+<li><a href="#%E7%AC%AC%E4%BA%8C%E7%AB%A0">第二章</a></li>
+<li><a href="#%E7%AC%AC%E4%B8%89%E7%AB%A0">第三章</a></li>
+<li><a href="#%E7%AC%AC%E5%9B%9B%E7%AB%A0">第四章</a></li>
+<li><a href="#%E7%AC%AC%E4%BA%94%E7%AB%A0">第五章</a></li>
+<li><a href="#%E7%AC%AC%E5%85%AD%E7%AB%A0">第六章</a></li>
+</ul>
+<!-- raw HTML omitted -->
+<h1 id="第一章">第一章</h1>
+<ul>
+<li>传递函数</li>
+<li>特征多项式</li>
+<li>特征方程</li>
+<li>系统的极点</li>
+<li>系统的零点</li>
+<li>零极点相消</li>
+<li>传递函数的零点和极点</li>
+<li>系统的传递函数矩阵</li>
+<li>元传递函数？</li>
+<li>真有理分式矩阵</li>
+<li>(严格真与真的)判别方法</li>
+</ul>
+<p>【定义1.1】 动力学系统的<strong>状态</strong>定义为完全的表征系统时间域行为的一个最小内部变量组。</p>
+<ul>
+<li>系统的状态变量</li>
+<li>初始时刻</li>
+<li>系统的状态向量(状态)</li>
+<li>状态空间</li>
+</ul>
+<ol>
+<li>状态变量组可以完全的表征系统行为的属性</li>
+<li>状态变量组的最小性</li>
+<li>状态变量组在数学上的特征</li>
+<li>状态变量组包含了系统的物理特征</li>
+<li>状态变量组选取上的不唯一性</li>
+</ol>
+<p>【定理1.1】 系统任意选取的两个状态变量组之间为线性非奇异的关系。</p>
+<ul>
+<li>系统的状态方程</li>
+<li>输出方程或量测方程</li>
+<li>离散时间系统(离散系统)</li>
+<li>系统的阶</li>
+<li>控制输入向量</li>
+<li>输出向量</li>
+<li>系统矩阵</li>
+<li>输入矩阵</li>
+<li>输出矩阵</li>
+<li>前馈矩阵</li>
+<li>实现问题(不唯一)</li>
+</ul>
+<hr>
+<p>【定理1.2】 给定单输入——单输出线性定常系统的输入输出描述
+$$
+y^{(n)}+a_{n-1}y^{(n-1)}+\cdots+a_1y^{(1)}+a_0y=b_mu^{(m)}+b_{m-1}u^{(m-1)}+\cdots+b_1u^{(1)}+b_0u
+$$</p>
+<p>或</p>
+<p>$$
+g(s)=\dfrac{Y(s)}{U(s)}=\dfrac{b_ms^m+\cdots+b_1s+b_0}{s^n+a_{n-1}s^{n-1}+\cdots+a_1s+a_0}
+$$</p>
+<p>当 $m&lt;n$ 时，其对应的一个状态空间描述为</p>
+<p>$$
+\dot{x}=
+\begin{bmatrix}
+0&amp;1\
+\vdots&amp;&amp;\ddots\
+0&amp;&amp;&amp;1\
+-a_0&amp;-a_1&amp;\cdots&amp;-a_{n-1}
+\end{bmatrix}x+
+\begin{bmatrix}
+0\\vdots\0\1
+\end{bmatrix}u,
+$$</p>
+<p>$$
+y=\begin{bmatrix}
+b_0&amp;b_1&amp;\cdots&amp;b_m&amp;0&amp;\cdots&amp;0
+\end{bmatrix}x.
+$$</p>
+<hr>
+<p>【定理 1.3】 对应于状态空间描述
+$$
+\begin{cases}
+\dot{x}=Ax+Bu,;;x(0)=0,\
+y = Cx+Du
+\end{cases}
+$$
+的传递函数矩阵为
+$$
+G(s)=C(sI-A)^{-1}B+D
+$$
+并且，当 $D\not=0$ 时， $G(s)$ 为真的，$D=0$ 时，$G(s)$ 为严格真的，且有
+$$\lim_{s\to\infty}G(s)=D.$$</p>
+<hr>
+<p><strong>实用算式</strong></p>
+<p>【定理 1.4】 给定状态空间描述的系数矩阵 ${A,B,C}$，求出
+$$
+\alpha(s)=\det(sI-A)=s^n+a_{n-1}s^{n-1}+\cdots+a_1s+a_0\\quad\
+\begin{cases}
+E_{n-1}=CB,\
+E_{n-2}=CAB+a_{n-1}CB\
+\quad\cdots\cdots\
+E_1=CA^{n-2}B+a_{n-1}CA^{n-3}B+\cdots+a_2CB,\
+E_0=CA^{n-2}B+a_{n-1}CA^{n-2}B+\cdots+a_1CB,
+\end{cases}
+$$
+则相应的传递函数矩阵可表示为
+$$G(s)=\dfrac{1}{\alpha(s)}(E_{n-1}s^{n-1}+E_{n-2}s^{n-2}+\cdots+E_1s+E_0s).$$</p>
+<p>【推论 1.1】 若 $A$ 的最小多项式为
+$$
+\varphi(s)=s^l+a_{l-1}s^{l-1}+\cdots+a_0,\quad l\leqslant n,
+$$
+则系统 $(A,B,C)$ 的传递函数矩阵可表示为</p>
+<p>$$
+G(s)=C\cdot\dfrac{\displaystyle\sum_{j=0}^{l-1}s^{j}\sum_{i=j+1}^{l}a_iA^{i-j-1}}{\varphi(s)}\cdot B=C\cdot\dfrac{\displaystyle\sum_{j=0}^{l-1}A^{j}\sum_{i=j+1}^{l}a_is^{i-j-1}}{\varphi(s)}\cdot B,;a_{l}=1.
+$$</p>
+<hr>
+<p>【定理 1.5】 给定线性定常系统的状态空间描述为
+$$
+\Sigma:\begin{cases}
+\dot{x}=Ax+Bu,\
+y=Cx+Du.
+\end{cases}
+$$
+引入变换 $\bar{x}=Px,;P$ 非奇异，并令变换后的状态空间描述为
+$$
+\bar{\Sigma}:\begin{cases}
+\dot{\bar{x}}=\bar{A}\bar{x}+\bar{B}u,\
+y=\bar{C}\bar{x}+\bar{D}u,
+\end{cases}
+$$
+则必成立
+$$
+\bar{A}=PAP^{-1},;;\bar{B}=PB,;;\bar{C}=CP^{-2},;;\bar{D}=D.
+$$</p>
+<hr>
+<p>【定理 1.6】 考虑上面 $\Sigma,;\bar{\Sigma}$ 给出的状态空间描述，两者具有相同的特征值，即成立<br>
+$$
+\lambda_i(A)=\lambda_i(\bar{A}),;;i=1,2,\cdots,n.
+$$</p>
+<hr>
+<p>【定理 1.7】 线性定常系统的传递函数矩阵在坐标变换下保持不变。</p>
+<ol>
+<li>若两个状态空间描述之间满足
+$$
+\bar{A}=PAP^{-1},;;\bar{B}=PB,;;\bar{C}=CP^{-2},;;\bar{D}=D，
+$$
+则称他们是代数等价的，即他们具有相同的一些代数特征。</li>
+<li>定理1.5 说明，同一系统采用不同的状态变量组所导出的两个状态空间描述之间必然是代数等价的。</li>
+<li>定理1.6，定理1.7 说明代数等价的线性定常系统具有相同的特征值和传递函数。坐标系的选取具有主观性，而系统的特征具有客观性，因此系统在坐标变换下的不变量和不变属性，反映了其固有的特性。例如：特征值反应系统稳定性；传递函数反映了系统的输入输出特性.</li>
+</ol>
+<hr>
+<p>【定理 1.8】 系统
+$$
+\dot{x}=Ax,;;x(0)=x_0,;;t\geqslant0,
+$$
+其中 $x$ 为 $n$ 维状态向量，$A$ 为 $n\times n$ 常数阵，零输入响应的表达式为
+$$
+x(t)=e^{At}x_0,;;;t\geqslant0.
+$$</p>
+<hr>
+<p>【定理1.9】 给定初始状态为零的线性定常系统的强迫方程
+$$
+\dot{x}=Ax+Bu,;;x(0)=0,;;t\geqslant0,
+$$
+其中 $x$ 为 $n$ 为状态向量，$u$ 为 $p$ 维输入向量，$A,B$ 分别为 $n\times n,;n\times p$ 常阵. 则该系统的零状态相应的表达式为
+$$
+x(t)=\int_0^{t}e^{A(t-\tau)}Bu(\tau)\text{d}\tau,;;t\geqslant0.
+$$</p>
+<hr>
+<p>【定理 1.10】 考虑线性定常系统
+$$
+\dot{x}=Ax+Bu,;;x(0)=x_0,;;t\geqslant0
+$$
+解的表达式，在初始状态和外输入同时作用下的状态运动的表达式为
+$$
+x(t)=e^{At}x_0+\int_0^{t}e^{A(t-\tau)}Bu(\tau)\text{d}\tau,;;t\geqslant0.
+$$
+更一般的表达式为
+$$
+x(t)=e^{A(t-t_0)}x_0+\int_0^{t}e^{A(t-\tau)}Bu(\tau)\text{d}\tau,;;t\geqslant t_0.
+$$</p>
+<p>定理1.8，定理1.9，定理1.10相关，第一项为初始状态的转移项，第二项为控制作用下的受控项。</p>
+<hr>
+<ul>
+<li>单位脉冲函数</li>
+<li>脉冲响应矩阵</li>
+<li>卷积</li>
+</ul>
+<p>【定理 1.11】 线性定常系统
+$$
+\begin{aligned}
+&amp;\dot{x}=Ax+Bu,;;x(0)=x_0,;;t\geqslant0,\
+&amp;y=Cx+Du,
+\end{aligned}
+$$
+其中 $A,B,C,D$ 分别为 $n\times n,n\times p,q\times n,q\times p$ 的实常阵。<br>
+该系统的脉冲响应矩阵为
+$$
+G(t-\tau)=Ce^{A(t-\tau)}B+D\delta(t-\tau),
+$$
+更常用的形式为
+$$
+G(t)=Ce^{At}B+D\delta(t).
+$$</p>
+<hr>
+<p>【定理 1.12】 两个代数等价的线性定常系统具有相同的脉冲响应矩阵。</p>
+<p>【定理 1.13】 两个代数等价的线性定常系统具有相同的输出零状态响应和输出零输入响应。</p>
+<hr>
+<p>【定理 1.14】 $G(t)$ 和 $G(s)$ 分别表示线性定常系统 $(A,B,C,D)$ 的脉冲响应矩阵和传递函数矩阵，则有<br>
+$$
+G(s)=\mathcal{L}[G(t)],;;t\geqslant 0,\
+G(t)=\mathcal{L}^{-1}[G(s)],;;t\geqslant 0.
+$$</p>
+<p>【推论 1.2】 给定两个线性定常系统 $(A,B,C,D)$ 和 $(\bar{A},\bar{B},\bar{C},\bar{D})$，设两者具有相同的输入和输出维数，状态维数不一定相同，则两系统具有相同的脉冲响应矩阵(也即相同的传递函数)的充要条件为
+$$
+D=\bar{D},;;CA^iB=\bar{C}\bar{A}^{i}\bar{B},;;i=0,1,2,\cdots
+$$</p>
+<hr>
+<p>【定理 1.15】线性定常系统
+$$
+\begin{aligned}
+&amp;\dot{x}=Ax+Bu,;;x(0)=x_0,;;t\geqslant0,\
+&amp;y=Cx+Du
+\end{aligned}
+$$
+的时间离散化模型为
+$$
+\begin{aligned}
+&amp;x(k+1)=Gx(k)+Hu(k),\
+&amp;y(k)=Cx(k)+Du(k).
+\end{aligned}
+$$
+其中 $G=e^{AT},;H=\displaystyle\int_0^{T}e^{At}\text{d}tB$.</p>
+<h1 id="第二章">第二章</h1>
+<ul>
+<li>系统能控</li>
+<li>状态能控</li>
+<li>不完全能控</li>
+</ul>
+<p>【定义 2.1】 对于线性定常系统
+$$
+\dot{x}=Ax+Bu,;;x(0)=x_0\tag{2.1.1}
+$$
+其中，$x$ 为 $n$ 维状态向量，$u$ 为 $p$ 维输入向量，$A,B$ 分别为 $n\times n,n\times p$ 的实常阵。</p>
+<p>若给定非零初始状态 $x_0$，及有限时刻 $T&gt;0$，存在控制 $u(t)$，使得经 $u(t)$ 作用在 $[0,T]$ 时间段将自 $x_0$ 出发的系统轨线到引导 $x(T)=0$，则称 $x_0$ 为能控状态.</p>
+<p>【定义 2.2】 对于系统$(2.1.1)$，若状态空间中所有非零状态都是能控的，则称系统是(完全)能控的.</p>
+<p>【定义 2.3】 对于系统$(2.1.1)$，若状态空间中存在一个或一些非零状态是不能空的，则称系统$(2.1.1)$ 是不完全能控的。若所有非零状态都是不能控的，则称系统$(2.1.1)$是完全不能控的.</p>
+<ul>
+<li>能控子空间 $X_C$</li>
+<li>不能控子空间 $X_{NC}$</li>
+</ul>
+<hr>
+<p>【定理 2.1】 系统$(2.1.1)$的不能控子空间 $X_{NC}$ 为
+$$
+\alpha^Te^{At}B=0,;;t\in[0,T]
+$$
+的常解空间.</p>
+<p>【定理 2.2】 系统$(2.1.1)$的不能控子空间 $X_{NC}$ 为<br>
+$$
+\alpha^T\begin{bmatrix}
+B&amp;AB&amp;\cdots&amp;A^{n-1}B
+\end{bmatrix}=0
+$$
+的解空间.</p>
+<p>【定理 2.3】 系统$(2.1.1)$ 的不能控子空间 $X_{NC}$ 为
+$$
+\alpha^TW_C[0,T]=0
+$$
+的解空间。式中
+$$
+W_C\begin{bmatrix}
+0,T
+\end{bmatrix}=\int_0^Te^{-At}B(e^{-At}B)^T\text{d}t
+$$
+称为<strong>能控格拉姆(Gram)矩阵</strong>。</p>
+<p>【定理 2.4】系统$(2.1.1)$ 的能控子空间 $X_C$ 的元是 $B,AB,\cdots,A^{n-1}B$ 的列线性组合，即
+$$
+X_C= \text{span}\begin{bmatrix}
+B&amp;AB&amp;\cdots&amp;A^{n-1}B
+\end{bmatrix}.
+$$</p>
+<p>【定理 2.5】 系统$(2.1.1)$的能控子空间 $X_C$ 满足
+$$
+X_C=\text{span}W_C[0,T]
+$$
+其中，$W_C[0,T]$ 为能控 $\text{Gram}$ 阵.</p>
+<p>【推论 2.1】 不能控子空间 $X_{NC}$ 是 $A^T$ 的不变子空间，能控子空间 $X_C$ 是 $A$ 的不变子空间.</p>
+<p>【定理 2.6(Gram 矩阵判据)】 线性定常系统(2.1.1) 为完全能控的充分必要条件是，能控 Gram 矩阵 $W_C[0,T]$ 非奇异。</p>
+<p>【定理 2.7(秩判据)】 线性定常系统(2.1.1) 为完全能控的充要条件是
+$$
+\text{rank}\begin{bmatrix}
+B&amp;AB&amp;\cdots&amp;A^{n-1}B
+\end{bmatrix}=n
+$$
+其中 $n$ 为 $A$ 的维数，$Q_C=\begin{bmatrix}
+B&amp;AB&amp;\cdots&amp;A^{n-1}B
+\end{bmatrix}=n$ 称为系统的能空性判别阵.</p>
+<p>【定理 2.8(PHB 秩判据)】 线性定常系统 (2.1.1) 为完全能控的充要条件为
+$$
+\text{rank}\begin{bmatrix}
+sI-A&amp;B
+\end{bmatrix}=n,\quad \forall s\in\mathbb{C}
+$$
+或等价地，对矩阵 $A$ 的所有特征值 $\lambda_i;(i=1,2,\cdots,n)$，成立
+$$
+\text{rank}\begin{bmatrix}
+\lambda_iI-A&amp;B
+\end{bmatrix}=n,\quad i=1,2,\cdots,n.
+$$</p>
+<p>【定理 2.9(PBH 特征向量判据)】 线性定常系统 (2.1.1) 为完全能控的充要条件是，$A$ 的非零做特征向量不能与 $B$ 的所有列正交. 即对 $A$ 的任一特征值 $\lambda_i$，同时满足
+$$
+\alpha^TA=\lambda_i\alpha^T,;;\alpha^TB=0
+$$
+的特征向量 $\alpha\equiv 0$.</p>
+<p>【定理 2.10(若尔当规范型判据)】 由系统 (2.1.1) 导出的若尔当规范型为
+$$
+暂时没写
+$$
+，则系统 (2.1.1) 为完全能控的充分必要条件是 $B_{ik}(k=1,2,\cdots,\alpha_i)$ 的最后一行所组成的矩阵对 $i=1,2,\cdots,l$ 均为行线性无关.</p>
+<p>【推论 2.2 (最小输入数定理)】 系统 $(A,B)$ 状态能控的必要条件为<br>
+$$
+p\geqslant \alpha_j,\quad j=1,2,\cdots,l.
+$$
+若 $A$ 的互异特征根各自对应一个若尔当块，则称 $A$ 为非减次矩阵，或循环矩阵。</p>
+<p>【推论 2.3】 单输入系统 $(A,B)$ 状态能控的必要条件为：$A$ 是非减次矩阵.</p>
+<p>【定理 2.11】 线性定常系统 $(A,B)$ 的能控性在线性非奇异变换下不变。</p>
+<p>线性定常系统
+$$
+\dot{x}=Ax+Bu,;;x(0)=x_0\tag{2.3.1}
+$$
+其中，$x$ 为 $n$ 维状态向量，$u$ 为 $p$ 维输入向量，$A,B$ 分别为 $n\times n,n\times p$ 的实常阵。<br>
+$$
+\text{rank}Q_C=\text{rank}\begin{bmatrix}
+B&amp;AB&amp;\cdots&amp;A^{n-1}B
+\end{bmatrix}=k&lt;n.
+$$</p>
+<p>【定理 2.12】 对于不完全能控系统 $(2.3.1)$，存在非奇异线性变换 $x=T\hat{x}$，使系统结构按能控性分解的规范表达式为
+$$
+\begin{bmatrix}
+\dot{x}<em>1\\dot{x}<em>2
+\end{bmatrix}=\begin{bmatrix}
+A</em>{11}&amp;A</em>{12}\
+0&amp;A_{22}
+\end{bmatrix}\begin{bmatrix}
+x_1\x_2
+\end{bmatrix}+\begin{bmatrix}
+B_1\0
+\end{bmatrix}u
+$$
+其中，$x_1$ 为 $k$ 维能控分状态向量，$x_2$ 为 $n-k$ 维不能控分状态向量，$k=\text{rank}Q_C$.</p>
+<p>考虑完全能控的单输入——单输出线性定常系统
+$$
+\begin{aligned}
+&amp;\dot{x}=AX+bu,\
+y=cx
+\end{aligned}\tag{2.4.1}
+$$
+其中 $A$ 为 $n\times n$ 常阵，$b$ 和 $c$ 分别为 $n\times 1,1\times n$ 常阵。</p>
+<p>【定理 2.13】 对于完全能控的单输入——单输出系统 (2.4.1)，引入线性非奇异变换 $x=P\bar{x}$，即可到处其能控规范型为
+$$
+\begin{aligned}
+&amp;\dot{\bar{x}}=A_c\bar{x}+b_cu,\
+&amp;y = c_c\bar{x},
+\end{aligned}
+$$
+其中
+$$
+\begin{aligned}
+&amp;A_c=P^{-1}AP=\begin{bmatrix}
+0&amp;1\
+\vdots&amp;&amp;\ddots\
+0&amp;&amp;&amp;1\
+-a_0&amp;-a_1&amp;\cdots&amp;-a_{n-1}
+\end{bmatrix},;;
+b_c=P^{-1}b=\begin{bmatrix}
+0\\vdots\0\1
+\end{bmatrix},\
+&amp;c_C=cP=\begin{bmatrix}
+\beta_0&amp;\beta_1&amp;\cdots&amp;\beta_{n-1}
+\end{bmatrix}.
+\end{aligned}
+$$
+其中 $\beta_i$ 的定义为
+$$
+\begin{aligned}
+&amp;\beta_{n-1}=cb\
+&amp;\beta_{n-2}=cAb+a_{n-1}cb\
+&amp;\cdots\cdots\
+&amp;\beta_{1}=cA^{n-2}b+a_{n-1}cA^{n-3}b+\cdots+a_2cb,\
+&amp;\beta_{0}=cA_{n-1}b+a_{n-1}cA^{n-2}b+\cdots+a_1b.
+\end{aligned}
+$$</p>
+<h1 id="第三章">第三章</h1>
+<p>【定理 3.2】 若单输入系统 $(A,b)$ 能控，则对于任意给定的 $n$ 个数 $\alpha_1,\alpha_2,\cdots,\alpha_n$(复数共轭出现)，必存在矩阵 $K$，使得经状态反馈 $u=Kx+v$ 构成的闭环系统 $(A+bK,b)$ 以此 $n$ 个数为极点.</p>
+<p>【引理 3.1】 若 $(A,B)$ 能控，$A$ 为循环矩阵，则必有向量 $\alpha\in\mathbb{R}^{p\times1}$，使得 $(A,B\alpha)$ 单输入能控.</p>
+<p>【定理 3.3】 若多输入系统 $(A,B)$ 能控，$A$ 为循环矩阵，则必存在状态反馈矩阵 $K$，使得 $A+BK$ 有任意指定的特征值.</p>
+<p>【引理 3.2】 若 $(A,B)$ 能控，$A$ 不是循环矩阵，则存在矩阵 $K\in\mathbb{R}^{p\times n}$，使得 $A+BK$ 为循环矩阵.</p>
+<p>【定理 3.4】 若多输入系统 $(A,B)$ 能控，则必存在反馈矩阵 $K$，使得 $A+BK$ 有任意指定的特征值.</p>
+<p>【定理 3.5】 系统 $(A,B)$ 能控的充要条件是存在反馈矩阵 $K$，使得 $A+BK$ 有任意指定的特征值.</p>
+<p>【定理 3.6】 若单输入系统 $(A,b,C)$ 能控，则状态反馈不改变传递函数的零点.</p>
+<p>线性定常系统
+$$
+\dot{x}=Ax+bu\tag{3.3.1}
+$$
+其中，$x$ 为 $n$ 维状态向量，$u$ 为 $p$ 维控制向量，$A,B$ 分别是 $n\times n,n\times p$ 阶常阵.</p>
+<p>【定义 3.1】 称线性定常系统 $(A,B)$ 是能稳的，若存在状态反馈矩阵 $K$ 使得 $A+BK$ 的特征值全在左半平面.</p>
+<p>【定理 3.7】 $(A,B)$ 能稳得充要条件是不能控部分的特征值全部落在左半平面.</p>
+<p>【定理 3.8】 $(A,B)$ 能稳得充要条件是
+$$
+\text{rank}\begin{bmatrix}
+sI-A&amp;B
+\end{bmatrix}=n,\quad \forall s\in\mathbb{C},\quad \text{Re}s\geqslant0.
+$$</p>
+<p>【定理 3.9】 系统 $(3.3.1)$ 是由状态反馈可镇定得，当且仅当 $(A,B)$ 是能稳得.</p>
+<h1 id="第四章">第四章</h1>
+<p>$$
+\begin{cases}
+\dot{x}=Ax,;;x(t_0)=x_0,\
+y=Cx
+\end{cases}\tag{4.1.6}
+$$</p>
+<p>【定义 4.1】 对于系统 $(4.1.6)$，若给定非零初始状态 $x_0$，任意给定有限时刻 $T&gt;t_0$，使得自 $x_0$ 出发的系统轨线 $x(t)$ 在 $[t_0,T]$ 上的输出恒为 $0$，则称 $x_0$ 为不能观状态.</p>
+<p>【定义 4.2】 对于系统 $(4.1.6)$，若状态空间中所有非零状态都不是不能观状态，则称系统 $(4.1.6)$(或 $(A,C)$) 是(完全)能观的.</p>
+<p>【定义 4.3】 对于系统 $(4.1.6)$，若状态空间中存在一个或一些非零状态时不能观的，则称系统 $(4.1.6)$(或 $(A,C)$) 是不完全能观的.</p>
+<p>【定理 4.1】 系统 $(4.1.6)$ 的不能观子空间 $X_{NO}$ 等价于方程
+$$
+Ce^{A(t-t_0)}\alpha=0,\quad t\in[y_0,T]
+$$
+的常矢量解空间.</p>
+<p>【定理 4.2】 系统 $(4.1.6)$ 的不能观子空间 $X_{NO}$ 等价于方程
+$$
+\begin{bmatrix}
+C\CA\\vdots\CA^{n-1}
+\end{bmatrix}\alpha=0
+$$
+的解空间.</p>
+<p>【定理 4.3】 系统 $(4.1.6)$ 能观子空间 $X_{O}$ 满足
+$$
+X_{O}=\text{span}\begin{bmatrix}
+C^T&amp;(CA)^T&amp;\cdots(CA^{n-1})^T
+\end{bmatrix}
+$$</p>
+<p>【推论 4.1】 不能观子空间 $X_{NO}$ 是 $A$ 的不变子空间，能观子空间 $X_O$ 是 $A^T$ 的不变子空间.</p>
+<p>考虑输入 $u=0$ 的线性定常系统
+$$
+\begin{aligned}
+&amp;\dot{x}=Ax,;;x(0)=x_0,;;t\geqslant0,\
+&amp;y=Cx,
+\end{aligned}\tag{4.2.1}
+$$
+其中 $x$ 为 $n$ 维状态变量，$y$ 为 $q$ 维输出变量，$A,C$ 分别为 $n\times n,q\times n$ 常阵.</p>
+<p>【定理 4.4(Gram 矩阵判据)】 线性定常系统 $(4.2.1)$ 完全能观的充要条件是 对任意指定的有限时刻 $T&gt;0$，使得能观 Gram 矩阵
+$$
+W_O[0,T]=\int_0^Te^{A^Tt}C^TCe^{At}\text{d}t
+$$
+为非奇异.</p>
+<p>【推论 4.2】 不能观子空间 $X_{NO}$ 为 $W_O[0,T]\alpha=0$ 的解空间；能观子空间 $X_{O}=\text{span}W_O[0,T]$.</p>
+<p>【定理 4.5(秩判据)】 线性系统 $(4.2.1)$ 完全能观的充分必要条件为
+$$
+\text{rank}\begin{bmatrix}
+C\CA\\vdots\CA^{n-1}
+\end{bmatrix}=n
+$$
+其中 $Q_O=\begin{bmatrix}
+C\CA\\vdots\CA^{n-1}
+\end{bmatrix}$ 称为系统的能观性判别阵.</p>
+<p>【定理 4.6(PHB 秩判据)】 线性定常系统 $(4.2.1)$ 完全能观的充分必要条件是，对矩阵 $A$ 的所有特征值 $\lambda_i(i=1,2,\cdots,n)$ 均成立
+$$
+\text{rank}\begin{bmatrix}
+C\\lambda_i I-A
+\end{bmatrix}=n,;;i=1,2,\cdots,n
+$$
+或等价地
+$$
+\text{rank}\begin{bmatrix}
+C\sI-A
+\end{bmatrix}=n,;;\forall s\in\mathbb{C}.
+$$</p>
+<p>【定理 4.7(PBH 特征向量判据)】 系统 $(4.2.1)$ 为完全能观的充分必要条件是，矩阵 $A$ 的所有非零右特征向量都不与矩阵 $C$ 的各行正交，即不存在非零非零列向量 $q$，同时满足
+$$
+Aq=\lambda_iq,;;Cq=0,
+$$
+其中 $\lambda_i(i=1,2,\cdots,n)$ 为 $A$ 的特征值.<br>
+当 $(A,C)$ 具有若尔当规范型的形式时，即<br>
+$$
+\begin{aligned}
+&amp;A=\begin{bmatrix}
+J_1\&amp;J_2\&amp;&amp;\ddots\&amp;&amp;&amp;J_{l}
+\end{bmatrix}<em>{n\times n},
+&amp;J</em>{i}=\begin{bmatrix}
+J_{i1}\&amp;J_{i2}\&amp;&amp;\ddots\&amp;&amp;&amp;J_{i\alpha_i}
+\end{bmatrix}<em>{\sigma_i\times \sigma_i},\
+&amp;J</em>{ik}=\begin{bmatrix}
+\lambda_i&amp;1\&amp;\lambda_i&amp;1\&amp;&amp;\ddots&amp;\ddots\&amp;&amp;&amp;\ddots&amp;1\&amp;&amp;&amp;&amp;\lambda_i
+\end{bmatrix}<em>{r</em>{ik}\times r_{ik}},
+&amp;C=\begin{bmatrix}
+C_1&amp;C_2&amp;\ddots&amp;C_{l}
+\end{bmatrix}<em>{q\times n},\
+&amp;C</em>{i}=\begin{bmatrix}
+C_{i1}&amp;C_{i2}&amp;\cdots&amp;C_{i\alpha_i}
+\end{bmatrix}<em>{q\times\sigma</em>{i}},
+&amp;C_{ik}=\begin{bmatrix}
+c_{1ik}&amp;c_{2ik}&amp;\cdots&amp;c_{rik}
+\end{bmatrix}<em>{q\times</em>{ik}}
+\end{aligned}
+$$</p>
+<p>其中 $\sigma_i$ 为特征值 $\lambda_i$ 的重数，$\displaystyle n=\sum_{i=1}^l\sigma_i,;\lambda_i$ 互异，而 $(r_{i1}+r_{r2}+\cdots+r_{i\alpha_i})=\sigma_i$.</p>
+<p>【定理 4.8】 具有若尔当规范型的线性系统 $(4.2.1)$ 为完全能观的充分必要条件时由 $C_{ik}(k=1,2,\cdots,\alpha_k)$ 的第一列组成的矩阵对 $i=1,2,\cdots,l$ 均列线性无关. 即
+$$
+\text{rank}\begin{bmatrix}
+c_{1i1}&amp;c_{1i2}&amp;\cdots&amp;c_{1i\alpha}
+\end{bmatrix}=\alpha_i,;;i=1,2,\cdots,l
+$$</p>
+<p>【推论 4.3(最少输出数定理)】 线性定常系统 $(A,C)$，则 $(A,C)$ 能观的必要条件为 $q\geqslant \max{\alpha_i,i=1,2,\cdots,l}$.</p>
+<p>【推论 4.4】 单输出线性系统 $(A,c)$ 能观的必要条件为：$A$ 为非减次（循环）矩阵.</p>
+<p>【定理 4.9】 线性系统 $(4.2.1)$ 完全能观的充分必要条件是：存在矩阵 $G$，使 $A-GC$ 的特征值可以任意配置.</p>
+<p>【定理 4.10】 线性系统 $(A,C)$ 能观测性指数及能观测性指数集在非奇异变换下保持不变.</p>
+<p>【引理 4.1】 系统 $(A,C)$ 的能观性在非奇异线性变换下保持不变.</p>
+<p>考虑不完全能观测得线性定常系统
+$$
+\begin{aligned}
+&amp;\dot{x}=Ax+Bu,\
+&amp;y=Cx,
+\end{aligned}\tag{4.3.1}
+$$
+其中 $x$ 为 $n$ 维状态变量，$u$ 为 $p$ 维输入向量，$y$ 为 $q$ 维输出变量，$A,B,C$ 分别为 $n\times n,n\times p,q\times n$ 实常阵.<br>
+$$
+\text{rank}Q_O=\text{rank}\begin{bmatrix}
+C\CA\cdots\CA^{n-1}
+\end{bmatrix}=m&lt;n.
+$$</p>
+<p>【定理 4.11】 对于不完全能观系统 $(4.3.1)$ ，存在非奇异线性变换 $x=T^{-1}\hat{x}$，使系统结构按能观性分解得规范表达式为<br>
+$$
+\begin{aligned}
+&amp;\begin{bmatrix}
+\dot{x}<em>1\\dot{x}<em>2
+\end{bmatrix}=
+\begin{bmatrix}
+A</em>{11}&amp;0\
+A</em>{21}&amp;A_{22}
+\end{bmatrix}
+\begin{bmatrix}
+x_1\x_2
+\end{bmatrix}+
+\begin{bmatrix}
+B_1\B_2
+\end{bmatrix}u,\
+&amp;y=\begin{bmatrix}
+C_1&amp;0
+\end{bmatrix}
+\begin{bmatrix}
+x_1\x_2
+\end{bmatrix},
+\end{aligned}
+$$
+其中，$x_1$ 为 $m$ 维能观分状态，$x_2$ 为 $n-m$ 维不能观分状态.</p>
+<p>考虑完全能观的单输入——单输出线性定常系统
+$$
+\begin{aligned}
+&amp;\dot{x}=Ax+bu,\
+&amp;y=cx,
+\end{aligned}\tag{4.4.1}
+$$</p>
+<p>【定理 4.12】 对完全能观单输入——单输出系统 $(4.4.1)$，引入线性非奇异变换 $\hat{x}=Qx$，则可导出其能观规范型为
+$$
+\begin{aligned}
+&amp;\dot{x}=A_o\hat{x}+b_ou,\
+&amp;y=c_o\hat{x},
+\end{aligned}
+$$
+其中
+$$
+\begin{aligned}
+&amp;A_o=QAQ^{-1}=\begin{bmatrix}
+0&amp;\cdots&amp;0&amp;-\alpha_0\
+1&amp;&amp;&amp;-\alpha_1\
+&amp;\ddots&amp;&amp;\vdots\
+&amp;&amp;1&amp;-\alpha_{n-1}
+\end{bmatrix},
+&amp;b_o=Qb=\begin{bmatrix}
+\beta_0\\beta_1\\vdots\\beta_{n-1}
+\end{bmatrix},\
+&amp;c_o=cQ^{-1}=\begin{bmatrix}
+0&amp;\cdots&amp;0&amp;1
+\end{bmatrix}.
+\end{aligned}
+$$</p>
+<p>【定义 对偶系统】 给定两个 $n$ 维线性定常连续系统 $\Sigma_1=(A_1,B_1,C_1)$ 和 $\Sigma_2=(A_2,B_2,C_2)$，若有 $A_1^T=-A_2,B_1^T=C_2,C_1^T=B_2$，则称这两个系统是互为对偶的两个系统.</p>
+<p>若记系统 $\Sigma_1$ 为
+$$
+\begin{cases}
+\dot{x}=A_1x+B_1u,\
+y=C_1x,
+\end{cases}
+$$
+其中 $x$ 为 $n$ 维状态向量，$u$ 为 $p$ 维输入向量，$y$ 为 $q$ 维输出向量，$A_1,B_1,C_1$ 分别为 $n\times n,n\times p,q\times n$ 常阵. 则系统 $\Sigma_2$ 应为
+$$
+\begin{cases}
+\dot{z}=-A^Tz+C_1^Tv,\
+w=B_1^Tz,
+\end{cases}
+$$
+其中 $z$ 为 $n$ 维状态向量，$v$ 为 $q$ 维输入向量，$w$ 为 $p$ 维输出向量.</p>
+<p>【定理 4.13】 设 $n$ 维线性定常连续系统 $\Sigma_1=(A_1,B_1,C_1)$ 与 $\Sigma_2=(A_2,B_2,C_2)$ 是互为对偶的两个系统，则必有<br>
+(1) 系统 $\Sigma_1$ 的状态完全能控等同于系统 $\Sigma_2$ 的状态完全能观.<br>
+(2) 系统 $\Sigma_1$ 的状态完全能观等同于系统 $\Sigma_2$ 的状态完全能控.</p>
+<h1 id="第五章">第五章</h1>
+<p>考虑线性定常系统
+$$
+\begin{aligned}
+&amp;\dot{x}=Ax+Bu,\
+&amp;y=Cx,
+\end{aligned}\tag{5.1.1}
+$$</p>
+<p>【定理 5.1(Kalman 规范分解定理)】 对不完全能控不完全能观系统 $(5.1.1)$，通过非奇异线性变换可实现系统结构的规范分解，其规范分解的表达式
+$$
+\begin{bmatrix}
+\dot{x}<em>1\\dot{x}<em>2\\dot{x}<em>3\\dot{x}<em>4
+\end{bmatrix}=
+\begin{bmatrix}
+A</em>{11}&amp;A</em>{12}&amp;A</em>{13}&amp;A</em>{14}\
+0&amp;A_{22}&amp;0&amp;A_{24}\
+0&amp;0&amp;A_{33}&amp;A_{34}\
+0&amp;0&amp;0&amp;A_{44}
+\end{bmatrix}
+\begin{bmatrix}
+x_1\x_2\x_3\x_4
+\end{bmatrix}+
+\begin{bmatrix}
+B_1\B_2\0\0
+\end{bmatrix}u,;
+y=\begin{bmatrix}
+0&amp;C_2&amp;0&amp;C_4
+\end{bmatrix}
+\begin{bmatrix}
+x_1\x_2\x_3\x_4
+\end{bmatrix}
+$$
+并且<br>
+(1) $\left(\begin{bmatrix}
+A_{11}&amp;A_{12}\
+0&amp;A_{22}
+\end{bmatrix},\begin{bmatrix}
+B_1\B_2
+\end{bmatrix}\right)$ 能控，<br>
+(2) $\left(\begin{bmatrix}
+A_{22}&amp;A_{24}\
+0&amp;A_{44}
+\end{bmatrix},\begin{bmatrix}
+C_2&amp;C_4
+\end{bmatrix}\right)$ 能观.<br>
+(3) $(A_{22},B_2,C_2)$ 能控能观.</p>
+<p>【定理 5.2】 不完全能控，不完全能观系统 $(5.1.1)$ 的传递函数即是其能控能观部分的传递函数
+$$
+G_{(A,B,C)}(s)=C(sI-A)^{-1}B=C_2(sI-A_{22})^{-1}B_2=G_{(A_{22},B_2,C_2)}(s).
+$$</p>
+<p>考虑线性定常系统
+$$
+\begin{aligned}
+&amp;\dot{x}=Ax+Bu,\
+&amp;y=Cx,
+\end{aligned}\tag{5.2.1}
+$$
+其中 $x$ 为 $n$ 维状态向量，$u$ 为 $p$ 维输入向量，$A,B,C$ 为适当维数的实常阵. 其传递函数矩阵为
+$$
+G(s)=C(sI-A)^{-1}B=C\dfrac{\text{adj}(sI-A)}{\det(sI-sA)}B
+$$
+其中 $\text{adj}(sI-A)$ 表示特征矩阵 $(sI-A)$ 的伴随矩阵，$\det(sI-A)$ 表示 $(sI-A)$ 的行列式。</p>
+<p>【定理 5.3】 若 $(A,B)$ 能控，则 $P(s)B$ 在复平面无根.</p>
+<p>【定理 5.4】 若 $(A,C)$ 能观，则 $CP(s)$ 在复平面无根.</p>
+<p>【定理 5.5】 若 $(A,B,C)$ 能控能观，系统 $(5.2.1)$ 的传递函数的最小多项式表示为
+$$
+C(sI-A)^{-1}B=\dfrac{CP(s)B}{\varphi(s)}.
+$$
+则 $CP(s)B$ 与 $\varphi(s)$ 无公共根.</p>
+<p>【推论 5.1】 若 $(A,B)$ 能控，$(A,C)$ 能观，则传递函数 $G(s)=C(sI-A)^{-1}B$ 的极点即为 $det(sI-A)$ 的根.</p>
+<p>【定理 5.6】 若系统 $(A,B,C)$ 为单输入(或单输出)等于状态维数的不可简约分式.</p>
+<p>考虑严格真传递函数矩阵 $G(s)$，其有理分式矩阵形式描述为
+$$
+G(s)=(g_{ij}(s)),;;i=1,\cdots,q,;;j=1,\cdots,p.
+$$
+令 $d(s)$ 为 $g_{ij}(s)(i=1,\cdots,q,j=1,\cdots,p)$ 的最小公分母，且
+$$
+d(s)=s^n+a_{n-1}s^{n-1}+\cdots+a_1s+a_0,
+$$
+则可将 $G(s)$ 表示为
+$$
+G(s)=\dfrac{C(s)}{d(s)}=\dfrac{C_{n-1}s^{n-1}+\cdots+C_1s+C_0}{s^n+a_{n-1}s^{n-1}+\cdots+a_1s+a_0}\tag{5.3.5}
+$$
+其中 $C_i,i=0,1,\cdots,n-1$ 为 $q\times p$ 常阵.</p>
+<p>【定理 5.7】 给定传递函数矩阵 $G(s)$ 如 $(5.3.5)$ 所示. 则下述 $(A,B,C)$
+$$
+\begin{aligned}
+&amp;A=\begin{bmatrix}
+0&amp;I_p\
+&amp;\ddots&amp;\ddots\
+&amp;&amp;0&amp;I_p\
+-a_0I_p&amp;-a_{1}I_p&amp;\cdots&amp;-a_{n-1}I_p
+\end{bmatrix},
+B=\begin{bmatrix}
+0\0\\vdots\I_p
+\end{bmatrix},\
+&amp;C=\begin{bmatrix}
+C_0&amp;C_1&amp;\cdots&amp;C_{n-1}
+\end{bmatrix}
+\end{aligned}
+$$
+即为 $G(s)$ 的一个能控形实现.</p>
+<p>【定理 5.8】 给定传递函数矩阵 $G(s)$ 如 $(5.3.5)$ 所示，则下述 $(A,B,C)$ 为 $G(s)$ 的一个能观形实现：
+$$
+A=\begin{bmatrix}
+0&amp;&amp;&amp;-a_0I_q\
+I_q&amp;\ddots&amp;&amp;-a_1I_q\
+&amp;\ddots&amp;0&amp;\vdots\
+&amp;&amp;I_q&amp;-a_{n-1}I_q
+\end{bmatrix},
+B=\begin{bmatrix}
+C_0\C_1\\vdots\C_{n-1}
+\end{bmatrix},
+C=\begin{bmatrix}
+0&amp;0&amp;\cdots&amp;I_q
+\end{bmatrix}.
+$$</p>
+<p>【定义 最小实现】 给定真传递函数矩阵 $G(s)$ 的<strong>维数最小</strong>的实现，称为最小实现，也可称为不可简约实现.</p>
+<p>【定理 5.9】 设 $(A,B,C)$ 为严格真传递函数矩阵 $G(s)$ 的一个实现，则其为最小实现的充分必要条件是 $(A,B)$ 能控且 $(A,C)$ 能观.</p>
+<p>【定理 5.10】 对于给定的严格真传递函数矩阵，若 $(A,B,C)$ 和 $(\bar{A},\bar{B},\bar{C})$ 为 $G(s)$ 的任意两个最小实现，则它们必代数等价.</p>
+<hr>
+<h1 id="第六章">第六章</h1>
+<ul>
+<li>功能
+<ul>
+<li>状态观测器</li>
+<li>函数观测器</li>
+</ul>
+</li>
+<li>结构
+<ul>
+<li>全维观测器</li>
+<li>降维观测器</li>
+</ul>
+</li>
+</ul>
+<p>考虑线性定常系统
+$$
+\begin{aligned}
+&amp;\dot{x}=Ax+BU,;;x(0)=x_0,t\geqslant0,\
+&amp;y=Cx,
+\end{aligned}\tag{6.2.1}
+$$
+其中，$x$ 为 $n$ 维状态变量，$u$ 为 $p$ 维输入变量，$y$ 为 $q$ 维输出变量，$A,B,C$ 分别为 $n\times n,n\times p,q\times n$ 实常阵.</p>
+<p>【定义 6.1】 称系统 $(6.2.1)$ 或矩阵 $(A,C)$ 是可检测的，若存在矩阵 $G$，使得 $A-CG$ 的特征根全在左半平面.</p>
+<p>【引理 6.1】 矩阵对 $(A,C)$ 可检测的充分必要条件是 $(A^T,C^T)$ 能稳.</p>
+<p>【引理 6.2】 矩阵对 $(A,C)$ 可检测的充分必要条件是不能观部分的特征根全部在左半平面.</p>
+<hr>
+<p>$\begin{cases}
+\dfrac{\partial u}{\partial t} = \dfrac{\partial^2 u}{\partial x^2}\quad(0&lt;x&lt;\pi,;0&lt;t\leqslant T)\
+u(x,0) = \sin x \quad (0\leqslant x\leqslant \pi)\
+u(0,t)=u(\pi,t)=0\quad (0\leqslant t\leqslant T)
+\end{cases}$</p>
+<p>精确解 $u = e^{-t}\sin x$</p>
+<hr>
+<p>$\begin{cases}
+\dfrac{\partial u}{\partial t}=\dfrac{\partial^2 u}{\partial x^2} \quad(0&lt;x&lt;1)\
+u(x,0)=\sin \pi x\quad(0\leqslant x \leqslant 1)\
+u(0,t)=u(1,t)=0\quad(t&gt;0)
+\end{cases}$</p>
+<p>精确解 $u=e^{-\pi^2t}\sin \pi x$</p>
+<hr>
+<p>$\begin{cases}
+\dfrac{\partial u}{\partial t}-2\dfrac{\partial^2 u}{\partial x^2} = -e^x\left[\cos\left(\dfrac{1}{2}-t\right)+2\sin\left(\dfrac{1}{2}-t\right)\right]\\quad\quad\quad 0&lt;x&lt;1,\quad0&lt;t\leqslant 1\
+u(x,0)=e^x\sin\dfrac{1}{2},\quad0\leqslant x\leqslant 1\
+u(0,t)=\sin\left(\dfrac{1}{2}-t\right),\quad 0&lt;t\leqslant1.\
+u(1,t)=e\sin\left(\dfrac{1}{2}-t\right),\quad0&lt;t\leqslant 1
+\end{cases}$</p>
+<p>精确解 $u=e^x\sin\left(\dfrac{1}{2}-t\right)$</p>
+<hr>
+<p>$\begin{cases}
+\dfrac{\partial^2 u}{\partial t^2}-\dfrac{\partial^2 u}{\partial x^2}=0,\quad 0&lt;x&lt;1,\quad0&lt;t\leqslant 1\
+u(x,0)=e^x,\quad\dfrac{\partial u}{\partial t}(x,0)=e^x,\quad 0&lt;x&lt;1\
+u(0,t)=e^t,\quad u(1,t)=e^{1+t},\quad0\leqslant t\leqslant 1.
+\end{cases}$</p>
+<p>精确解 $u(x,t)=e^{x+t}$</p>
+<hr>
+<p>$\begin{cases}
+\dfrac{\partial^2 u}{\partial t^2}-\dfrac{\partial^2 u}{\partial x^2} = (t^2-x^2)\sin(xt),\quad 0&lt;x&lt;1,;0&lt;t\leqslant 1\
+u(x,0)=0,;;\dfrac{\partial u}{\partial t}(x,0)=x,\quad 0\leqslant x \leqslant 1,\
+u(0,t)=0,;;u(1,t)=\sin t,;;0&lt;t\leqslant 1.
+\end{cases}$</p>
+<p>精确解 $u=\sin(xt)$</p>
+<hr>
+<p>$\begin{cases}
+\dfrac{\partial u}{\partial t}-\left(\dfrac{\partial^2u}{\partial x^2}+\dfrac{\partial^2 u}{\partial y^2}\right)=-\dfrac{3}{2}e^{\frac{1}{2}(x+y)-t},\quad 0&lt;x,y&lt;1,\quad 0&lt;t\leqslant 1,\
+u(x,y,0)=e^{\frac{1}{2}(x+y)},\quad 0&lt;x,y&lt;1,\
+u(0,y,t)=e^{\frac{1}{2}y-t},;u(1,y,t)=e^{\frac{1}{2}(1+y)-t},\quad0\leqslant y\leqslant1,;0\leqslant t\leqslant 1,\
+u(x,0,t)=e^{\frac{1}{2}x-t},;u(x,1,t)=e^{\frac{1}{2}(1+x)-t},\quad0&lt; x&lt; 1,;0\leqslant t\leqslant 1,\
+\end{cases}$</p>
+<p>精确解 $u=e^{\frac{1}{2}(x+y)-t}$</p>
+<hr>
+<p>$\begin{cases}
+\dfrac{\partial u}{\partial t}-\left(\dfrac{\partial^2u}{\partial x^2}+\dfrac{\partial^2 u}{\partial y^2}\right)=(x^2+y^2)t^2\sin(xyt)+xy\cos(xyt)\
+\quad\quad 0&lt;x,y&lt;1,;0&lt;t\leqslant 1\
+u(x,y,0)=0,\quad 0&lt;x,y&lt;1,\
+u(0,y,t)=0,;u(1,y,t)=\sin(yt),\quad0\leqslant y\leqslant1,;0\leqslant t\leqslant 1,\
+u(x,0,t)=0,;u(x,1,t)=\sin(xt),\quad0&lt; x&lt; 1,;0\leqslant t\leqslant 1,\
+\end{cases}$</p>
+<p>精确解 $u=\sin(xyt)$</p>
+<hr>
+<p>$\begin{cases}
+\dfrac{\partial u}{\partial t}=\dfrac{\partial^2 u}{\partial x^2}+\sin t,\quad 0&lt;x&lt;1,;;t&gt;0\
+u_x(0,t)=u_x(1,t) = 0,;;t&gt;0,\
+u(x,0)=\cos\pi x,;;0&lt;x&lt;1.
+\end{cases}$</p>
+<p>精确解 $u=e^{-\pi^2t}\cos\pi x+1-\cos t$</p>
+<hr>
+<p>设有一系列实验数据 $(x_i,y_i)(i=0,1,2,\cdots,m)$ 及各点的权系数 $\rho(x_i)$，要求再函数类 $\Phi=\text{span}{\varphi_0,\varphi_1,\cdots,\varphi_n}$ 中求函数</p>
+<p>$$
+s^{<em>}(x)=a_0^{</em>}\varphi_0(x)+a_1^{<em>}\varphi_1(x)+\cdots+a_n^{</em>}\varphi_n(x)=\sum_{k=0}^na_k^{*}\varphi_k(x),;m\geqslant n
+$$</p>
+<p>满足</p>
+<p>$$
+|\delta|<em>2^2=\sum</em>{i=0}^m\rho(x_i)[s^{<em>}(x_i)-y_i]^2=\underset{s\in\Phi}{\min}\sum_{i=0}^m\rho(x_i)[s(x_i)-y_i]^2
+$$
+式中，$s(x)=\displaystyle\sum_{k=0}^{n}a_k\varphi_k(x)$ 为 $\Phi$ 中任何函数，称这种函数近似表达式的方法为数据的最小二乘拟合，称 $s^{</em>}(x)$ 为最小二乘解.</p>
+<p>$\begin{cases}
+\dfrac{\partial u}{\partial t}=\dfrac{\partial^2u}{\partial x^2}+\dfrac{\partial^2u}{\partial y^2},;0&lt;x&lt;1,;0&lt;y&lt;1\
+u(0,x,y)=\sin(4\pi x)+\cos(4\pi y).
+\end{cases}$
+四条边界都为0</p>
+<hr>
+<p>$\begin{cases}
+\cos x\dfrac{\partial u}{\partial t}=u\dfrac{\partial^2 u}{\partial x^2}+\sin^2x\cdot e^{-2t}-\sin x\dfrac{\partial u}{\partial x}\quad(0&lt;x&lt;\pi,;0&lt;t\leqslant 1)\
+u(x,0) = \sin x \quad (0\leqslant x\leqslant \pi)\
+u(0,t)=u(\pi,t)=0\quad (0\leqslant t\leqslant 1)
+\end{cases}$</p>
+<p>精确解 $u = e^{-t}\sin x$</p>
+<hr>
+<p>$\begin{aligned}&amp;\mathscr{L}u=f,;;;x\in\Omega\&amp;\mathscr{B}u=g,;;;x\in\partial\Omega\end{aligned}$
+$h=\int_{\Omega}|\mathscr{L}u_{\alpha}-f|^2\text{d}V+\int_{\partial\Omega}|\partial u_{\alpha}-g|^2\text{d}S$
+$u_t+N[u]=0,;x\in\Omega,;t\in[0,T]$
+$(x,t)$ 为随机抽样点。</p>
+<p>$v_t=\beta_1v_{t-1}+(1-\beta_1)g_t$<br>
+$s_t=\beta_2s_{t-1}+(1-\beta_2)g_t^2$<br>
+$\hat{v}_t=\dfrac{v_t}{1-\beta_1^t},;;\hat{s}<em>t=\dfrac{s_t}{1-\beta_2^t}$<br>
+$g</em>{t}&rsquo;=\dfrac{\eta\hat{v}<em>t}{\sqrt{\hat{s}}+\epsilon}$<br>
+$\theta_t=\theta</em>{t-1}-g_t'$</p>
+<p>$u_t+A(x)u_{xx}=f(x,t)$</p>
+<p>$\dfrac{u_{J}^{n+1}-u_{J}^n}{\tau}=\dfrac{u_{J+1}^n-2u_{J}^n+u_{J-1}^n}{h^2}+f(x_J, t_n),;;u_{J+1}^{n}:=u_{J-1}^n$</p>
+<p>$u_{j}^0=u(x_j,0)=g(x_j)$</p>
+<p>$u(x_i,t_j)$</p>
+<p>$r=\tau/h^2$</p>
+<p>$x_n = nh$</p>
+<p>$\dfrac{\partial u}{\partial t}$</p>
+<p>$\dfrac{u_{j+1}^n-2u_j^n+u_{j-1}^n}{h^2}$</p>
+<p>$\dfrac{\partial^2 u}{\partial x^2}$</p>
+<p>$t_n = n\tau$</p>
+<p>$h=1/J$</p>
+<p>$\begin{aligned}
+&amp;f:=\dfrac{\partial u}{\partial t}+u\dfrac{\partial u}{\partial x}-\dfrac{0.01}{\pi}\dfrac{\partial^2 u}{\partial x^2}=0,;x\in[-1,,1],;;t\in[0,1]\
+&amp;u(x,0) = -\sin(\pi x),\
+&amp;u(-1,t)=u(1,t)=0.
+\end{aligned}$</p>
+<p>$\text{MSE}<em>f=\dfrac{1}{N_u}\sum</em>{i=1}^{N_u}|f[\hat{u}(x_i,t_i)]|^2$</p>
+<p>$MSE=MSE_u+MSE_f$
+$MSE_u=\dfrac{1}{N_u}\sum_{i=1}^{N_u}|u(t_{u}^i,x_u^i)-u^i|^2$</p>
+<p>$MSE_f=\dfrac{1}{N_f}\sum_{i=1}^{N_f}|f(t_f^i,x_f^i)|^2$</p>
+<p>${t_u^i,x_u^i,u^i}_{i=1}^{N_u}$</p>
+<p>$u(t,x)$</p>
+<p>${t_f^i,x_f^i}_{i=1}^{N_f}$</p>
+<p>$f(t,x)$</p>
+<p>$MSE_u$</p>
+<p>$MSE_f$</p>
+<p>$N_u$</p>
+<p>$N_f$</p>
+<p>$[x_1,x_2,\cdots,x_6][w_{11}^{(1)},w_{12}^{(1)},\cdots,w_{16}^{(1)}]^T$</p>
+<p>$$</p>
+<p>\begin{bmatrix}
+w_{11}^{(1)},w_{12}^{(1)},\cdots,w_{16}^{(1)}\
+w_{21}^{(1)},w_{22}^{(1)},\cdots,w_{26}^{(1)}\
+\cdots\
+w_{12,1}^{(1)},w_{12,2}^{(1)},\cdots,w_{12,6}^{(1)}\
+\end{bmatrix}
+[x_1,x_2,\cdots,x_6]^T
+$$</p>
+<p>$\begin{aligned}
+&amp;\int e^{2x}(\tan x+1)^2\text{d}x\
+=&amp;\int e^{2x}(\tan^2x+2\tan x+1)\text{d}x\
+=&amp;\int e^{2x}\tan^2x\text{d}x+\int e^{2x}(2\tan x+1)\text{d}x\
+=&amp;e^{2x}(\tan x-x)-\int e^{2x}(2\tan x-2x)\text{d}x+\int e^{2x}(2\tan x+1)\text{d}x\
+=&amp;e^{2x}(\tan x-x)+\int e^{2x}(2x+1)\text{d}x\
+=&amp;e^{2x}\tan x+C
+\end{aligned}$</p>
+<p>$\displaystyle \dfrac{r_1}{k}+\dfrac{r_2}{k^2}+\cdots+\dfrac{r_a}{k^a}&lt;1$</p>
+<p>$\displaystyle \dfrac{r_a}{k^a}&lt;\dfrac{1}{k^{a-1}}$</p>
+<p>$\displaystyle \dfrac{r_1}{k}+\dfrac{r_2}{k^2}+\cdots+\dfrac{r_a}{k^a}&lt;\displaystyle \dfrac{r_1}{k}+\dfrac{r_2}{k^2}+\cdots+\dfrac{r_{a-1}+1}{k^{a-1}}$</p>
+<p>$\displaystyle \dfrac{r_{a-1}+1}{k^{a-1}}\leqslant \dfrac{1}{k^{a-2}}$</p>
+<p>$\displaystyle \dfrac{r_1}{k}+\dfrac{r_2}{k^2}+\cdots+\dfrac{r_{a-1}+1}{k^{a-1}}\leqslant\dfrac{r_1}{k}+\dfrac{r_2}{k^2}+\cdots+\dfrac{r_{a-2}+1}{k^{a-2}}\leqslant \cdots \leqslant\dfrac{r_1+1}{k}\leqslant1$</p>
+
+    </div>
+    <div class="post-footer">
+      
+    </div>
+  </article>
+
+    </main>
+  </body>
+</html>

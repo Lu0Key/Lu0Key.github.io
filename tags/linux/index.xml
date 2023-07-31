@@ -6,7 +6,17 @@
     <description>Recent content in Linux on 洛七的摸鱼池塘</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Mon, 31 Jul 2023 13:16:20 +0800</lastBuildDate><atom:link href="https://Lu0key.github.io/tags/linux/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 31 Jul 2023 15:03:39 +0800</lastBuildDate><atom:link href="https://Lu0key.github.io/tags/linux/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Linux 新增硬盘</title>
+      <link>https://Lu0key.github.io/post/linux-%E6%96%B0%E5%A2%9E%E7%A1%AC%E7%9B%98/</link>
+      <pubDate>Mon, 31 Jul 2023 15:03:39 +0800</pubDate>
+      
+      <guid>https://Lu0key.github.io/post/linux-%E6%96%B0%E5%A2%9E%E7%A1%AC%E7%9B%98/</guid>
+      <description>我们有时候Linux 服务器只有一个硬盘, 但是不是 LVM 格式的, 没办法直接扩容, 又不够用了, 因此我们选择 新创建一个 /home2 文件夹, 然后把硬盘挂载到 /home2 上, 想要方便直接用的话, 我就直接在 /home2 下给每一个人新创建一个同样的文件夹
+# 需要管理员来搞 # 比如这个用户叫xxx sudo mkdir /home2/xxx sudo chmod 755 /home2/xxx sudo chown xxx:xxx /home2/xxx 然后 xxx 就可以在这个新的文件夹里直接用了.</description>
+    </item>
+    
     <item>
       <title>Linux 文本文件忙</title>
       <link>https://Lu0key.github.io/post/linux-%E6%96%87%E6%9C%AC%E6%96%87%E4%BB%B6%E5%BF%99/</link>

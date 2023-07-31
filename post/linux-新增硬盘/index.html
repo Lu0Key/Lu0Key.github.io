@@ -1,0 +1,84 @@
+<!doctype html>
+<html lang="en-us">
+  <head>
+    <title>Linux 新增硬盘 // 洛七的摸鱼池塘</title>
+    <link rel="shortcut icon" href="/favicon.ico" />
+    <meta charset="utf-8" />
+    <meta name="generator" content="Hugo 0.115.4">
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="author" content="洛七" />
+    <meta name="description" content="" />
+    <link rel="stylesheet" href="/css/main.min.d08c6ce68432c68a64d84cb426dfdecab702035f91a5d580831f23f76c040a05.css" />
+
+    
+    <meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Linux 新增硬盘"/>
+<meta name="twitter:description" content="我们有时候Linux 服务器只有一个硬盘, 但是不是 LVM 格式的, 没办法直接扩容, 又不够用了, 因此我们选择 新创建一个 /home2 文件夹, 然后把硬盘挂载到 /home2 上, 想要方便直接用的话, 我就直接在 /home2 下给每一个人新创建一个同样的文件夹
+# 需要管理员来搞 # 比如这个用户叫xxx sudo mkdir /home2/xxx sudo chmod 755 /home2/xxx sudo chown xxx:xxx /home2/xxx 然后 xxx 就可以在这个新的文件夹里直接用了."/>
+
+    <meta property="og:title" content="Linux 新增硬盘" />
+<meta property="og:description" content="我们有时候Linux 服务器只有一个硬盘, 但是不是 LVM 格式的, 没办法直接扩容, 又不够用了, 因此我们选择 新创建一个 /home2 文件夹, 然后把硬盘挂载到 /home2 上, 想要方便直接用的话, 我就直接在 /home2 下给每一个人新创建一个同样的文件夹
+# 需要管理员来搞 # 比如这个用户叫xxx sudo mkdir /home2/xxx sudo chmod 755 /home2/xxx sudo chown xxx:xxx /home2/xxx 然后 xxx 就可以在这个新的文件夹里直接用了." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://Lu0key.github.io/post/linux-%E6%96%B0%E5%A2%9E%E7%A1%AC%E7%9B%98/" /><meta property="article:section" content="post" />
+<meta property="article:published_time" content="2023-07-31T15:03:39+08:00" />
+<meta property="article:modified_time" content="2023-07-31T15:03:39+08:00" />
+
+
+  </head>
+  <body>
+    <header class="app-header">
+      <a href="https://Lu0key.github.io/"><img class="app-header-avatar" src="/avatar.jpg" alt="洛七" /></a>
+      <span class="app-header-title">洛七的摸鱼池塘</span>
+      <nav class="app-header-menu">
+          <a class="app-header-menu-item" href="/tags/">Tags</a>
+      </nav>
+      <p>即将没书读的咸鱼</p>
+    </header>
+    <main class="app-container">
+      
+  <article class="post">
+    <header class="post-header">
+      <h1 class ="post-title">Linux 新增硬盘</h1>
+      <div class="post-meta">
+        <div>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-calendar">
+  <title>calendar</title>
+  <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line>
+</svg>
+          Jul 31, 2023
+        </div>
+        <div>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-clock">
+  <title>clock</title>
+  <circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline>
+</svg>
+          1 min read
+        </div>
+        <div>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-tag">
+  <title>tag</title>
+  <path d="M20.59 13.41l-7.17 7.17a2 2 0 0 1-2.83 0L2 12V2h10l8.59 8.59a2 2 0 0 1 0 2.82z"></path><line x1="7" y1="7" x2="7.01" y2="7"></line>
+</svg>
+              <a class="tag" href="https://Lu0key.github.io/tags/linux/">Linux</a>
+        </div>
+      </div>
+    </header>
+    <div class="post-content">
+      <p>我们有时候Linux 服务器只有一个硬盘, 但是不是 LVM 格式的, 没办法直接扩容, 又不够用了, 因此我们选择 新创建一个 <code>/home2</code> 文件夹, 然后把硬盘挂载到 <code>/home2</code> 上, 想要方便直接用的话, 我就直接在 <code>/home2</code> 下给每一个人新创建一个同样的文件夹</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span><span style="color:#75715e"># 需要管理员来搞</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># 比如这个用户叫xxx</span>
+</span></span><span style="display:flex;"><span>sudo mkdir /home2/xxx
+</span></span><span style="display:flex;"><span>sudo chmod <span style="color:#ae81ff">755</span> /home2/xxx
+</span></span><span style="display:flex;"><span>sudo chown xxx:xxx /home2/xxx
+</span></span></code></pre></div><p>然后 xxx 就可以在这个新的文件夹里直接用了.</p>
+
+    </div>
+    <div class="post-footer">
+      
+    </div>
+  </article>
+
+    </main>
+  </body>
+</html>
