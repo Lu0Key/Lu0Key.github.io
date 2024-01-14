@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>链表 on 洛七的摸鱼池塘</title>
+    <link>https://Lu0key.github.io/tags/%E9%93%BE%E8%A1%A8/</link>
+    <description>Recent content in 链表 on 洛七的摸鱼池塘</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Sun, 14 Jan 2024 14:07:16 +0800</lastBuildDate><atom:link href="https://Lu0key.github.io/tags/%E9%93%BE%E8%A1%A8/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Leetcode 83 删除排序链表中的重复元素</title>
+      <link>https://Lu0key.github.io/post/lc-83-remove-duplicates-from-sorted-list/</link>
+      <pubDate>Sun, 14 Jan 2024 14:07:16 +0800</pubDate>
+      
+      <guid>https://Lu0key.github.io/post/lc-83-remove-duplicates-from-sorted-list/</guid>
+      <description>83.删除排序链表中的重复元素 给定一个已排序的链表的头 head ， 删除所有重复的元素，使每个元素只出现一次 。返回已排序的链表。
+示例 1：
+输入: head = [1,1,2]
+输出: [1,2]
+示例 2:
+输入: head = [1,1,2,3,3]
+输出: [1,2,3]
+提示：
+链表中节点数目在范围 [0, 300] 内 -100 &amp;lt;= Node.val &amp;lt;= 100 题目数据保证链表已经按升序 排列 Related Topics
+链表 题目链接: link
+解答 这题不愧是 Easy ，没有什么弯弯绕绕，因此只需要看看下一个和当前这个节点的值一不一样，如果一样就跳过下一个节点，如果不一样就当前节点跳到下一个节点，因为只要一直保持当前节点和下一个节点不一样就能保证只出现一次。
+/** * Definition for singly-linked list. * public class ListNode { * int val; * ListNode next; * ListNode() {} * ListNode(int val) { this.val = val; } * ListNode(int val, ListNode next) { this.</description>
+    </item>
+    
+  </channel>
+</rss>

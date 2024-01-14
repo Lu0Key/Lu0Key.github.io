@@ -19,8 +19,7 @@ sudo chmod u+x ./NNVIDIA-Linux-x86_64-535.86.05.run sudo ./NVIDIA-Linux-x86_64-5
 sudo service lightdm stop # or sudo systemctl stop gdm 然后重新执行即可.
 如果遇到提示
 ERROR: The Nouveau kernel driver is currently in use by your system. 那么执行下面命令
-sudo vim /etc/default/grub # 然后修改成下面这样 # GRUB_CMDLINE_LINUX_DEFAULT=&amp;#34;quiet splash nouveau.modeset=0&amp;#34; # 修改完后保存退出, 更新 sudo update-grub # 重启 sudo reboot 然后重新执行即可.
-更新 CUDA 先选择cuda, 官网, 我这里依次选择 Linux -&amp;gt; x86_64 -&amp;gt; Ubuntu -&amp;gt; 22.</description>
+sudo vim /etc/default/grub # 然后修改成下面这样 # GRUB_CMDLINE_LINUX_DEFAULT=&amp;#34;quiet splash nouveau.modeset=0&amp;#34; # 修改完后保存退出, 更新 sudo update-grub # 重启 sudo reboot ERROR: Unable to find the development tool `cc` in your path; please make sure that you have the package &amp;#39;gcc&amp;#39; installed.</description>
     </item>
     
     <item>
