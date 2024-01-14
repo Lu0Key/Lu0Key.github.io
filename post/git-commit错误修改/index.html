@@ -4,49 +4,51 @@
     <title>Git Commit错误修改 // 洛七的摸鱼池塘</title>
     <link rel="shortcut icon" href="/favicon.ico" />
     <meta charset="utf-8" />
-    <meta name="generator" content="Hugo 0.115.4">
+    <meta name="generator" content="Hugo 0.81.0" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="author" content="洛七" />
     <meta name="description" content="" />
-    <link rel="stylesheet" href="/css/main.min.d08c6ce68432c68a64d84cb426dfdecab702035f91a5d580831f23f76c040a05.css" />
+    <link rel="stylesheet" href="/css/main.min.0fb49e70a30412f97ddfc418e18fefef1d9fcdebe45f634dbbba768b00fe1eec.css" />
+    
 
     
     <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Git Commit错误修改"/>
 <meta name="twitter:description" content="git commit错误修改 在 git commit -m &quot;message&quot; 时，我们有时会不小心把 message 的信息写错，要怎么修改呢？
 这时候分为两种情况
-已经git push了 还没git push 还没push 这种情况比较简单，直接使用
-git commit --amend 进入vim界面，按i进入insert模式，修改完错误的message后，按esc，输入:wq保存退出即可，最后再push
+ 已经git push了 还没git push  还没push 这种情况比较简单，直接使用
+git commit --amend进入vim界面，按i进入insert模式，修改完错误的message后，按esc，输入:wq保存退出即可，最后再push
 通过
-git log 可以看到记录是修改后的message
+git log可以看到记录是修改后的message
 已经push 这种情况命令比较多一点，但是也是能够解决
 先用 git log 查看是哪一次commit 的message需要修改，比如我是倒数第二次和第三次的commit都有一点问题，那么我们先修改倒数第二次的，先使用命令
-git rebase -i HEAD^ 进入vim界面，按i进入insert模式，将需要修改message的那一行的pick改成edit，将message改成正确的，再按esc，输入 :wq 保存退出
+git rebase -i HEAD^进入vim界面，按i进入insert模式，将需要修改message的那一行的pick改成edit，将message改成正确的，再按esc，输入 :wq 保存退出
 输入命令
-git commit --amend 同样进入vim界面，按i进入insert模式，将第一行错误的message修改为正确的message，退出保存流程和上面一样
+git commit --amend同样进入vim界面，按i进入insert模式，将第一行错误的message修改为正确的message，退出保存流程和上面一样
 rebase确认命令
-git rebase --continue 最后强制push一下即可
-git push -f 查看git log会发现已经修改好了"/>
+git rebase --continue最后强制push一下即可
+git push -f查看git log会发现已经修改好了"/>
 
     <meta property="og:title" content="Git Commit错误修改" />
 <meta property="og:description" content="git commit错误修改 在 git commit -m &quot;message&quot; 时，我们有时会不小心把 message 的信息写错，要怎么修改呢？
 这时候分为两种情况
-已经git push了 还没git push 还没push 这种情况比较简单，直接使用
-git commit --amend 进入vim界面，按i进入insert模式，修改完错误的message后，按esc，输入:wq保存退出即可，最后再push
+ 已经git push了 还没git push  还没push 这种情况比较简单，直接使用
+git commit --amend进入vim界面，按i进入insert模式，修改完错误的message后，按esc，输入:wq保存退出即可，最后再push
 通过
-git log 可以看到记录是修改后的message
+git log可以看到记录是修改后的message
 已经push 这种情况命令比较多一点，但是也是能够解决
 先用 git log 查看是哪一次commit 的message需要修改，比如我是倒数第二次和第三次的commit都有一点问题，那么我们先修改倒数第二次的，先使用命令
-git rebase -i HEAD^ 进入vim界面，按i进入insert模式，将需要修改message的那一行的pick改成edit，将message改成正确的，再按esc，输入 :wq 保存退出
+git rebase -i HEAD^进入vim界面，按i进入insert模式，将需要修改message的那一行的pick改成edit，将message改成正确的，再按esc，输入 :wq 保存退出
 输入命令
-git commit --amend 同样进入vim界面，按i进入insert模式，将第一行错误的message修改为正确的message，退出保存流程和上面一样
+git commit --amend同样进入vim界面，按i进入insert模式，将第一行错误的message修改为正确的message，退出保存流程和上面一样
 rebase确认命令
-git rebase --continue 最后强制push一下即可
-git push -f 查看git log会发现已经修改好了" />
+git rebase --continue最后强制push一下即可
+git push -f查看git log会发现已经修改好了" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://Lu0key.github.io/post/git-commit%E9%94%99%E8%AF%AF%E4%BF%AE%E6%94%B9/" /><meta property="article:section" content="post" />
-<meta property="article:published_time" content="2021-02-06T21:34:56+08:00" />
-<meta property="article:modified_time" content="2021-02-06T21:34:56+08:00" />
+<meta property="article:published_time" content="2021-02-06T21:34:56&#43;08:00" />
+<meta property="article:modified_time" content="2021-02-06T21:34:56&#43;08:00" />
+
 
 
   </head>
@@ -91,23 +93,23 @@ git push -f 查看git log会发现已经修改好了" />
 </ul>
 <h2 id="还没push">还没push</h2>
 <p>这种情况比较简单，直接使用</p>
-<pre tabindex="0"><code class="language-git" data-lang="git">git commit --amend
+<pre><code class="language-git" data-lang="git">git commit --amend
 </code></pre><p>进入vim界面，按<code>i</code>进入insert模式，修改完错误的message后，按esc，输入<code>:wq</code>保存退出即可，最后再push</p>
 <p>通过</p>
-<pre tabindex="0"><code class="language-git" data-lang="git">git log
+<pre><code class="language-git" data-lang="git">git log
 </code></pre><p>可以看到记录是修改后的message</p>
 <h2 id="已经push">已经push</h2>
 <p>这种情况命令比较多一点，但是也是能够解决</p>
 <p>先用 <code>git log</code> 查看是哪一次commit 的message需要修改，比如我是倒数第二次和第三次的commit都有一点问题，那么我们先修改倒数第二次的，先使用命令</p>
-<pre tabindex="0"><code class="language-git" data-lang="git">git rebase -i HEAD^
+<pre><code class="language-git" data-lang="git">git rebase -i HEAD^
 </code></pre><p>进入vim界面，按<code>i</code>进入insert模式，将需要修改message的那一行的pick改成edit，将message改成正确的，再按esc，输入 <code>:wq</code> 保存退出</p>
 <p>输入命令</p>
-<pre tabindex="0"><code class="language-git" data-lang="git">git commit --amend
+<pre><code class="language-git" data-lang="git">git commit --amend
 </code></pre><p>同样进入vim界面，按<code>i</code>进入insert模式，将第一行错误的message修改为正确的message，退出保存流程和上面一样</p>
 <p>rebase确认命令</p>
-<pre tabindex="0"><code class="language-git" data-lang="git">git rebase --continue
+<pre><code class="language-git" data-lang="git">git rebase --continue
 </code></pre><p>最后强制push一下即可</p>
-<pre tabindex="0"><code class="language-git" data-lang="git">git push -f
+<pre><code class="language-git" data-lang="git">git push -f
 </code></pre><p>查看<code>git log</code>会发现已经修改好了</p>
 
     </div>

@@ -4,31 +4,25 @@
     <title>王道考研 数据结构 线性表 // 洛七的摸鱼池塘</title>
     <link rel="shortcut icon" href="/favicon.ico" />
     <meta charset="utf-8" />
-    <meta name="generator" content="Hugo 0.115.4">
+    <meta name="generator" content="Hugo 0.81.0" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="author" content="洛七" />
     <meta name="description" content="" />
-    <link rel="stylesheet" href="/css/main.min.d08c6ce68432c68a64d84cb426dfdecab702035f91a5d580831f23f76c040a05.css" />
+    <link rel="stylesheet" href="/css/main.min.0fb49e70a30412f97ddfc418e18fefef1d9fcdebe45f634dbbba768b00fe1eec.css" />
+    
 
     
     <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="王道考研 数据结构 线性表"/>
-<meta name="twitter:description" content="线性表 线性表 定义 基本操作 其他常用操作 注 为什么需要实现基本操作 顺序表 顺序表的实现-静态分配 顺序表的实现-动态分配 特点 顺序表-插入 顺序表-删除 顺序表-按位查找 顺序表-按值查找 按值查找的时间复杂度 链表 定义 单链表-初始化 单链表-按位序插入 单链表-后插操作 单链表-前插操作 单链表-按位序删除 单链表-删除指定结点 单链表-按位查找 单链表-按值查找 单链表-获取长度 单链表-尾插法 单链表-头插法 双链表 初始化 双链表-插入 双链表-删除 双链表-遍历 循环链表 循环单链表 循环双链表 静态链表 静态链表-定义 顺序表和链表的比较 定义 线性表(Linear List)是具有相同数据类型的 n ($n\geqslant0$) 个数据元素的有限序列，其中 n 为表长，当 n=0 时线性表是一个空表。若用 L 命名线性表，则一般表示为 $$ L=(a_1, a_2,\cdots,a_j, a_{j&#43;1},\cdots,a_n) $$ 相同：意味着每个数据元素所占空间一样大
-有限序列：意味着所有按大小增加的整数不是一个线性表
-$a_i$ 是线性表中“第 i 个” , 是元素线性表中的位序
-$a_1$ 是表头元素，$a_n$ 是表尾元素. 有前继，后继的概念
-基本操作 InitList(&amp;L):初始化表"/>
+<meta name="twitter:description" content="线性表  线性表  定义 基本操作  其他常用操作 注 为什么需要实现基本操作   顺序表  顺序表的实现-静态分配 顺序表的实现-动态分配 特点 顺序表-插入 顺序表-删除 顺序表-按位查找 顺序表-按值查找 按值查找的时间复杂度   链表  定义 单链表-初始化 单链表-按位序插入 单链表-后插操作 单链表-前插操作 单链表-按位序删除 单链表-删除指定结点 单链表-按位查找 单链表-按值查找 单链表-获取长度 单链表-尾插法 单链表-头插法   双链表  初始化 双链表-插入 双链表-删除 双链表-遍历   循环链表  循环单链表 循环双链表   静态链表  静态链表-定义   顺序表和链表的比较    定义 线性表(Linear List)是具有相同数据类型的 n ($n\geqslant0$) 个数据元素的有限序列，其中 n 为表长，当 n=0 时线性表是一个空表。若用 L 命名线性表，则一般表示为 $$ L=(a_1, a_2,\cdots,a_j, a_{j&#43;1},\cdots,a_n) $$ 相同：意味着每个数据元素所占空间一样大"/>
 
     <meta property="og:title" content="王道考研 数据结构 线性表" />
-<meta property="og:description" content="线性表 线性表 定义 基本操作 其他常用操作 注 为什么需要实现基本操作 顺序表 顺序表的实现-静态分配 顺序表的实现-动态分配 特点 顺序表-插入 顺序表-删除 顺序表-按位查找 顺序表-按值查找 按值查找的时间复杂度 链表 定义 单链表-初始化 单链表-按位序插入 单链表-后插操作 单链表-前插操作 单链表-按位序删除 单链表-删除指定结点 单链表-按位查找 单链表-按值查找 单链表-获取长度 单链表-尾插法 单链表-头插法 双链表 初始化 双链表-插入 双链表-删除 双链表-遍历 循环链表 循环单链表 循环双链表 静态链表 静态链表-定义 顺序表和链表的比较 定义 线性表(Linear List)是具有相同数据类型的 n ($n\geqslant0$) 个数据元素的有限序列，其中 n 为表长，当 n=0 时线性表是一个空表。若用 L 命名线性表，则一般表示为 $$ L=(a_1, a_2,\cdots,a_j, a_{j&#43;1},\cdots,a_n) $$ 相同：意味着每个数据元素所占空间一样大
-有限序列：意味着所有按大小增加的整数不是一个线性表
-$a_i$ 是线性表中“第 i 个” , 是元素线性表中的位序
-$a_1$ 是表头元素，$a_n$ 是表尾元素. 有前继，后继的概念
-基本操作 InitList(&amp;L):初始化表" />
+<meta property="og:description" content="线性表  线性表  定义 基本操作  其他常用操作 注 为什么需要实现基本操作   顺序表  顺序表的实现-静态分配 顺序表的实现-动态分配 特点 顺序表-插入 顺序表-删除 顺序表-按位查找 顺序表-按值查找 按值查找的时间复杂度   链表  定义 单链表-初始化 单链表-按位序插入 单链表-后插操作 单链表-前插操作 单链表-按位序删除 单链表-删除指定结点 单链表-按位查找 单链表-按值查找 单链表-获取长度 单链表-尾插法 单链表-头插法   双链表  初始化 双链表-插入 双链表-删除 双链表-遍历   循环链表  循环单链表 循环双链表   静态链表  静态链表-定义   顺序表和链表的比较    定义 线性表(Linear List)是具有相同数据类型的 n ($n\geqslant0$) 个数据元素的有限序列，其中 n 为表长，当 n=0 时线性表是一个空表。若用 L 命名线性表，则一般表示为 $$ L=(a_1, a_2,\cdots,a_j, a_{j&#43;1},\cdots,a_n) $$ 相同：意味着每个数据元素所占空间一样大" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://Lu0key.github.io/post/%E7%8E%8B%E9%81%93%E8%80%83%E7%A0%94-%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84-%E7%BA%BF%E6%80%A7%E8%A1%A8/" /><meta property="article:section" content="post" />
-<meta property="article:published_time" content="2021-02-06T21:43:51+08:00" />
-<meta property="article:modified_time" content="2021-02-06T21:43:51+08:00" />
+<meta property="article:published_time" content="2021-02-06T21:43:51&#43;08:00" />
+<meta property="article:modified_time" content="2021-02-06T21:43:51&#43;08:00" />
+
 
 
   </head>
@@ -193,42 +187,42 @@ $a_1$ 是表头元素，$a_n$ 是表尾元素.
 数据元素的大小我们可通过 sizeof(ElemType) 获得</p>
 <p><code>LOC</code> 为 location的缩写</p>
 <h3 id="顺序表的实现-静态分配">顺序表的实现-静态分配</h3>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-c" data-lang="c"><span style="display:flex;"><span><span style="color:#75715e">#define MAXSIZE 10
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#66d9ef">typedef</span> <span style="color:#66d9ef">struct</span>{
-</span></span><span style="display:flex;"><span>    ElemType data[MAXSIZE];
-</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">int</span> length;
-</span></span><span style="display:flex;"><span>}SqList;
-</span></span></code></pre></div><p><code>sq</code> 是 sequence 的缩写.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c" data-lang="c"><span style="color:#75715e">#define MAXSIZE 10
+</span><span style="color:#75715e"></span><span style="color:#66d9ef">typedef</span> <span style="color:#66d9ef">struct</span>{
+    ElemType data[MAXSIZE];
+    <span style="color:#66d9ef">int</span> length;
+}SqList;
+</code></pre></div><p><code>sq</code> 是 sequence 的缩写.</p>
 <p>静态分配的局限性，数组的大小是不变的</p>
 <h3 id="顺序表的实现-动态分配">顺序表的实现-动态分配</h3>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-c" data-lang="c"><span style="display:flex;"><span><span style="color:#75715e">#define INITSIZE 10
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#66d9ef">typedef</span> <span style="color:#66d9ef">struct</span>{
-</span></span><span style="display:flex;"><span>    ElemType <span style="color:#f92672">*</span>data;
-</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">int</span> MaxSize;
-</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">int</span> length;
-</span></span><span style="display:flex;"><span>}SeqList;
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#75715e">// 初始化
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#66d9ef">void</span> <span style="color:#a6e22e">InitList</span>(SeqList <span style="color:#f92672">&amp;</span>L){
-</span></span><span style="display:flex;"><span>    L.data <span style="color:#f92672">=</span> (<span style="color:#66d9ef">int</span> <span style="color:#f92672">*</span>)<span style="color:#a6e22e">malloc</span>(INITSIZE<span style="color:#f92672">*</span><span style="color:#66d9ef">sizeof</span>(ElemType));
-</span></span><span style="display:flex;"><span>    L.length <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>;
-</span></span><span style="display:flex;"><span>    L.MaxSize <span style="color:#f92672">=</span> INITSIZE;
-</span></span><span style="display:flex;"><span>}
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#75715e">// 增加动态的长度
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#66d9ef">void</span> <span style="color:#a6e22e">IncreaseSize</span>(SeqList <span style="color:#f92672">&amp;</span>L, <span style="color:#66d9ef">int</span> len){
-</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">int</span> <span style="color:#f92672">*</span>p <span style="color:#f92672">=</span> L.data;
-</span></span><span style="display:flex;"><span>    L.data <span style="color:#f92672">=</span> (<span style="color:#66d9ef">int</span> <span style="color:#f92672">*</span>)<span style="color:#a6e22e">malloc</span>((L.MaxSize<span style="color:#f92672">+</span>len)<span style="color:#f92672">*</span><span style="color:#66d9ef">sizeof</span>(ElemType));
-</span></span><span style="display:flex;"><span>    <span style="color:#75715e">// 将数据复制到新区域
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>    <span style="color:#66d9ef">for</span>(<span style="color:#66d9ef">int</span> i<span style="color:#f92672">=</span><span style="color:#ae81ff">0</span>;i<span style="color:#f92672">&lt;</span>L.length;i<span style="color:#f92672">++</span>){
-</span></span><span style="display:flex;"><span>        L.data[i]<span style="color:#f92672">=</span>p[i];
-</span></span><span style="display:flex;"><span>    }
-</span></span><span style="display:flex;"><span>    <span style="color:#75715e">// 顺序表最大长度增加 len
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>    L.MaxSize <span style="color:#f92672">=</span> L.MaxSize <span style="color:#f92672">+</span>len;
-</span></span><span style="display:flex;"><span>    <span style="color:#75715e">// 释放原来的内存内存空间
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>    <span style="color:#a6e22e">free</span>(p);
-</span></span><span style="display:flex;"><span>}
-</span></span></code></pre></div><h3 id="特点">特点</h3>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c" data-lang="c"><span style="color:#75715e">#define INITSIZE 10
+</span><span style="color:#75715e"></span><span style="color:#66d9ef">typedef</span> <span style="color:#66d9ef">struct</span>{
+    ElemType <span style="color:#f92672">*</span>data;
+    <span style="color:#66d9ef">int</span> MaxSize;
+    <span style="color:#66d9ef">int</span> length;
+}SeqList;
+
+<span style="color:#75715e">// 初始化
+</span><span style="color:#75715e"></span><span style="color:#66d9ef">void</span> <span style="color:#a6e22e">InitList</span>(SeqList <span style="color:#f92672">&amp;</span>L){
+    L.data <span style="color:#f92672">=</span> (<span style="color:#66d9ef">int</span> <span style="color:#f92672">*</span>)malloc(INITSIZE<span style="color:#f92672">*</span><span style="color:#66d9ef">sizeof</span>(ElemType));
+    L.length <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>;
+    L.MaxSize <span style="color:#f92672">=</span> INITSIZE;
+}
+
+<span style="color:#75715e">// 增加动态的长度
+</span><span style="color:#75715e"></span><span style="color:#66d9ef">void</span> <span style="color:#a6e22e">IncreaseSize</span>(SeqList <span style="color:#f92672">&amp;</span>L, <span style="color:#66d9ef">int</span> len){
+    <span style="color:#66d9ef">int</span> <span style="color:#f92672">*</span>p <span style="color:#f92672">=</span> L.data;
+    L.data <span style="color:#f92672">=</span> (<span style="color:#66d9ef">int</span> <span style="color:#f92672">*</span>)malloc((L.MaxSize<span style="color:#f92672">+</span>len)<span style="color:#f92672">*</span><span style="color:#66d9ef">sizeof</span>(ElemType));
+    <span style="color:#75715e">// 将数据复制到新区域
+</span><span style="color:#75715e"></span>    <span style="color:#66d9ef">for</span>(<span style="color:#66d9ef">int</span> i<span style="color:#f92672">=</span><span style="color:#ae81ff">0</span>;i<span style="color:#f92672">&lt;</span>L.length;i<span style="color:#f92672">++</span>){
+        L.data[i]<span style="color:#f92672">=</span>p[i];
+    }
+    <span style="color:#75715e">// 顺序表最大长度增加 len
+</span><span style="color:#75715e"></span>    L.MaxSize <span style="color:#f92672">=</span> L.MaxSize <span style="color:#f92672">+</span>len;
+    <span style="color:#75715e">// 释放原来的内存内存空间
+</span><span style="color:#75715e"></span>    free(p);
+}
+</code></pre></div><h3 id="特点">特点</h3>
 <ul>
 <li>随机访问，即可在 O(1) 时间内找到第 i 个元素</li>
 <li>存储密度高，每个节点只存储数据元素</li>
@@ -237,71 +231,71 @@ $a_1$ 是表头元素，$a_n$ 是表尾元素.
 </ul>
 <h3 id="顺序表-插入">顺序表-插入</h3>
 <p>以静态分配为基础来写基本操作</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-c" data-lang="c"><span style="display:flex;"><span><span style="color:#66d9ef">void</span> <span style="color:#a6e22e">ListInsert</span>(SqList <span style="color:#f92672">&amp;</span>L, <span style="color:#66d9ef">int</span> i, <span style="color:#66d9ef">int</span> e){
-</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">for</span>(<span style="color:#66d9ef">int</span> j<span style="color:#f92672">=</span>L.length; j<span style="color:#f92672">&gt;=</span>i; j<span style="color:#f92672">++</span>){
-</span></span><span style="display:flex;"><span>        <span style="color:#75715e">// 从最后一个元素开始往后移，到第i个元素
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>        L.data[j]<span style="color:#f92672">=</span>L.data[j<span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>]; 
-</span></span><span style="display:flex;"><span>    }
-</span></span><span style="display:flex;"><span>    L.data[i<span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>]<span style="color:#f92672">=</span>e; <span style="color:#75715e">// 第i个元素的索引为i-1
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>    L.length<span style="color:#f92672">++</span>;
-</span></span><span style="display:flex;"><span>}
-</span></span></code></pre></div><p>由于可能遇到插入位置不对，顺序表已满等问题，插入操作代码的健壮性不够，因此可以进行修改</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-c" data-lang="c"><span style="display:flex;"><span><span style="color:#75715e">// 返回一个 bool值去表示插入状态：成功、失败
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#66d9ef">bool</span> <span style="color:#a6e22e">ListInsert</span>(SqList <span style="color:#f92672">&amp;</span>L, <span style="color:#66d9ef">int</span> i, <span style="color:#66d9ef">int</span> e){
-</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">if</span>(i<span style="color:#f92672">&lt;</span><span style="color:#ae81ff">1</span><span style="color:#f92672">||</span>i<span style="color:#f92672">&gt;</span>L.length<span style="color:#f92672">+</span><span style="color:#ae81ff">1</span>)
-</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">return</span> false;
-</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">if</span>(L.length<span style="color:#f92672">&gt;=</span>MAXSIZE)
-</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">return</span> false;
-</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">for</span>(<span style="color:#66d9ef">int</span> j<span style="color:#f92672">=</span>L.length; j<span style="color:#f92672">&gt;=</span>i; j<span style="color:#f92672">++</span>){
-</span></span><span style="display:flex;"><span>        <span style="color:#75715e">// 从最后一个元素开始往后移，到第i个元素
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>        L.data[j]<span style="color:#f92672">=</span>L.data[j<span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>]; 
-</span></span><span style="display:flex;"><span>    }
-</span></span><span style="display:flex;"><span>    L.data[i<span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>]<span style="color:#f92672">=</span>e; <span style="color:#75715e">// 第i个元素的索引为i-1
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>    L.length<span style="color:#f92672">++</span>;
-</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> true;
-</span></span><span style="display:flex;"><span>}
-</span></span></code></pre></div><h3 id="顺序表-删除">顺序表-删除</h3>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-c" data-lang="c"><span style="display:flex;"><span><span style="color:#75715e">// 删除，并返回被删除的值，并返回操作的状态：成功、失败
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#66d9ef">bool</span> <span style="color:#a6e22e">ListDelete</span>(SqLsit <span style="color:#f92672">&amp;</span>L, <span style="color:#66d9ef">int</span> i, <span style="color:#66d9ef">int</span> <span style="color:#f92672">&amp;</span>e){
-</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">if</span>(i<span style="color:#f92672">&lt;</span><span style="color:#ae81ff">1</span><span style="color:#f92672">||</span>i<span style="color:#f92672">&gt;</span>L.length)
-</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">return</span> false;
-</span></span><span style="display:flex;"><span>    e <span style="color:#f92672">=</span> L.data[i<span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>];
-</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">for</span>(<span style="color:#66d9ef">int</span> j<span style="color:#f92672">=</span>i; j<span style="color:#f92672">&lt;</span>L.length; j<span style="color:#f92672">++</span>)
-</span></span><span style="display:flex;"><span>        L.data[j<span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>] <span style="color:#f92672">=</span> L.data[j];
-</span></span><span style="display:flex;"><span>    L.length<span style="color:#f92672">--</span>;
-</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> true;
-</span></span><span style="display:flex;"><span>}
-</span></span></code></pre></div><p>要注意，删除时和插入时，移动元素的顺序</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c" data-lang="c"><span style="color:#66d9ef">void</span> <span style="color:#a6e22e">ListInsert</span>(SqList <span style="color:#f92672">&amp;</span>L, <span style="color:#66d9ef">int</span> i, <span style="color:#66d9ef">int</span> e){
+    <span style="color:#66d9ef">for</span>(<span style="color:#66d9ef">int</span> j<span style="color:#f92672">=</span>L.length; j<span style="color:#f92672">&gt;=</span>i; j<span style="color:#f92672">++</span>){
+        <span style="color:#75715e">// 从最后一个元素开始往后移，到第i个元素
+</span><span style="color:#75715e"></span>        L.data[j]<span style="color:#f92672">=</span>L.data[j<span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>]; 
+    }
+    L.data[i<span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>]<span style="color:#f92672">=</span>e; <span style="color:#75715e">// 第i个元素的索引为i-1
+</span><span style="color:#75715e"></span>    L.length<span style="color:#f92672">++</span>;
+}
+</code></pre></div><p>由于可能遇到插入位置不对，顺序表已满等问题，插入操作代码的健壮性不够，因此可以进行修改</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c" data-lang="c"><span style="color:#75715e">// 返回一个 bool值去表示插入状态：成功、失败
+</span><span style="color:#75715e"></span><span style="color:#66d9ef">bool</span> <span style="color:#a6e22e">ListInsert</span>(SqList <span style="color:#f92672">&amp;</span>L, <span style="color:#66d9ef">int</span> i, <span style="color:#66d9ef">int</span> e){
+    <span style="color:#66d9ef">if</span>(i<span style="color:#f92672">&lt;</span><span style="color:#ae81ff">1</span><span style="color:#f92672">||</span>i<span style="color:#f92672">&gt;</span>L.length<span style="color:#f92672">+</span><span style="color:#ae81ff">1</span>)
+        <span style="color:#66d9ef">return</span> false;
+    <span style="color:#66d9ef">if</span>(L.length<span style="color:#f92672">&gt;=</span>MAXSIZE)
+        <span style="color:#66d9ef">return</span> false;
+    <span style="color:#66d9ef">for</span>(<span style="color:#66d9ef">int</span> j<span style="color:#f92672">=</span>L.length; j<span style="color:#f92672">&gt;=</span>i; j<span style="color:#f92672">++</span>){
+        <span style="color:#75715e">// 从最后一个元素开始往后移，到第i个元素
+</span><span style="color:#75715e"></span>        L.data[j]<span style="color:#f92672">=</span>L.data[j<span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>]; 
+    }
+    L.data[i<span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>]<span style="color:#f92672">=</span>e; <span style="color:#75715e">// 第i个元素的索引为i-1
+</span><span style="color:#75715e"></span>    L.length<span style="color:#f92672">++</span>;
+    <span style="color:#66d9ef">return</span> true;
+}
+</code></pre></div><h3 id="顺序表-删除">顺序表-删除</h3>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c" data-lang="c"><span style="color:#75715e">// 删除，并返回被删除的值，并返回操作的状态：成功、失败
+</span><span style="color:#75715e"></span><span style="color:#66d9ef">bool</span> <span style="color:#a6e22e">ListDelete</span>(SqLsit <span style="color:#f92672">&amp;</span>L, <span style="color:#66d9ef">int</span> i, <span style="color:#66d9ef">int</span> <span style="color:#f92672">&amp;</span>e){
+    <span style="color:#66d9ef">if</span>(i<span style="color:#f92672">&lt;</span><span style="color:#ae81ff">1</span><span style="color:#f92672">||</span>i<span style="color:#f92672">&gt;</span>L.length)
+        <span style="color:#66d9ef">return</span> false;
+    e <span style="color:#f92672">=</span> L.data[i<span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>];
+    <span style="color:#66d9ef">for</span>(<span style="color:#66d9ef">int</span> j<span style="color:#f92672">=</span>i; j<span style="color:#f92672">&lt;</span>L.length; j<span style="color:#f92672">++</span>)
+        L.data[j<span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>] <span style="color:#f92672">=</span> L.data[j];
+    L.length<span style="color:#f92672">--</span>;
+    <span style="color:#66d9ef">return</span> true;
+}
+</code></pre></div><p>要注意，删除时和插入时，移动元素的顺序</p>
 <hr>
 <h3 id="顺序表-按位查找">顺序表-按位查找</h3>
 <p>静态存储</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-c" data-lang="c"><span style="display:flex;"><span><span style="color:#75715e">#define MaxSize 10
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#66d9ef">typedef</span> <span style="color:#66d9ef">struct</span>{
-</span></span><span style="display:flex;"><span>    ElemType data[MaxSize];
-</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">int</span> length;
-</span></span><span style="display:flex;"><span>}SqList;
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>ElemType <span style="color:#a6e22e">GetElem</span>(SqList L, <span style="color:#66d9ef">int</span> i){
-</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> L.data[i<span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>];
-</span></span><span style="display:flex;"><span>}
-</span></span></code></pre></div><p>动态分配也是一样的方法，因为分配的内存也是连续的</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c" data-lang="c"><span style="color:#75715e">#define MaxSize 10
+</span><span style="color:#75715e"></span><span style="color:#66d9ef">typedef</span> <span style="color:#66d9ef">struct</span>{
+    ElemType data[MaxSize];
+    <span style="color:#66d9ef">int</span> length;
+}SqList;
+
+ElemType <span style="color:#a6e22e">GetElem</span>(SqList L, <span style="color:#66d9ef">int</span> i){
+    <span style="color:#66d9ef">return</span> L.data[i<span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>];
+}
+</code></pre></div><p>动态分配也是一样的方法，因为分配的内存也是连续的</p>
 <h3 id="顺序表-按值查找">顺序表-按值查找</h3>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-c" data-lang="c"><span style="display:flex;"><span><span style="color:#75715e">#define InitSize 10
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#66d9ef">typedef</span> <span style="color:#66d9ef">struct</span>{
-</span></span><span style="display:flex;"><span>    ElemType <span style="color:#f92672">*</span>data;
-</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">int</span> MaxSize;
-</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">int</span> length;
-</span></span><span style="display:flex;"><span>}SeqList;
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#75715e">// 返回第一个值相等的元素的位序.
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e">// 这边假设了e可以直接用==比较
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#66d9ef">int</span> <span style="color:#a6e22e">locateElem</span>(SeqList L, ElemType e){
-</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">for</span>(<span style="color:#66d9ef">int</span> i <span style="color:#f92672">=</span><span style="color:#ae81ff">0</span>; i<span style="color:#f92672">&lt;</span>L.length;i<span style="color:#f92672">++</span>){
-</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">if</span>  (L.data[i] <span style="color:#f92672">==</span> e) {<span style="color:#66d9ef">return</span> i<span style="color:#f92672">+</span><span style="color:#ae81ff">1</span>;}
-</span></span><span style="display:flex;"><span>    }
-</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> <span style="color:#ae81ff">0</span>;
-</span></span><span style="display:flex;"><span>}
-</span></span></code></pre></div><h3 id="按值查找的时间复杂度">按值查找的时间复杂度</h3>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c" data-lang="c"><span style="color:#75715e">#define InitSize 10
+</span><span style="color:#75715e"></span><span style="color:#66d9ef">typedef</span> <span style="color:#66d9ef">struct</span>{
+    ElemType <span style="color:#f92672">*</span>data;
+    <span style="color:#66d9ef">int</span> MaxSize;
+    <span style="color:#66d9ef">int</span> length;
+}SeqList;
+
+<span style="color:#75715e">// 返回第一个值相等的元素的位序.
+</span><span style="color:#75715e">// 这边假设了e可以直接用==比较
+</span><span style="color:#75715e"></span><span style="color:#66d9ef">int</span> <span style="color:#a6e22e">locateElem</span>(SeqList L, ElemType e){
+    <span style="color:#66d9ef">for</span>(<span style="color:#66d9ef">int</span> i <span style="color:#f92672">=</span><span style="color:#ae81ff">0</span>; i<span style="color:#f92672">&lt;</span>L.length;i<span style="color:#f92672">++</span>){
+        <span style="color:#66d9ef">if</span>  (L.data[i] <span style="color:#f92672">==</span> e) {<span style="color:#66d9ef">return</span> i<span style="color:#f92672">+</span><span style="color:#ae81ff">1</span>;}
+    }
+    <span style="color:#66d9ef">return</span> <span style="color:#ae81ff">0</span>;
+}
+</code></pre></div><h3 id="按值查找的时间复杂度">按值查找的时间复杂度</h3>
 <p>最好时间复杂度=O(1)<br>
 最坏时间复杂度=O(n)<br>
 平均时间复杂度=O(n)</p>
@@ -309,460 +303,460 @@ $a_1$ 是表头元素，$a_n$ 是表尾元素.
 <p>优点：不要求大片连续空间，改变容量方便<br>
 缺点：不可随机存取，要耗费一定空间存放指针</p>
 <h3 id="定义-1">定义</h3>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-c" data-lang="c"><span style="display:flex;"><span><span style="color:#66d9ef">struct</span> LNode{             <span style="color:#75715e">// 定义单链表节点类型
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>    ElemType data;        <span style="color:#75715e">// 每个节点存放一个数据元素
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>    <span style="color:#66d9ef">struct</span> LNode <span style="color:#f92672">*</span>next;   <span style="color:#75715e">// 指针指向下一个节点
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>}
-</span></span><span style="display:flex;"><span><span style="color:#66d9ef">struct</span> LNode <span style="color:#f92672">*</span>p <span style="color:#f92672">=</span> (<span style="color:#66d9ef">struct</span> LNode <span style="color:#f92672">*</span>) <span style="color:#a6e22e">malloc</span>(<span style="color:#66d9ef">sizeof</span>(<span style="color:#66d9ef">struct</span> LNode))
-</span></span></code></pre></div><p>这里声明变量的时候都是用的 <code>struct LNode</code> 这是C语言的特性，在C++中不需要，在C语言中为了方便我们可以使用关键字 <code>typedef</code> 给数据类型重命名</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-c" data-lang="c"><span style="display:flex;"><span><span style="color:#66d9ef">typedef</span> <span style="color:#f92672">&lt;</span><span style="color:#960050;background-color:#1e0010">数据类型</span><span style="color:#f92672">&gt;</span> <span style="color:#f92672">&lt;</span><span style="color:#960050;background-color:#1e0010">别名</span><span style="color:#f92672">&gt;</span>
-</span></span><span style="display:flex;"><span><span style="color:#75715e">// e.g 
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#66d9ef">typedef</span> <span style="color:#66d9ef">struct</span> LNode LNode;
-</span></span><span style="display:flex;"><span>LNode <span style="color:#f92672">*</span>p <span style="color:#f92672">=</span> (LNode <span style="color:#f92672">*</span>) <span style="color:#a6e22e">malloc</span>(<span style="color:#66d9ef">sizeof</span>(LNode));
-</span></span></code></pre></div><p>更简洁的方法就是之前的写法</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-c" data-lang="c"><span style="display:flex;"><span><span style="color:#66d9ef">typedef</span> <span style="color:#66d9ef">struct</span> LNode{    <span style="color:#75715e">// 定义单链表节点类型
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>    ElemType data;       <span style="color:#75715e">// 每个节点存放一个数据元素
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>    <span style="color:#66d9ef">struct</span> Lnode <span style="color:#f92672">*</span>next;  <span style="color:#75715e">// 指针指向下一个节点
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>}LNode,<span style="color:#f92672">*</span>LinkList;
-</span></span></code></pre></div><p>这段等价于</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-c" data-lang="c"><span style="display:flex;"><span><span style="color:#66d9ef">struct</span> Lnode{
-</span></span><span style="display:flex;"><span>    ElemType data;
-</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">struct</span> LNode <span style="color:#f92672">*</span>next;
-</span></span><span style="display:flex;"><span>};
-</span></span><span style="display:flex;"><span><span style="color:#66d9ef">typedef</span> <span style="color:#66d9ef">struct</span> LNode LNode;
-</span></span><span style="display:flex;"><span><span style="color:#66d9ef">typedef</span> <span style="color:#66d9ef">struct</span> LNode <span style="color:#f92672">*</span>LinkList;
-</span></span></code></pre></div><p>后者可读性更强.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c" data-lang="c"><span style="color:#66d9ef">struct</span> LNode{             <span style="color:#75715e">// 定义单链表节点类型
+</span><span style="color:#75715e"></span>    ElemType data;        <span style="color:#75715e">// 每个节点存放一个数据元素
+</span><span style="color:#75715e"></span>    <span style="color:#66d9ef">struct</span> LNode <span style="color:#f92672">*</span>next;   <span style="color:#75715e">// 指针指向下一个节点
+</span><span style="color:#75715e"></span>}
+<span style="color:#66d9ef">struct</span> LNode <span style="color:#f92672">*</span>p <span style="color:#f92672">=</span> (<span style="color:#66d9ef">struct</span> LNode <span style="color:#f92672">*</span>) malloc(<span style="color:#66d9ef">sizeof</span>(<span style="color:#66d9ef">struct</span> LNode))
+</code></pre></div><p>这里声明变量的时候都是用的 <code>struct LNode</code> 这是C语言的特性，在C++中不需要，在C语言中为了方便我们可以使用关键字 <code>typedef</code> 给数据类型重命名</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c" data-lang="c"><span style="color:#66d9ef">typedef</span> <span style="color:#f92672">&lt;</span><span style="color:#960050;background-color:#1e0010">数据类型</span><span style="color:#f92672">&gt;</span> <span style="color:#f92672">&lt;</span><span style="color:#960050;background-color:#1e0010">别名</span><span style="color:#f92672">&gt;</span>
+<span style="color:#75715e">// e.g 
+</span><span style="color:#75715e"></span><span style="color:#66d9ef">typedef</span> <span style="color:#66d9ef">struct</span> LNode LNode;
+LNode <span style="color:#f92672">*</span>p <span style="color:#f92672">=</span> (LNode <span style="color:#f92672">*</span>) malloc(<span style="color:#66d9ef">sizeof</span>(LNode));
+</code></pre></div><p>更简洁的方法就是之前的写法</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c" data-lang="c"><span style="color:#66d9ef">typedef</span> <span style="color:#66d9ef">struct</span> LNode{    <span style="color:#75715e">// 定义单链表节点类型
+</span><span style="color:#75715e"></span>    ElemType data;       <span style="color:#75715e">// 每个节点存放一个数据元素
+</span><span style="color:#75715e"></span>    <span style="color:#66d9ef">struct</span> Lnode <span style="color:#f92672">*</span>next;  <span style="color:#75715e">// 指针指向下一个节点
+</span><span style="color:#75715e"></span>}LNode,<span style="color:#f92672">*</span>LinkList;
+</code></pre></div><p>这段等价于</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c" data-lang="c"><span style="color:#66d9ef">struct</span> Lnode{
+    ElemType data;
+    <span style="color:#66d9ef">struct</span> LNode <span style="color:#f92672">*</span>next;
+};
+<span style="color:#66d9ef">typedef</span> <span style="color:#66d9ef">struct</span> LNode LNode;
+<span style="color:#66d9ef">typedef</span> <span style="color:#66d9ef">struct</span> LNode <span style="color:#f92672">*</span>LinkList;
+</code></pre></div><p>后者可读性更强.</p>
 <p>LinkList 就是单链表的意思<br>
 代码中使用<code>LinkList</code> 和 <code>LNode *</code> 本质上没有区别，但是 <code>LinkList</code> 强调这是一个单链表，<code>LNode *</code> 强调 这是一个节点</p>
 <h3 id="单链表-初始化">单链表-初始化</h3>
 <p>不带头节点的初始化</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-c" data-lang="c"><span style="display:flex;"><span><span style="color:#75715e">// 初始化
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#66d9ef">bool</span> <span style="color:#a6e22e">InitList</span>(LinkList <span style="color:#f92672">&amp;</span>L){
-</span></span><span style="display:flex;"><span>    L <span style="color:#f92672">=</span> NULL;
-</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> true;
-</span></span><span style="display:flex;"><span>}
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#75715e">// 判断是否为空
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#66d9ef">bool</span> <span style="color:#a6e22e">Empty</span>(LinkList L){
-</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">if</span>(L <span style="color:#f92672">==</span> NULL)
-</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">return</span> true;
-</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">else</span>
-</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">return</span> false;
-</span></span><span style="display:flex;"><span>}
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#75715e">// 更简洁的写法
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e">// bool Empty(LinkList L){return (L==NULL)}
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#66d9ef">int</span> <span style="color:#a6e22e">main</span>(){
-</span></span><span style="display:flex;"><span>    LinkList L;
-</span></span><span style="display:flex;"><span>    <span style="color:#75715e">// 初始化一个空表
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>    <span style="color:#a6e22e">InitList</span>(L);
-</span></span><span style="display:flex;"><span>}
-</span></span></code></pre></div><p>带头节点的初始化</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-c" data-lang="c"><span style="display:flex;"><span><span style="color:#75715e">// 初始化
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#66d9ef">bool</span> <span style="color:#a6e22e">InitList</span>(LinkList <span style="color:#f92672">&amp;</span>L){
-</span></span><span style="display:flex;"><span>    L <span style="color:#f92672">=</span> (LNode <span style="color:#f92672">*</span>) <span style="color:#a6e22e">malloc</span>(<span style="color:#66d9ef">sizeof</span>(LNode)); <span style="color:#75715e">// 分配一个头节点
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>    <span style="color:#66d9ef">if</span>(L<span style="color:#f92672">==</span>NULL)
-</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">return</span> false;
-</span></span><span style="display:flex;"><span>    L<span style="color:#f92672">-&gt;</span>next <span style="color:#f92672">=</span> NULL;
-</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> true;
-</span></span><span style="display:flex;"><span>}
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#75715e">// 判断是否为空
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#66d9ef">bool</span> <span style="color:#a6e22e">Empty</span>(LinkList L){
-</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">if</span>(L<span style="color:#f92672">-&gt;</span>next <span style="color:#f92672">==</span> NULL)
-</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">return</span> true;
-</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">else</span>
-</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">return</span> false;
-</span></span><span style="display:flex;"><span>}
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#75715e">// 更简洁的写法
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e">// bool Empty(LinkList L){return (L-&gt;next==NULL)}
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>
-</span></span><span style="display:flex;"><span><span style="color:#66d9ef">int</span> <span style="color:#a6e22e">main</span>(){
-</span></span><span style="display:flex;"><span>    LinkList L;
-</span></span><span style="display:flex;"><span>    <span style="color:#75715e">// 初始化一个空表
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>    <span style="color:#a6e22e">InitList</span>(L);
-</span></span><span style="display:flex;"><span>}
-</span></span></code></pre></div><p>头节点本身不存储数据，只是表示一个头</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c" data-lang="c"><span style="color:#75715e">// 初始化
+</span><span style="color:#75715e"></span><span style="color:#66d9ef">bool</span> <span style="color:#a6e22e">InitList</span>(LinkList <span style="color:#f92672">&amp;</span>L){
+    L <span style="color:#f92672">=</span> NULL;
+    <span style="color:#66d9ef">return</span> true;
+}
+
+<span style="color:#75715e">// 判断是否为空
+</span><span style="color:#75715e"></span><span style="color:#66d9ef">bool</span> <span style="color:#a6e22e">Empty</span>(LinkList L){
+    <span style="color:#66d9ef">if</span>(L <span style="color:#f92672">==</span> NULL)
+        <span style="color:#66d9ef">return</span> true;
+    <span style="color:#66d9ef">else</span>
+        <span style="color:#66d9ef">return</span> false;
+}
+
+<span style="color:#75715e">// 更简洁的写法
+</span><span style="color:#75715e">// bool Empty(LinkList L){return (L==NULL)}
+</span><span style="color:#75715e"></span><span style="color:#66d9ef">int</span> <span style="color:#a6e22e">main</span>(){
+    LinkList L;
+    <span style="color:#75715e">// 初始化一个空表
+</span><span style="color:#75715e"></span>    InitList(L);
+}
+</code></pre></div><p>带头节点的初始化</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c" data-lang="c"><span style="color:#75715e">// 初始化
+</span><span style="color:#75715e"></span><span style="color:#66d9ef">bool</span> <span style="color:#a6e22e">InitList</span>(LinkList <span style="color:#f92672">&amp;</span>L){
+    L <span style="color:#f92672">=</span> (LNode <span style="color:#f92672">*</span>) malloc(<span style="color:#66d9ef">sizeof</span>(LNode)); <span style="color:#75715e">// 分配一个头节点
+</span><span style="color:#75715e"></span>    <span style="color:#66d9ef">if</span>(L<span style="color:#f92672">==</span>NULL)
+        <span style="color:#66d9ef">return</span> false;
+    L<span style="color:#f92672">-&gt;</span>next <span style="color:#f92672">=</span> NULL;
+    <span style="color:#66d9ef">return</span> true;
+}
+
+<span style="color:#75715e">// 判断是否为空
+</span><span style="color:#75715e"></span><span style="color:#66d9ef">bool</span> <span style="color:#a6e22e">Empty</span>(LinkList L){
+    <span style="color:#66d9ef">if</span>(L<span style="color:#f92672">-&gt;</span>next <span style="color:#f92672">==</span> NULL)
+        <span style="color:#66d9ef">return</span> true;
+    <span style="color:#66d9ef">else</span>
+        <span style="color:#66d9ef">return</span> false;
+}
+
+<span style="color:#75715e">// 更简洁的写法
+</span><span style="color:#75715e">// bool Empty(LinkList L){return (L-&gt;next==NULL)}
+</span><span style="color:#75715e"></span>
+<span style="color:#66d9ef">int</span> <span style="color:#a6e22e">main</span>(){
+    LinkList L;
+    <span style="color:#75715e">// 初始化一个空表
+</span><span style="color:#75715e"></span>    InitList(L);
+}
+</code></pre></div><p>头节点本身不存储数据，只是表示一个头</p>
 <h3 id="单链表-按位序插入">单链表-按位序插入</h3>
 <p>带头元素</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-c" data-lang="c"><span style="display:flex;"><span><span style="color:#66d9ef">bool</span> <span style="color:#a6e22e">ListInsert</span>(LinkList <span style="color:#f92672">&amp;</span>L, <span style="color:#66d9ef">int</span> i, ElemType e){
-</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">if</span>(i<span style="color:#f92672">&lt;</span><span style="color:#ae81ff">1</span>)
-</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">return</span> false;
-</span></span><span style="display:flex;"><span>    LNode <span style="color:#f92672">*</span>p;  <span style="color:#75715e">// 指针p指向当前扫描到的节点
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>    <span style="color:#66d9ef">int</span> j<span style="color:#f92672">=</span><span style="color:#ae81ff">0</span>;   <span style="color:#75715e">// 当前p指向的市第几个节点
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>    p <span style="color:#f92672">=</span> L;     <span style="color:#75715e">// L指向头节点，头结点是第0个节点
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>    <span style="color:#66d9ef">while</span> (p<span style="color:#f92672">!</span> <span style="color:#f92672">=</span> NULL <span style="color:#f92672">&amp;&amp;</span> j<span style="color:#f92672">&lt;</span>i<span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>){
-</span></span><span style="display:flex;"><span>        p <span style="color:#f92672">=</span> p<span style="color:#f92672">-&gt;</span>next;
-</span></span><span style="display:flex;"><span>        j<span style="color:#f92672">++</span>;
-</span></span><span style="display:flex;"><span>    }
-</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">if</span>(p<span style="color:#f92672">==</span>NULL) <span style="color:#75715e">// 判断第i-1个节点是否存在
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>        <span style="color:#66d9ef">return</span> false;
-</span></span><span style="display:flex;"><span>    LNode <span style="color:#f92672">*</span>s <span style="color:#f92672">=</span> (LNode <span style="color:#f92672">*</span>)<span style="color:#a6e22e">malloc</span>(<span style="color:#66d9ef">sizeof</span>(LNode));
-</span></span><span style="display:flex;"><span>    s<span style="color:#f92672">-&gt;</span>data <span style="color:#f92672">=</span> e;
-</span></span><span style="display:flex;"><span>    s<span style="color:#f92672">-&gt;</span>next <span style="color:#f92672">=</span> p<span style="color:#f92672">-&gt;</span>next;
-</span></span><span style="display:flex;"><span>    p<span style="color:#f92672">-&gt;</span>next <span style="color:#f92672">=</span> s;
-</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> true;
-</span></span><span style="display:flex;"><span>}
-</span></span></code></pre></div><p>先找到第i-1个节点p，然后新建一个节点s，分配空间，存储数据，先将p的下一个节点地址存在s中，再将s的地址存在p中，这两步不能颠倒.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c" data-lang="c"><span style="color:#66d9ef">bool</span> <span style="color:#a6e22e">ListInsert</span>(LinkList <span style="color:#f92672">&amp;</span>L, <span style="color:#66d9ef">int</span> i, ElemType e){
+    <span style="color:#66d9ef">if</span>(i<span style="color:#f92672">&lt;</span><span style="color:#ae81ff">1</span>)
+        <span style="color:#66d9ef">return</span> false;
+    LNode <span style="color:#f92672">*</span>p;  <span style="color:#75715e">// 指针p指向当前扫描到的节点
+</span><span style="color:#75715e"></span>    <span style="color:#66d9ef">int</span> j<span style="color:#f92672">=</span><span style="color:#ae81ff">0</span>;   <span style="color:#75715e">// 当前p指向的市第几个节点
+</span><span style="color:#75715e"></span>    p <span style="color:#f92672">=</span> L;     <span style="color:#75715e">// L指向头节点，头结点是第0个节点
+</span><span style="color:#75715e"></span>    <span style="color:#66d9ef">while</span> (p<span style="color:#f92672">!</span> <span style="color:#f92672">=</span> NULL <span style="color:#f92672">&amp;&amp;</span> j<span style="color:#f92672">&lt;</span>i<span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>){
+        p <span style="color:#f92672">=</span> p<span style="color:#f92672">-&gt;</span>next;
+        j<span style="color:#f92672">++</span>;
+    }
+    <span style="color:#66d9ef">if</span>(p<span style="color:#f92672">==</span>NULL) <span style="color:#75715e">// 判断第i-1个节点是否存在
+</span><span style="color:#75715e"></span>        <span style="color:#66d9ef">return</span> false;
+    LNode <span style="color:#f92672">*</span>s <span style="color:#f92672">=</span> (LNode <span style="color:#f92672">*</span>)malloc(<span style="color:#66d9ef">sizeof</span>(LNode));
+    s<span style="color:#f92672">-&gt;</span>data <span style="color:#f92672">=</span> e;
+    s<span style="color:#f92672">-&gt;</span>next <span style="color:#f92672">=</span> p<span style="color:#f92672">-&gt;</span>next;
+    p<span style="color:#f92672">-&gt;</span>next <span style="color:#f92672">=</span> s;
+    <span style="color:#66d9ef">return</span> true;
+}
+</code></pre></div><p>先找到第i-1个节点p，然后新建一个节点s，分配空间，存储数据，先将p的下一个节点地址存在s中，再将s的地址存在p中，这两步不能颠倒.</p>
 <p>最坏时间复杂度为O(n)
 平均时间复杂度为O(n)</p>
 <p>不带头节点</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-c" data-lang="c"><span style="display:flex;"><span><span style="color:#66d9ef">bool</span> <span style="color:#a6e22e">ListInsert</span>(LinkList <span style="color:#f92672">&amp;</span>L, <span style="color:#66d9ef">int</span> i, ElemType e){
-</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">if</span>(i<span style="color:#f92672">&lt;</span><span style="color:#ae81ff">1</span>)
-</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">return</span> false;
-</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">if</span>(i<span style="color:#f92672">==</span><span style="color:#ae81ff">1</span>){
-</span></span><span style="display:flex;"><span>        LNode <span style="color:#f92672">*</span>s <span style="color:#f92672">=</span> (LNode <span style="color:#f92672">*</span>)<span style="color:#a6e22e">malloc</span>(<span style="color:#66d9ef">sizeof</span>(LNode));
-</span></span><span style="display:flex;"><span>        s<span style="color:#f92672">-&gt;</span>data <span style="color:#f92672">=</span> e;
-</span></span><span style="display:flex;"><span>        s<span style="color:#f92672">-&gt;</span>next <span style="color:#f92672">=</span> L;
-</span></span><span style="display:flex;"><span>        L <span style="color:#f92672">=</span> s;  <span style="color:#75715e">// 头指针指向新节点
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>        <span style="color:#66d9ef">return</span> true;
-</span></span><span style="display:flex;"><span>    }
-</span></span><span style="display:flex;"><span>    LNode <span style="color:#f92672">*</span>p;  <span style="color:#75715e">// 指针p指向当前扫描到的节点
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>    <span style="color:#66d9ef">int</span> j<span style="color:#f92672">=</span><span style="color:#ae81ff">1</span>;   <span style="color:#75715e">// 当前p指向的市第几个节点
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>    p <span style="color:#f92672">=</span> L;     <span style="color:#75715e">// p指向第1个节点
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>    <span style="color:#66d9ef">while</span> (p<span style="color:#f92672">!</span> <span style="color:#f92672">=</span> NULL <span style="color:#f92672">&amp;&amp;</span> j<span style="color:#f92672">&lt;</span>i<span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>){
-</span></span><span style="display:flex;"><span>        p <span style="color:#f92672">=</span> p<span style="color:#f92672">-&gt;</span>next;
-</span></span><span style="display:flex;"><span>        j<span style="color:#f92672">++</span>;
-</span></span><span style="display:flex;"><span>    }
-</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">if</span>(p<span style="color:#f92672">==</span>NULL) <span style="color:#75715e">// 判断第i-1个节点是否存在
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>        <span style="color:#66d9ef">return</span> false;
-</span></span><span style="display:flex;"><span>    LNode <span style="color:#f92672">*</span>s <span style="color:#f92672">=</span> (LNode <span style="color:#f92672">*</span>)<span style="color:#a6e22e">malloc</span>(<span style="color:#66d9ef">sizeof</span>(LNode));
-</span></span><span style="display:flex;"><span>    s<span style="color:#f92672">-&gt;</span>data <span style="color:#f92672">=</span> e;
-</span></span><span style="display:flex;"><span>    s<span style="color:#f92672">-&gt;</span>next <span style="color:#f92672">=</span> p<span style="color:#f92672">-&gt;</span>next;
-</span></span><span style="display:flex;"><span>    p<span style="color:#f92672">-&gt;</span>next <span style="color:#f92672">=</span> s;
-</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> true;
-</span></span><span style="display:flex;"><span>}
-</span></span></code></pre></div><p>一般使用带头结点的</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c" data-lang="c"><span style="color:#66d9ef">bool</span> <span style="color:#a6e22e">ListInsert</span>(LinkList <span style="color:#f92672">&amp;</span>L, <span style="color:#66d9ef">int</span> i, ElemType e){
+    <span style="color:#66d9ef">if</span>(i<span style="color:#f92672">&lt;</span><span style="color:#ae81ff">1</span>)
+        <span style="color:#66d9ef">return</span> false;
+    <span style="color:#66d9ef">if</span>(i<span style="color:#f92672">==</span><span style="color:#ae81ff">1</span>){
+        LNode <span style="color:#f92672">*</span>s <span style="color:#f92672">=</span> (LNode <span style="color:#f92672">*</span>)malloc(<span style="color:#66d9ef">sizeof</span>(LNode));
+        s<span style="color:#f92672">-&gt;</span>data <span style="color:#f92672">=</span> e;
+        s<span style="color:#f92672">-&gt;</span>next <span style="color:#f92672">=</span> L;
+        L <span style="color:#f92672">=</span> s;  <span style="color:#75715e">// 头指针指向新节点
+</span><span style="color:#75715e"></span>        <span style="color:#66d9ef">return</span> true;
+    }
+    LNode <span style="color:#f92672">*</span>p;  <span style="color:#75715e">// 指针p指向当前扫描到的节点
+</span><span style="color:#75715e"></span>    <span style="color:#66d9ef">int</span> j<span style="color:#f92672">=</span><span style="color:#ae81ff">1</span>;   <span style="color:#75715e">// 当前p指向的市第几个节点
+</span><span style="color:#75715e"></span>    p <span style="color:#f92672">=</span> L;     <span style="color:#75715e">// p指向第1个节点
+</span><span style="color:#75715e"></span>    <span style="color:#66d9ef">while</span> (p<span style="color:#f92672">!</span> <span style="color:#f92672">=</span> NULL <span style="color:#f92672">&amp;&amp;</span> j<span style="color:#f92672">&lt;</span>i<span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>){
+        p <span style="color:#f92672">=</span> p<span style="color:#f92672">-&gt;</span>next;
+        j<span style="color:#f92672">++</span>;
+    }
+    <span style="color:#66d9ef">if</span>(p<span style="color:#f92672">==</span>NULL) <span style="color:#75715e">// 判断第i-1个节点是否存在
+</span><span style="color:#75715e"></span>        <span style="color:#66d9ef">return</span> false;
+    LNode <span style="color:#f92672">*</span>s <span style="color:#f92672">=</span> (LNode <span style="color:#f92672">*</span>)malloc(<span style="color:#66d9ef">sizeof</span>(LNode));
+    s<span style="color:#f92672">-&gt;</span>data <span style="color:#f92672">=</span> e;
+    s<span style="color:#f92672">-&gt;</span>next <span style="color:#f92672">=</span> p<span style="color:#f92672">-&gt;</span>next;
+    p<span style="color:#f92672">-&gt;</span>next <span style="color:#f92672">=</span> s;
+    <span style="color:#66d9ef">return</span> true;
+}
+</code></pre></div><p>一般使用带头结点的</p>
 <h3 id="单链表-后插操作">单链表-后插操作</h3>
 <p>在指定节点后插入元素 e</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-c" data-lang="c"><span style="display:flex;"><span><span style="color:#66d9ef">bool</span> <span style="color:#a6e22e">InsertNextNode</span> (LNode <span style="color:#f92672">*</span>p, ElemType e){
-</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">if</span> (p<span style="color:#f92672">==</span>NULL)
-</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">return</span> false;
-</span></span><span style="display:flex;"><span>    LNode <span style="color:#f92672">*</span>s <span style="color:#f92672">=</span> (LNode <span style="color:#f92672">*</span>)<span style="color:#a6e22e">malloc</span>(<span style="color:#66d9ef">sizeof</span>(LNode));
-</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">if</span>(s<span style="color:#f92672">==</span>NULL)  <span style="color:#75715e">// 内存分配失败(内存不足)
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>        <span style="color:#66d9ef">return</span> false;
-</span></span><span style="display:flex;"><span>    s<span style="color:#f92672">-&gt;</span>data <span style="color:#f92672">=</span> e;  <span style="color:#75715e">// 用结点s保存数据元素e
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>    s<span style="color:#f92672">-&gt;</span>next <span style="color:#f92672">=</span> p<span style="color:#f92672">-&gt;</span>next;
-</span></span><span style="display:flex;"><span>    p<span style="color:#f92672">-&gt;</span>next <span style="color:#f92672">=</span> s;
-</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> true;
-</span></span><span style="display:flex;"><span>}
-</span></span></code></pre></div><h3 id="单链表-前插操作">单链表-前插操作</h3>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c" data-lang="c"><span style="color:#66d9ef">bool</span> <span style="color:#a6e22e">InsertNextNode</span> (LNode <span style="color:#f92672">*</span>p, ElemType e){
+    <span style="color:#66d9ef">if</span> (p<span style="color:#f92672">==</span>NULL)
+        <span style="color:#66d9ef">return</span> false;
+    LNode <span style="color:#f92672">*</span>s <span style="color:#f92672">=</span> (LNode <span style="color:#f92672">*</span>)malloc(<span style="color:#66d9ef">sizeof</span>(LNode));
+    <span style="color:#66d9ef">if</span>(s<span style="color:#f92672">==</span>NULL)  <span style="color:#75715e">// 内存分配失败(内存不足)
+</span><span style="color:#75715e"></span>        <span style="color:#66d9ef">return</span> false;
+    s<span style="color:#f92672">-&gt;</span>data <span style="color:#f92672">=</span> e;  <span style="color:#75715e">// 用结点s保存数据元素e
+</span><span style="color:#75715e"></span>    s<span style="color:#f92672">-&gt;</span>next <span style="color:#f92672">=</span> p<span style="color:#f92672">-&gt;</span>next;
+    p<span style="color:#f92672">-&gt;</span>next <span style="color:#f92672">=</span> s;
+    <span style="color:#66d9ef">return</span> true;
+}
+</code></pre></div><h3 id="单链表-前插操作">单链表-前插操作</h3>
 <p>在指定节点p前插入元素 e<br>
 当你知道p前面的任意一个节点时<br>
 直接遍历，直到找到p，获得他的前驱结点.</p>
 <p>当你对p之前的结点一无所知时：</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-c" data-lang="c"><span style="display:flex;"><span><span style="color:#66d9ef">bool</span> <span style="color:#a6e22e">InsertPriorNode</span> (LNode <span style="color:#f92672">*</span>p, ElemType e){
-</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">if</span>(p<span style="color:#f92672">==</span>NULL)
-</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">return</span> false;
-</span></span><span style="display:flex;"><span>    LNode <span style="color:#f92672">*</span>s <span style="color:#f92672">=</span> (LNode <span style="color:#f92672">*</span>)<span style="color:#a6e22e">malloc</span>(<span style="color:#66d9ef">sizeof</span>(LNode));
-</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">if</span>(s<span style="color:#f92672">==</span>NULL)
-</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">return</span> false;
-</span></span><span style="display:flex;"><span>    s<span style="color:#f92672">-&gt;</span>next <span style="color:#f92672">=</span> p<span style="color:#f92672">-&gt;</span>next;
-</span></span><span style="display:flex;"><span>    s<span style="color:#f92672">-&gt;</span>data <span style="color:#f92672">=</span> p<span style="color:#f92672">-&gt;</span>data;
-</span></span><span style="display:flex;"><span>    p<span style="color:#f92672">-&gt;</span>next <span style="color:#f92672">=</span> s;    <span style="color:#75715e">// 新节点 s 连接到 p 之后
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>    p<span style="color:#f92672">-&gt;</span>data <span style="color:#f92672">=</span> e;    <span style="color:#75715e">// 将 p 中元素复制到 s 中
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>    <span style="color:#66d9ef">return</span> true;    <span style="color:#75715e">// p 中元素覆盖为 e
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>}
-</span></span></code></pre></div><p>这种方法的和后插操作差不多，在指定结点后插入一个新结点，将新结点的数据换成指定结点的数据，然后将指定节点的数据换成需要插入的数据，秒啊！<br>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c" data-lang="c"><span style="color:#66d9ef">bool</span> <span style="color:#a6e22e">InsertPriorNode</span> (LNode <span style="color:#f92672">*</span>p, ElemType e){
+    <span style="color:#66d9ef">if</span>(p<span style="color:#f92672">==</span>NULL)
+        <span style="color:#66d9ef">return</span> false;
+    LNode <span style="color:#f92672">*</span>s <span style="color:#f92672">=</span> (LNode <span style="color:#f92672">*</span>)malloc(<span style="color:#66d9ef">sizeof</span>(LNode));
+    <span style="color:#66d9ef">if</span>(s<span style="color:#f92672">==</span>NULL)
+        <span style="color:#66d9ef">return</span> false;
+    s<span style="color:#f92672">-&gt;</span>next <span style="color:#f92672">=</span> p<span style="color:#f92672">-&gt;</span>next;
+    s<span style="color:#f92672">-&gt;</span>data <span style="color:#f92672">=</span> p<span style="color:#f92672">-&gt;</span>data;
+    p<span style="color:#f92672">-&gt;</span>next <span style="color:#f92672">=</span> s;    <span style="color:#75715e">// 新节点 s 连接到 p 之后
+</span><span style="color:#75715e"></span>    p<span style="color:#f92672">-&gt;</span>data <span style="color:#f92672">=</span> e;    <span style="color:#75715e">// 将 p 中元素复制到 s 中
+</span><span style="color:#75715e"></span>    <span style="color:#66d9ef">return</span> true;    <span style="color:#75715e">// p 中元素覆盖为 e
+</span><span style="color:#75715e"></span>}
+</code></pre></div><p>这种方法的和后插操作差不多，在指定结点后插入一个新结点，将新结点的数据换成指定结点的数据，然后将指定节点的数据换成需要插入的数据，秒啊！<br>
 更妙之处在于时间复杂度为 O(1).</p>
 <h3 id="单链表-按位序删除">单链表-按位序删除</h3>
 <p>之后都默认单链表是带头结点<br>
 删除表L中第i个位置的元素，并用e返回删除元素的值.</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-c" data-lang="c"><span style="display:flex;"><span><span style="color:#66d9ef">bool</span> <span style="color:#a6e22e">ListDelete</span>(LinkList <span style="color:#f92672">&amp;</span>L, <span style="color:#66d9ef">int</span> i, ElemType <span style="color:#f92672">&amp;</span>e){
-</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">if</span>(i<span style="color:#f92672">&lt;</span><span style="color:#ae81ff">1</span>)
-</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">return</span> false;
-</span></span><span style="display:flex;"><span>    LNode <span style="color:#f92672">*</span>p;
-</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">int</span> j<span style="color:#f92672">=</span><span style="color:#ae81ff">0</span>;
-</span></span><span style="display:flex;"><span>    p <span style="color:#f92672">=</span> L;
-</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">while</span> (p<span style="color:#f92672">!=</span>NULL <span style="color:#f92672">&amp;&amp;</span> j<span style="color:#f92672">&lt;</span>i<span style="color:#f92672">-</span><span style="color:#ae81ff">1</span><span style="color:#f92672">&gt;</span>) {
-</span></span><span style="display:flex;"><span>        p <span style="color:#f92672">=</span> p<span style="color:#f92672">-&gt;</span>next;
-</span></span><span style="display:flex;"><span>        j<span style="color:#f92672">++</span>;
-</span></span><span style="display:flex;"><span>    }
-</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">if</span> (p<span style="color:#f92672">==</span>NULL)
-</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">return</span> false;
-</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">if</span> (p<span style="color:#f92672">-&gt;</span>next <span style="color:#f92672">==</span> NULL)
-</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">return</span> false;
-</span></span><span style="display:flex;"><span>    LNode <span style="color:#f92672">*</span>q <span style="color:#f92672">=</span> p<span style="color:#f92672">-&gt;</span>next;
-</span></span><span style="display:flex;"><span>    e <span style="color:#f92672">=</span> q<span style="color:#f92672">-&gt;</span>data;
-</span></span><span style="display:flex;"><span>    p<span style="color:#f92672">-&gt;</span>next <span style="color:#f92672">=</span> q<span style="color:#f92672">-&gt;</span>next;
-</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">free</span>(q);
-</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> true;
-</span></span><span style="display:flex;"><span>}
-</span></span></code></pre></div><p>先存好该位序的结点信息，将前驱结点的next存后继结点的地址，然后再释放(描述的有点不太清楚，代码很清楚)</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c" data-lang="c"><span style="color:#66d9ef">bool</span> <span style="color:#a6e22e">ListDelete</span>(LinkList <span style="color:#f92672">&amp;</span>L, <span style="color:#66d9ef">int</span> i, ElemType <span style="color:#f92672">&amp;</span>e){
+    <span style="color:#66d9ef">if</span>(i<span style="color:#f92672">&lt;</span><span style="color:#ae81ff">1</span>)
+        <span style="color:#66d9ef">return</span> false;
+    LNode <span style="color:#f92672">*</span>p;
+    <span style="color:#66d9ef">int</span> j<span style="color:#f92672">=</span><span style="color:#ae81ff">0</span>;
+    p <span style="color:#f92672">=</span> L;
+    <span style="color:#66d9ef">while</span> (p<span style="color:#f92672">!=</span>NULL <span style="color:#f92672">&amp;&amp;</span> j<span style="color:#f92672">&lt;</span>i<span style="color:#f92672">-</span><span style="color:#ae81ff">1</span><span style="color:#f92672">&gt;</span>) {
+        p <span style="color:#f92672">=</span> p<span style="color:#f92672">-&gt;</span>next;
+        j<span style="color:#f92672">++</span>;
+    }
+    <span style="color:#66d9ef">if</span> (p<span style="color:#f92672">==</span>NULL)
+        <span style="color:#66d9ef">return</span> false;
+    <span style="color:#66d9ef">if</span> (p<span style="color:#f92672">-&gt;</span>next <span style="color:#f92672">==</span> NULL)
+        <span style="color:#66d9ef">return</span> false;
+    LNode <span style="color:#f92672">*</span>q <span style="color:#f92672">=</span> p<span style="color:#f92672">-&gt;</span>next;
+    e <span style="color:#f92672">=</span> q<span style="color:#f92672">-&gt;</span>data;
+    p<span style="color:#f92672">-&gt;</span>next <span style="color:#f92672">=</span> q<span style="color:#f92672">-&gt;</span>next;
+    free(q);
+    <span style="color:#66d9ef">return</span> true;
+}
+</code></pre></div><p>先存好该位序的结点信息，将前驱结点的next存后继结点的地址，然后再释放(描述的有点不太清楚，代码很清楚)</p>
 <h3 id="单链表-删除指定结点">单链表-删除指定结点</h3>
 <p>能够找到前驱节点时，和按位序删除差不多，只需要循环即可</p>
 <p>这里主要是讲找不到前驱节点时，如何删除，和前插操作类似</p>
 <p>当指定结点有后继结点时</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-c" data-lang="c"><span style="display:flex;"><span><span style="color:#66d9ef">bool</span> <span style="color:#a6e22e">DeleteNode</span>(LNode <span style="color:#f92672">*</span>p){
-</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">if</span>(p<span style="color:#f92672">==</span>NULL)
-</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">return</span> false;
-</span></span><span style="display:flex;"><span>    LNode <span style="color:#f92672">*</span>q <span style="color:#f92672">=</span> p<span style="color:#f92672">-&gt;</span>next;
-</span></span><span style="display:flex;"><span>    p<span style="color:#f92672">-&gt;</span>data <span style="color:#f92672">=</span> p<span style="color:#f92672">-&gt;</span>next<span style="color:#f92672">-&gt;</span>data
-</span></span><span style="display:flex;"><span>    p<span style="color:#f92672">-&gt;</span>next <span style="color:#f92672">=</span> q<span style="color:#f92672">-&gt;</span>next;
-</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">free</span>(q);
-</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> true;
-</span></span><span style="display:flex;"><span>}
-</span></span></code></pre></div><p>把后继结点的数据拷贝到指定节点，然后释放后继节点，效果一样，当不存在后继节点时会出现问题，这时只能通过前驱节点来循环查找了</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c" data-lang="c"><span style="color:#66d9ef">bool</span> <span style="color:#a6e22e">DeleteNode</span>(LNode <span style="color:#f92672">*</span>p){
+    <span style="color:#66d9ef">if</span>(p<span style="color:#f92672">==</span>NULL)
+        <span style="color:#66d9ef">return</span> false;
+    LNode <span style="color:#f92672">*</span>q <span style="color:#f92672">=</span> p<span style="color:#f92672">-&gt;</span>next;
+    p<span style="color:#f92672">-&gt;</span>data <span style="color:#f92672">=</span> p<span style="color:#f92672">-&gt;</span>next<span style="color:#f92672">-&gt;</span>data
+    p<span style="color:#f92672">-&gt;</span>next <span style="color:#f92672">=</span> q<span style="color:#f92672">-&gt;</span>next;
+    free(q);
+    <span style="color:#66d9ef">return</span> true;
+}
+</code></pre></div><p>把后继结点的数据拷贝到指定节点，然后释放后继节点，效果一样，当不存在后继节点时会出现问题，这时只能通过前驱节点来循环查找了</p>
 <h3 id="单链表-按位查找">单链表-按位查找</h3>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-c" data-lang="c"><span style="display:flex;"><span>LNode <span style="color:#f92672">*</span> <span style="color:#a6e22e">GetElem</span>(LinkList L, <span style="color:#66d9ef">int</span> i){
-</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">if</span>(i<span style="color:#f92672">&lt;</span><span style="color:#ae81ff">0</span>)
-</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">return</span> NULL;
-</span></span><span style="display:flex;"><span>    LNode <span style="color:#f92672">*</span>p;
-</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">int</span> j<span style="color:#f92672">=</span><span style="color:#ae81ff">0</span>;
-</span></span><span style="display:flex;"><span>    p <span style="color:#f92672">=</span> L;
-</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">while</span> (p<span style="color:#f92672">!=</span>NULL <span style="color:#f92672">&amp;&amp;</span> j<span style="color:#f92672">&lt;</span>i){
-</span></span><span style="display:flex;"><span>        p <span style="color:#f92672">=</span> p<span style="color:#f92672">-&gt;</span>next;
-</span></span><span style="display:flex;"><span>        j<span style="color:#f92672">++</span>;
-</span></span><span style="display:flex;"><span>    }
-</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> p;
-</span></span><span style="display:flex;"><span>}
-</span></span></code></pre></div><p>找第0个结点，会返回头节点，找超过单链表长度的结点会返回NULL，平均时间复杂度为O(n)</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c" data-lang="c">LNode <span style="color:#f92672">*</span> <span style="color:#a6e22e">GetElem</span>(LinkList L, <span style="color:#66d9ef">int</span> i){
+    <span style="color:#66d9ef">if</span>(i<span style="color:#f92672">&lt;</span><span style="color:#ae81ff">0</span>)
+        <span style="color:#66d9ef">return</span> NULL;
+    LNode <span style="color:#f92672">*</span>p;
+    <span style="color:#66d9ef">int</span> j<span style="color:#f92672">=</span><span style="color:#ae81ff">0</span>;
+    p <span style="color:#f92672">=</span> L;
+    <span style="color:#66d9ef">while</span> (p<span style="color:#f92672">!=</span>NULL <span style="color:#f92672">&amp;&amp;</span> j<span style="color:#f92672">&lt;</span>i){
+        p <span style="color:#f92672">=</span> p<span style="color:#f92672">-&gt;</span>next;
+        j<span style="color:#f92672">++</span>;
+    }
+    <span style="color:#66d9ef">return</span> p;
+}
+</code></pre></div><p>找第0个结点，会返回头节点，找超过单链表长度的结点会返回NULL，平均时间复杂度为O(n)</p>
 <p>这个时候我们已经封装了多个基本操作，重新回去看一些基本操作的实现变得更简单</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-c" data-lang="c"><span style="display:flex;"><span><span style="color:#66d9ef">bool</span> <span style="color:#a6e22e">ListInsert</span>(LinkList <span style="color:#f92672">&amp;</span>L, <span style="color:#66d9ef">int</span> i, ElemType e){
-</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">if</span>(i<span style="color:#f92672">&lt;</span><span style="color:#ae81ff">1</span>)
-</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">return</span> false;
-</span></span><span style="display:flex;"><span>    LNode <span style="color:#f92672">*</span>p <span style="color:#f92672">=</span> <span style="color:#a6e22e">GetElem</span>(L, i<span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>);
-</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">if</span>(p<span style="color:#f92672">==</span>NULL) <span style="color:#75715e">// 判断第i-1个节点是否存在
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>        <span style="color:#66d9ef">return</span> false;
-</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> <span style="color:#a6e22e">InsertPriorNode</span>(p, e); <span style="color:#75715e">// 插入指定元素后面
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>}
-</span></span></code></pre></div><p>避免了重复代码、简介、易维护</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c" data-lang="c"><span style="color:#66d9ef">bool</span> <span style="color:#a6e22e">ListInsert</span>(LinkList <span style="color:#f92672">&amp;</span>L, <span style="color:#66d9ef">int</span> i, ElemType e){
+    <span style="color:#66d9ef">if</span>(i<span style="color:#f92672">&lt;</span><span style="color:#ae81ff">1</span>)
+        <span style="color:#66d9ef">return</span> false;
+    LNode <span style="color:#f92672">*</span>p <span style="color:#f92672">=</span> GetElem(L, i<span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>);
+    <span style="color:#66d9ef">if</span>(p<span style="color:#f92672">==</span>NULL) <span style="color:#75715e">// 判断第i-1个节点是否存在
+</span><span style="color:#75715e"></span>        <span style="color:#66d9ef">return</span> false;
+    <span style="color:#66d9ef">return</span> InsertPriorNode(p, e); <span style="color:#75715e">// 插入指定元素后面
+</span><span style="color:#75715e"></span>}
+</code></pre></div><p>避免了重复代码、简介、易维护</p>
 <h3 id="单链表-按值查找">单链表-按值查找</h3>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-c" data-lang="c"><span style="display:flex;"><span>LNode <span style="color:#f92672">*</span> <span style="color:#a6e22e">LocateElem</span>(LinkList L, ElemType e) {
-</span></span><span style="display:flex;"><span>    LNode <span style="color:#f92672">*</span>p <span style="color:#f92672">=</span>L<span style="color:#f92672">-&gt;</span>next;
-</span></span><span style="display:flex;"><span>    <span style="color:#75715e">// 从第1个结点开始数据域为e的结点
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>    <span style="color:#66d9ef">while</span>(p <span style="color:#f92672">!=</span> NULL <span style="color:#f92672">&amp;&amp;</span> p<span style="color:#f92672">-&gt;</span>data <span style="color:#f92672">!=</span> e)
-</span></span><span style="display:flex;"><span>        p <span style="color:#f92672">=</span> p<span style="color:#f92672">-&gt;</span>next;
-</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> p;
-</span></span><span style="display:flex;"><span>}
-</span></span></code></pre></div><p>如果要查的数据不存在，会返回NULL</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c" data-lang="c">LNode <span style="color:#f92672">*</span> <span style="color:#a6e22e">LocateElem</span>(LinkList L, ElemType e) {
+    LNode <span style="color:#f92672">*</span>p <span style="color:#f92672">=</span>L<span style="color:#f92672">-&gt;</span>next;
+    <span style="color:#75715e">// 从第1个结点开始数据域为e的结点
+</span><span style="color:#75715e"></span>    <span style="color:#66d9ef">while</span>(p <span style="color:#f92672">!=</span> NULL <span style="color:#f92672">&amp;&amp;</span> p<span style="color:#f92672">-&gt;</span>data <span style="color:#f92672">!=</span> e)
+        p <span style="color:#f92672">=</span> p<span style="color:#f92672">-&gt;</span>next;
+    <span style="color:#66d9ef">return</span> p;
+}
+</code></pre></div><p>如果要查的数据不存在，会返回NULL</p>
 <h3 id="单链表-获取长度">单链表-获取长度</h3>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-c" data-lang="c"><span style="display:flex;"><span><span style="color:#66d9ef">int</span> <span style="color:#a6e22e">Length</span>(LinkList L){
-</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">int</span> len <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>;
-</span></span><span style="display:flex;"><span>    LNode <span style="color:#f92672">*</span>p <span style="color:#f92672">=</span> L;
-</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">while</span> (p<span style="color:#f92672">-&gt;</span>next <span style="color:#f92672">!=</span> NULL){
-</span></span><span style="display:flex;"><span>        p <span style="color:#f92672">=</span> p<span style="color:#f92672">-&gt;</span>next;
-</span></span><span style="display:flex;"><span>        len<span style="color:#f92672">++</span>;
-</span></span><span style="display:flex;"><span>    }
-</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> len;
-</span></span><span style="display:flex;"><span>}
-</span></span></code></pre></div><p>同样的，这种操作时间复杂度也是O(n)</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c" data-lang="c"><span style="color:#66d9ef">int</span> <span style="color:#a6e22e">Length</span>(LinkList L){
+    <span style="color:#66d9ef">int</span> len <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>;
+    LNode <span style="color:#f92672">*</span>p <span style="color:#f92672">=</span> L;
+    <span style="color:#66d9ef">while</span> (p<span style="color:#f92672">-&gt;</span>next <span style="color:#f92672">!=</span> NULL){
+        p <span style="color:#f92672">=</span> p<span style="color:#f92672">-&gt;</span>next;
+        len<span style="color:#f92672">++</span>;
+    }
+    <span style="color:#66d9ef">return</span> len;
+}
+</code></pre></div><p>同样的，这种操作时间复杂度也是O(n)</p>
 <h3 id="单链表-尾插法">单链表-尾插法</h3>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-c" data-lang="c"><span style="display:flex;"><span>LinkList <span style="color:#a6e22e">List_TailInsert</span>(LinkList <span style="color:#f92672">&amp;</span>L){ <span style="color:#75715e">// 正向建立单链表
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>    <span style="color:#66d9ef">int</span> x;    <span style="color:#75715e">// 设ElemType为整型
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>    L <span style="color:#f92672">=</span> (LinkList)<span style="color:#a6e22e">malloc</span>(<span style="color:#66d9ef">sizeof</span>(LNode)); <span style="color:#75715e">// 建立头指针
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>    LNode <span style="color:#f92672">*</span>s, <span style="color:#f92672">*</span>r <span style="color:#f92672">=</span> L;   <span style="color:#75715e">// r为表尾指针 
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>    <span style="color:#a6e22e">scanf</span>(<span style="color:#e6db74">&#34;%d&#34;</span>, <span style="color:#f92672">&amp;</span>x);    <span style="color:#75715e">// 输入结点的值
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>    <span style="color:#66d9ef">while</span>(x<span style="color:#f92672">!=</span><span style="color:#ae81ff">9999</span>){     <span style="color:#75715e">// 输入9999表示结束
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>        s <span style="color:#f92672">=</span> (LNode <span style="color:#f92672">*</span>)<span style="color:#a6e22e">malloc</span>(<span style="color:#66d9ef">sizeof</span>(LNode));
-</span></span><span style="display:flex;"><span>        s<span style="color:#f92672">-&gt;</span>data <span style="color:#f92672">=</span> x;
-</span></span><span style="display:flex;"><span>        r<span style="color:#f92672">-&gt;</span>next <span style="color:#f92672">=</span> s;
-</span></span><span style="display:flex;"><span>        r<span style="color:#f92672">=</span>s;            <span style="color:#75715e">// r指向新的表尾结点 
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>        <span style="color:#a6e22e">scanf</span>(<span style="color:#e6db74">&#34;%d&#34;</span>,<span style="color:#f92672">&amp;</span>x);
-</span></span><span style="display:flex;"><span>    }
-</span></span><span style="display:flex;"><span>    r<span style="color:#f92672">-&gt;</span>next <span style="color:#f92672">=</span> NULL; <span style="color:#75715e">//尾结点指针置空
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>    <span style="color:#66d9ef">return</span> L;
-</span></span><span style="display:flex;"><span>}
-</span></span></code></pre></div><p>会发现这个链表不能存9999，只是一个表示结束的方式，其他结束方式也可以</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c" data-lang="c">LinkList <span style="color:#a6e22e">List_TailInsert</span>(LinkList <span style="color:#f92672">&amp;</span>L){ <span style="color:#75715e">// 正向建立单链表
+</span><span style="color:#75715e"></span>    <span style="color:#66d9ef">int</span> x;    <span style="color:#75715e">// 设ElemType为整型
+</span><span style="color:#75715e"></span>    L <span style="color:#f92672">=</span> (LinkList)malloc(<span style="color:#66d9ef">sizeof</span>(LNode)); <span style="color:#75715e">// 建立头指针
+</span><span style="color:#75715e"></span>    LNode <span style="color:#f92672">*</span>s, <span style="color:#f92672">*</span>r <span style="color:#f92672">=</span> L;   <span style="color:#75715e">// r为表尾指针 
+</span><span style="color:#75715e"></span>    scanf(<span style="color:#e6db74">&#34;%d&#34;</span>, <span style="color:#f92672">&amp;</span>x);    <span style="color:#75715e">// 输入结点的值
+</span><span style="color:#75715e"></span>    <span style="color:#66d9ef">while</span>(x<span style="color:#f92672">!=</span><span style="color:#ae81ff">9999</span>){     <span style="color:#75715e">// 输入9999表示结束
+</span><span style="color:#75715e"></span>        s <span style="color:#f92672">=</span> (LNode <span style="color:#f92672">*</span>)malloc(<span style="color:#66d9ef">sizeof</span>(LNode));
+        s<span style="color:#f92672">-&gt;</span>data <span style="color:#f92672">=</span> x;
+        r<span style="color:#f92672">-&gt;</span>next <span style="color:#f92672">=</span> s;
+        r<span style="color:#f92672">=</span>s;            <span style="color:#75715e">// r指向新的表尾结点 
+</span><span style="color:#75715e"></span>        scanf(<span style="color:#e6db74">&#34;%d&#34;</span>,<span style="color:#f92672">&amp;</span>x);
+    }
+    r<span style="color:#f92672">-&gt;</span>next <span style="color:#f92672">=</span> NULL; <span style="color:#75715e">//尾结点指针置空
+</span><span style="color:#75715e"></span>    <span style="color:#66d9ef">return</span> L;
+}
+</code></pre></div><p>会发现这个链表不能存9999，只是一个表示结束的方式，其他结束方式也可以</p>
 <h3 id="单链表-头插法">单链表-头插法</h3>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-c" data-lang="c"><span style="display:flex;"><span>LinkList <span style="color:#a6e22e">List_HeadInsert</span>(LinkList <span style="color:#f92672">&amp;</span>L){ <span style="color:#75715e">// 你想建立单链表
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>    LNode <span style="color:#f92672">*</span>s;
-</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">int</span> x;
-</span></span><span style="display:flex;"><span>    L <span style="color:#f92672">=</span> (LinkList)<span style="color:#a6e22e">malloc</span>(<span style="color:#66d9ef">sizeof</span>(LNode)); <span style="color:#75715e">// 创建头节点
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>    L<span style="color:#f92672">-&gt;</span>next <span style="color:#f92672">=</span> NULL; <span style="color:#75715e">// 初始化为空链表
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>    <span style="color:#a6e22e">scanf</span>(<span style="color:#e6db74">&#34;%d&#34;</span>, <span style="color:#f92672">&amp;</span>x);<span style="color:#75715e">// 输入结点的值
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>    <span style="color:#66d9ef">while</span>(x<span style="color:#f92672">!=</span><span style="color:#ae81ff">9999</span>){ <span style="color:#75715e">// 输入9999表示结束
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>        s <span style="color:#f92672">=</span> (LNode <span style="color:#f92672">*</span>)<span style="color:#a6e22e">malloc</span>(<span style="color:#66d9ef">sizeof</span>(LNode));<span style="color:#75715e">// 创建新节点
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>        s<span style="color:#f92672">-&gt;</span>data <span style="color:#f92672">=</span> x;
-</span></span><span style="display:flex;"><span>        s<span style="color:#f92672">-&gt;</span>next <span style="color:#f92672">=</span> L<span style="color:#f92672">-&gt;</span>next;
-</span></span><span style="display:flex;"><span>        L<span style="color:#f92672">-&gt;</span>next <span style="color:#f92672">=</span> s; <span style="color:#75715e">// 将新节点插入表中，L为头指针
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>        <span style="color:#a6e22e">scanf</span>(<span style="color:#e6db74">&#34;%d&#34;</span>, <span style="color:#f92672">&amp;</span>x);
-</span></span><span style="display:flex;"><span>    }
-</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> L;
-</span></span><span style="display:flex;"><span>}
-</span></span></code></pre></div><p>为什么要初始化？<br>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c" data-lang="c">LinkList <span style="color:#a6e22e">List_HeadInsert</span>(LinkList <span style="color:#f92672">&amp;</span>L){ <span style="color:#75715e">// 你想建立单链表
+</span><span style="color:#75715e"></span>    LNode <span style="color:#f92672">*</span>s;
+    <span style="color:#66d9ef">int</span> x;
+    L <span style="color:#f92672">=</span> (LinkList)malloc(<span style="color:#66d9ef">sizeof</span>(LNode)); <span style="color:#75715e">// 创建头节点
+</span><span style="color:#75715e"></span>    L<span style="color:#f92672">-&gt;</span>next <span style="color:#f92672">=</span> NULL; <span style="color:#75715e">// 初始化为空链表
+</span><span style="color:#75715e"></span>    scanf(<span style="color:#e6db74">&#34;%d&#34;</span>, <span style="color:#f92672">&amp;</span>x);<span style="color:#75715e">// 输入结点的值
+</span><span style="color:#75715e"></span>    <span style="color:#66d9ef">while</span>(x<span style="color:#f92672">!=</span><span style="color:#ae81ff">9999</span>){ <span style="color:#75715e">// 输入9999表示结束
+</span><span style="color:#75715e"></span>        s <span style="color:#f92672">=</span> (LNode <span style="color:#f92672">*</span>)malloc(<span style="color:#66d9ef">sizeof</span>(LNode));<span style="color:#75715e">// 创建新节点
+</span><span style="color:#75715e"></span>        s<span style="color:#f92672">-&gt;</span>data <span style="color:#f92672">=</span> x;
+        s<span style="color:#f92672">-&gt;</span>next <span style="color:#f92672">=</span> L<span style="color:#f92672">-&gt;</span>next;
+        L<span style="color:#f92672">-&gt;</span>next <span style="color:#f92672">=</span> s; <span style="color:#75715e">// 将新节点插入表中，L为头指针
+</span><span style="color:#75715e"></span>        scanf(<span style="color:#e6db74">&#34;%d&#34;</span>, <span style="color:#f92672">&amp;</span>x);
+    }
+    <span style="color:#66d9ef">return</span> L;
+}
+</code></pre></div><p>为什么要初始化？<br>
 因为没有初始化的指针可能会指向原本存在的脏数据，会出现一些问题</p>
 <p>怎么将单链表逆置？<br>
 可以将链表从头到尾读一遍到新的链表里，通过头插法建立这个新的链表</p>
 <h2 id="双链表">双链表</h2>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-c" data-lang="c"><span style="display:flex;"><span><span style="color:#66d9ef">typedef</span> <span style="color:#66d9ef">struct</span> DNode{
-</span></span><span style="display:flex;"><span>    ElemType data;
-</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">struct</span> DNode <span style="color:#f92672">*</span>prior, <span style="color:#f92672">*</span>next;
-</span></span><span style="display:flex;"><span>}DNode, <span style="color:#f92672">*</span>DLinklist;
-</span></span></code></pre></div><h3 id="初始化">初始化</h3>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c" data-lang="c"><span style="color:#66d9ef">typedef</span> <span style="color:#66d9ef">struct</span> DNode{
+    ElemType data;
+    <span style="color:#66d9ef">struct</span> DNode <span style="color:#f92672">*</span>prior, <span style="color:#f92672">*</span>next;
+}DNode, <span style="color:#f92672">*</span>DLinklist;
+</code></pre></div><h3 id="初始化">初始化</h3>
 <p>带头结点</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-c" data-lang="c"><span style="display:flex;"><span><span style="color:#66d9ef">bool</span> <span style="color:#a6e22e">InitDLinkList</span>(DLinklist <span style="color:#f92672">&amp;</span>L){
-</span></span><span style="display:flex;"><span>    L <span style="color:#f92672">=</span> (DNode <span style="color:#f92672">*</span>)<span style="color:#a6e22e">malloc</span>(<span style="color:#66d9ef">sizeof</span>(DNode)); <span style="color:#75715e">// 分配一个头节点
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>    <span style="color:#66d9ef">if</span> (L<span style="color:#f92672">==</span>NULL)  <span style="color:#75715e">// 内存不足，分配失败
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>        <span style="color:#66d9ef">return</span> false;
-</span></span><span style="display:flex;"><span>    L<span style="color:#f92672">-&gt;</span>prior <span style="color:#f92672">=</span> NULL; <span style="color:#75715e">// 头结点的 prior 永远指向NULL
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>    L<span style="color:#f92672">-&gt;</span>next <span style="color:#f92672">=</span> NULL;  <span style="color:#75715e">// 头结点之后暂时还没有结点
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>    <span style="color:#66d9ef">return</span> true;
-</span></span><span style="display:flex;"><span>}
-</span></span></code></pre></div><p>同样的，<code>DNode *</code> 和 <code>DLinklist</code> 是等价的，一个强调是结点，一个强调是链表</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c" data-lang="c"><span style="color:#66d9ef">bool</span> <span style="color:#a6e22e">InitDLinkList</span>(DLinklist <span style="color:#f92672">&amp;</span>L){
+    L <span style="color:#f92672">=</span> (DNode <span style="color:#f92672">*</span>)malloc(<span style="color:#66d9ef">sizeof</span>(DNode)); <span style="color:#75715e">// 分配一个头节点
+</span><span style="color:#75715e"></span>    <span style="color:#66d9ef">if</span> (L<span style="color:#f92672">==</span>NULL)  <span style="color:#75715e">// 内存不足，分配失败
+</span><span style="color:#75715e"></span>        <span style="color:#66d9ef">return</span> false;
+    L<span style="color:#f92672">-&gt;</span>prior <span style="color:#f92672">=</span> NULL; <span style="color:#75715e">// 头结点的 prior 永远指向NULL
+</span><span style="color:#75715e"></span>    L<span style="color:#f92672">-&gt;</span>next <span style="color:#f92672">=</span> NULL;  <span style="color:#75715e">// 头结点之后暂时还没有结点
+</span><span style="color:#75715e"></span>    <span style="color:#66d9ef">return</span> true;
+}
+</code></pre></div><p>同样的，<code>DNode *</code> 和 <code>DLinklist</code> 是等价的，一个强调是结点，一个强调是链表</p>
 <p>判断双链表是否为空（带头结点）</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-c" data-lang="c"><span style="display:flex;"><span><span style="color:#66d9ef">bool</span> <span style="color:#a6e22e">Empty</span>(DLinklist L){
-</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">if</span> (L<span style="color:#f92672">-&gt;</span>next <span style="color:#f92672">==</span> NULL)
-</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">return</span> true;
-</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">else</span>
-</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">return</span> false;
-</span></span><span style="display:flex;"><span>}
-</span></span></code></pre></div><h3 id="双链表-插入">双链表-插入</h3>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c" data-lang="c"><span style="color:#66d9ef">bool</span> <span style="color:#a6e22e">Empty</span>(DLinklist L){
+    <span style="color:#66d9ef">if</span> (L<span style="color:#f92672">-&gt;</span>next <span style="color:#f92672">==</span> NULL)
+        <span style="color:#66d9ef">return</span> true;
+    <span style="color:#66d9ef">else</span>
+        <span style="color:#66d9ef">return</span> false;
+}
+</code></pre></div><h3 id="双链表-插入">双链表-插入</h3>
 <p>在指定结点p后插入结点s</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-c" data-lang="c"><span style="display:flex;"><span><span style="color:#66d9ef">bool</span> <span style="color:#a6e22e">InsertNextDNode</span>(DNode <span style="color:#f92672">*</span>p, DNode <span style="color:#f92672">*</span>s){
-</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">if</span> (p<span style="color:#f92672">==</span>NULL<span style="color:#f92672">||</span> s<span style="color:#f92672">==</span>NULL)
-</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">return</span> false;
-</span></span><span style="display:flex;"><span>    s<span style="color:#f92672">-&gt;</span>next <span style="color:#f92672">=</span> p<span style="color:#f92672">-&gt;</span>next;
-</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">if</span>(p<span style="color:#f92672">-&gt;</span>next <span style="color:#f92672">!=</span> NULL)
-</span></span><span style="display:flex;"><span>        p<span style="color:#f92672">-&gt;</span>next<span style="color:#f92672">-&gt;</span>prior <span style="color:#f92672">=</span> s
-</span></span><span style="display:flex;"><span>    s<span style="color:#f92672">-&gt;</span>prior <span style="color:#f92672">=</span> p;
-</span></span><span style="display:flex;"><span>    p<span style="color:#f92672">-&gt;</span>next <span style="color:#f92672">=</span> s;
-</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> true;
-</span></span><span style="display:flex;"><span>}
-</span></span></code></pre></div><p>要注意语序的顺序，不然可能会出问题</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c" data-lang="c"><span style="color:#66d9ef">bool</span> <span style="color:#a6e22e">InsertNextDNode</span>(DNode <span style="color:#f92672">*</span>p, DNode <span style="color:#f92672">*</span>s){
+    <span style="color:#66d9ef">if</span> (p<span style="color:#f92672">==</span>NULL<span style="color:#f92672">||</span> s<span style="color:#f92672">==</span>NULL)
+        <span style="color:#66d9ef">return</span> false;
+    s<span style="color:#f92672">-&gt;</span>next <span style="color:#f92672">=</span> p<span style="color:#f92672">-&gt;</span>next;
+    <span style="color:#66d9ef">if</span>(p<span style="color:#f92672">-&gt;</span>next <span style="color:#f92672">!=</span> NULL)
+        p<span style="color:#f92672">-&gt;</span>next<span style="color:#f92672">-&gt;</span>prior <span style="color:#f92672">=</span> s
+    s<span style="color:#f92672">-&gt;</span>prior <span style="color:#f92672">=</span> p;
+    p<span style="color:#f92672">-&gt;</span>next <span style="color:#f92672">=</span> s;
+    <span style="color:#66d9ef">return</span> true;
+}
+</code></pre></div><p>要注意语序的顺序，不然可能会出问题</p>
 <p>前插操作只需要找到指定结点的前驱结点，对其进行后插操作即可，然后对特殊情况进行处理，比如指定节点为第一个结点</p>
 <h3 id="双链表-删除">双链表-删除</h3>
 <p>删除给定结点p的后继节点</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-c" data-lang="c"><span style="display:flex;"><span><span style="color:#66d9ef">bool</span> <span style="color:#a6e22e">DeleteNextDNode</span>(DNode <span style="color:#f92672">*</span>p){
-</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">if</span> (p <span style="color:#f92672">==</span> NULL)<span style="color:#75715e">// 判断输入是否合法
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>        <span style="color:#66d9ef">return</span> false;
-</span></span><span style="display:flex;"><span>    DNode <span style="color:#f92672">*</span>q <span style="color:#f92672">=</span> p<span style="color:#f92672">-&gt;</span>next;<span style="color:#75715e">// q 是 p 的后继结点
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>    <span style="color:#66d9ef">if</span> (q <span style="color:#f92672">==</span> NULL) <span style="color:#75715e">// 判断q是不是最后一个结点
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>        q<span style="color:#f92672">-&gt;</span>next<span style="color:#f92672">-&gt;</span>prior <span style="color:#f92672">=</span> p;
-</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">free</span>(q);  <span style="color:#75715e">// 释放结点空间
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>    <span style="color:#66d9ef">return</span> true;
-</span></span><span style="display:flex;"><span>}
-</span></span></code></pre></div><p>销毁链表：</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-c" data-lang="c"><span style="display:flex;"><span><span style="color:#66d9ef">void</span> <span style="color:#a6e22e">DestoryList</span>(DLinklist <span style="color:#f92672">&amp;</span>L){
-</span></span><span style="display:flex;"><span>    <span style="color:#75715e">// 循环释放各个数据结点
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>    <span style="color:#66d9ef">while</span> (L<span style="color:#f92672">-&gt;</span>next <span style="color:#f92672">!=</span> NULL)
-</span></span><span style="display:flex;"><span>        <span style="color:#a6e22e">DeleteNextDNode</span>(L);
-</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">free</span>(L);
-</span></span><span style="display:flex;"><span>    L<span style="color:#f92672">=</span>NULL; <span style="color:#75715e">// 头指针指向NULL，防止指向位置数据
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>}
-</span></span></code></pre></div><h3 id="双链表-遍历">双链表-遍历</h3>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-c" data-lang="c"><span style="display:flex;"><span><span style="color:#75715e">// 1. 后向遍历
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#66d9ef">while</span> (p<span style="color:#f92672">!=</span>NULL){
-</span></span><span style="display:flex;"><span>    <span style="color:#75715e">// 对结点p做处理
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>    p <span style="color:#f92672">=</span> p<span style="color:#f92672">-&gt;</span>next;
-</span></span><span style="display:flex;"><span>}
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#75715e">// 2. 前向遍历
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#66d9ef">while</span> (p <span style="color:#f92672">!=</span> NULL){
-</span></span><span style="display:flex;"><span>    <span style="color:#75715e">// 对结点p做相应处理
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>    p <span style="color:#f92672">=</span> p<span style="color:#f92672">-&gt;</span>prior;
-</span></span><span style="display:flex;"><span>}
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#75715e">// 3. 前向遍历（跳过头结点）
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#66d9ef">while</span> (p<span style="color:#f92672">-&gt;</span>prior <span style="color:#f92672">!=</span> NULL){
-</span></span><span style="display:flex;"><span>    <span style="color:#75715e">// 对结点 p 做相应处理
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>    p <span style="color:#f92672">=</span> p<span style="color:#f92672">-&gt;</span>prior;
-</span></span><span style="display:flex;"><span>}
-</span></span></code></pre></div><p>双链表不可随机存取，因此安慰查找，按值查找都只能用遍历的方式实现。时间复杂度O(n)</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c" data-lang="c"><span style="color:#66d9ef">bool</span> <span style="color:#a6e22e">DeleteNextDNode</span>(DNode <span style="color:#f92672">*</span>p){
+    <span style="color:#66d9ef">if</span> (p <span style="color:#f92672">==</span> NULL)<span style="color:#75715e">// 判断输入是否合法
+</span><span style="color:#75715e"></span>        <span style="color:#66d9ef">return</span> false;
+    DNode <span style="color:#f92672">*</span>q <span style="color:#f92672">=</span> p<span style="color:#f92672">-&gt;</span>next;<span style="color:#75715e">// q 是 p 的后继结点
+</span><span style="color:#75715e"></span>    <span style="color:#66d9ef">if</span> (q <span style="color:#f92672">==</span> NULL) <span style="color:#75715e">// 判断q是不是最后一个结点
+</span><span style="color:#75715e"></span>        q<span style="color:#f92672">-&gt;</span>next<span style="color:#f92672">-&gt;</span>prior <span style="color:#f92672">=</span> p;
+    free(q);  <span style="color:#75715e">// 释放结点空间
+</span><span style="color:#75715e"></span>    <span style="color:#66d9ef">return</span> true;
+}
+</code></pre></div><p>销毁链表：</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c" data-lang="c"><span style="color:#66d9ef">void</span> <span style="color:#a6e22e">DestoryList</span>(DLinklist <span style="color:#f92672">&amp;</span>L){
+    <span style="color:#75715e">// 循环释放各个数据结点
+</span><span style="color:#75715e"></span>    <span style="color:#66d9ef">while</span> (L<span style="color:#f92672">-&gt;</span>next <span style="color:#f92672">!=</span> NULL)
+        DeleteNextDNode(L);
+    free(L);
+    L<span style="color:#f92672">=</span>NULL; <span style="color:#75715e">// 头指针指向NULL，防止指向位置数据
+</span><span style="color:#75715e"></span>}
+</code></pre></div><h3 id="双链表-遍历">双链表-遍历</h3>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c" data-lang="c"><span style="color:#75715e">// 1. 后向遍历
+</span><span style="color:#75715e"></span><span style="color:#66d9ef">while</span> (p<span style="color:#f92672">!=</span>NULL){
+    <span style="color:#75715e">// 对结点p做处理
+</span><span style="color:#75715e"></span>    p <span style="color:#f92672">=</span> p<span style="color:#f92672">-&gt;</span>next;
+}
+
+<span style="color:#75715e">// 2. 前向遍历
+</span><span style="color:#75715e"></span><span style="color:#66d9ef">while</span> (p <span style="color:#f92672">!=</span> NULL){
+    <span style="color:#75715e">// 对结点p做相应处理
+</span><span style="color:#75715e"></span>    p <span style="color:#f92672">=</span> p<span style="color:#f92672">-&gt;</span>prior;
+}
+
+<span style="color:#75715e">// 3. 前向遍历（跳过头结点）
+</span><span style="color:#75715e"></span><span style="color:#66d9ef">while</span> (p<span style="color:#f92672">-&gt;</span>prior <span style="color:#f92672">!=</span> NULL){
+    <span style="color:#75715e">// 对结点 p 做相应处理
+</span><span style="color:#75715e"></span>    p <span style="color:#f92672">=</span> p<span style="color:#f92672">-&gt;</span>prior;
+}
+</code></pre></div><p>双链表不可随机存取，因此安慰查找，按值查找都只能用遍历的方式实现。时间复杂度O(n)</p>
 <h2 id="循环链表">循环链表</h2>
 <h3 id="循环单链表">循环单链表</h3>
 <p>结点定义</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-c" data-lang="c"><span style="display:flex;"><span>typrdef <span style="color:#66d9ef">struct</span> LNode{
-</span></span><span style="display:flex;"><span>    ElemType data;
-</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">struct</span> LNode <span style="color:#f92672">*</span>next;
-</span></span><span style="display:flex;"><span>}LNode, <span style="color:#f92672">*</span>LinkList;
-</span></span></code></pre></div><p>初始化一个循环单链表</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-c" data-lang="c"><span style="display:flex;"><span><span style="color:#66d9ef">bool</span> <span style="color:#a6e22e">InitList</span>(LinkList <span style="color:#f92672">&amp;</span>L){
-</span></span><span style="display:flex;"><span>    L <span style="color:#f92672">=</span> (LNode <span style="color:#f92672">*</span>)<span style="color:#a6e22e">malloc</span>(<span style="color:#66d9ef">sizeof</span>(LNode)); <span style="color:#75715e">// 分配一个头结点
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>    <span style="color:#66d9ef">if</span> (L<span style="color:#f92672">==</span>NULL)
-</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">return</span> false;
-</span></span><span style="display:flex;"><span>    L<span style="color:#f92672">-&gt;</span>next <span style="color:#f92672">=</span> L;
-</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> true;
-</span></span><span style="display:flex;"><span>}
-</span></span></code></pre></div><p>判断循环单链表是否为空</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-c" data-lang="c"><span style="display:flex;"><span><span style="color:#66d9ef">bool</span> <span style="color:#a6e22e">Empty</span>(LinkList L){
-</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">if</span> (L<span style="color:#f92672">-&gt;</span>next <span style="color:#f92672">==</span> L)
-</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">return</span> true;
-</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">else</span>
-</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">return</span> false;
-</span></span><span style="display:flex;"><span>}
-</span></span></code></pre></div><p>判断结点p是否为为循环单链表的表尾结点</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-c" data-lang="c"><span style="display:flex;"><span><span style="color:#66d9ef">bool</span> <span style="color:#a6e22e">isTail</span>(LinkList L, LNode <span style="color:#f92672">*</span>p){
-</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">if</span> (p<span style="color:#f92672">-&gt;</span>next <span style="color:#f92672">==</span> L)
-</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">return</span> true;
-</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">else</span>
-</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">return</span> false;
-</span></span><span style="display:flex;"><span>}
-</span></span></code></pre></div><p>循环单链表可以从一个结点出发找到其他任何一个结点</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c" data-lang="c">typrdef <span style="color:#66d9ef">struct</span> LNode{
+    ElemType data;
+    <span style="color:#66d9ef">struct</span> LNode <span style="color:#f92672">*</span>next;
+}LNode, <span style="color:#f92672">*</span>LinkList;
+</code></pre></div><p>初始化一个循环单链表</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c" data-lang="c"><span style="color:#66d9ef">bool</span> <span style="color:#a6e22e">InitList</span>(LinkList <span style="color:#f92672">&amp;</span>L){
+    L <span style="color:#f92672">=</span> (LNode <span style="color:#f92672">*</span>)malloc(<span style="color:#66d9ef">sizeof</span>(LNode)); <span style="color:#75715e">// 分配一个头结点
+</span><span style="color:#75715e"></span>    <span style="color:#66d9ef">if</span> (L<span style="color:#f92672">==</span>NULL)
+        <span style="color:#66d9ef">return</span> false;
+    L<span style="color:#f92672">-&gt;</span>next <span style="color:#f92672">=</span> L;
+    <span style="color:#66d9ef">return</span> true;
+}
+</code></pre></div><p>判断循环单链表是否为空</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c" data-lang="c"><span style="color:#66d9ef">bool</span> <span style="color:#a6e22e">Empty</span>(LinkList L){
+    <span style="color:#66d9ef">if</span> (L<span style="color:#f92672">-&gt;</span>next <span style="color:#f92672">==</span> L)
+        <span style="color:#66d9ef">return</span> true;
+    <span style="color:#66d9ef">else</span>
+        <span style="color:#66d9ef">return</span> false;
+}
+</code></pre></div><p>判断结点p是否为为循环单链表的表尾结点</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c" data-lang="c"><span style="color:#66d9ef">bool</span> <span style="color:#a6e22e">isTail</span>(LinkList L, LNode <span style="color:#f92672">*</span>p){
+    <span style="color:#66d9ef">if</span> (p<span style="color:#f92672">-&gt;</span>next <span style="color:#f92672">==</span> L)
+        <span style="color:#66d9ef">return</span> true;
+    <span style="color:#66d9ef">else</span>
+        <span style="color:#66d9ef">return</span> false;
+}
+</code></pre></div><p>循环单链表可以从一个结点出发找到其他任何一个结点</p>
 <h3 id="循环双链表">循环双链表</h3>
 <p>结点定义：</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-c" data-lang="c"><span style="display:flex;"><span><span style="color:#66d9ef">typedef</span> <span style="color:#66d9ef">struct</span> DNode{
-</span></span><span style="display:flex;"><span>    ElemType data;
-</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">struct</span> DNode <span style="color:#f92672">*</span>prior, <span style="color:#f92672">*</span>next;
-</span></span><span style="display:flex;"><span>}DNode, <span style="color:#f92672">*</span>DLinklist;
-</span></span></code></pre></div><p>初始化一个空的循环双链表</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-c" data-lang="c"><span style="display:flex;"><span><span style="color:#66d9ef">bool</span> <span style="color:#a6e22e">initDLinkList</span>(DLinklist <span style="color:#f92672">&amp;</span>L){
-</span></span><span style="display:flex;"><span>    L <span style="color:#f92672">=</span> (DNode <span style="color:#f92672">*</span>)<span style="color:#a6e22e">malloc</span>(<span style="color:#66d9ef">sizeof</span>(DNode));
-</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">if</span> (L<span style="color:#f92672">==</span>NULL) <span style="color:#75715e">// 内存不足，分配失败
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>        <span style="color:#66d9ef">return</span> false;
-</span></span><span style="display:flex;"><span>    L<span style="color:#f92672">-&gt;</span>prior <span style="color:#f92672">=</span> L;
-</span></span><span style="display:flex;"><span>    L<span style="color:#f92672">-&gt;</span>next <span style="color:#f92672">=</span> L;
-</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> true;
-</span></span><span style="display:flex;"><span>}
-</span></span></code></pre></div><p>判断循环双链表是否为空</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-c" data-lang="c"><span style="display:flex;"><span><span style="color:#66d9ef">bool</span> <span style="color:#a6e22e">Empty</span>(DLinklist L){
-</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">if</span> (L<span style="color:#f92672">-&gt;</span>next <span style="color:#f92672">==</span> L)
-</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">return</span> true;
-</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">else</span>
-</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">return</span> false;
-</span></span><span style="display:flex;"><span>}
-</span></span></code></pre></div><p>判断结点p是否为循环双链表的表尾结点</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-c" data-lang="c"><span style="display:flex;"><span><span style="color:#66d9ef">bool</span> <span style="color:#a6e22e">isTail</span>(DLinklist L, DNode <span style="color:#f92672">*</span>p){
-</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">if</span> (p<span style="color:#f92672">-&gt;</span>next <span style="color:#f92672">==</span>L)
-</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">return</span> true
-</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">else</span>
-</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">return</span> false;
-</span></span><span style="display:flex;"><span>}
-</span></span></code></pre></div><p>双链表的插入<br>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c" data-lang="c"><span style="color:#66d9ef">typedef</span> <span style="color:#66d9ef">struct</span> DNode{
+    ElemType data;
+    <span style="color:#66d9ef">struct</span> DNode <span style="color:#f92672">*</span>prior, <span style="color:#f92672">*</span>next;
+}DNode, <span style="color:#f92672">*</span>DLinklist;
+</code></pre></div><p>初始化一个空的循环双链表</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c" data-lang="c"><span style="color:#66d9ef">bool</span> <span style="color:#a6e22e">initDLinkList</span>(DLinklist <span style="color:#f92672">&amp;</span>L){
+    L <span style="color:#f92672">=</span> (DNode <span style="color:#f92672">*</span>)malloc(<span style="color:#66d9ef">sizeof</span>(DNode));
+    <span style="color:#66d9ef">if</span> (L<span style="color:#f92672">==</span>NULL) <span style="color:#75715e">// 内存不足，分配失败
+</span><span style="color:#75715e"></span>        <span style="color:#66d9ef">return</span> false;
+    L<span style="color:#f92672">-&gt;</span>prior <span style="color:#f92672">=</span> L;
+    L<span style="color:#f92672">-&gt;</span>next <span style="color:#f92672">=</span> L;
+    <span style="color:#66d9ef">return</span> true;
+}
+</code></pre></div><p>判断循环双链表是否为空</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c" data-lang="c"><span style="color:#66d9ef">bool</span> <span style="color:#a6e22e">Empty</span>(DLinklist L){
+    <span style="color:#66d9ef">if</span> (L<span style="color:#f92672">-&gt;</span>next <span style="color:#f92672">==</span> L)
+        <span style="color:#66d9ef">return</span> true;
+    <span style="color:#66d9ef">else</span>
+        <span style="color:#66d9ef">return</span> false;
+}
+</code></pre></div><p>判断结点p是否为循环双链表的表尾结点</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c" data-lang="c"><span style="color:#66d9ef">bool</span> <span style="color:#a6e22e">isTail</span>(DLinklist L, DNode <span style="color:#f92672">*</span>p){
+    <span style="color:#66d9ef">if</span> (p<span style="color:#f92672">-&gt;</span>next <span style="color:#f92672">==</span>L)
+        <span style="color:#66d9ef">return</span> true
+    <span style="color:#66d9ef">else</span>
+        <span style="color:#66d9ef">return</span> false;
+}
+</code></pre></div><p>双链表的插入<br>
 在结点p之后插入s结点</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-c" data-lang="c"><span style="display:flex;"><span><span style="color:#66d9ef">bool</span> <span style="color:#a6e22e">InsertNextDNode</span>(DNode <span style="color:#f92672">*</span>p, DNode <span style="color:#f92672">*</span>s){
-</span></span><span style="display:flex;"><span>    s<span style="color:#f92672">-&gt;</span>next <span style="color:#f92672">=</span> p<span style="color:#f92672">-&gt;</span>next;
-</span></span><span style="display:flex;"><span>    p<span style="color:#f92672">-&gt;</span>next<span style="color:#f92672">-&gt;</span>prior <span style="color:#f92672">=</span> s;
-</span></span><span style="display:flex;"><span>    s<span style="color:#f92672">-&gt;</span>prior <span style="color:#f92672">=</span> p;
-</span></span><span style="display:flex;"><span>    p<span style="color:#f92672">-</span>next <span style="color:#f92672">=</span> s;
-</span></span><span style="display:flex;"><span>}
-</span></span></code></pre></div><p>双链表的删除<br>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c" data-lang="c"><span style="color:#66d9ef">bool</span> <span style="color:#a6e22e">InsertNextDNode</span>(DNode <span style="color:#f92672">*</span>p, DNode <span style="color:#f92672">*</span>s){
+    s<span style="color:#f92672">-&gt;</span>next <span style="color:#f92672">=</span> p<span style="color:#f92672">-&gt;</span>next;
+    p<span style="color:#f92672">-&gt;</span>next<span style="color:#f92672">-&gt;</span>prior <span style="color:#f92672">=</span> s;
+    s<span style="color:#f92672">-&gt;</span>prior <span style="color:#f92672">=</span> p;
+    p<span style="color:#f92672">-</span>next <span style="color:#f92672">=</span> s;
+}
+</code></pre></div><p>双链表的删除<br>
 删除结点p的后继结点q</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-c" data-lang="c"><span style="display:flex;"><span>p<span style="color:#f92672">-&gt;</span>next<span style="color:#f92672">=</span>q<span style="color:#f92672">-&gt;</span>next;
-</span></span><span style="display:flex;"><span>q<span style="color:#f92672">-&gt;</span>next<span style="color:#f92672">-&gt;</span>prior<span style="color:#f92672">=</span> p;
-</span></span><span style="display:flex;"><span><span style="color:#a6e22e">free</span>(q);
-</span></span></code></pre></div><h2 id="静态链表">静态链表</h2>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c" data-lang="c">p<span style="color:#f92672">-&gt;</span>next<span style="color:#f92672">=</span>q<span style="color:#f92672">-&gt;</span>next;
+q<span style="color:#f92672">-&gt;</span>next<span style="color:#f92672">-&gt;</span>prior<span style="color:#f92672">=</span> p;
+free(q);
+</code></pre></div><h2 id="静态链表">静态链表</h2>
 <p>单链表：结点零散<br>
 静态链表：分配一整片的连续空间，各个结点集中安放</p>
 <h3 id="静态链表-定义">静态链表-定义</h3>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-c" data-lang="c"><span style="display:flex;"><span><span style="color:#75715e">#define MaxSize 10
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#66d9ef">struct</span> Node{
-</span></span><span style="display:flex;"><span>    ElemType data; <span style="color:#75715e">// 存储数据元素
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>    <span style="color:#66d9ef">int</span> next;      <span style="color:#75715e">// 下一个元素的数组下标
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>}
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#66d9ef">void</span> <span style="color:#a6e22e">test</span>(){
-</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">struct</span> Node a[MaxSize]; <span style="color:#75715e">// 数组a作为静态链表
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>}
-</span></span></code></pre></div><p>用另一种方法定义</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-c" data-lang="c"><span style="display:flex;"><span><span style="color:#75715e">#define MaxSize 10
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>typrdef <span style="color:#66d9ef">struct</span> {
-</span></span><span style="display:flex;"><span>    ElemType data;
-</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">int</span> next;
-</span></span><span style="display:flex;"><span>}SLinkList[MaxSize];
-</span></span></code></pre></div><p>等价于</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-c" data-lang="c"><span style="display:flex;"><span><span style="color:#75715e">#define MaxSize 10
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#66d9ef">struct</span> Node{
-</span></span><span style="display:flex;"><span>    Elemtype data;
-</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">int</span> next;
-</span></span><span style="display:flex;"><span>};
-</span></span><span style="display:flex;"><span><span style="color:#66d9ef">typedef</span> <span style="color:#66d9ef">struct</span> Node SLinkList[MaxSize];
-</span></span><span style="display:flex;"><span><span style="color:#66d9ef">void</span> <span style="color:#a6e22e">test</span>(){
-</span></span><span style="display:flex;"><span>    SlinkList a;
-</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">printf</span>(<span style="color:#e6db74">&#34;size a=%d&#34;</span>,<span style="color:#66d9ef">sizeof</span>(a));
-</span></span><span style="display:flex;"><span>}
-</span></span></code></pre></div><p>这个得到的结果为<code>size a=80</code><br>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c" data-lang="c"><span style="color:#75715e">#define MaxSize 10
+</span><span style="color:#75715e"></span><span style="color:#66d9ef">struct</span> Node{
+    ElemType data; <span style="color:#75715e">// 存储数据元素
+</span><span style="color:#75715e"></span>    <span style="color:#66d9ef">int</span> next;      <span style="color:#75715e">// 下一个元素的数组下标
+</span><span style="color:#75715e"></span>}
+
+<span style="color:#66d9ef">void</span> test(){
+    <span style="color:#66d9ef">struct</span> Node a[MaxSize]; <span style="color:#75715e">// 数组a作为静态链表
+</span><span style="color:#75715e"></span>}
+</code></pre></div><p>用另一种方法定义</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c" data-lang="c"><span style="color:#75715e">#define MaxSize 10
+</span><span style="color:#75715e"></span>typrdef <span style="color:#66d9ef">struct</span> {
+    ElemType data;
+    <span style="color:#66d9ef">int</span> next;
+}SLinkList[MaxSize];
+</code></pre></div><p>等价于</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c" data-lang="c"><span style="color:#75715e">#define MaxSize 10
+</span><span style="color:#75715e"></span><span style="color:#66d9ef">struct</span> Node{
+    Elemtype data;
+    <span style="color:#66d9ef">int</span> next;
+};
+<span style="color:#66d9ef">typedef</span> <span style="color:#66d9ef">struct</span> Node SLinkList[MaxSize];
+<span style="color:#66d9ef">void</span> <span style="color:#a6e22e">test</span>(){
+    SlinkList a;
+    printf(<span style="color:#e6db74">&#34;size a=%d&#34;</span>,<span style="color:#66d9ef">sizeof</span>(a));
+}
+</code></pre></div><p>这个得到的结果为<code>size a=80</code><br>
 <code>SLinkList a</code> 相当于定义了一个长度为MaxSize 的Node型数组</p>
 <p>虽然是连续的一个空间，看起来和数组很像，或者是和顺序表很像，但是数据的顺序和数组下标并不相关，有单独存下一个元素偏移量的一个元素，物理上相邻，但是逻辑上可能不相邻</p>
 <p>初始化静态链表的时候，应当把空闲节点标记出来，在删除一个节点的时候，也要把空闲的结点标注出来</p>

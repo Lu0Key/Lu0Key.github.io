@@ -14,12 +14,12 @@
       
       <guid>https://Lu0key.github.io/post/linux-%E6%9B%B4%E6%96%B0%E6%98%BE%E5%8D%A1%E9%A9%B1%E5%8A%A8/</guid>
       <description>最近经常更新老机器上的显卡驱动, 记录一下.
-更新显卡驱动 更新CUDA 更新 Cudnn 更新显卡驱动 先去官网下载最新的显卡驱动, 放到服务器上, 然后执行
+ 更新显卡驱动 更新CUDA 更新 Cudnn  更新显卡驱动 先去官网下载最新的显卡驱动, 放到服务器上, 然后执行
 sudo chmod u+x ./NNVIDIA-Linux-x86_64-535.86.05.run sudo ./NVIDIA-Linux-x86_64-535.86.05.run 然后一路安装即可, 可能会遇到 X Server 没关闭的错误, 那就执行下面的命令即可.(我是Ubuntu)
 sudo service lightdm stop # or sudo systemctl stop gdm 然后重新执行即可.
 如果遇到提示
 ERROR: The Nouveau kernel driver is currently in use by your system. 那么执行下面命令
-sudo vim /etc/default/grub # 然后修改成下面这样 # GRUB_CMDLINE_LINUX_DEFAULT=&amp;#34;quiet splash nouveau.modeset=0&amp;#34; # 修改完后保存退出, 更新 sudo update-grub # 重启 sudo reboot ERROR: Unable to find the development tool `cc` in your path; please make sure that you have the package &amp;#39;gcc&amp;#39; installed.</description>
+sudo vim /etc/default/grub # 然后修改成下面这样 # GRUB_CMDLINE_LINUX_DEFAULT=&amp;#34;quiet splash nouveau.modeset=0&amp;#34; # 修改完后保存退出, 更新 sudo update-grub # 重启 sudo reboot ERROR: Unable to find the development tool `cc` in your path; please make sure that you have the package &#39;gcc&#39; installed.</description>
     </item>
     
     <item>
@@ -50,7 +50,7 @@ dos2unix xxx.sh 然后重新运行即可.</description>
       
       <guid>https://Lu0key.github.io/post/linux-gpu-fan-control/</guid>
       <description>用于 Linux 服务器风扇控制, 经常觉得服务器显卡的风扇调度太保守了, 没事就想摸摸看, 然后核心温度才50度, 摸上去都有70多度了, 因此想要自己控制显卡的风扇转速, 狠狠地转！ 有时候核心都快70度了, 风扇转速才70%。
-#!/bin/bash gpu_index_str=$(nvidia-smi --query-gpu=index --format=csv,noheader) gpu_index=($gpu_index_str) for index in ${!gpu_index[*]} do nvidia-settings -a &amp;#34;[gpu:$index]/GPUFanControlState=1&amp;#34; done old_speed=-1 # fan_nums nvidia-settings -q all | grep fan last_fan_index=$( nvidia-settings -q all | grep fan | grep -oP &amp;#34;\[fan:(\d+)\]:&amp;#34; | grep -oP &amp;#34;\d+&amp;#34; | sort -rn | head -n 1) echo $last_fan_index fan_nums=$((last_fan_index+1)) echo &amp;#34;fan count&amp;#34; echo $fan_nums while true do temperature_str=$(nvidia-smi --query-gpu=temperature.gpu --format=csv,noheader) temperature=($temperature_str) if [ $((temperature[0])) -lt 40 ]; then echo &amp;#34;temperature &amp;lt; 40&amp;#34; fan_speed=60 elif [ $((temperature[0])) -lt 60 ]; then echo &amp;#34;40 &amp;lt; temperature &amp;lt; 60&amp;#34; fan_speed=90 else echo &amp;#34;temperature &amp;gt; 60&amp;#34; fan_speed=100 fi if [ $((old_speed)) -ne $((fan_speed)) ]; then for ((index=0;index&amp;lt;fan_nums;index++)) do old_speed=$fan_speed # echo &amp;#34;fan speed flush to $fan_speed&amp;#34; nvidia-settings -a &amp;#34;[fan:$((index))]/GPUTargetFanSpeed=$((fan_speed))&amp;#34; # echo &amp;#39;nvidia-settings -c:$index -a &amp;#34;[fan:$((index))]/GPUTargetFanSpeed=$((fan_speed))&amp;#34;&amp;#39; done fi sleep 300 done 缺陷:</description>
+#!/bin/bash  gpu_index_str=$(nvidia-smi --query-gpu=index --format=csv,noheader) gpu_index=($gpu_index_str) for index in ${!gpu_index[*]} do nvidia-settings -a &amp;#34;[gpu:$index]/GPUFanControlState=1&amp;#34; done old_speed=-1 # fan_nums nvidia-settings -q all | grep fan last_fan_index=$( nvidia-settings -q all | grep fan | grep -oP &amp;#34;\[fan:(\d+)\]:&amp;#34; | grep -oP &amp;#34;\d+&amp;#34; | sort -rn | head -n 1) echo $last_fan_index fan_nums=$((last_fan_index+1)) echo &amp;#34;fan count&amp;#34; echo $fan_nums while true do temperature_str=$(nvidia-smi --query-gpu=temperature.gpu --format=csv,noheader) temperature=($temperature_str) if [ $((temperature[0])) -lt 40 ]; then echo &amp;#34;temperature &amp;lt; 40&amp;#34; fan_speed=60 elif [ $((temperature[0])) -lt 60 ]; then echo &amp;#34;40 &amp;lt; temperature &amp;lt; 60&amp;#34; fan_speed=90 else echo &amp;#34;temperature &amp;gt; 60&amp;#34; fan_speed=100 fi if [ $((old_speed)) -ne $((fan_speed)) ]; then for ((index=0;index&amp;lt;fan_nums;index++)) do old_speed=$fan_speed # echo &amp;#34;fan speed flush to $fan_speed&amp;#34; nvidia-settings -a &amp;#34;[fan:$((index))]/GPUTargetFanSpeed=$((fan_speed))&amp;#34; # echo &amp;#39;nvidia-settings -c:$index -a &amp;#34;[fan:$((index))]/GPUTargetFanSpeed=$((fan_speed))&amp;#34;&amp;#39; done fi sleep 300 done 缺陷:</description>
     </item>
     
     <item>

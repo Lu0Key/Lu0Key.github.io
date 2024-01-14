@@ -4,11 +4,12 @@
     <title>Listings 笔记 // 洛七的摸鱼池塘</title>
     <link rel="shortcut icon" href="/favicon.ico" />
     <meta charset="utf-8" />
-    <meta name="generator" content="Hugo 0.115.4">
+    <meta name="generator" content="Hugo 0.81.0" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="author" content="洛七" />
     <meta name="description" content="" />
-    <link rel="stylesheet" href="/css/main.min.d08c6ce68432c68a64d84cb426dfdecab702035f91a5d580831f23f76c040a05.css" />
+    <link rel="stylesheet" href="/css/main.min.0fb49e70a30412f97ddfc418e18fefef1d9fcdebe45f634dbbba768b00fe1eec.css" />
+    
 
     
     <meta name="twitter:card" content="summary"/>
@@ -47,8 +48,9 @@ listings的demo
 \begin{lstlisting}[ basicstyle=\ttfamily, breaklines=true, language=Java, morekeywords={String}, keywordstyle={\bfseries\color{NavyBlue}}, emph={Controller,@RequestParam,CommonsMultipartFile,HttpServletRequest,IOException,@Controller, OutputStream, InputStream, @RequestMapping, HttpServletResponse,@PostMapping,File}, emphstyle={\bfseries\color{Tan}}, alsoletter={." />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://Lu0key.github.io/post/listings-%E7%AC%94%E8%AE%B0/" /><meta property="article:section" content="post" />
-<meta property="article:published_time" content="2021-03-04T19:37:06+08:00" />
-<meta property="article:modified_time" content="2021-03-04T19:37:06+08:00" />
+<meta property="article:published_time" content="2021-03-04T19:37:06&#43;08:00" />
+<meta property="article:modified_time" content="2021-03-04T19:37:06&#43;08:00" />
+
 
 
   </head>
@@ -94,155 +96,156 @@ listings的demo
       <h1 id="listings-笔记">listings 笔记</h1>
 <p>虽然是使用<code>listings</code>宏包，但是在使用环境的时候是使用<code>lstlisting</code></p>
 <p>basicstyle = &lt;basic style&gt;<br>
-可以在每个列表的开头选择. 你可以使用 <code>\footnotesize</code>, <code>\small</code>, <code>\itshape</code>, <code>\ttfamily</code>,或者其他的. The last token of
+可以在每个列表的开头选择. 你可以使用 <code>\footnotesize</code>, <code>\small</code>, <code>\itshape</code>, <code>\ttfamily</code>,或者其他的. The last token of 
 &lt;basic style&gt; 的最后一个标记不能读取以下任何字符(这一句翻译的怪怪的).</p>
 <p>如果你发现你的代码没有自动换行，可以加上这句</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-tex" data-lang="tex"><span style="display:flex;"><span>breaklines=true
-</span></span></code></pre></div><p>我们再设定一下代码块的语言和样式</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-tex" data-lang="tex"><span style="display:flex;"><span>language=Java,
-</span></span><span style="display:flex;"><span>keywordstyle={<span style="color:#66d9ef">\bfseries\color</span>{NavyBlue}}
-</span></span></code></pre></div><p>这边要把xcolor宏包引入</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-tex" data-lang="tex">breaklines=true
+</code></pre></div><p>我们再设定一下代码块的语言和样式</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-tex" data-lang="tex">language=Java,
+keywordstyle={<span style="color:#66d9ef">\bfseries\color</span>{NavyBlue}}
+</code></pre></div><p>这边要把xcolor宏包引入</p>
 <p>如果你觉得listings自带的关键字不够，可以自己手动添加关键字</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-tex" data-lang="tex"><span style="display:flex;"><span>morekeywords={String}
-</span></span></code></pre></div><p>有些不是关键字，但是是重要的类，可以使用强调(同样的，想要强调明显，也需要给强调设置样式)</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-tex" data-lang="tex"><span style="display:flex;"><span>emph={Controller,@RequestParam,CommonsMultipartFile,HttpServletRequest,IOException,@Controller,OutputStream, InputStream, @RequestMapping, HttpServletResponse,@PostMapping,File},
-</span></span><span style="display:flex;"><span>emphstyle={<span style="color:#66d9ef">\bfseries\color</span>{Tan}}
-</span></span></code></pre></div><p>这时候我们会发现不仅下面的代码强调了，连导入的包中对应的词都强调了，这是我们不想看见的，因此我们可以使用</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-tex" data-lang="tex"><span style="display:flex;"><span>alsoletter{.}
-</span></span></code></pre></div><p>这样前面有点的强调字就不会被记录在被强调的里面了</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-tex" data-lang="tex">morekeywords={String}
+</code></pre></div><p>有些不是关键字，但是是重要的类，可以使用强调(同样的，想要强调明显，也需要给强调设置样式)</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-tex" data-lang="tex">emph={Controller,@RequestParam,CommonsMultipartFile,HttpServletRequest,IOException,@Controller,OutputStream, InputStream, @RequestMapping, HttpServletResponse,@PostMapping,File},
+emphstyle={<span style="color:#66d9ef">\bfseries\color</span>{Tan}}
+</code></pre></div><p>这时候我们会发现不仅下面的代码强调了，连导入的包中对应的词都强调了，这是我们不想看见的，因此我们可以使用</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-tex" data-lang="tex">alsoletter{.}
+</code></pre></div><p>这样前面有点的强调字就不会被记录在被强调的里面了</p>
 <p><img src="https://raw.githubusercontent.com/Lu0Key/hexo-image/master/imags/2021/20210304204149.png" alt="图裂了"></p>
 <p>效果如图</p>
 <p><img src="https://raw.githubusercontent.com/Lu0Key/hexo-image/master/imags/2021/20210304204427.png" alt="图裂了"></p>
 <p>除此之外，我们还可以设置这些</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-tex" data-lang="tex"><span style="display:flex;"><span>backgroundcolor={<span style="color:#66d9ef">\color</span>{yellow!40!white}},  <span style="color:#75715e">% 设置背景颜色
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>frame=shadowbox,                            <span style="color:#75715e">% 设置边框
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>rulecolor={<span style="color:#66d9ef">\color</span>{purple}},                 <span style="color:#75715e">% 设置边框线条颜色
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>rulesepcolor={<span style="color:#66d9ef">\color</span>{orange}},              <span style="color:#75715e">% 设置边框线条和代码块间的颜色
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>framesep=1em,                               <span style="color:#75715e">% 设置代码块和边框的距离
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>numbers=left,                               <span style="color:#75715e">% 设置代码行数的位置
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>numbersep=2em,                              <span style="color:#75715e">% 设置代码行数离代码的距离
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>numberstyle={<span style="color:#66d9ef">\sffamily\footnotesize</span>}        <span style="color:#75715e">% 设置代码行数的样式
-</span></span></span></code></pre></div><p>最后的效果如图所示，
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-tex" data-lang="tex">backgroundcolor={<span style="color:#66d9ef">\color</span>{yellow!40!white}},  <span style="color:#75715e">% 设置背景颜色
+</span><span style="color:#75715e"></span>frame=shadowbox,                            <span style="color:#75715e">% 设置边框
+</span><span style="color:#75715e"></span>rulecolor={<span style="color:#66d9ef">\color</span>{purple}},                 <span style="color:#75715e">% 设置边框线条颜色
+</span><span style="color:#75715e"></span>rulesepcolor={<span style="color:#66d9ef">\color</span>{orange}},              <span style="color:#75715e">% 设置边框线条和代码块间的颜色
+</span><span style="color:#75715e"></span>framesep=1em,                               <span style="color:#75715e">% 设置代码块和边框的距离
+</span><span style="color:#75715e"></span>numbers=left,                               <span style="color:#75715e">% 设置代码行数的位置
+</span><span style="color:#75715e"></span>numbersep=2em,                              <span style="color:#75715e">% 设置代码行数离代码的距离
+</span><span style="color:#75715e"></span>numberstyle={<span style="color:#66d9ef">\sffamily\footnotesize</span>}        <span style="color:#75715e">% 设置代码行数的样式
+</span></code></pre></div><p>最后的效果如图所示，
 <img src="https://raw.githubusercontent.com/Lu0Key/hexo-image/master/imags/2021/20210304204847.png" alt="图裂了"></p>
 <p>如果我们需要写很多的代码块，那我们可以把公共的部分放在最前面的 <code>\lstset</code> 中</p>
 <p>listings的demo</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-tex" data-lang="tex"><span style="display:flex;"><span><span style="color:#66d9ef">\begin</span>{lstlisting}[
-</span></span><span style="display:flex;"><span>    basicstyle=<span style="color:#66d9ef">\ttfamily</span>,
-</span></span><span style="display:flex;"><span>    breaklines=true,
-</span></span><span style="display:flex;"><span>    language=Java,
-</span></span><span style="display:flex;"><span>    morekeywords={String},
-</span></span><span style="display:flex;"><span>    keywordstyle={<span style="color:#66d9ef">\bfseries\color</span>{NavyBlue}},
-</span></span><span style="display:flex;"><span>    emph={Controller,@RequestParam,CommonsMultipartFile,HttpServletRequest,IOException,@Controller,
-</span></span><span style="display:flex;"><span>    OutputStream, InputStream, @RequestMapping, HttpServletResponse,@PostMapping,File},
-</span></span><span style="display:flex;"><span>    emphstyle={<span style="color:#66d9ef">\bfseries\color</span>{Tan}},
-</span></span><span style="display:flex;"><span>    alsoletter={.},
-</span></span><span style="display:flex;"><span>    backgroundcolor={<span style="color:#66d9ef">\color</span>{yellow!40!white}},  <span style="color:#75715e">% 设置背景颜色
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>    frame=shadowbox,                            <span style="color:#75715e">% 设置边框
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>    rulecolor={<span style="color:#66d9ef">\color</span>{purple}},                 <span style="color:#75715e">% 设置边框线条颜色
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>    rulesepcolor={<span style="color:#66d9ef">\color</span>{orange}},              <span style="color:#75715e">% 设置边框线条和代码块间的颜色
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>    framesep=1em,                               <span style="color:#75715e">% 设置代码块和边框的距离
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>    numbers=left,                               <span style="color:#75715e">% 设置代码行数的位置
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>    numbersep=2em,                              <span style="color:#75715e">% 设置代码行数离代码的距离
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>    numberstyle={<span style="color:#66d9ef">\sffamily\footnotesize</span>}        <span style="color:#75715e">% 设置代码行数的样式
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>]
-</span></span><span style="display:flex;"><span>package com.luo.controller;
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>import org.springframework.stereotype.Controller;
-</span></span><span style="display:flex;"><span>import org.springframework.web.bind.annotation.PostMapping;
-</span></span><span style="display:flex;"><span>import org.springframework.web.bind.annotation.RequestMapping;
-</span></span><span style="display:flex;"><span>import org.springframework.web.bind.annotation.RequestParam;
-</span></span><span style="display:flex;"><span>import org.springframework.web.multipart.commons.CommonsMultipartFile;
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>import javax.servlet.http.HttpServletRequest;
-</span></span><span style="display:flex;"><span>import javax.servlet.http.HttpServletResponse;
-</span></span><span style="display:flex;"><span>import java.io.*;
-</span></span><span style="display:flex;"><span>import java.net.URLEncoder;
-</span></span><span style="display:flex;"><span>import java.nio.charset.StandardCharsets;
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>@Controller
-</span></span><span style="display:flex;"><span>public class FileController {
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>    @PostMapping(&#34;/upload&#34;)
-</span></span><span style="display:flex;"><span>    public String upload(@RequestParam(&#34;file&#34;) CommonsMultipartFile file, HttpServletRequest request) throws IOException {
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>        // 获取文件名：file.getOriginalFilename();
-</span></span><span style="display:flex;"><span>        String uploadFileName = file.getOriginalFilename();
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>        // 如果文件名为空，直接回到首页
-</span></span><span style="display:flex;"><span>        if(&#34;&#34;.equals(uploadFileName)||uploadFileName == null){
-</span></span><span style="display:flex;"><span>            return &#34;redirect:/index.jsp&#34;;
-</span></span><span style="display:flex;"><span>        }
-</span></span><span style="display:flex;"><span>        System.out.println(&#34;上传文件名为：&#34;+uploadFileName);
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>        // 上传文件路径保存设置
-</span></span><span style="display:flex;"><span>        //String path = request.getRealPath(&#34;/upload&#34;);
-</span></span><span style="display:flex;"><span>        String path = request.getSession().getServletContext().getRealPath(&#34;/upload&#34;);
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>        // 如果路径不存在，创建一个
-</span></span><span style="display:flex;"><span>        File realPath = new File(path);
-</span></span><span style="display:flex;"><span>        if(!realPath.exists()){
-</span></span><span style="display:flex;"><span>            boolean mkdir = realPath.mkdir();
-</span></span><span style="display:flex;"><span>            if (!mkdir) return &#34;redirect:/index.jsp&#34;;
-</span></span><span style="display:flex;"><span>        }
-</span></span><span style="display:flex;"><span>        System.out.println(&#34;上传文件保存地址：&#34;+realPath);
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>        // 文件输入流
-</span></span><span style="display:flex;"><span>        InputStream is = file.getInputStream();
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>        // 文件输出流
-</span></span><span style="display:flex;"><span>        OutputStream os = new FileOutputStream(new File(realPath,uploadFileName));
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>        // 读取写出
-</span></span><span style="display:flex;"><span>        int len=0;
-</span></span><span style="display:flex;"><span>        byte[] buffer = new byte[1024];
-</span></span><span style="display:flex;"><span>        while ((len= is.read(buffer))!=-1){
-</span></span><span style="display:flex;"><span>            os.write(buffer,0,len);
-</span></span><span style="display:flex;"><span>            os.flush();
-</span></span><span style="display:flex;"><span>        }
-</span></span><span style="display:flex;"><span>        os.close();
-</span></span><span style="display:flex;"><span>        return &#34;redirect:/index.jsp&#34;;
-</span></span><span style="display:flex;"><span>    }
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>    @RequestMapping(&#34;/download&#34;)
-</span></span><span style="display:flex;"><span>    public String downloads(HttpServletRequest request,HttpServletResponse response) throws IOException {
-</span></span><span style="display:flex;"><span>        // 要下载的图片地址
-</span></span><span style="display:flex;"><span>        String path = request.getSession().getServletContext().getRealPath(&#34;/upload&#34;);
-</span></span><span style="display:flex;"><span>        String filename = &#34;18R.py&#34;;
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>        // 1. 设置 response 响应头
-</span></span><span style="display:flex;"><span>        // 设置页面不缓存，清空buffer
-</span></span><span style="display:flex;"><span>        response.reset();
-</span></span><span style="display:flex;"><span>        // 字符编码
-</span></span><span style="display:flex;"><span>        response.setCharacterEncoding(&#34;UTF-8&#34;);
-</span></span><span style="display:flex;"><span>        // 二进制传输数据
-</span></span><span style="display:flex;"><span>        response.setContentType(&#34;multipart/form-data&#34;);
-</span></span><span style="display:flex;"><span>        // 设置响应头
-</span></span><span style="display:flex;"><span>        response.setHeader(&#34;Content-Disposition&#34;,
-</span></span><span style="display:flex;"><span>                &#34;attachment;filename=&#34;+ URLEncoder.encode(filename, StandardCharsets.UTF_8));
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>        File file = new File(path,filename);
-</span></span><span style="display:flex;"><span>        // 2. 读文件--输入流
-</span></span><span style="display:flex;"><span>        InputStream input = new FileInputStream(file);
-</span></span><span style="display:flex;"><span>        // 3. 写出文件--输出流
-</span></span><span style="display:flex;"><span>        OutputStream output = response.getOutputStream();
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>        byte[] buffer = new byte[1024];
-</span></span><span style="display:flex;"><span>        int index=0;
-</span></span><span style="display:flex;"><span>        // 4. 执行写出操作
-</span></span><span style="display:flex;"><span>        while((index=input.read(buffer))!=-1){
-</span></span><span style="display:flex;"><span>            output.write(buffer,0,index);
-</span></span><span style="display:flex;"><span>            output.flush();
-</span></span><span style="display:flex;"><span>        }
-</span></span><span style="display:flex;"><span>        output.close();
-</span></span><span style="display:flex;"><span>        input.close();
-</span></span><span style="display:flex;"><span>        return null;
-</span></span><span style="display:flex;"><span>    }
-</span></span><span style="display:flex;"><span>}
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#66d9ef">\end</span>{lstlisting}
-</span></span></code></pre></div>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-tex" data-lang="tex"><span style="color:#66d9ef">\begin</span>{lstlisting}[
+    basicstyle=<span style="color:#66d9ef">\ttfamily</span>,
+    breaklines=true,
+    language=Java,
+    morekeywords={String},
+    keywordstyle={<span style="color:#66d9ef">\bfseries\color</span>{NavyBlue}},
+    emph={Controller,@RequestParam,CommonsMultipartFile,HttpServletRequest,IOException,@Controller,
+    OutputStream, InputStream, @RequestMapping, HttpServletResponse,@PostMapping,File},
+    emphstyle={<span style="color:#66d9ef">\bfseries\color</span>{Tan}},
+    alsoletter={.},
+    backgroundcolor={<span style="color:#66d9ef">\color</span>{yellow!40!white}},  <span style="color:#75715e">% 设置背景颜色
+</span><span style="color:#75715e"></span>    frame=shadowbox,                            <span style="color:#75715e">% 设置边框
+</span><span style="color:#75715e"></span>    rulecolor={<span style="color:#66d9ef">\color</span>{purple}},                 <span style="color:#75715e">% 设置边框线条颜色
+</span><span style="color:#75715e"></span>    rulesepcolor={<span style="color:#66d9ef">\color</span>{orange}},              <span style="color:#75715e">% 设置边框线条和代码块间的颜色
+</span><span style="color:#75715e"></span>    framesep=1em,                               <span style="color:#75715e">% 设置代码块和边框的距离
+</span><span style="color:#75715e"></span>    numbers=left,                               <span style="color:#75715e">% 设置代码行数的位置
+</span><span style="color:#75715e"></span>    numbersep=2em,                              <span style="color:#75715e">% 设置代码行数离代码的距离
+</span><span style="color:#75715e"></span>    numberstyle={<span style="color:#66d9ef">\sffamily\footnotesize</span>}        <span style="color:#75715e">% 设置代码行数的样式
+</span><span style="color:#75715e"></span>]
+package com.luo.controller;
+
+
+import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.multipart.commons.CommonsMultipartFile;
+
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+import java.io.*;
+import java.net.URLEncoder;
+import java.nio.charset.StandardCharsets;
+
+@Controller
+public class FileController {
+
+
+    @PostMapping(&#34;/upload&#34;)
+    public String upload(@RequestParam(&#34;file&#34;) CommonsMultipartFile file, HttpServletRequest request) throws IOException {
+
+        // 获取文件名：file.getOriginalFilename();
+        String uploadFileName = file.getOriginalFilename();
+
+        // 如果文件名为空，直接回到首页
+        if(&#34;&#34;.equals(uploadFileName)||uploadFileName == null){
+            return &#34;redirect:/index.jsp&#34;;
+        }
+        System.out.println(&#34;上传文件名为：&#34;+uploadFileName);
+
+        // 上传文件路径保存设置
+        //String path = request.getRealPath(&#34;/upload&#34;);
+        String path = request.getSession().getServletContext().getRealPath(&#34;/upload&#34;);
+
+        // 如果路径不存在，创建一个
+        File realPath = new File(path);
+        if(!realPath.exists()){
+            boolean mkdir = realPath.mkdir();
+            if (!mkdir) return &#34;redirect:/index.jsp&#34;;
+        }
+        System.out.println(&#34;上传文件保存地址：&#34;+realPath);
+
+        // 文件输入流
+        InputStream is = file.getInputStream();
+
+        // 文件输出流
+        OutputStream os = new FileOutputStream(new File(realPath,uploadFileName));
+
+        // 读取写出
+        int len=0;
+        byte[] buffer = new byte[1024];
+        while ((len= is.read(buffer))!=-1){
+            os.write(buffer,0,len);
+            os.flush();
+        }
+        os.close();
+        return &#34;redirect:/index.jsp&#34;;
+    }
+
+    @RequestMapping(&#34;/download&#34;)
+    public String downloads(HttpServletRequest request,HttpServletResponse response) throws IOException {
+        // 要下载的图片地址
+        String path = request.getSession().getServletContext().getRealPath(&#34;/upload&#34;);
+        String filename = &#34;18R.py&#34;;
+
+        // 1. 设置 response 响应头
+        // 设置页面不缓存，清空buffer
+        response.reset();
+        // 字符编码
+        response.setCharacterEncoding(&#34;UTF-8&#34;);
+        // 二进制传输数据
+        response.setContentType(&#34;multipart/form-data&#34;);
+        // 设置响应头
+        response.setHeader(&#34;Content-Disposition&#34;,
+                &#34;attachment;filename=&#34;+ URLEncoder.encode(filename, StandardCharsets.UTF_8));
+
+        File file = new File(path,filename);
+        // 2. 读文件--输入流
+        InputStream input = new FileInputStream(file);
+        // 3. 写出文件--输出流
+        OutputStream output = response.getOutputStream();
+
+        byte[] buffer = new byte[1024];
+        int index=0;
+        // 4. 执行写出操作
+        while((index=input.read(buffer))!=-1){
+            output.write(buffer,0,index);
+            output.flush();
+        }
+        output.close();
+        input.close();
+        return null;
+    }
+}
+
+<span style="color:#66d9ef">\end</span>{lstlisting}
+
+</code></pre></div>
     </div>
     <div class="post-footer">
       

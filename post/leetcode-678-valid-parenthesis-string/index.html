@@ -4,33 +4,35 @@
     <title>Leetcode 678 有效的括号字符串 // 洛七的摸鱼池塘</title>
     <link rel="shortcut icon" href="/favicon.ico" />
     <meta charset="utf-8" />
-    <meta name="generator" content="Hugo 0.115.4">
+    <meta name="generator" content="Hugo 0.81.0" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="author" content="洛七" />
     <meta name="description" content="" />
-    <link rel="stylesheet" href="/css/main.min.d08c6ce68432c68a64d84cb426dfdecab702035f91a5d580831f23f76c040a05.css" />
+    <link rel="stylesheet" href="/css/main.min.0fb49e70a30412f97ddfc418e18fefef1d9fcdebe45f634dbbba768b00fe1eec.css" />
+    
 
     
     <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Leetcode 678 有效的括号字符串"/>
 <meta name="twitter:description" content="有效的括号字符串(Valid Parenthesis String) 给定一个只包含三种字符的字符串：（ ，） 和 *，写一个函数来检验这个字符串是否为有效字符串。有效字符串具有如下规则：
-任何左括号 ( 必须有相应的右括号 )。 任何右括号 ) 必须有相应的左括号 ( 。 左括号 ( 必须在对应的右括号之前 )。 * 可以被视为单个右括号 ) ，或单个左括号 ( ，或一个空字符串。 一个空字符串也被视为有效字符串。 示例 1:
-输入: &#34;()&#34; 输出: True 示例 2:
-输入: &#34;(*)&#34; 输出: True 示例 3:
-输入: &#34;(*))&#34; 输出: True 注意:
-字符串大小将在 [1，100] 范围内。 bool checkVaildSubstring(char * s, int i, int j){ if(i &gt; j) return true; if(s[i] == &#39;)&#39;) { return false; }else if( s[i] == &#39;*&#39;){ if (checkVaildSubstring(s, i&#43;1,j)){ return true; } } for (int k=i&#43;1;k&lt;= j;k&#43;&#43;){ if(s[k]==&#39;)&#39; || s[k] == &#39;*&#39;){ if(checkVaildSubstring(s,i&#43;1,k-1) &amp;&amp; checkVaildSubstring(s,k&#43;1,j)){ return true; } } } return false; } bool checkValidString(char * s){ return checkVaildSubstring(s,0,strlen(s)-1); } 这里会因为重复算相同的内容多次导致超时，因此我们可以用一个二维数组将算过的存起来，二维数组的i,j表示从索引i到索引j的这个子串是否计算过"/>
+ 任何左括号 ( 必须有相应的右括号 )。 任何右括号 ) 必须有相应的左括号 ( 。 左括号 ( 必须在对应的右括号之前 )。 * 可以被视为单个右括号 ) ，或单个左括号 ( ，或一个空字符串。 一个空字符串也被视为有效字符串。  示例 1:
+输入: &quot;()&quot;输出: True示例 2:
+输入: &quot;(*)&quot;输出: True示例 3:
+输入: &quot;(*))&quot;输出: True注意:
+ 字符串大小将在 [1，100] 范围内。  bool checkVaildSubstring(char * s, int i, int j){ if(i &gt; j) return true; if(s[i] == &#39;)&#39;) { return false; }else if( s[i] == &#39;*&#39;){ if (checkVaildSubstring(s, i&#43;1,j)){ return true; } } for (int k=i&#43;1;k&lt;= j;k&#43;&#43;){ if(s[k]==&#39;)&#39; || s[k] == &#39;*&#39;){ if(checkVaildSubstring(s,i&#43;1,k-1) &amp;&amp; checkVaildSubstring(s,k&#43;1,j)){ return true; } } } return false; } bool checkValidString(char * s){ return checkVaildSubstring(s,0,strlen(s)-1); } 这里会因为重复算相同的内容多次导致超时，因此我们可以用一个二维数组将算过的存起来，二维数组的i,j表示从索引i到索引j的这个子串是否计算过"/>
 
     <meta property="og:title" content="Leetcode 678 有效的括号字符串" />
 <meta property="og:description" content="有效的括号字符串(Valid Parenthesis String) 给定一个只包含三种字符的字符串：（ ，） 和 *，写一个函数来检验这个字符串是否为有效字符串。有效字符串具有如下规则：
-任何左括号 ( 必须有相应的右括号 )。 任何右括号 ) 必须有相应的左括号 ( 。 左括号 ( 必须在对应的右括号之前 )。 * 可以被视为单个右括号 ) ，或单个左括号 ( ，或一个空字符串。 一个空字符串也被视为有效字符串。 示例 1:
-输入: &#34;()&#34; 输出: True 示例 2:
-输入: &#34;(*)&#34; 输出: True 示例 3:
-输入: &#34;(*))&#34; 输出: True 注意:
-字符串大小将在 [1，100] 范围内。 bool checkVaildSubstring(char * s, int i, int j){ if(i &gt; j) return true; if(s[i] == &#39;)&#39;) { return false; }else if( s[i] == &#39;*&#39;){ if (checkVaildSubstring(s, i&#43;1,j)){ return true; } } for (int k=i&#43;1;k&lt;= j;k&#43;&#43;){ if(s[k]==&#39;)&#39; || s[k] == &#39;*&#39;){ if(checkVaildSubstring(s,i&#43;1,k-1) &amp;&amp; checkVaildSubstring(s,k&#43;1,j)){ return true; } } } return false; } bool checkValidString(char * s){ return checkVaildSubstring(s,0,strlen(s)-1); } 这里会因为重复算相同的内容多次导致超时，因此我们可以用一个二维数组将算过的存起来，二维数组的i,j表示从索引i到索引j的这个子串是否计算过" />
+ 任何左括号 ( 必须有相应的右括号 )。 任何右括号 ) 必须有相应的左括号 ( 。 左括号 ( 必须在对应的右括号之前 )。 * 可以被视为单个右括号 ) ，或单个左括号 ( ，或一个空字符串。 一个空字符串也被视为有效字符串。  示例 1:
+输入: &quot;()&quot;输出: True示例 2:
+输入: &quot;(*)&quot;输出: True示例 3:
+输入: &quot;(*))&quot;输出: True注意:
+ 字符串大小将在 [1，100] 范围内。  bool checkVaildSubstring(char * s, int i, int j){ if(i &gt; j) return true; if(s[i] == &#39;)&#39;) { return false; }else if( s[i] == &#39;*&#39;){ if (checkVaildSubstring(s, i&#43;1,j)){ return true; } } for (int k=i&#43;1;k&lt;= j;k&#43;&#43;){ if(s[k]==&#39;)&#39; || s[k] == &#39;*&#39;){ if(checkVaildSubstring(s,i&#43;1,k-1) &amp;&amp; checkVaildSubstring(s,k&#43;1,j)){ return true; } } } return false; } bool checkValidString(char * s){ return checkVaildSubstring(s,0,strlen(s)-1); } 这里会因为重复算相同的内容多次导致超时，因此我们可以用一个二维数组将算过的存起来，二维数组的i,j表示从索引i到索引j的这个子串是否计算过" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://Lu0key.github.io/post/leetcode-678-valid-parenthesis-string/" /><meta property="article:section" content="post" />
-<meta property="article:published_time" content="2021-03-23T14:30:43+08:00" />
-<meta property="article:modified_time" content="2021-03-23T14:30:43+08:00" />
+<meta property="article:published_time" content="2021-03-23T14:30:43&#43;08:00" />
+<meta property="article:modified_time" content="2021-03-23T14:30:43&#43;08:00" />
+
 
 
   </head>
@@ -83,107 +85,107 @@
 <li>一个空字符串也被视为有效字符串。</li>
 </ol>
 <p><strong>示例 1:</strong></p>
-<pre tabindex="0"><code>输入: &#34;()&#34;
+<pre><code>输入: &quot;()&quot;
 输出: True
 </code></pre><p><strong>示例 2:</strong></p>
-<pre tabindex="0"><code>输入: &#34;(*)&#34;
+<pre><code>输入: &quot;(*)&quot;
 输出: True
 </code></pre><p><strong>示例 3:</strong></p>
-<pre tabindex="0"><code>输入: &#34;(*))&#34;
+<pre><code>输入: &quot;(*))&quot;
 输出: True
 </code></pre><p><strong>注意:</strong></p>
 <ul>
 <li>字符串大小将在 [1，100] 范围内。</li>
 </ul>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-c" data-lang="c"><span style="display:flex;"><span><span style="color:#66d9ef">bool</span> <span style="color:#a6e22e">checkVaildSubstring</span>(<span style="color:#66d9ef">char</span> <span style="color:#f92672">*</span> s, <span style="color:#66d9ef">int</span> i, <span style="color:#66d9ef">int</span> j){
-</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">if</span>(i <span style="color:#f92672">&gt;</span> j) <span style="color:#66d9ef">return</span> true;
-</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">if</span>(s[i] <span style="color:#f92672">==</span> <span style="color:#e6db74">&#39;)&#39;</span>) {
-</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">return</span> false;
-</span></span><span style="display:flex;"><span>    }<span style="color:#66d9ef">else</span> <span style="color:#66d9ef">if</span>( s[i] <span style="color:#f92672">==</span> <span style="color:#e6db74">&#39;*&#39;</span>){
-</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">if</span> (<span style="color:#a6e22e">checkVaildSubstring</span>(s, i<span style="color:#f92672">+</span><span style="color:#ae81ff">1</span>,j)){
-</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">return</span> true;
-</span></span><span style="display:flex;"><span>        }
-</span></span><span style="display:flex;"><span>    }
-</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">for</span> (<span style="color:#66d9ef">int</span> k<span style="color:#f92672">=</span>i<span style="color:#f92672">+</span><span style="color:#ae81ff">1</span>;k<span style="color:#f92672">&lt;=</span> j;k<span style="color:#f92672">++</span>){
-</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">if</span>(s[k]<span style="color:#f92672">==</span><span style="color:#e6db74">&#39;)&#39;</span> <span style="color:#f92672">||</span> s[k] <span style="color:#f92672">==</span> <span style="color:#e6db74">&#39;*&#39;</span>){
-</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">if</span>(<span style="color:#a6e22e">checkVaildSubstring</span>(s,i<span style="color:#f92672">+</span><span style="color:#ae81ff">1</span>,k<span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>) <span style="color:#f92672">&amp;&amp;</span> <span style="color:#a6e22e">checkVaildSubstring</span>(s,k<span style="color:#f92672">+</span><span style="color:#ae81ff">1</span>,j)){
-</span></span><span style="display:flex;"><span>                <span style="color:#66d9ef">return</span> true;
-</span></span><span style="display:flex;"><span>            }
-</span></span><span style="display:flex;"><span>        }
-</span></span><span style="display:flex;"><span>    }
-</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> false;
-</span></span><span style="display:flex;"><span>}
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#66d9ef">bool</span> <span style="color:#a6e22e">checkValidString</span>(<span style="color:#66d9ef">char</span> <span style="color:#f92672">*</span> s){
-</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> <span style="color:#a6e22e">checkVaildSubstring</span>(s,<span style="color:#ae81ff">0</span>,<span style="color:#a6e22e">strlen</span>(s)<span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>);
-</span></span><span style="display:flex;"><span>}
-</span></span></code></pre></div><p>这里会因为重复算相同的内容多次导致超时，因此我们可以用一个二维数组将算过的存起来，二维数组的i,j表示从索引i到索引j的这个子串是否计算过</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-c" data-lang="c"><span style="display:flex;"><span><span style="color:#66d9ef">bool</span> <span style="color:#a6e22e">checkVaildSubstring</span>(<span style="color:#66d9ef">char</span> <span style="color:#f92672">*</span> s, <span style="color:#66d9ef">int</span> i, <span style="color:#66d9ef">int</span> j, <span style="color:#66d9ef">int</span><span style="color:#f92672">**</span> cache){
-</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">if</span>(i <span style="color:#f92672">&gt;</span> j) <span style="color:#66d9ef">return</span> true;
-</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">if</span>(cache[i][j] <span style="color:#f92672">==</span> <span style="color:#ae81ff">1</span>) <span style="color:#66d9ef">return</span> true;
-</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">if</span>(cache[i][j] <span style="color:#f92672">==-</span><span style="color:#ae81ff">1</span>) <span style="color:#66d9ef">return</span> false;
-</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">if</span>(s[i] <span style="color:#f92672">==</span> <span style="color:#e6db74">&#39;)&#39;</span>) {
-</span></span><span style="display:flex;"><span>        cache[i][j] <span style="color:#f92672">=</span> <span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>;
-</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">return</span> false;
-</span></span><span style="display:flex;"><span>    }<span style="color:#66d9ef">else</span> <span style="color:#66d9ef">if</span>( s[i] <span style="color:#f92672">==</span> <span style="color:#e6db74">&#39;*&#39;</span>){
-</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">if</span> (<span style="color:#a6e22e">checkVaildSubstring</span>(s, i<span style="color:#f92672">+</span><span style="color:#ae81ff">1</span>,j,cache)){
-</span></span><span style="display:flex;"><span>            cache[i][j] <span style="color:#f92672">=</span> <span style="color:#ae81ff">1</span>;
-</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">return</span> true;
-</span></span><span style="display:flex;"><span>        }
-</span></span><span style="display:flex;"><span>    }
-</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">for</span> (<span style="color:#66d9ef">int</span> k<span style="color:#f92672">=</span>i<span style="color:#f92672">+</span><span style="color:#ae81ff">1</span>;k<span style="color:#f92672">&lt;=</span> j;k<span style="color:#f92672">++</span>){
-</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">if</span>(s[k]<span style="color:#f92672">==</span><span style="color:#e6db74">&#39;)&#39;</span> <span style="color:#f92672">||</span> s[k] <span style="color:#f92672">==</span> <span style="color:#e6db74">&#39;*&#39;</span>){
-</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">if</span>(<span style="color:#a6e22e">checkVaildSubstring</span>(s,i<span style="color:#f92672">+</span><span style="color:#ae81ff">1</span>,k<span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>,cache) <span style="color:#f92672">&amp;&amp;</span> <span style="color:#a6e22e">checkVaildSubstring</span>(s,k<span style="color:#f92672">+</span><span style="color:#ae81ff">1</span>,j,cache)){
-</span></span><span style="display:flex;"><span>                cache[i][j] <span style="color:#f92672">=</span> true;
-</span></span><span style="display:flex;"><span>                <span style="color:#66d9ef">return</span> true;
-</span></span><span style="display:flex;"><span>            }
-</span></span><span style="display:flex;"><span>        }
-</span></span><span style="display:flex;"><span>    }
-</span></span><span style="display:flex;"><span>    cache[i][j] <span style="color:#f92672">=</span> <span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>;
-</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> false;
-</span></span><span style="display:flex;"><span>}
-</span></span><span style="display:flex;"><span><span style="color:#66d9ef">bool</span> <span style="color:#a6e22e">checkValidString</span>(<span style="color:#66d9ef">char</span> <span style="color:#f92672">*</span> s){
-</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">int</span> len <span style="color:#f92672">=</span> <span style="color:#a6e22e">strlen</span>(s);
-</span></span><span style="display:flex;"><span>    <span style="color:#75715e">// 0表示没算过，1表示算过且为true，-1表示算过且为false
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>    <span style="color:#66d9ef">int</span> <span style="color:#f92672">**</span> cache <span style="color:#f92672">=</span> <span style="color:#a6e22e">malloc</span>(<span style="color:#66d9ef">sizeof</span>(<span style="color:#66d9ef">int</span><span style="color:#f92672">*</span>)<span style="color:#f92672">*</span>len);
-</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">for</span> (<span style="color:#66d9ef">int</span> i <span style="color:#f92672">=</span><span style="color:#ae81ff">0</span>;i<span style="color:#f92672">&lt;</span>len; i<span style="color:#f92672">++</span>){
-</span></span><span style="display:flex;"><span>        <span style="color:#75715e">// calloc 和malloc的区别再与calloc会自动把内存初始化为0
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>        <span style="color:#75715e">// malloc不初始化，分配到的空间中数据时随机数据
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>        cache[i] <span style="color:#f92672">=</span> <span style="color:#a6e22e">calloc</span>(len, <span style="color:#66d9ef">sizeof</span>(<span style="color:#66d9ef">int</span>));
-</span></span><span style="display:flex;"><span>    }
-</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">bool</span> isValid <span style="color:#f92672">=</span> <span style="color:#a6e22e">checkVaildSubstring</span>(s,<span style="color:#ae81ff">0</span>,<span style="color:#a6e22e">strlen</span>(s)<span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>,cache);
-</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">for</span> (<span style="color:#66d9ef">int</span> i <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>; i<span style="color:#f92672">&lt;</span>len; i<span style="color:#f92672">++</span>){
-</span></span><span style="display:flex;"><span>        <span style="color:#a6e22e">free</span>(cache[i]);
-</span></span><span style="display:flex;"><span>    }
-</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">free</span>(cache);
-</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> isValid;
-</span></span><span style="display:flex;"><span>}
-</span></span></code></pre></div><p>成对相消的思路</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-c" data-lang="c"><span style="display:flex;"><span><span style="color:#66d9ef">bool</span> <span style="color:#a6e22e">checkValidString</span>(<span style="color:#66d9ef">char</span> <span style="color:#f92672">*</span> s){
-</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">int</span> minCount <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>; <span style="color:#75715e">// 最少多少个 &#39;(&#39;
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>    <span style="color:#66d9ef">int</span> maxCount <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>; <span style="color:#75715e">// 最多多少个 &#39;(&#39;
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>    <span style="color:#66d9ef">for</span> (<span style="color:#66d9ef">int</span> i <span style="color:#f92672">=</span><span style="color:#ae81ff">0</span>;i<span style="color:#f92672">&lt;</span><span style="color:#a6e22e">strlen</span>(s);i<span style="color:#f92672">++</span>){
-</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">if</span>(s[i] <span style="color:#f92672">==</span> <span style="color:#e6db74">&#39;(&#39;</span>){
-</span></span><span style="display:flex;"><span>            minCount<span style="color:#f92672">++</span>;
-</span></span><span style="display:flex;"><span>            maxCount<span style="color:#f92672">++</span>;
-</span></span><span style="display:flex;"><span>        }<span style="color:#66d9ef">else</span> <span style="color:#66d9ef">if</span>(s[i] <span style="color:#f92672">==</span> <span style="color:#e6db74">&#39;)&#39;</span>){
-</span></span><span style="display:flex;"><span>            minCount<span style="color:#f92672">--</span>;
-</span></span><span style="display:flex;"><span>            maxCount<span style="color:#f92672">--</span>;
-</span></span><span style="display:flex;"><span>        }<span style="color:#66d9ef">else</span> <span style="color:#66d9ef">if</span>(s[i] <span style="color:#f92672">==</span> <span style="color:#e6db74">&#39;*&#39;</span>){
-</span></span><span style="display:flex;"><span>            minCount<span style="color:#f92672">--</span>;
-</span></span><span style="display:flex;"><span>            maxCount<span style="color:#f92672">++</span>;
-</span></span><span style="display:flex;"><span>        }
-</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">if</span>(maxCount <span style="color:#f92672">&lt;</span> <span style="color:#ae81ff">0</span>){
-</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">return</span> false;
-</span></span><span style="display:flex;"><span>        }
-</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">if</span>(minCount <span style="color:#f92672">&lt;</span> <span style="color:#ae81ff">0</span>){
-</span></span><span style="display:flex;"><span>            minCount <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>;
-</span></span><span style="display:flex;"><span>        }
-</span></span><span style="display:flex;"><span>    }
-</span></span><span style="display:flex;"><span>    <span style="color:#75715e">// 其实看的就是最后这个范围中有没有0
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>    <span style="color:#66d9ef">return</span> minCount <span style="color:#f92672">==</span> <span style="color:#ae81ff">0</span>;
-</span></span><span style="display:flex;"><span>}
-</span></span></code></pre></div>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c" data-lang="c"><span style="color:#66d9ef">bool</span> <span style="color:#a6e22e">checkVaildSubstring</span>(<span style="color:#66d9ef">char</span> <span style="color:#f92672">*</span> s, <span style="color:#66d9ef">int</span> i, <span style="color:#66d9ef">int</span> j){
+    <span style="color:#66d9ef">if</span>(i <span style="color:#f92672">&gt;</span> j) <span style="color:#66d9ef">return</span> true;
+    <span style="color:#66d9ef">if</span>(s[i] <span style="color:#f92672">==</span> <span style="color:#e6db74">&#39;)&#39;</span>) {
+        <span style="color:#66d9ef">return</span> false;
+    }<span style="color:#66d9ef">else</span> <span style="color:#66d9ef">if</span>( s[i] <span style="color:#f92672">==</span> <span style="color:#e6db74">&#39;*&#39;</span>){
+        <span style="color:#66d9ef">if</span> (checkVaildSubstring(s, i<span style="color:#f92672">+</span><span style="color:#ae81ff">1</span>,j)){
+            <span style="color:#66d9ef">return</span> true;
+        }
+    }
+    <span style="color:#66d9ef">for</span> (<span style="color:#66d9ef">int</span> k<span style="color:#f92672">=</span>i<span style="color:#f92672">+</span><span style="color:#ae81ff">1</span>;k<span style="color:#f92672">&lt;=</span> j;k<span style="color:#f92672">++</span>){
+        <span style="color:#66d9ef">if</span>(s[k]<span style="color:#f92672">==</span><span style="color:#e6db74">&#39;)&#39;</span> <span style="color:#f92672">||</span> s[k] <span style="color:#f92672">==</span> <span style="color:#e6db74">&#39;*&#39;</span>){
+            <span style="color:#66d9ef">if</span>(checkVaildSubstring(s,i<span style="color:#f92672">+</span><span style="color:#ae81ff">1</span>,k<span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>) <span style="color:#f92672">&amp;&amp;</span> checkVaildSubstring(s,k<span style="color:#f92672">+</span><span style="color:#ae81ff">1</span>,j)){
+                <span style="color:#66d9ef">return</span> true;
+            }
+        }
+    }
+    <span style="color:#66d9ef">return</span> false;
+}
+
+<span style="color:#66d9ef">bool</span> <span style="color:#a6e22e">checkValidString</span>(<span style="color:#66d9ef">char</span> <span style="color:#f92672">*</span> s){
+    <span style="color:#66d9ef">return</span> checkVaildSubstring(s,<span style="color:#ae81ff">0</span>,strlen(s)<span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>);
+}
+</code></pre></div><p>这里会因为重复算相同的内容多次导致超时，因此我们可以用一个二维数组将算过的存起来，二维数组的i,j表示从索引i到索引j的这个子串是否计算过</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c" data-lang="c"><span style="color:#66d9ef">bool</span> <span style="color:#a6e22e">checkVaildSubstring</span>(<span style="color:#66d9ef">char</span> <span style="color:#f92672">*</span> s, <span style="color:#66d9ef">int</span> i, <span style="color:#66d9ef">int</span> j, <span style="color:#66d9ef">int</span><span style="color:#f92672">**</span> cache){
+    <span style="color:#66d9ef">if</span>(i <span style="color:#f92672">&gt;</span> j) <span style="color:#66d9ef">return</span> true;
+    <span style="color:#66d9ef">if</span>(cache[i][j] <span style="color:#f92672">==</span> <span style="color:#ae81ff">1</span>) <span style="color:#66d9ef">return</span> true;
+    <span style="color:#66d9ef">if</span>(cache[i][j] <span style="color:#f92672">==-</span><span style="color:#ae81ff">1</span>) <span style="color:#66d9ef">return</span> false;
+    <span style="color:#66d9ef">if</span>(s[i] <span style="color:#f92672">==</span> <span style="color:#e6db74">&#39;)&#39;</span>) {
+        cache[i][j] <span style="color:#f92672">=</span> <span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>;
+        <span style="color:#66d9ef">return</span> false;
+    }<span style="color:#66d9ef">else</span> <span style="color:#66d9ef">if</span>( s[i] <span style="color:#f92672">==</span> <span style="color:#e6db74">&#39;*&#39;</span>){
+        <span style="color:#66d9ef">if</span> (checkVaildSubstring(s, i<span style="color:#f92672">+</span><span style="color:#ae81ff">1</span>,j,cache)){
+            cache[i][j] <span style="color:#f92672">=</span> <span style="color:#ae81ff">1</span>;
+            <span style="color:#66d9ef">return</span> true;
+        }
+    }
+    <span style="color:#66d9ef">for</span> (<span style="color:#66d9ef">int</span> k<span style="color:#f92672">=</span>i<span style="color:#f92672">+</span><span style="color:#ae81ff">1</span>;k<span style="color:#f92672">&lt;=</span> j;k<span style="color:#f92672">++</span>){
+        <span style="color:#66d9ef">if</span>(s[k]<span style="color:#f92672">==</span><span style="color:#e6db74">&#39;)&#39;</span> <span style="color:#f92672">||</span> s[k] <span style="color:#f92672">==</span> <span style="color:#e6db74">&#39;*&#39;</span>){
+            <span style="color:#66d9ef">if</span>(checkVaildSubstring(s,i<span style="color:#f92672">+</span><span style="color:#ae81ff">1</span>,k<span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>,cache) <span style="color:#f92672">&amp;&amp;</span> checkVaildSubstring(s,k<span style="color:#f92672">+</span><span style="color:#ae81ff">1</span>,j,cache)){
+                cache[i][j] <span style="color:#f92672">=</span> true;
+                <span style="color:#66d9ef">return</span> true;
+            }
+        }
+    }
+    cache[i][j] <span style="color:#f92672">=</span> <span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>;
+    <span style="color:#66d9ef">return</span> false;
+}
+<span style="color:#66d9ef">bool</span> <span style="color:#a6e22e">checkValidString</span>(<span style="color:#66d9ef">char</span> <span style="color:#f92672">*</span> s){
+    <span style="color:#66d9ef">int</span> len <span style="color:#f92672">=</span> strlen(s);
+    <span style="color:#75715e">// 0表示没算过，1表示算过且为true，-1表示算过且为false
+</span><span style="color:#75715e"></span>    <span style="color:#66d9ef">int</span> <span style="color:#f92672">**</span> cache <span style="color:#f92672">=</span> malloc(<span style="color:#66d9ef">sizeof</span>(<span style="color:#66d9ef">int</span><span style="color:#f92672">*</span>)<span style="color:#f92672">*</span>len);
+    <span style="color:#66d9ef">for</span> (<span style="color:#66d9ef">int</span> i <span style="color:#f92672">=</span><span style="color:#ae81ff">0</span>;i<span style="color:#f92672">&lt;</span>len; i<span style="color:#f92672">++</span>){
+        <span style="color:#75715e">// calloc 和malloc的区别再与calloc会自动把内存初始化为0
+</span><span style="color:#75715e"></span>        <span style="color:#75715e">// malloc不初始化，分配到的空间中数据时随机数据
+</span><span style="color:#75715e"></span>        cache[i] <span style="color:#f92672">=</span> calloc(len, <span style="color:#66d9ef">sizeof</span>(<span style="color:#66d9ef">int</span>));
+    }
+    <span style="color:#66d9ef">bool</span> isValid <span style="color:#f92672">=</span> checkVaildSubstring(s,<span style="color:#ae81ff">0</span>,strlen(s)<span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>,cache);
+    <span style="color:#66d9ef">for</span> (<span style="color:#66d9ef">int</span> i <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>; i<span style="color:#f92672">&lt;</span>len; i<span style="color:#f92672">++</span>){
+        free(cache[i]);
+    }
+    free(cache);
+    <span style="color:#66d9ef">return</span> isValid;
+}
+</code></pre></div><p>成对相消的思路</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c" data-lang="c"><span style="color:#66d9ef">bool</span> <span style="color:#a6e22e">checkValidString</span>(<span style="color:#66d9ef">char</span> <span style="color:#f92672">*</span> s){
+    <span style="color:#66d9ef">int</span> minCount <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>; <span style="color:#75715e">// 最少多少个 &#39;(&#39;
+</span><span style="color:#75715e"></span>    <span style="color:#66d9ef">int</span> maxCount <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>; <span style="color:#75715e">// 最多多少个 &#39;(&#39;
+</span><span style="color:#75715e"></span>    <span style="color:#66d9ef">for</span> (<span style="color:#66d9ef">int</span> i <span style="color:#f92672">=</span><span style="color:#ae81ff">0</span>;i<span style="color:#f92672">&lt;</span>strlen(s);i<span style="color:#f92672">++</span>){
+        <span style="color:#66d9ef">if</span>(s[i] <span style="color:#f92672">==</span> <span style="color:#e6db74">&#39;(&#39;</span>){
+            minCount<span style="color:#f92672">++</span>;
+            maxCount<span style="color:#f92672">++</span>;
+        }<span style="color:#66d9ef">else</span> <span style="color:#66d9ef">if</span>(s[i] <span style="color:#f92672">==</span> <span style="color:#e6db74">&#39;)&#39;</span>){
+            minCount<span style="color:#f92672">--</span>;
+            maxCount<span style="color:#f92672">--</span>;
+        }<span style="color:#66d9ef">else</span> <span style="color:#66d9ef">if</span>(s[i] <span style="color:#f92672">==</span> <span style="color:#e6db74">&#39;*&#39;</span>){
+            minCount<span style="color:#f92672">--</span>;
+            maxCount<span style="color:#f92672">++</span>;
+        }
+        <span style="color:#66d9ef">if</span>(maxCount <span style="color:#f92672">&lt;</span> <span style="color:#ae81ff">0</span>){
+            <span style="color:#66d9ef">return</span> false;
+        }
+        <span style="color:#66d9ef">if</span>(minCount <span style="color:#f92672">&lt;</span> <span style="color:#ae81ff">0</span>){
+            minCount <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>;
+        }
+    }
+    <span style="color:#75715e">// 其实看的就是最后这个范围中有没有0
+</span><span style="color:#75715e"></span>    <span style="color:#66d9ef">return</span> minCount <span style="color:#f92672">==</span> <span style="color:#ae81ff">0</span>;
+}
+</code></pre></div>
     </div>
     <div class="post-footer">
       

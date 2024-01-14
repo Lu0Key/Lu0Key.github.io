@@ -4,25 +4,27 @@
     <title>Linux gpu fan control // 洛七的摸鱼池塘</title>
     <link rel="shortcut icon" href="/favicon.ico" />
     <meta charset="utf-8" />
-    <meta name="generator" content="Hugo 0.115.4">
+    <meta name="generator" content="Hugo 0.81.0" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="author" content="洛七" />
     <meta name="description" content="" />
-    <link rel="stylesheet" href="/css/main.min.d08c6ce68432c68a64d84cb426dfdecab702035f91a5d580831f23f76c040a05.css" />
+    <link rel="stylesheet" href="/css/main.min.0fb49e70a30412f97ddfc418e18fefef1d9fcdebe45f634dbbba768b00fe1eec.css" />
+    
 
     
     <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Linux gpu fan control"/>
 <meta name="twitter:description" content="用于 Linux 服务器风扇控制, 经常觉得服务器显卡的风扇调度太保守了, 没事就想摸摸看, 然后核心温度才50度, 摸上去都有70多度了, 因此想要自己控制显卡的风扇转速, 狠狠地转！ 有时候核心都快70度了, 风扇转速才70%。
-#!/bin/bash gpu_index_str=$(nvidia-smi --query-gpu=index --format=csv,noheader) gpu_index=($gpu_index_str) for index in ${!gpu_index[*]} do nvidia-settings -a &#34;[gpu:$index]/GPUFanControlState=1&#34; done old_speed=-1 # fan_nums nvidia-settings -q all | grep fan last_fan_index=$( nvidia-settings -q all | grep fan | grep -oP &#34;\[fan:(\d&#43;)\]:&#34; | grep -oP &#34;\d&#43;&#34; | sort -rn | head -n 1) echo $last_fan_index fan_nums=$((last_fan_index&#43;1)) echo &#34;fan count&#34; echo $fan_nums while true do temperature_str=$(nvidia-smi --query-gpu=temperature.gpu --format=csv,noheader) temperature=($temperature_str) if [ $((temperature[0])) -lt 40 ]; then echo &#34;temperature &lt; 40&#34; fan_speed=60 elif [ $((temperature[0])) -lt 60 ]; then echo &#34;40 &lt; temperature &lt; 60&#34; fan_speed=90 else echo &#34;temperature &gt; 60&#34; fan_speed=100 fi if [ $((old_speed)) -ne $((fan_speed)) ]; then for ((index=0;index&lt;fan_nums;index&#43;&#43;)) do old_speed=$fan_speed # echo &#34;fan speed flush to $fan_speed&#34; nvidia-settings -a &#34;[fan:$((index))]/GPUTargetFanSpeed=$((fan_speed))&#34; # echo &#39;nvidia-settings -c:$index -a &#34;[fan:$((index))]/GPUTargetFanSpeed=$((fan_speed))&#34;&#39; done fi sleep 300 done 缺陷:"/>
+#!/bin/bash  gpu_index_str=$(nvidia-smi --query-gpu=index --format=csv,noheader) gpu_index=($gpu_index_str) for index in ${!gpu_index[*]} do nvidia-settings -a &#34;[gpu:$index]/GPUFanControlState=1&#34; done old_speed=-1 # fan_nums nvidia-settings -q all | grep fan last_fan_index=$( nvidia-settings -q all | grep fan | grep -oP &#34;\[fan:(\d&#43;)\]:&#34; | grep -oP &#34;\d&#43;&#34; | sort -rn | head -n 1) echo $last_fan_index fan_nums=$((last_fan_index&#43;1)) echo &#34;fan count&#34; echo $fan_nums while true do temperature_str=$(nvidia-smi --query-gpu=temperature.gpu --format=csv,noheader) temperature=($temperature_str) if [ $((temperature[0])) -lt 40 ]; then echo &#34;temperature &lt; 40&#34; fan_speed=60 elif [ $((temperature[0])) -lt 60 ]; then echo &#34;40 &lt; temperature &lt; 60&#34; fan_speed=90 else echo &#34;temperature &gt; 60&#34; fan_speed=100 fi if [ $((old_speed)) -ne $((fan_speed)) ]; then for ((index=0;index&lt;fan_nums;index&#43;&#43;)) do old_speed=$fan_speed # echo &#34;fan speed flush to $fan_speed&#34; nvidia-settings -a &#34;[fan:$((index))]/GPUTargetFanSpeed=$((fan_speed))&#34; # echo &#39;nvidia-settings -c:$index -a &#34;[fan:$((index))]/GPUTargetFanSpeed=$((fan_speed))&#34;&#39; done fi sleep 300 done 缺陷:"/>
 
     <meta property="og:title" content="Linux gpu fan control" />
 <meta property="og:description" content="用于 Linux 服务器风扇控制, 经常觉得服务器显卡的风扇调度太保守了, 没事就想摸摸看, 然后核心温度才50度, 摸上去都有70多度了, 因此想要自己控制显卡的风扇转速, 狠狠地转！ 有时候核心都快70度了, 风扇转速才70%。
-#!/bin/bash gpu_index_str=$(nvidia-smi --query-gpu=index --format=csv,noheader) gpu_index=($gpu_index_str) for index in ${!gpu_index[*]} do nvidia-settings -a &#34;[gpu:$index]/GPUFanControlState=1&#34; done old_speed=-1 # fan_nums nvidia-settings -q all | grep fan last_fan_index=$( nvidia-settings -q all | grep fan | grep -oP &#34;\[fan:(\d&#43;)\]:&#34; | grep -oP &#34;\d&#43;&#34; | sort -rn | head -n 1) echo $last_fan_index fan_nums=$((last_fan_index&#43;1)) echo &#34;fan count&#34; echo $fan_nums while true do temperature_str=$(nvidia-smi --query-gpu=temperature.gpu --format=csv,noheader) temperature=($temperature_str) if [ $((temperature[0])) -lt 40 ]; then echo &#34;temperature &lt; 40&#34; fan_speed=60 elif [ $((temperature[0])) -lt 60 ]; then echo &#34;40 &lt; temperature &lt; 60&#34; fan_speed=90 else echo &#34;temperature &gt; 60&#34; fan_speed=100 fi if [ $((old_speed)) -ne $((fan_speed)) ]; then for ((index=0;index&lt;fan_nums;index&#43;&#43;)) do old_speed=$fan_speed # echo &#34;fan speed flush to $fan_speed&#34; nvidia-settings -a &#34;[fan:$((index))]/GPUTargetFanSpeed=$((fan_speed))&#34; # echo &#39;nvidia-settings -c:$index -a &#34;[fan:$((index))]/GPUTargetFanSpeed=$((fan_speed))&#34;&#39; done fi sleep 300 done 缺陷:" />
+#!/bin/bash  gpu_index_str=$(nvidia-smi --query-gpu=index --format=csv,noheader) gpu_index=($gpu_index_str) for index in ${!gpu_index[*]} do nvidia-settings -a &#34;[gpu:$index]/GPUFanControlState=1&#34; done old_speed=-1 # fan_nums nvidia-settings -q all | grep fan last_fan_index=$( nvidia-settings -q all | grep fan | grep -oP &#34;\[fan:(\d&#43;)\]:&#34; | grep -oP &#34;\d&#43;&#34; | sort -rn | head -n 1) echo $last_fan_index fan_nums=$((last_fan_index&#43;1)) echo &#34;fan count&#34; echo $fan_nums while true do temperature_str=$(nvidia-smi --query-gpu=temperature.gpu --format=csv,noheader) temperature=($temperature_str) if [ $((temperature[0])) -lt 40 ]; then echo &#34;temperature &lt; 40&#34; fan_speed=60 elif [ $((temperature[0])) -lt 60 ]; then echo &#34;40 &lt; temperature &lt; 60&#34; fan_speed=90 else echo &#34;temperature &gt; 60&#34; fan_speed=100 fi if [ $((old_speed)) -ne $((fan_speed)) ]; then for ((index=0;index&lt;fan_nums;index&#43;&#43;)) do old_speed=$fan_speed # echo &#34;fan speed flush to $fan_speed&#34; nvidia-settings -a &#34;[fan:$((index))]/GPUTargetFanSpeed=$((fan_speed))&#34; # echo &#39;nvidia-settings -c:$index -a &#34;[fan:$((index))]/GPUTargetFanSpeed=$((fan_speed))&#34;&#39; done fi sleep 300 done 缺陷:" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://Lu0key.github.io/post/linux-gpu-fan-control/" /><meta property="article:section" content="post" />
-<meta property="article:published_time" content="2023-07-26T00:58:32+08:00" />
-<meta property="article:modified_time" content="2023-07-26T00:58:32+08:00" />
+<meta property="article:published_time" content="2023-07-26T00:58:32&#43;08:00" />
+<meta property="article:modified_time" content="2023-07-26T00:58:32&#43;08:00" />
+
 
 
   </head>
@@ -67,54 +69,54 @@
     <div class="post-content">
       <p>用于 Linux 服务器风扇控制, 经常觉得服务器显卡的风扇调度太保守了, 没事就想摸摸看, 然后核心温度才50度, 摸上去都有70多度了, 因此想要自己控制显卡的风扇转速, 狠狠地转！
 有时候核心都快70度了, 风扇转速才70%。</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span><span style="color:#75715e">#!/bin/bash
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>
-</span></span><span style="display:flex;"><span>gpu_index_str<span style="color:#f92672">=</span><span style="color:#66d9ef">$(</span>nvidia-smi --query-gpu<span style="color:#f92672">=</span>index --format<span style="color:#f92672">=</span>csv,noheader<span style="color:#66d9ef">)</span>
-</span></span><span style="display:flex;"><span>gpu_index<span style="color:#f92672">=(</span>$gpu_index_str<span style="color:#f92672">)</span>
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#66d9ef">for</span> index in <span style="color:#e6db74">${</span>!gpu_index[*]<span style="color:#e6db74">}</span>
-</span></span><span style="display:flex;"><span><span style="color:#66d9ef">do</span>
-</span></span><span style="display:flex;"><span>    nvidia-settings -a <span style="color:#e6db74">&#34;[gpu:</span>$index<span style="color:#e6db74">]/GPUFanControlState=1&#34;</span>
-</span></span><span style="display:flex;"><span><span style="color:#66d9ef">done</span>
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>old_speed<span style="color:#f92672">=</span>-1
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#75715e"># fan_nums  nvidia-settings -q all | grep fan</span>
-</span></span><span style="display:flex;"><span>last_fan_index<span style="color:#f92672">=</span><span style="color:#66d9ef">$(</span> nvidia-settings -q all | grep fan | grep -oP <span style="color:#e6db74">&#34;\[fan:(\d+)\]:&#34;</span> | grep -oP <span style="color:#e6db74">&#34;\d+&#34;</span> | sort -rn | head -n 1<span style="color:#66d9ef">)</span>
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>echo $last_fan_index
-</span></span><span style="display:flex;"><span>fan_nums<span style="color:#f92672">=</span><span style="color:#66d9ef">$((</span>last_fan_index+1<span style="color:#66d9ef">))</span>
-</span></span><span style="display:flex;"><span>echo <span style="color:#e6db74">&#34;fan count&#34;</span>
-</span></span><span style="display:flex;"><span>echo $fan_nums
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#66d9ef">while</span> true
-</span></span><span style="display:flex;"><span><span style="color:#66d9ef">do</span>
-</span></span><span style="display:flex;"><span>    temperature_str<span style="color:#f92672">=</span><span style="color:#66d9ef">$(</span>nvidia-smi --query-gpu<span style="color:#f92672">=</span>temperature.gpu --format<span style="color:#f92672">=</span>csv,noheader<span style="color:#66d9ef">)</span>
-</span></span><span style="display:flex;"><span>    temperature<span style="color:#f92672">=(</span>$temperature_str<span style="color:#f92672">)</span>
-</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">if</span> <span style="color:#f92672">[</span> <span style="color:#66d9ef">$((</span>temperature<span style="color:#f92672">[</span><span style="color:#ae81ff">0</span><span style="color:#f92672">]</span><span style="color:#66d9ef">))</span> -lt <span style="color:#ae81ff">40</span> <span style="color:#f92672">]</span>; <span style="color:#66d9ef">then</span>
-</span></span><span style="display:flex;"><span>        echo <span style="color:#e6db74">&#34;temperature &lt; 40&#34;</span>
-</span></span><span style="display:flex;"><span>        fan_speed<span style="color:#f92672">=</span><span style="color:#ae81ff">60</span>
-</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">elif</span> <span style="color:#f92672">[</span> <span style="color:#66d9ef">$((</span>temperature<span style="color:#f92672">[</span><span style="color:#ae81ff">0</span><span style="color:#f92672">]</span><span style="color:#66d9ef">))</span> -lt <span style="color:#ae81ff">60</span> <span style="color:#f92672">]</span>; <span style="color:#66d9ef">then</span>
-</span></span><span style="display:flex;"><span>        echo <span style="color:#e6db74">&#34;40 &lt; temperature &lt; 60&#34;</span>
-</span></span><span style="display:flex;"><span>        fan_speed<span style="color:#f92672">=</span><span style="color:#ae81ff">90</span>
-</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">else</span>
-</span></span><span style="display:flex;"><span>        echo <span style="color:#e6db74">&#34;temperature &gt; 60&#34;</span>
-</span></span><span style="display:flex;"><span>        fan_speed<span style="color:#f92672">=</span><span style="color:#ae81ff">100</span>
-</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">fi</span>
-</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">if</span> <span style="color:#f92672">[</span> <span style="color:#66d9ef">$((</span>old_speed<span style="color:#66d9ef">))</span> -ne <span style="color:#66d9ef">$((</span>fan_speed<span style="color:#66d9ef">))</span> <span style="color:#f92672">]</span>; <span style="color:#66d9ef">then</span>
-</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">for</span> <span style="color:#f92672">((</span>index<span style="color:#f92672">=</span>0;index&lt;fan_nums;index++<span style="color:#f92672">))</span>
-</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">do</span>
-</span></span><span style="display:flex;"><span>          old_speed<span style="color:#f92672">=</span>$fan_speed
-</span></span><span style="display:flex;"><span>          <span style="color:#75715e"># echo &#34;fan speed flush to $fan_speed&#34;</span>
-</span></span><span style="display:flex;"><span>          
-</span></span><span style="display:flex;"><span>          nvidia-settings -a <span style="color:#e6db74">&#34;[fan:</span><span style="color:#66d9ef">$((</span>index<span style="color:#66d9ef">))</span><span style="color:#e6db74">]/GPUTargetFanSpeed=</span><span style="color:#66d9ef">$((</span>fan_speed<span style="color:#66d9ef">))</span><span style="color:#e6db74">&#34;</span>
-</span></span><span style="display:flex;"><span>          <span style="color:#75715e"># echo &#39;nvidia-settings -c:$index -a &#34;[fan:$((index))]/GPUTargetFanSpeed=$((fan_speed))&#34;&#39;</span>
-</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">done</span>
-</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">fi</span>
-</span></span><span style="display:flex;"><span>    sleep <span style="color:#ae81ff">300</span>
-</span></span><span style="display:flex;"><span><span style="color:#66d9ef">done</span>
-</span></span></code></pre></div><p>缺陷:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell"><span style="color:#75715e">#!/bin/bash
+</span><span style="color:#75715e"></span>
+gpu_index_str<span style="color:#f92672">=</span><span style="color:#66d9ef">$(</span>nvidia-smi --query-gpu<span style="color:#f92672">=</span>index --format<span style="color:#f92672">=</span>csv,noheader<span style="color:#66d9ef">)</span>
+gpu_index<span style="color:#f92672">=(</span>$gpu_index_str<span style="color:#f92672">)</span>
+
+
+<span style="color:#66d9ef">for</span> index in <span style="color:#e6db74">${</span>!gpu_index[*]<span style="color:#e6db74">}</span>
+<span style="color:#66d9ef">do</span>
+    nvidia-settings -a <span style="color:#e6db74">&#34;[gpu:</span>$index<span style="color:#e6db74">]/GPUFanControlState=1&#34;</span>
+<span style="color:#66d9ef">done</span>
+
+old_speed<span style="color:#f92672">=</span>-1
+
+<span style="color:#75715e"># fan_nums  nvidia-settings -q all | grep fan</span>
+last_fan_index<span style="color:#f92672">=</span><span style="color:#66d9ef">$(</span> nvidia-settings -q all | grep fan | grep -oP <span style="color:#e6db74">&#34;\[fan:(\d+)\]:&#34;</span> | grep -oP <span style="color:#e6db74">&#34;\d+&#34;</span> | sort -rn | head -n 1<span style="color:#66d9ef">)</span>
+
+echo $last_fan_index
+fan_nums<span style="color:#f92672">=</span><span style="color:#66d9ef">$((</span>last_fan_index+1<span style="color:#66d9ef">))</span>
+echo <span style="color:#e6db74">&#34;fan count&#34;</span>
+echo $fan_nums
+
+<span style="color:#66d9ef">while</span> true
+<span style="color:#66d9ef">do</span>
+    temperature_str<span style="color:#f92672">=</span><span style="color:#66d9ef">$(</span>nvidia-smi --query-gpu<span style="color:#f92672">=</span>temperature.gpu --format<span style="color:#f92672">=</span>csv,noheader<span style="color:#66d9ef">)</span>
+    temperature<span style="color:#f92672">=(</span>$temperature_str<span style="color:#f92672">)</span>
+    <span style="color:#66d9ef">if</span> <span style="color:#f92672">[</span> <span style="color:#66d9ef">$((</span>temperature<span style="color:#f92672">[</span><span style="color:#ae81ff">0</span><span style="color:#f92672">]</span><span style="color:#66d9ef">))</span> -lt <span style="color:#ae81ff">40</span> <span style="color:#f92672">]</span>; <span style="color:#66d9ef">then</span>
+        echo <span style="color:#e6db74">&#34;temperature &lt; 40&#34;</span>
+        fan_speed<span style="color:#f92672">=</span><span style="color:#ae81ff">60</span>
+    <span style="color:#66d9ef">elif</span> <span style="color:#f92672">[</span> <span style="color:#66d9ef">$((</span>temperature<span style="color:#f92672">[</span><span style="color:#ae81ff">0</span><span style="color:#f92672">]</span><span style="color:#66d9ef">))</span> -lt <span style="color:#ae81ff">60</span> <span style="color:#f92672">]</span>; <span style="color:#66d9ef">then</span>
+        echo <span style="color:#e6db74">&#34;40 &lt; temperature &lt; 60&#34;</span>
+        fan_speed<span style="color:#f92672">=</span><span style="color:#ae81ff">90</span>
+    <span style="color:#66d9ef">else</span>
+        echo <span style="color:#e6db74">&#34;temperature &gt; 60&#34;</span>
+        fan_speed<span style="color:#f92672">=</span><span style="color:#ae81ff">100</span>
+    <span style="color:#66d9ef">fi</span>
+    <span style="color:#66d9ef">if</span> <span style="color:#f92672">[</span> <span style="color:#66d9ef">$((</span>old_speed<span style="color:#66d9ef">))</span> -ne <span style="color:#66d9ef">$((</span>fan_speed<span style="color:#66d9ef">))</span> <span style="color:#f92672">]</span>; <span style="color:#66d9ef">then</span>
+        <span style="color:#66d9ef">for</span> <span style="color:#f92672">((</span>index<span style="color:#f92672">=</span>0;index&lt;fan_nums;index++<span style="color:#f92672">))</span>
+        <span style="color:#66d9ef">do</span>
+          old_speed<span style="color:#f92672">=</span>$fan_speed
+          <span style="color:#75715e"># echo &#34;fan speed flush to $fan_speed&#34;</span>
+          
+          nvidia-settings -a <span style="color:#e6db74">&#34;[fan:</span><span style="color:#66d9ef">$((</span>index<span style="color:#66d9ef">))</span><span style="color:#e6db74">]/GPUTargetFanSpeed=</span><span style="color:#66d9ef">$((</span>fan_speed<span style="color:#66d9ef">))</span><span style="color:#e6db74">&#34;</span>
+          <span style="color:#75715e"># echo &#39;nvidia-settings -c:$index -a &#34;[fan:$((index))]/GPUTargetFanSpeed=$((fan_speed))&#34;&#39;</span>
+        <span style="color:#66d9ef">done</span>
+    <span style="color:#66d9ef">fi</span>
+    sleep <span style="color:#ae81ff">300</span>
+<span style="color:#66d9ef">done</span>
+</code></pre></div><p>缺陷:</p>
 <ol>
 <li>nvidia-settings 必须要在图形界面用, 所以不能用 ssh 远程调风扇速度, 相当于如果不设置开机自启的话, 每次重启服务器都要手动开个终端启动脚本, 而且需要连显示屏.</li>
 <li>这里 sleep 300 是5分钟检查一次, 避免检查太频繁, 这里需要根据自己的情况调整.</li>

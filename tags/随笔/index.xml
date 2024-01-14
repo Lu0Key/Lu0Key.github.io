@@ -15,7 +15,7 @@
       <guid>https://Lu0key.github.io/post/first-blog/</guid>
       <description>Hello world 第一篇Hugo博客
 下载主题
-git clone https://github.com/lxndrblz/m10c.git themes/m10c hugo 本地启动
+git clone https://github.com/lxndrblz/m10c.git themes/m10c  hugo 本地启动
 hugo server -t themename --bulidDrafts hugo 创建新文章
 hugo new post/blogname.md 推到Github远端服务器 创建名为 [github用户名].github.io 的仓库
 blog目录下
@@ -25,7 +25,7 @@ git init 将所有文件添加入暂存区
 git add . 将git仓库和云端仓库关联
 git remote add [shortname] [url] 比如我的就是
 git remote add origin https://github.com/Lu0key/Lu0key.github.io.git 最后推至云端
-git push -u origin master 之后修改博客后，再推到GitHub上需要
+git push -u origin master  之后修改博客后，再推到GitHub上需要
 hugo --theme=m10c -b=&amp;#34;https://Lu0key.github.io/&amp;#34; -D cd public git add . git commit -m &amp;#34;message&amp;#34; git push </description>
     </item>
     

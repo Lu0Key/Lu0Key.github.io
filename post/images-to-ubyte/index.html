@@ -4,11 +4,12 @@
     <title>Images to UByte // 洛七的摸鱼池塘</title>
     <link rel="shortcut icon" href="/favicon.ico" />
     <meta charset="utf-8" />
-    <meta name="generator" content="Hugo 0.115.4">
+    <meta name="generator" content="Hugo 0.81.0" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="author" content="洛七" />
     <meta name="description" content="" />
-    <link rel="stylesheet" href="/css/main.min.d08c6ce68432c68a64d84cb426dfdecab702035f91a5d580831f23f76c040a05.css" />
+    <link rel="stylesheet" href="/css/main.min.0fb49e70a30412f97ddfc418e18fefef1d9fcdebe45f634dbbba768b00fe1eec.css" />
+    
 
     
     <meta name="twitter:card" content="summary"/>
@@ -21,8 +22,9 @@
 # https://blog.csdn.net/ycc2011/article/details/88965606 # # This python script converts a sample of the notMNIST dataset into # the same file format used by the MNIST dataset. If you have a program # that uses the MNIST files, you can run this script over notMNIST to # produce a new set of data files that should be compatible with # your program. # # Instructions: # # 1) if you already have a MNIST data/ directory, rename it and create # a new one # # $ mv data data." />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://Lu0key.github.io/post/images-to-ubyte/" /><meta property="article:section" content="post" />
-<meta property="article:published_time" content="2023-03-30T18:41:44+08:00" />
-<meta property="article:modified_time" content="2023-03-30T18:41:44+08:00" />
+<meta property="article:published_time" content="2023-03-30T18:41:44&#43;08:00" />
+<meta property="article:modified_time" content="2023-03-30T18:41:44&#43;08:00" />
+
 
 
   </head>
@@ -68,228 +70,228 @@
     <div class="post-content">
       <h1 id="图片数据集合转化为mnist的ubytegz格式">图片数据集合转化为MNIST的UByte.gz格式</h1>
 <p>因为要使用别人的模型，替换成自己的数据集，但是发现别人的模型用的是MNIST一个<code>t10k-labels-idx1-ubyte</code> 这样名字的数据集，而不是直接的图片，因此为了避免麻烦，我想要把自己的图片数据集转化为这种格式的，找了半天在Github 上找到了，这里只是记录一下，方便下次用</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#75715e"># https://blog.csdn.net/ycc2011/article/details/88965606</span>
-</span></span><span style="display:flex;"><span><span style="color:#75715e">#</span>
-</span></span><span style="display:flex;"><span><span style="color:#75715e"># This python script converts a sample of the notMNIST dataset into</span>
-</span></span><span style="display:flex;"><span><span style="color:#75715e"># the same file format used by the MNIST dataset. If you have a program</span>
-</span></span><span style="display:flex;"><span><span style="color:#75715e"># that uses the MNIST files, you can run this script over notMNIST to</span>
-</span></span><span style="display:flex;"><span><span style="color:#75715e"># produce a new set of data files that should be compatible with</span>
-</span></span><span style="display:flex;"><span><span style="color:#75715e"># your program.</span>
-</span></span><span style="display:flex;"><span><span style="color:#75715e">#</span>
-</span></span><span style="display:flex;"><span><span style="color:#75715e"># Instructions:</span>
-</span></span><span style="display:flex;"><span><span style="color:#75715e">#</span>
-</span></span><span style="display:flex;"><span><span style="color:#75715e"># 1) if you already have a MNIST data/ directory, rename it and create</span>
-</span></span><span style="display:flex;"><span><span style="color:#75715e">#    a new one</span>
-</span></span><span style="display:flex;"><span><span style="color:#75715e">#</span>
-</span></span><span style="display:flex;"><span><span style="color:#75715e"># $ mv data data.original_mnist</span>
-</span></span><span style="display:flex;"><span><span style="color:#75715e"># $ mkdir convert_MNIST</span>
-</span></span><span style="display:flex;"><span><span style="color:#75715e">#</span>
-</span></span><span style="display:flex;"><span><span style="color:#75715e"># 2) Download and unpack the notMNIST data. This can take a long time</span>
-</span></span><span style="display:flex;"><span><span style="color:#75715e">#    because the notMNIST data set consists of ~500,000 files</span>
-</span></span><span style="display:flex;"><span><span style="color:#75715e">#</span>
-</span></span><span style="display:flex;"><span><span style="color:#75715e"># $ curl -o notMNIST_small.tar.gz http://yaroslavvb.com/upload/notMNIST/notMNIST_small.tar.gz</span>
-</span></span><span style="display:flex;"><span><span style="color:#75715e"># $ curl -o notMNIST_large.tar.gz http://yaroslavvb.com/upload/notMNIST/notMNIST_large.tar.gz</span>
-</span></span><span style="display:flex;"><span><span style="color:#75715e"># $ tar xzf notMNIST_small.tar.gz</span>
-</span></span><span style="display:flex;"><span><span style="color:#75715e"># $ tar xzf notMNIST_large.tar.gz</span>
-</span></span><span style="display:flex;"><span><span style="color:#75715e">#</span>
-</span></span><span style="display:flex;"><span><span style="color:#75715e"># 3) Run this script to convert the data to MNIST files, then compress them.</span>
-</span></span><span style="display:flex;"><span><span style="color:#75715e">#    These commands will produce files of the same size as MNIST</span>
-</span></span><span style="display:flex;"><span><span style="color:#75715e">#    notMNIST is larger than MNIST, and you can increase the sizes if you want.</span>
-</span></span><span style="display:flex;"><span><span style="color:#75715e">#</span>
-</span></span><span style="display:flex;"><span><span style="color:#75715e"># $ python convert_to_mnist_format.py notMNIST_small test 1000</span>
-</span></span><span style="display:flex;"><span><span style="color:#75715e"># $ python convert_to_mnist_format.py notMNIST_large train 6000</span>
-</span></span><span style="display:flex;"><span><span style="color:#75715e"># $ gzip convert_MNIST/*ubyte</span>
-</span></span><span style="display:flex;"><span><span style="color:#75715e">#</span>
-</span></span><span style="display:flex;"><span><span style="color:#75715e"># 4) After update, we cancel output path and replace with &#39;train&#39;, &#39;test&#39; or test ratio number,</span>
-</span></span><span style="display:flex;"><span><span style="color:#75715e">#    it not only work on 10 labels but more,</span>
-</span></span><span style="display:flex;"><span><span style="color:#75715e">#    it depends on your subdir number under target folder, you can input or not input more command</span>
-</span></span><span style="display:flex;"><span><span style="color:#75715e">#</span>
-</span></span><span style="display:flex;"><span><span style="color:#75715e"># Now we define input variable like following:</span>
-</span></span><span style="display:flex;"><span><span style="color:#75715e"># $ python convert_to_mnist_format.py target_folder test_train_or_ratio data_number</span>
-</span></span><span style="display:flex;"><span><span style="color:#75715e">#</span>
-</span></span><span style="display:flex;"><span><span style="color:#75715e"># target_folder: must give minimal folder path to convert data</span>
-</span></span><span style="display:flex;"><span><span style="color:#75715e"># test_train_or_ratio: must define &#39;test&#39; or &#39;train&#39; about this data,</span>
-</span></span><span style="display:flex;"><span><span style="color:#75715e">#                      if you want seperate total data to test and train automatically,</span>
-</span></span><span style="display:flex;"><span><span style="color:#75715e">#                      you can input one integer for test ratio,</span>
-</span></span><span style="display:flex;"><span><span style="color:#75715e">#                      e.q. if you input 2, it mean 2% data will become test data</span>
-</span></span><span style="display:flex;"><span><span style="color:#75715e"># data_number: if you input 0 or nothing, it convert total images under each label folder,</span>
-</span></span><span style="display:flex;"><span><span style="color:#75715e">#        e.q.</span>
-</span></span><span style="display:flex;"><span><span style="color:#75715e">#          a. python convert_to_mnist_format.py notMNIST_small test 0</span>
-</span></span><span style="display:flex;"><span><span style="color:#75715e">#          b. python convert_to_mnist_format.py notMNIST_small test</span>
-</span></span><span style="display:flex;"><span><span style="color:#75715e">#          c. python convert_to_mnist_format.py notMNIST_small train 0</span>
-</span></span><span style="display:flex;"><span><span style="color:#75715e">#          d. python convert_to_mnist_format.py notMNIST_small train</span>
-</span></span><span style="display:flex;"><span><span style="color:#75715e">#    这是我自己使用的时候用的命令</span>
-</span></span><span style="display:flex;"><span><span style="color:#75715e">#    python .\convert_to_mnist_format.py img/train train</span>
-</span></span><span style="display:flex;"><span> 
-</span></span><span style="display:flex;"><span><span style="color:#f92672">import</span> numpy
-</span></span><span style="display:flex;"><span><span style="color:#f92672">import</span> imageio
-</span></span><span style="display:flex;"><span><span style="color:#f92672">import</span> glob
-</span></span><span style="display:flex;"><span><span style="color:#f92672">import</span> sys
-</span></span><span style="display:flex;"><span><span style="color:#f92672">import</span> os
-</span></span><span style="display:flex;"><span><span style="color:#f92672">import</span> random
-</span></span><span style="display:flex;"><span> 
-</span></span><span style="display:flex;"><span>height <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>
-</span></span><span style="display:flex;"><span>width <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>
-</span></span><span style="display:flex;"><span> 
-</span></span><span style="display:flex;"><span>dstPath <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;convert_MNIST&#34;</span>
-</span></span><span style="display:flex;"><span>testLabelPath <span style="color:#f92672">=</span> dstPath<span style="color:#f92672">+</span><span style="color:#e6db74">&#34;/t10k-labels-idx1-ubyte&#34;</span>
-</span></span><span style="display:flex;"><span>testImagePath <span style="color:#f92672">=</span> dstPath<span style="color:#f92672">+</span><span style="color:#e6db74">&#34;/t10k-images-idx3-ubyte&#34;</span>
-</span></span><span style="display:flex;"><span>trainLabelPath <span style="color:#f92672">=</span> dstPath<span style="color:#f92672">+</span><span style="color:#e6db74">&#34;/train-labels-idx1-ubyte&#34;</span>
-</span></span><span style="display:flex;"><span>trainImagePath <span style="color:#f92672">=</span> dstPath<span style="color:#f92672">+</span><span style="color:#e6db74">&#34;/train-images-idx3-ubyte&#34;</span>
-</span></span><span style="display:flex;"><span> 
-</span></span><span style="display:flex;"><span> 
-</span></span><span style="display:flex;"><span><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">get_subdir</span>(folder):
-</span></span><span style="display:flex;"><span>    listDir <span style="color:#f92672">=</span> <span style="color:#66d9ef">None</span>
-</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">for</span> root, dirs, files <span style="color:#f92672">in</span> os<span style="color:#f92672">.</span>walk(folder):
-</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">if</span> <span style="color:#f92672">not</span> dirs <span style="color:#f92672">==</span> []:
-</span></span><span style="display:flex;"><span>            listDir <span style="color:#f92672">=</span> dirs
-</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">break</span>
-</span></span><span style="display:flex;"><span>    listDir<span style="color:#f92672">.</span>sort()
-</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> listDir
-</span></span><span style="display:flex;"><span> 
-</span></span><span style="display:flex;"><span> 
-</span></span><span style="display:flex;"><span><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">get_labels_and_files</span>(folder, number<span style="color:#f92672">=</span><span style="color:#ae81ff">0</span>):
-</span></span><span style="display:flex;"><span>    <span style="color:#75715e"># Make a list of lists of files for each label</span>
-</span></span><span style="display:flex;"><span>    filelists <span style="color:#f92672">=</span> []
-</span></span><span style="display:flex;"><span>    subdir <span style="color:#f92672">=</span> get_subdir(folder)
-</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">for</span> label <span style="color:#f92672">in</span> range(<span style="color:#ae81ff">0</span>, len(subdir)):
-</span></span><span style="display:flex;"><span>        filelist <span style="color:#f92672">=</span> []
-</span></span><span style="display:flex;"><span>        filelists<span style="color:#f92672">.</span>append(filelist)
-</span></span><span style="display:flex;"><span>        dirname <span style="color:#f92672">=</span> os<span style="color:#f92672">.</span>path<span style="color:#f92672">.</span>join(folder, subdir[label])
-</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">for</span> file <span style="color:#f92672">in</span> os<span style="color:#f92672">.</span>listdir(dirname):
-</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">if</span> (file<span style="color:#f92672">.</span>endswith(<span style="color:#e6db74">&#39;.png&#39;</span>) <span style="color:#f92672">or</span> file<span style="color:#f92672">.</span>endswith(<span style="color:#e6db74">&#39;.jpg&#39;</span>)):
-</span></span><span style="display:flex;"><span>                fullname <span style="color:#f92672">=</span> os<span style="color:#f92672">.</span>path<span style="color:#f92672">.</span>join(dirname, file)
-</span></span><span style="display:flex;"><span>                <span style="color:#66d9ef">if</span> (os<span style="color:#f92672">.</span>path<span style="color:#f92672">.</span>getsize(fullname) <span style="color:#f92672">&gt;</span> <span style="color:#ae81ff">0</span>):
-</span></span><span style="display:flex;"><span>                    filelist<span style="color:#f92672">.</span>append(fullname)
-</span></span><span style="display:flex;"><span>                <span style="color:#66d9ef">else</span>:
-</span></span><span style="display:flex;"><span>                    print(<span style="color:#e6db74">&#39;file &#39;</span> <span style="color:#f92672">+</span> fullname <span style="color:#f92672">+</span> <span style="color:#e6db74">&#39; is empty&#39;</span>)
-</span></span><span style="display:flex;"><span>        <span style="color:#75715e"># sort each list of files so they start off in the same order</span>
-</span></span><span style="display:flex;"><span>        <span style="color:#75715e"># regardless of how the order the OS returns them in</span>
-</span></span><span style="display:flex;"><span>        filelist<span style="color:#f92672">.</span>sort()
-</span></span><span style="display:flex;"><span> 
-</span></span><span style="display:flex;"><span>    <span style="color:#75715e"># Take the specified number of items for each label and</span>
-</span></span><span style="display:flex;"><span>    <span style="color:#75715e"># build them into an array of (label, filename) pairs</span>
-</span></span><span style="display:flex;"><span>    <span style="color:#75715e"># Since we seeded the RNG, we should get the same sample each run</span>
-</span></span><span style="display:flex;"><span>    labelsAndFiles <span style="color:#f92672">=</span> []
-</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">for</span> label <span style="color:#f92672">in</span> range(<span style="color:#ae81ff">0</span>, len(subdir)):
-</span></span><span style="display:flex;"><span>        count <span style="color:#f92672">=</span> number <span style="color:#66d9ef">if</span> number <span style="color:#f92672">&gt;</span> <span style="color:#ae81ff">0</span> <span style="color:#66d9ef">else</span> len(filelists[label])
-</span></span><span style="display:flex;"><span>        filelist <span style="color:#f92672">=</span> random<span style="color:#f92672">.</span>sample(filelists[label], count)
-</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">for</span> filename <span style="color:#f92672">in</span> filelist:
-</span></span><span style="display:flex;"><span>            labelsAndFiles<span style="color:#f92672">.</span>append((label, filename))
-</span></span><span style="display:flex;"><span> 
-</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> labelsAndFiles
-</span></span><span style="display:flex;"><span> 
-</span></span><span style="display:flex;"><span> 
-</span></span><span style="display:flex;"><span><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">make_arrays</span>(labelsAndFiles, ratio):
-</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">global</span> height, width
-</span></span><span style="display:flex;"><span>    images <span style="color:#f92672">=</span> []
-</span></span><span style="display:flex;"><span>    labels <span style="color:#f92672">=</span> []
-</span></span><span style="display:flex;"><span>    imShape <span style="color:#f92672">=</span> imageio<span style="color:#f92672">.</span>imread(labelsAndFiles[<span style="color:#ae81ff">0</span>][<span style="color:#ae81ff">1</span>])<span style="color:#f92672">.</span>shape
-</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">if</span> len(imShape) <span style="color:#f92672">&gt;</span> <span style="color:#ae81ff">2</span>:
-</span></span><span style="display:flex;"><span>        height, width, channels <span style="color:#f92672">=</span> imShape
-</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">else</span>:
-</span></span><span style="display:flex;"><span>        height, width <span style="color:#f92672">=</span> imShape
-</span></span><span style="display:flex;"><span>        channels <span style="color:#f92672">=</span> <span style="color:#ae81ff">1</span>
-</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">for</span> i <span style="color:#f92672">in</span> range(<span style="color:#ae81ff">0</span>, len(labelsAndFiles)):
-</span></span><span style="display:flex;"><span>        <span style="color:#75715e"># display progress, since this can take a while</span>
-</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">if</span> (i <span style="color:#f92672">%</span> <span style="color:#ae81ff">100</span> <span style="color:#f92672">==</span> <span style="color:#ae81ff">0</span>):
-</span></span><span style="display:flex;"><span>            sys<span style="color:#f92672">.</span>stdout<span style="color:#f92672">.</span>write(<span style="color:#e6db74">&#34;</span><span style="color:#ae81ff">\r</span><span style="color:#e6db74">%d%%</span><span style="color:#e6db74"> complete&#34;</span> <span style="color:#f92672">%</span>
-</span></span><span style="display:flex;"><span>                             ((i <span style="color:#f92672">*</span> <span style="color:#ae81ff">100</span>) <span style="color:#f92672">/</span> len(labelsAndFiles)))
-</span></span><span style="display:flex;"><span>            sys<span style="color:#f92672">.</span>stdout<span style="color:#f92672">.</span>flush()
-</span></span><span style="display:flex;"><span> 
-</span></span><span style="display:flex;"><span>        filename <span style="color:#f92672">=</span> labelsAndFiles[i][<span style="color:#ae81ff">1</span>]
-</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">try</span>:
-</span></span><span style="display:flex;"><span>            image <span style="color:#f92672">=</span> imageio<span style="color:#f92672">.</span>imread(filename)
-</span></span><span style="display:flex;"><span>            images<span style="color:#f92672">.</span>append(image)
-</span></span><span style="display:flex;"><span>            labels<span style="color:#f92672">.</span>append(labelsAndFiles[i][<span style="color:#ae81ff">0</span>])
-</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">except</span>:
-</span></span><span style="display:flex;"><span>            <span style="color:#75715e"># If this happens we won&#39;t have the requested number</span>
-</span></span><span style="display:flex;"><span>            print(<span style="color:#e6db74">&#34;</span><span style="color:#ae81ff">\n</span><span style="color:#e6db74">Can&#39;t read image file &#34;</span> <span style="color:#f92672">+</span> filename)
-</span></span><span style="display:flex;"><span> 
-</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">if</span> ratio <span style="color:#f92672">==</span> <span style="color:#e6db74">&#39;train&#39;</span>:
-</span></span><span style="display:flex;"><span>        ratio <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>
-</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">elif</span> ratio <span style="color:#f92672">==</span> <span style="color:#e6db74">&#39;test&#39;</span>:
-</span></span><span style="display:flex;"><span>        ratio <span style="color:#f92672">=</span> <span style="color:#ae81ff">1</span>
-</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">else</span>:
-</span></span><span style="display:flex;"><span>        ratio <span style="color:#f92672">=</span> float(ratio) <span style="color:#f92672">/</span> <span style="color:#ae81ff">100</span>
-</span></span><span style="display:flex;"><span>    count <span style="color:#f92672">=</span> len(images)
-</span></span><span style="display:flex;"><span>    trainNum <span style="color:#f92672">=</span> int(count <span style="color:#f92672">*</span> (<span style="color:#ae81ff">1</span> <span style="color:#f92672">-</span> ratio))
-</span></span><span style="display:flex;"><span>    testNum <span style="color:#f92672">=</span> count <span style="color:#f92672">-</span> trainNum
-</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">if</span> channels <span style="color:#f92672">&gt;</span> <span style="color:#ae81ff">1</span>:
-</span></span><span style="display:flex;"><span>        trainImagedata <span style="color:#f92672">=</span> numpy<span style="color:#f92672">.</span>zeros(
-</span></span><span style="display:flex;"><span>            (trainNum, height, width, channels), dtype<span style="color:#f92672">=</span>numpy<span style="color:#f92672">.</span>uint8)
-</span></span><span style="display:flex;"><span>        testImagedata <span style="color:#f92672">=</span> numpy<span style="color:#f92672">.</span>zeros(
-</span></span><span style="display:flex;"><span>            (testNum, height, width, channels), dtype<span style="color:#f92672">=</span>numpy<span style="color:#f92672">.</span>uint8)
-</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">else</span>:
-</span></span><span style="display:flex;"><span>        trainImagedata <span style="color:#f92672">=</span> numpy<span style="color:#f92672">.</span>zeros(
-</span></span><span style="display:flex;"><span>            (trainNum, height, width), dtype<span style="color:#f92672">=</span>numpy<span style="color:#f92672">.</span>uint8)
-</span></span><span style="display:flex;"><span>        testImagedata <span style="color:#f92672">=</span> numpy<span style="color:#f92672">.</span>zeros(
-</span></span><span style="display:flex;"><span>            (testNum, height, width), dtype<span style="color:#f92672">=</span>numpy<span style="color:#f92672">.</span>uint8)
-</span></span><span style="display:flex;"><span>    trainLabeldata <span style="color:#f92672">=</span> numpy<span style="color:#f92672">.</span>zeros(trainNum, dtype<span style="color:#f92672">=</span>numpy<span style="color:#f92672">.</span>uint8)
-</span></span><span style="display:flex;"><span>    testLabeldata <span style="color:#f92672">=</span> numpy<span style="color:#f92672">.</span>zeros(testNum, dtype<span style="color:#f92672">=</span>numpy<span style="color:#f92672">.</span>uint8)
-</span></span><span style="display:flex;"><span> 
-</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">for</span> i <span style="color:#f92672">in</span> range(trainNum):
-</span></span><span style="display:flex;"><span>        trainImagedata[i] <span style="color:#f92672">=</span> images[i]
-</span></span><span style="display:flex;"><span>        trainLabeldata[i] <span style="color:#f92672">=</span> labels[i]
-</span></span><span style="display:flex;"><span> 
-</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">for</span> i <span style="color:#f92672">in</span> range(<span style="color:#ae81ff">0</span>, testNum):
-</span></span><span style="display:flex;"><span>        testImagedata[i] <span style="color:#f92672">=</span> images[trainNum <span style="color:#f92672">+</span> i]
-</span></span><span style="display:flex;"><span>        testLabeldata[i] <span style="color:#f92672">=</span> labels[trainNum <span style="color:#f92672">+</span> i]
-</span></span><span style="display:flex;"><span>    print(<span style="color:#e6db74">&#34;</span><span style="color:#ae81ff">\n</span><span style="color:#e6db74">&#34;</span>)
-</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> trainImagedata, trainLabeldata, testImagedata, testLabeldata
-</span></span><span style="display:flex;"><span> 
-</span></span><span style="display:flex;"><span> 
-</span></span><span style="display:flex;"><span><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">write_labeldata</span>(labeldata, outputfile):
-</span></span><span style="display:flex;"><span>    header <span style="color:#f92672">=</span> numpy<span style="color:#f92672">.</span>array([<span style="color:#ae81ff">0x0801</span>, len(labeldata)], dtype<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;&gt;i4&#39;</span>)
-</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">with</span> open(outputfile, <span style="color:#e6db74">&#34;wb&#34;</span>) <span style="color:#66d9ef">as</span> f:
-</span></span><span style="display:flex;"><span>        f<span style="color:#f92672">.</span>write(header<span style="color:#f92672">.</span>tobytes())
-</span></span><span style="display:flex;"><span>        f<span style="color:#f92672">.</span>write(labeldata<span style="color:#f92672">.</span>tobytes())
-</span></span><span style="display:flex;"><span> 
-</span></span><span style="display:flex;"><span><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">write_imagedata</span>(imagedata, outputfile):
-</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">global</span> height, width
-</span></span><span style="display:flex;"><span>    header <span style="color:#f92672">=</span> numpy<span style="color:#f92672">.</span>array([<span style="color:#ae81ff">0x0803</span>, len(imagedata), height, width], dtype<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;&gt;i4&#39;</span>)
-</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">with</span> open(outputfile, <span style="color:#e6db74">&#34;wb&#34;</span>) <span style="color:#66d9ef">as</span> f:
-</span></span><span style="display:flex;"><span>        f<span style="color:#f92672">.</span>write(header<span style="color:#f92672">.</span>tobytes())
-</span></span><span style="display:flex;"><span>        f<span style="color:#f92672">.</span>write(imagedata<span style="color:#f92672">.</span>tobytes())
-</span></span><span style="display:flex;"><span> 
-</span></span><span style="display:flex;"><span> 
-</span></span><span style="display:flex;"><span><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">main</span>(argv):
-</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">global</span> idxLabelPath, idxImagePath
-</span></span><span style="display:flex;"><span>    <span style="color:#75715e"># Uncomment the line below if you want to seed the random</span>
-</span></span><span style="display:flex;"><span>    <span style="color:#75715e"># number generator in the same way I did to produce the</span>
-</span></span><span style="display:flex;"><span>    <span style="color:#75715e"># specific data files in this repo.</span>
-</span></span><span style="display:flex;"><span>    <span style="color:#75715e"># random.seed(int(&#34;notMNIST&#34;, 36))</span>
-</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">if</span> <span style="color:#f92672">not</span> os<span style="color:#f92672">.</span>path<span style="color:#f92672">.</span>exists(dstPath):
-</span></span><span style="display:flex;"><span>        os<span style="color:#f92672">.</span>makedirs(dstPath)
-</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">if</span> len(argv) <span style="color:#f92672">==</span> <span style="color:#ae81ff">3</span>:
-</span></span><span style="display:flex;"><span>        labelsAndFiles <span style="color:#f92672">=</span> get_labels_and_files(argv[<span style="color:#ae81ff">1</span>])
-</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">elif</span> len(argv) <span style="color:#f92672">==</span> <span style="color:#ae81ff">4</span>:
-</span></span><span style="display:flex;"><span>        labelsAndFiles <span style="color:#f92672">=</span> get_labels_and_files(argv[<span style="color:#ae81ff">1</span>], int(argv[<span style="color:#ae81ff">3</span>]))
-</span></span><span style="display:flex;"><span>    random<span style="color:#f92672">.</span>seed(<span style="color:#ae81ff">777</span>)
-</span></span><span style="display:flex;"><span>    random<span style="color:#f92672">.</span>shuffle(labelsAndFiles)
-</span></span><span style="display:flex;"><span> 
-</span></span><span style="display:flex;"><span>    trainImagedata, trainLabeldata, testImagedata, testLabeldata <span style="color:#f92672">=</span> make_arrays(
-</span></span><span style="display:flex;"><span>        labelsAndFiles, argv[<span style="color:#ae81ff">2</span>])
-</span></span><span style="display:flex;"><span> 
-</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">if</span> argv[<span style="color:#ae81ff">2</span>] <span style="color:#f92672">==</span> <span style="color:#e6db74">&#39;train&#39;</span>:
-</span></span><span style="display:flex;"><span>        write_labeldata(trainLabeldata, trainLabelPath)
-</span></span><span style="display:flex;"><span>        write_imagedata(trainImagedata, trainImagePath)
-</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">elif</span> argv[<span style="color:#ae81ff">2</span>] <span style="color:#f92672">==</span> <span style="color:#e6db74">&#39;test&#39;</span>:
-</span></span><span style="display:flex;"><span>        write_labeldata(testLabeldata, testLabelPath)
-</span></span><span style="display:flex;"><span>        write_imagedata(testImagedata, testImagePath)
-</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">else</span>:
-</span></span><span style="display:flex;"><span>        write_labeldata(trainLabeldata, trainLabelPath)
-</span></span><span style="display:flex;"><span>        write_imagedata(trainImagedata, trainImagePath)
-</span></span><span style="display:flex;"><span>        write_labeldata(testLabeldata, testLabelPath)
-</span></span><span style="display:flex;"><span>        write_imagedata(testImagedata, testImagePath)
-</span></span><span style="display:flex;"><span> 
-</span></span><span style="display:flex;"><span> 
-</span></span><span style="display:flex;"><span><span style="color:#66d9ef">if</span> __name__ <span style="color:#f92672">==</span> <span style="color:#e6db74">&#39;__main__&#39;</span>:
-</span></span><span style="display:flex;"><span>    print(<span style="color:#e6db74">&#34;len:&#34;</span>,len(sys<span style="color:#f92672">.</span>argv))
-</span></span><span style="display:flex;"><span>    main(sys<span style="color:#f92672">.</span>argv)
-</span></span></code></pre></div><p>最后再将文件 <code>t10k-labels-idx1-ubyte</code> 用gzip压缩一下即可。</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>gzip t10k-labels-idx1-ubyte
-</span></span></code></pre></div><p>会有四个文件需要压缩.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#75715e"># https://blog.csdn.net/ycc2011/article/details/88965606</span>
+<span style="color:#75715e">#</span>
+<span style="color:#75715e"># This python script converts a sample of the notMNIST dataset into</span>
+<span style="color:#75715e"># the same file format used by the MNIST dataset. If you have a program</span>
+<span style="color:#75715e"># that uses the MNIST files, you can run this script over notMNIST to</span>
+<span style="color:#75715e"># produce a new set of data files that should be compatible with</span>
+<span style="color:#75715e"># your program.</span>
+<span style="color:#75715e">#</span>
+<span style="color:#75715e"># Instructions:</span>
+<span style="color:#75715e">#</span>
+<span style="color:#75715e"># 1) if you already have a MNIST data/ directory, rename it and create</span>
+<span style="color:#75715e">#    a new one</span>
+<span style="color:#75715e">#</span>
+<span style="color:#75715e"># $ mv data data.original_mnist</span>
+<span style="color:#75715e"># $ mkdir convert_MNIST</span>
+<span style="color:#75715e">#</span>
+<span style="color:#75715e"># 2) Download and unpack the notMNIST data. This can take a long time</span>
+<span style="color:#75715e">#    because the notMNIST data set consists of ~500,000 files</span>
+<span style="color:#75715e">#</span>
+<span style="color:#75715e"># $ curl -o notMNIST_small.tar.gz http://yaroslavvb.com/upload/notMNIST/notMNIST_small.tar.gz</span>
+<span style="color:#75715e"># $ curl -o notMNIST_large.tar.gz http://yaroslavvb.com/upload/notMNIST/notMNIST_large.tar.gz</span>
+<span style="color:#75715e"># $ tar xzf notMNIST_small.tar.gz</span>
+<span style="color:#75715e"># $ tar xzf notMNIST_large.tar.gz</span>
+<span style="color:#75715e">#</span>
+<span style="color:#75715e"># 3) Run this script to convert the data to MNIST files, then compress them.</span>
+<span style="color:#75715e">#    These commands will produce files of the same size as MNIST</span>
+<span style="color:#75715e">#    notMNIST is larger than MNIST, and you can increase the sizes if you want.</span>
+<span style="color:#75715e">#</span>
+<span style="color:#75715e"># $ python convert_to_mnist_format.py notMNIST_small test 1000</span>
+<span style="color:#75715e"># $ python convert_to_mnist_format.py notMNIST_large train 6000</span>
+<span style="color:#75715e"># $ gzip convert_MNIST/*ubyte</span>
+<span style="color:#75715e">#</span>
+<span style="color:#75715e"># 4) After update, we cancel output path and replace with &#39;train&#39;, &#39;test&#39; or test ratio number,</span>
+<span style="color:#75715e">#    it not only work on 10 labels but more,</span>
+<span style="color:#75715e">#    it depends on your subdir number under target folder, you can input or not input more command</span>
+<span style="color:#75715e">#</span>
+<span style="color:#75715e"># Now we define input variable like following:</span>
+<span style="color:#75715e"># $ python convert_to_mnist_format.py target_folder test_train_or_ratio data_number</span>
+<span style="color:#75715e">#</span>
+<span style="color:#75715e"># target_folder: must give minimal folder path to convert data</span>
+<span style="color:#75715e"># test_train_or_ratio: must define &#39;test&#39; or &#39;train&#39; about this data,</span>
+<span style="color:#75715e">#                      if you want seperate total data to test and train automatically,</span>
+<span style="color:#75715e">#                      you can input one integer for test ratio,</span>
+<span style="color:#75715e">#                      e.q. if you input 2, it mean 2% data will become test data</span>
+<span style="color:#75715e"># data_number: if you input 0 or nothing, it convert total images under each label folder,</span>
+<span style="color:#75715e">#        e.q.</span>
+<span style="color:#75715e">#          a. python convert_to_mnist_format.py notMNIST_small test 0</span>
+<span style="color:#75715e">#          b. python convert_to_mnist_format.py notMNIST_small test</span>
+<span style="color:#75715e">#          c. python convert_to_mnist_format.py notMNIST_small train 0</span>
+<span style="color:#75715e">#          d. python convert_to_mnist_format.py notMNIST_small train</span>
+<span style="color:#75715e">#    这是我自己使用的时候用的命令</span>
+<span style="color:#75715e">#    python .\convert_to_mnist_format.py img/train train</span>
+ 
+<span style="color:#f92672">import</span> numpy
+<span style="color:#f92672">import</span> imageio
+<span style="color:#f92672">import</span> glob
+<span style="color:#f92672">import</span> sys
+<span style="color:#f92672">import</span> os
+<span style="color:#f92672">import</span> random
+ 
+height <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>
+width <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>
+ 
+dstPath <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;convert_MNIST&#34;</span>
+testLabelPath <span style="color:#f92672">=</span> dstPath<span style="color:#f92672">+</span><span style="color:#e6db74">&#34;/t10k-labels-idx1-ubyte&#34;</span>
+testImagePath <span style="color:#f92672">=</span> dstPath<span style="color:#f92672">+</span><span style="color:#e6db74">&#34;/t10k-images-idx3-ubyte&#34;</span>
+trainLabelPath <span style="color:#f92672">=</span> dstPath<span style="color:#f92672">+</span><span style="color:#e6db74">&#34;/train-labels-idx1-ubyte&#34;</span>
+trainImagePath <span style="color:#f92672">=</span> dstPath<span style="color:#f92672">+</span><span style="color:#e6db74">&#34;/train-images-idx3-ubyte&#34;</span>
+ 
+ 
+<span style="color:#66d9ef">def</span> <span style="color:#a6e22e">get_subdir</span>(folder):
+    listDir <span style="color:#f92672">=</span> None
+    <span style="color:#66d9ef">for</span> root, dirs, files <span style="color:#f92672">in</span> os<span style="color:#f92672">.</span>walk(folder):
+        <span style="color:#66d9ef">if</span> <span style="color:#f92672">not</span> dirs <span style="color:#f92672">==</span> []:
+            listDir <span style="color:#f92672">=</span> dirs
+            <span style="color:#66d9ef">break</span>
+    listDir<span style="color:#f92672">.</span>sort()
+    <span style="color:#66d9ef">return</span> listDir
+ 
+ 
+<span style="color:#66d9ef">def</span> <span style="color:#a6e22e">get_labels_and_files</span>(folder, number<span style="color:#f92672">=</span><span style="color:#ae81ff">0</span>):
+    <span style="color:#75715e"># Make a list of lists of files for each label</span>
+    filelists <span style="color:#f92672">=</span> []
+    subdir <span style="color:#f92672">=</span> get_subdir(folder)
+    <span style="color:#66d9ef">for</span> label <span style="color:#f92672">in</span> range(<span style="color:#ae81ff">0</span>, len(subdir)):
+        filelist <span style="color:#f92672">=</span> []
+        filelists<span style="color:#f92672">.</span>append(filelist)
+        dirname <span style="color:#f92672">=</span> os<span style="color:#f92672">.</span>path<span style="color:#f92672">.</span>join(folder, subdir[label])
+        <span style="color:#66d9ef">for</span> file <span style="color:#f92672">in</span> os<span style="color:#f92672">.</span>listdir(dirname):
+            <span style="color:#66d9ef">if</span> (file<span style="color:#f92672">.</span>endswith(<span style="color:#e6db74">&#39;.png&#39;</span>) <span style="color:#f92672">or</span> file<span style="color:#f92672">.</span>endswith(<span style="color:#e6db74">&#39;.jpg&#39;</span>)):
+                fullname <span style="color:#f92672">=</span> os<span style="color:#f92672">.</span>path<span style="color:#f92672">.</span>join(dirname, file)
+                <span style="color:#66d9ef">if</span> (os<span style="color:#f92672">.</span>path<span style="color:#f92672">.</span>getsize(fullname) <span style="color:#f92672">&gt;</span> <span style="color:#ae81ff">0</span>):
+                    filelist<span style="color:#f92672">.</span>append(fullname)
+                <span style="color:#66d9ef">else</span>:
+                    <span style="color:#66d9ef">print</span>(<span style="color:#e6db74">&#39;file &#39;</span> <span style="color:#f92672">+</span> fullname <span style="color:#f92672">+</span> <span style="color:#e6db74">&#39; is empty&#39;</span>)
+        <span style="color:#75715e"># sort each list of files so they start off in the same order</span>
+        <span style="color:#75715e"># regardless of how the order the OS returns them in</span>
+        filelist<span style="color:#f92672">.</span>sort()
+ 
+    <span style="color:#75715e"># Take the specified number of items for each label and</span>
+    <span style="color:#75715e"># build them into an array of (label, filename) pairs</span>
+    <span style="color:#75715e"># Since we seeded the RNG, we should get the same sample each run</span>
+    labelsAndFiles <span style="color:#f92672">=</span> []
+    <span style="color:#66d9ef">for</span> label <span style="color:#f92672">in</span> range(<span style="color:#ae81ff">0</span>, len(subdir)):
+        count <span style="color:#f92672">=</span> number <span style="color:#66d9ef">if</span> number <span style="color:#f92672">&gt;</span> <span style="color:#ae81ff">0</span> <span style="color:#66d9ef">else</span> len(filelists[label])
+        filelist <span style="color:#f92672">=</span> random<span style="color:#f92672">.</span>sample(filelists[label], count)
+        <span style="color:#66d9ef">for</span> filename <span style="color:#f92672">in</span> filelist:
+            labelsAndFiles<span style="color:#f92672">.</span>append((label, filename))
+ 
+    <span style="color:#66d9ef">return</span> labelsAndFiles
+ 
+ 
+<span style="color:#66d9ef">def</span> <span style="color:#a6e22e">make_arrays</span>(labelsAndFiles, ratio):
+    <span style="color:#66d9ef">global</span> height, width
+    images <span style="color:#f92672">=</span> []
+    labels <span style="color:#f92672">=</span> []
+    imShape <span style="color:#f92672">=</span> imageio<span style="color:#f92672">.</span>imread(labelsAndFiles[<span style="color:#ae81ff">0</span>][<span style="color:#ae81ff">1</span>])<span style="color:#f92672">.</span>shape
+    <span style="color:#66d9ef">if</span> len(imShape) <span style="color:#f92672">&gt;</span> <span style="color:#ae81ff">2</span>:
+        height, width, channels <span style="color:#f92672">=</span> imShape
+    <span style="color:#66d9ef">else</span>:
+        height, width <span style="color:#f92672">=</span> imShape
+        channels <span style="color:#f92672">=</span> <span style="color:#ae81ff">1</span>
+    <span style="color:#66d9ef">for</span> i <span style="color:#f92672">in</span> range(<span style="color:#ae81ff">0</span>, len(labelsAndFiles)):
+        <span style="color:#75715e"># display progress, since this can take a while</span>
+        <span style="color:#66d9ef">if</span> (i <span style="color:#f92672">%</span> <span style="color:#ae81ff">100</span> <span style="color:#f92672">==</span> <span style="color:#ae81ff">0</span>):
+            sys<span style="color:#f92672">.</span>stdout<span style="color:#f92672">.</span>write(<span style="color:#e6db74">&#34;</span><span style="color:#ae81ff">\r</span><span style="color:#e6db74">%d%%</span><span style="color:#e6db74"> complete&#34;</span> <span style="color:#f92672">%</span>
+                             ((i <span style="color:#f92672">*</span> <span style="color:#ae81ff">100</span>) <span style="color:#f92672">/</span> len(labelsAndFiles)))
+            sys<span style="color:#f92672">.</span>stdout<span style="color:#f92672">.</span>flush()
+ 
+        filename <span style="color:#f92672">=</span> labelsAndFiles[i][<span style="color:#ae81ff">1</span>]
+        <span style="color:#66d9ef">try</span>:
+            image <span style="color:#f92672">=</span> imageio<span style="color:#f92672">.</span>imread(filename)
+            images<span style="color:#f92672">.</span>append(image)
+            labels<span style="color:#f92672">.</span>append(labelsAndFiles[i][<span style="color:#ae81ff">0</span>])
+        <span style="color:#66d9ef">except</span>:
+            <span style="color:#75715e"># If this happens we won&#39;t have the requested number</span>
+            <span style="color:#66d9ef">print</span>(<span style="color:#e6db74">&#34;</span><span style="color:#ae81ff">\n</span><span style="color:#e6db74">Can&#39;t read image file &#34;</span> <span style="color:#f92672">+</span> filename)
+ 
+    <span style="color:#66d9ef">if</span> ratio <span style="color:#f92672">==</span> <span style="color:#e6db74">&#39;train&#39;</span>:
+        ratio <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>
+    <span style="color:#66d9ef">elif</span> ratio <span style="color:#f92672">==</span> <span style="color:#e6db74">&#39;test&#39;</span>:
+        ratio <span style="color:#f92672">=</span> <span style="color:#ae81ff">1</span>
+    <span style="color:#66d9ef">else</span>:
+        ratio <span style="color:#f92672">=</span> float(ratio) <span style="color:#f92672">/</span> <span style="color:#ae81ff">100</span>
+    count <span style="color:#f92672">=</span> len(images)
+    trainNum <span style="color:#f92672">=</span> int(count <span style="color:#f92672">*</span> (<span style="color:#ae81ff">1</span> <span style="color:#f92672">-</span> ratio))
+    testNum <span style="color:#f92672">=</span> count <span style="color:#f92672">-</span> trainNum
+    <span style="color:#66d9ef">if</span> channels <span style="color:#f92672">&gt;</span> <span style="color:#ae81ff">1</span>:
+        trainImagedata <span style="color:#f92672">=</span> numpy<span style="color:#f92672">.</span>zeros(
+            (trainNum, height, width, channels), dtype<span style="color:#f92672">=</span>numpy<span style="color:#f92672">.</span>uint8)
+        testImagedata <span style="color:#f92672">=</span> numpy<span style="color:#f92672">.</span>zeros(
+            (testNum, height, width, channels), dtype<span style="color:#f92672">=</span>numpy<span style="color:#f92672">.</span>uint8)
+    <span style="color:#66d9ef">else</span>:
+        trainImagedata <span style="color:#f92672">=</span> numpy<span style="color:#f92672">.</span>zeros(
+            (trainNum, height, width), dtype<span style="color:#f92672">=</span>numpy<span style="color:#f92672">.</span>uint8)
+        testImagedata <span style="color:#f92672">=</span> numpy<span style="color:#f92672">.</span>zeros(
+            (testNum, height, width), dtype<span style="color:#f92672">=</span>numpy<span style="color:#f92672">.</span>uint8)
+    trainLabeldata <span style="color:#f92672">=</span> numpy<span style="color:#f92672">.</span>zeros(trainNum, dtype<span style="color:#f92672">=</span>numpy<span style="color:#f92672">.</span>uint8)
+    testLabeldata <span style="color:#f92672">=</span> numpy<span style="color:#f92672">.</span>zeros(testNum, dtype<span style="color:#f92672">=</span>numpy<span style="color:#f92672">.</span>uint8)
+ 
+    <span style="color:#66d9ef">for</span> i <span style="color:#f92672">in</span> range(trainNum):
+        trainImagedata[i] <span style="color:#f92672">=</span> images[i]
+        trainLabeldata[i] <span style="color:#f92672">=</span> labels[i]
+ 
+    <span style="color:#66d9ef">for</span> i <span style="color:#f92672">in</span> range(<span style="color:#ae81ff">0</span>, testNum):
+        testImagedata[i] <span style="color:#f92672">=</span> images[trainNum <span style="color:#f92672">+</span> i]
+        testLabeldata[i] <span style="color:#f92672">=</span> labels[trainNum <span style="color:#f92672">+</span> i]
+    <span style="color:#66d9ef">print</span>(<span style="color:#e6db74">&#34;</span><span style="color:#ae81ff">\n</span><span style="color:#e6db74">&#34;</span>)
+    <span style="color:#66d9ef">return</span> trainImagedata, trainLabeldata, testImagedata, testLabeldata
+ 
+ 
+<span style="color:#66d9ef">def</span> <span style="color:#a6e22e">write_labeldata</span>(labeldata, outputfile):
+    header <span style="color:#f92672">=</span> numpy<span style="color:#f92672">.</span>array([<span style="color:#ae81ff">0x0801</span>, len(labeldata)], dtype<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;&gt;i4&#39;</span>)
+    <span style="color:#66d9ef">with</span> open(outputfile, <span style="color:#e6db74">&#34;wb&#34;</span>) <span style="color:#66d9ef">as</span> f:
+        f<span style="color:#f92672">.</span>write(header<span style="color:#f92672">.</span>tobytes())
+        f<span style="color:#f92672">.</span>write(labeldata<span style="color:#f92672">.</span>tobytes())
+ 
+<span style="color:#66d9ef">def</span> <span style="color:#a6e22e">write_imagedata</span>(imagedata, outputfile):
+    <span style="color:#66d9ef">global</span> height, width
+    header <span style="color:#f92672">=</span> numpy<span style="color:#f92672">.</span>array([<span style="color:#ae81ff">0x0803</span>, len(imagedata), height, width], dtype<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;&gt;i4&#39;</span>)
+    <span style="color:#66d9ef">with</span> open(outputfile, <span style="color:#e6db74">&#34;wb&#34;</span>) <span style="color:#66d9ef">as</span> f:
+        f<span style="color:#f92672">.</span>write(header<span style="color:#f92672">.</span>tobytes())
+        f<span style="color:#f92672">.</span>write(imagedata<span style="color:#f92672">.</span>tobytes())
+ 
+ 
+<span style="color:#66d9ef">def</span> <span style="color:#a6e22e">main</span>(argv):
+    <span style="color:#66d9ef">global</span> idxLabelPath, idxImagePath
+    <span style="color:#75715e"># Uncomment the line below if you want to seed the random</span>
+    <span style="color:#75715e"># number generator in the same way I did to produce the</span>
+    <span style="color:#75715e"># specific data files in this repo.</span>
+    <span style="color:#75715e"># random.seed(int(&#34;notMNIST&#34;, 36))</span>
+    <span style="color:#66d9ef">if</span> <span style="color:#f92672">not</span> os<span style="color:#f92672">.</span>path<span style="color:#f92672">.</span>exists(dstPath):
+        os<span style="color:#f92672">.</span>makedirs(dstPath)
+    <span style="color:#66d9ef">if</span> len(argv) <span style="color:#f92672">==</span> <span style="color:#ae81ff">3</span>:
+        labelsAndFiles <span style="color:#f92672">=</span> get_labels_and_files(argv[<span style="color:#ae81ff">1</span>])
+    <span style="color:#66d9ef">elif</span> len(argv) <span style="color:#f92672">==</span> <span style="color:#ae81ff">4</span>:
+        labelsAndFiles <span style="color:#f92672">=</span> get_labels_and_files(argv[<span style="color:#ae81ff">1</span>], int(argv[<span style="color:#ae81ff">3</span>]))
+    random<span style="color:#f92672">.</span>seed(<span style="color:#ae81ff">777</span>)
+    random<span style="color:#f92672">.</span>shuffle(labelsAndFiles)
+ 
+    trainImagedata, trainLabeldata, testImagedata, testLabeldata <span style="color:#f92672">=</span> make_arrays(
+        labelsAndFiles, argv[<span style="color:#ae81ff">2</span>])
+ 
+    <span style="color:#66d9ef">if</span> argv[<span style="color:#ae81ff">2</span>] <span style="color:#f92672">==</span> <span style="color:#e6db74">&#39;train&#39;</span>:
+        write_labeldata(trainLabeldata, trainLabelPath)
+        write_imagedata(trainImagedata, trainImagePath)
+    <span style="color:#66d9ef">elif</span> argv[<span style="color:#ae81ff">2</span>] <span style="color:#f92672">==</span> <span style="color:#e6db74">&#39;test&#39;</span>:
+        write_labeldata(testLabeldata, testLabelPath)
+        write_imagedata(testImagedata, testImagePath)
+    <span style="color:#66d9ef">else</span>:
+        write_labeldata(trainLabeldata, trainLabelPath)
+        write_imagedata(trainImagedata, trainImagePath)
+        write_labeldata(testLabeldata, testLabelPath)
+        write_imagedata(testImagedata, testImagePath)
+ 
+ 
+<span style="color:#66d9ef">if</span> __name__ <span style="color:#f92672">==</span> <span style="color:#e6db74">&#39;__main__&#39;</span>:
+    <span style="color:#66d9ef">print</span>(<span style="color:#e6db74">&#34;len:&#34;</span>,len(sys<span style="color:#f92672">.</span>argv))
+    main(sys<span style="color:#f92672">.</span>argv)
+</code></pre></div><p>最后再将文件 <code>t10k-labels-idx1-ubyte</code> 用gzip压缩一下即可。</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">gzip t10k-labels-idx1-ubyte
+</code></pre></div><p>会有四个文件需要压缩.</p>
 
     </div>
     <div class="post-footer">

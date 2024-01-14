@@ -4,33 +4,35 @@
     <title>Leetcode 540 有序数组中的单一元素 // 洛七的摸鱼池塘</title>
     <link rel="shortcut icon" href="/favicon.ico" />
     <meta charset="utf-8" />
-    <meta name="generator" content="Hugo 0.115.4">
+    <meta name="generator" content="Hugo 0.81.0" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="author" content="洛七" />
     <meta name="description" content="" />
-    <link rel="stylesheet" href="/css/main.min.d08c6ce68432c68a64d84cb426dfdecab702035f91a5d580831f23f76c040a05.css" />
+    <link rel="stylesheet" href="/css/main.min.0fb49e70a30412f97ddfc418e18fefef1d9fcdebe45f634dbbba768b00fe1eec.css" />
+    
 
     
     <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Leetcode 540 有序数组中的单一元素"/>
 <meta name="twitter:description" content="有序数组中的单一元素(Single Element in a Sorted Array) 给定一个只包含整数的有序数组，每个元素都会出现两次，唯有一个数只会出现一次，找出这个数。
 示例 1:
-输入: [1,1,2,3,3,4,4,8,8] 输出: 2 示例 2:
-输入: [3,3,7,7,10,11,11] 输出: 10 注意: 您的方案应该在 O(log n)时间复杂度和 O(1)空间复杂度中运行。
+输入: [1,1,2,3,3,4,4,8,8]输出: 2示例 2:
+输入: [3,3,7,7,10,11,11]输出: 10注意: 您的方案应该在 O(log n)时间复杂度和 O(1)空间复杂度中运行。
 int singleNonDuplicate(int* nums, int numsSize){ int ans = nums[0]; for (int i = 1; i &lt; numsSize; &#43;&#43;i) { ans ^= nums[i]; } return ans; } 这个做法和之前的做法是一模一样的，这边应该有更妙的做法，毕竟条件更多了
 int singleNonDuplicate(int* nums, int numsSize){ for (int i = 0; i&#43;1 &lt; numsSize; i&#43;=2) { if (nums[i] != nums[i&#43;1]){ return nums[i]; } } return nums[numsSize-1]; } 这样的做法也是比较简单的，而且不用用到异或，更清楚，但是时间复杂度还是O(n)"/>
 
     <meta property="og:title" content="Leetcode 540 有序数组中的单一元素" />
 <meta property="og:description" content="有序数组中的单一元素(Single Element in a Sorted Array) 给定一个只包含整数的有序数组，每个元素都会出现两次，唯有一个数只会出现一次，找出这个数。
 示例 1:
-输入: [1,1,2,3,3,4,4,8,8] 输出: 2 示例 2:
-输入: [3,3,7,7,10,11,11] 输出: 10 注意: 您的方案应该在 O(log n)时间复杂度和 O(1)空间复杂度中运行。
+输入: [1,1,2,3,3,4,4,8,8]输出: 2示例 2:
+输入: [3,3,7,7,10,11,11]输出: 10注意: 您的方案应该在 O(log n)时间复杂度和 O(1)空间复杂度中运行。
 int singleNonDuplicate(int* nums, int numsSize){ int ans = nums[0]; for (int i = 1; i &lt; numsSize; &#43;&#43;i) { ans ^= nums[i]; } return ans; } 这个做法和之前的做法是一模一样的，这边应该有更妙的做法，毕竟条件更多了
 int singleNonDuplicate(int* nums, int numsSize){ for (int i = 0; i&#43;1 &lt; numsSize; i&#43;=2) { if (nums[i] != nums[i&#43;1]){ return nums[i]; } } return nums[numsSize-1]; } 这样的做法也是比较简单的，而且不用用到异或，更清楚，但是时间复杂度还是O(n)" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://Lu0key.github.io/post/leetcode-540-single-element-in-a-sorted-array/" /><meta property="article:section" content="post" />
-<meta property="article:published_time" content="2021-03-25T16:53:45+08:00" />
-<meta property="article:modified_time" content="2021-03-25T16:53:45+08:00" />
+<meta property="article:published_time" content="2021-03-25T16:53:45&#43;08:00" />
+<meta property="article:modified_time" content="2021-03-25T16:53:45&#43;08:00" />
+
 
 
   </head>
@@ -76,51 +78,51 @@ int singleNonDuplicate(int* nums, int numsSize){ for (int i = 0; i&#43;1 &lt; nu
       <h1 id="有序数组中的单一元素single-element-in-a-sorted-arrayhttpsleetcode-cncomproblemssingle-element-in-a-sorted-array"><a href="https://leetcode-cn.com/problems/single-element-in-a-sorted-array/">有序数组中的单一元素(Single Element in a Sorted Array)</a></h1>
 <p>给定一个只包含整数的有序数组，每个元素都会出现两次，唯有一个数只会出现一次，找出这个数。</p>
 <p><strong>示例 1:</strong></p>
-<pre tabindex="0"><code>输入: [1,1,2,3,3,4,4,8,8]
+<pre><code>输入: [1,1,2,3,3,4,4,8,8]
 输出: 2
 </code></pre><p><strong>示例 2:</strong></p>
-<pre tabindex="0"><code>输入: [3,3,7,7,10,11,11]
+<pre><code>输入: [3,3,7,7,10,11,11]
 输出: 10
 </code></pre><p><strong>注意:</strong> 您的方案应该在 O(log n)时间复杂度和 O(1)空间复杂度中运行。</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-c" data-lang="c"><span style="display:flex;"><span><span style="color:#66d9ef">int</span> <span style="color:#a6e22e">singleNonDuplicate</span>(<span style="color:#66d9ef">int</span><span style="color:#f92672">*</span> nums, <span style="color:#66d9ef">int</span> numsSize){
-</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">int</span> ans <span style="color:#f92672">=</span> nums[<span style="color:#ae81ff">0</span>];
-</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">for</span> (<span style="color:#66d9ef">int</span> i <span style="color:#f92672">=</span> <span style="color:#ae81ff">1</span>; i <span style="color:#f92672">&lt;</span> numsSize; <span style="color:#f92672">++</span>i) {
-</span></span><span style="display:flex;"><span>        ans <span style="color:#f92672">^=</span> nums[i];
-</span></span><span style="display:flex;"><span>    }
-</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> ans;
-</span></span><span style="display:flex;"><span>}
-</span></span></code></pre></div><p>这个做法和之前的做法是一模一样的，这边应该有更妙的做法，毕竟条件更多了</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-c" data-lang="c"><span style="display:flex;"><span><span style="color:#66d9ef">int</span> <span style="color:#a6e22e">singleNonDuplicate</span>(<span style="color:#66d9ef">int</span><span style="color:#f92672">*</span> nums, <span style="color:#66d9ef">int</span> numsSize){
-</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">for</span> (<span style="color:#66d9ef">int</span> i <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>; i<span style="color:#f92672">+</span><span style="color:#ae81ff">1</span> <span style="color:#f92672">&lt;</span> numsSize; i<span style="color:#f92672">+=</span><span style="color:#ae81ff">2</span>) {
-</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">if</span> (nums[i] <span style="color:#f92672">!=</span> nums[i<span style="color:#f92672">+</span><span style="color:#ae81ff">1</span>]){
-</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">return</span> nums[i];
-</span></span><span style="display:flex;"><span>        }
-</span></span><span style="display:flex;"><span>    }
-</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> nums[numsSize<span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>];
-</span></span><span style="display:flex;"><span>}
-</span></span></code></pre></div><p>这样的做法也是比较简单的，而且不用用到异或，更清楚，但是时间复杂度还是O(n)</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-c" data-lang="c"><span style="display:flex;"><span><span style="color:#66d9ef">int</span> <span style="color:#a6e22e">binarySearch</span>(<span style="color:#66d9ef">int</span><span style="color:#f92672">*</span> nums, <span style="color:#66d9ef">int</span> begin, <span style="color:#66d9ef">int</span> end){
-</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">if</span> (end <span style="color:#f92672">-</span> begin <span style="color:#f92672">==</span> <span style="color:#ae81ff">1</span>) <span style="color:#66d9ef">return</span>  nums[begin];
-</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">int</span> mid <span style="color:#f92672">=</span> begin <span style="color:#f92672">+</span> (end <span style="color:#f92672">-</span> begin)<span style="color:#f92672">/</span><span style="color:#ae81ff">2</span>;
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">if</span> (nums[mid<span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>] <span style="color:#f92672">&lt;</span> nums[mid] <span style="color:#f92672">&amp;&amp;</span> nums[mid] <span style="color:#f92672">&lt;</span> nums[mid<span style="color:#f92672">+</span><span style="color:#ae81ff">1</span>]) <span style="color:#66d9ef">return</span> nums[mid];
-</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">if</span> (mid <span style="color:#f92672">%</span> <span style="color:#ae81ff">2</span> <span style="color:#f92672">==</span> <span style="color:#ae81ff">0</span> <span style="color:#f92672">&amp;&amp;</span> nums[mid<span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>] <span style="color:#f92672">&lt;</span> nums[mid] <span style="color:#f92672">&amp;&amp;</span> nums[mid] <span style="color:#f92672">==</span> nums[mid<span style="color:#f92672">+</span><span style="color:#ae81ff">1</span>]) <span style="color:#66d9ef">return</span> <span style="color:#a6e22e">binarySearch</span>(nums, begin, mid);
-</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">if</span> (mid <span style="color:#f92672">%</span> <span style="color:#ae81ff">2</span> <span style="color:#f92672">==</span> <span style="color:#ae81ff">0</span> <span style="color:#f92672">&amp;&amp;</span> nums[mid<span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>] <span style="color:#f92672">==</span> nums[mid] <span style="color:#f92672">&amp;&amp;</span> nums[mid] <span style="color:#f92672">&lt;</span> nums[mid<span style="color:#f92672">+</span><span style="color:#ae81ff">1</span>]) <span style="color:#66d9ef">return</span> <span style="color:#a6e22e">binarySearch</span>(nums, begin, mid<span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>);
-</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">if</span> (mid <span style="color:#f92672">%</span> <span style="color:#ae81ff">2</span> <span style="color:#f92672">==</span> <span style="color:#ae81ff">0</span> <span style="color:#f92672">&amp;&amp;</span> nums[mid<span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>] <span style="color:#f92672">&lt;</span> nums[mid] <span style="color:#f92672">&amp;&amp;</span> nums[mid] <span style="color:#f92672">==</span> nums[mid<span style="color:#f92672">+</span><span style="color:#ae81ff">1</span>]) <span style="color:#66d9ef">return</span> <span style="color:#a6e22e">binarySearch</span>(nums, mid<span style="color:#f92672">+</span><span style="color:#ae81ff">2</span>,end);
-</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">if</span> (mid <span style="color:#f92672">%</span> <span style="color:#ae81ff">2</span> <span style="color:#f92672">==</span> <span style="color:#ae81ff">1</span> <span style="color:#f92672">&amp;&amp;</span> nums[mid<span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>] <span style="color:#f92672">==</span> nums[mid] <span style="color:#f92672">&amp;&amp;</span> nums[mid] <span style="color:#f92672">&lt;</span> nums[mid<span style="color:#f92672">+</span><span style="color:#ae81ff">1</span>]) <span style="color:#66d9ef">return</span> <span style="color:#a6e22e">binarySearch</span>(nums, mid, end);
-</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> <span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>;
-</span></span><span style="display:flex;"><span>}
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#66d9ef">int</span> <span style="color:#a6e22e">singleNonDuplicate</span>(<span style="color:#66d9ef">int</span><span style="color:#f92672">*</span> nums, <span style="color:#66d9ef">int</span> numsSize){
-</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">for</span> (<span style="color:#66d9ef">int</span> i <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>; i<span style="color:#f92672">+</span><span style="color:#ae81ff">1</span> <span style="color:#f92672">&lt;</span> numsSize; i<span style="color:#f92672">+=</span><span style="color:#ae81ff">2</span>) {
-</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">if</span> (nums[i] <span style="color:#f92672">!=</span> nums[i<span style="color:#f92672">+</span><span style="color:#ae81ff">1</span>]){
-</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">return</span> nums[i];
-</span></span><span style="display:flex;"><span>        }
-</span></span><span style="display:flex;"><span>    }
-</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> nums[numsSize<span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>];
-</span></span><span style="display:flex;"><span>}
-</span></span></code></pre></div><p>排序自然会想到二分法呀，然后就可以让时间复杂度变成 O(log n)了，并且我们看到 <code>binarySearch</code> 只会在return 的时候才调用自己，因此是一个伪递归，因此可以转化为while循环.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c" data-lang="c"><span style="color:#66d9ef">int</span> <span style="color:#a6e22e">singleNonDuplicate</span>(<span style="color:#66d9ef">int</span><span style="color:#f92672">*</span> nums, <span style="color:#66d9ef">int</span> numsSize){
+    <span style="color:#66d9ef">int</span> ans <span style="color:#f92672">=</span> nums[<span style="color:#ae81ff">0</span>];
+    <span style="color:#66d9ef">for</span> (<span style="color:#66d9ef">int</span> i <span style="color:#f92672">=</span> <span style="color:#ae81ff">1</span>; i <span style="color:#f92672">&lt;</span> numsSize; <span style="color:#f92672">++</span>i) {
+        ans <span style="color:#f92672">^=</span> nums[i];
+    }
+    <span style="color:#66d9ef">return</span> ans;
+}
+</code></pre></div><p>这个做法和之前的做法是一模一样的，这边应该有更妙的做法，毕竟条件更多了</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c" data-lang="c"><span style="color:#66d9ef">int</span> <span style="color:#a6e22e">singleNonDuplicate</span>(<span style="color:#66d9ef">int</span><span style="color:#f92672">*</span> nums, <span style="color:#66d9ef">int</span> numsSize){
+    <span style="color:#66d9ef">for</span> (<span style="color:#66d9ef">int</span> i <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>; i<span style="color:#f92672">+</span><span style="color:#ae81ff">1</span> <span style="color:#f92672">&lt;</span> numsSize; i<span style="color:#f92672">+=</span><span style="color:#ae81ff">2</span>) {
+        <span style="color:#66d9ef">if</span> (nums[i] <span style="color:#f92672">!=</span> nums[i<span style="color:#f92672">+</span><span style="color:#ae81ff">1</span>]){
+            <span style="color:#66d9ef">return</span> nums[i];
+        }
+    }
+    <span style="color:#66d9ef">return</span> nums[numsSize<span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>];
+}
+</code></pre></div><p>这样的做法也是比较简单的，而且不用用到异或，更清楚，但是时间复杂度还是O(n)</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c" data-lang="c"><span style="color:#66d9ef">int</span> <span style="color:#a6e22e">binarySearch</span>(<span style="color:#66d9ef">int</span><span style="color:#f92672">*</span> nums, <span style="color:#66d9ef">int</span> begin, <span style="color:#66d9ef">int</span> end){
+    <span style="color:#66d9ef">if</span> (end <span style="color:#f92672">-</span> begin <span style="color:#f92672">==</span> <span style="color:#ae81ff">1</span>) <span style="color:#66d9ef">return</span>  nums[begin];
+    <span style="color:#66d9ef">int</span> mid <span style="color:#f92672">=</span> begin <span style="color:#f92672">+</span> (end <span style="color:#f92672">-</span> begin)<span style="color:#f92672">/</span><span style="color:#ae81ff">2</span>;
+
+    <span style="color:#66d9ef">if</span> (nums[mid<span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>] <span style="color:#f92672">&lt;</span> nums[mid] <span style="color:#f92672">&amp;&amp;</span> nums[mid] <span style="color:#f92672">&lt;</span> nums[mid<span style="color:#f92672">+</span><span style="color:#ae81ff">1</span>]) <span style="color:#66d9ef">return</span> nums[mid];
+    <span style="color:#66d9ef">if</span> (mid <span style="color:#f92672">%</span> <span style="color:#ae81ff">2</span> <span style="color:#f92672">==</span> <span style="color:#ae81ff">0</span> <span style="color:#f92672">&amp;&amp;</span> nums[mid<span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>] <span style="color:#f92672">&lt;</span> nums[mid] <span style="color:#f92672">&amp;&amp;</span> nums[mid] <span style="color:#f92672">==</span> nums[mid<span style="color:#f92672">+</span><span style="color:#ae81ff">1</span>]) <span style="color:#66d9ef">return</span> binarySearch(nums, begin, mid);
+    <span style="color:#66d9ef">if</span> (mid <span style="color:#f92672">%</span> <span style="color:#ae81ff">2</span> <span style="color:#f92672">==</span> <span style="color:#ae81ff">0</span> <span style="color:#f92672">&amp;&amp;</span> nums[mid<span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>] <span style="color:#f92672">==</span> nums[mid] <span style="color:#f92672">&amp;&amp;</span> nums[mid] <span style="color:#f92672">&lt;</span> nums[mid<span style="color:#f92672">+</span><span style="color:#ae81ff">1</span>]) <span style="color:#66d9ef">return</span> binarySearch(nums, begin, mid<span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>);
+    <span style="color:#66d9ef">if</span> (mid <span style="color:#f92672">%</span> <span style="color:#ae81ff">2</span> <span style="color:#f92672">==</span> <span style="color:#ae81ff">0</span> <span style="color:#f92672">&amp;&amp;</span> nums[mid<span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>] <span style="color:#f92672">&lt;</span> nums[mid] <span style="color:#f92672">&amp;&amp;</span> nums[mid] <span style="color:#f92672">==</span> nums[mid<span style="color:#f92672">+</span><span style="color:#ae81ff">1</span>]) <span style="color:#66d9ef">return</span> binarySearch(nums, mid<span style="color:#f92672">+</span><span style="color:#ae81ff">2</span>,end);
+    <span style="color:#66d9ef">if</span> (mid <span style="color:#f92672">%</span> <span style="color:#ae81ff">2</span> <span style="color:#f92672">==</span> <span style="color:#ae81ff">1</span> <span style="color:#f92672">&amp;&amp;</span> nums[mid<span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>] <span style="color:#f92672">==</span> nums[mid] <span style="color:#f92672">&amp;&amp;</span> nums[mid] <span style="color:#f92672">&lt;</span> nums[mid<span style="color:#f92672">+</span><span style="color:#ae81ff">1</span>]) <span style="color:#66d9ef">return</span> binarySearch(nums, mid, end);
+    <span style="color:#66d9ef">return</span> <span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>;
+}
+
+
+<span style="color:#66d9ef">int</span> <span style="color:#a6e22e">singleNonDuplicate</span>(<span style="color:#66d9ef">int</span><span style="color:#f92672">*</span> nums, <span style="color:#66d9ef">int</span> numsSize){
+    <span style="color:#66d9ef">for</span> (<span style="color:#66d9ef">int</span> i <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>; i<span style="color:#f92672">+</span><span style="color:#ae81ff">1</span> <span style="color:#f92672">&lt;</span> numsSize; i<span style="color:#f92672">+=</span><span style="color:#ae81ff">2</span>) {
+        <span style="color:#66d9ef">if</span> (nums[i] <span style="color:#f92672">!=</span> nums[i<span style="color:#f92672">+</span><span style="color:#ae81ff">1</span>]){
+            <span style="color:#66d9ef">return</span> nums[i];
+        }
+    }
+    <span style="color:#66d9ef">return</span> nums[numsSize<span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>];
+}
+</code></pre></div><p>排序自然会想到二分法呀，然后就可以让时间复杂度变成 O(log n)了，并且我们看到 <code>binarySearch</code> 只会在return 的时候才调用自己，因此是一个伪递归，因此可以转化为while循环.</p>
 
     </div>
     <div class="post-footer">

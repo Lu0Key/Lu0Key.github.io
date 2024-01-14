@@ -14,17 +14,32 @@
       
       <guid>https://Lu0key.github.io/post/%E5%87%A0%E9%81%93%E7%A7%AF%E5%88%86%E5%92%8C%E7%BA%A7%E6%95%B0/</guid>
       <description>忘记什么时候搞来的积分了，有些好像是积分竞赛的，应该很多都不是我自己做的，只是原来记录的
-$\begin{aligned} &amp;amp;\dfrac{z}{1-z}=\sum_{n=1}^{\infty}z^n\qquad(|z|&amp;lt;1)\\ &amp;amp;左右两边积分可得;\ln(1-z)=-\sum_{n=1}^\infty\dfrac{z^n}{n}.\\ &amp;amp;代入z=re^{i\theta},\dfrac{re^{i\theta}}{1-re^{i\theta}}=\sum_{n=1}^{\infty}r^n(\cos n\theta+i\sin n\theta)\\ &amp;amp;左边=\dfrac{re^{i\theta}}{1-re^{i\theta}}=\dfrac{r\cos\theta+ir\sin\theta}{(1-r\cos\theta)-ir\sin\theta}=\dfrac{(r\cos\theta+ir\sin\theta)[(1-r\cos\theta)+ir\sin\theta]}{(1-r\cos\theta)^2+r^2\sin^2\theta}\\ &amp;amp;\qquad=\dfrac{r\cos\theta-r^2}{1-2r\cos\theta+r^2}+i\dfrac{r\sin\theta}{1-2r\cos\theta+r^2}\\ &amp;amp;因此\dfrac{\cos\theta-r}{1-2r\cos\theta+r^2}=\sum_{n=1}^{\infty}r^{n-1}\cos n\theta,\quad \dfrac{\sin\theta}{1-2r\cos\theta+r^2}=\sum_{n=1}^{\infty}r^{n-1}\sin n\theta.\\ &amp;amp;左右对r积分:\quad\dfrac12\ln(1-2r\cos\theta+r^2)=-\sum_{n=1}^{\infty}r^n\dfrac{\cos n\theta}{n}\cdots①\\ &amp;amp;\qquad\qquad\qquad\quad \arctan\dfrac{r\sin\theta}{1-r\cos\theta}=\sum_{n=1}^{\infty}r^n\dfrac{\sin n\theta}{n}\cdots②\\ &amp;amp;将①式中r换为-r得：\\ &amp;amp;\qquad\qquad r\cos\theta-r^2\dfrac{\cos2\theta}{2}+r^3\dfrac{\cos3\theta}{3}-\cdots=\dfrac12\ln(1+2r\cos\theta+r^2)\\ &amp;amp;将②式中的r换为-r，\theta换为-\theta得：\\ &amp;amp;\qquad\qquad r\sin\theta-r^2\dfrac{\sin2\theta}{2}+r^3\dfrac{\sin3\theta}{3}-\cdots=\arctan\dfrac{r\sin\theta}{1+r\cos\theta} \end{aligned}$
-$ \begin{aligned} \displaystyle&amp;amp;\int\dfrac{\sin \theta}{r^2-2r\cos\theta+1}\text{d}r\\ =&amp;amp;\int\dfrac{\sin\theta}{(r-\cos\theta)^2+\sin^2\theta}\text{d}(r-\cos\theta)\\ =&amp;amp;\arctan\dfrac{r-\cos\theta}{\sin \theta} \end{aligned} $
-$ \begin{aligned} \left(\arctan\dfrac{r\sin\theta}{1-r\cos\theta}\right)&amp;rsquo;=&amp;amp;\dfrac{1}{\left(\dfrac{r\sin\theta}{1-r\cos\theta}\right)^2+1}\cdot\dfrac{\sin\theta(1-r\cos\theta)+\cos\theta\cdot r\sin\theta}{(1-r\cos\theta)^2}\\ =&amp;amp;\dfrac{\sin\theta}{r^2\sin^2\theta+1-2r\cos\theta+r^2\cos^2\theta}\\ =&amp;amp;\dfrac{\sin\theta}{1-2r\cos\theta+r^2} \end{aligned} $
-$ \begin{aligned} &amp;amp;\dfrac{\sin\theta}{1-2r\cos\theta+r^2}=\dfrac{\sin\theta}{1-2r\cos\theta+r^2\cos^2\theta+r^2\sin^2\theta}\\ =&amp;amp;\dfrac{\sin\theta}{(1-r\cos\theta)^2+r^2\sin^2\theta}=\dfrac{\dfrac{\sin\theta}{(1-r\cos\theta)^2}}{1+\left(\dfrac{r\sin\theta}{1-r\cos\theta}\right)^2} \end{aligned} $
+$\begin{aligned} &amp;amp;\dfrac{z}{1-z}=\sum_{n=1}^{\infty}z^n\qquad(|z|&amp;lt;1)\\
+&amp;amp;左右两边积分可得;\ln(1-z)=-\sum_{n=1}^\infty\dfrac{z^n}{n}.\\
+&amp;amp;代入z=re^{i\theta},\dfrac{re^{i\theta}}{1-re^{i\theta}}=\sum_{n=1}^{\infty}r^n(\cos n\theta+i\sin n\theta)\\
+&amp;amp;左边=\dfrac{re^{i\theta}}{1-re^{i\theta}}=\dfrac{r\cos\theta+ir\sin\theta}{(1-r\cos\theta)-ir\sin\theta}=\dfrac{(r\cos\theta+ir\sin\theta)[(1-r\cos\theta)+ir\sin\theta]}{(1-r\cos\theta)^2+r^2\sin^2\theta}\\
+&amp;amp;\qquad=\dfrac{r\cos\theta-r^2}{1-2r\cos\theta+r^2}+i\dfrac{r\sin\theta}{1-2r\cos\theta+r^2}\\
+&amp;amp;因此\dfrac{\cos\theta-r}{1-2r\cos\theta+r^2}=\sum_{n=1}^{\infty}r^{n-1}\cos n\theta,\quad \dfrac{\sin\theta}{1-2r\cos\theta+r^2}=\sum_{n=1}^{\infty}r^{n-1}\sin n\theta.\\
+&amp;amp;左右对r积分:\quad\dfrac12\ln(1-2r\cos\theta+r^2)=-\sum_{n=1}^{\infty}r^n\dfrac{\cos n\theta}{n}\cdots①\\
+&amp;amp;\qquad\qquad\qquad\quad \arctan\dfrac{r\sin\theta}{1-r\cos\theta}=\sum_{n=1}^{\infty}r^n\dfrac{\sin n\theta}{n}\cdots②\\
+&amp;amp;将①式中r换为-r得：\\
+&amp;amp;\qquad\qquad r\cos\theta-r^2\dfrac{\cos2\theta}{2}+r^3\dfrac{\cos3\theta}{3}-\cdots=\dfrac12\ln(1+2r\cos\theta+r^2)\\
+&amp;amp;将②式中的r换为-r，\theta换为-\theta得：\\
+&amp;amp;\qquad\qquad r\sin\theta-r^2\dfrac{\sin2\theta}{2}+r^3\dfrac{\sin3\theta}{3}-\cdots=\arctan\dfrac{r\sin\theta}{1+r\cos\theta} \end{aligned}$
+ $ \begin{aligned} \displaystyle&amp;amp;\int\dfrac{\sin \theta}{r^2-2r\cos\theta+1}\text{d}r\\
+=&amp;amp;\int\dfrac{\sin\theta}{(r-\cos\theta)^2+\sin^2\theta}\text{d}(r-\cos\theta)\\
+=&amp;amp;\arctan\dfrac{r-\cos\theta}{\sin \theta} \end{aligned} $
+$ \begin{aligned} \left(\arctan\dfrac{r\sin\theta}{1-r\cos\theta}\right)&#39;=&amp;amp;\dfrac{1}{\left(\dfrac{r\sin\theta}{1-r\cos\theta}\right)^2+1}\cdot\dfrac{\sin\theta(1-r\cos\theta)+\cos\theta\cdot r\sin\theta}{(1-r\cos\theta)^2}\\
+=&amp;amp;\dfrac{\sin\theta}{r^2\sin^2\theta+1-2r\cos\theta+r^2\cos^2\theta}\\
+=&amp;amp;\dfrac{\sin\theta}{1-2r\cos\theta+r^2} \end{aligned} $
+$ \begin{aligned} &amp;amp;\dfrac{\sin\theta}{1-2r\cos\theta+r^2}=\dfrac{\sin\theta}{1-2r\cos\theta+r^2\cos^2\theta+r^2\sin^2\theta}\\
+=&amp;amp;\dfrac{\sin\theta}{(1-r\cos\theta)^2+r^2\sin^2\theta}=\dfrac{\dfrac{\sin\theta}{(1-r\cos\theta)^2}}{1+\left(\dfrac{r\sin\theta}{1-r\cos\theta}\right)^2} \end{aligned} $
 $\displaystyle\int_0^r\dfrac{\dfrac{\sin\theta}{(1-r\cos\theta)^2}}{1+\left(\dfrac{r\sin\theta}{1-r\cos\theta}\right)^2}\text{d}r=\int_0^r\dfrac{1}{1+\left(\dfrac{r\sin\theta}{1-r\cos\theta}\right)^2}\text{d}(\dfrac{r\sin\theta}{1-r\cos\theta})\\=\arctan\dfrac{r\sin\theta}{1-r\cos\theta}$
 $\displaystyle\int_0^1\dfrac{\arctan x}{x\sqrt{1-x^2}}\text{d}x=\int_0^{\frac{\pi}{4}}\dfrac{x}{\tan x}$
 $\displaystyle\lim_{x\to0^+}\ln(1-x)\ln(\tan x)=\lim_{x\to0^+}\ln(1-x)\ln(\sin x)=\lim_{x\to0^+}-x\ln(\sin x)=\lim_{x\to0^+}-\dfrac{\ln(\sin x)}{\frac1x}=\lim_{x\to0^+}\dfrac{\cos x}{\sin x}\cdot x^2=0$
-$\cos\theta+\dfrac{\cos2\theta}{2}+\dfrac{\cos3\theta}{3}+\dfrac{\cos4\theta}{4}+\cdots$ 直接引用昨天的结论：
+  $\cos\theta+\dfrac{\cos2\theta}{2}+\dfrac{\cos3\theta}{3}+\dfrac{\cos4\theta}{4}+\cdots$  直接引用昨天的结论：
 $r\cos\theta-r^2\dfrac{\cos2\theta}{2}+r^3\dfrac{\cos3\theta}{3}-\cdots=\dfrac12\ln(1+2r\cos\theta+r^2)\cdots①;$
-把 $r=-1$ 带入 ① 式，得：
-$-\cos\theta-\dfrac{\cos2\theta}{2}-\dfrac{\cos3\theta}{3}-\cdots=\dfrac12\ln(2-2r\cos\theta)=\ln(2\sin\dfrac{\theta}{2})$</description>
+把 $r=-1$ 带入 ① 式，得：</description>
     </item>
     
     <item>
@@ -35,16 +50,37 @@ $-\cos\theta-\dfrac{\cos2\theta}{2}-\dfrac{\cos3\theta}{3}-\cdots=\dfrac12\ln(2-
       <guid>https://Lu0key.github.io/post/%E8%AE%B0%E5%BD%95%E4%B8%A4%E9%81%93%E8%A1%8C%E5%88%97%E5%BC%8F/</guid>
       <description>最近在清理电脑，发现有些题目之前写的，没有保存，这里记录一下
 求行列式
-$$ D = \begin{vmatrix} \sin(\theta_1+\theta_1)&amp;amp;\sin(\theta_1+\theta_2)&amp;amp;\cdots&amp;amp;\sin(\theta_1+\theta_n)\\ \sin(\theta_2+\theta_1)&amp;amp;\sin(\theta_2+\theta_2)&amp;amp;\cdots&amp;amp;\sin(\theta_2+\theta_n)\\ \vdots&amp;amp;\vdots&amp;amp;&amp;amp;\vdots\\ \sin(\theta_n+\theta_1)&amp;amp;\sin(\theta_n+\theta_2)&amp;amp;\cdots&amp;amp;\sin(\theta_n+\theta_n) \end{vmatrix} $$
+$$ D = \begin{vmatrix} \sin(\theta_1+\theta_1)&amp;amp;\sin(\theta_1+\theta_2)&amp;amp;\cdots&amp;amp;\sin(\theta_1+\theta_n)\\
+\sin(\theta_2+\theta_1)&amp;amp;\sin(\theta_2+\theta_2)&amp;amp;\cdots&amp;amp;\sin(\theta_2+\theta_n)\\
+\vdots&amp;amp;\vdots&amp;amp;&amp;amp;\vdots\\
+\sin(\theta_n+\theta_1)&amp;amp;\sin(\theta_n+\theta_2)&amp;amp;\cdots&amp;amp;\sin(\theta_n+\theta_n) \end{vmatrix} $$
 【Sol】: 当 $n\geqslant2$ 时
-$$ \begin{aligned} &amp;amp;\begin{vmatrix} \sin(\theta_1+\theta_1)&amp;amp;\sin(\theta_1+\theta_2)&amp;amp;\cdots&amp;amp;\sin(\theta_1+\theta_n)\\ \sin(\theta_2+\theta_1)&amp;amp;\sin(\theta_2+\theta_2)&amp;amp;\cdots&amp;amp;\sin(\theta_2+\theta_n)\\ \vdots&amp;amp;\vdots&amp;amp;&amp;amp;\vdots\\ \sin(\theta_n+\theta_1)&amp;amp;\sin(\theta_n+\theta_2)&amp;amp;\cdots&amp;amp;\sin(\theta_n+\theta_n) \end{vmatrix}\\ =&amp;amp;\begin{vmatrix} \sin\theta_1&amp;amp;\cos\theta_1&amp;amp;0&amp;amp;\cdots&amp;amp;0\\ \sin\theta_2&amp;amp;\cos\theta_2&amp;amp;0&amp;amp;\cdots&amp;amp;0\\ \vdots&amp;amp;\vdots&amp;amp;\vdots&amp;amp;&amp;amp;\vdots\\ \sin\theta_n&amp;amp;\cos\theta_n&amp;amp;0&amp;amp;\cdots&amp;amp;0 \end{vmatrix}_ {n \times n} \cdot \begin{vmatrix} \cos\theta_1&amp;amp;\cos\theta_2&amp;amp;\cdots&amp;amp;\cos\theta_n\\ \sin\theta_1&amp;amp;\sin\theta_2&amp;amp;\cdots&amp;amp;\sin\theta_n\\ 0&amp;amp;0&amp;amp;\cdots&amp;amp;0\\ \vdots&amp;amp;\vdots&amp;amp;&amp;amp;\vdots\\ 0&amp;amp;0&amp;amp;\cdots&amp;amp;0 \end{vmatrix}_{n\times n}\\ =&amp;amp;\begin{cases} -\sin^2(\theta_1-\theta_2),&amp;amp;n=2\\ 0,&amp;amp;n\geqslant3 \end{cases} \end{aligned} $$
+$$ \begin{aligned} &amp;amp;\begin{vmatrix} \sin(\theta_1+\theta_1)&amp;amp;\sin(\theta_1+\theta_2)&amp;amp;\cdots&amp;amp;\sin(\theta_1+\theta_n)\\
+\sin(\theta_2+\theta_1)&amp;amp;\sin(\theta_2+\theta_2)&amp;amp;\cdots&amp;amp;\sin(\theta_2+\theta_n)\\
+\vdots&amp;amp;\vdots&amp;amp;&amp;amp;\vdots\\
+\sin(\theta_n+\theta_1)&amp;amp;\sin(\theta_n+\theta_2)&amp;amp;\cdots&amp;amp;\sin(\theta_n+\theta_n) \end{vmatrix}\\
+=&amp;amp;\begin{vmatrix} \sin\theta_1&amp;amp;\cos\theta_1&amp;amp;0&amp;amp;\cdots&amp;amp;0\\
+\sin\theta_2&amp;amp;\cos\theta_2&amp;amp;0&amp;amp;\cdots&amp;amp;0\\
+\vdots&amp;amp;\vdots&amp;amp;\vdots&amp;amp;&amp;amp;\vdots\\
+\sin\theta_n&amp;amp;\cos\theta_n&amp;amp;0&amp;amp;\cdots&amp;amp;0 \end{vmatrix}_ {n \times n} \cdot \begin{vmatrix} \cos\theta_1&amp;amp;\cos\theta_2&amp;amp;\cdots&amp;amp;\cos\theta_n\\
+\sin\theta_1&amp;amp;\sin\theta_2&amp;amp;\cdots&amp;amp;\sin\theta_n\\
+0&amp;amp;0&amp;amp;\cdots&amp;amp;0\\
+\vdots&amp;amp;\vdots&amp;amp;&amp;amp;\vdots\\
+0&amp;amp;0&amp;amp;\cdots&amp;amp;0 \end{vmatrix}_{n\times n}\\
+=&amp;amp;\begin{cases} -\sin^2(\theta_1-\theta_2),&amp;amp;n=2\\
+0,&amp;amp;n\geqslant3 \end{cases} \end{aligned} $$
 因此
-$$ D= \begin{cases} \sin2\theta_1,&amp;amp;n=1\\ -\sin^2(\theta_1-\theta_2),&amp;amp;n=2\\ 0,&amp;amp;n\geqslant3 \end{cases} $$
-求行列式
-$$ \begin{vmatrix} a_1^{n-1}&amp;amp;a_1^{n-2}b_1&amp;amp;\cdots&amp;amp;a_1b_1^{n-2}&amp;amp;b_1^{n-1}\\ a_2^{n-1}&amp;amp;a_2^{n-2}b_2&amp;amp;\cdots&amp;amp;a_2b_2^{n-2}&amp;amp;b_2^{n-1}\\ \vdots&amp;amp;\vdots&amp;amp;&amp;amp;\vdots&amp;amp;\vdots\\ a_{n-1}^{n-1}&amp;amp;a_{n-1}^{n-2}b_{n-1}&amp;amp;\cdots&amp;amp;a_{n-1}b_{n-1}^{n-2}&amp;amp;b_{n-1}^{n-1}\\ a_{n}^{n-1}&amp;amp;a_{n}^{n-2}b_n&amp;amp;\cdots&amp;amp;a_{n}b_n^{n-2}&amp;amp;b_{n}^{n-1} \end{vmatrix} $$
+$$ D= \begin{cases} \sin2\theta_1,&amp;amp;n=1\\
+-\sin^2(\theta_1-\theta_2),&amp;amp;n=2\\
+0,&amp;amp;n\geqslant3 \end{cases} $$
+ 求行列式
+$$ \begin{vmatrix} a_1^{n-1}&amp;amp;a_1^{n-2}b_1&amp;amp;\cdots&amp;amp;a_1b_1^{n-2}&amp;amp;b_1^{n-1}\\
+a_2^{n-1}&amp;amp;a_2^{n-2}b_2&amp;amp;\cdots&amp;amp;a_2b_2^{n-2}&amp;amp;b_2^{n-1}\\
+\vdots&amp;amp;\vdots&amp;amp;&amp;amp;\vdots&amp;amp;\vdots\\
+a_{n-1}^{n-1}&amp;amp;a_{n-1}^{n-2}b_{n-1}&amp;amp;\cdots&amp;amp;a_{n-1}b_{n-1}^{n-2}&amp;amp;b_{n-1}^{n-1}\\
+a_{n}^{n-1}&amp;amp;a_{n}^{n-2}b_n&amp;amp;\cdots&amp;amp;a_{n}b_n^{n-2}&amp;amp;b_{n}^{n-1} \end{vmatrix} $$
 【Sol】:
-首先引入引理，范德蒙(Vandermonde)行列式:
-$$ D_n=\begin{vmatrix} 1&amp;amp;1&amp;amp;\cdots&amp;amp;1\\ x_1&amp;amp;x_2&amp;amp;\cdots&amp;amp;x_n\\ \cdots&amp;amp;\cdots&amp;amp;&amp;amp;\cdots\\ x_1^{n-2}&amp;amp;x_2^{n-2}&amp;amp;\cdots&amp;amp;x_{n}^{n-2}\\ x_1^{n-1}&amp;amp;x_{2}^{n-1}&amp;amp;\cdots&amp;amp;x_{n}^{n-1} \end{vmatrix} = \prod_{1\leqslant i&amp;lt;j\leqslant n}(x_j-x_i) $$</description>
+首先引入引理，范德蒙(Vandermonde)行列式:</description>
     </item>
     
     <item>
@@ -57,7 +93,11 @@ $$ D_n=\begin{vmatrix} 1&amp;amp;1&amp;amp;\cdots&amp;amp;1\\ x_1&amp;amp;x_2&am
 求极限
 $$ \lim_{x\to\infty}\dfrac{(1+\frac{1}{x})^x-e}{\sin\dfrac{1}{x}}
 $$
-Solution: $$\begin{aligned} &amp;amp;\lim_{x\to\infty}\dfrac{(1+\frac{1}{x})^x-e}{\sin\dfrac{1}{x}}\\ =&amp;amp;e\lim_{x\to\infty}\dfrac{e^{x\ln(1+\frac{1}{x})-1}-1}{\dfrac{1}{x}}\\ =&amp;amp;e\lim_{x\to\infty}x[x\ln(1+\dfrac{1}{x})-1]\\ =&amp;amp;e\lim_{x\to\infty}x[x(\dfrac{1}{x}-\dfrac{1}{2x^2}+o(\dfrac{1}{x^3}))-1]\\ =&amp;amp;-\dfrac{e}{2} \end{aligned}$$</description>
+Solution: $$\begin{aligned} &amp;amp;\lim_{x\to\infty}\dfrac{(1+\frac{1}{x})^x-e}{\sin\dfrac{1}{x}}\\
+=&amp;amp;e\lim_{x\to\infty}\dfrac{e^{x\ln(1+\frac{1}{x})-1}-1}{\dfrac{1}{x}}\\
+=&amp;amp;e\lim_{x\to\infty}x[x\ln(1+\dfrac{1}{x})-1]\\
+=&amp;amp;e\lim_{x\to\infty}x[x(\dfrac{1}{x}-\dfrac{1}{2x^2}+o(\dfrac{1}{x^3}))-1]\\
+=&amp;amp;-\dfrac{e}{2} \end{aligned}$$</description>
     </item>
     
     <item>
@@ -81,12 +121,13 @@ $\text{B}(p,q)=2\displaystyle\int_0^{\frac\pi2}\cos^{2p-1}\varphi\sin^{2q-1}\var
 易知
 $\text{B}\left(\dfrac{1}{2},\dfrac{1}{2}\right)=\pi$
 2 作变量代换 $x=\dfrac{1}{1+t}$，得到
-$\begin{aligned} \text{B}(p,q)=&amp;amp;\int_0^{+\infty}\dfrac{t^{q-1}}{(1+t)^{p+q}}\text{d}t\ =&amp;amp;\int_0^{1}\dfrac{t^{q-1}}{(1+t)^{p+q}}\text{d}t+\int_1^{+\infty}\dfrac{t^{q-1}}{(1+t)^{p+q}}\text{d}t \end{aligned}$
+$\begin{aligned} \text{B}(p,q)=&amp;amp;\int_0^{+\infty}\dfrac{t^{q-1}}{(1+t)^{p+q}}\text{d}t\
+=&amp;amp;\int_0^{1}\dfrac{t^{q-1}}{(1+t)^{p+q}}\text{d}t+\int_1^{+\infty}\dfrac{t^{q-1}}{(1+t)^{p+q}}\text{d}t \end{aligned}$
 对后一个积分作变量代换 $t=\dfrac{1}{u}$，得到
 $\displaystyle\int_1^{+\infty}\dfrac{t^{q-1}}{(1+t)^{p+q}}\text{d}t=\int_0^1\dfrac{u^{p-1}}{(1+u)^{p+q}}\text{d}u$
 于是
 $\displaystyle\text{B}(p,q)=\int_0^1\dfrac{t^{q-1}+t^{p-1}}{(1+t)^{p+q}}\text{d}t$
-Gamma 函数 形如
+ Gamma 函数 形如
 $\displaystyle\Gamma(s)=\int_0^{+\infty}x^{s-1}e^{-x}\text{d}x$
 的含参变量积分称为 Gamma 函数 或 第二类 Euler 积分.
 $\Gamma(s)$ 的定义域为 $(0,+\infty)$

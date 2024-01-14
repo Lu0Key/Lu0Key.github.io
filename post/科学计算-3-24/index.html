@@ -4,29 +4,29 @@
     <title>科学计算 3-24 // 洛七的摸鱼池塘</title>
     <link rel="shortcut icon" href="/favicon.ico" />
     <meta charset="utf-8" />
-    <meta name="generator" content="Hugo 0.115.4">
+    <meta name="generator" content="Hugo 0.81.0" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="author" content="洛七" />
     <meta name="description" content="" />
-    <link rel="stylesheet" href="/css/main.min.d08c6ce68432c68a64d84cb426dfdecab702035f91a5d580831f23f76c040a05.css" />
+    <link rel="stylesheet" href="/css/main.min.0fb49e70a30412f97ddfc418e18fefef1d9fcdebe45f634dbbba768b00fe1eec.css" />
+    
 
     
     <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="科学计算 3-24"/>
-<meta name="twitter:description" content="3.24 (分段)线性插值基函数的表示
+<meta name="twitter:description" content="3.24    (分段)线性插值基函数的表示
 不妨认为直接整数为插值接点
-% 可以画图多次(以叠加的方式) hold on; % 这个代码默认结点间隔为 1，只需要改下面这一行代码即可 xNode = linspace(0,5,6); for i=1:length(xNode) if length(xNode)&lt;2 break; end r = rand(); g = rand(); b = rand(); if i == 1 x = linspace(0,xNode(2),100); y = (x-xNode(2))./(xNode(1)-xNode(2)); plot(x,y,&#39;Color&#39;,[r,g,b]); elseif i == length(xNode) x = linspace(xNode(i-1),xNode(i),100); y = (x-xNode(i-1))./(xNode(i)-xNode(i-1)); plot(x,y,&#39;Color&#39;,[r,g,b]); else x = linspace(xNode(i-1),xNode(i),100); y = (x-xNode(i-1))./(xNode(i)-xNode(i-1)); plot(x,y,&#39;Color&#39;,[r,g,b]); x = linspace(xNode(i),xNode(i&#43;1),100); y = (x-xNode(i&#43;1))./(xNode(i)-xNode(i&#43;1)); plot(x,y,&#39;Color&#39;,[r,g,b]); end end (分段)二次插值基函数的表示
-hold on; xNode = linspace(0,2,3); for i=1:length(xNode) if length(xNode)&lt;2 break; end r = rand();g = rand();b = rand(); if i == 1 x = linspace(xNode(1),xNode(2),100); mid1 = (xNode(1)&#43;xNode(2))."/>
+% 可以画图多次(以叠加的方式) hold on; % 这个代码默认结点间隔为 1，只需要改下面这一行代码即可 xNode = linspace(0,5,6); for i=1:length(xNode) if length(xNode)&lt;2 break; end r = rand(); g = rand(); b = rand(); if i == 1 x = linspace(0,xNode(2),100); y = (x-xNode(2))./(xNode(1)-xNode(2)); plot(x,y,&#39;Color&#39;,[r,g,b]); elseif i == length(xNode) x = linspace(xNode(i-1),xNode(i),100); y = (x-xNode(i-1))./(xNode(i)-xNode(i-1)); plot(x,y,&#39;Color&#39;,[r,g,b]); else x = linspace(xNode(i-1),xNode(i),100); y = (x-xNode(i-1))./(xNode(i)-xNode(i-1)); plot(x,y,&#39;Color&#39;,[r,g,b]); x = linspace(xNode(i),xNode(i&#43;1),100); y = (x-xNode(i&#43;1))./(xNode(i)-xNode(i&#43;1)); plot(x,y,&#39;Color&#39;,[r,g,b]); end end (分段)二次插值基函数的表示"/>
 
     <meta property="og:title" content="科学计算 3-24" />
-<meta property="og:description" content="3.24 (分段)线性插值基函数的表示
+<meta property="og:description" content="3.24    (分段)线性插值基函数的表示
 不妨认为直接整数为插值接点
-% 可以画图多次(以叠加的方式) hold on; % 这个代码默认结点间隔为 1，只需要改下面这一行代码即可 xNode = linspace(0,5,6); for i=1:length(xNode) if length(xNode)&lt;2 break; end r = rand(); g = rand(); b = rand(); if i == 1 x = linspace(0,xNode(2),100); y = (x-xNode(2))./(xNode(1)-xNode(2)); plot(x,y,&#39;Color&#39;,[r,g,b]); elseif i == length(xNode) x = linspace(xNode(i-1),xNode(i),100); y = (x-xNode(i-1))./(xNode(i)-xNode(i-1)); plot(x,y,&#39;Color&#39;,[r,g,b]); else x = linspace(xNode(i-1),xNode(i),100); y = (x-xNode(i-1))./(xNode(i)-xNode(i-1)); plot(x,y,&#39;Color&#39;,[r,g,b]); x = linspace(xNode(i),xNode(i&#43;1),100); y = (x-xNode(i&#43;1))./(xNode(i)-xNode(i&#43;1)); plot(x,y,&#39;Color&#39;,[r,g,b]); end end (分段)二次插值基函数的表示
-hold on; xNode = linspace(0,2,3); for i=1:length(xNode) if length(xNode)&lt;2 break; end r = rand();g = rand();b = rand(); if i == 1 x = linspace(xNode(1),xNode(2),100); mid1 = (xNode(1)&#43;xNode(2))." />
+% 可以画图多次(以叠加的方式) hold on; % 这个代码默认结点间隔为 1，只需要改下面这一行代码即可 xNode = linspace(0,5,6); for i=1:length(xNode) if length(xNode)&lt;2 break; end r = rand(); g = rand(); b = rand(); if i == 1 x = linspace(0,xNode(2),100); y = (x-xNode(2))./(xNode(1)-xNode(2)); plot(x,y,&#39;Color&#39;,[r,g,b]); elseif i == length(xNode) x = linspace(xNode(i-1),xNode(i),100); y = (x-xNode(i-1))./(xNode(i)-xNode(i-1)); plot(x,y,&#39;Color&#39;,[r,g,b]); else x = linspace(xNode(i-1),xNode(i),100); y = (x-xNode(i-1))./(xNode(i)-xNode(i-1)); plot(x,y,&#39;Color&#39;,[r,g,b]); x = linspace(xNode(i),xNode(i&#43;1),100); y = (x-xNode(i&#43;1))./(xNode(i)-xNode(i&#43;1)); plot(x,y,&#39;Color&#39;,[r,g,b]); end end (分段)二次插值基函数的表示" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://Lu0key.github.io/post/%E7%A7%91%E5%AD%A6%E8%AE%A1%E7%AE%97-3-24/" /><meta property="article:section" content="post" />
-<meta property="article:published_time" content="2021-05-11T08:57:54+08:00" />
-<meta property="article:modified_time" content="2021-05-11T08:57:54+08:00" />
+<meta property="article:published_time" content="2021-05-11T08:57:54&#43;08:00" />
+<meta property="article:modified_time" content="2021-05-11T08:57:54&#43;08:00" />
+
 
 
   </head>
@@ -76,205 +76,203 @@ hold on; xNode = linspace(0,2,3); for i=1:length(xNode) if length(xNode)&lt;2 br
 </ol>
 <p>(分段)线性插值基函数的表示<br>
 不妨认为直接整数为插值接点</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-matlab" data-lang="matlab"><span style="display:flex;"><span><span style="color:#75715e">% 可以画图多次(以叠加的方式)</span>
-</span></span><span style="display:flex;"><span>hold on;
-</span></span><span style="display:flex;"><span><span style="color:#75715e">% 这个代码默认结点间隔为 1，只需要改下面这一行代码即可</span>
-</span></span><span style="display:flex;"><span>xNode = linspace(<span style="color:#ae81ff">0</span>,<span style="color:#ae81ff">5</span>,<span style="color:#ae81ff">6</span>);
-</span></span><span style="display:flex;"><span><span style="color:#66d9ef">for</span> i=<span style="color:#ae81ff">1</span>:length(xNode)
-</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">if</span> length(xNode)<span style="color:#f92672">&lt;</span><span style="color:#ae81ff">2</span>
-</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">break</span>;
-</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">end</span>
-</span></span><span style="display:flex;"><span>    r = rand();
-</span></span><span style="display:flex;"><span>    g = rand();
-</span></span><span style="display:flex;"><span>    b = rand();
-</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">if</span> i <span style="color:#f92672">==</span> <span style="color:#ae81ff">1</span>
-</span></span><span style="display:flex;"><span>        x = linspace(<span style="color:#ae81ff">0</span>,xNode(<span style="color:#ae81ff">2</span>),<span style="color:#ae81ff">100</span>);
-</span></span><span style="display:flex;"><span>        y = (x<span style="color:#f92672">-</span>xNode(<span style="color:#ae81ff">2</span>))<span style="color:#f92672">./</span>(xNode(<span style="color:#ae81ff">1</span>)<span style="color:#f92672">-</span>xNode(<span style="color:#ae81ff">2</span>));
-</span></span><span style="display:flex;"><span>        plot(x,y,<span style="color:#e6db74">&#39;Color&#39;</span>,[r,g,b]);
-</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">elseif</span> i <span style="color:#f92672">==</span> length(xNode)
-</span></span><span style="display:flex;"><span>        x = linspace(xNode(i<span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>),xNode(i),<span style="color:#ae81ff">100</span>);
-</span></span><span style="display:flex;"><span>        y = (x<span style="color:#f92672">-</span>xNode(i<span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>))<span style="color:#f92672">./</span>(xNode(i)<span style="color:#f92672">-</span>xNode(i<span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>));
-</span></span><span style="display:flex;"><span>        plot(x,y,<span style="color:#e6db74">&#39;Color&#39;</span>,[r,g,b]);    
-</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">else</span>
-</span></span><span style="display:flex;"><span>        x = linspace(xNode(i<span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>),xNode(i),<span style="color:#ae81ff">100</span>);
-</span></span><span style="display:flex;"><span>        y = (x<span style="color:#f92672">-</span>xNode(i<span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>))<span style="color:#f92672">./</span>(xNode(i)<span style="color:#f92672">-</span>xNode(i<span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>));
-</span></span><span style="display:flex;"><span>        plot(x,y,<span style="color:#e6db74">&#39;Color&#39;</span>,[r,g,b]);
-</span></span><span style="display:flex;"><span>        x = linspace(xNode(i),xNode(i<span style="color:#f92672">+</span><span style="color:#ae81ff">1</span>),<span style="color:#ae81ff">100</span>);
-</span></span><span style="display:flex;"><span>        y = (x<span style="color:#f92672">-</span>xNode(i<span style="color:#f92672">+</span><span style="color:#ae81ff">1</span>))<span style="color:#f92672">./</span>(xNode(i)<span style="color:#f92672">-</span>xNode(i<span style="color:#f92672">+</span><span style="color:#ae81ff">1</span>));
-</span></span><span style="display:flex;"><span>        plot(x,y,<span style="color:#e6db74">&#39;Color&#39;</span>,[r,g,b]);
-</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">end</span>
-</span></span><span style="display:flex;"><span><span style="color:#66d9ef">end</span>
-</span></span></code></pre></div><p><img src="https://raw.githubusercontent.com/Lu0Key/hexo-image/master/imags/2021/3-24-1-1.png" alt="图裂了"></p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-matlab" data-lang="matlab"><span style="color:#75715e">% 可以画图多次(以叠加的方式)</span>
+hold on;
+<span style="color:#75715e">% 这个代码默认结点间隔为 1，只需要改下面这一行代码即可</span>
+xNode = linspace(<span style="color:#ae81ff">0</span>,<span style="color:#ae81ff">5</span>,<span style="color:#ae81ff">6</span>);
+<span style="color:#66d9ef">for</span> i=<span style="color:#ae81ff">1</span>:length(xNode)
+    <span style="color:#66d9ef">if</span> length(xNode)<span style="color:#f92672">&lt;</span><span style="color:#ae81ff">2</span>
+        <span style="color:#66d9ef">break</span>;
+    <span style="color:#66d9ef">end</span>
+    r = rand();
+    g = rand();
+    b = rand();
+    <span style="color:#66d9ef">if</span> i <span style="color:#f92672">==</span> <span style="color:#ae81ff">1</span>
+        x = linspace(<span style="color:#ae81ff">0</span>,xNode(<span style="color:#ae81ff">2</span>),<span style="color:#ae81ff">100</span>);
+        y = (x<span style="color:#f92672">-</span>xNode(<span style="color:#ae81ff">2</span>))<span style="color:#f92672">./</span>(xNode(<span style="color:#ae81ff">1</span>)<span style="color:#f92672">-</span>xNode(<span style="color:#ae81ff">2</span>));
+        plot(x,y,<span style="color:#e6db74">&#39;Color&#39;</span>,[r,g,b]);
+    <span style="color:#66d9ef">elseif</span> i <span style="color:#f92672">==</span> length(xNode)
+        x = linspace(xNode(i<span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>),xNode(i),<span style="color:#ae81ff">100</span>);
+        y = (x<span style="color:#f92672">-</span>xNode(i<span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>))<span style="color:#f92672">./</span>(xNode(i)<span style="color:#f92672">-</span>xNode(i<span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>));
+        plot(x,y,<span style="color:#e6db74">&#39;Color&#39;</span>,[r,g,b]);    
+    <span style="color:#66d9ef">else</span>
+        x = linspace(xNode(i<span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>),xNode(i),<span style="color:#ae81ff">100</span>);
+        y = (x<span style="color:#f92672">-</span>xNode(i<span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>))<span style="color:#f92672">./</span>(xNode(i)<span style="color:#f92672">-</span>xNode(i<span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>));
+        plot(x,y,<span style="color:#e6db74">&#39;Color&#39;</span>,[r,g,b]);
+        x = linspace(xNode(i),xNode(i<span style="color:#f92672">+</span><span style="color:#ae81ff">1</span>),<span style="color:#ae81ff">100</span>);
+        y = (x<span style="color:#f92672">-</span>xNode(i<span style="color:#f92672">+</span><span style="color:#ae81ff">1</span>))<span style="color:#f92672">./</span>(xNode(i)<span style="color:#f92672">-</span>xNode(i<span style="color:#f92672">+</span><span style="color:#ae81ff">1</span>));
+        plot(x,y,<span style="color:#e6db74">&#39;Color&#39;</span>,[r,g,b]);
+    <span style="color:#66d9ef">end</span>
+<span style="color:#66d9ef">end</span>
+</code></pre></div><p><img src="https://raw.githubusercontent.com/Lu0Key/hexo-image/master/imags/2021/3-24-1-1.png" alt="图裂了"></p>
 <p>(分段)二次插值基函数的表示</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-matlab" data-lang="matlab"><span style="display:flex;"><span>hold on;
-</span></span><span style="display:flex;"><span>xNode = linspace(<span style="color:#ae81ff">0</span>,<span style="color:#ae81ff">2</span>,<span style="color:#ae81ff">3</span>);
-</span></span><span style="display:flex;"><span><span style="color:#66d9ef">for</span> i=<span style="color:#ae81ff">1</span>:length(xNode)
-</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">if</span> length(xNode)<span style="color:#f92672">&lt;</span><span style="color:#ae81ff">2</span>
-</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">break</span>;
-</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">end</span>
-</span></span><span style="display:flex;"><span>    r = rand();g = rand();b = rand();
-</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">if</span> i <span style="color:#f92672">==</span> <span style="color:#ae81ff">1</span>
-</span></span><span style="display:flex;"><span>        x = linspace(xNode(<span style="color:#ae81ff">1</span>),xNode(<span style="color:#ae81ff">2</span>),<span style="color:#ae81ff">100</span>);
-</span></span><span style="display:flex;"><span>        mid1 = (xNode(<span style="color:#ae81ff">1</span>)<span style="color:#f92672">+</span>xNode(<span style="color:#ae81ff">2</span>))<span style="color:#f92672">./</span><span style="color:#ae81ff">2</span>;
-</span></span><span style="display:flex;"><span>        y = (x<span style="color:#f92672">-</span>mid1)<span style="color:#f92672">.*</span>(x<span style="color:#f92672">-</span>xNode(<span style="color:#ae81ff">2</span>))<span style="color:#f92672">./</span>((xNode(<span style="color:#ae81ff">1</span>)<span style="color:#f92672">-</span>mid1)<span style="color:#f92672">.*</span>(xNode(<span style="color:#ae81ff">1</span>)<span style="color:#f92672">-</span>xNode(<span style="color:#ae81ff">2</span>)));
-</span></span><span style="display:flex;"><span>        plot(x,y,<span style="color:#e6db74">&#39;Color&#39;</span>,[r,g,b],<span style="color:#e6db74">&#39;DisplayName&#39;</span>,&#34;L0&#34;);
-</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">elseif</span> i <span style="color:#f92672">==</span> length(xNode)
-</span></span><span style="display:flex;"><span>        x = linspace(xNode(i<span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>),xNode(i),<span style="color:#ae81ff">100</span>);
-</span></span><span style="display:flex;"><span>        mid1 = (xNode(i<span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>)<span style="color:#f92672">+</span>xNode(i))<span style="color:#f92672">./</span><span style="color:#ae81ff">2</span>;
-</span></span><span style="display:flex;"><span>        y = (x<span style="color:#f92672">-</span>mid1)<span style="color:#f92672">.*</span>(x<span style="color:#f92672">-</span>xNode(i<span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>))<span style="color:#f92672">./</span>((xNode(i)<span style="color:#f92672">-</span>mid1)<span style="color:#f92672">.*</span>(xNode(i)<span style="color:#f92672">-</span>xNode(i<span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>)));
-</span></span><span style="display:flex;"><span>        plot(x,y,<span style="color:#e6db74">&#39;Color&#39;</span>,[r,g,b],<span style="color:#e6db74">&#39;DisplayName&#39;</span>,&#34;L&#34;<span style="color:#f92672">+</span>(i<span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>));
-</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">else</span>
-</span></span><span style="display:flex;"><span>        x = linspace(xNode(i<span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>),xNode(i),<span style="color:#ae81ff">100</span>);
-</span></span><span style="display:flex;"><span>        mid1 = (xNode(i<span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>)<span style="color:#f92672">+</span>xNode(i))<span style="color:#f92672">./</span><span style="color:#ae81ff">2</span>;
-</span></span><span style="display:flex;"><span>        y = (x<span style="color:#f92672">-</span>xNode(i<span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>))<span style="color:#f92672">.*</span>(x<span style="color:#f92672">-</span>mid1)<span style="color:#f92672">./</span>((xNode(i)<span style="color:#f92672">-</span>xNode(i<span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>))<span style="color:#f92672">.*</span>(xNode(i)<span style="color:#f92672">-</span>mid1));
-</span></span><span style="display:flex;"><span>        plot(x,y,<span style="color:#e6db74">&#39;Color&#39;</span>,[r,g,b],<span style="color:#e6db74">&#39;HandleVisibility&#39;</span>,<span style="color:#e6db74">&#39;off&#39;</span>);
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>        x = linspace(xNode(i),xNode(i<span style="color:#f92672">+</span><span style="color:#ae81ff">1</span>),<span style="color:#ae81ff">100</span>);
-</span></span><span style="display:flex;"><span>        mid2 = (xNode(i)<span style="color:#f92672">+</span>xNode(i<span style="color:#f92672">+</span><span style="color:#ae81ff">1</span>))<span style="color:#f92672">./</span><span style="color:#ae81ff">2</span>;
-</span></span><span style="display:flex;"><span>        y = (x<span style="color:#f92672">-</span>mid2)<span style="color:#f92672">.*</span>(x<span style="color:#f92672">-</span>xNode(i<span style="color:#f92672">+</span><span style="color:#ae81ff">1</span>))<span style="color:#f92672">./</span>((xNode(i)<span style="color:#f92672">-</span>mid2)<span style="color:#f92672">.*</span>(xNode(i)<span style="color:#f92672">-</span>xNode(i<span style="color:#f92672">+</span><span style="color:#ae81ff">1</span>)));
-</span></span><span style="display:flex;"><span>        plot(x,y,<span style="color:#e6db74">&#39;Color&#39;</span>,[r,g,b],<span style="color:#e6db74">&#39;DisplayName&#39;</span>,&#34;L&#34;<span style="color:#f92672">+</span>(i<span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>));
-</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">end</span>
-</span></span><span style="display:flex;"><span><span style="color:#66d9ef">end</span>
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#66d9ef">for</span> i = <span style="color:#ae81ff">1</span>:length(xNode)<span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>
-</span></span><span style="display:flex;"><span>    <span style="color:#75715e">%if length(xNode)&lt;2</span>
-</span></span><span style="display:flex;"><span>    <span style="color:#75715e">%    break;</span>
-</span></span><span style="display:flex;"><span>   <span style="color:#75715e">% end</span>
-</span></span><span style="display:flex;"><span>    r = rand();g = rand();b = rand();
-</span></span><span style="display:flex;"><span>    x = linspace(xNode(i),xNode(i<span style="color:#f92672">+</span><span style="color:#ae81ff">1</span>),<span style="color:#ae81ff">100</span>);
-</span></span><span style="display:flex;"><span>    mid = (xNode(i)<span style="color:#f92672">+</span>xNode(i<span style="color:#f92672">+</span><span style="color:#ae81ff">1</span>))<span style="color:#f92672">./</span><span style="color:#ae81ff">2</span>;
-</span></span><span style="display:flex;"><span>    y = (x<span style="color:#f92672">-</span>xNode(i))<span style="color:#f92672">.*</span>(x<span style="color:#f92672">-</span>xNode(i<span style="color:#f92672">+</span><span style="color:#ae81ff">1</span>))<span style="color:#f92672">./</span>((mid<span style="color:#f92672">-</span>xNode(i))<span style="color:#f92672">.*</span>(mid<span style="color:#f92672">-</span>xNode(i<span style="color:#f92672">+</span><span style="color:#ae81ff">1</span>)));
-</span></span><span style="display:flex;"><span>    <span style="color:#75715e">% DisplayName 指定图例</span>
-</span></span><span style="display:flex;"><span>    plot(x,y,<span style="color:#e6db74">&#39;Color&#39;</span>,[r,g,b],<span style="color:#e6db74">&#39;DisplayName&#39;</span>,&#34;L&#34;<span style="color:#f92672">+</span>(i<span style="color:#f92672">*</span><span style="color:#ae81ff">2</span><span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>)<span style="color:#f92672">+</span>&#34;<span style="color:#f92672">/</span><span style="color:#ae81ff">2</span>&#34;);
-</span></span><span style="display:flex;"><span><span style="color:#66d9ef">end</span>
-</span></span><span style="display:flex;"><span><span style="color:#75715e">% 对图例位置进行设置</span>
-</span></span><span style="display:flex;"><span>legend(<span style="color:#e6db74">&#39;orientation&#39;</span>,<span style="color:#e6db74">&#39;vertical&#39;</span>,<span style="color:#e6db74">&#39;location&#39;</span>,<span style="color:#e6db74">&#39;eastoutside&#39;</span>);
-</span></span><span style="display:flex;"><span>hold off;
-</span></span></code></pre></div><p><img src="https://raw.githubusercontent.com/Lu0Key/hexo-image/master/imags/2021/3-24-1-2.png" alt="图裂了"></p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-matlab" data-lang="matlab">hold on;
+xNode = linspace(<span style="color:#ae81ff">0</span>,<span style="color:#ae81ff">2</span>,<span style="color:#ae81ff">3</span>);
+<span style="color:#66d9ef">for</span> i=<span style="color:#ae81ff">1</span>:length(xNode)
+    <span style="color:#66d9ef">if</span> length(xNode)<span style="color:#f92672">&lt;</span><span style="color:#ae81ff">2</span>
+        <span style="color:#66d9ef">break</span>;
+    <span style="color:#66d9ef">end</span>
+    r = rand();g = rand();b = rand();
+    <span style="color:#66d9ef">if</span> i <span style="color:#f92672">==</span> <span style="color:#ae81ff">1</span>
+        x = linspace(xNode(<span style="color:#ae81ff">1</span>),xNode(<span style="color:#ae81ff">2</span>),<span style="color:#ae81ff">100</span>);
+        mid1 = (xNode(<span style="color:#ae81ff">1</span>)<span style="color:#f92672">+</span>xNode(<span style="color:#ae81ff">2</span>))<span style="color:#f92672">./</span><span style="color:#ae81ff">2</span>;
+        y = (x<span style="color:#f92672">-</span>mid1)<span style="color:#f92672">.*</span>(x<span style="color:#f92672">-</span>xNode(<span style="color:#ae81ff">2</span>))<span style="color:#f92672">./</span>((xNode(<span style="color:#ae81ff">1</span>)<span style="color:#f92672">-</span>mid1)<span style="color:#f92672">.*</span>(xNode(<span style="color:#ae81ff">1</span>)<span style="color:#f92672">-</span>xNode(<span style="color:#ae81ff">2</span>)));
+        plot(x,y,<span style="color:#e6db74">&#39;Color&#39;</span>,[r,g,b],<span style="color:#e6db74">&#39;DisplayName&#39;</span>,&#34;L0&#34;);
+    <span style="color:#66d9ef">elseif</span> i <span style="color:#f92672">==</span> length(xNode)
+        x = linspace(xNode(i<span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>),xNode(i),<span style="color:#ae81ff">100</span>);
+        mid1 = (xNode(i<span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>)<span style="color:#f92672">+</span>xNode(i))<span style="color:#f92672">./</span><span style="color:#ae81ff">2</span>;
+        y = (x<span style="color:#f92672">-</span>mid1)<span style="color:#f92672">.*</span>(x<span style="color:#f92672">-</span>xNode(i<span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>))<span style="color:#f92672">./</span>((xNode(i)<span style="color:#f92672">-</span>mid1)<span style="color:#f92672">.*</span>(xNode(i)<span style="color:#f92672">-</span>xNode(i<span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>)));
+        plot(x,y,<span style="color:#e6db74">&#39;Color&#39;</span>,[r,g,b],<span style="color:#e6db74">&#39;DisplayName&#39;</span>,&#34;L&#34;<span style="color:#f92672">+</span>(i<span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>));
+    <span style="color:#66d9ef">else</span>
+        x = linspace(xNode(i<span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>),xNode(i),<span style="color:#ae81ff">100</span>);
+        mid1 = (xNode(i<span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>)<span style="color:#f92672">+</span>xNode(i))<span style="color:#f92672">./</span><span style="color:#ae81ff">2</span>;
+        y = (x<span style="color:#f92672">-</span>xNode(i<span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>))<span style="color:#f92672">.*</span>(x<span style="color:#f92672">-</span>mid1)<span style="color:#f92672">./</span>((xNode(i)<span style="color:#f92672">-</span>xNode(i<span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>))<span style="color:#f92672">.*</span>(xNode(i)<span style="color:#f92672">-</span>mid1));
+        plot(x,y,<span style="color:#e6db74">&#39;Color&#39;</span>,[r,g,b],<span style="color:#e6db74">&#39;HandleVisibility&#39;</span>,<span style="color:#e6db74">&#39;off&#39;</span>);
+
+        x = linspace(xNode(i),xNode(i<span style="color:#f92672">+</span><span style="color:#ae81ff">1</span>),<span style="color:#ae81ff">100</span>);
+        mid2 = (xNode(i)<span style="color:#f92672">+</span>xNode(i<span style="color:#f92672">+</span><span style="color:#ae81ff">1</span>))<span style="color:#f92672">./</span><span style="color:#ae81ff">2</span>;
+        y = (x<span style="color:#f92672">-</span>mid2)<span style="color:#f92672">.*</span>(x<span style="color:#f92672">-</span>xNode(i<span style="color:#f92672">+</span><span style="color:#ae81ff">1</span>))<span style="color:#f92672">./</span>((xNode(i)<span style="color:#f92672">-</span>mid2)<span style="color:#f92672">.*</span>(xNode(i)<span style="color:#f92672">-</span>xNode(i<span style="color:#f92672">+</span><span style="color:#ae81ff">1</span>)));
+        plot(x,y,<span style="color:#e6db74">&#39;Color&#39;</span>,[r,g,b],<span style="color:#e6db74">&#39;DisplayName&#39;</span>,&#34;L&#34;<span style="color:#f92672">+</span>(i<span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>));
+    <span style="color:#66d9ef">end</span>
+<span style="color:#66d9ef">end</span>
+
+<span style="color:#66d9ef">for</span> i = <span style="color:#ae81ff">1</span>:length(xNode)<span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>
+    <span style="color:#75715e">%if length(xNode)&lt;2</span>
+    <span style="color:#75715e">%    break;</span>
+   <span style="color:#75715e">% end</span>
+    r = rand();g = rand();b = rand();
+    x = linspace(xNode(i),xNode(i<span style="color:#f92672">+</span><span style="color:#ae81ff">1</span>),<span style="color:#ae81ff">100</span>);
+    mid = (xNode(i)<span style="color:#f92672">+</span>xNode(i<span style="color:#f92672">+</span><span style="color:#ae81ff">1</span>))<span style="color:#f92672">./</span><span style="color:#ae81ff">2</span>;
+    y = (x<span style="color:#f92672">-</span>xNode(i))<span style="color:#f92672">.*</span>(x<span style="color:#f92672">-</span>xNode(i<span style="color:#f92672">+</span><span style="color:#ae81ff">1</span>))<span style="color:#f92672">./</span>((mid<span style="color:#f92672">-</span>xNode(i))<span style="color:#f92672">.*</span>(mid<span style="color:#f92672">-</span>xNode(i<span style="color:#f92672">+</span><span style="color:#ae81ff">1</span>)));
+    <span style="color:#75715e">% DisplayName 指定图例</span>
+    plot(x,y,<span style="color:#e6db74">&#39;Color&#39;</span>,[r,g,b],<span style="color:#e6db74">&#39;DisplayName&#39;</span>,&#34;L&#34;<span style="color:#f92672">+</span>(i<span style="color:#f92672">*</span><span style="color:#ae81ff">2</span><span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>)<span style="color:#f92672">+</span>&#34;<span style="color:#f92672">/</span><span style="color:#ae81ff">2</span>&#34;);
+<span style="color:#66d9ef">end</span>
+<span style="color:#75715e">% 对图例位置进行设置</span>
+legend(<span style="color:#e6db74">&#39;orientation&#39;</span>,<span style="color:#e6db74">&#39;vertical&#39;</span>,<span style="color:#e6db74">&#39;location&#39;</span>,<span style="color:#e6db74">&#39;eastoutside&#39;</span>);
+hold off;
+</code></pre></div><p><img src="https://raw.githubusercontent.com/Lu0Key/hexo-image/master/imags/2021/3-24-1-2.png" alt="图裂了"></p>
 <ol start="2">
 <li></li>
 </ol>
 <p>(分段)三次Hermite插值基函数的表示</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-matlab" data-lang="matlab"><span style="display:flex;"><span>clf;
-</span></span><span style="display:flex;"><span>hold on;
-</span></span><span style="display:flex;"><span>xNode = linspace(<span style="color:#ae81ff">0</span>,<span style="color:#ae81ff">4</span>,<span style="color:#ae81ff">5</span>);
-</span></span><span style="display:flex;"><span><span style="color:#66d9ef">for</span> i=<span style="color:#ae81ff">1</span>:length(xNode)
-</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">if</span> length(xNode)<span style="color:#f92672">&lt;</span><span style="color:#ae81ff">2</span>
-</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">break</span>;
-</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">end</span>
-</span></span><span style="display:flex;"><span>    r = rand();g = rand();b = rand();
-</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">if</span> i <span style="color:#f92672">==</span> <span style="color:#ae81ff">1</span>
-</span></span><span style="display:flex;"><span>        x = linspace(xNode(<span style="color:#ae81ff">1</span>),xNode(<span style="color:#ae81ff">2</span>),<span style="color:#ae81ff">100</span>);
-</span></span><span style="display:flex;"><span>        y = (<span style="color:#ae81ff">1</span><span style="color:#f92672">-</span>(x<span style="color:#f92672">-</span>xNode(<span style="color:#ae81ff">1</span>)))<span style="color:#f92672">.^</span><span style="color:#ae81ff">2.</span><span style="color:#f92672">*</span>(<span style="color:#ae81ff">1</span><span style="color:#f92672">+</span><span style="color:#ae81ff">2.</span><span style="color:#f92672">*</span>(x<span style="color:#f92672">-</span>xNode(<span style="color:#ae81ff">1</span>)));
-</span></span><span style="display:flex;"><span>        plot(x,y,<span style="color:#e6db74">&#39;Color&#39;</span>,[r,g,b],<span style="color:#e6db74">&#39;DisplayName&#39;</span>,&#34;H&#34;<span style="color:#f92672">+</span>(i<span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>)<span style="color:#f92672">+</span>&#34;<span style="color:#ae81ff">0</span>&#34;);
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>        r = rand();g = rand();b = rand();
-</span></span><span style="display:flex;"><span>        y = (x<span style="color:#f92672">-</span>xNode(<span style="color:#ae81ff">1</span>))<span style="color:#f92672">.*</span>(<span style="color:#ae81ff">1</span><span style="color:#f92672">-</span>(x<span style="color:#f92672">-</span>xNode(<span style="color:#ae81ff">1</span>)))<span style="color:#f92672">.^</span><span style="color:#ae81ff">2</span>;
-</span></span><span style="display:flex;"><span>        plot(x,y,<span style="color:#e6db74">&#39;Color&#39;</span>,[r,g,b],<span style="color:#e6db74">&#39;DisplayName&#39;</span>,&#34;H&#34;<span style="color:#f92672">+</span>(i<span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>)<span style="color:#f92672">+</span>&#34;<span style="color:#ae81ff">1</span>&#34;);
-</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">elseif</span> i <span style="color:#f92672">==</span> length(xNode)
-</span></span><span style="display:flex;"><span>        x = linspace(xNode(i<span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>),xNode(i),<span style="color:#ae81ff">100</span>);
-</span></span><span style="display:flex;"><span>        y = (x<span style="color:#f92672">-</span>xNode(i<span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>))<span style="color:#f92672">.^</span><span style="color:#ae81ff">2.</span><span style="color:#f92672">*</span>(<span style="color:#ae81ff">3</span><span style="color:#f92672">-</span><span style="color:#ae81ff">2.</span><span style="color:#f92672">*</span>(x<span style="color:#f92672">-</span>xNode(i<span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>)));
-</span></span><span style="display:flex;"><span>        plot(x,y,<span style="color:#e6db74">&#39;Color&#39;</span>,[r,g,b],<span style="color:#e6db74">&#39;DisplayName&#39;</span>,&#34;H&#34;<span style="color:#f92672">+</span>(i<span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>)<span style="color:#f92672">+</span>&#34;<span style="color:#ae81ff">0</span>&#34;);   
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>        r = rand();g = rand();b = rand(); 
-</span></span><span style="display:flex;"><span>        y = (x<span style="color:#f92672">-</span>xNode(i<span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>))<span style="color:#f92672">.^</span><span style="color:#ae81ff">2.</span><span style="color:#f92672">*</span>(x<span style="color:#f92672">-</span>xNode(i<span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>)<span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>);
-</span></span><span style="display:flex;"><span>        plot(x,y,<span style="color:#e6db74">&#39;Color&#39;</span>,[r,g,b],<span style="color:#e6db74">&#39;DisplayName&#39;</span>,&#34;H&#34;<span style="color:#f92672">+</span>(i<span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>)<span style="color:#f92672">+</span>&#34;<span style="color:#ae81ff">1</span>&#34;);
-</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">else</span>
-</span></span><span style="display:flex;"><span>        x = linspace(xNode(i<span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>),xNode(i),<span style="color:#ae81ff">100</span>);
-</span></span><span style="display:flex;"><span>        y = (x<span style="color:#f92672">-</span>xNode(i<span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>))<span style="color:#f92672">.^</span><span style="color:#ae81ff">2.</span><span style="color:#f92672">*</span>(<span style="color:#ae81ff">3</span><span style="color:#f92672">-</span><span style="color:#ae81ff">2.</span><span style="color:#f92672">*</span>(x<span style="color:#f92672">-</span>xNode(i<span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>)));
-</span></span><span style="display:flex;"><span>        plot(x,y,<span style="color:#e6db74">&#39;Color&#39;</span>,[r,g,b],<span style="color:#e6db74">&#39;HandleVisibility&#39;</span>,<span style="color:#e6db74">&#39;off&#39;</span>);
-</span></span><span style="display:flex;"><span>        x = linspace(xNode(i),xNode(i<span style="color:#f92672">+</span><span style="color:#ae81ff">1</span>),<span style="color:#ae81ff">100</span>);
-</span></span><span style="display:flex;"><span>        y = (<span style="color:#ae81ff">1</span><span style="color:#f92672">-</span>(x<span style="color:#f92672">-</span>xNode(i)))<span style="color:#f92672">.^</span><span style="color:#ae81ff">2.</span><span style="color:#f92672">*</span>(<span style="color:#ae81ff">1</span><span style="color:#f92672">+</span><span style="color:#ae81ff">2.</span><span style="color:#f92672">*</span>(x<span style="color:#f92672">-</span>xNode(i)));
-</span></span><span style="display:flex;"><span>        plot(x,y,<span style="color:#e6db74">&#39;Color&#39;</span>,[r,g,b],<span style="color:#e6db74">&#39;DisplayName&#39;</span>,&#34;H&#34;<span style="color:#f92672">+</span>(i<span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>)<span style="color:#f92672">+</span>&#34;<span style="color:#ae81ff">0</span>&#34;);
-</span></span><span style="display:flex;"><span>        
-</span></span><span style="display:flex;"><span>        r = rand();g = rand();b = rand(); 
-</span></span><span style="display:flex;"><span>        x = linspace(xNode(i<span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>),xNode(i),<span style="color:#ae81ff">100</span>);
-</span></span><span style="display:flex;"><span>        y = (x<span style="color:#f92672">-</span>xNode(i<span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>))<span style="color:#f92672">.^</span><span style="color:#ae81ff">2.</span><span style="color:#f92672">*</span>(x<span style="color:#f92672">-</span>xNode(i<span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>)<span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>);
-</span></span><span style="display:flex;"><span>        plot(x,y,<span style="color:#e6db74">&#39;Color&#39;</span>,[r,g,b],<span style="color:#e6db74">&#39;HandleVisibility&#39;</span>,<span style="color:#e6db74">&#39;off&#39;</span>);
-</span></span><span style="display:flex;"><span>        x = linspace(xNode(i),xNode(i<span style="color:#f92672">+</span><span style="color:#ae81ff">1</span>),<span style="color:#ae81ff">100</span>);
-</span></span><span style="display:flex;"><span>        y = (x<span style="color:#f92672">-</span>xNode(i))<span style="color:#f92672">.*</span>(<span style="color:#ae81ff">1</span><span style="color:#f92672">-</span>(x<span style="color:#f92672">-</span>xNode(i)))<span style="color:#f92672">.^</span><span style="color:#ae81ff">2</span>;
-</span></span><span style="display:flex;"><span>        plot(x,y,<span style="color:#e6db74">&#39;Color&#39;</span>,[r,g,b],<span style="color:#e6db74">&#39;DisplayName&#39;</span>,&#34;H&#34;<span style="color:#f92672">+</span>(i<span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>)<span style="color:#f92672">+</span>&#34;<span style="color:#ae81ff">1</span>&#34;);
-</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">end</span>
-</span></span><span style="display:flex;"><span><span style="color:#66d9ef">end</span>
-</span></span><span style="display:flex;"><span>legend(<span style="color:#e6db74">&#39;orientation&#39;</span>,<span style="color:#e6db74">&#39;vertical&#39;</span>,<span style="color:#e6db74">&#39;location&#39;</span>,<span style="color:#e6db74">&#39;eastoutside&#39;</span>);
-</span></span><span style="display:flex;"><span>hold off;
-</span></span></code></pre></div><p><img src="https://raw.githubusercontent.com/Lu0Key/hexo-image/master/imags/2021/3-24-2.png" alt="图裂了"></p>
-<ol start="3">
-<li></li>
-</ol>
-<p>$x^3-6x+5x-3$ 上的点做随机扰动后的3次，2次，4次插值</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-matlab" data-lang="matlab"><span style="display:flex;"><span>clf;
-</span></span><span style="display:flex;"><span>hold on;
-</span></span><span style="display:flex;"><span>start = <span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>;
-</span></span><span style="display:flex;"><span>endPoint = <span style="color:#ae81ff">4</span>;
-</span></span><span style="display:flex;"><span><span style="color:#75715e">% 原函数图像</span>
-</span></span><span style="display:flex;"><span>x0 = linspace(start,endPoint,<span style="color:#ae81ff">1000</span>);
-</span></span><span style="display:flex;"><span>y0 = x0<span style="color:#f92672">.^</span><span style="color:#ae81ff">3</span><span style="color:#f92672">-</span><span style="color:#ae81ff">6.</span><span style="color:#f92672">*</span>x0<span style="color:#f92672">.^</span><span style="color:#ae81ff">2</span><span style="color:#f92672">+</span><span style="color:#ae81ff">5.</span><span style="color:#f92672">*</span>x0<span style="color:#f92672">-</span><span style="color:#ae81ff">3</span>;
-</span></span><span style="display:flex;"><span>plot(x0,y0,<span style="color:#e6db74">&#39;b-&#39;</span>,&#34;DisplayName&#34;,&#34;原函数&#34;);
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#75715e">% 二次插值</span>
-</span></span><span style="display:flex;"><span>x3 = linspace(start,endPoint,<span style="color:#ae81ff">3</span>);
-</span></span><span style="display:flex;"><span>y3 = x3<span style="color:#f92672">.^</span><span style="color:#ae81ff">3</span><span style="color:#f92672">-</span><span style="color:#ae81ff">6.</span><span style="color:#f92672">*</span>x3<span style="color:#f92672">.^</span><span style="color:#ae81ff">2</span><span style="color:#f92672">+</span><span style="color:#ae81ff">5.</span><span style="color:#f92672">*</span>x3<span style="color:#f92672">-</span><span style="color:#ae81ff">3</span>;
-</span></span><span style="display:flex;"><span><span style="color:#75715e">% 抖动</span>
-</span></span><span style="display:flex;"><span>y3 = y3 <span style="color:#f92672">+</span> randn(size(y3));
-</span></span><span style="display:flex;"><span>y3 = lagrange(x3,y3,linspace(start,endPoint,<span style="color:#ae81ff">50</span>));
-</span></span><span style="display:flex;"><span>plot(linspace(start,endPoint,<span style="color:#ae81ff">50</span>),y3,<span style="color:#e6db74">&#39;p--&#39;</span>,<span style="color:#e6db74">&#39;DisplayName&#39;</span>,<span style="color:#e6db74">&#39;二次插值&#39;</span>);
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#75715e">% 三次插值</span>
-</span></span><span style="display:flex;"><span>x1 = linspace(start,endPoint,<span style="color:#ae81ff">4</span>);
-</span></span><span style="display:flex;"><span>y1 = x1<span style="color:#f92672">.^</span><span style="color:#ae81ff">3</span><span style="color:#f92672">-</span><span style="color:#ae81ff">6.</span><span style="color:#f92672">*</span>x1<span style="color:#f92672">.^</span><span style="color:#ae81ff">2</span><span style="color:#f92672">+</span><span style="color:#ae81ff">5.</span><span style="color:#f92672">*</span>x1<span style="color:#f92672">-</span><span style="color:#ae81ff">3</span>;
-</span></span><span style="display:flex;"><span><span style="color:#75715e">% 抖动</span>
-</span></span><span style="display:flex;"><span>y1 = y1 <span style="color:#f92672">+</span> randn(size(y1));
-</span></span><span style="display:flex;"><span>y1 = lagrange(x1,y1,linspace(start,endPoint,<span style="color:#ae81ff">50</span>));
-</span></span><span style="display:flex;"><span>plot(linspace(start,endPoint,<span style="color:#ae81ff">50</span>),y1,<span style="color:#e6db74">&#39;r--&#39;</span>,<span style="color:#e6db74">&#39;DisplayName&#39;</span>,<span style="color:#e6db74">&#39;二次插值&#39;</span>);
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#75715e">% 四次插值</span>
-</span></span><span style="display:flex;"><span>x2 = linspace(start,endPoint,<span style="color:#ae81ff">5</span>);
-</span></span><span style="display:flex;"><span>y2 = x2<span style="color:#f92672">.^</span><span style="color:#ae81ff">3</span><span style="color:#f92672">-</span><span style="color:#ae81ff">6.</span><span style="color:#f92672">*</span>x2<span style="color:#f92672">.^</span><span style="color:#ae81ff">2</span><span style="color:#f92672">+</span><span style="color:#ae81ff">5.</span><span style="color:#f92672">*</span>x2<span style="color:#f92672">-</span><span style="color:#ae81ff">3</span>;
-</span></span><span style="display:flex;"><span><span style="color:#75715e">% 抖动</span>
-</span></span><span style="display:flex;"><span>y2 = y2 <span style="color:#f92672">+</span> randn(size(y2));
-</span></span><span style="display:flex;"><span>y2 = lagrange(x2,y2,linspace(start,endPoint,<span style="color:#ae81ff">50</span>));
-</span></span><span style="display:flex;"><span>plot(linspace(start,endPoint,<span style="color:#ae81ff">50</span>),y3,<span style="color:#e6db74">&#39;b--&#39;</span>,<span style="color:#e6db74">&#39;DisplayName&#39;</span>,<span style="color:#e6db74">&#39;四次插值&#39;</span>);
-</span></span><span style="display:flex;"><span>legend;
-</span></span><span style="display:flex;"><span>hold off;
-</span></span></code></pre></div><p><img src="https://raw.githubusercontent.com/Lu0Key/hexo-image/master/imags/2021/3-24-3.png" alt="图裂了"></p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-matlab" data-lang="matlab">clf;
+hold on;
+xNode = linspace(<span style="color:#ae81ff">0</span>,<span style="color:#ae81ff">4</span>,<span style="color:#ae81ff">5</span>);
+<span style="color:#66d9ef">for</span> i=<span style="color:#ae81ff">1</span>:length(xNode)
+    <span style="color:#66d9ef">if</span> length(xNode)<span style="color:#f92672">&lt;</span><span style="color:#ae81ff">2</span>
+        <span style="color:#66d9ef">break</span>;
+    <span style="color:#66d9ef">end</span>
+    r = rand();g = rand();b = rand();
+    <span style="color:#66d9ef">if</span> i <span style="color:#f92672">==</span> <span style="color:#ae81ff">1</span>
+        x = linspace(xNode(<span style="color:#ae81ff">1</span>),xNode(<span style="color:#ae81ff">2</span>),<span style="color:#ae81ff">100</span>);
+        y = (<span style="color:#ae81ff">1</span><span style="color:#f92672">-</span>(x<span style="color:#f92672">-</span>xNode(<span style="color:#ae81ff">1</span>)))<span style="color:#f92672">.^</span><span style="color:#ae81ff">2.</span><span style="color:#f92672">*</span>(<span style="color:#ae81ff">1</span><span style="color:#f92672">+</span><span style="color:#ae81ff">2.</span><span style="color:#f92672">*</span>(x<span style="color:#f92672">-</span>xNode(<span style="color:#ae81ff">1</span>)));
+        plot(x,y,<span style="color:#e6db74">&#39;Color&#39;</span>,[r,g,b],<span style="color:#e6db74">&#39;DisplayName&#39;</span>,&#34;H&#34;<span style="color:#f92672">+</span>(i<span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>)<span style="color:#f92672">+</span>&#34;<span style="color:#ae81ff">0</span>&#34;);
+
+        r = rand();g = rand();b = rand();
+        y = (x<span style="color:#f92672">-</span>xNode(<span style="color:#ae81ff">1</span>))<span style="color:#f92672">.*</span>(<span style="color:#ae81ff">1</span><span style="color:#f92672">-</span>(x<span style="color:#f92672">-</span>xNode(<span style="color:#ae81ff">1</span>)))<span style="color:#f92672">.^</span><span style="color:#ae81ff">2</span>;
+        plot(x,y,<span style="color:#e6db74">&#39;Color&#39;</span>,[r,g,b],<span style="color:#e6db74">&#39;DisplayName&#39;</span>,&#34;H&#34;<span style="color:#f92672">+</span>(i<span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>)<span style="color:#f92672">+</span>&#34;<span style="color:#ae81ff">1</span>&#34;);
+    <span style="color:#66d9ef">elseif</span> i <span style="color:#f92672">==</span> length(xNode)
+        x = linspace(xNode(i<span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>),xNode(i),<span style="color:#ae81ff">100</span>);
+        y = (x<span style="color:#f92672">-</span>xNode(i<span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>))<span style="color:#f92672">.^</span><span style="color:#ae81ff">2.</span><span style="color:#f92672">*</span>(<span style="color:#ae81ff">3</span><span style="color:#f92672">-</span><span style="color:#ae81ff">2.</span><span style="color:#f92672">*</span>(x<span style="color:#f92672">-</span>xNode(i<span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>)));
+        plot(x,y,<span style="color:#e6db74">&#39;Color&#39;</span>,[r,g,b],<span style="color:#e6db74">&#39;DisplayName&#39;</span>,&#34;H&#34;<span style="color:#f92672">+</span>(i<span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>)<span style="color:#f92672">+</span>&#34;<span style="color:#ae81ff">0</span>&#34;);   
+
+        r = rand();g = rand();b = rand(); 
+        y = (x<span style="color:#f92672">-</span>xNode(i<span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>))<span style="color:#f92672">.^</span><span style="color:#ae81ff">2.</span><span style="color:#f92672">*</span>(x<span style="color:#f92672">-</span>xNode(i<span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>)<span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>);
+        plot(x,y,<span style="color:#e6db74">&#39;Color&#39;</span>,[r,g,b],<span style="color:#e6db74">&#39;DisplayName&#39;</span>,&#34;H&#34;<span style="color:#f92672">+</span>(i<span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>)<span style="color:#f92672">+</span>&#34;<span style="color:#ae81ff">1</span>&#34;);
+    <span style="color:#66d9ef">else</span>
+        x = linspace(xNode(i<span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>),xNode(i),<span style="color:#ae81ff">100</span>);
+        y = (x<span style="color:#f92672">-</span>xNode(i<span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>))<span style="color:#f92672">.^</span><span style="color:#ae81ff">2.</span><span style="color:#f92672">*</span>(<span style="color:#ae81ff">3</span><span style="color:#f92672">-</span><span style="color:#ae81ff">2.</span><span style="color:#f92672">*</span>(x<span style="color:#f92672">-</span>xNode(i<span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>)));
+        plot(x,y,<span style="color:#e6db74">&#39;Color&#39;</span>,[r,g,b],<span style="color:#e6db74">&#39;HandleVisibility&#39;</span>,<span style="color:#e6db74">&#39;off&#39;</span>);
+        x = linspace(xNode(i),xNode(i<span style="color:#f92672">+</span><span style="color:#ae81ff">1</span>),<span style="color:#ae81ff">100</span>);
+        y = (<span style="color:#ae81ff">1</span><span style="color:#f92672">-</span>(x<span style="color:#f92672">-</span>xNode(i)))<span style="color:#f92672">.^</span><span style="color:#ae81ff">2.</span><span style="color:#f92672">*</span>(<span style="color:#ae81ff">1</span><span style="color:#f92672">+</span><span style="color:#ae81ff">2.</span><span style="color:#f92672">*</span>(x<span style="color:#f92672">-</span>xNode(i)));
+        plot(x,y,<span style="color:#e6db74">&#39;Color&#39;</span>,[r,g,b],<span style="color:#e6db74">&#39;DisplayName&#39;</span>,&#34;H&#34;<span style="color:#f92672">+</span>(i<span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>)<span style="color:#f92672">+</span>&#34;<span style="color:#ae81ff">0</span>&#34;);
+        
+        r = rand();g = rand();b = rand(); 
+        x = linspace(xNode(i<span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>),xNode(i),<span style="color:#ae81ff">100</span>);
+        y = (x<span style="color:#f92672">-</span>xNode(i<span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>))<span style="color:#f92672">.^</span><span style="color:#ae81ff">2.</span><span style="color:#f92672">*</span>(x<span style="color:#f92672">-</span>xNode(i<span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>)<span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>);
+        plot(x,y,<span style="color:#e6db74">&#39;Color&#39;</span>,[r,g,b],<span style="color:#e6db74">&#39;HandleVisibility&#39;</span>,<span style="color:#e6db74">&#39;off&#39;</span>);
+        x = linspace(xNode(i),xNode(i<span style="color:#f92672">+</span><span style="color:#ae81ff">1</span>),<span style="color:#ae81ff">100</span>);
+        y = (x<span style="color:#f92672">-</span>xNode(i))<span style="color:#f92672">.*</span>(<span style="color:#ae81ff">1</span><span style="color:#f92672">-</span>(x<span style="color:#f92672">-</span>xNode(i)))<span style="color:#f92672">.^</span><span style="color:#ae81ff">2</span>;
+        plot(x,y,<span style="color:#e6db74">&#39;Color&#39;</span>,[r,g,b],<span style="color:#e6db74">&#39;DisplayName&#39;</span>,&#34;H&#34;<span style="color:#f92672">+</span>(i<span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>)<span style="color:#f92672">+</span>&#34;<span style="color:#ae81ff">1</span>&#34;);
+    <span style="color:#66d9ef">end</span>
+<span style="color:#66d9ef">end</span>
+legend(<span style="color:#e6db74">&#39;orientation&#39;</span>,<span style="color:#e6db74">&#39;vertical&#39;</span>,<span style="color:#e6db74">&#39;location&#39;</span>,<span style="color:#e6db74">&#39;eastoutside&#39;</span>);
+hold off;
+</code></pre></div><p><img src="https://raw.githubusercontent.com/Lu0Key/hexo-image/master/imags/2021/3-24-2.png" alt="图裂了"></p>
+<p>3.
+$x^3-6x+5x-3$ 上的点做随机扰动后的3次，2次，4次插值</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-matlab" data-lang="matlab">clf;
+hold on;
+start = <span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>;
+endPoint = <span style="color:#ae81ff">4</span>;
+<span style="color:#75715e">% 原函数图像</span>
+x0 = linspace(start,endPoint,<span style="color:#ae81ff">1000</span>);
+y0 = x0<span style="color:#f92672">.^</span><span style="color:#ae81ff">3</span><span style="color:#f92672">-</span><span style="color:#ae81ff">6.</span><span style="color:#f92672">*</span>x0<span style="color:#f92672">.^</span><span style="color:#ae81ff">2</span><span style="color:#f92672">+</span><span style="color:#ae81ff">5.</span><span style="color:#f92672">*</span>x0<span style="color:#f92672">-</span><span style="color:#ae81ff">3</span>;
+plot(x0,y0,<span style="color:#e6db74">&#39;b-&#39;</span>,&#34;DisplayName&#34;,&#34;原函数&#34;);
+
+<span style="color:#75715e">% 二次插值</span>
+x3 = linspace(start,endPoint,<span style="color:#ae81ff">3</span>);
+y3 = x3<span style="color:#f92672">.^</span><span style="color:#ae81ff">3</span><span style="color:#f92672">-</span><span style="color:#ae81ff">6.</span><span style="color:#f92672">*</span>x3<span style="color:#f92672">.^</span><span style="color:#ae81ff">2</span><span style="color:#f92672">+</span><span style="color:#ae81ff">5.</span><span style="color:#f92672">*</span>x3<span style="color:#f92672">-</span><span style="color:#ae81ff">3</span>;
+<span style="color:#75715e">% 抖动</span>
+y3 = y3 <span style="color:#f92672">+</span> randn(size(y3));
+y3 = lagrange(x3,y3,linspace(start,endPoint,<span style="color:#ae81ff">50</span>));
+plot(linspace(start,endPoint,<span style="color:#ae81ff">50</span>),y3,<span style="color:#e6db74">&#39;p--&#39;</span>,<span style="color:#e6db74">&#39;DisplayName&#39;</span>,<span style="color:#e6db74">&#39;二次插值&#39;</span>);
+
+<span style="color:#75715e">% 三次插值</span>
+x1 = linspace(start,endPoint,<span style="color:#ae81ff">4</span>);
+y1 = x1<span style="color:#f92672">.^</span><span style="color:#ae81ff">3</span><span style="color:#f92672">-</span><span style="color:#ae81ff">6.</span><span style="color:#f92672">*</span>x1<span style="color:#f92672">.^</span><span style="color:#ae81ff">2</span><span style="color:#f92672">+</span><span style="color:#ae81ff">5.</span><span style="color:#f92672">*</span>x1<span style="color:#f92672">-</span><span style="color:#ae81ff">3</span>;
+<span style="color:#75715e">% 抖动</span>
+y1 = y1 <span style="color:#f92672">+</span> randn(size(y1));
+y1 = lagrange(x1,y1,linspace(start,endPoint,<span style="color:#ae81ff">50</span>));
+plot(linspace(start,endPoint,<span style="color:#ae81ff">50</span>),y1,<span style="color:#e6db74">&#39;r--&#39;</span>,<span style="color:#e6db74">&#39;DisplayName&#39;</span>,<span style="color:#e6db74">&#39;二次插值&#39;</span>);
+
+<span style="color:#75715e">% 四次插值</span>
+x2 = linspace(start,endPoint,<span style="color:#ae81ff">5</span>);
+y2 = x2<span style="color:#f92672">.^</span><span style="color:#ae81ff">3</span><span style="color:#f92672">-</span><span style="color:#ae81ff">6.</span><span style="color:#f92672">*</span>x2<span style="color:#f92672">.^</span><span style="color:#ae81ff">2</span><span style="color:#f92672">+</span><span style="color:#ae81ff">5.</span><span style="color:#f92672">*</span>x2<span style="color:#f92672">-</span><span style="color:#ae81ff">3</span>;
+<span style="color:#75715e">% 抖动</span>
+y2 = y2 <span style="color:#f92672">+</span> randn(size(y2));
+y2 = lagrange(x2,y2,linspace(start,endPoint,<span style="color:#ae81ff">50</span>));
+plot(linspace(start,endPoint,<span style="color:#ae81ff">50</span>),y3,<span style="color:#e6db74">&#39;b--&#39;</span>,<span style="color:#e6db74">&#39;DisplayName&#39;</span>,<span style="color:#e6db74">&#39;四次插值&#39;</span>);
+legend;
+hold off;
+</code></pre></div><p><img src="https://raw.githubusercontent.com/Lu0Key/hexo-image/master/imags/2021/3-24-3.png" alt="图裂了"></p>
 <ol start="4">
 <li></li>
 </ol>
 <p>$\dfrac{1}{1+x^2}$ 在 [-1,1] 上高次插值的 Runge 现象</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-matlab" data-lang="matlab"><span style="display:flex;"><span>hold on;
-</span></span><span style="display:flex;"><span>x0 = linspace(<span style="color:#f92672">-</span><span style="color:#ae81ff">5</span>,<span style="color:#ae81ff">5</span>,<span style="color:#ae81ff">10</span>); <span style="color:#75715e">% 会有10个点，生成的是9次的多项式</span>
-</span></span><span style="display:flex;"><span>y0 = <span style="color:#ae81ff">1.</span><span style="color:#f92672">/</span>(<span style="color:#ae81ff">1</span><span style="color:#f92672">+</span>x0<span style="color:#f92672">.^</span><span style="color:#ae81ff">2</span>);
-</span></span><span style="display:flex;"><span>plot(x0,y0,<span style="color:#e6db74">&#39;o&#39;</span>);
-</span></span><span style="display:flex;"><span>axis([<span style="color:#f92672">-</span><span style="color:#ae81ff">1</span> <span style="color:#ae81ff">1</span>,<span style="color:#ae81ff">0</span>,<span style="color:#ae81ff">1</span>]) <span style="color:#75715e">%  设置坐标轴范围</span>
-</span></span><span style="display:flex;"><span>x1 = linspace(<span style="color:#f92672">-</span><span style="color:#ae81ff">5</span>,<span style="color:#ae81ff">5</span>,<span style="color:#ae81ff">1000</span>); 
-</span></span><span style="display:flex;"><span>y1 = lagrange(x0,y0,x1);
-</span></span><span style="display:flex;"><span>plot(x1,y1,<span style="color:#e6db74">&#39;--&#39;</span>,x1,<span style="color:#ae81ff">1.</span><span style="color:#f92672">/</span>(<span style="color:#ae81ff">1</span><span style="color:#f92672">+</span>x1<span style="color:#f92672">.^</span><span style="color:#ae81ff">2</span>),<span style="color:#e6db74">&#39;b-&#39;</span>);
-</span></span><span style="display:flex;"><span>axis([<span style="color:#f92672">-</span><span style="color:#ae81ff">5</span> <span style="color:#ae81ff">5</span>,<span style="color:#f92672">-</span><span style="color:#ae81ff">0.3</span> <span style="color:#ae81ff">1</span>]) <span style="color:#75715e">%  设置坐标轴范围</span>
-</span></span><span style="display:flex;"><span>hold off;
-</span></span></code></pre></div><p>这题在 [-1,1] 上现象并不明显。</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-matlab" data-lang="matlab">hold on;
+x0 = linspace(<span style="color:#f92672">-</span><span style="color:#ae81ff">5</span>,<span style="color:#ae81ff">5</span>,<span style="color:#ae81ff">10</span>); <span style="color:#75715e">% 会有10个点，生成的是9次的多项式</span>
+y0 = <span style="color:#ae81ff">1.</span><span style="color:#f92672">/</span>(<span style="color:#ae81ff">1</span><span style="color:#f92672">+</span>x0<span style="color:#f92672">.^</span><span style="color:#ae81ff">2</span>);
+plot(x0,y0,<span style="color:#e6db74">&#39;o&#39;</span>);
+axis([<span style="color:#f92672">-</span><span style="color:#ae81ff">1</span> <span style="color:#ae81ff">1</span>,<span style="color:#ae81ff">0</span>,<span style="color:#ae81ff">1</span>]) <span style="color:#75715e">%  设置坐标轴范围</span>
+x1 = linspace(<span style="color:#f92672">-</span><span style="color:#ae81ff">5</span>,<span style="color:#ae81ff">5</span>,<span style="color:#ae81ff">1000</span>); 
+y1 = lagrange(x0,y0,x1);
+plot(x1,y1,<span style="color:#e6db74">&#39;--&#39;</span>,x1,<span style="color:#ae81ff">1.</span><span style="color:#f92672">/</span>(<span style="color:#ae81ff">1</span><span style="color:#f92672">+</span>x1<span style="color:#f92672">.^</span><span style="color:#ae81ff">2</span>),<span style="color:#e6db74">&#39;b-&#39;</span>);
+axis([<span style="color:#f92672">-</span><span style="color:#ae81ff">5</span> <span style="color:#ae81ff">5</span>,<span style="color:#f92672">-</span><span style="color:#ae81ff">0.3</span> <span style="color:#ae81ff">1</span>]) <span style="color:#75715e">%  设置坐标轴范围</span>
+hold off;
+</code></pre></div><p>这题在 [-1,1] 上现象并不明显。</p>
 <p>lagrange.m</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-matlab" data-lang="matlab"><span style="display:flex;"><span><span style="color:#66d9ef">function</span> yValue = <span style="color:#a6e22e">lagrange</span>(xMatrix,yMatrix,xValue)
-</span></span><span style="display:flex;"><span><span style="color:#75715e">% xMatrix 表示插值点中的 x 值 </span>
-</span></span><span style="display:flex;"><span><span style="color:#75715e">% yMatrix 表示插值点中的 y 值</span>
-</span></span><span style="display:flex;"><span><span style="color:#75715e">% xValue  表示希望求的插值多项式的x</span>
-</span></span><span style="display:flex;"><span><span style="color:#75715e">% yValue  表示在插值多项式中x对应的函数值</span>
-</span></span><span style="display:flex;"><span>    n = length(xMatrix);
-</span></span><span style="display:flex;"><span>    yValue = <span style="color:#ae81ff">0</span>;
-</span></span><span style="display:flex;"><span>    <span style="color:#75715e">% i 表示第几个基函数</span>
-</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">for</span> i = <span style="color:#ae81ff">1</span>:n
-</span></span><span style="display:flex;"><span>        numerator = <span style="color:#ae81ff">1</span>;  <span style="color:#75715e">% 分子</span>
-</span></span><span style="display:flex;"><span>        denominator = <span style="color:#ae81ff">1</span>;<span style="color:#75715e">% 分母</span>
-</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">for</span> j=<span style="color:#ae81ff">1</span>:n
-</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">if</span> i<span style="color:#f92672">~=</span>j
-</span></span><span style="display:flex;"><span>                numerator = numerator<span style="color:#f92672">.*</span>(xValue<span style="color:#f92672">-</span>xMatrix(j));
-</span></span><span style="display:flex;"><span>                denominator = denominator<span style="color:#f92672">.*</span>(xMatrix(i)<span style="color:#f92672">-</span>xMatrix(j));
-</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">end</span>
-</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">end</span>
-</span></span><span style="display:flex;"><span>        yValue = yValue <span style="color:#f92672">+</span> yMatrix(i)<span style="color:#f92672">.*</span>numerator<span style="color:#f92672">./</span>denominator;
-</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">end</span>
-</span></span><span style="display:flex;"><span><span style="color:#66d9ef">end</span>
-</span></span></code></pre></div><p><img src="https://raw.githubusercontent.com/Lu0Key/hexo-image/master/imags/2021/3-24-4v2.png" alt="图裂了"></p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-matlab" data-lang="matlab"><span style="color:#66d9ef">function</span> yValue = <span style="color:#a6e22e">lagrange</span>(xMatrix,yMatrix,xValue)
+<span style="color:#75715e">% xMatrix 表示插值点中的 x 值 </span>
+<span style="color:#75715e">% yMatrix 表示插值点中的 y 值</span>
+<span style="color:#75715e">% xValue  表示希望求的插值多项式的x</span>
+<span style="color:#75715e">% yValue  表示在插值多项式中x对应的函数值</span>
+    n = length(xMatrix);
+    yValue = <span style="color:#ae81ff">0</span>;
+    <span style="color:#75715e">% i 表示第几个基函数</span>
+    <span style="color:#66d9ef">for</span> i = <span style="color:#ae81ff">1</span>:n
+        numerator = <span style="color:#ae81ff">1</span>;  <span style="color:#75715e">% 分子</span>
+        denominator = <span style="color:#ae81ff">1</span>;<span style="color:#75715e">% 分母</span>
+        <span style="color:#66d9ef">for</span> j=<span style="color:#ae81ff">1</span>:n
+            <span style="color:#66d9ef">if</span> i<span style="color:#f92672">~=</span>j
+                numerator = numerator<span style="color:#f92672">.*</span>(xValue<span style="color:#f92672">-</span>xMatrix(j));
+                denominator = denominator<span style="color:#f92672">.*</span>(xMatrix(i)<span style="color:#f92672">-</span>xMatrix(j));
+            <span style="color:#66d9ef">end</span>
+        <span style="color:#66d9ef">end</span>
+        yValue = yValue <span style="color:#f92672">+</span> yMatrix(i)<span style="color:#f92672">.*</span>numerator<span style="color:#f92672">./</span>denominator;
+    <span style="color:#66d9ef">end</span>
+<span style="color:#66d9ef">end</span>
+</code></pre></div><p><img src="https://raw.githubusercontent.com/Lu0Key/hexo-image/master/imags/2021/3-24-4v2.png" alt="图裂了"></p>
 <p><a href="https://lu0key.github.io/post/%E7%A7%91%E5%AD%A6%E8%AE%A1%E7%AE%97-4-7/">【科学计算 4-7】</a></p>
 
     </div>

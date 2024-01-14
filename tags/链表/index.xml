@@ -21,10 +21,10 @@
 输入: head = [1,1,2,3,3]
 输出: [1,2,3]
 提示：
-链表中节点数目在范围 [0, 300] 内 -100 &amp;lt;= Node.val &amp;lt;= 100 题目数据保证链表已经按升序 排列 Related Topics
-链表 题目链接: link
+ 链表中节点数目在范围 [0, 300] 内 -100 &amp;lt;= Node.val &amp;lt;= 100 题目数据保证链表已经按升序 排列  Related Topics
+ 链表  题目链接: link
 解答 这题不愧是 Easy ，没有什么弯弯绕绕，因此只需要看看下一个和当前这个节点的值一不一样，如果一样就跳过下一个节点，如果不一样就当前节点跳到下一个节点，因为只要一直保持当前节点和下一个节点不一样就能保证只出现一次。
-/** * Definition for singly-linked list. * public class ListNode { * int val; * ListNode next; * ListNode() {} * ListNode(int val) { this.val = val; } * ListNode(int val, ListNode next) { this.</description>
+/** * Definition for singly-linked list. * public class ListNode { * int val; * ListNode next; * ListNode() {} * ListNode(int val) { this.</description>
     </item>
     
   </channel>

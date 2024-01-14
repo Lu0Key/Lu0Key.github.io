@@ -4,11 +4,12 @@
     <title>Euler积分 // 洛七的摸鱼池塘</title>
     <link rel="shortcut icon" href="/favicon.ico" />
     <meta charset="utf-8" />
-    <meta name="generator" content="Hugo 0.115.4">
+    <meta name="generator" content="Hugo 0.81.0" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="author" content="洛七" />
     <meta name="description" content="" />
-    <link rel="stylesheet" href="/css/main.min.d08c6ce68432c68a64d84cb426dfdecab702035f91a5d580831f23f76c040a05.css" />
+    <link rel="stylesheet" href="/css/main.min.0fb49e70a30412f97ddfc418e18fefef1d9fcdebe45f634dbbba768b00fe1eec.css" />
+    
 
     
     <meta name="twitter:card" content="summary"/>
@@ -28,12 +29,13 @@ $\text{B}(p,q)=2\displaystyle\int_0^{\frac\pi2}\cos^{2p-1}\varphi\sin^{2q-1}\var
 易知
 $\text{B}\left(\dfrac{1}{2},\dfrac{1}{2}\right)=\pi$
 2 作变量代换 $x=\dfrac{1}{1&#43;t}$，得到
-$\begin{aligned} \text{B}(p,q)=&amp;\int_0^{&#43;\infty}\dfrac{t^{q-1}}{(1&#43;t)^{p&#43;q}}\text{d}t\ =&amp;\int_0^{1}\dfrac{t^{q-1}}{(1&#43;t)^{p&#43;q}}\text{d}t&#43;\int_1^{&#43;\infty}\dfrac{t^{q-1}}{(1&#43;t)^{p&#43;q}}\text{d}t \end{aligned}$
+$\begin{aligned} \text{B}(p,q)=&amp;\int_0^{&#43;\infty}\dfrac{t^{q-1}}{(1&#43;t)^{p&#43;q}}\text{d}t\
+=&amp;\int_0^{1}\dfrac{t^{q-1}}{(1&#43;t)^{p&#43;q}}\text{d}t&#43;\int_1^{&#43;\infty}\dfrac{t^{q-1}}{(1&#43;t)^{p&#43;q}}\text{d}t \end{aligned}$
 对后一个积分作变量代换 $t=\dfrac{1}{u}$，得到
 $\displaystyle\int_1^{&#43;\infty}\dfrac{t^{q-1}}{(1&#43;t)^{p&#43;q}}\text{d}t=\int_0^1\dfrac{u^{p-1}}{(1&#43;u)^{p&#43;q}}\text{d}u$
 于是
 $\displaystyle\text{B}(p,q)=\int_0^1\dfrac{t^{q-1}&#43;t^{p-1}}{(1&#43;t)^{p&#43;q}}\text{d}t$
-Gamma 函数 形如
+ Gamma 函数 形如
 $\displaystyle\Gamma(s)=\int_0^{&#43;\infty}x^{s-1}e^{-x}\text{d}x$
 的含参变量积分称为 Gamma 函数 或 第二类 Euler 积分.
 $\Gamma(s)$ 的定义域为 $(0,&#43;\infty)$
@@ -55,20 +57,22 @@ $\text{B}(p,q)=2\displaystyle\int_0^{\frac\pi2}\cos^{2p-1}\varphi\sin^{2q-1}\var
 易知
 $\text{B}\left(\dfrac{1}{2},\dfrac{1}{2}\right)=\pi$
 2 作变量代换 $x=\dfrac{1}{1&#43;t}$，得到
-$\begin{aligned} \text{B}(p,q)=&amp;\int_0^{&#43;\infty}\dfrac{t^{q-1}}{(1&#43;t)^{p&#43;q}}\text{d}t\ =&amp;\int_0^{1}\dfrac{t^{q-1}}{(1&#43;t)^{p&#43;q}}\text{d}t&#43;\int_1^{&#43;\infty}\dfrac{t^{q-1}}{(1&#43;t)^{p&#43;q}}\text{d}t \end{aligned}$
+$\begin{aligned} \text{B}(p,q)=&amp;\int_0^{&#43;\infty}\dfrac{t^{q-1}}{(1&#43;t)^{p&#43;q}}\text{d}t\
+=&amp;\int_0^{1}\dfrac{t^{q-1}}{(1&#43;t)^{p&#43;q}}\text{d}t&#43;\int_1^{&#43;\infty}\dfrac{t^{q-1}}{(1&#43;t)^{p&#43;q}}\text{d}t \end{aligned}$
 对后一个积分作变量代换 $t=\dfrac{1}{u}$，得到
 $\displaystyle\int_1^{&#43;\infty}\dfrac{t^{q-1}}{(1&#43;t)^{p&#43;q}}\text{d}t=\int_0^1\dfrac{u^{p-1}}{(1&#43;u)^{p&#43;q}}\text{d}u$
 于是
 $\displaystyle\text{B}(p,q)=\int_0^1\dfrac{t^{q-1}&#43;t^{p-1}}{(1&#43;t)^{p&#43;q}}\text{d}t$
-Gamma 函数 形如
+ Gamma 函数 形如
 $\displaystyle\Gamma(s)=\int_0^{&#43;\infty}x^{s-1}e^{-x}\text{d}x$
 的含参变量积分称为 Gamma 函数 或 第二类 Euler 积分.
 $\Gamma(s)$ 的定义域为 $(0,&#43;\infty)$
 性质 1 连续性与可导性 $\Gamma(s)$ 在 $(0,&#43;\infty)$ 上连续且任意阶可导." />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://Lu0key.github.io/post/euler%E7%A7%AF%E5%88%86/" /><meta property="article:section" content="post" />
-<meta property="article:published_time" content="2021-01-22T16:04:02+08:00" />
-<meta property="article:modified_time" content="2021-01-22T16:04:02+08:00" />
+<meta property="article:published_time" content="2021-01-22T16:04:02&#43;08:00" />
+<meta property="article:modified_time" content="2021-01-22T16:04:02&#43;08:00" />
+
 
 
   </head>
@@ -135,7 +139,7 @@ $\Gamma(s)$ 的定义域为 $(0,&#43;\infty)$
 <h4 id="2">2</h4>
 <p>作变量代换 $x=\dfrac{1}{1+t}$，得到</p>
 <p>$\begin{aligned}
-\text{B}(p,q)=&amp;\int_0^{+\infty}\dfrac{t^{q-1}}{(1+t)^{p+q}}\text{d}t\
+\text{B}(p,q)=&amp;\int_0^{+\infty}\dfrac{t^{q-1}}{(1+t)^{p+q}}\text{d}t\<br>
 =&amp;\int_0^{1}\dfrac{t^{q-1}}{(1+t)^{p+q}}\text{d}t+\int_1^{+\infty}\dfrac{t^{q-1}}{(1+t)^{p+q}}\text{d}t
 \end{aligned}$</p>
 <p>对后一个积分作变量代换 $t=\dfrac{1}{u}$，得到</p>
@@ -185,13 +189,13 @@ $\displaystyle\Gamma(q)=2\int_0^{+\infty}t^{2q-1}e^{-t^2}\text{d}t$</p>
 <p>取 $\Omega={(s,t)|0\leqslant s&lt;+\infty,;0\leqslant t&lt;+\infty}$，利用化反常重积分为累次积分的方法得到</p>
 <p>$\begin{aligned}
 \Gamma(p)\Gamma(q)
-=&amp;4\int_0^{+\infty}s^{2p-1}e^{-s^2}\text{d}s\int_0^{+\infty}t^{2q-1}e^{-t^2}\text{d}t\
+=&amp;4\int_0^{+\infty}s^{2p-1}e^{-s^2}\text{d}s\int_0^{+\infty}t^{2q-1}e^{-t^2}\text{d}t\<br>
 =&amp;4\underset{\Omega}{\iint}s^{2p-1}e^{-s^2}t^{2q-1}e^{-t^2}\text{d}s\text{d}t
 \end{aligned}$</p>
 <p>作极坐标变换 $s=r\cos\theta,;t=r\sin\theta$，即得</p>
 <p>$\begin{aligned}
-\Gamma(p)\Gamma(q)=&amp;4\underset{\overset{0\leqslant r&lt;+\infty}{0\leqslant\theta\leqslant\frac\pi2}}{\iint}r^{2(p+q)-1}e^{-r^2}\cos^{2p-1}\theta\sin^{2q-1}\theta\text{d}t\text{d}\theta\
-=&amp;\left(2\int_0^{\frac\pi2}\cos^{2p-1}\theta\sin^{2q-1}\theta\text{d}\theta\right)\left(2\int_0^{+\infty}r^{2(p+q)-1}e^{r^2}\text{d}r\right)\
+\Gamma(p)\Gamma(q)=&amp;4\underset{\overset{0\leqslant r&lt;+\infty}{0\leqslant\theta\leqslant\frac\pi2}}{\iint}r^{2(p+q)-1}e^{-r^2}\cos^{2p-1}\theta\sin^{2q-1}\theta\text{d}t\text{d}\theta\<br>
+=&amp;\left(2\int_0^{\frac\pi2}\cos^{2p-1}\theta\sin^{2q-1}\theta\text{d}\theta\right)\left(2\int_0^{+\infty}r^{2(p+q)-1}e^{r^2}\text{d}r\right)\<br>
 =&amp;\text{B}(p,q)\Gamma(p+q)
 \end{aligned}$</p>
 <h2 id="legendre-公式">Legendre 公式</h2>

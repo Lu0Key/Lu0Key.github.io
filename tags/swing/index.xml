@@ -14,7 +14,7 @@
       
       <guid>https://Lu0key.github.io/post/imageviewer-code/</guid>
       <description>这个代码是直接用核心卷上的
-import javax.swing.*; import java.awt.*; import java.io.File; public class ImageViewer { public static void main(String[] args) { EventQueue.invokeLater(()-&amp;gt;{ JFrame frame = new ImageViewerFrame(); frame.setTitle(&amp;#34;ImageViewer&amp;#34;); frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE); frame.setVisible(true); }); } } class ImageViewerFrame extends JFrame{ private JLabel label; private JFileChooser chooser; private static final int DEFAULT_WIDTH = 300; private static final int DEFAULT_HEIGHT = 400; public ImageViewerFrame(){ setSize(DEFAULT_WIDTH,DEFAULT_HEIGHT); // use a label to display the images label = new JLabel(); add(label); // set up the file chooser chooser = new JFileChooser(); chooser.</description>
+import javax.swing.*; import java.awt.*; import java.io.File; public class ImageViewer { public static void main(String[] args) { EventQueue.invokeLater(()-&amp;gt;{ JFrame frame = new ImageViewerFrame(); frame.setTitle(&amp;#34;ImageViewer&amp;#34;); frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE); frame.setVisible(true); }); } } class ImageViewerFrame extends JFrame{ private JLabel label; private JFileChooser chooser; private static final int DEFAULT_WIDTH = 300; private static final int DEFAULT_HEIGHT = 400; public ImageViewerFrame(){ setSize(DEFAULT_WIDTH,DEFAULT_HEIGHT); // use a label to display the images  label = new JLabel(); add(label); // set up the file chooser  chooser = new JFileChooser(); chooser.</description>
     </item>
     
   </channel>

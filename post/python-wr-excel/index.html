@@ -4,11 +4,12 @@
     <title>Python 操作 Excel // 洛七的摸鱼池塘</title>
     <link rel="shortcut icon" href="/favicon.ico" />
     <meta charset="utf-8" />
-    <meta name="generator" content="Hugo 0.115.4">
+    <meta name="generator" content="Hugo 0.81.0" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="author" content="洛七" />
     <meta name="description" content="" />
-    <link rel="stylesheet" href="/css/main.min.d08c6ce68432c68a64d84cb426dfdecab702035f91a5d580831f23f76c040a05.css" />
+    <link rel="stylesheet" href="/css/main.min.0fb49e70a30412f97ddfc418e18fefef1d9fcdebe45f634dbbba768b00fe1eec.css" />
+    
 
     
     <meta name="twitter:card" content="summary"/>
@@ -25,8 +26,9 @@ import xlrd # 总的人名 name_set = [] # 填报的人 name_data = [] # 没填�
 import xlrd # 总的人名 name_set = [] # 填报的人 name_data = [] # 没填报的人 other = [] set_excel = xlrd.open_workbook(&#39;C:\\Users\\Luokey\\Desktop\\set.xlsx&#39;) set_sheet = set_excel.sheets()[0] print(set_sheet.name) print(&#34;=============&#34;) # 这里实际上是从第二行开始，到第一列的最后一个元素 for i in range(1,len(set_sheet.col_slice(0, start_rowx=0, end_rowx=None))): name = set_sheet.cell_value(i, 0) name_set.append(name) print(name_set) print(len(name_set)) data_excel = xlrd.open_workbook(&#39;C:\\Users\\Luokey\\Desktop\\data.xlsx&#39;) data_sheet = data_excel.sheets()[0] print(&#34;=============&#34;) # 这里实际上是从第二行开始，到第一列的最后一个元素 for i in range(1,len(data_sheet.col_slice(0, start_rowx=0, end_rowx=None))): name = data_sheet.cell_value(i, 0) name_data.append(name) print(&#34;======没提交的名单=======&#34;) for name in name_set: if name not in name_data: print(name) other." />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://Lu0key.github.io/post/python-wr-excel/" /><meta property="article:section" content="post" />
-<meta property="article:published_time" content="2021-02-28T18:37:37+08:00" />
-<meta property="article:modified_time" content="2021-02-28T18:37:37+08:00" />
+<meta property="article:published_time" content="2021-02-28T18:37:37&#43;08:00" />
+<meta property="article:modified_time" content="2021-02-28T18:37:37&#43;08:00" />
+
 
 
   </head>
@@ -74,92 +76,92 @@ import xlrd # 总的人名 name_set = [] # 填报的人 name_data = [] # 没填�
 <p>老师需要找出哪些同学在网上填了返校申请，因为有几百个人，所以比较难以肉眼看出来</p>
 <p>这里我们假设填了信息的人可以导出名字，和整个年级的名单</p>
 <p>这样我们就有两个表了，代码如下</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#f92672">import</span> xlrd
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#75715e"># 总的人名</span>
-</span></span><span style="display:flex;"><span>name_set <span style="color:#f92672">=</span> []
-</span></span><span style="display:flex;"><span><span style="color:#75715e"># 填报的人</span>
-</span></span><span style="display:flex;"><span>name_data <span style="color:#f92672">=</span> []
-</span></span><span style="display:flex;"><span><span style="color:#75715e"># 没填报的人</span>
-</span></span><span style="display:flex;"><span>other <span style="color:#f92672">=</span> []
-</span></span><span style="display:flex;"><span>set_excel <span style="color:#f92672">=</span> xlrd<span style="color:#f92672">.</span>open_workbook(<span style="color:#e6db74">&#39;C:</span><span style="color:#ae81ff">\\</span><span style="color:#e6db74">Users</span><span style="color:#ae81ff">\\</span><span style="color:#e6db74">Luokey</span><span style="color:#ae81ff">\\</span><span style="color:#e6db74">Desktop</span><span style="color:#ae81ff">\\</span><span style="color:#e6db74">set.xlsx&#39;</span>)
-</span></span><span style="display:flex;"><span>set_sheet <span style="color:#f92672">=</span> set_excel<span style="color:#f92672">.</span>sheets()[<span style="color:#ae81ff">0</span>]
-</span></span><span style="display:flex;"><span>print(set_sheet<span style="color:#f92672">.</span>name)
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>print(<span style="color:#e6db74">&#34;=============&#34;</span>)
-</span></span><span style="display:flex;"><span><span style="color:#75715e"># 这里实际上是从第二行开始，到第一列的最后一个元素</span>
-</span></span><span style="display:flex;"><span><span style="color:#66d9ef">for</span> i <span style="color:#f92672">in</span> range(<span style="color:#ae81ff">1</span>,len(set_sheet<span style="color:#f92672">.</span>col_slice(<span style="color:#ae81ff">0</span>, start_rowx<span style="color:#f92672">=</span><span style="color:#ae81ff">0</span>, end_rowx<span style="color:#f92672">=</span><span style="color:#66d9ef">None</span>))):
-</span></span><span style="display:flex;"><span>    name <span style="color:#f92672">=</span> set_sheet<span style="color:#f92672">.</span>cell_value(i, <span style="color:#ae81ff">0</span>)
-</span></span><span style="display:flex;"><span>    name_set<span style="color:#f92672">.</span>append(name)
-</span></span><span style="display:flex;"><span>print(name_set)
-</span></span><span style="display:flex;"><span>print(len(name_set))
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>data_excel <span style="color:#f92672">=</span> xlrd<span style="color:#f92672">.</span>open_workbook(<span style="color:#e6db74">&#39;C:</span><span style="color:#ae81ff">\\</span><span style="color:#e6db74">Users</span><span style="color:#ae81ff">\\</span><span style="color:#e6db74">Luokey</span><span style="color:#ae81ff">\\</span><span style="color:#e6db74">Desktop</span><span style="color:#ae81ff">\\</span><span style="color:#e6db74">data.xlsx&#39;</span>)
-</span></span><span style="display:flex;"><span>data_sheet <span style="color:#f92672">=</span> data_excel<span style="color:#f92672">.</span>sheets()[<span style="color:#ae81ff">0</span>]
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>print(<span style="color:#e6db74">&#34;=============&#34;</span>)
-</span></span><span style="display:flex;"><span><span style="color:#75715e"># 这里实际上是从第二行开始，到第一列的最后一个元素</span>
-</span></span><span style="display:flex;"><span><span style="color:#66d9ef">for</span> i <span style="color:#f92672">in</span> range(<span style="color:#ae81ff">1</span>,len(data_sheet<span style="color:#f92672">.</span>col_slice(<span style="color:#ae81ff">0</span>, start_rowx<span style="color:#f92672">=</span><span style="color:#ae81ff">0</span>, end_rowx<span style="color:#f92672">=</span><span style="color:#66d9ef">None</span>))):
-</span></span><span style="display:flex;"><span>    name <span style="color:#f92672">=</span> data_sheet<span style="color:#f92672">.</span>cell_value(i, <span style="color:#ae81ff">0</span>)
-</span></span><span style="display:flex;"><span>    name_data<span style="color:#f92672">.</span>append(name)
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>print(<span style="color:#e6db74">&#34;======没提交的名单=======&#34;</span>)
-</span></span><span style="display:flex;"><span><span style="color:#66d9ef">for</span> name <span style="color:#f92672">in</span> name_set:
-</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">if</span> name <span style="color:#f92672">not</span> <span style="color:#f92672">in</span> name_data:
-</span></span><span style="display:flex;"><span>        print(name)
-</span></span><span style="display:flex;"><span>        other<span style="color:#f92672">.</span>append(name)
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>print(<span style="color:#e6db74">&#34;一共：&#34;</span><span style="color:#f92672">+</span>str(len(other))<span style="color:#f92672">+</span><span style="color:#e6db74">&#34;位同学&#34;</span>)
-</span></span><span style="display:flex;"><span>print(<span style="color:#e6db74">&#34;========================&#34;</span>)
-</span></span></code></pre></div><p>代码非常简单，分成三部分</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#f92672">import</span> xlrd
+
+<span style="color:#75715e"># 总的人名</span>
+name_set <span style="color:#f92672">=</span> []
+<span style="color:#75715e"># 填报的人</span>
+name_data <span style="color:#f92672">=</span> []
+<span style="color:#75715e"># 没填报的人</span>
+other <span style="color:#f92672">=</span> []
+set_excel <span style="color:#f92672">=</span> xlrd<span style="color:#f92672">.</span>open_workbook(<span style="color:#e6db74">&#39;C:</span><span style="color:#ae81ff">\\</span><span style="color:#e6db74">Users</span><span style="color:#ae81ff">\\</span><span style="color:#e6db74">Luokey</span><span style="color:#ae81ff">\\</span><span style="color:#e6db74">Desktop</span><span style="color:#ae81ff">\\</span><span style="color:#e6db74">set.xlsx&#39;</span>)
+set_sheet <span style="color:#f92672">=</span> set_excel<span style="color:#f92672">.</span>sheets()[<span style="color:#ae81ff">0</span>]
+<span style="color:#66d9ef">print</span>(set_sheet<span style="color:#f92672">.</span>name)
+
+<span style="color:#66d9ef">print</span>(<span style="color:#e6db74">&#34;=============&#34;</span>)
+<span style="color:#75715e"># 这里实际上是从第二行开始，到第一列的最后一个元素</span>
+<span style="color:#66d9ef">for</span> i <span style="color:#f92672">in</span> range(<span style="color:#ae81ff">1</span>,len(set_sheet<span style="color:#f92672">.</span>col_slice(<span style="color:#ae81ff">0</span>, start_rowx<span style="color:#f92672">=</span><span style="color:#ae81ff">0</span>, end_rowx<span style="color:#f92672">=</span>None))):
+    name <span style="color:#f92672">=</span> set_sheet<span style="color:#f92672">.</span>cell_value(i, <span style="color:#ae81ff">0</span>)
+    name_set<span style="color:#f92672">.</span>append(name)
+<span style="color:#66d9ef">print</span>(name_set)
+<span style="color:#66d9ef">print</span>(len(name_set))
+
+data_excel <span style="color:#f92672">=</span> xlrd<span style="color:#f92672">.</span>open_workbook(<span style="color:#e6db74">&#39;C:</span><span style="color:#ae81ff">\\</span><span style="color:#e6db74">Users</span><span style="color:#ae81ff">\\</span><span style="color:#e6db74">Luokey</span><span style="color:#ae81ff">\\</span><span style="color:#e6db74">Desktop</span><span style="color:#ae81ff">\\</span><span style="color:#e6db74">data.xlsx&#39;</span>)
+data_sheet <span style="color:#f92672">=</span> data_excel<span style="color:#f92672">.</span>sheets()[<span style="color:#ae81ff">0</span>]
+
+<span style="color:#66d9ef">print</span>(<span style="color:#e6db74">&#34;=============&#34;</span>)
+<span style="color:#75715e"># 这里实际上是从第二行开始，到第一列的最后一个元素</span>
+<span style="color:#66d9ef">for</span> i <span style="color:#f92672">in</span> range(<span style="color:#ae81ff">1</span>,len(data_sheet<span style="color:#f92672">.</span>col_slice(<span style="color:#ae81ff">0</span>, start_rowx<span style="color:#f92672">=</span><span style="color:#ae81ff">0</span>, end_rowx<span style="color:#f92672">=</span>None))):
+    name <span style="color:#f92672">=</span> data_sheet<span style="color:#f92672">.</span>cell_value(i, <span style="color:#ae81ff">0</span>)
+    name_data<span style="color:#f92672">.</span>append(name)
+
+<span style="color:#66d9ef">print</span>(<span style="color:#e6db74">&#34;======没提交的名单=======&#34;</span>)
+<span style="color:#66d9ef">for</span> name <span style="color:#f92672">in</span> name_set:
+    <span style="color:#66d9ef">if</span> name <span style="color:#f92672">not</span> <span style="color:#f92672">in</span> name_data:
+        <span style="color:#66d9ef">print</span>(name)
+        other<span style="color:#f92672">.</span>append(name)
+
+<span style="color:#66d9ef">print</span>(<span style="color:#e6db74">&#34;一共：&#34;</span><span style="color:#f92672">+</span>str(len(other))<span style="color:#f92672">+</span><span style="color:#e6db74">&#34;位同学&#34;</span>)
+<span style="color:#66d9ef">print</span>(<span style="color:#e6db74">&#34;========================&#34;</span>)
+</code></pre></div><p>代码非常简单，分成三部分</p>
 <ol>
 <li>初始化list</li>
 <li>读表格中的名字，并存入list</li>
 <li>对比list中的名字，没有的就输出</li>
 </ol>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#75715e"># 可以获得某一列的长度</span>
-</span></span><span style="display:flex;"><span>len(表<span style="color:#f92672">.</span>col_slice(列的索引, start_rowx<span style="color:#f92672">=</span><span style="color:#ae81ff">0</span>, end_rowx<span style="color:#f92672">=</span><span style="color:#66d9ef">None</span>))
-</span></span></code></pre></div><h2 id="遇到的问题">遇到的问题</h2>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>xlrd.biffh.XLRDError: Excel xlsx file; not supported
-</span></span></code></pre></div><p>在xlrd-2.0.1中已经不支持xlsx这种格式了，因此只能重新安装老版本的xlrd<br>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#75715e"># 可以获得某一列的长度</span>
+len(<span style="color:#960050;background-color:#1e0010">表</span><span style="color:#f92672">.</span>col_slice(<span style="color:#960050;background-color:#1e0010">列的索引</span>, start_rowx<span style="color:#f92672">=</span><span style="color:#ae81ff">0</span>, end_rowx<span style="color:#f92672">=</span>None))
+</code></pre></div><h2 id="遇到的问题">遇到的问题</h2>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">xlrd.biffh.XLRDError: Excel xlsx file; not supported
+</code></pre></div><p>在xlrd-2.0.1中已经不支持xlsx这种格式了，因此只能重新安装老版本的xlrd<br>
 在cmd中输入命令</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>pip uninstall xlrd
-</span></span><span style="display:flex;"><span>pip install xlrd<span style="color:#f92672">==</span>1.2.0
-</span></span></code></pre></div><p>下载指定版本的xlrd即可</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">pip uninstall xlrd
+pip install xlrd<span style="color:#f92672">==</span>1.2.0
+</code></pre></div><p>下载指定版本的xlrd即可</p>
 <h2 id="写入excel">写入excel</h2>
 <p>除此之外遇到一个需求是，根据excel的内容去修改excel，而xlrd只能读excel，而不能写，因此需要另外的模块</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#f92672">import</span> xlwt
-</span></span></code></pre></div><p>代码如下：</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#f92672">from</span> bs4 <span style="color:#f92672">import</span> BeautifulSoup
-</span></span><span style="display:flex;"><span><span style="color:#f92672">import</span> xlrd
-</span></span><span style="display:flex;"><span><span style="color:#f92672">import</span> xlwt
-</span></span><span style="display:flex;"><span><span style="color:#f92672">from</span> xlutils.copy <span style="color:#f92672">import</span> copy
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#66d9ef">with</span> open(<span style="color:#e6db74">&#39;C:</span><span style="color:#ae81ff">\\</span><span style="color:#e6db74">Users</span><span style="color:#ae81ff">\\</span><span style="color:#e6db74">Luokey</span><span style="color:#ae81ff">\\</span><span style="color:#e6db74">Desktop</span><span style="color:#ae81ff">\\</span><span style="color:#e6db74">1.htm&#39;</span>,encoding<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;utf-8&#34;</span>) <span style="color:#66d9ef">as</span> file_obj:
-</span></span><span style="display:flex;"><span>    html <span style="color:#f92672">=</span> file_obj<span style="color:#f92672">.</span>read()
-</span></span><span style="display:flex;"><span>soup <span style="color:#f92672">=</span> BeautifulSoup(html,<span style="color:#e6db74">&#39;lxml&#39;</span>)
-</span></span><span style="display:flex;"><span>names <span style="color:#f92672">=</span> []
-</span></span><span style="display:flex;"><span>items <span style="color:#f92672">=</span> soup<span style="color:#f92672">.</span>select(<span style="color:#e6db74">&#39;.manage-bar.completed &gt; .manage-body &gt; .left-block &gt; .apply-detail-outside &gt; ul:nth-child(3) &gt; li:nth-child(1)&#39;</span>)
-</span></span><span style="display:flex;"><span><span style="color:#66d9ef">for</span> item <span style="color:#f92672">in</span> items:
-</span></span><span style="display:flex;"><span>    name <span style="color:#f92672">=</span> item<span style="color:#f92672">.</span>text[<span style="color:#ae81ff">6</span>:]
-</span></span><span style="display:flex;"><span>    names<span style="color:#f92672">.</span>append(name)
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>info<span style="color:#f92672">=</span>[]
-</span></span><span style="display:flex;"><span>old <span style="color:#f92672">=</span> xlrd<span style="color:#f92672">.</span>open_workbook(<span style="color:#e6db74">&#39;C:</span><span style="color:#ae81ff">\\</span><span style="color:#e6db74">Users</span><span style="color:#ae81ff">\\</span><span style="color:#e6db74">Luokey</span><span style="color:#ae81ff">\\</span><span style="color:#e6db74">Desktop</span><span style="color:#ae81ff">\\</span><span style="color:#e6db74">18.xlsx&#39;</span>)
-</span></span><span style="display:flex;"><span>old_sheet <span style="color:#f92672">=</span> old<span style="color:#f92672">.</span>sheets()[<span style="color:#ae81ff">0</span>]
-</span></span><span style="display:flex;"><span>new_excel <span style="color:#f92672">=</span> copy(old)
-</span></span><span style="display:flex;"><span>sheet1 <span style="color:#f92672">=</span> new_excel<span style="color:#f92672">.</span>get_sheet(<span style="color:#ae81ff">0</span>)
-</span></span><span style="display:flex;"><span>print(<span style="color:#e6db74">&#34;=============&#34;</span>)
-</span></span><span style="display:flex;"><span><span style="color:#66d9ef">for</span> i <span style="color:#f92672">in</span> range(<span style="color:#ae81ff">1</span>,len(old_sheet<span style="color:#f92672">.</span>col_slice(<span style="color:#ae81ff">1</span>, start_rowx<span style="color:#f92672">=</span><span style="color:#ae81ff">0</span>, end_rowx<span style="color:#f92672">=</span><span style="color:#66d9ef">None</span>))):
-</span></span><span style="display:flex;"><span>    na <span style="color:#f92672">=</span> old_sheet<span style="color:#f92672">.</span>cell_value(i, <span style="color:#ae81ff">1</span>)
-</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">if</span> na <span style="color:#f92672">in</span> names:
-</span></span><span style="display:flex;"><span>        info<span style="color:#f92672">.</span>append(i)
-</span></span><span style="display:flex;"><span><span style="color:#66d9ef">for</span> i <span style="color:#f92672">in</span> range(<span style="color:#ae81ff">1</span>,len(old_sheet<span style="color:#f92672">.</span>col_slice(<span style="color:#ae81ff">1</span>, start_rowx<span style="color:#f92672">=</span><span style="color:#ae81ff">0</span>, end_rowx<span style="color:#f92672">=</span><span style="color:#66d9ef">None</span>))):
-</span></span><span style="display:flex;"><span>    sheet1<span style="color:#f92672">.</span>write(i,<span style="color:#ae81ff">2</span>,<span style="color:#ae81ff">1</span>)
-</span></span><span style="display:flex;"><span><span style="color:#66d9ef">for</span> i <span style="color:#f92672">in</span> info:
-</span></span><span style="display:flex;"><span>    sheet1<span style="color:#f92672">.</span>write(i,<span style="color:#ae81ff">2</span>,<span style="color:#ae81ff">0</span>)
-</span></span><span style="display:flex;"><span>new_excel<span style="color:#f92672">.</span>save(<span style="color:#e6db74">&#39;18.xls&#39;</span>) 
-</span></span></code></pre></div><p>因为那个网页一次性可以显示上千条数据，所以就不写登录爬虫，直接把整个网页保存下来读取内容</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#f92672">import</span> xlwt
+</code></pre></div><p>代码如下：</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#f92672">from</span> bs4 <span style="color:#f92672">import</span> BeautifulSoup
+<span style="color:#f92672">import</span> xlrd
+<span style="color:#f92672">import</span> xlwt
+<span style="color:#f92672">from</span> xlutils.copy <span style="color:#f92672">import</span> copy
+
+<span style="color:#66d9ef">with</span> open(<span style="color:#e6db74">&#39;C:</span><span style="color:#ae81ff">\\</span><span style="color:#e6db74">Users</span><span style="color:#ae81ff">\\</span><span style="color:#e6db74">Luokey</span><span style="color:#ae81ff">\\</span><span style="color:#e6db74">Desktop</span><span style="color:#ae81ff">\\</span><span style="color:#e6db74">1.htm&#39;</span>,encoding<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;utf-8&#34;</span>) <span style="color:#66d9ef">as</span> file_obj:
+    html <span style="color:#f92672">=</span> file_obj<span style="color:#f92672">.</span>read()
+soup <span style="color:#f92672">=</span> BeautifulSoup(html,<span style="color:#e6db74">&#39;lxml&#39;</span>)
+names <span style="color:#f92672">=</span> []
+items <span style="color:#f92672">=</span> soup<span style="color:#f92672">.</span>select(<span style="color:#e6db74">&#39;.manage-bar.completed &gt; .manage-body &gt; .left-block &gt; .apply-detail-outside &gt; ul:nth-child(3) &gt; li:nth-child(1)&#39;</span>)
+<span style="color:#66d9ef">for</span> item <span style="color:#f92672">in</span> items:
+    name <span style="color:#f92672">=</span> item<span style="color:#f92672">.</span>text[<span style="color:#ae81ff">6</span>:]
+    names<span style="color:#f92672">.</span>append(name)
+
+info<span style="color:#f92672">=</span>[]
+old <span style="color:#f92672">=</span> xlrd<span style="color:#f92672">.</span>open_workbook(<span style="color:#e6db74">&#39;C:</span><span style="color:#ae81ff">\\</span><span style="color:#e6db74">Users</span><span style="color:#ae81ff">\\</span><span style="color:#e6db74">Luokey</span><span style="color:#ae81ff">\\</span><span style="color:#e6db74">Desktop</span><span style="color:#ae81ff">\\</span><span style="color:#e6db74">18.xlsx&#39;</span>)
+old_sheet <span style="color:#f92672">=</span> old<span style="color:#f92672">.</span>sheets()[<span style="color:#ae81ff">0</span>]
+new_excel <span style="color:#f92672">=</span> copy(old)
+sheet1 <span style="color:#f92672">=</span> new_excel<span style="color:#f92672">.</span>get_sheet(<span style="color:#ae81ff">0</span>)
+<span style="color:#66d9ef">print</span>(<span style="color:#e6db74">&#34;=============&#34;</span>)
+<span style="color:#66d9ef">for</span> i <span style="color:#f92672">in</span> range(<span style="color:#ae81ff">1</span>,len(old_sheet<span style="color:#f92672">.</span>col_slice(<span style="color:#ae81ff">1</span>, start_rowx<span style="color:#f92672">=</span><span style="color:#ae81ff">0</span>, end_rowx<span style="color:#f92672">=</span>None))):
+    na <span style="color:#f92672">=</span> old_sheet<span style="color:#f92672">.</span>cell_value(i, <span style="color:#ae81ff">1</span>)
+    <span style="color:#66d9ef">if</span> na <span style="color:#f92672">in</span> names:
+        info<span style="color:#f92672">.</span>append(i)
+<span style="color:#66d9ef">for</span> i <span style="color:#f92672">in</span> range(<span style="color:#ae81ff">1</span>,len(old_sheet<span style="color:#f92672">.</span>col_slice(<span style="color:#ae81ff">1</span>, start_rowx<span style="color:#f92672">=</span><span style="color:#ae81ff">0</span>, end_rowx<span style="color:#f92672">=</span>None))):
+    sheet1<span style="color:#f92672">.</span>write(i,<span style="color:#ae81ff">2</span>,<span style="color:#ae81ff">1</span>)
+<span style="color:#66d9ef">for</span> i <span style="color:#f92672">in</span> info:
+    sheet1<span style="color:#f92672">.</span>write(i,<span style="color:#ae81ff">2</span>,<span style="color:#ae81ff">0</span>)
+new_excel<span style="color:#f92672">.</span>save(<span style="color:#e6db74">&#39;18.xls&#39;</span>) 
+</code></pre></div><p>因为那个网页一次性可以显示上千条数据，所以就不写登录爬虫，直接把整个网页保存下来读取内容</p>
 <ol>
 <li>先用xlrd读取表</li>
 <li>用copy复制一份表</li>
