@@ -6,7 +6,31 @@
     <description>Recent content in leetcode on 洛七的摸鱼池塘</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Sun, 14 Jan 2024 14:07:16 +0800</lastBuildDate><atom:link href="https://Lu0key.github.io/tags/leetcode/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 15 Jan 2024 14:24:03 +0800</lastBuildDate><atom:link href="https://Lu0key.github.io/tags/leetcode/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Leetcode 82 删除排序链表中的重复元素Ⅱ</title>
+      <link>https://Lu0key.github.io/post/lc-82-remove-duplicates-from-sorted-list-ii/</link>
+      <pubDate>Mon, 15 Jan 2024 14:24:03 +0800</pubDate>
+      
+      <guid>https://Lu0key.github.io/post/lc-82-remove-duplicates-from-sorted-list-ii/</guid>
+      <description>82.删除排序链表中的重复元素Ⅱ 给定一个已排序的链表的头 head ， 给定一个已排序的链表的头 head ， 删除原始链表中所有重复数字的节点，只留下不同的数字 。返回已排序的链表。
+示例 1：
+示例 1：
+输入: head = head = [1,2,3,3,4,4,5]
+输出: [1,2,5]
+示例 2:
+输入: head = [1,1,1,2,3]
+输出: [2,3]
+提示：
+ 链表中节点数目在范围 [0, 300] 内 -100 &amp;lt;= Node.val &amp;lt;= 100 题目数据保证链表已经按升序 排列  Related Topics
+ 链表 双指针  题目链接: link
+解答 这题虽然是 Medium，但是和昨天的 Easy 其实差不多，只是在删除了多余的节点外还要删除自己本身。
+首先用最粗暴的方式，先遍历一遍所有节点，看看哪些节点只出现过一次，然后重建一遍链表。实现包括但不限于使用HashMap存每个元素出现的次数；一个长201的count数组统计每种可能的元素出现的次数；两个集合分别存出现过的节点和出现不止一次的节点，然后两个集合做差，最后通过筛选出来的结果重新构造节点，时间复杂度都是 O(N), 但是空间复杂度差一点。这些方法对于算法学习没什么帮助，因此直接选择更优的方法。
+题目给出的链表本身就是升序的，因此我们只需要看当前节点与下一个节点的值是否相同，如果相同就跳过下一个节点，并且用一个值 isDelete 标记一下当前这个节点需要删除，然后继续此流程直到当前节点和下一个节点的值不同时，根据标记值 isDelete 判断是否要删除当前节点。
+但是此方法只能当下一个节点存在时才能持续，因此结束了循环还要单独判断一下边界，因为有步骤需要跳过当前节点，因此需要记录当前节点的上一个节点，需要一个参数 pre 用于存储上一个节点。代码如下：
+/** * Definition for singly-linked list.</description>
+    </item>
+    
     <item>
       <title>Leetcode 83 删除排序链表中的重复元素</title>
       <link>https://Lu0key.github.io/post/lc-83-remove-duplicates-from-sorted-list/</link>
