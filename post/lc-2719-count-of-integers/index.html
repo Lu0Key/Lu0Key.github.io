@@ -1,0 +1,193 @@
+<!doctype html>
+<html lang="en-us">
+  <head>
+    <title>Leetcode 2719 統計整數數目 // 洛七的摸鱼池塘</title>
+    <link rel="shortcut icon" href="/favicon.ico" />
+    <meta charset="utf-8" />
+    <meta name="generator" content="Hugo 0.81.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="author" content="洛七" />
+    <meta name="description" content="" />
+    <link rel="stylesheet" href="/css/main.min.0fb49e70a30412f97ddfc418e18fefef1d9fcdebe45f634dbbba768b00fe1eec.css" />
+    
+
+    
+    <meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Leetcode 2719 統計整數數目"/>
+<meta name="twitter:description" content="2719.統計整數數目 給你兩個數字字符串 num1 和 num2，以及兩個整數 max_sum 和 min_sum. 如果一個整數滿足一下條件，我們稱它是一個好整數：
+ num1 &lt;= x &lt;= num2 min_sum &lt;= digit_sum(x) &lt;= max_sum  請你返回好整數的數目。答案可能很大，請返回答案對 10^9&#43;7 取餘后的結果。
+注意，digit_sum(x) 表示 x 各位數字之和。
+示例 1：
+输入：num1 = &ldquo;1&rdquo;, num2 = &ldquo;12&rdquo;, min_num = 1, max_num = 8
+输出：11
+解释：总共有 11 个整数的数位和在 1 到 8 之间，分别是 1,2,3,4,5,6,7,8,10,11 和 12 。所以我们返回 11 。
+示例 2：
+输入：num1 = &ldquo;1&rdquo;, num2 = &ldquo;5&rdquo;, min_num = 1, max_num = 5"/>
+
+    <meta property="og:title" content="Leetcode 2719 統計整數數目" />
+<meta property="og:description" content="2719.統計整數數目 給你兩個數字字符串 num1 和 num2，以及兩個整數 max_sum 和 min_sum. 如果一個整數滿足一下條件，我們稱它是一個好整數：
+ num1 &lt;= x &lt;= num2 min_sum &lt;= digit_sum(x) &lt;= max_sum  請你返回好整數的數目。答案可能很大，請返回答案對 10^9&#43;7 取餘后的結果。
+注意，digit_sum(x) 表示 x 各位數字之和。
+示例 1：
+输入：num1 = &ldquo;1&rdquo;, num2 = &ldquo;12&rdquo;, min_num = 1, max_num = 8
+输出：11
+解释：总共有 11 个整数的数位和在 1 到 8 之间，分别是 1,2,3,4,5,6,7,8,10,11 和 12 。所以我们返回 11 。
+示例 2：
+输入：num1 = &ldquo;1&rdquo;, num2 = &ldquo;5&rdquo;, min_num = 1, max_num = 5" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://Lu0key.github.io/post/lc-2719-count-of-integers/" /><meta property="article:section" content="post" />
+<meta property="article:published_time" content="2024-01-16T17:51:29&#43;08:00" />
+<meta property="article:modified_time" content="2024-01-16T17:51:29&#43;08:00" />
+
+
+
+  </head>
+  <body>
+    <header class="app-header">
+      <a href="https://Lu0key.github.io/"><img class="app-header-avatar" src="/avatar.jpg" alt="洛七" /></a>
+      <span class="app-header-title">洛七的摸鱼池塘</span>
+      <nav class="app-header-menu">
+          <a class="app-header-menu-item" href="/tags/">Tags</a>
+      </nav>
+      <p>即将没书读的咸鱼</p>
+    </header>
+    <main class="app-container">
+      
+  <article class="post">
+    <header class="post-header">
+      <h1 class ="post-title">Leetcode 2719 統計整數數目</h1>
+      <div class="post-meta">
+        <div>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-calendar">
+  <title>calendar</title>
+  <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line>
+</svg>
+          Jan 16, 2024
+        </div>
+        <div>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-clock">
+  <title>clock</title>
+  <circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline>
+</svg>
+          3 min read
+        </div>
+        <div>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-tag">
+  <title>tag</title>
+  <path d="M20.59 13.41l-7.17 7.17a2 2 0 0 1-2.83 0L2 12V2h10l8.59 8.59a2 2 0 0 1 0 2.82z"></path><line x1="7" y1="7" x2="7.01" y2="7"></line>
+</svg>
+              <a class="tag" href="https://Lu0key.github.io/tags/leetcode/">leetcode</a>
+              <a class="tag" href="https://Lu0key.github.io/tags/%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92/">动态规划</a>
+        </div>
+      </div>
+    </header>
+    <div class="post-content">
+      <h2 id="2719統計整數數目">2719.統計整數數目</h2>
+<p>給你兩個數字字符串 <code>num1</code> 和 <code>num2</code>，以及兩個整數 <code>max_sum</code> 和 <code>min_sum</code>. 如果一個整數滿足一下條件，我們稱它是一個好整數：</p>
+<ul>
+<li><code>num1 &lt;= x &lt;= num2</code></li>
+<li><code>min_sum &lt;= digit_sum(x) &lt;= max_sum</code></li>
+</ul>
+<p>請你返回好整數的數目。答案可能很大，請返回答案對 <code>10^9+7</code> 取餘后的結果。</p>
+<p>注意，<code>digit_sum(x)</code> 表示 <code>x</code> 各位數字之和。</p>
+<p>示例 1：</p>
+<p>输入：num1 = &ldquo;1&rdquo;, num2 = &ldquo;12&rdquo;, min_num = 1, max_num = 8<br>
+输出：11<br>
+解释：总共有 11 个整数的数位和在 1 到 8 之间，分别是 1,2,3,4,5,6,7,8,10,11 和 12 。所以我们返回 11 。</p>
+<p>示例 2：</p>
+<p>输入：num1 = &ldquo;1&rdquo;, num2 = &ldquo;5&rdquo;, min_num = 1, max_num = 5<br>
+输出：5<br>
+解释：数位和在 1 到 5 之间的 5 个整数分别为 1,2,3,4 和 5 。所以我们返回 5 。</p>
+<p>提示：</p>
+<ul>
+<li><code>1 &lt;= num1 &lt;= num2 &lt;= 10^22</code></li>
+<li><code>1 &lt;= min_sum &lt;= max_sum &lt;= 400</code></li>
+</ul>
+<p>Related Topics</p>
+<ul>
+<li>數學</li>
+<li>字符串</li>
+<li>動態規劃</li>
+</ul>
+<p>题目链接: <a href="https://leetcode.cn/problems/count-of-integers/">link</a></p>
+<h2 id="解答">解答</h2>
+<p>先分析題目，題目翻譯一下就是要找 <code>[num1, num2]</code> 之間有多少個數的各位數之和在 <code>min_sum</code> 和 <code>max_sum</code> 之間。那我們爲了簡化問題可以轉而求 [1, num] 之間有多少個各位數之和在<code>min_sum</code> 和 <code>max_sum</code> 之間，然後轉爲求 <code>[1, num2]-[1,num1]</code> ，因爲這裏得到的區間是 <code>(num1, num2]</code> ，因此還需要再單獨判斷num1 的各位數之和，或者直接求 <code>[1,num2] - [1,num1-1]</code>, 看你覺得哪個更方便了。</p>
+<p>按理來説題目範圍内各位數之和最大的數應該是 10^22-1 一共22個9，最大不會超過當前字符串長度的9倍。 max_sum 根本不會達到 400，因此如果要用到數組存每個好證書對應的 <code>digit_sum(x)</code>, 那麽這個長度只需要 <code>min(9*n, max_sum)</code> 即可。</p>
+<p>然後自己分析了一大通，最後過了三分之一的測試用例，結果一分析，自己就是寫了一坨，前前後後搞了三個小時，直接選擇看題解。</p>
+<p>下面學習一下別人的題解。</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Solution</span> <span style="color:#f92672">{</span>
+    <span style="color:#66d9ef">private</span> <span style="color:#66d9ef">static</span> <span style="color:#66d9ef">final</span> <span style="color:#66d9ef">int</span> MOD <span style="color:#f92672">=</span> 1_000_000_007<span style="color:#f92672">;</span>
+
+    <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">int</span> <span style="color:#a6e22e">count</span><span style="color:#f92672">(</span>String num1<span style="color:#f92672">,</span> String num2<span style="color:#f92672">,</span> <span style="color:#66d9ef">int</span> minSum<span style="color:#f92672">,</span> <span style="color:#66d9ef">int</span> maxSum<span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
+        <span style="color:#75715e">// 這邊的思路就是 [1,num2] - [1,num1] 然後單獨判斷 num1 部分
+</span><span style="color:#75715e"></span>        <span style="color:#66d9ef">int</span> ans <span style="color:#f92672">=</span> calc<span style="color:#f92672">(</span>num2<span style="color:#f92672">,</span> minSum<span style="color:#f92672">,</span> maxSum<span style="color:#f92672">)</span> <span style="color:#f92672">-</span> calc<span style="color:#f92672">(</span>num1<span style="color:#f92672">,</span> minSum<span style="color:#f92672">,</span> maxSum<span style="color:#f92672">)</span> <span style="color:#f92672">+</span> MOD<span style="color:#f92672">;</span> <span style="color:#75715e">// 避免负数
+</span><span style="color:#75715e"></span>        <span style="color:#75715e">// 這裏是因爲可能出現那種 前面已經取過余了，導致後面更小的情況。下面就是單獨判斷的代碼
+</span><span style="color:#75715e"></span>        <span style="color:#66d9ef">int</span> sum <span style="color:#f92672">=</span> 0<span style="color:#f92672">;</span>
+        <span style="color:#66d9ef">for</span> <span style="color:#f92672">(</span><span style="color:#66d9ef">char</span> c <span style="color:#f92672">:</span> num1<span style="color:#f92672">.</span><span style="color:#a6e22e">toCharArray</span><span style="color:#f92672">())</span> <span style="color:#f92672">{</span>
+            sum <span style="color:#f92672">+=</span> c <span style="color:#f92672">-</span> <span style="color:#e6db74">&#39;0&#39;</span><span style="color:#f92672">;</span>
+        <span style="color:#f92672">}</span>
+
+        <span style="color:#66d9ef">if</span> <span style="color:#f92672">(</span>minSum <span style="color:#f92672">&lt;=</span> sum <span style="color:#f92672">&amp;&amp;</span> sum <span style="color:#f92672">&lt;=</span> maxSum<span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
+            ans<span style="color:#f92672">++;</span> <span style="color:#75715e">// num1 是合法的，补回来
+</span><span style="color:#75715e"></span>        <span style="color:#f92672">}</span>
+        <span style="color:#66d9ef">return</span> ans <span style="color:#f92672">%</span> MOD<span style="color:#f92672">;</span>
+    <span style="color:#f92672">}</span>
+
+    <span style="color:#75715e">// 這裏就是計算 [1, num]
+</span><span style="color:#75715e"></span>    <span style="color:#66d9ef">private</span> <span style="color:#66d9ef">int</span> <span style="color:#a6e22e">calc</span><span style="color:#f92672">(</span>String s<span style="color:#f92672">,</span> <span style="color:#66d9ef">int</span> minSum<span style="color:#f92672">,</span> <span style="color:#66d9ef">int</span> maxSum<span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
+        <span style="color:#66d9ef">int</span> n <span style="color:#f92672">=</span> s<span style="color:#f92672">.</span><span style="color:#a6e22e">length</span><span style="color:#f92672">();</span>
+        <span style="color:#75715e">// 和前面説的一樣，節約空間
+</span><span style="color:#75715e"></span>        <span style="color:#66d9ef">int</span><span style="color:#f92672">[][]</span> memo <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> <span style="color:#66d9ef">int</span><span style="color:#f92672">[</span>n<span style="color:#f92672">][</span>Math<span style="color:#f92672">.</span><span style="color:#a6e22e">min</span><span style="color:#f92672">(</span>9 <span style="color:#f92672">*</span> n<span style="color:#f92672">,</span> maxSum<span style="color:#f92672">)</span> <span style="color:#f92672">+</span> 1<span style="color:#f92672">];</span>
+        <span style="color:#75715e">// 全部初始化一遍為 -1 表示未知
+</span><span style="color:#75715e"></span>        <span style="color:#66d9ef">for</span> <span style="color:#f92672">(</span><span style="color:#66d9ef">int</span><span style="color:#f92672">[]</span> row <span style="color:#f92672">:</span> memo<span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
+            Arrays<span style="color:#f92672">.</span><span style="color:#a6e22e">fill</span><span style="color:#f92672">(</span>row<span style="color:#f92672">,</span> <span style="color:#f92672">-</span>1<span style="color:#f92672">);</span>
+        <span style="color:#f92672">}</span>
+        <span style="color:#66d9ef">return</span> dfs<span style="color:#f92672">(</span>0<span style="color:#f92672">,</span> 0<span style="color:#f92672">,</span> <span style="color:#66d9ef">true</span><span style="color:#f92672">,</span> s<span style="color:#f92672">.</span><span style="color:#a6e22e">toCharArray</span><span style="color:#f92672">(),</span> minSum<span style="color:#f92672">,</span> maxSum<span style="color:#f92672">,</span> memo<span style="color:#f92672">);</span>
+    <span style="color:#f92672">}</span>
+    <span style="color:#75715e">// sum應該是當前求和的值
+</span><span style="color:#75715e"></span>    <span style="color:#75715e">// i 表示 num 字符串的索引, [0, s.length-1]
+</span><span style="color:#75715e"></span>    <span style="color:#66d9ef">private</span> <span style="color:#66d9ef">int</span> <span style="color:#a6e22e">dfs</span><span style="color:#f92672">(</span><span style="color:#66d9ef">int</span> i<span style="color:#f92672">,</span> <span style="color:#66d9ef">int</span> sum<span style="color:#f92672">,</span> <span style="color:#66d9ef">boolean</span> isLimit<span style="color:#f92672">,</span> <span style="color:#66d9ef">char</span><span style="color:#f92672">[]</span> s<span style="color:#f92672">,</span> <span style="color:#66d9ef">int</span> minSum<span style="color:#f92672">,</span> <span style="color:#66d9ef">int</span> maxSum<span style="color:#f92672">,</span> <span style="color:#66d9ef">int</span><span style="color:#f92672">[][]</span> memo<span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
+        <span style="color:#66d9ef">if</span> <span style="color:#f92672">(</span>sum <span style="color:#f92672">&gt;</span> maxSum<span style="color:#f92672">)</span> <span style="color:#f92672">{</span> <span style="color:#75715e">// 非法
+</span><span style="color:#75715e"></span>            <span style="color:#66d9ef">return</span> 0<span style="color:#f92672">;</span>
+        <span style="color:#f92672">}</span>
+        
+        <span style="color:#66d9ef">if</span> <span style="color:#f92672">(</span>i <span style="color:#f92672">==</span> s<span style="color:#f92672">.</span><span style="color:#a6e22e">length</span><span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
+            <span style="color:#66d9ef">return</span> sum <span style="color:#f92672">&gt;=</span> minSum <span style="color:#f92672">?</span> 1 <span style="color:#f92672">:</span> 0<span style="color:#f92672">;</span>
+        <span style="color:#f92672">}</span>
+        <span style="color:#75715e">// 沒有限制且已經有填有信息的就返回，相當於是算過的就不用再算了。
+</span><span style="color:#75715e"></span>        <span style="color:#66d9ef">if</span> <span style="color:#f92672">(!</span>isLimit <span style="color:#f92672">&amp;&amp;</span> memo<span style="color:#f92672">[</span>i<span style="color:#f92672">][</span>sum<span style="color:#f92672">]</span> <span style="color:#f92672">!=</span> <span style="color:#f92672">-</span>1<span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
+            <span style="color:#66d9ef">return</span> memo<span style="color:#f92672">[</span>i<span style="color:#f92672">][</span>sum<span style="color:#f92672">];</span>
+        <span style="color:#f92672">}</span>
+        <span style="color:#75715e">// 如果有限制，那麽上限就是當前這個索引的位置
+</span><span style="color:#75715e"></span>        <span style="color:#75715e">// 如果沒有限制，就是所都可以
+</span><span style="color:#75715e"></span>        <span style="color:#66d9ef">int</span> up <span style="color:#f92672">=</span> isLimit <span style="color:#f92672">?</span> s<span style="color:#f92672">[</span>i<span style="color:#f92672">]</span> <span style="color:#f92672">-</span> <span style="color:#e6db74">&#39;0&#39;</span> <span style="color:#f92672">:</span> 9<span style="color:#f92672">;</span>
+        <span style="color:#66d9ef">int</span> res <span style="color:#f92672">=</span> 0<span style="color:#f92672">;</span>
+
+        <span style="color:#66d9ef">for</span> <span style="color:#f92672">(</span><span style="color:#66d9ef">int</span> d <span style="color:#f92672">=</span> 0<span style="color:#f92672">;</span> d <span style="color:#f92672">&lt;=</span> up<span style="color:#f92672">;</span> d<span style="color:#f92672">++)</span> <span style="color:#f92672">{</span> <span style="color:#75715e">// 枚举当前数位填 d
+</span><span style="color:#75715e"></span>            <span style="color:#75715e">// 就是假設當前位是d，然後填後面的，如果當前位不是到達限制位，那就後面隨便就行
+</span><span style="color:#75715e"></span>            res <span style="color:#f92672">=</span> <span style="color:#f92672">(</span>res <span style="color:#f92672">+</span> dfs<span style="color:#f92672">(</span>i <span style="color:#f92672">+</span> 1<span style="color:#f92672">,</span> sum <span style="color:#f92672">+</span> d<span style="color:#f92672">,</span> isLimit <span style="color:#f92672">&amp;&amp;</span> <span style="color:#f92672">(</span>d <span style="color:#f92672">==</span> up<span style="color:#f92672">),</span> s<span style="color:#f92672">,</span> minSum<span style="color:#f92672">,</span> maxSum<span style="color:#f92672">,</span> memo<span style="color:#f92672">))</span> <span style="color:#f92672">%</span> MOD<span style="color:#f92672">;</span>
+        <span style="color:#f92672">}</span>
+
+        <span style="color:#75715e">// 如果沒有限制就存起來
+</span><span style="color:#75715e"></span>        <span style="color:#66d9ef">if</span> <span style="color:#f92672">(!</span>isLimit<span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
+            memo<span style="color:#f92672">[</span>i<span style="color:#f92672">][</span>sum<span style="color:#f92672">]</span> <span style="color:#f92672">=</span> res<span style="color:#f92672">;</span>
+        <span style="color:#f92672">}</span>
+        <span style="color:#66d9ef">return</span> res<span style="color:#f92672">;</span>
+    <span style="color:#f92672">}</span>
+<span style="color:#f92672">}</span>
+</code></pre></div><p>代碼直觀地理解就是，我先根據當前數字的長度畫一樣長度的綫。</p>
+<p>以 &ldquo;23456&rdquo; 舉例</p>
+<p><code>_ _ _ _ _</code><br>
+第一位肯定是有限制的，畢竟第一位不能超過2嘛至少，因此一開始啓動dfs的時 <code>isLimit=true</code>, 那麽此時的 <code>up=2</code>, 那麽從0開始，這時候就是 <code>0 _ _ _ _ _</code>, 此時第二位是多少都OK了，因此此時 <code>isLimit=false</code>, 然後庫庫填，因爲對於 <code>x x x _ _ _</code> 如果此時沒有限制，且留下的位數一樣的話, 那麽 後面三位其實能填的範圍都是 <code>0-9</code>, 因此如果此時當前填寫位數一樣且前面位和也一樣，其實兩者狀態一樣，因此可以節省後面三位的重複計算直接存起來。如果第一位到了2, 那麽此時下一位就有限制了, 至少不能超過3嘛， 接下來的都差不多.</p>
+<p>看題解原來這種叫數位DP，下次做做相似的題目鞏固一下。</p>
+<p>動態規劃是我的大薄弱項, 狠狠學！</p>
+
+    </div>
+    <div class="post-footer">
+      
+    </div>
+  </article>
+
+    </main>
+  </body>
+</html>

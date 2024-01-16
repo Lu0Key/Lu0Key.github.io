@@ -6,7 +6,24 @@
     <description>Recent content in leetcode on 洛七的摸鱼池塘</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Mon, 15 Jan 2024 14:24:03 +0800</lastBuildDate><atom:link href="https://Lu0key.github.io/tags/leetcode/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Tue, 16 Jan 2024 17:51:29 +0800</lastBuildDate><atom:link href="https://Lu0key.github.io/tags/leetcode/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Leetcode 2719 統計整數數目</title>
+      <link>https://Lu0key.github.io/post/lc-2719-count-of-integers/</link>
+      <pubDate>Tue, 16 Jan 2024 17:51:29 +0800</pubDate>
+      
+      <guid>https://Lu0key.github.io/post/lc-2719-count-of-integers/</guid>
+      <description>2719.統計整數數目 給你兩個數字字符串 num1 和 num2，以及兩個整數 max_sum 和 min_sum. 如果一個整數滿足一下條件，我們稱它是一個好整數：
+ num1 &amp;lt;= x &amp;lt;= num2 min_sum &amp;lt;= digit_sum(x) &amp;lt;= max_sum  請你返回好整數的數目。答案可能很大，請返回答案對 10^9+7 取餘后的結果。
+注意，digit_sum(x) 表示 x 各位數字之和。
+示例 1：
+输入：num1 = &amp;ldquo;1&amp;rdquo;, num2 = &amp;ldquo;12&amp;rdquo;, min_num = 1, max_num = 8
+输出：11
+解释：总共有 11 个整数的数位和在 1 到 8 之间，分别是 1,2,3,4,5,6,7,8,10,11 和 12 。所以我们返回 11 。
+示例 2：
+输入：num1 = &amp;ldquo;1&amp;rdquo;, num2 = &amp;ldquo;5&amp;rdquo;, min_num = 1, max_num = 5</description>
+    </item>
+    
     <item>
       <title>Leetcode 82 删除排序链表中的重复元素Ⅱ</title>
       <link>https://Lu0key.github.io/post/lc-82-remove-duplicates-from-sorted-list-ii/</link>
