@@ -6,7 +6,25 @@
     <description>Recent content on 洛七的摸鱼池塘</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Tue, 16 Jan 2024 17:51:29 +0800</lastBuildDate><atom:link href="https://Lu0key.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Wed, 17 Jan 2024 10:46:40 +0800</lastBuildDate><atom:link href="https://Lu0key.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Leetcode 2744 最大字符串配对数目</title>
+      <link>https://Lu0key.github.io/post/lc-2744-find-maximum-number-of-string-pairs/</link>
+      <pubDate>Wed, 17 Jan 2024 10:46:40 +0800</pubDate>
+      
+      <guid>https://Lu0key.github.io/post/lc-2744-find-maximum-number-of-string-pairs/</guid>
+      <description>2744.最大字符串配对数目 给你一个下标从 0 开始的数组 words ，数组中包含 互不相同 的字符串。
+如果字符串 words[i] 与字符串 words[j] 满足以下条件，我们称它们可以匹配：
+ 字符串 words[i] 等于 words[j] 的反转字符串. 0 &amp;lt;= i &amp;lt; j &amp;lt; words.length  请你返回数组 words 中的 最大 匹配数目。
+注意，每个字符串最多匹配一次。
+示例 1：
+示例 1：
+输入：words = [&amp;ldquo;cd&amp;rdquo;,&amp;ldquo;ac&amp;rdquo;,&amp;ldquo;dc&amp;rdquo;,&amp;ldquo;ca&amp;rdquo;,&amp;ldquo;zz&amp;rdquo;]
+输出：2 解释：在此示例中，我们可以通过以下方式匹配 2 对字符串：
+ 我们将第 0 个字符串与第 2 个字符串匹配，因为 word[0] 的反转字符串是 &amp;ldquo;dc&amp;rdquo; 并且等于 words[2]。 我们将第 1 个字符串与第 3 个字符串匹配，因为 word[1] 的反转字符串是 &amp;ldquo;ca&amp;rdquo; 并且等于 words[3]。  可以证明最多匹配数目是 2 。
+示例 2:</description>
+    </item>
+    
     <item>
       <title>Leetcode 2719 統計整數數目</title>
       <link>https://Lu0key.github.io/post/lc-2719-count-of-integers/</link>
