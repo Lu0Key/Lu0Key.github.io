@@ -1,0 +1,216 @@
+<!doctype html>
+<html lang="en-us">
+  <head>
+    <title>Leetcode 2171 拿出最少数目的魔法豆 // 洛七的摸鱼池塘</title>
+    <link rel="shortcut icon" href="/favicon.ico" />
+    <meta charset="utf-8" />
+    <meta name="generator" content="Hugo 0.81.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="author" content="洛七" />
+    <meta name="description" content="" />
+    <link rel="stylesheet" href="/css/main.min.0fb49e70a30412f97ddfc418e18fefef1d9fcdebe45f634dbbba768b00fe1eec.css" />
+    
+
+    
+    <meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Leetcode 2171 拿出最少数目的魔法豆"/>
+<meta name="twitter:description" content="2171.拿出最少数目的魔法豆 给定一个 正整数 数组 beans ，其中每个整数表示一个袋子里装的魔法豆的数目。
+请你从每个袋子中 拿出 一些豆子（也可以 不拿出），使得剩下的 非空 袋子中（即 至少还有一颗 魔法豆的袋子）魔法豆的数目 相等。一旦把魔法豆从袋子中取出，你不能再将它放到任何袋子中。
+请返回你需要拿出魔法豆的 最少数目。
+示例 1：
+输入：beans = [4,1,6,5]
+输出：4
+解释：
+ 我们从有 1 个魔法豆的袋子中拿出 1 颗魔法豆。 剩下袋子中魔法豆的数目为：[4,0,6,5] 然后我们从有 6 个魔法豆的袋子中拿出 2 个魔法豆。 剩下袋子中魔法豆的数目为：[4,0,4,5] 然后我们从有 5 个魔法豆的袋子中拿出 1 个魔法豆。 剩下袋子中魔法豆的数目为：[4,0,4,4] 总共拿出了 1 &#43; 2 &#43; 1 = 4 个魔法豆，剩下非空袋子中魔法豆的数目相等。 没有比取出 4 个魔法豆更少的方案。  示例 2：
+输入：beans = [2,10,3,2]
+输出：7
+解释：
+ 我们从有 2 个魔法豆的其中一个袋子中拿出 2 个魔法豆。 剩下袋子中魔法豆的数目为：[0,10,3,2] 然后我们从另一个有 2 个魔法豆的袋子中拿出 2 个魔法豆。 剩下袋子中魔法豆的数目为：[0,10,3,0] 然后我们从有 3 个魔法豆的袋子中拿出 3 个魔法豆。 剩下袋子中魔法豆的数目为：[0,10,0,0] 总共拿出了 2 &#43; 2 &#43; 3 = 7 个魔法豆，剩下非空袋子中魔法豆的数目相等。 没有比取出 7 个魔法豆更少的方案。  提示:"/>
+
+    <meta property="og:title" content="Leetcode 2171 拿出最少数目的魔法豆" />
+<meta property="og:description" content="2171.拿出最少数目的魔法豆 给定一个 正整数 数组 beans ，其中每个整数表示一个袋子里装的魔法豆的数目。
+请你从每个袋子中 拿出 一些豆子（也可以 不拿出），使得剩下的 非空 袋子中（即 至少还有一颗 魔法豆的袋子）魔法豆的数目 相等。一旦把魔法豆从袋子中取出，你不能再将它放到任何袋子中。
+请返回你需要拿出魔法豆的 最少数目。
+示例 1：
+输入：beans = [4,1,6,5]
+输出：4
+解释：
+ 我们从有 1 个魔法豆的袋子中拿出 1 颗魔法豆。 剩下袋子中魔法豆的数目为：[4,0,6,5] 然后我们从有 6 个魔法豆的袋子中拿出 2 个魔法豆。 剩下袋子中魔法豆的数目为：[4,0,4,5] 然后我们从有 5 个魔法豆的袋子中拿出 1 个魔法豆。 剩下袋子中魔法豆的数目为：[4,0,4,4] 总共拿出了 1 &#43; 2 &#43; 1 = 4 个魔法豆，剩下非空袋子中魔法豆的数目相等。 没有比取出 4 个魔法豆更少的方案。  示例 2：
+输入：beans = [2,10,3,2]
+输出：7
+解释：
+ 我们从有 2 个魔法豆的其中一个袋子中拿出 2 个魔法豆。 剩下袋子中魔法豆的数目为：[0,10,3,2] 然后我们从另一个有 2 个魔法豆的袋子中拿出 2 个魔法豆。 剩下袋子中魔法豆的数目为：[0,10,3,0] 然后我们从有 3 个魔法豆的袋子中拿出 3 个魔法豆。 剩下袋子中魔法豆的数目为：[0,10,0,0] 总共拿出了 2 &#43; 2 &#43; 3 = 7 个魔法豆，剩下非空袋子中魔法豆的数目相等。 没有比取出 7 个魔法豆更少的方案。  提示:" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://Lu0key.github.io/post/lc-2171-removing-minimum-number-of-magic-beans/" /><meta property="article:section" content="post" />
+<meta property="article:published_time" content="2024-01-18T14:37:18&#43;08:00" />
+<meta property="article:modified_time" content="2024-01-18T14:37:18&#43;08:00" />
+
+
+
+  </head>
+  <body>
+    <header class="app-header">
+      <a href="https://Lu0key.github.io/"><img class="app-header-avatar" src="/avatar.jpg" alt="洛七" /></a>
+      <span class="app-header-title">洛七的摸鱼池塘</span>
+      <nav class="app-header-menu">
+          <a class="app-header-menu-item" href="/tags/">Tags</a>
+      </nav>
+      <p>即将没书读的咸鱼</p>
+    </header>
+    <main class="app-container">
+      
+  <article class="post">
+    <header class="post-header">
+      <h1 class ="post-title">Leetcode 2171 拿出最少数目的魔法豆</h1>
+      <div class="post-meta">
+        <div>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-calendar">
+  <title>calendar</title>
+  <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line>
+</svg>
+          Jan 18, 2024
+        </div>
+        <div>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-clock">
+  <title>clock</title>
+  <circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline>
+</svg>
+          2 min read
+        </div>
+        <div>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-tag">
+  <title>tag</title>
+  <path d="M20.59 13.41l-7.17 7.17a2 2 0 0 1-2.83 0L2 12V2h10l8.59 8.59a2 2 0 0 1 0 2.82z"></path><line x1="7" y1="7" x2="7.01" y2="7"></line>
+</svg>
+              <a class="tag" href="https://Lu0key.github.io/tags/leetcode/">leetcode</a>
+              <a class="tag" href="https://Lu0key.github.io/tags/%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92/">动态规划</a>
+        </div>
+      </div>
+    </header>
+    <div class="post-content">
+      <h2 id="2171拿出最少数目的魔法豆">2171.拿出最少数目的魔法豆</h2>
+<p>给定一个 <strong>正整数</strong> 数组 <code>beans</code> ，其中每个整数表示一个袋子里装的魔法豆的数目。</p>
+<p>请你从每个袋子中 <strong>拿出</strong> 一些豆子（也可以 <strong>不拿出</strong>），使得剩下的 <strong>非空</strong> 袋子中（即 <strong>至少还有一颗</strong> 魔法豆的袋子）魔法豆的数目 <strong>相等</strong>。一旦把魔法豆从袋子中取出，你不能再将它放到任何袋子中。</p>
+<p>请返回你需要拿出魔法豆的 <strong>最少数目</strong>。</p>
+<p>示例 1：</p>
+<p>输入：beans = [4,1,6,5]<br>
+输出：4<br>
+解释：</p>
+<ul>
+<li>我们从有 1 个魔法豆的袋子中拿出 1 颗魔法豆。 剩下袋子中魔法豆的数目为：<code>[4,0,6,5]</code></li>
+<li>然后我们从有 6 个魔法豆的袋子中拿出 2 个魔法豆。 剩下袋子中魔法豆的数目为：<code>[4,0,4,5]</code></li>
+<li>然后我们从有 5 个魔法豆的袋子中拿出 1 个魔法豆。 剩下袋子中魔法豆的数目为：<code>[4,0,4,4]</code> 总共拿出了 1 + 2 + 1 = 4 个魔法豆，剩下非空袋子中魔法豆的数目相等。 没有比取出 4 个魔法豆更少的方案。</li>
+</ul>
+<p>示例 2：</p>
+<p>输入：beans = [2,10,3,2]<br>
+输出：7<br>
+解释：</p>
+<ul>
+<li>我们从有 2 个魔法豆的其中一个袋子中拿出 2 个魔法豆。 剩下袋子中魔法豆的数目为：<code>[0,10,3,2]</code></li>
+<li>然后我们从另一个有 2 个魔法豆的袋子中拿出 2 个魔法豆。 剩下袋子中魔法豆的数目为：<code>[0,10,3,0]</code></li>
+<li>然后我们从有 3 个魔法豆的袋子中拿出 3 个魔法豆。 剩下袋子中魔法豆的数目为：<code>[0,10,0,0]</code> 总共拿出了 2 + 2 + 3 = 7 个魔法豆，剩下非空袋子中魔法豆的数目相等。 没有比取出 7 个魔法豆更少的方案。</li>
+</ul>
+<p>提示:</p>
+<ul>
+<li><code>1 &lt;= beans.length &lt;= 10^5</code></li>
+<li><code>1 &lt;= beans[i] &lt;= 10^5</code></li>
+</ul>
+<p>Related Topics</p>
+<ul>
+<li>数组</li>
+<li>前缀和</li>
+<li>排序</li>
+</ul>
+<p>题目链接: <a href="https://leetcode.cn/problems/removing-minimum-number-of-magic-beans">link</a></p>
+<h2 id="解答">解答</h2>
+<p>今天这题虽然是 Medium, 但是达到一个中规中矩的效果还是不困难的，最简单粗暴的方式就是对 <code>beans</code> 的每一个元素进行遍历, 都假设当前为最小值或者0，计算需要的次数，这样的时间负载度为 <code>O(n^2)</code>, 不知道会不会超时, 但是有一个更自然的想法，并且时间复杂度更低。</p>
+<p>因为题目的意思就是，我要让所有看的到的元素一样高。以 <code>[2, 10, 3, 4]</code> 为例</p>
+<p><img src="https://raw.githubusercontent.com/Lu0Key/hexo-image/master/images/2024/01/c060a36af51a73ba6fec34676dc0b3d.png" alt=""></p>
+<p>那我们就需要移除选中部分</p>
+<p><img src="https://raw.githubusercontent.com/Lu0Key/hexo-image/master/images/2024/01/24c3a5bd5763d9beded9add5d222748.png" alt=""></p>
+<p>当我们将最小的部分先拿为0，那么我们有机会将需要拿的次数减少，如图所示</p>
+<p><img src="https://raw.githubusercontent.com/Lu0Key/hexo-image/master/images/2024/01/20240118113314.png" alt=""></p>
+<p>虽然因为先将最小的部分拿为0，增加了要拿的次数，但是在其他上减小了需要拿的次数，有机会减小的次数大于增加的次数。那么能否先将其他的部分减少到最小呢？实际上不能，我们每次要拿为0，必须是最小的，证明很简单，如图所示，以第二小为例</p>
+<p><img src="https://raw.githubusercontent.com/Lu0Key/hexo-image/master/images/2024/01/20240118114353.png" alt=""></p>
+<p>我们发现不仅拿的次数没有减少，而且还在原来的基础上增加了一个最小值的量。那等于说如果我当前要将一个值拿到为0，就需要知道当前最小值的是多少，那如果我每次都需要知道最小值是多少都需要遍历一遍剩余值，这个比较麻烦，并且这题的结果与数如何排列是无关的，因此我们很容易想到先对 <code>beans</code> 进行从小到大排序。</p>
+<p>我们从0开始，计算如果0个值拿到为0达到题目要求的次数需要多少次作为基础结果。然后依次进行增加需要拿到为0的列，我们以下图为例（升序），当第一列拿到为0，那么增加的次数为第一列的值，减少的次数为（剩下的列的数量）* （第二列与第一列所差的值）</p>
+<p><img src="https://raw.githubusercontent.com/Lu0Key/hexo-image/master/images/2024/01/20240118115145.png" alt=""></p>
+<p>因此当将索引为 <code>i</code> 的列置为0时，前面的 <code>[0,i-1]</code> 列都已经为0了，此时要将临时结果加上第 i 列的值 , 并且减去 （索引为 <code>i+1</code> 列的值 <strong>减去</strong> 索引为 <code>i</code> 的列的值）<strong>乘以</strong> 剩余的列数, 即 (n-i-1)， 并且只剩下最后一列时就不需要减了，因为只剩最后一列不为0时无论值为多少都是满足题目要求的了。在这个过程中一直看，从0个列置为0到n-1个列值为0，什么时候的结果是最小的，最后返回这个结果。</p>
+<p>代码如下：</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Solution</span> <span style="color:#f92672">{</span>
+    <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">long</span> <span style="color:#a6e22e">minimumRemoval</span><span style="color:#f92672">(</span><span style="color:#66d9ef">int</span><span style="color:#f92672">[]</span> beans<span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
+        <span style="color:#66d9ef">long</span> result <span style="color:#f92672">=</span> 0<span style="color:#f92672">;</span>
+        ArrayList<span style="color:#f92672">&lt;</span>Integer<span style="color:#f92672">&gt;</span> list <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> ArrayList<span style="color:#f92672">();</span>
+        <span style="color:#66d9ef">for</span> <span style="color:#f92672">(</span><span style="color:#66d9ef">int</span> i <span style="color:#f92672">=</span> 0<span style="color:#f92672">;</span> i <span style="color:#f92672">&lt;</span> beans<span style="color:#f92672">.</span><span style="color:#a6e22e">length</span><span style="color:#f92672">;</span> i<span style="color:#f92672">++)</span> <span style="color:#f92672">{</span>
+            list<span style="color:#f92672">.</span><span style="color:#a6e22e">add</span><span style="color:#f92672">(</span>beans<span style="color:#f92672">[</span>i<span style="color:#f92672">]);</span>
+        <span style="color:#f92672">}</span>
+        list<span style="color:#f92672">.</span><span style="color:#a6e22e">sort</span><span style="color:#f92672">(</span>Comparator<span style="color:#f92672">.</span><span style="color:#a6e22e">naturalOrder</span><span style="color:#f92672">());</span>
+
+        <span style="color:#66d9ef">int</span><span style="color:#f92672">[]</span> diff <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> <span style="color:#66d9ef">int</span><span style="color:#f92672">[</span>beans<span style="color:#f92672">.</span><span style="color:#a6e22e">length</span><span style="color:#f92672">];</span>
+        <span style="color:#66d9ef">for</span> <span style="color:#f92672">(</span><span style="color:#66d9ef">int</span> i <span style="color:#f92672">=</span> 0<span style="color:#f92672">;</span> i <span style="color:#f92672">&lt;</span> diff<span style="color:#f92672">.</span><span style="color:#a6e22e">length</span><span style="color:#f92672">;</span> i<span style="color:#f92672">++)</span> <span style="color:#f92672">{</span>
+            diff<span style="color:#f92672">[</span>i<span style="color:#f92672">]</span> <span style="color:#f92672">=</span> list<span style="color:#f92672">.</span><span style="color:#a6e22e">get</span><span style="color:#f92672">(</span>i<span style="color:#f92672">)-</span>list<span style="color:#f92672">.</span><span style="color:#a6e22e">get</span><span style="color:#f92672">(</span>0<span style="color:#f92672">);</span>
+        <span style="color:#f92672">}</span>
+        <span style="color:#66d9ef">for</span> <span style="color:#f92672">(</span><span style="color:#66d9ef">int</span> i <span style="color:#f92672">=</span> 0<span style="color:#f92672">;</span> i <span style="color:#f92672">&lt;</span> diff<span style="color:#f92672">.</span><span style="color:#a6e22e">length</span><span style="color:#f92672">;</span> i<span style="color:#f92672">++)</span> <span style="color:#f92672">{</span>
+            result <span style="color:#f92672">+=</span> diff<span style="color:#f92672">[</span>i<span style="color:#f92672">];</span>
+        <span style="color:#f92672">}</span>
+        <span style="color:#66d9ef">long</span> tempResult <span style="color:#f92672">=</span> result<span style="color:#f92672">;</span>
+        <span style="color:#66d9ef">for</span> <span style="color:#f92672">(</span><span style="color:#66d9ef">int</span> i <span style="color:#f92672">=</span> 0<span style="color:#f92672">;</span> i <span style="color:#f92672">&lt;</span> beans<span style="color:#f92672">.</span><span style="color:#a6e22e">length</span><span style="color:#f92672">-</span>1<span style="color:#f92672">;</span> i<span style="color:#f92672">++)</span> <span style="color:#f92672">{</span>
+            tempResult <span style="color:#f92672">+=</span> list<span style="color:#f92672">.</span><span style="color:#a6e22e">get</span><span style="color:#f92672">(</span>i<span style="color:#f92672">);</span>
+            tempResult <span style="color:#f92672">-=</span> <span style="color:#f92672">(</span>list<span style="color:#f92672">.</span><span style="color:#a6e22e">get</span><span style="color:#f92672">(</span>i<span style="color:#f92672">+</span>1<span style="color:#f92672">)-</span>list<span style="color:#f92672">.</span><span style="color:#a6e22e">get</span><span style="color:#f92672">(</span>i<span style="color:#f92672">))*(</span>beans<span style="color:#f92672">.</span><span style="color:#a6e22e">length</span> <span style="color:#f92672">-</span> i <span style="color:#f92672">-</span> 1<span style="color:#f92672">);</span>
+            <span style="color:#66d9ef">if</span><span style="color:#f92672">(</span>tempResult<span style="color:#f92672">&lt;</span>result<span style="color:#f92672">){</span>result <span style="color:#f92672">=</span> tempResult<span style="color:#f92672">;}</span>
+        <span style="color:#f92672">}</span>
+        <span style="color:#66d9ef">return</span> result<span style="color:#f92672">;</span>
+    <span style="color:#f92672">}</span>
+<span style="color:#f92672">}</span>
+</code></pre></div><p>但是这个版本实在是太慢了, 用时154ms, 击败了 6.02%, 于是看了下别人的逻辑, 然后发现自己太抽象了, 居然先转成 <code>ArrayList</code> 然后再排序, 可以直接使用 <code>Arrays.sort()</code>, 因此简单改了一下代码</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Solution</span> <span style="color:#f92672">{</span>
+    <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">long</span> <span style="color:#a6e22e">minimumRemoval</span><span style="color:#f92672">(</span><span style="color:#66d9ef">int</span><span style="color:#f92672">[]</span> beans<span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
+        <span style="color:#66d9ef">long</span> result <span style="color:#f92672">=</span> 0<span style="color:#f92672">;</span>
+        Arrays<span style="color:#f92672">.</span><span style="color:#a6e22e">sort</span><span style="color:#f92672">(</span>beans<span style="color:#f92672">);</span>
+
+        <span style="color:#66d9ef">int</span><span style="color:#f92672">[]</span> diff <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> <span style="color:#66d9ef">int</span><span style="color:#f92672">[</span>beans<span style="color:#f92672">.</span><span style="color:#a6e22e">length</span><span style="color:#f92672">];</span>
+        <span style="color:#66d9ef">for</span> <span style="color:#f92672">(</span><span style="color:#66d9ef">int</span> i <span style="color:#f92672">=</span> 0<span style="color:#f92672">;</span> i <span style="color:#f92672">&lt;</span> diff<span style="color:#f92672">.</span><span style="color:#a6e22e">length</span><span style="color:#f92672">;</span> i<span style="color:#f92672">++)</span> <span style="color:#f92672">{</span>
+            diff<span style="color:#f92672">[</span>i<span style="color:#f92672">]</span> <span style="color:#f92672">=</span> beans<span style="color:#f92672">[</span>i<span style="color:#f92672">]-</span>beans<span style="color:#f92672">[</span>0<span style="color:#f92672">];</span>
+        <span style="color:#f92672">}</span>
+        <span style="color:#66d9ef">for</span> <span style="color:#f92672">(</span><span style="color:#66d9ef">int</span> i <span style="color:#f92672">=</span> 0<span style="color:#f92672">;</span> i <span style="color:#f92672">&lt;</span> diff<span style="color:#f92672">.</span><span style="color:#a6e22e">length</span><span style="color:#f92672">;</span> i<span style="color:#f92672">++)</span> <span style="color:#f92672">{</span>
+            result <span style="color:#f92672">+=</span> diff<span style="color:#f92672">[</span>i<span style="color:#f92672">];</span>
+        <span style="color:#f92672">}</span>
+        <span style="color:#66d9ef">long</span> tempResult <span style="color:#f92672">=</span> result<span style="color:#f92672">;</span>
+        <span style="color:#66d9ef">for</span> <span style="color:#f92672">(</span><span style="color:#66d9ef">int</span> i <span style="color:#f92672">=</span> 0<span style="color:#f92672">;</span> i <span style="color:#f92672">&lt;</span> beans<span style="color:#f92672">.</span><span style="color:#a6e22e">length</span><span style="color:#f92672">-</span>1<span style="color:#f92672">;</span> i<span style="color:#f92672">++)</span> <span style="color:#f92672">{</span>
+            tempResult <span style="color:#f92672">+=</span> beans<span style="color:#f92672">[</span>i<span style="color:#f92672">];</span>
+            tempResult <span style="color:#f92672">-=</span> <span style="color:#f92672">(</span>beans<span style="color:#f92672">[</span>i<span style="color:#f92672">+</span>1<span style="color:#f92672">]-</span>beans<span style="color:#f92672">[</span>i<span style="color:#f92672">])*(</span>beans<span style="color:#f92672">.</span><span style="color:#a6e22e">length</span> <span style="color:#f92672">-</span> i <span style="color:#f92672">-</span> 1<span style="color:#f92672">);</span>
+            <span style="color:#66d9ef">if</span><span style="color:#f92672">(</span>tempResult<span style="color:#f92672">&lt;</span>result<span style="color:#f92672">){</span>result <span style="color:#f92672">=</span> tempResult<span style="color:#f92672">;}</span>
+        <span style="color:#f92672">}</span>
+        <span style="color:#66d9ef">return</span> result<span style="color:#f92672">;</span>
+    <span style="color:#f92672">}</span>
+<span style="color:#f92672">}</span>
+</code></pre></div><p>成功优化到了 39ms, 并且击败了 46.99%。然后继续修修补补发现diff根本不需要，时间效率到了38ms, 但是感觉这个算误差了</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Solution</span> <span style="color:#f92672">{</span>
+    <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">long</span> <span style="color:#a6e22e">minimumRemoval</span><span style="color:#f92672">(</span><span style="color:#66d9ef">int</span><span style="color:#f92672">[]</span> beans<span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
+        <span style="color:#66d9ef">long</span> result <span style="color:#f92672">=</span> 0<span style="color:#f92672">;</span>
+        <span style="color:#66d9ef">int</span> n <span style="color:#f92672">=</span> beans<span style="color:#f92672">.</span><span style="color:#a6e22e">length</span><span style="color:#f92672">;</span>
+        Arrays<span style="color:#f92672">.</span><span style="color:#a6e22e">sort</span><span style="color:#f92672">(</span>beans<span style="color:#f92672">);</span>
+
+        <span style="color:#66d9ef">for</span> <span style="color:#f92672">(</span><span style="color:#66d9ef">int</span> i <span style="color:#f92672">=</span> 0<span style="color:#f92672">;</span> i <span style="color:#f92672">&lt;</span> n<span style="color:#f92672">;</span> i<span style="color:#f92672">++)</span> <span style="color:#f92672">{</span>
+            result <span style="color:#f92672">+=</span> beans<span style="color:#f92672">[</span>i<span style="color:#f92672">]-</span>beans<span style="color:#f92672">[</span>0<span style="color:#f92672">];</span>
+        <span style="color:#f92672">}</span>
+        <span style="color:#66d9ef">long</span> tempResult <span style="color:#f92672">=</span> result<span style="color:#f92672">;</span>
+        <span style="color:#66d9ef">for</span> <span style="color:#f92672">(</span><span style="color:#66d9ef">int</span> i <span style="color:#f92672">=</span> 0<span style="color:#f92672">;</span> i <span style="color:#f92672">&lt;</span> n<span style="color:#f92672">-</span>1<span style="color:#f92672">;</span> i<span style="color:#f92672">++)</span> <span style="color:#f92672">{</span>
+            tempResult <span style="color:#f92672">+=</span> beans<span style="color:#f92672">[</span>i<span style="color:#f92672">];</span>
+            tempResult <span style="color:#f92672">-=</span> <span style="color:#f92672">(</span>beans<span style="color:#f92672">[</span>i<span style="color:#f92672">+</span>1<span style="color:#f92672">]-</span>beans<span style="color:#f92672">[</span>i<span style="color:#f92672">])*(</span>n <span style="color:#f92672">-</span> i <span style="color:#f92672">-</span> 1<span style="color:#f92672">);</span>
+            result <span style="color:#f92672">=</span> tempResult <span style="color:#f92672">&lt;</span> result <span style="color:#f92672">?</span> tempResult<span style="color:#f92672">:</span> result<span style="color:#f92672">;</span>
+        <span style="color:#f92672">}</span>
+        <span style="color:#66d9ef">return</span> result<span style="color:#f92672">;</span>
+    <span style="color:#f92672">}</span>
+<span style="color:#f92672">}</span>
+</code></pre></div><p>此时的时间复杂度应该主要就是排序部分的 <code>O(nlogn)</code> 了，因此想要提高再提高时间效率就需要用空间去换了。可以尝试优化成  O(n) 的时间复杂度.</p>
+
+    </div>
+    <div class="post-footer">
+      
+    </div>
+  </article>
+
+    </main>
+  </body>
+</html>
