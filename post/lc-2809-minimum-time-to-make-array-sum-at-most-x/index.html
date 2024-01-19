@@ -1,0 +1,180 @@
+<!doctype html>
+<html lang="en-us">
+  <head>
+    <title>Leetcode 2809 使数组和小于等于 x 的最少时间 // 洛七的摸鱼池塘</title>
+    <link rel="shortcut icon" href="/favicon.ico" />
+    <meta charset="utf-8" />
+    <meta name="generator" content="Hugo 0.81.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="author" content="洛七" />
+    <meta name="description" content="" />
+    <link rel="stylesheet" href="/css/main.min.0fb49e70a30412f97ddfc418e18fefef1d9fcdebe45f634dbbba768b00fe1eec.css" />
+    
+
+    
+    <meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Leetcode 2809 使数组和小于等于 x 的最少时间"/>
+<meta name="twitter:description" content="2809.使数组和小于等于 x 的最少时间 给你两个长度相等下标从 0 开始的整数数组 nums1 和 nums2 。每一秒，对于所有下标 0 &lt;= i &lt; nums1.length ，nums1[i] 的值都增加 nums2[i] 。操作 完成后 ，你可以进行如下操作：
+ 选择任一满足 0 &lt;= i &lt; nums1.length 的下标 i ，并使 nums1[i] = 0 。  同时给你一个整数 x 。
+请你返回使 nums1 中所有元素之和 小于等于 x 所需要的 最少 时间，如果无法实现，那么返回 -1 。
+示例 1：
+输入: nums1 = [1,2,3], nums2 = [1,2,3], x = 4
+输出: 3
+解释：
+第 1 秒，我们对 i = 0 进行操作，得到 nums1 = [0,2&#43;2,3&#43;3] = [0,4,6] 。"/>
+
+    <meta property="og:title" content="Leetcode 2809 使数组和小于等于 x 的最少时间" />
+<meta property="og:description" content="2809.使数组和小于等于 x 的最少时间 给你两个长度相等下标从 0 开始的整数数组 nums1 和 nums2 。每一秒，对于所有下标 0 &lt;= i &lt; nums1.length ，nums1[i] 的值都增加 nums2[i] 。操作 完成后 ，你可以进行如下操作：
+ 选择任一满足 0 &lt;= i &lt; nums1.length 的下标 i ，并使 nums1[i] = 0 。  同时给你一个整数 x 。
+请你返回使 nums1 中所有元素之和 小于等于 x 所需要的 最少 时间，如果无法实现，那么返回 -1 。
+示例 1：
+输入: nums1 = [1,2,3], nums2 = [1,2,3], x = 4
+输出: 3
+解释：
+第 1 秒，我们对 i = 0 进行操作，得到 nums1 = [0,2&#43;2,3&#43;3] = [0,4,6] 。" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://Lu0key.github.io/post/lc-2809-minimum-time-to-make-array-sum-at-most-x/" /><meta property="article:section" content="post" />
+<meta property="article:published_time" content="2024-01-20T00:07:08&#43;08:00" />
+<meta property="article:modified_time" content="2024-01-20T00:07:08&#43;08:00" />
+
+
+
+  </head>
+  <body>
+    <header class="app-header">
+      <a href="https://Lu0key.github.io/"><img class="app-header-avatar" src="/avatar.jpg" alt="洛七" /></a>
+      <span class="app-header-title">洛七的摸鱼池塘</span>
+      <nav class="app-header-menu">
+          <a class="app-header-menu-item" href="/tags/">Tags</a>
+      </nav>
+      <p>即将没书读的咸鱼</p>
+    </header>
+    <main class="app-container">
+      
+  <article class="post">
+    <header class="post-header">
+      <h1 class ="post-title">Leetcode 2809 使数组和小于等于 x 的最少时间</h1>
+      <div class="post-meta">
+        <div>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-calendar">
+  <title>calendar</title>
+  <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line>
+</svg>
+          Jan 20, 2024
+        </div>
+        <div>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-clock">
+  <title>clock</title>
+  <circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline>
+</svg>
+          3 min read
+        </div>
+        <div>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-tag">
+  <title>tag</title>
+  <path d="M20.59 13.41l-7.17 7.17a2 2 0 0 1-2.83 0L2 12V2h10l8.59 8.59a2 2 0 0 1 0 2.82z"></path><line x1="7" y1="7" x2="7.01" y2="7"></line>
+</svg>
+              <a class="tag" href="https://Lu0key.github.io/tags/leetcode/">leetcode</a>
+              <a class="tag" href="https://Lu0key.github.io/tags/%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92/">动态规划</a>
+        </div>
+      </div>
+    </header>
+    <div class="post-content">
+      <h2 id="2809使数组和小于等于-x-的最少时间">2809.使数组和小于等于 x 的最少时间</h2>
+<p>给你两个长度相等下标从 <strong>0</strong> 开始的整数数组 <code>nums1</code> 和 <code>nums2</code> 。每一秒，对于所有下标 <code>0 &lt;= i &lt; nums1.length</code> ，<code>nums1[i]</code> 的值都增加 <code>nums2[i]</code> 。操作 <strong>完成后</strong> ，你可以进行如下操作：</p>
+<ul>
+<li>选择任一满足 <code>0 &lt;= i &lt; nums1.length</code> 的下标 <code>i</code> ，并使 <code>nums1[i] = 0</code> 。</li>
+</ul>
+<p>同时给你一个整数 <code>x</code> 。</p>
+<p>请你返回使 <code>nums1</code> 中所有元素之和 <strong>小于等于</strong> <code>x</code> 所需要的 <strong>最少</strong> 时间，如果无法实现，那么返回 <code>-1</code> 。</p>
+<p>示例 1：</p>
+<p>输入: nums1 = [1,2,3], nums2 = [1,2,3], x = 4<br>
+输出: 3<br>
+解释：<br>
+第 1 秒，我们对 i = 0 进行操作，得到 nums1 = [0,2+2,3+3] = [0,4,6] 。<br>
+第 2 秒，我们对 i = 1 进行操作，得到 nums1 = [0+1,0,6+3] = [1,0,9] 。<br>
+第 3 秒，我们对 i = 2 进行操作，得到 nums1 = [1+1,0+2,0] = [2,2,0] 。<br>
+现在 nums1 的和为 4 。不存在更少次数的操作，所以我们返回 3 。</p>
+<p>示例 2：</p>
+<p>输入: nums1 = [1,2,3], nums2 = [3,3,3], x = 4<br>
+输出: -1<br>
+解释：不管如何操作，nums1 的和总是会超过 x 。</p>
+<p>提示：</p>
+<ul>
+<li><code>1 &lt;= nums1.length &lt;= 10^3</code></li>
+<li><code>1 &lt;= nums1[i] &lt;= 10^3</code></li>
+<li><code>0 &lt;= nums2[i] &lt;= 10^3</code></li>
+<li><code>nums1.length == nums2.length</code></li>
+<li><code>0 &lt;= x &lt;= 10^6</code></li>
+</ul>
+<p>Related Topics</p>
+<ul>
+<li>数组</li>
+<li>动态规划</li>
+<li>排序</li>
+</ul>
+<p>题目链接: <a href="https://leetcode.cn/problems/minimum-time-to-make-array-sum-at-most-x/">link</a></p>
+<h2 id="解答">解答</h2>
+<p>今天的题目好难啊，难度为 Hard, 我没有做出来，但是还是可以根据题目已有信息尝试分析一下。</p>
+<p>首先就是对于每个位置，我们最多操作一次，为什么呢？因为如果我们对同一个位置操作多次的话，完全可以只保留最后一次，这样还能避免其他位置的数字多次增加，反而导致整体更大。</p>
+<p>其次，假定我们已经确定了我们要操作的位置，比如 <code>i_1,i_2,i_3,...,i_k</code>, 那我们操作的顺序应当从 <code>nums2[i_j]</code> 中小的开始，因为如果我们先从 <code>nums2[i_j]</code> 大的位置开始的话，之后我们就不会操作这个位置了，那么这个位置就会增加的值次数就会更多，因为我们没有假定 <code>i_1&lt;=i_2&lt;=i_3&lt;=...&lt;=i_k</code>, 因此我们可以假定 <code>nums2[i_1] &lt;= nums2[i_2]&lt;=...&lt;=nums2[i_k]</code>, 毕竟总能排成这样的，根据顺序再决定 <code>i_j</code> 的值就好了。</p>
+<p>我们假设 <code>nums2[n] &lt;= nums[m]</code>, 并且 <code>nums2[n]</code> 与 <code>nums2[m]</code> 之间间隔了 <code>l</code> 个选定的位置那我们会发现 先进行操作位置 <code>n</code> 再操作位置 <code>m</code>和 先操作位置 <code>m</code> 再操作位置 <code>n</code>,对于前者位置 <code>n</code> 的值为 <code>(l+1) * num2s[n]</code> 而位置 <code>m</code> 的值为 <code>0</code>, 对于后者位置 <code>n</code> 的值为 <code>0</code> 而位置 <code>m</code> 的值为 <code>(l+1) * nums2[m]</code>, 此时其他位置的值是相同的, 因此整体的值是前者更小。</p>
+<p>因此对于任意两个位置的操作顺序我们都可以进行调换，调换到位置对应的值小的先进行操作。</p>
+<p>我们假设 <code>nums1</code> 的和为 <code>s1</code>, <code>nums2</code> 的和为 <code>s2</code>, 那么对于操作 <code>t</code> 次后, 我们的值就为 <code>s1 + s2*t</code> 并减去减少量的值, 我们就需要考虑对于不同的 t 能够最多减少多少。</p>
+<p>以上就是我能够考虑到的部分。接下来的是看解析的。</p>
+<p>假设我们对于位置 <code>i</code> 在第 <code>r</code> 次进行操作, 那么到了第 <code>k</code> 次, 此时 <code>nums1[i]</code> 的值为 <code>(k-r)*nums[i]</code>, 对于整体减少的值为 <code>nums1[i]+r*nums2[i]</code>, 我们不妨假设  <code>k=3</code>, 并且操作的3个位置分别为 <code>3,6,9</code>, 那么 3 次操作后对整体减少的值为 <code>nums1[3]+r1*nums2[3]+nums1[6]+r2*nums2[6]+nums1[9]+r3*nums2[9]</code>, 因为我们希望整体减少的最多的前提是我们现在已经确认了就选择 <code>3,6,9</code> 这三个位置, 在确认位置的前提下对操作顺序进行排序, 达到整体减少最多, 因此问题转为求 <code>r1*nums2[3]+r2*nums2[6]+r3*nums2[9]</code> 的最大值, 我们不妨假设 <code>nums2[3] &lt;= nums2[6] &lt;= nums2[9]</code>, 那么由排序不等式可知, 当 <code>r1&lt;=r2&lt;=r3</code> 时, <code>r1*nums2[3]+r2*nums2[6]+r3*nums2[9]</code> 最大.</p>
+<p>由于输出与位置无关, 因此为了方便我们可以将 <code>nums2</code> 进行排序, 当然需要将 <code>nums1</code> 与 <code>nums2</code> 绑在一起，根据 <code>nums2</code> 的值进行排序.</p>
+<p>由于场景的特殊性, 因此此时 <code>r</code> 的取值与排序相同, 例如上面例子取到最大的值时为 <code>r1=1,r2=2,r3=3</code>.</p>
+<p>定义 <code>f[i+1][j]</code> 表示从 <code>0,1,2,...,i</code> 中选 <code>j</code> 个下标（<code>j&lt;=i+1</code>）, 减少量最大的值, 那么我们考虑下标 <code>i</code>:</p>
+<ul>
+<li>不选 <code>i</code>， 问题变成从 <code>0,1,2,...,i-1</code> 中选 <code>j</code> 个下标, 减少量最大值是多少, 即 <code>f[i+1][j] = f[i][j]</code></li>
+<li>如果选 <code>i</code>, 问题变成从 <code>0,1,2,...,i-1</code> 中选 <code>j-1</code> 个下标, 减少量最大值是多少, 即 <code>f[i+1][j] = f[i][j-1] + nums1[i] + nums2[i] * j</code></li>
+</ul>
+<p>最后最大值就是两种情况的最大值,</p>
+<p><code>f[i+1][j] = max(f[i][j], f[i][j-1] + nums1[i] + nums2[i] * j)</code></p>
+<p>初始值很自然就是 0 个点中选 0个, 那自然 <code>f[0][0]=0</code>, 答案为第一个满足 <code>s1+s2*t-f[n][t]&lt;=x</code> 的 <code>t</code>, 如果不存在, 则返回 -1.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Solution</span> <span style="color:#f92672">{</span>
+    <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">int</span> <span style="color:#a6e22e">minimumTime</span><span style="color:#f92672">(</span>List<span style="color:#f92672">&lt;</span>Integer<span style="color:#f92672">&gt;</span> nums1<span style="color:#f92672">,</span> List<span style="color:#f92672">&lt;</span>Integer<span style="color:#f92672">&gt;</span> nums2<span style="color:#f92672">,</span> <span style="color:#66d9ef">int</span> x<span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
+        <span style="color:#75715e">// 计算 nums1 的总和 s1 , nums2 的总和 s2
+</span><span style="color:#75715e"></span>        <span style="color:#66d9ef">int</span> n <span style="color:#f92672">=</span> nums1<span style="color:#f92672">.</span><span style="color:#a6e22e">size</span><span style="color:#f92672">(),</span> s1 <span style="color:#f92672">=</span> 0<span style="color:#f92672">,</span> s2 <span style="color:#f92672">=</span> 0<span style="color:#f92672">;</span>
+        <span style="color:#75715e">// 定义的 f[i+1][j]
+</span><span style="color:#75715e"></span>        <span style="color:#66d9ef">int</span><span style="color:#f92672">[][]</span> dp <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> <span style="color:#66d9ef">int</span><span style="color:#f92672">[</span>n <span style="color:#f92672">+</span> 1<span style="color:#f92672">][</span>n <span style="color:#f92672">+</span> 1<span style="color:#f92672">];</span>
+        <span style="color:#75715e">// 把两个放在一起, 一起排序
+</span><span style="color:#75715e"></span>        List<span style="color:#f92672">&lt;</span>List<span style="color:#f92672">&lt;</span>Integer<span style="color:#f92672">&gt;&gt;</span> nums <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> ArrayList<span style="color:#f92672">&lt;&gt;();</span>
+        <span style="color:#75715e">// 这里作者把 nums1 和 nums2 换了顺序
+</span><span style="color:#75715e"></span>        <span style="color:#66d9ef">for</span> <span style="color:#f92672">(</span><span style="color:#66d9ef">int</span> i <span style="color:#f92672">=</span> 0<span style="color:#f92672">;</span> i <span style="color:#f92672">&lt;</span> n<span style="color:#f92672">;</span> i<span style="color:#f92672">++)</span> <span style="color:#f92672">{</span>
+            <span style="color:#66d9ef">int</span> a <span style="color:#f92672">=</span> nums1<span style="color:#f92672">.</span><span style="color:#a6e22e">get</span><span style="color:#f92672">(</span>i<span style="color:#f92672">),</span> b <span style="color:#f92672">=</span> nums2<span style="color:#f92672">.</span><span style="color:#a6e22e">get</span><span style="color:#f92672">(</span>i<span style="color:#f92672">);</span>
+            nums<span style="color:#f92672">.</span><span style="color:#a6e22e">add</span><span style="color:#f92672">(</span>Arrays<span style="color:#f92672">.</span><span style="color:#a6e22e">asList</span><span style="color:#f92672">(</span>b<span style="color:#f92672">,</span> a<span style="color:#f92672">));</span>
+            s1 <span style="color:#f92672">+=</span> a<span style="color:#f92672">;</span>
+            s2 <span style="color:#f92672">+=</span> b<span style="color:#f92672">;</span>
+        <span style="color:#f92672">}</span>
+        <span style="color:#75715e">// 排序
+</span><span style="color:#75715e"></span>        Collections<span style="color:#f92672">.</span><span style="color:#a6e22e">sort</span><span style="color:#f92672">(</span>nums<span style="color:#f92672">,</span> <span style="color:#f92672">(</span>o1<span style="color:#f92672">,</span> o2<span style="color:#f92672">)</span> <span style="color:#f92672">-&gt;</span> Integer<span style="color:#f92672">.</span><span style="color:#a6e22e">compare</span><span style="color:#f92672">(</span>o1<span style="color:#f92672">.</span><span style="color:#a6e22e">get</span><span style="color:#f92672">(</span>0<span style="color:#f92672">),</span> o2<span style="color:#f92672">.</span><span style="color:#a6e22e">get</span><span style="color:#f92672">(</span>0<span style="color:#f92672">)));</span>
+        <span style="color:#75715e">// 从 j=1 即最多1个节点开始
+</span><span style="color:#75715e"></span>        <span style="color:#75715e">// 他这个和他写的解析有点反，应该把 j换成i，i换成j好一点.
+</span><span style="color:#75715e"></span>        <span style="color:#66d9ef">for</span> <span style="color:#f92672">(</span><span style="color:#66d9ef">int</span> j <span style="color:#f92672">=</span> 1<span style="color:#f92672">;</span> j <span style="color:#f92672">&lt;=</span> n<span style="color:#f92672">;</span> <span style="color:#f92672">++</span>j<span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
+            <span style="color:#66d9ef">int</span> b <span style="color:#f92672">=</span> nums<span style="color:#f92672">.</span><span style="color:#a6e22e">get</span><span style="color:#f92672">(</span>j <span style="color:#f92672">-</span> 1<span style="color:#f92672">).</span><span style="color:#a6e22e">get</span><span style="color:#f92672">(</span>0<span style="color:#f92672">),</span> a <span style="color:#f92672">=</span> nums<span style="color:#f92672">.</span><span style="color:#a6e22e">get</span><span style="color:#f92672">(</span>j <span style="color:#f92672">-</span> 1<span style="color:#f92672">).</span><span style="color:#a6e22e">get</span><span style="color:#f92672">(</span>1<span style="color:#f92672">);</span>
+            <span style="color:#66d9ef">for</span> <span style="color:#f92672">(</span><span style="color:#66d9ef">int</span> i <span style="color:#f92672">=</span> j<span style="color:#f92672">;</span> i <span style="color:#f92672">&gt;</span> 0<span style="color:#f92672">;</span> <span style="color:#f92672">--</span>i<span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
+                dp<span style="color:#f92672">[</span>j<span style="color:#f92672">][</span>i<span style="color:#f92672">]</span> <span style="color:#f92672">=</span> Math<span style="color:#f92672">.</span><span style="color:#a6e22e">max</span><span style="color:#f92672">(</span>dp<span style="color:#f92672">[</span>j <span style="color:#f92672">-</span> 1<span style="color:#f92672">][</span>i<span style="color:#f92672">],</span> dp<span style="color:#f92672">[</span>j <span style="color:#f92672">-</span> 1<span style="color:#f92672">][</span>i <span style="color:#f92672">-</span> 1<span style="color:#f92672">]</span> <span style="color:#f92672">+</span> i <span style="color:#f92672">*</span> b <span style="color:#f92672">+</span> a<span style="color:#f92672">);</span>
+            <span style="color:#f92672">}</span>
+        <span style="color:#f92672">}</span>
+        <span style="color:#75715e">// 然后这里就看 t 什么时候 OK
+</span><span style="color:#75715e"></span>        <span style="color:#66d9ef">for</span> <span style="color:#f92672">(</span><span style="color:#66d9ef">int</span> i <span style="color:#f92672">=</span> 0<span style="color:#f92672">;</span> i <span style="color:#f92672">&lt;=</span> n<span style="color:#f92672">;</span> i<span style="color:#f92672">++)</span> <span style="color:#f92672">{</span>
+            <span style="color:#66d9ef">if</span> <span style="color:#f92672">(</span>s2 <span style="color:#f92672">*</span> i <span style="color:#f92672">+</span> s1 <span style="color:#f92672">-</span> dp<span style="color:#f92672">[</span>n<span style="color:#f92672">][</span>i<span style="color:#f92672">]</span> <span style="color:#f92672">&lt;=</span> x<span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
+                <span style="color:#66d9ef">return</span> i<span style="color:#f92672">;</span>
+            <span style="color:#f92672">}</span>
+        <span style="color:#f92672">}</span>
+        <span style="color:#66d9ef">return</span> <span style="color:#f92672">-</span>1<span style="color:#f92672">;</span>
+    <span style="color:#f92672">}</span>
+<span style="color:#f92672">}</span>
+</code></pre></div><p>感觉这种题目常常都是考虑很小的情况开始, 然后慢慢从 <code>2</code> 个推广到 <code>n</code> 个。下次多写写.</p>
+
+    </div>
+    <div class="post-footer">
+      
+    </div>
+  </article>
+
+    </main>
+  </body>
+</html>
