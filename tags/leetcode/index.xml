@@ -6,7 +6,34 @@
     <description>Recent content in leetcode on 洛七的摸鱼池塘</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Sat, 20 Jan 2024 00:07:08 +0800</lastBuildDate><atom:link href="https://Lu0key.github.io/tags/leetcode/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sat, 20 Jan 2024 15:24:45 +0800</lastBuildDate><atom:link href="https://Lu0key.github.io/tags/leetcode/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Leetcode 2788 按分隔符拆分字符串</title>
+      <link>https://Lu0key.github.io/post/lc-2788-split-strings-by-separator/</link>
+      <pubDate>Sat, 20 Jan 2024 15:24:45 +0800</pubDate>
+      
+      <guid>https://Lu0key.github.io/post/lc-2788-split-strings-by-separator/</guid>
+      <description>2788.按分隔符拆分字符串 给你一个字符串数组 words 和一个字符 separator ，请你按 separator 拆分 words 中的每个字符串。
+返回一个由拆分后的新字符串组成的字符串数组，不包括空字符串 。
+注意
+ separator 用于决定拆分发生的位置，但它不包含在结果字符串中。 拆分可能形成两个以上的字符串。 结果字符串必须保持初始相同的先后顺序。  示例 1:
+输入: words = [&amp;ldquo;one.two.three&amp;rdquo;,&amp;ldquo;four.five&amp;rdquo;,&amp;ldquo;six&amp;rdquo;], separator = &amp;ldquo;.&amp;rdquo;
+输出: [&amp;ldquo;one&amp;rdquo;,&amp;ldquo;two&amp;rdquo;,&amp;ldquo;three&amp;rdquo;,&amp;ldquo;four&amp;rdquo;,&amp;ldquo;five&amp;rdquo;,&amp;ldquo;six&amp;rdquo;]
+解释: 在本示例中，我们进行下述拆分：
+&amp;ldquo;one.two.three&amp;rdquo; 拆分为 &amp;ldquo;one&amp;rdquo;, &amp;ldquo;two&amp;rdquo;,
+&amp;ldquo;three&amp;rdquo; &amp;ldquo;four.five&amp;rdquo; 拆分为 &amp;ldquo;four&amp;rdquo;,
+&amp;ldquo;five&amp;rdquo; &amp;ldquo;six&amp;rdquo; 拆分为 &amp;ldquo;six&amp;rdquo;
+因此，结果数组为 [&amp;ldquo;one&amp;rdquo;,&amp;ldquo;two&amp;rdquo;,&amp;ldquo;three&amp;rdquo;,&amp;ldquo;four&amp;rdquo;,&amp;ldquo;five&amp;rdquo;,&amp;ldquo;six&amp;rdquo;] 。
+示例 2:
+输入: words = [&amp;quot;$easy$&amp;quot;,&amp;quot;$problem$&amp;quot;], separator = &amp;ldquo;$&amp;rdquo;
+输出: [&amp;ldquo;easy&amp;rdquo;,&amp;ldquo;problem&amp;rdquo;]
+解释: 在本示例中，我们进行下述拆分：
+&amp;ldquo;$easy$&amp;rdquo; 拆分为 &amp;ldquo;easy&amp;rdquo;（不包括空字符串）
+&amp;ldquo;$problem$&amp;rdquo; 拆分为 &amp;ldquo;problem&amp;rdquo;（不包括空字符串）
+因此，结果数组为 [&amp;ldquo;easy&amp;rdquo;,&amp;ldquo;problem&amp;rdquo;] 。
+示例 3:</description>
+    </item>
+    
     <item>
       <title>Leetcode 2809 使数组和小于等于 x 的最少时间</title>
       <link>https://Lu0key.github.io/post/lc-2809-minimum-time-to-make-array-sum-at-most-x/</link>
