@@ -6,7 +6,32 @@
     <description>Recent content on 洛七的摸鱼池塘</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Sat, 20 Jan 2024 15:24:45 +0800</lastBuildDate><atom:link href="https://Lu0key.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 22 Jan 2024 23:27:38 +0800</lastBuildDate><atom:link href="https://Lu0key.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Lc 670 最大交换</title>
+      <link>https://Lu0key.github.io/post/lc-670-maximum-swap/</link>
+      <pubDate>Mon, 22 Jan 2024 23:27:38 +0800</pubDate>
+      
+      <guid>https://Lu0key.github.io/post/lc-670-maximum-swap/</guid>
+      <description>670.最大交换 给定一个非负整数，你至多可以交换一次数字中的任意两位。返回你能得到的最大值。
+示例 1:
+输入: 2736
+输出: 7236
+解释: 交换数字2和数字7。
+示例 2:
+输入: 9973
+输出: 9973
+解释: 不需要交换。
+注意:
+ 给定数字的范围是 [0, 10^8]  Related Topics
+ 贪心 数学  题目链接: link
+解答 本题的难度是 Medium.
+首先很自然的想法，当然是越高位的被换成越大越好, 因此我们从左到右遍历, 对于每一位来看, 这一位的右边有没有更大的, 如果有就把右边最大的和当前位进行换, 如果没有, 说明当前遍历过的数字已经是最大的了, 就要看看后面的了. 当然右边同时有两个是最大的, 那么当然是选位更小的那个数字, 因此从右向左遍历.
+比如: 96177, 9 的右边没有比 9 更大的了, 因此跳到 6, 右边最大的为 7, 因此我们要找最大的应该用最低位, 即个位的 7. 得到结果, 97176。
+代码如下:
+class Solution { public int maximumSwap(int num) { String s = Integer.</description>
+    </item>
+    
     <item>
       <title>Leetcode 2788 按分隔符拆分字符串</title>
       <link>https://Lu0key.github.io/post/lc-2788-split-strings-by-separator/</link>
