@@ -1,0 +1,262 @@
+<!doctype html>
+<html lang="en-us">
+  <head>
+    <title>Leetcode 2641 二叉树的堂兄弟节点 II // 洛七的摸鱼池塘</title>
+    <link rel="shortcut icon" href="/favicon.ico" />
+    <meta charset="utf-8" />
+    <meta name="generator" content="Hugo 0.81.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="author" content="洛七" />
+    <meta name="description" content="" />
+    <link rel="stylesheet" href="/css/main.min.0fb49e70a30412f97ddfc418e18fefef1d9fcdebe45f634dbbba768b00fe1eec.css" />
+    
+
+    
+    <meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Leetcode 2641 二叉树的堂兄弟节点 II"/>
+<meta name="twitter:description" content="2641.二叉树的堂兄弟节点 II 给你一棵二叉树的根 root ，请你将每个节点的值替换成该节点的所有 堂兄弟节点值的和 。
+如果两个节点在树中有相同的深度且它们的父节点不同，那么它们互为 堂兄弟 。
+请你返回修改值之后，树的根 root 。
+注意，一个节点的深度指的是从树根节点到这个节点经过的边数。
+示例 1:
+输入: root = [5,4,9,1,10,null,7]
+输出: [0,0,0,7,7,null,11]
+解释: 上图展示了初始的二叉树和修改每个节点的值之后的二叉树。
+ 值为 5 的节点没有堂兄弟，所以值修改为 0 。 值为 4 的节点没有堂兄弟，所以值修改为 0 。 值为 9 的节点没有堂兄弟，所以值修改为 0 。 值为 1 的节点有一个堂兄弟，值为 7 ，所以值修改为 7 。 值为 10 的节点有一个堂兄弟，值为 7 ，所以值修改为 7 。 值为 7 的节点有两个堂兄弟，值分别为 1 和 10 ，所以值修改为 11 。  示例 2:
+输入: root = [3,1,2]"/>
+
+    <meta property="og:title" content="Leetcode 2641 二叉树的堂兄弟节点 II" />
+<meta property="og:description" content="2641.二叉树的堂兄弟节点 II 给你一棵二叉树的根 root ，请你将每个节点的值替换成该节点的所有 堂兄弟节点值的和 。
+如果两个节点在树中有相同的深度且它们的父节点不同，那么它们互为 堂兄弟 。
+请你返回修改值之后，树的根 root 。
+注意，一个节点的深度指的是从树根节点到这个节点经过的边数。
+示例 1:
+输入: root = [5,4,9,1,10,null,7]
+输出: [0,0,0,7,7,null,11]
+解释: 上图展示了初始的二叉树和修改每个节点的值之后的二叉树。
+ 值为 5 的节点没有堂兄弟，所以值修改为 0 。 值为 4 的节点没有堂兄弟，所以值修改为 0 。 值为 9 的节点没有堂兄弟，所以值修改为 0 。 值为 1 的节点有一个堂兄弟，值为 7 ，所以值修改为 7 。 值为 10 的节点有一个堂兄弟，值为 7 ，所以值修改为 7 。 值为 7 的节点有两个堂兄弟，值分别为 1 和 10 ，所以值修改为 11 。  示例 2:
+输入: root = [3,1,2]" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://Lu0key.github.io/post/lc-2641-cousins-in-binary-tree-ii/" /><meta property="article:section" content="post" />
+<meta property="article:published_time" content="2024-02-28T22:02:26&#43;08:00" />
+<meta property="article:modified_time" content="2024-02-28T22:02:26&#43;08:00" />
+
+
+
+  </head>
+  <body>
+    <header class="app-header">
+      <a href="https://Lu0key.github.io/"><img class="app-header-avatar" src="/avatar.jpg" alt="洛七" /></a>
+      <span class="app-header-title">洛七的摸鱼池塘</span>
+      <nav class="app-header-menu">
+          <a class="app-header-menu-item" href="/tags/">Tags</a>
+      </nav>
+      <p>即将没书读的咸鱼</p>
+    </header>
+    <main class="app-container">
+      
+  <article class="post">
+    <header class="post-header">
+      <h1 class ="post-title">Leetcode 2641 二叉树的堂兄弟节点 II</h1>
+      <div class="post-meta">
+        <div>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-calendar">
+  <title>calendar</title>
+  <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line>
+</svg>
+          Feb 28, 2024
+        </div>
+        <div>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-clock">
+  <title>clock</title>
+  <circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline>
+</svg>
+          3 min read
+        </div>
+        <div>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-tag">
+  <title>tag</title>
+  <path d="M20.59 13.41l-7.17 7.17a2 2 0 0 1-2.83 0L2 12V2h10l8.59 8.59a2 2 0 0 1 0 2.82z"></path><line x1="7" y1="7" x2="7.01" y2="7"></line>
+</svg>
+              <a class="tag" href="https://Lu0key.github.io/tags/leetcode/">leetcode</a>
+        </div>
+      </div>
+    </header>
+    <div class="post-content">
+      <h2 id="2641二叉树的堂兄弟节点-ii">2641.二叉树的堂兄弟节点 II</h2>
+<p>给你一棵二叉树的根 <code>root</code> ，请你将每个节点的值替换成该节点的所有 <strong>堂兄弟节点值的和</strong> 。</p>
+<p>如果两个节点在树中有相同的深度且它们的父节点不同，那么它们互为 <strong>堂兄弟</strong> 。</p>
+<p>请你返回修改值之后，树的根 <code>root</code> 。</p>
+<p><strong>注意</strong>，一个节点的深度指的是从树根节点到这个节点经过的边数。</p>
+<p><strong>示例 1:</strong></p>
+<p><img src="https://raw.githubusercontent.com/Lu0Key/hexo-image/master/images/2024/02/example11.png" alt="iamge1"></p>
+<p><strong>输入</strong>: root = [5,4,9,1,10,null,7]<br>
+<strong>输出</strong>: [0,0,0,7,7,null,11]<br>
+<strong>解释</strong>: 上图展示了初始的二叉树和修改每个节点的值之后的二叉树。</p>
+<ul>
+<li>值为 5 的节点没有堂兄弟，所以值修改为 0 。</li>
+<li>值为 4 的节点没有堂兄弟，所以值修改为 0 。</li>
+<li>值为 9 的节点没有堂兄弟，所以值修改为 0 。</li>
+<li>值为 1 的节点有一个堂兄弟，值为 7 ，所以值修改为 7 。</li>
+<li>值为 10 的节点有一个堂兄弟，值为 7 ，所以值修改为 7 。</li>
+<li>值为 7 的节点有两个堂兄弟，值分别为 1 和 10 ，所以值修改为 11 。</li>
+</ul>
+<p><strong>示例 2:</strong></p>
+<p><img src="https://raw.githubusercontent.com/Lu0Key/hexo-image/master/images/2024/02/diagram33.png" alt="image2"></p>
+<p><strong>输入</strong>: root = [3,1,2]<br>
+<strong>输出</strong>: [0,0,0]<br>
+<strong>解释</strong>: 上图展示了初始的二叉树和修改每个节点的值之后的二叉树。</p>
+<ul>
+<li>值为 3 的节点没有堂兄弟，所以值修改为 0 。</li>
+<li>值为 1 的节点没有堂兄弟，所以值修改为 0 。</li>
+<li>值为 2 的节点没有堂兄弟，所以值修改为 0 。</li>
+</ul>
+<p>提示：</p>
+<ul>
+<li>树中节点数目的范围是 <code>[1, 10^5]</code></li>
+<li><code>1 &lt;= Node.val &lt;= 10^4</code></li>
+</ul>
+<p>Related Topics</p>
+<ul>
+<li>树</li>
+<li>深度优先搜索</li>
+<li>广度优先搜索</li>
+<li>哈希表</li>
+<li>二叉树</li>
+</ul>
+<p>题目链接: <a href="https://leetcode.cn/problems/cousins-in-binary-tree-ii">link</a></p>
+<h2 id="解答">解答</h2>
+<p>本题的难度是 Medium.</p>
+<p>这里的思路是先记下来每一层的总值, 然后再遍历一遍, 把每个节点的值替换成这一层的总值减去自己和兄弟节点的值. 这样就能得到结果了.</p>
+<p>代码如下:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Solution</span> <span style="color:#f92672">{</span>
+    <span style="color:#75715e">// 每一层的总值
+</span><span style="color:#75715e"></span>    <span style="color:#66d9ef">public</span> HashMap<span style="color:#f92672">&lt;</span>Integer<span style="color:#f92672">,</span> Integer<span style="color:#f92672">&gt;</span> hashMap <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> HashMap<span style="color:#f92672">&lt;&gt;();</span>
+    <span style="color:#66d9ef">public</span> TreeNode <span style="color:#a6e22e">replaceValueInTree</span><span style="color:#f92672">(</span>TreeNode root<span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
+        <span style="color:#66d9ef">if</span> <span style="color:#f92672">(</span>root <span style="color:#f92672">==</span> <span style="color:#66d9ef">null</span><span style="color:#f92672">)</span> <span style="color:#f92672">{</span><span style="color:#66d9ef">return</span> <span style="color:#66d9ef">null</span><span style="color:#f92672">;}</span>
+        TreeNode result <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> TreeNode<span style="color:#f92672">(</span>0<span style="color:#f92672">);</span>
+        BFS_s<span style="color:#f92672">(</span>root<span style="color:#f92672">,</span> 0<span style="color:#f92672">);</span>
+        System<span style="color:#f92672">.</span><span style="color:#a6e22e">out</span><span style="color:#f92672">.</span><span style="color:#a6e22e">println</span><span style="color:#f92672">(</span>hashMap<span style="color:#f92672">);</span>
+        BFS_b<span style="color:#f92672">(</span>root<span style="color:#f92672">,</span> 0<span style="color:#f92672">,</span>result<span style="color:#f92672">);</span>
+        <span style="color:#66d9ef">return</span> result<span style="color:#f92672">;</span>
+
+    <span style="color:#f92672">}</span>
+    <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">BFS_s</span><span style="color:#f92672">(</span>TreeNode node<span style="color:#f92672">,</span> <span style="color:#66d9ef">int</span> depth<span style="color:#f92672">){</span>
+        <span style="color:#66d9ef">if</span><span style="color:#f92672">(</span>node<span style="color:#f92672">.</span><span style="color:#a6e22e">left</span> <span style="color:#f92672">!=</span> <span style="color:#66d9ef">null</span><span style="color:#f92672">){</span>
+            hashMap<span style="color:#f92672">.</span><span style="color:#a6e22e">put</span><span style="color:#f92672">(</span>depth<span style="color:#f92672">,</span> hashMap<span style="color:#f92672">.</span><span style="color:#a6e22e">getOrDefault</span><span style="color:#f92672">(</span>depth<span style="color:#f92672">,</span>0<span style="color:#f92672">)+</span>node<span style="color:#f92672">.</span><span style="color:#a6e22e">left</span><span style="color:#f92672">.</span><span style="color:#a6e22e">val</span><span style="color:#f92672">);</span>
+            BFS_s<span style="color:#f92672">(</span>node<span style="color:#f92672">.</span><span style="color:#a6e22e">left</span><span style="color:#f92672">,</span> depth<span style="color:#f92672">+</span>1<span style="color:#f92672">);</span>
+        <span style="color:#f92672">}</span>
+        <span style="color:#66d9ef">if</span> <span style="color:#f92672">(</span>node<span style="color:#f92672">.</span><span style="color:#a6e22e">right</span> <span style="color:#f92672">!=</span> <span style="color:#66d9ef">null</span><span style="color:#f92672">){</span>
+            hashMap<span style="color:#f92672">.</span><span style="color:#a6e22e">put</span><span style="color:#f92672">(</span>depth<span style="color:#f92672">,</span> hashMap<span style="color:#f92672">.</span><span style="color:#a6e22e">getOrDefault</span><span style="color:#f92672">(</span>depth<span style="color:#f92672">,</span>0<span style="color:#f92672">)+</span>node<span style="color:#f92672">.</span><span style="color:#a6e22e">right</span><span style="color:#f92672">.</span><span style="color:#a6e22e">val</span><span style="color:#f92672">);</span>
+            BFS_s<span style="color:#f92672">(</span>node<span style="color:#f92672">.</span><span style="color:#a6e22e">right</span><span style="color:#f92672">,</span> depth<span style="color:#f92672">+</span>1<span style="color:#f92672">);</span>
+        <span style="color:#f92672">}</span>
+    <span style="color:#f92672">}</span>
+    <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">BFS_b</span><span style="color:#f92672">(</span>TreeNode node<span style="color:#f92672">,</span> <span style="color:#66d9ef">int</span> depth<span style="color:#f92672">,</span> TreeNode resultNode<span style="color:#f92672">){</span>
+
+        <span style="color:#66d9ef">int</span> temp<span style="color:#f92672">=</span>0<span style="color:#f92672">;</span>
+        <span style="color:#66d9ef">if</span><span style="color:#f92672">(</span>node<span style="color:#f92672">.</span><span style="color:#a6e22e">left</span> <span style="color:#f92672">!=</span> <span style="color:#66d9ef">null</span><span style="color:#f92672">){</span>
+            temp <span style="color:#f92672">+=</span> node<span style="color:#f92672">.</span><span style="color:#a6e22e">left</span><span style="color:#f92672">.</span><span style="color:#a6e22e">val</span><span style="color:#f92672">;</span>
+        <span style="color:#f92672">}</span>
+        <span style="color:#66d9ef">if</span><span style="color:#f92672">(</span>node<span style="color:#f92672">.</span><span style="color:#a6e22e">right</span> <span style="color:#f92672">!=</span> <span style="color:#66d9ef">null</span><span style="color:#f92672">){</span>
+            temp <span style="color:#f92672">+=</span> node<span style="color:#f92672">.</span><span style="color:#a6e22e">right</span><span style="color:#f92672">.</span><span style="color:#a6e22e">val</span><span style="color:#f92672">;</span>
+        <span style="color:#f92672">}</span>
+        <span style="color:#66d9ef">if</span><span style="color:#f92672">(</span>node<span style="color:#f92672">.</span><span style="color:#a6e22e">left</span> <span style="color:#f92672">!=</span> <span style="color:#66d9ef">null</span><span style="color:#f92672">){</span>
+            resultNode<span style="color:#f92672">.</span><span style="color:#a6e22e">left</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> TreeNode<span style="color:#f92672">(</span>hashMap<span style="color:#f92672">.</span><span style="color:#a6e22e">get</span><span style="color:#f92672">(</span>depth<span style="color:#f92672">)-</span>temp<span style="color:#f92672">);</span>
+            BFS_b<span style="color:#f92672">(</span>node<span style="color:#f92672">.</span><span style="color:#a6e22e">left</span><span style="color:#f92672">,</span> depth<span style="color:#f92672">+</span>1<span style="color:#f92672">,</span> resultNode<span style="color:#f92672">.</span><span style="color:#a6e22e">left</span><span style="color:#f92672">);</span>
+        <span style="color:#f92672">}</span>
+        <span style="color:#66d9ef">if</span><span style="color:#f92672">(</span>node<span style="color:#f92672">.</span><span style="color:#a6e22e">right</span> <span style="color:#f92672">!=</span> <span style="color:#66d9ef">null</span><span style="color:#f92672">){</span>
+            resultNode<span style="color:#f92672">.</span><span style="color:#a6e22e">right</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> TreeNode<span style="color:#f92672">(</span>hashMap<span style="color:#f92672">.</span><span style="color:#a6e22e">get</span><span style="color:#f92672">(</span>depth<span style="color:#f92672">)-</span>temp<span style="color:#f92672">);</span>
+            BFS_b<span style="color:#f92672">(</span>node<span style="color:#f92672">.</span><span style="color:#a6e22e">right</span><span style="color:#f92672">,</span> depth<span style="color:#f92672">+</span>1<span style="color:#f92672">,</span> resultNode<span style="color:#f92672">.</span><span style="color:#a6e22e">right</span><span style="color:#f92672">);</span>
+        <span style="color:#f92672">}</span>
+    <span style="color:#f92672">}</span>
+<span style="color:#f92672">}</span>
+</code></pre></div><p>很简单的思路，但是时间开销是 49ms, 只击败了18.29的用户. 因此考虑会不会是 HashMap这一步消耗了太多的时间, 因此这里进行了一些优化, 把 HashMap 换成了数组, 这样就不需要每次都去查找了.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Solution</span> <span style="color:#f92672">{</span>
+    <span style="color:#75715e">// 每一层的总值
+</span><span style="color:#75715e"></span>    <span style="color:#66d9ef">private</span> <span style="color:#66d9ef">int</span><span style="color:#f92672">[]</span> hashMap <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> <span style="color:#66d9ef">int</span><span style="color:#f92672">[</span>100_000<span style="color:#f92672">];</span>
+    <span style="color:#66d9ef">public</span> TreeNode <span style="color:#a6e22e">replaceValueInTree</span><span style="color:#f92672">(</span>TreeNode root<span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
+        <span style="color:#66d9ef">if</span> <span style="color:#f92672">(</span>root <span style="color:#f92672">==</span> <span style="color:#66d9ef">null</span><span style="color:#f92672">)</span> <span style="color:#f92672">{</span><span style="color:#66d9ef">return</span> <span style="color:#66d9ef">null</span><span style="color:#f92672">;}</span>
+        TreeNode result <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> TreeNode<span style="color:#f92672">(</span>0<span style="color:#f92672">);</span>
+        BFS_s<span style="color:#f92672">(</span>root<span style="color:#f92672">,</span> 0<span style="color:#f92672">);</span>
+        BFS_b<span style="color:#f92672">(</span>root<span style="color:#f92672">,</span> 0<span style="color:#f92672">,</span>result<span style="color:#f92672">);</span>
+        <span style="color:#66d9ef">return</span> result<span style="color:#f92672">;</span>
+
+    <span style="color:#f92672">}</span>
+    <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">BFS_s</span><span style="color:#f92672">(</span>TreeNode node<span style="color:#f92672">,</span> <span style="color:#66d9ef">int</span> depth<span style="color:#f92672">){</span>
+        <span style="color:#66d9ef">if</span><span style="color:#f92672">(</span>node<span style="color:#f92672">.</span><span style="color:#a6e22e">left</span> <span style="color:#f92672">!=</span> <span style="color:#66d9ef">null</span><span style="color:#f92672">){</span>
+            hashMap<span style="color:#f92672">[</span>depth<span style="color:#f92672">]</span> <span style="color:#f92672">=</span> hashMap<span style="color:#f92672">[</span>depth<span style="color:#f92672">]</span> <span style="color:#f92672">+</span> <span style="color:#f92672">+</span>node<span style="color:#f92672">.</span><span style="color:#a6e22e">left</span><span style="color:#f92672">.</span><span style="color:#a6e22e">val</span><span style="color:#f92672">;</span>
+            BFS_s<span style="color:#f92672">(</span>node<span style="color:#f92672">.</span><span style="color:#a6e22e">left</span><span style="color:#f92672">,</span> depth<span style="color:#f92672">+</span>1<span style="color:#f92672">);</span>
+        <span style="color:#f92672">}</span>
+        <span style="color:#66d9ef">if</span> <span style="color:#f92672">(</span>node<span style="color:#f92672">.</span><span style="color:#a6e22e">right</span> <span style="color:#f92672">!=</span> <span style="color:#66d9ef">null</span><span style="color:#f92672">){</span>
+            hashMap<span style="color:#f92672">[</span>depth<span style="color:#f92672">]</span> <span style="color:#f92672">=</span> hashMap<span style="color:#f92672">[</span>depth<span style="color:#f92672">]</span> <span style="color:#f92672">+</span> <span style="color:#f92672">+</span>node<span style="color:#f92672">.</span><span style="color:#a6e22e">right</span><span style="color:#f92672">.</span><span style="color:#a6e22e">val</span><span style="color:#f92672">;</span>
+            BFS_s<span style="color:#f92672">(</span>node<span style="color:#f92672">.</span><span style="color:#a6e22e">right</span><span style="color:#f92672">,</span> depth<span style="color:#f92672">+</span>1<span style="color:#f92672">);</span>
+        <span style="color:#f92672">}</span>
+    <span style="color:#f92672">}</span>
+    <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">BFS_b</span><span style="color:#f92672">(</span>TreeNode node<span style="color:#f92672">,</span> <span style="color:#66d9ef">int</span> depth<span style="color:#f92672">,</span> TreeNode resultNode<span style="color:#f92672">){</span>
+
+        <span style="color:#66d9ef">int</span> temp<span style="color:#f92672">=</span>0<span style="color:#f92672">;</span>
+
+        <span style="color:#66d9ef">if</span><span style="color:#f92672">(</span>node<span style="color:#f92672">.</span><span style="color:#a6e22e">left</span> <span style="color:#f92672">!=</span> <span style="color:#66d9ef">null</span><span style="color:#f92672">){</span>
+            temp <span style="color:#f92672">+=</span> node<span style="color:#f92672">.</span><span style="color:#a6e22e">left</span><span style="color:#f92672">.</span><span style="color:#a6e22e">val</span><span style="color:#f92672">;</span>
+        <span style="color:#f92672">}</span>
+        <span style="color:#66d9ef">if</span><span style="color:#f92672">(</span>node<span style="color:#f92672">.</span><span style="color:#a6e22e">right</span> <span style="color:#f92672">!=</span> <span style="color:#66d9ef">null</span><span style="color:#f92672">){</span>
+            temp <span style="color:#f92672">+=</span> node<span style="color:#f92672">.</span><span style="color:#a6e22e">right</span><span style="color:#f92672">.</span><span style="color:#a6e22e">val</span><span style="color:#f92672">;</span>
+        <span style="color:#f92672">}</span>
+        <span style="color:#66d9ef">if</span><span style="color:#f92672">(</span>node<span style="color:#f92672">.</span><span style="color:#a6e22e">left</span> <span style="color:#f92672">!=</span> <span style="color:#66d9ef">null</span><span style="color:#f92672">){</span>
+            resultNode<span style="color:#f92672">.</span><span style="color:#a6e22e">left</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> TreeNode<span style="color:#f92672">(</span>hashMap<span style="color:#f92672">[</span>depth<span style="color:#f92672">]-</span>temp<span style="color:#f92672">);</span>
+            BFS_b<span style="color:#f92672">(</span>node<span style="color:#f92672">.</span><span style="color:#a6e22e">left</span><span style="color:#f92672">,</span> depth<span style="color:#f92672">+</span>1<span style="color:#f92672">,</span> resultNode<span style="color:#f92672">.</span><span style="color:#a6e22e">left</span><span style="color:#f92672">);</span>
+        <span style="color:#f92672">}</span>
+        <span style="color:#66d9ef">if</span><span style="color:#f92672">(</span>node<span style="color:#f92672">.</span><span style="color:#a6e22e">right</span> <span style="color:#f92672">!=</span> <span style="color:#66d9ef">null</span><span style="color:#f92672">){</span>
+            resultNode<span style="color:#f92672">.</span><span style="color:#a6e22e">right</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> TreeNode<span style="color:#f92672">(</span>hashMap<span style="color:#f92672">[</span>depth<span style="color:#f92672">]-</span>temp<span style="color:#f92672">);</span>
+            BFS_b<span style="color:#f92672">(</span>node<span style="color:#f92672">.</span><span style="color:#a6e22e">right</span><span style="color:#f92672">,</span> depth<span style="color:#f92672">+</span>1<span style="color:#f92672">,</span> resultNode<span style="color:#f92672">.</span><span style="color:#a6e22e">right</span><span style="color:#f92672">);</span>
+        <span style="color:#f92672">}</span>
+    <span style="color:#f92672">}</span>
+<span style="color:#f92672">}</span>
+</code></pre></div><p>此时的时间开销为 22ms, 击败了 58.29% 的提交, 原本到这里就想结束了, 但是突然一想, 为什么我要创建新的节点呢, 我直接在原来的节点上修改不就好了吗, 因此这里进行了一些修改, 把创建新节点的操作去掉了.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Solution</span> <span style="color:#f92672">{</span>
+    <span style="color:#75715e">// 每一层的总值
+</span><span style="color:#75715e"></span>    <span style="color:#66d9ef">private</span> <span style="color:#66d9ef">int</span><span style="color:#f92672">[]</span> hashMap <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> <span style="color:#66d9ef">int</span><span style="color:#f92672">[</span>100_000<span style="color:#f92672">];</span>
+    <span style="color:#66d9ef">public</span> TreeNode <span style="color:#a6e22e">replaceValueInTree</span><span style="color:#f92672">(</span>TreeNode root<span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
+        <span style="color:#66d9ef">if</span> <span style="color:#f92672">(</span>root <span style="color:#f92672">==</span> <span style="color:#66d9ef">null</span><span style="color:#f92672">)</span> <span style="color:#f92672">{</span><span style="color:#66d9ef">return</span> <span style="color:#66d9ef">null</span><span style="color:#f92672">;}</span>
+        TreeNode result <span style="color:#f92672">=</span> root<span style="color:#f92672">;</span>
+        result<span style="color:#f92672">.</span><span style="color:#a6e22e">val</span> <span style="color:#f92672">=</span> 0<span style="color:#f92672">;</span>
+        BFS_s<span style="color:#f92672">(</span>root<span style="color:#f92672">,</span> 0<span style="color:#f92672">);</span>
+        BFS_b<span style="color:#f92672">(</span>root<span style="color:#f92672">,</span> 0<span style="color:#f92672">,</span>result<span style="color:#f92672">);</span>
+        <span style="color:#66d9ef">return</span> result<span style="color:#f92672">;</span>
+
+    <span style="color:#f92672">}</span>
+    <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">BFS_s</span><span style="color:#f92672">(</span>TreeNode node<span style="color:#f92672">,</span> <span style="color:#66d9ef">int</span> depth<span style="color:#f92672">){</span>
+        <span style="color:#66d9ef">if</span><span style="color:#f92672">(</span>node<span style="color:#f92672">.</span><span style="color:#a6e22e">left</span> <span style="color:#f92672">!=</span> <span style="color:#66d9ef">null</span><span style="color:#f92672">){</span>
+            hashMap<span style="color:#f92672">[</span>depth<span style="color:#f92672">]</span> <span style="color:#f92672">=</span> hashMap<span style="color:#f92672">[</span>depth<span style="color:#f92672">]</span> <span style="color:#f92672">+</span> <span style="color:#f92672">+</span>node<span style="color:#f92672">.</span><span style="color:#a6e22e">left</span><span style="color:#f92672">.</span><span style="color:#a6e22e">val</span><span style="color:#f92672">;</span>
+            BFS_s<span style="color:#f92672">(</span>node<span style="color:#f92672">.</span><span style="color:#a6e22e">left</span><span style="color:#f92672">,</span> depth<span style="color:#f92672">+</span>1<span style="color:#f92672">);</span>
+        <span style="color:#f92672">}</span>
+        <span style="color:#66d9ef">if</span> <span style="color:#f92672">(</span>node<span style="color:#f92672">.</span><span style="color:#a6e22e">right</span> <span style="color:#f92672">!=</span> <span style="color:#66d9ef">null</span><span style="color:#f92672">){</span>
+            hashMap<span style="color:#f92672">[</span>depth<span style="color:#f92672">]</span> <span style="color:#f92672">=</span> hashMap<span style="color:#f92672">[</span>depth<span style="color:#f92672">]</span> <span style="color:#f92672">+</span> <span style="color:#f92672">+</span>node<span style="color:#f92672">.</span><span style="color:#a6e22e">right</span><span style="color:#f92672">.</span><span style="color:#a6e22e">val</span><span style="color:#f92672">;</span>
+            BFS_s<span style="color:#f92672">(</span>node<span style="color:#f92672">.</span><span style="color:#a6e22e">right</span><span style="color:#f92672">,</span> depth<span style="color:#f92672">+</span>1<span style="color:#f92672">);</span>
+        <span style="color:#f92672">}</span>
+    <span style="color:#f92672">}</span>
+    <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">BFS_b</span><span style="color:#f92672">(</span>TreeNode node<span style="color:#f92672">,</span> <span style="color:#66d9ef">int</span> depth<span style="color:#f92672">,</span> TreeNode resultNode<span style="color:#f92672">){</span>
+        <span style="color:#66d9ef">int</span> temp<span style="color:#f92672">=</span>0<span style="color:#f92672">;</span>
+        <span style="color:#66d9ef">if</span><span style="color:#f92672">(</span>node<span style="color:#f92672">.</span><span style="color:#a6e22e">left</span> <span style="color:#f92672">!=</span> <span style="color:#66d9ef">null</span><span style="color:#f92672">){</span>temp <span style="color:#f92672">+=</span> node<span style="color:#f92672">.</span><span style="color:#a6e22e">left</span><span style="color:#f92672">.</span><span style="color:#a6e22e">val</span><span style="color:#f92672">;}</span>
+        <span style="color:#66d9ef">if</span><span style="color:#f92672">(</span>node<span style="color:#f92672">.</span><span style="color:#a6e22e">right</span> <span style="color:#f92672">!=</span> <span style="color:#66d9ef">null</span><span style="color:#f92672">){</span>temp <span style="color:#f92672">+=</span> node<span style="color:#f92672">.</span><span style="color:#a6e22e">right</span><span style="color:#f92672">.</span><span style="color:#a6e22e">val</span><span style="color:#f92672">;}</span>
+        <span style="color:#66d9ef">if</span><span style="color:#f92672">(</span>node<span style="color:#f92672">.</span><span style="color:#a6e22e">left</span> <span style="color:#f92672">!=</span> <span style="color:#66d9ef">null</span><span style="color:#f92672">){</span>
+            resultNode<span style="color:#f92672">.</span><span style="color:#a6e22e">left</span><span style="color:#f92672">.</span><span style="color:#a6e22e">val</span> <span style="color:#f92672">=</span> hashMap<span style="color:#f92672">[</span>depth<span style="color:#f92672">]-</span>temp<span style="color:#f92672">;</span>
+            BFS_b<span style="color:#f92672">(</span>node<span style="color:#f92672">.</span><span style="color:#a6e22e">left</span><span style="color:#f92672">,</span> depth<span style="color:#f92672">+</span>1<span style="color:#f92672">,</span> resultNode<span style="color:#f92672">.</span><span style="color:#a6e22e">left</span><span style="color:#f92672">);</span>
+        <span style="color:#f92672">}</span>
+        <span style="color:#66d9ef">if</span><span style="color:#f92672">(</span>node<span style="color:#f92672">.</span><span style="color:#a6e22e">right</span> <span style="color:#f92672">!=</span> <span style="color:#66d9ef">null</span><span style="color:#f92672">){</span>
+            resultNode<span style="color:#f92672">.</span><span style="color:#a6e22e">right</span><span style="color:#f92672">.</span><span style="color:#a6e22e">val</span> <span style="color:#f92672">=</span> hashMap<span style="color:#f92672">[</span>depth<span style="color:#f92672">]-</span>temp<span style="color:#f92672">;</span>
+            BFS_b<span style="color:#f92672">(</span>node<span style="color:#f92672">.</span><span style="color:#a6e22e">right</span><span style="color:#f92672">,</span> depth<span style="color:#f92672">+</span>1<span style="color:#f92672">,</span> resultNode<span style="color:#f92672">.</span><span style="color:#a6e22e">right</span><span style="color:#f92672">);</span>
+        <span style="color:#f92672">}</span>
+    <span style="color:#f92672">}</span>
+<span style="color:#f92672">}</span>
+</code></pre></div><p>这样只做了微小的修改, 但是让时间开销变成了 17ms, 击败了 90.86% 的提交. 心满意足</p>
+
+    </div>
+    <div class="post-footer">
+      
+    </div>
+  </article>
+
+    </main>
+  </body>
+</html>
