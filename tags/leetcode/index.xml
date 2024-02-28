@@ -6,7 +6,26 @@
     <description>Recent content in leetcode on 洛七的摸鱼池塘</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Tue, 23 Jan 2024 23:43:58 +0800</lastBuildDate><atom:link href="https://Lu0key.github.io/tags/leetcode/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Wed, 28 Feb 2024 21:15:49 +0800</lastBuildDate><atom:link href="https://Lu0key.github.io/tags/leetcode/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Leetcode 2759 计算 K 置位下标对应元素的和</title>
+      <link>https://Lu0key.github.io/post/lc-2759-sum-of-values-at-indices-with-k-set-bits/</link>
+      <pubDate>Wed, 28 Feb 2024 21:15:49 +0800</pubDate>
+      
+      <guid>https://Lu0key.github.io/post/lc-2759-sum-of-values-at-indices-with-k-set-bits/</guid>
+      <description>2759.计算 K 置位下标对应元素的和 你一个下标从 0 开始的整数数组 nums 和一个整数 k 。
+请你用整数形式返回 nums 中的特定元素之 和 ，这些特定元素满足：其对应下标的二进制表示中恰存在 k 个置位。
+整数的二进制表示中的 1 就是这个整数的 置位 。
+例如，21 的二进制表示为 10101 ，其中有 3 个置位。
+示例 1:
+输入: nums = [5,10,1,5,2], k = 1
+输出: 13
+解释: 下标的二进制表示是：
+0 = 00021 = 00122 = 01023 = 01124 = 1002下标 1、2 和 4 在其二进制表示中都存在 k = 1 个置位。
+因此，答案为 nums[1] + nums[2] + nums[4] = 13 。
+示例 2:</description>
+    </item>
+    
     <item>
       <title>Leetcode 2765 最长交替子数组</title>
       <link>https://Lu0key.github.io/post/lc-2765-longest-alternating-subarray/</link>
