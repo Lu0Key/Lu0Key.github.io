@@ -6,9 +6,27 @@
     <description>Recent content in Linux on 洛七的摸鱼池塘</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Tue, 23 Jan 2024 21:57:17 +0800</lastBuildDate><atom:link href="https://Lu0key.github.io/tags/linux/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Wed, 28 Feb 2024 16:10:46 +0800</lastBuildDate><atom:link href="https://Lu0key.github.io/tags/linux/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>Ubuntu_docker_安装</title>
+      <title>Ubuntu 开机自启</title>
+      <link>https://Lu0key.github.io/post/ubuntu-start-automatically-at-boot/</link>
+      <pubDate>Wed, 28 Feb 2024 16:10:46 +0800</pubDate>
+      
+      <guid>https://Lu0key.github.io/post/ubuntu-start-automatically-at-boot/</guid>
+      <description>因为有些服务需要开机自启, 因此记录一下
+环境: Ubuntu 22.04
+方法一 这是最后成功的方法
+先写好 shell 脚本, 然后在 /etc/profile 文件里面最后一行加上 bash xxx.sh 即可
+目前还没实验 xxx.sh 需要什么样的权限才能用, 目前给的是 775, 今天事情处理完再多做几个实验
+还要实验一下 shell 脚本的 开头是不是一定要 #!/bin/bash
+方法二 这个是网上推荐的方法, 但是我没有成功, 不知道问题在哪里
+[Unit] Description=Your Service Description After=network.target [Service] Type=simple ExecStart=/path/to/your/script.sh Restart=on-failure RestartSec=3s [Install] WantedBy=multi-user.target 这里 restart 只在异常退出的时候使用, 因为这个脚本只是启动服务的, 服务启动结束就完了, 不需要这个脚本一直执行.
+然后保存文件并执行
+sudo systemctl daemon-reload sudo systemctl restart your-service-name.service sudo systemctl status your-service-name 这里看 status 时发现, 都可以执行, 除了用 nohup python xxx 一直有问题不知道为什么, 就是执行不了, 前面后面的都能执行, 之后看看去掉 nohup 能不能执行, 不知道会不会与这个相关.</description>
+    </item>
+    
+    <item>
+      <title>Ubuntu docker 安装</title>
       <link>https://Lu0key.github.io/post/ubuntu_docker_%E5%AE%89%E8%A3%85/</link>
       <pubDate>Tue, 23 Jan 2024 21:57:17 +0800</pubDate>
       
