@@ -1,0 +1,165 @@
+<!doctype html>
+<html lang="en-us">
+  <head>
+    <title>Leetcode 889 根据前序和后序遍历构造二叉树 // 洛七的摸鱼池塘</title>
+    <link rel="shortcut icon" href="/favicon.ico" />
+    <meta charset="utf-8" />
+    <meta name="generator" content="Hugo 0.81.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="author" content="洛七" />
+    <meta name="description" content="" />
+    <link rel="stylesheet" href="/css/main.min.0fb49e70a30412f97ddfc418e18fefef1d9fcdebe45f634dbbba768b00fe1eec.css" />
+    
+
+    
+    <meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Leetcode 889 根据前序和后序遍历构造二叉树"/>
+<meta name="twitter:description" content="889. 根据前序和后序遍历构造二叉树 给定两个整数数组, preorder 和 postorder ，其中 preorder 是一个具有 无重复 值的二叉树的前序遍历，postorder 是同一棵树的后序遍历，重构并返回二叉树。
+如果存在多个答案，您可以返回其中 任何 一个。
+示例 1:
+输入: preorder = [1,2,4,5,3,6,7], postorder = [4,5,2,6,7,3,1]
+输出: [1,2,3,4,5,6,7]
+示例 2:
+输入: preorder = [1], postorder = [1]
+输出: [1]
+提示：
+ 1 &lt;= preorder.length &lt;= 30 1 &lt;= preorder[i] &lt;= preorder.length preorder 中所有值都 不同 postorder.length == preorder.length 1 &lt;= postorder[i] &lt;= postorder.length postorder 中所有值都 不同 保证 preorder 和 postorder 是同一棵二叉树的前序遍历和后序遍历  Related Topics"/>
+
+    <meta property="og:title" content="Leetcode 889 根据前序和后序遍历构造二叉树" />
+<meta property="og:description" content="889. 根据前序和后序遍历构造二叉树 给定两个整数数组, preorder 和 postorder ，其中 preorder 是一个具有 无重复 值的二叉树的前序遍历，postorder 是同一棵树的后序遍历，重构并返回二叉树。
+如果存在多个答案，您可以返回其中 任何 一个。
+示例 1:
+输入: preorder = [1,2,4,5,3,6,7], postorder = [4,5,2,6,7,3,1]
+输出: [1,2,3,4,5,6,7]
+示例 2:
+输入: preorder = [1], postorder = [1]
+输出: [1]
+提示：
+ 1 &lt;= preorder.length &lt;= 30 1 &lt;= preorder[i] &lt;= preorder.length preorder 中所有值都 不同 postorder.length == preorder.length 1 &lt;= postorder[i] &lt;= postorder.length postorder 中所有值都 不同 保证 preorder 和 postorder 是同一棵二叉树的前序遍历和后序遍历  Related Topics" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://Lu0key.github.io/post/lc-889-construct-binary-tree-from-preorder-and-postorder-traversal/" /><meta property="article:section" content="post" />
+<meta property="article:published_time" content="2024-02-28T22:43:59&#43;08:00" />
+<meta property="article:modified_time" content="2024-02-28T22:43:59&#43;08:00" />
+
+
+
+  </head>
+  <body>
+    <header class="app-header">
+      <a href="https://Lu0key.github.io/"><img class="app-header-avatar" src="/avatar.jpg" alt="洛七" /></a>
+      <span class="app-header-title">洛七的摸鱼池塘</span>
+      <nav class="app-header-menu">
+          <a class="app-header-menu-item" href="/tags/">Tags</a>
+      </nav>
+      <p>即将没书读的咸鱼</p>
+    </header>
+    <main class="app-container">
+      
+  <article class="post">
+    <header class="post-header">
+      <h1 class ="post-title">Leetcode 889 根据前序和后序遍历构造二叉树</h1>
+      <div class="post-meta">
+        <div>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-calendar">
+  <title>calendar</title>
+  <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line>
+</svg>
+          Feb 28, 2024
+        </div>
+        <div>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-clock">
+  <title>clock</title>
+  <circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline>
+</svg>
+          2 min read
+        </div>
+        <div>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-tag">
+  <title>tag</title>
+  <path d="M20.59 13.41l-7.17 7.17a2 2 0 0 1-2.83 0L2 12V2h10l8.59 8.59a2 2 0 0 1 0 2.82z"></path><line x1="7" y1="7" x2="7.01" y2="7"></line>
+</svg>
+              <a class="tag" href="https://Lu0key.github.io/tags/leetcode/">leetcode</a>
+        </div>
+      </div>
+    </header>
+    <div class="post-content">
+      <h2 id="889-根据前序和后序遍历构造二叉树">889. 根据前序和后序遍历构造二叉树</h2>
+<p>给定两个整数数组, <code>preorder</code> 和 <code>postorder</code> ，其中 <code>preorder</code> 是一个具有 无重复 <code>值的二叉树的前序遍历，postorder</code> 是同一棵树的后序遍历，重构并返回二叉树。</p>
+<p>如果存在多个答案，您可以返回其中 <strong>任何</strong> 一个。</p>
+<p><strong>示例 1:</strong></p>
+<p><img src="https://raw.githubusercontent.com/Lu0Key/hexo-image/master/images/2024/02/lc-prepost.jpg" alt="image1"></p>
+<p><strong>输入</strong>: <code>preorder = [1,2,4,5,3,6,7], postorder = [4,5,2,6,7,3,1]</code><br>
+<strong>输出</strong>: <code>[1,2,3,4,5,6,7]</code></p>
+<p><strong>示例 2:</strong></p>
+<p><strong>输入</strong>: <code>preorder = [1], postorder = [1]</code><br>
+<strong>输出</strong>: <code>[1]</code></p>
+<p>提示：</p>
+<ul>
+<li><code>1 &lt;= preorder.length &lt;= 30</code></li>
+<li><code>1 &lt;= preorder[i] &lt;= preorder.length</code></li>
+<li><code>preorder</code> 中所有值都 <strong>不同</strong></li>
+<li><code>postorder.length == preorder.length</code></li>
+<li><code>1 &lt;= postorder[i] &lt;= postorder.length</code></li>
+<li><code>postorder</code> 中所有值都 <strong>不同</strong></li>
+<li>保证 <code>preorder</code> 和 <code>postorder</code> 是同一棵二叉树的前序遍历和后序遍历</li>
+</ul>
+<p>Related Topics</p>
+<ul>
+<li>树</li>
+<li>数组</li>
+<li>哈希表</li>
+<li>分治</li>
+<li>二叉树</li>
+</ul>
+<p>题目链接: <a href="https://leetcode.cn/problems/construct-binary-tree-from-preorder-and-postorder-traversal">link</a></p>
+<h2 id="解答">解答</h2>
+<p>本题的难度是 Medium.</p>
+<p>题目里有一句话，如果答案有多个, 可以返回任意一个. 那为什么会有多个答案呢？我们可以看以下两棵二叉树</p>
+<pre><code class="language-code" data-lang="code">    1   1
+   /     \
+  2       2
+ /         \
+3           3
+</code></pre><p>这两棵树的前序遍历都是 <code>[1,2,3]</code>, 后序遍历都是 <code>[3,2,1]</code>, 相同的前序遍历序列和后序遍历序列, 但是二叉树的结构是不一样的, 而一个前序遍历序列+中序遍历序列，或后序遍历序列+中序遍历学列可以唯一确定一棵二叉树. 所以之前的答案都是唯一的, 这里可能是多个的.</p>
+<p>这题的思路其实和之前的是一样的，根据当前的前序遍历序列确定根节点, 只是这里多一步, 你需要根据子树的根节点去切分出左子树和右子树的范围. 其他都和前两天的一样, 因此就懒得优化了.</p>
+<p>代码如下:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Solution</span> <span style="color:#f92672">{</span>
+    <span style="color:#66d9ef">private</span> HashMap<span style="color:#f92672">&lt;</span>Integer<span style="color:#f92672">,</span> Integer<span style="color:#f92672">&gt;</span> hashMap <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> HashMap<span style="color:#f92672">&lt;&gt;();</span>
+    <span style="color:#66d9ef">public</span> TreeNode <span style="color:#a6e22e">constructFromPrePost</span><span style="color:#f92672">(</span><span style="color:#66d9ef">int</span><span style="color:#f92672">[]</span> preorder<span style="color:#f92672">,</span> <span style="color:#66d9ef">int</span><span style="color:#f92672">[]</span> postorder<span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
+        <span style="color:#66d9ef">for</span> <span style="color:#f92672">(</span><span style="color:#66d9ef">int</span> i <span style="color:#f92672">=</span> 0<span style="color:#f92672">;</span> i <span style="color:#f92672">&lt;</span> postorder<span style="color:#f92672">.</span><span style="color:#a6e22e">length</span><span style="color:#f92672">;</span> i<span style="color:#f92672">++)</span> <span style="color:#f92672">{</span>
+            hashMap<span style="color:#f92672">.</span><span style="color:#a6e22e">put</span><span style="color:#f92672">(</span>postorder<span style="color:#f92672">[</span>i<span style="color:#f92672">],</span> i<span style="color:#f92672">);</span>
+        <span style="color:#f92672">}</span>
+        <span style="color:#66d9ef">return</span> createNode<span style="color:#f92672">(</span>preorder<span style="color:#f92672">,</span> postorder<span style="color:#f92672">,</span>
+                0<span style="color:#f92672">,</span> preorder<span style="color:#f92672">.</span><span style="color:#a6e22e">length</span><span style="color:#f92672">,</span>
+                0<span style="color:#f92672">,</span> postorder<span style="color:#f92672">.</span><span style="color:#a6e22e">length</span><span style="color:#f92672">);</span>
+    <span style="color:#f92672">}</span>
+
+    <span style="color:#66d9ef">private</span> TreeNode <span style="color:#a6e22e">createNode</span><span style="color:#f92672">(</span><span style="color:#66d9ef">int</span><span style="color:#f92672">[]</span> preorder<span style="color:#f92672">,</span> <span style="color:#66d9ef">int</span><span style="color:#f92672">[]</span> postorder<span style="color:#f92672">,</span>
+                            <span style="color:#66d9ef">int</span> startPre<span style="color:#f92672">,</span> <span style="color:#66d9ef">int</span> endPre<span style="color:#f92672">,</span>
+                            <span style="color:#66d9ef">int</span> startPost<span style="color:#f92672">,</span> <span style="color:#66d9ef">int</span> endPost<span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
+        <span style="color:#66d9ef">if</span><span style="color:#f92672">(</span>endPre<span style="color:#f92672">-</span>startPre <span style="color:#f92672">&lt;=</span> 0<span style="color:#f92672">)</span> <span style="color:#f92672">{</span><span style="color:#66d9ef">return</span> <span style="color:#66d9ef">null</span><span style="color:#f92672">;}</span>
+        <span style="color:#66d9ef">int</span> nodeval <span style="color:#f92672">=</span> preorder<span style="color:#f92672">[</span>startPre<span style="color:#f92672">];</span>
+        TreeNode node <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> TreeNode<span style="color:#f92672">(</span>nodeval<span style="color:#f92672">);</span>
+        <span style="color:#75715e">// 这里是因为有可能就没有子树了, 这就是最后一个节点
+</span><span style="color:#75715e"></span>        <span style="color:#66d9ef">if</span> <span style="color:#f92672">(</span>startPre <span style="color:#f92672">+</span> 1  <span style="color:#f92672">==</span> endPre<span style="color:#f92672">)</span> <span style="color:#f92672">{</span><span style="color:#66d9ef">return</span> node<span style="color:#f92672">;}</span>
+        <span style="color:#66d9ef">int</span> splitIndex <span style="color:#f92672">=</span> hashMap<span style="color:#f92672">.</span><span style="color:#a6e22e">get</span><span style="color:#f92672">(</span>preorder<span style="color:#f92672">[</span>startPre<span style="color:#f92672">+</span>1<span style="color:#f92672">]);</span>
+        node<span style="color:#f92672">.</span><span style="color:#a6e22e">left</span> <span style="color:#f92672">=</span> createNode<span style="color:#f92672">(</span>preorder<span style="color:#f92672">,</span> postorder<span style="color:#f92672">,</span>
+                startPre<span style="color:#f92672">+</span>1<span style="color:#f92672">,</span> startPre <span style="color:#f92672">+</span> 1 <span style="color:#f92672">+</span> splitIndex <span style="color:#f92672">-</span> startPost <span style="color:#f92672">+</span> 1<span style="color:#f92672">,</span>
+                startPost<span style="color:#f92672">,</span> splitIndex<span style="color:#f92672">+</span>1<span style="color:#f92672">);</span>
+        node<span style="color:#f92672">.</span><span style="color:#a6e22e">right</span> <span style="color:#f92672">=</span> createNode<span style="color:#f92672">(</span>preorder<span style="color:#f92672">,</span> postorder<span style="color:#f92672">,</span>
+                startPre <span style="color:#f92672">+</span> 1 <span style="color:#f92672">+</span> splitIndex <span style="color:#f92672">-</span> startPost <span style="color:#f92672">+</span> 1<span style="color:#f92672">,</span> endPre<span style="color:#f92672">,</span>
+                splitIndex<span style="color:#f92672">+</span>1<span style="color:#f92672">,</span> endPost<span style="color:#f92672">-</span>1<span style="color:#f92672">);</span>
+        <span style="color:#66d9ef">return</span> node<span style="color:#f92672">;</span>
+    <span style="color:#f92672">}</span>
+<span style="color:#f92672">}</span>
+</code></pre></div><p>时间开销为 1ms, 击败了 74.03% 的提交.</p>
+
+    </div>
+    <div class="post-footer">
+      
+    </div>
+  </article>
+
+    </main>
+  </body>
+</html>
