@@ -6,7 +6,22 @@
     <description>Recent content in Linux on 洛七的摸鱼池塘</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Wed, 28 Feb 2024 16:10:46 +0800</lastBuildDate><atom:link href="https://Lu0key.github.io/tags/linux/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Wed, 28 Feb 2024 16:45:30 +0800</lastBuildDate><atom:link href="https://Lu0key.github.io/tags/linux/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Linux Nvidia 显卡掉驱动</title>
+      <link>https://Lu0key.github.io/post/linux-nvidia-driver-failed/</link>
+      <pubDate>Wed, 28 Feb 2024 16:45:30 +0800</pubDate>
+      
+      <guid>https://Lu0key.github.io/post/linux-nvidia-driver-failed/</guid>
+      <description>环境: Ubuntu 22.04
+很恶心的一个问题, 经常掉驱动
+# 看到这个就恶心 nvidia-smi # NVIDIA-SMI has failed because it couldn&amp;#39;t communicate with the NVIDIA driver. Make sure that the latest NVIDIA driver is installed and running. 目前可能的一个原因是服务器重启之后自动更新了内核版本, 导致驱动与内核版本不匹配, 很抽象
+这里主要记录禁止内核自动升级, 和已经升级了的解决尝试
+禁止内核自动升级 # 关闭内核自动升级 sudo apt-mark hold linux-image-generic linux-headers-generic # 以后如果要恢复 # sudo apt-mark unhold linux-image-generic linux-headers-generic # 先看看现在的 Linux 内核版本 uname -r # 6.5.0-18-generic 尝试解决 原来都是直接下新的驱动就OK了, 这次安装新的驱动不行可能是因为要求的 gcc 版本更高了, 但是电脑里没有新版的 gcc
+看了别人很多解决方案, 这里还是选择不重启的方法
+两种选择:</description>
+    </item>
+    
     <item>
       <title>Ubuntu 开机自启</title>
       <link>https://Lu0key.github.io/post/ubuntu-start-automatically-at-boot/</link>
