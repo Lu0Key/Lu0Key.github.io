@@ -1,0 +1,167 @@
+<!doctype html>
+<html lang="en-us">
+  <head>
+    <title>Leetcode 365 水壶问题 // 洛七的摸鱼池塘</title>
+    <link rel="shortcut icon" href="/favicon.ico" />
+    <meta charset="utf-8" />
+    <meta name="generator" content="Hugo 0.81.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="author" content="洛七" />
+    <meta name="description" content="" />
+    <link rel="stylesheet" href="/css/main.min.0fb49e70a30412f97ddfc418e18fefef1d9fcdebe45f634dbbba768b00fe1eec.css" />
+    
+
+    
+    <meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Leetcode 365 水壶问题"/>
+<meta name="twitter:description" content="365.水壶问题 有两个水壶，容量分别为 jug1Capacity 和 jug2Capacity 升。水的供应是无限的。确定是否有可能使用这两个壶准确得到 targetCapacity 升。
+如果可以得到 targetCapacity 升水，最后请用以上水壶中的一或两个来盛放取得的 targetCapacity 升水。
+你可以：
+ 装满任意一个水壶 清空任意一个水壶 从一个水壶向另外一个水壶倒水，直到装满或者倒空  示例 1:
+输入: jug1Capacity = 3, jug2Capacity = 5, targetCapacity = 4
+输出: true
+示例 2:
+输入: jug1Capacity = 2, jug2Capacity = 6, targetCapacity = 5
+输出: false
+示例 3:
+输入: jug1Capacity = 1, jug2Capacity = 2, targetCapacity = 3
+输出: true
+提示：
+ 1 &lt;= jug1Capacity, jug2Capacity, targetCapacity &lt;= 10^6  Related Topics"/>
+
+    <meta property="og:title" content="Leetcode 365 水壶问题" />
+<meta property="og:description" content="365.水壶问题 有两个水壶，容量分别为 jug1Capacity 和 jug2Capacity 升。水的供应是无限的。确定是否有可能使用这两个壶准确得到 targetCapacity 升。
+如果可以得到 targetCapacity 升水，最后请用以上水壶中的一或两个来盛放取得的 targetCapacity 升水。
+你可以：
+ 装满任意一个水壶 清空任意一个水壶 从一个水壶向另外一个水壶倒水，直到装满或者倒空  示例 1:
+输入: jug1Capacity = 3, jug2Capacity = 5, targetCapacity = 4
+输出: true
+示例 2:
+输入: jug1Capacity = 2, jug2Capacity = 6, targetCapacity = 5
+输出: false
+示例 3:
+输入: jug1Capacity = 1, jug2Capacity = 2, targetCapacity = 3
+输出: true
+提示：
+ 1 &lt;= jug1Capacity, jug2Capacity, targetCapacity &lt;= 10^6  Related Topics" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://Lu0key.github.io/post/lc-365-water-and-jug-problem/" /><meta property="article:section" content="post" />
+<meta property="article:published_time" content="2024-02-28T21:35:19&#43;08:00" />
+<meta property="article:modified_time" content="2024-02-28T21:35:19&#43;08:00" />
+
+
+
+  </head>
+  <body>
+    <header class="app-header">
+      <a href="https://Lu0key.github.io/"><img class="app-header-avatar" src="/avatar.jpg" alt="洛七" /></a>
+      <span class="app-header-title">洛七的摸鱼池塘</span>
+      <nav class="app-header-menu">
+          <a class="app-header-menu-item" href="/tags/">Tags</a>
+      </nav>
+      <p>即将没书读的咸鱼</p>
+    </header>
+    <main class="app-container">
+      
+  <article class="post">
+    <header class="post-header">
+      <h1 class ="post-title">Leetcode 365 水壶问题</h1>
+      <div class="post-meta">
+        <div>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-calendar">
+  <title>calendar</title>
+  <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line>
+</svg>
+          Feb 28, 2024
+        </div>
+        <div>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-clock">
+  <title>clock</title>
+  <circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline>
+</svg>
+          2 min read
+        </div>
+        <div>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-tag">
+  <title>tag</title>
+  <path d="M20.59 13.41l-7.17 7.17a2 2 0 0 1-2.83 0L2 12V2h10l8.59 8.59a2 2 0 0 1 0 2.82z"></path><line x1="7" y1="7" x2="7.01" y2="7"></line>
+</svg>
+              <a class="tag" href="https://Lu0key.github.io/tags/leetcode/">leetcode</a>
+              <a class="tag" href="https://Lu0key.github.io/tags/%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92/">动态规划</a>
+        </div>
+      </div>
+    </header>
+    <div class="post-content">
+      <h2 id="365水壶问题">365.水壶问题</h2>
+<p>有两个水壶，容量分别为 <code>jug1Capacity</code> 和 <code>jug2Capacity</code> 升。水的供应是无限的。确定是否有可能使用这两个壶准确得到 <code>targetCapacity</code> 升。</p>
+<p>如果可以得到 <code>targetCapacity</code> 升水，最后请用以上水壶中的一或两个来盛放取得的 <code>targetCapacity</code> 升水。</p>
+<p>你可以：</p>
+<ul>
+<li>装满任意一个水壶</li>
+<li>清空任意一个水壶</li>
+<li>从一个水壶向另外一个水壶倒水，直到装满或者倒空</li>
+</ul>
+<p><strong>示例 1:</strong></p>
+<p><strong>输入</strong>: <code>jug1Capacity = 3, jug2Capacity = 5, targetCapacity = 4</code><br>
+<strong>输出</strong>: true</p>
+<p><strong>示例 2:</strong></p>
+<p><strong>输入</strong>: <code>jug1Capacity = 2, jug2Capacity = 6, targetCapacity = 5</code><br>
+<strong>输出</strong>: false</p>
+<p><strong>示例 3:</strong></p>
+<p><strong>输入</strong>: <code>jug1Capacity = 1, jug2Capacity = 2, targetCapacity = 3</code><br>
+<strong>输出</strong>: true</p>
+<p>提示：</p>
+<ul>
+<li><code>1 &lt;= jug1Capacity, jug2Capacity, targetCapacity &lt;= 10^6</code></li>
+</ul>
+<p>Related Topics</p>
+<ul>
+<li>深度优先搜索</li>
+<li>广度优先搜索</li>
+<li>数学</li>
+</ul>
+<p>题目链接: <a href="https://leetcode.cn/problems/water-and-jug-problem">link</a></p>
+<h2 id="解答">解答</h2>
+<p>本题的难度是 Medium.</p>
+<p>其实我们只需要考虑两个壶相加能否得到 <code>targetCapacity</code>, 因为如果只需要一个壶能满足的话把另一个倒空就行.  其次, 我们会发现, 每次加水时, 我们都可以简化为加量为 <code>jug1Capacity</code> 或 <code>jug2Capacity</code> 的水, 为了方便我们记 <code>a=jug1Capacity</code>, <code>b=jug2Capacity</code>, <code>z=targetCapacity</code>,我们可以考虑从以下几种情况(不考虑壶编号的话其实可能的就4种)</p>
+<ul>
+<li>情况1, 壶1满, 壶2满: 此时不能加水</li>
+<li>情况2, 壶1满, 壶2有水不满: 此时加水等价于从壶2空加满, 等同于加 <code>b</code></li>
+<li>情况3, 壶1满, 壶2空: 此时加水等同于加 <code>b</code></li>
+<li>情况4, 壶1有水不满, 壶2满: 与情况2 相同</li>
+<li>情况5, 壶1有水不满, 壶2有水不满: 按照题目不可能出现这种情况,因为倒水只会在一个空或者一个满的时候停</li>
+<li>情况6, 壶1有水不满, 壶2空: 壶1的水是壶2的倍数,此时如果对壶1加水等价于初始状态把壶1加满,等同于加了 <code>a</code>, 如果把壶2加满等于加了 <code>b</code></li>
+<li>情况7, 壶1空, 壶2满: 等同于情况3</li>
+<li>情况8, 壶1空, 壶2有水不满: 等同于情况6</li>
+<li>情况9, 壶1空, 壶2空: 等同于加量为 <code>a</code> 或 <code>b</code> 的水</li>
+</ul>
+<p>而清空水壶是类似的, 因此我们每次的操作都是对水量的变化为 <code>a * x+b * y</code>, 当没有倒出或加入时系数为<strong>0</strong>, 有可能出现一次倒出几倍的 <code>b</code>之类的, 倒出时系数为负,加入时为正, 所以会有个系数, 那么其实就是希望从<strong>0</strong>开始,进行操作<code>k</code>次, 每次操作对水量的变化为 <code>a * x_i+b* y_i</code>, 那么其实会发现, 把 <code>k</code> 次操作的变化量加起来为 <code>a*(x_1+...+x_k)+b*(y_1+...+y_k)</code>, 还是一个 <code>ax+by</code> 的格式, 我们希望判断 <code>ax+by=z</code> 是否存在整数解(因为要求倒入倒出是整数嘛), 这时候我们就发现这就是 <code>Bézout's identity</code>.</p>
+<p>即: 若  <code>x</code>, <code>y</code> 为整数, 且有 <code>d=gcd(a,b)</code>, 那么对于任意的整数  <code>x</code>, <code>y</code>, 都有: <code>ax+by</code> 的值都一定是 <code>d</code> 的倍数, 其中 <code>gcd(a,b)</code> 表示 <code>a</code>, <code>b</code> 的最大公因数. 因此有一个推论, 如果 <code>a</code>, <code>b</code> 互质, 那么一定存在整数  <code>x</code>, <code>y</code> 使得 <code>ax+by=1</code>.</p>
+<p>知道了上面这个结论, 那我们只需要求 <code>a</code>, <code>b</code> 的最大公因数 <code>d</code>, 然后看 <code>z</code> 是不是 <code>d</code> 的倍数就行了.  至于求最大公因数使用辗转相除法就行.</p>
+<p>代码如下:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Solution</span> <span style="color:#f92672">{</span>
+    <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">boolean</span> <span style="color:#a6e22e">canMeasureWater</span><span style="color:#f92672">(</span><span style="color:#66d9ef">int</span> jug1Capacity<span style="color:#f92672">,</span> <span style="color:#66d9ef">int</span> jug2Capacity<span style="color:#f92672">,</span> <span style="color:#66d9ef">int</span> targetCapacity<span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
+        <span style="color:#66d9ef">if</span> <span style="color:#f92672">(</span>jug1Capacity <span style="color:#f92672">+</span> jug2Capacity <span style="color:#f92672">&lt;</span> targetCapacity<span style="color:#f92672">){</span><span style="color:#66d9ef">return</span> <span style="color:#66d9ef">false</span><span style="color:#f92672">;}</span>
+        <span style="color:#66d9ef">if</span> <span style="color:#f92672">(</span>jug1Capacity <span style="color:#f92672">&gt;</span> jug2Capacity<span style="color:#f92672">){</span>
+            <span style="color:#66d9ef">return</span> targetCapacity <span style="color:#f92672">%</span> gcd<span style="color:#f92672">(</span>jug1Capacity<span style="color:#f92672">,</span>jug2Capacity<span style="color:#f92672">)</span> <span style="color:#f92672">==</span> 0<span style="color:#f92672">;</span>
+        <span style="color:#f92672">}</span><span style="color:#66d9ef">else</span> <span style="color:#f92672">{</span>
+            <span style="color:#66d9ef">return</span> targetCapacity <span style="color:#f92672">%</span> gcd<span style="color:#f92672">(</span>jug2Capacity<span style="color:#f92672">,</span>jug1Capacity<span style="color:#f92672">)</span> <span style="color:#f92672">==</span> 0<span style="color:#f92672">;</span>
+        <span style="color:#f92672">}</span>
+    <span style="color:#f92672">}</span>
+
+    <span style="color:#66d9ef">private</span> <span style="color:#66d9ef">int</span> <span style="color:#a6e22e">gcd</span><span style="color:#f92672">(</span><span style="color:#66d9ef">int</span> a<span style="color:#f92672">,</span> <span style="color:#66d9ef">int</span> b<span style="color:#f92672">){</span>
+        <span style="color:#66d9ef">if</span> <span style="color:#f92672">(</span>a<span style="color:#f92672">%</span>b <span style="color:#f92672">==</span> 0<span style="color:#f92672">){</span><span style="color:#66d9ef">return</span> b<span style="color:#f92672">;}</span>
+        <span style="color:#66d9ef">return</span> gcd<span style="color:#f92672">(</span>b<span style="color:#f92672">,</span> a<span style="color:#f92672">%</span>b<span style="color:#f92672">);</span>
+    <span style="color:#f92672">}</span>
+<span style="color:#f92672">}</span>
+</code></pre></div><p>时间效率成功击败 100%, 这题的标签还有 DFS 和 BFS, 应该不用数学的话就是用这两种方法, 下次试试不用数学的方法. 应该可以把搜索过的存起来, 最多也就 <code>(a+1)(b+1)</code> 种情况.</p>
+
+    </div>
+    <div class="post-footer">
+      
+    </div>
+  </article>
+
+    </main>
+  </body>
+</html>
