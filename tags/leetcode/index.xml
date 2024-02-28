@@ -6,7 +6,32 @@
     <description>Recent content in leetcode on 洛七的摸鱼池塘</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Wed, 28 Feb 2024 22:21:40 +0800</lastBuildDate><atom:link href="https://Lu0key.github.io/tags/leetcode/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Wed, 28 Feb 2024 22:23:36 +0800</lastBuildDate><atom:link href="https://Lu0key.github.io/tags/leetcode/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Leetcode 103 二叉树的锯齿形层序遍历</title>
+      <link>https://Lu0key.github.io/post/lc-103-binary-tree-zigzag-level-order-traversal/</link>
+      <pubDate>Wed, 28 Feb 2024 22:23:36 +0800</pubDate>
+      
+      <guid>https://Lu0key.github.io/post/lc-103-binary-tree-zigzag-level-order-traversal/</guid>
+      <description>103.二叉树的锯齿形层序遍历 给你二叉树的根节点 root ，返回其节点值的 锯齿形层序遍历 。（即先从左往右，再从右往左进行下一层遍历，以此类推，层与层之间交替进行）
+示例 1:
+输入: root = [3,9,20,null,null,15,7]
+输出: [[15,7],[9,20],[3]]
+示例 2:
+输入: root = [1]
+输出: [[1]]
+示例 3:
+输入: root = []
+输出: []
+提示：
+ 树中节点数目在范围 [0, 2000] 内 100 &amp;lt;= Node.val &amp;lt;= 100  Related Topics
+ 树 广度优先搜索 二叉树  题目链接: link
+解答 本题的难度是 Medium.
+也是写了很抽象的代码, 都不知道自己脑子那几天在想什么? 太怪了.
+代码如下:
+class Solution { private HashMap&amp;lt;Integer, ArrayList&amp;lt;Integer&amp;gt;&amp;gt; hashMap = new HashMap&amp;lt;&amp;gt;(); private int maxDepth = -1; public List&amp;lt;List&amp;lt;Integer&amp;gt;&amp;gt; zigzagLevelOrder(TreeNode root) { List&amp;lt;List&amp;lt;Integer&amp;gt;&amp;gt; result = new ArrayList&amp;lt;&amp;gt;(); levelOrder(root, 0); for (int i = 0; i &amp;lt;= maxDepth; i++) { ArrayList&amp;lt;Integer&amp;gt; list = hashMap.</description>
+    </item>
+    
     <item>
       <title>Leetcode 107 二叉树的层序遍历II</title>
       <link>https://Lu0key.github.io/post/lc-107-binary-tree-level-order-traversal-ii/</link>
