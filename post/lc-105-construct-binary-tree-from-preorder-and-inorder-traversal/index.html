@@ -1,0 +1,255 @@
+<!doctype html>
+<html lang="en-us">
+  <head>
+    <title>Leetcode 105 从前序与中序遍历序列构造二叉树 // 洛七的摸鱼池塘</title>
+    <link rel="shortcut icon" href="/favicon.ico" />
+    <meta charset="utf-8" />
+    <meta name="generator" content="Hugo 0.81.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="author" content="洛七" />
+    <meta name="description" content="" />
+    <link rel="stylesheet" href="/css/main.min.0fb49e70a30412f97ddfc418e18fefef1d9fcdebe45f634dbbba768b00fe1eec.css" />
+    
+
+    
+    <meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Leetcode 105 从前序与中序遍历序列构造二叉树"/>
+<meta name="twitter:description" content="105.从前序与中序遍历序列构造二叉树 给定两个整数数组 preorder 和 inorder ，其中 preorder 是二叉树的先序遍历， inorder 是同一棵树的 中序遍历，请构造二叉树并返回其根节点。
+示例 1:
+输入: preorder = [3,9,20,15,7], inorder = [9,3,15,20,7]
+输出: [3,9,20,null,null,15,7]
+示例 2:
+输入: preorder = [-1], inorder = [-1]
+输出: [-1]
+提示：
+ 1 &lt;= preorder.length &lt;= 3000 inorder.length == preorder.length -3000 &lt;= preorder[i], inorder[i] &lt;= 3000 preorder 和 inorder 均 无重复 元素 inorder 均出现在 preorder preorder 保证 为二叉树的前序遍历序列 inorder 保证 为二叉树的中序遍历序列  Related Topics
+ 树 数组 哈希表 分治 二叉树  题目链接: link"/>
+
+    <meta property="og:title" content="Leetcode 105 从前序与中序遍历序列构造二叉树" />
+<meta property="og:description" content="105.从前序与中序遍历序列构造二叉树 给定两个整数数组 preorder 和 inorder ，其中 preorder 是二叉树的先序遍历， inorder 是同一棵树的 中序遍历，请构造二叉树并返回其根节点。
+示例 1:
+输入: preorder = [3,9,20,15,7], inorder = [9,3,15,20,7]
+输出: [3,9,20,null,null,15,7]
+示例 2:
+输入: preorder = [-1], inorder = [-1]
+输出: [-1]
+提示：
+ 1 &lt;= preorder.length &lt;= 3000 inorder.length == preorder.length -3000 &lt;= preorder[i], inorder[i] &lt;= 3000 preorder 和 inorder 均 无重复 元素 inorder 均出现在 preorder preorder 保证 为二叉树的前序遍历序列 inorder 保证 为二叉树的中序遍历序列  Related Topics
+ 树 数组 哈希表 分治 二叉树  题目链接: link" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://Lu0key.github.io/post/lc-105-construct-binary-tree-from-preorder-and-inorder-traversal/" /><meta property="article:section" content="post" />
+<meta property="article:published_time" content="2024-02-28T22:40:00&#43;08:00" />
+<meta property="article:modified_time" content="2024-02-28T22:40:00&#43;08:00" />
+
+
+
+  </head>
+  <body>
+    <header class="app-header">
+      <a href="https://Lu0key.github.io/"><img class="app-header-avatar" src="/avatar.jpg" alt="洛七" /></a>
+      <span class="app-header-title">洛七的摸鱼池塘</span>
+      <nav class="app-header-menu">
+          <a class="app-header-menu-item" href="/tags/">Tags</a>
+      </nav>
+      <p>即将没书读的咸鱼</p>
+    </header>
+    <main class="app-container">
+      
+  <article class="post">
+    <header class="post-header">
+      <h1 class ="post-title">Leetcode 105 从前序与中序遍历序列构造二叉树</h1>
+      <div class="post-meta">
+        <div>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-calendar">
+  <title>calendar</title>
+  <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line>
+</svg>
+          Feb 28, 2024
+        </div>
+        <div>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-clock">
+  <title>clock</title>
+  <circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline>
+</svg>
+          4 min read
+        </div>
+        <div>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-tag">
+  <title>tag</title>
+  <path d="M20.59 13.41l-7.17 7.17a2 2 0 0 1-2.83 0L2 12V2h10l8.59 8.59a2 2 0 0 1 0 2.82z"></path><line x1="7" y1="7" x2="7.01" y2="7"></line>
+</svg>
+              <a class="tag" href="https://Lu0key.github.io/tags/leetcode/">leetcode</a>
+        </div>
+      </div>
+    </header>
+    <div class="post-content">
+      <h2 id="105从前序与中序遍历序列构造二叉树">105.从前序与中序遍历序列构造二叉树</h2>
+<p>给定两个整数数组 <code>preorder</code> 和 <code>inorder</code> ，其中 <code>preorder</code> 是二叉树的先序遍历， <code>inorder</code> 是同一棵树的 <strong>中序遍历</strong>，请构造二叉树并返回其根节点。</p>
+<p><strong>示例 1:</strong></p>
+<p><img src="https://raw.githubusercontent.com/Lu0Key/hexo-image/master/images/2024/02/tree.jpg" alt="image1"></p>
+<p><strong>输入</strong>: <code>preorder = [3,9,20,15,7], inorder = [9,3,15,20,7]</code><br>
+<strong>输出</strong>: <code>[3,9,20,null,null,15,7]</code></p>
+<p><strong>示例 2:</strong></p>
+<p><strong>输入</strong>: <code>preorder = [-1], inorder = [-1]</code><br>
+<strong>输出</strong>: <code>[-1]</code></p>
+<p>提示：</p>
+<ul>
+<li><code>1 &lt;= preorder.length &lt;= 3000</code></li>
+<li><code>inorder.length == preorder.length</code></li>
+<li><code>-3000 &lt;= preorder[i], inorder[i] &lt;= 3000</code></li>
+<li><code>preorder</code> 和 <code>inorder</code> 均 <strong>无重复</strong> 元素</li>
+<li><code>inorder</code> 均出现在 <code>preorder</code></li>
+<li><code>preorder</code> <strong>保证</strong> 为二叉树的前序遍历序列</li>
+<li><code>inorder</code> <strong>保证</strong> 为二叉树的中序遍历序列</li>
+</ul>
+<p>Related Topics</p>
+<ul>
+<li>树</li>
+<li>数组</li>
+<li>哈希表</li>
+<li>分治</li>
+<li>二叉树</li>
+</ul>
+<p>题目链接: <a href="https://leetcode.cn/problems/construct-binary-tree-from-preorder-and-inorder-traversal">link</a></p>
+<h2 id="解答">解答</h2>
+<p>本题的难度是 Medium.</p>
+<p>那根据前序遍历的定义, 前序遍历的第一个节点一定是根节点, 而根据中序遍历的定义, 一个节点的左子树的所有节点一定在这个节点的左边, 右子树的所有节点一定在这个节点的右边. 所以我们可以根据前序遍历的第一个节点, 在中序遍历中找到这个节点, 并且确定这个节点的左右子树的节点数量. 有了这些信息, 我们就可以递归的构建二叉树了.</p>
+<ul>
+<li>根据前序遍历找到当前的根节点, 并且得到剩余元素得到左右子树的前序遍历</li>
+<li>根据前序遍历和当前的中序遍历</li>
+</ul>
+<p>代码如下:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Solution</span> <span style="color:#f92672">{</span>
+    <span style="color:#66d9ef">public</span> TreeNode <span style="color:#a6e22e">buildTree</span><span style="color:#f92672">(</span><span style="color:#66d9ef">int</span><span style="color:#f92672">[]</span> preorder<span style="color:#f92672">,</span> <span style="color:#66d9ef">int</span><span style="color:#f92672">[]</span> inorder<span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
+        TreeNode root <span style="color:#f92672">=</span> createNode<span style="color:#f92672">(</span><span style="color:#66d9ef">null</span><span style="color:#f92672">,</span> preorder<span style="color:#f92672">,</span>inorder<span style="color:#f92672">);</span>
+        <span style="color:#66d9ef">return</span> root<span style="color:#f92672">;</span>
+    <span style="color:#f92672">}</span>
+
+    <span style="color:#66d9ef">private</span> TreeNode <span style="color:#a6e22e">createNode</span><span style="color:#f92672">(</span>TreeNode parent<span style="color:#f92672">,</span> <span style="color:#66d9ef">int</span><span style="color:#f92672">[]</span> preorder<span style="color:#f92672">,</span> <span style="color:#66d9ef">int</span><span style="color:#f92672">[]</span> inorder<span style="color:#f92672">){</span>
+        <span style="color:#66d9ef">if</span><span style="color:#f92672">(</span>preorder<span style="color:#f92672">.</span><span style="color:#a6e22e">length</span><span style="color:#f92672">==</span>0<span style="color:#f92672">){</span><span style="color:#66d9ef">return</span> <span style="color:#66d9ef">null</span><span style="color:#f92672">;}</span>
+        <span style="color:#75715e">// 获取前序遍历的第一个节点
+</span><span style="color:#75715e"></span>        <span style="color:#66d9ef">int</span> nodeVal <span style="color:#f92672">=</span> preorder<span style="color:#f92672">[</span>0<span style="color:#f92672">];</span>
+        <span style="color:#66d9ef">int</span> splitIndex <span style="color:#f92672">=</span> <span style="color:#f92672">-</span>1<span style="color:#f92672">;</span>
+        <span style="color:#66d9ef">for</span> <span style="color:#f92672">(</span><span style="color:#66d9ef">int</span> i <span style="color:#f92672">=</span> 0<span style="color:#f92672">;</span> i <span style="color:#f92672">&lt;</span> inorder<span style="color:#f92672">.</span><span style="color:#a6e22e">length</span><span style="color:#f92672">;</span> i<span style="color:#f92672">++)</span> <span style="color:#f92672">{</span>
+            <span style="color:#66d9ef">if</span> <span style="color:#f92672">(</span>inorder<span style="color:#f92672">[</span>i<span style="color:#f92672">]</span> <span style="color:#f92672">==</span> nodeVal<span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
+                splitIndex <span style="color:#f92672">=</span> i<span style="color:#f92672">;</span>
+                <span style="color:#66d9ef">break</span><span style="color:#f92672">;</span>
+            <span style="color:#f92672">}</span>
+        <span style="color:#f92672">}</span>
+        TreeNode node <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> TreeNode<span style="color:#f92672">(</span>nodeVal<span style="color:#f92672">);</span>
+        <span style="color:#66d9ef">if</span><span style="color:#f92672">(</span>preorder<span style="color:#f92672">.</span><span style="color:#a6e22e">length</span> <span style="color:#f92672">==</span> 1<span style="color:#f92672">)</span> <span style="color:#f92672">{</span><span style="color:#66d9ef">return</span> node<span style="color:#f92672">;}</span>
+        <span style="color:#75715e">// 这里其实写的挺莫名其妙的, 因为这题原来做过, 这个代码是原来写的, 真的很抽象
+</span><span style="color:#75715e"></span>        <span style="color:#66d9ef">if</span> <span style="color:#f92672">(</span>splitIndex <span style="color:#f92672">!=</span> 0<span style="color:#f92672">){</span>
+            <span style="color:#75715e">// 得到左子树的前序遍历和中序遍历
+</span><span style="color:#75715e"></span>            node<span style="color:#f92672">.</span><span style="color:#a6e22e">left</span> <span style="color:#f92672">=</span> createNode<span style="color:#f92672">(</span>node<span style="color:#f92672">,</span> Arrays<span style="color:#f92672">.</span><span style="color:#a6e22e">copyOfRange</span><span style="color:#f92672">(</span>preorder<span style="color:#f92672">,</span>1<span style="color:#f92672">,</span>splitIndex<span style="color:#f92672">+</span>1<span style="color:#f92672">),</span>
+                Arrays<span style="color:#f92672">.</span><span style="color:#a6e22e">copyOfRange</span><span style="color:#f92672">(</span>inorder<span style="color:#f92672">,</span> 0<span style="color:#f92672">,</span>splitIndex<span style="color:#f92672">));</span>
+        <span style="color:#f92672">}</span> <span style="color:#66d9ef">else</span> <span style="color:#f92672">{</span>
+            node<span style="color:#f92672">.</span><span style="color:#a6e22e">left</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">null</span><span style="color:#f92672">;</span>
+        <span style="color:#f92672">}</span>
+        <span style="color:#66d9ef">if</span> <span style="color:#f92672">(</span>splitIndex<span style="color:#f92672">+</span>1 <span style="color:#f92672">!=</span> preorder<span style="color:#f92672">.</span><span style="color:#a6e22e">length</span><span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
+            <span style="color:#75715e">// 得到右子树的前序遍历和中序遍历
+</span><span style="color:#75715e"></span>            node<span style="color:#f92672">.</span><span style="color:#a6e22e">right</span> <span style="color:#f92672">=</span> createNode<span style="color:#f92672">(</span>node<span style="color:#f92672">,</span> Arrays<span style="color:#f92672">.</span><span style="color:#a6e22e">copyOfRange</span><span style="color:#f92672">(</span>preorder<span style="color:#f92672">,</span> splitIndex <span style="color:#f92672">+</span> 1<span style="color:#f92672">,</span> preorder<span style="color:#f92672">.</span><span style="color:#a6e22e">length</span><span style="color:#f92672">),</span>
+                    Arrays<span style="color:#f92672">.</span><span style="color:#a6e22e">copyOfRange</span><span style="color:#f92672">(</span>inorder<span style="color:#f92672">,</span> splitIndex <span style="color:#f92672">+</span> 1<span style="color:#f92672">,</span> preorder<span style="color:#f92672">.</span><span style="color:#a6e22e">length</span><span style="color:#f92672">));</span>
+        <span style="color:#f92672">}</span> <span style="color:#66d9ef">else</span> <span style="color:#f92672">{</span>
+            node<span style="color:#f92672">.</span><span style="color:#a6e22e">right</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">null</span><span style="color:#f92672">;</span>
+        <span style="color:#f92672">}</span>
+        <span style="color:#66d9ef">return</span> node<span style="color:#f92672">;</span>
+    <span style="color:#f92672">}</span>
+<span style="color:#f92672">}</span>
+</code></pre></div><p>虽然解决了问题, 但是时间开销为 8ms, 并且 但是由于反复使用 for 循环查找节点值在中序遍历中的位置, 导致时间复杂度较高. 优化后的代码如下:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Solution</span> <span style="color:#f92672">{</span>
+    <span style="color:#66d9ef">public</span> TreeNode <span style="color:#a6e22e">buildTree</span><span style="color:#f92672">(</span><span style="color:#66d9ef">int</span><span style="color:#f92672">[]</span> preorder<span style="color:#f92672">,</span> <span style="color:#66d9ef">int</span><span style="color:#f92672">[]</span> inorder<span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
+        <span style="color:#75715e">// 这里也是很抽象, 我居然想的是用一个 list 来存储 inorder 的值, 然后用 lastIndexOf 来查找
+</span><span style="color:#75715e"></span>        ArrayList<span style="color:#f92672">&lt;</span>Integer<span style="color:#f92672">&gt;</span> list <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> ArrayList<span style="color:#f92672">&lt;&gt;();</span>
+        <span style="color:#66d9ef">for</span> <span style="color:#f92672">(</span><span style="color:#66d9ef">int</span> i <span style="color:#f92672">=</span> 0<span style="color:#f92672">;</span> i <span style="color:#f92672">&lt;</span> inorder<span style="color:#f92672">.</span><span style="color:#a6e22e">length</span><span style="color:#f92672">;</span> i<span style="color:#f92672">++)</span> <span style="color:#f92672">{</span>
+            list<span style="color:#f92672">.</span><span style="color:#a6e22e">add</span><span style="color:#f92672">(</span>inorder<span style="color:#f92672">[</span>i<span style="color:#f92672">]);</span>
+        <span style="color:#f92672">}</span>
+        TreeNode root <span style="color:#f92672">=</span> createNode<span style="color:#f92672">(</span><span style="color:#66d9ef">null</span><span style="color:#f92672">,</span> preorder<span style="color:#f92672">,</span>list<span style="color:#f92672">);</span>
+        <span style="color:#66d9ef">return</span> root<span style="color:#f92672">;</span>
+    <span style="color:#f92672">}</span>
+
+    <span style="color:#66d9ef">private</span> TreeNode <span style="color:#a6e22e">createNode</span><span style="color:#f92672">(</span>TreeNode parent<span style="color:#f92672">,</span> <span style="color:#66d9ef">int</span><span style="color:#f92672">[]</span> preorder<span style="color:#f92672">,</span> List<span style="color:#f92672">&lt;</span>Integer<span style="color:#f92672">&gt;</span> inoder<span style="color:#f92672">){</span>
+        <span style="color:#66d9ef">if</span><span style="color:#f92672">(</span>preorder<span style="color:#f92672">.</span><span style="color:#a6e22e">length</span><span style="color:#f92672">==</span>0<span style="color:#f92672">){</span><span style="color:#66d9ef">return</span> <span style="color:#66d9ef">null</span><span style="color:#f92672">;}</span>
+        <span style="color:#66d9ef">int</span> nodeVal  <span style="color:#f92672">=</span> preorder<span style="color:#f92672">[</span>0<span style="color:#f92672">];</span>
+        <span style="color:#66d9ef">int</span> splitIndex <span style="color:#f92672">=</span> inoder<span style="color:#f92672">.</span><span style="color:#a6e22e">lastIndexOf</span><span style="color:#f92672">(</span>nodeVal<span style="color:#f92672">);</span>
+        TreeNode node <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> TreeNode<span style="color:#f92672">(</span>nodeVal<span style="color:#f92672">);</span>
+        node<span style="color:#f92672">.</span><span style="color:#a6e22e">left</span> <span style="color:#f92672">=</span> createNode<span style="color:#f92672">(</span>node<span style="color:#f92672">,</span> Arrays<span style="color:#f92672">.</span><span style="color:#a6e22e">copyOfRange</span><span style="color:#f92672">(</span>preorder<span style="color:#f92672">,</span>1<span style="color:#f92672">,</span>splitIndex<span style="color:#f92672">+</span>1<span style="color:#f92672">),</span> inoder<span style="color:#f92672">.</span><span style="color:#a6e22e">subList</span><span style="color:#f92672">(</span>0<span style="color:#f92672">,</span>splitIndex<span style="color:#f92672">));</span>
+        node<span style="color:#f92672">.</span><span style="color:#a6e22e">right</span> <span style="color:#f92672">=</span> createNode<span style="color:#f92672">(</span>node<span style="color:#f92672">,</span> Arrays<span style="color:#f92672">.</span><span style="color:#a6e22e">copyOfRange</span><span style="color:#f92672">(</span>preorder<span style="color:#f92672">,</span>splitIndex<span style="color:#f92672">+</span>1<span style="color:#f92672">,</span>preorder<span style="color:#f92672">.</span><span style="color:#a6e22e">length</span><span style="color:#f92672">),</span> inoder<span style="color:#f92672">.</span><span style="color:#a6e22e">subList</span><span style="color:#f92672">(</span>splitIndex<span style="color:#f92672">+</span>1<span style="color:#f92672">,</span>preorder<span style="color:#f92672">.</span><span style="color:#a6e22e">length</span><span style="color:#f92672">));</span>
+        <span style="color:#66d9ef">return</span> node<span style="color:#f92672">;</span>
+    <span style="color:#f92672">}</span>
+<span style="color:#f92672">}</span>
+</code></pre></div><p>但是时间开销减少到了 4ms, 不过这样也只击败了 20.66% 的提交, 这边其实也很明白什么原因, 那就是因为疯狂使用 Arrays.copyOfRange 和 subList, 这两个方法的时间复杂度都是 O(n), 因此这里我改成指针的方式替代.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Solution</span> <span style="color:#f92672">{</span>
+    <span style="color:#66d9ef">public</span> TreeNode <span style="color:#a6e22e">buildTree</span><span style="color:#f92672">(</span><span style="color:#66d9ef">int</span><span style="color:#f92672">[]</span> preorder<span style="color:#f92672">,</span> <span style="color:#66d9ef">int</span><span style="color:#f92672">[]</span> inorder<span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
+        TreeNode root <span style="color:#f92672">=</span> createNode<span style="color:#f92672">(</span><span style="color:#66d9ef">null</span><span style="color:#f92672">,</span> preorder<span style="color:#f92672">,</span> inorder<span style="color:#f92672">,</span> 0<span style="color:#f92672">,</span> preorder<span style="color:#f92672">.</span><span style="color:#a6e22e">length</span><span style="color:#f92672">,</span> 0 <span style="color:#f92672">,</span>preorder<span style="color:#f92672">.</span><span style="color:#a6e22e">length</span><span style="color:#f92672">);</span>
+        <span style="color:#66d9ef">return</span> root<span style="color:#f92672">;</span>
+    <span style="color:#f92672">}</span>
+    <span style="color:#66d9ef">private</span> TreeNode <span style="color:#a6e22e">createNode</span><span style="color:#f92672">(</span>TreeNode parent<span style="color:#f92672">,</span> <span style="color:#66d9ef">int</span><span style="color:#f92672">[]</span> preorder<span style="color:#f92672">,</span> <span style="color:#66d9ef">int</span><span style="color:#f92672">[]</span> inorder<span style="color:#f92672">,</span> <span style="color:#66d9ef">int</span> startPre<span style="color:#f92672">,</span> <span style="color:#66d9ef">int</span> endPre<span style="color:#f92672">,</span> <span style="color:#66d9ef">int</span> startIn<span style="color:#f92672">,</span> <span style="color:#66d9ef">int</span> endIn<span style="color:#f92672">){</span>
+        <span style="color:#66d9ef">if</span><span style="color:#f92672">(</span>endPre<span style="color:#f92672">-</span>startPre<span style="color:#f92672">==</span>0<span style="color:#f92672">){</span><span style="color:#66d9ef">return</span> <span style="color:#66d9ef">null</span><span style="color:#f92672">;}</span>
+        <span style="color:#66d9ef">int</span> nodeVal  <span style="color:#f92672">=</span> preorder<span style="color:#f92672">[</span>startPre<span style="color:#f92672">];</span>
+        <span style="color:#75715e">// 这边是分析过程
+</span><span style="color:#75715e"></span>        <span style="color:#75715e">// preorder -&gt; [3,9,20,15,7], inorder-&gt; [9,3,15,20,7]
+</span><span style="color:#75715e"></span>        <span style="color:#75715e">// nodeVal -&gt; 3 -&gt; splitIndex = 1
+</span><span style="color:#75715e"></span>        <span style="color:#75715e">// 仔细想想其实代表的是左边的个数 -&gt; splitIndex - startIn
+</span><span style="color:#75715e"></span>        <span style="color:#75715e">// 那传给之后的就是 leftP-&gt; startP+1, startP+1+个数 -&gt; startP + 1 + splitIndex - startIn
+</span><span style="color:#75715e"></span>        <span style="color:#75715e">// 右边就是 rightP -&gt; startP + 1 + splitIndex - startIn, endP
+</span><span style="color:#75715e"></span>        <span style="color:#75715e">// leftP -&gt;  1,splitIndex + 1
+</span><span style="color:#75715e"></span>        <span style="color:#75715e">// rightP -&gt; splitIndex + 1, 5
+</span><span style="color:#75715e"></span>        <span style="color:#75715e">// 对于 inorder
+</span><span style="color:#75715e"></span>        <span style="color:#75715e">// left -&gt;  startIn, splitIndex
+</span><span style="color:#75715e"></span>        <span style="color:#75715e">// right -&gt; splitIndex+1, endIn
+</span><span style="color:#75715e"></span>        <span style="color:#66d9ef">int</span> splitIndex <span style="color:#f92672">=</span> indexOf<span style="color:#f92672">(</span>inorder<span style="color:#f92672">,</span> nodeVal<span style="color:#f92672">,</span> startIn<span style="color:#f92672">,</span> endIn<span style="color:#f92672">);</span>
+        TreeNode node <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> TreeNode<span style="color:#f92672">(</span>nodeVal<span style="color:#f92672">);</span>
+        node<span style="color:#f92672">.</span><span style="color:#a6e22e">left</span> <span style="color:#f92672">=</span> createNode<span style="color:#f92672">(</span>node<span style="color:#f92672">,</span> preorder<span style="color:#f92672">,</span> inorder<span style="color:#f92672">,</span>
+                startPre<span style="color:#f92672">+</span>1<span style="color:#f92672">,</span> startPre <span style="color:#f92672">+</span> 1 <span style="color:#f92672">+</span> splitIndex <span style="color:#f92672">-</span> startIn<span style="color:#f92672">,</span>
+                startIn<span style="color:#f92672">,</span> splitIndex<span style="color:#f92672">);</span>
+        node<span style="color:#f92672">.</span><span style="color:#a6e22e">right</span> <span style="color:#f92672">=</span> createNode<span style="color:#f92672">(</span>node<span style="color:#f92672">,</span> preorder<span style="color:#f92672">,</span> inorder<span style="color:#f92672">,</span>
+                startPre <span style="color:#f92672">+</span> 1 <span style="color:#f92672">+</span> splitIndex <span style="color:#f92672">-</span> startIn<span style="color:#f92672">,</span> endPre<span style="color:#f92672">,</span><span style="color:#75715e">// preorder 的左右边界
+</span><span style="color:#75715e"></span>                splitIndex<span style="color:#f92672">+</span>1<span style="color:#f92672">,</span> endIn<span style="color:#f92672">);</span><span style="color:#75715e">// inorder 的左右边界
+</span><span style="color:#75715e"></span>        <span style="color:#66d9ef">return</span> node<span style="color:#f92672">;</span>
+    <span style="color:#f92672">}</span>
+
+    <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">static</span> <span style="color:#66d9ef">int</span> <span style="color:#a6e22e">indexOf</span><span style="color:#f92672">(</span><span style="color:#66d9ef">int</span><span style="color:#f92672">[]</span> arr<span style="color:#f92672">,</span> <span style="color:#66d9ef">int</span> target<span style="color:#f92672">,</span> <span style="color:#66d9ef">int</span> start<span style="color:#f92672">,</span> <span style="color:#66d9ef">int</span> end<span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
+        <span style="color:#66d9ef">for</span> <span style="color:#f92672">(</span><span style="color:#66d9ef">int</span> i <span style="color:#f92672">=</span> start<span style="color:#f92672">;</span> i <span style="color:#f92672">&lt;</span> end<span style="color:#f92672">;</span> i<span style="color:#f92672">++)</span> <span style="color:#f92672">{</span>
+            <span style="color:#66d9ef">if</span> <span style="color:#f92672">(</span>arr<span style="color:#f92672">[</span>i<span style="color:#f92672">]</span> <span style="color:#f92672">==</span> target<span style="color:#f92672">)</span> <span style="color:#f92672">{</span> <span style="color:#66d9ef">return</span> i<span style="color:#f92672">;</span> <span style="color:#75715e">// 找到目标值，返回索引位置}
+</span><span style="color:#75715e"></span>        <span style="color:#f92672">}</span>
+        <span style="color:#66d9ef">return</span> <span style="color:#f92672">-</span>1<span style="color:#f92672">;</span> <span style="color:#75715e">// 没有找到目标值，返回 -1, 实际上应该不会返回 -1
+</span><span style="color:#75715e"></span>    <span style="color:#f92672">}</span>
+<span style="color:#f92672">}</span>
+</code></pre></div><p>这里换成了用指针的方法, 但是还是很抽象, 因为去掉了 Arrays.copyOfRange 和 subList, 但又加回了 indexOf 方法, 导致时间开销只减到了 3ms, 击败了 40.28% 的提交. 那这边的开销主要还是因为 indexOf, 并且可能一个区间可能遍历好多遍, 那我希望只遍历一遍, 就会很自然地想到 HashMap.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#f92672">import</span> java.util.HashMap<span style="color:#f92672">;</span>
+
+<span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Solution</span> <span style="color:#f92672">{</span>
+    <span style="color:#66d9ef">private</span> HashMap<span style="color:#f92672">&lt;</span>Integer<span style="color:#f92672">,</span> Integer<span style="color:#f92672">&gt;</span> hashMap <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> HashMap<span style="color:#f92672">&lt;&gt;();</span>
+    <span style="color:#66d9ef">public</span> TreeNode <span style="color:#a6e22e">buildTree</span><span style="color:#f92672">(</span><span style="color:#66d9ef">int</span><span style="color:#f92672">[]</span> preorder<span style="color:#f92672">,</span> <span style="color:#66d9ef">int</span><span style="color:#f92672">[]</span> inorder<span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
+        <span style="color:#66d9ef">for</span> <span style="color:#f92672">(</span><span style="color:#66d9ef">int</span> i <span style="color:#f92672">=</span> 0<span style="color:#f92672">;</span> i <span style="color:#f92672">&lt;</span> inorder<span style="color:#f92672">.</span><span style="color:#a6e22e">length</span><span style="color:#f92672">;</span> i<span style="color:#f92672">++)</span> <span style="color:#f92672">{</span>
+            hashMap<span style="color:#f92672">.</span><span style="color:#a6e22e">put</span><span style="color:#f92672">(</span>inorder<span style="color:#f92672">[</span>i<span style="color:#f92672">],</span>i<span style="color:#f92672">);</span>
+        <span style="color:#f92672">}</span>
+        TreeNode root <span style="color:#f92672">=</span> createNode<span style="color:#f92672">(</span><span style="color:#66d9ef">null</span><span style="color:#f92672">,</span> preorder<span style="color:#f92672">,</span> inorder<span style="color:#f92672">,</span> 0<span style="color:#f92672">,</span> preorder<span style="color:#f92672">.</span><span style="color:#a6e22e">length</span><span style="color:#f92672">,</span> 0 <span style="color:#f92672">,</span>preorder<span style="color:#f92672">.</span><span style="color:#a6e22e">length</span><span style="color:#f92672">);</span>
+        <span style="color:#66d9ef">return</span> root<span style="color:#f92672">;</span>
+    <span style="color:#f92672">}</span>
+    <span style="color:#66d9ef">private</span> TreeNode <span style="color:#a6e22e">createNode</span><span style="color:#f92672">(</span>TreeNode parent<span style="color:#f92672">,</span> <span style="color:#66d9ef">int</span><span style="color:#f92672">[]</span> preorder<span style="color:#f92672">,</span> <span style="color:#66d9ef">int</span><span style="color:#f92672">[]</span> inorder<span style="color:#f92672">,</span> <span style="color:#66d9ef">int</span> startPre<span style="color:#f92672">,</span> <span style="color:#66d9ef">int</span> endPre<span style="color:#f92672">,</span> <span style="color:#66d9ef">int</span> startIn<span style="color:#f92672">,</span> <span style="color:#66d9ef">int</span> endIn<span style="color:#f92672">){</span>
+        <span style="color:#66d9ef">if</span><span style="color:#f92672">(</span>endPre<span style="color:#f92672">-</span>startPre<span style="color:#f92672">==</span>0<span style="color:#f92672">){</span><span style="color:#66d9ef">return</span> <span style="color:#66d9ef">null</span><span style="color:#f92672">;}</span>
+        <span style="color:#66d9ef">int</span> nodeVal  <span style="color:#f92672">=</span> preorder<span style="color:#f92672">[</span>startPre<span style="color:#f92672">];</span>
+        <span style="color:#66d9ef">int</span> splitIndex <span style="color:#f92672">=</span> hashMap<span style="color:#f92672">.</span><span style="color:#a6e22e">get</span><span style="color:#f92672">(</span>nodeVal<span style="color:#f92672">);</span>
+        TreeNode node <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> TreeNode<span style="color:#f92672">(</span>nodeVal<span style="color:#f92672">);</span>
+        node<span style="color:#f92672">.</span><span style="color:#a6e22e">left</span> <span style="color:#f92672">=</span> createNode<span style="color:#f92672">(</span>node<span style="color:#f92672">,</span> preorder<span style="color:#f92672">,</span> inorder<span style="color:#f92672">,</span>
+                startPre<span style="color:#f92672">+</span>1<span style="color:#f92672">,</span> startPre <span style="color:#f92672">+</span> 1 <span style="color:#f92672">+</span> splitIndex <span style="color:#f92672">-</span> startIn<span style="color:#f92672">,</span>
+                startIn<span style="color:#f92672">,</span> splitIndex<span style="color:#f92672">);</span>
+        node<span style="color:#f92672">.</span><span style="color:#a6e22e">right</span> <span style="color:#f92672">=</span> createNode<span style="color:#f92672">(</span>node<span style="color:#f92672">,</span> preorder<span style="color:#f92672">,</span> inorder<span style="color:#f92672">,</span>
+                startPre <span style="color:#f92672">+</span> 1 <span style="color:#f92672">+</span> splitIndex <span style="color:#f92672">-</span> startIn<span style="color:#f92672">,</span> endPre<span style="color:#f92672">,</span>
+                splitIndex<span style="color:#f92672">+</span>1<span style="color:#f92672">,</span> endIn<span style="color:#f92672">);</span>
+
+        <span style="color:#66d9ef">return</span> node<span style="color:#f92672">;</span>
+    <span style="color:#f92672">}</span>
+</code></pre></div><p>好好好, 这样时间开销就成功地来到了 1ms, 击败了 99.37% 的提交，这个开销已经很满意了, 不过我还试了一下把 HashMap 换成一个长度为 6001 的数组, 代替 HashMap 的功能, 但是经过测试, 时间开销为 2ms, 说明当前情况下, HashMap 的开销更小.(可能因为节点的数量不多, 但是值的范围很大, 所以 HashMap 的开销更小)</p>
+
+    </div>
+    <div class="post-footer">
+      
+    </div>
+  </article>
+
+    </main>
+  </body>
+</html>
