@@ -6,7 +6,24 @@
     <description>Recent content in leetcode on 洛七的摸鱼池塘</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Wed, 28 Feb 2024 22:43:59 +0800</lastBuildDate><atom:link href="https://Lu0key.github.io/tags/leetcode/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Wed, 28 Feb 2024 22:46:15 +0800</lastBuildDate><atom:link href="https://Lu0key.github.io/tags/leetcode/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Leetcode 2583 二叉树中的第 K 大层和</title>
+      <link>https://Lu0key.github.io/post/lc-2583-kth-largest-sum-in-a-binary-tree/</link>
+      <pubDate>Wed, 28 Feb 2024 22:46:15 +0800</pubDate>
+      
+      <guid>https://Lu0key.github.io/post/lc-2583-kth-largest-sum-in-a-binary-tree/</guid>
+      <description>2583.二叉树中的第 K 大层和 给你一棵二叉树的根节点 root 和一个正整数 k 。
+树中的 层和 是指 同一层 上节点值的总和。
+返回树中第 k 大的层和（不一定不同）。如果树少于 k 层，则返回 -1 。
+注意，如果两个节点与根节点的距离相同，则认为它们在同一层。
+示例 1:
+输入: root = [5,8,9,2,1,3,7,4,6], k = 2
+输出: 13
+解释: 树中每一层的层和分别是：
+ Level 1: 5 Level 2: 8 + 9 = 17 Level 3: 2 + 1 + 3 + 7 = 13 Level 4: 4 + 6 = 10 第 2 大的层和等于 13 。  示例 2:</description>
+    </item>
+    
     <item>
       <title>Leetcode 889 根据前序和后序遍历构造二叉树</title>
       <link>https://Lu0key.github.io/post/lc-889-construct-binary-tree-from-preorder-and-postorder-traversal/</link>

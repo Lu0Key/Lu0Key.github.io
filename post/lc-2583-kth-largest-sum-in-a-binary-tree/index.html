@@ -1,0 +1,212 @@
+<!doctype html>
+<html lang="en-us">
+  <head>
+    <title>Leetcode 2583 二叉树中的第 K 大层和 // 洛七的摸鱼池塘</title>
+    <link rel="shortcut icon" href="/favicon.ico" />
+    <meta charset="utf-8" />
+    <meta name="generator" content="Hugo 0.81.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="author" content="洛七" />
+    <meta name="description" content="" />
+    <link rel="stylesheet" href="/css/main.min.0fb49e70a30412f97ddfc418e18fefef1d9fcdebe45f634dbbba768b00fe1eec.css" />
+    
+
+    
+    <meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Leetcode 2583 二叉树中的第 K 大层和"/>
+<meta name="twitter:description" content="2583.二叉树中的第 K 大层和 给你一棵二叉树的根节点 root 和一个正整数 k 。
+树中的 层和 是指 同一层 上节点值的总和。
+返回树中第 k 大的层和（不一定不同）。如果树少于 k 层，则返回 -1 。
+注意，如果两个节点与根节点的距离相同，则认为它们在同一层。
+示例 1:
+输入: root = [5,8,9,2,1,3,7,4,6], k = 2
+输出: 13
+解释: 树中每一层的层和分别是：
+ Level 1: 5 Level 2: 8 &#43; 9 = 17 Level 3: 2 &#43; 1 &#43; 3 &#43; 7 = 13 Level 4: 4 &#43; 6 = 10 第 2 大的层和等于 13 。  示例 2:"/>
+
+    <meta property="og:title" content="Leetcode 2583 二叉树中的第 K 大层和" />
+<meta property="og:description" content="2583.二叉树中的第 K 大层和 给你一棵二叉树的根节点 root 和一个正整数 k 。
+树中的 层和 是指 同一层 上节点值的总和。
+返回树中第 k 大的层和（不一定不同）。如果树少于 k 层，则返回 -1 。
+注意，如果两个节点与根节点的距离相同，则认为它们在同一层。
+示例 1:
+输入: root = [5,8,9,2,1,3,7,4,6], k = 2
+输出: 13
+解释: 树中每一层的层和分别是：
+ Level 1: 5 Level 2: 8 &#43; 9 = 17 Level 3: 2 &#43; 1 &#43; 3 &#43; 7 = 13 Level 4: 4 &#43; 6 = 10 第 2 大的层和等于 13 。  示例 2:" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://Lu0key.github.io/post/lc-2583-kth-largest-sum-in-a-binary-tree/" /><meta property="article:section" content="post" />
+<meta property="article:published_time" content="2024-02-28T22:46:15&#43;08:00" />
+<meta property="article:modified_time" content="2024-02-28T22:46:15&#43;08:00" />
+
+
+
+  </head>
+  <body>
+    <header class="app-header">
+      <a href="https://Lu0key.github.io/"><img class="app-header-avatar" src="/avatar.jpg" alt="洛七" /></a>
+      <span class="app-header-title">洛七的摸鱼池塘</span>
+      <nav class="app-header-menu">
+          <a class="app-header-menu-item" href="/tags/">Tags</a>
+      </nav>
+      <p>即将没书读的咸鱼</p>
+    </header>
+    <main class="app-container">
+      
+  <article class="post">
+    <header class="post-header">
+      <h1 class ="post-title">Leetcode 2583 二叉树中的第 K 大层和</h1>
+      <div class="post-meta">
+        <div>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-calendar">
+  <title>calendar</title>
+  <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line>
+</svg>
+          Feb 28, 2024
+        </div>
+        <div>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-clock">
+  <title>clock</title>
+  <circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline>
+</svg>
+          2 min read
+        </div>
+        <div>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-tag">
+  <title>tag</title>
+  <path d="M20.59 13.41l-7.17 7.17a2 2 0 0 1-2.83 0L2 12V2h10l8.59 8.59a2 2 0 0 1 0 2.82z"></path><line x1="7" y1="7" x2="7.01" y2="7"></line>
+</svg>
+              <a class="tag" href="https://Lu0key.github.io/tags/leetcode/">leetcode</a>
+        </div>
+      </div>
+    </header>
+    <div class="post-content">
+      <h2 id="2583二叉树中的第-k-大层和">2583.二叉树中的第 K 大层和</h2>
+<p>给你一棵二叉树的根节点 <code>root</code> 和一个正整数 <code>k</code> 。</p>
+<p>树中的 <strong>层和</strong> 是指 <strong>同一层</strong> 上节点值的总和。</p>
+<p>返回树中第 <code>k</code> 大的层和（不一定不同）。如果树少于 <code>k</code> 层，则返回 <code>-1</code> 。</p>
+<p><strong>注意</strong>，如果两个节点与根节点的距离相同，则认为它们在同一层。</p>
+<p><strong>示例 1:</strong></p>
+<p><img src="https://raw.githubusercontent.com/Lu0Key/hexo-image/master/images/2024/02/binaryytreeedrawio-2.png" alt="image1"></p>
+<p><strong>输入</strong>: <code>root = [5,8,9,2,1,3,7,4,6], k = 2</code><br>
+<strong>输出</strong>: <code>13</code><br>
+<strong>解释</strong>: 树中每一层的层和分别是：</p>
+<ul>
+<li>Level 1: 5</li>
+<li>Level 2: 8 + 9 = 17</li>
+<li>Level 3: 2 + 1 + 3 + 7 = 13</li>
+<li>Level 4: 4 + 6 = 10
+第 2 大的层和等于 13 。</li>
+</ul>
+<p><strong>示例 2:</strong></p>
+<p><img src="https://raw.githubusercontent.com/Lu0Key/hexo-image/master/images/2024/02/treedrawio-3.png" alt="image2"></p>
+<p><strong>输入</strong>: <code>root = [1,2,null,3], k = 1</code><br>
+<strong>输出</strong>: <code>3</code><br>
+<strong>解释</strong>: 最大的层和是 3 。</p>
+<p>提示：</p>
+<ul>
+<li>树中的节点数为 <code>n</code></li>
+<li><code>2 &lt;= n &lt;= 10^5</code></li>
+<li><code>1 &lt;= Node.val &lt;= 10^6</code></li>
+<li><code>1 &lt;= k &lt;= n</code></li>
+</ul>
+<p>Related Topics</p>
+<ul>
+<li>树</li>
+<li>广度优先搜索</li>
+<li>二叉树</li>
+<li>排序</li>
+</ul>
+<p>题目链接: <a href="https://leetcode.cn/problems/kth-largest-sum-in-a-binary-tree">link</a></p>
+<h2 id="解答">解答</h2>
+<p>本题的难度是 Medium.</p>
+<p>我们要知道第K大的层的和, 首先那我们就需要知道每一层的和, 然后再排序, 最后取第K大的和. 这是很直接的想法, 知道每一层的和用层序遍历, 前序遍历都行.</p>
+<p>代码如下:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Solution</span> <span style="color:#f92672">{</span>
+    <span style="color:#66d9ef">private</span> List<span style="color:#f92672">&lt;</span>Long<span style="color:#f92672">&gt;</span> list <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> ArrayList<span style="color:#f92672">&lt;&gt;();</span>
+    <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">long</span> <span style="color:#a6e22e">kthLargestLevelSum</span><span style="color:#f92672">(</span>TreeNode root<span style="color:#f92672">,</span> <span style="color:#66d9ef">int</span> k<span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
+        preorder<span style="color:#f92672">(</span>root<span style="color:#f92672">,</span> 0<span style="color:#f92672">);</span>
+        <span style="color:#66d9ef">if</span> <span style="color:#f92672">(</span>k <span style="color:#f92672">&gt;</span> list<span style="color:#f92672">.</span><span style="color:#a6e22e">size</span><span style="color:#f92672">()){</span>
+            <span style="color:#66d9ef">return</span> <span style="color:#f92672">-</span>1<span style="color:#f92672">;</span>
+        <span style="color:#f92672">}</span> <span style="color:#66d9ef">else</span> <span style="color:#f92672">{</span>
+            list<span style="color:#f92672">.</span><span style="color:#a6e22e">sort</span><span style="color:#f92672">(</span>Comparator<span style="color:#f92672">.</span><span style="color:#a6e22e">reverseOrder</span><span style="color:#f92672">());</span>
+            <span style="color:#66d9ef">return</span> list<span style="color:#f92672">.</span><span style="color:#a6e22e">get</span><span style="color:#f92672">(</span>k<span style="color:#f92672">-</span>1<span style="color:#f92672">);</span>
+        <span style="color:#f92672">}</span>
+    <span style="color:#f92672">}</span>
+
+    <span style="color:#66d9ef">private</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">preorder</span><span style="color:#f92672">(</span>TreeNode node<span style="color:#f92672">,</span> <span style="color:#66d9ef">int</span> depth<span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
+        <span style="color:#66d9ef">if</span> <span style="color:#f92672">(</span>node <span style="color:#f92672">==</span> <span style="color:#66d9ef">null</span><span style="color:#f92672">)</span> <span style="color:#f92672">{</span><span style="color:#66d9ef">return</span> <span style="color:#f92672">;}</span>
+        <span style="color:#66d9ef">if</span> <span style="color:#f92672">(</span>list<span style="color:#f92672">.</span><span style="color:#a6e22e">size</span><span style="color:#f92672">()</span> <span style="color:#f92672">==</span> depth<span style="color:#f92672">){</span>
+            list<span style="color:#f92672">.</span><span style="color:#a6e22e">add</span><span style="color:#f92672">((</span><span style="color:#66d9ef">long</span><span style="color:#f92672">)</span> node<span style="color:#f92672">.</span><span style="color:#a6e22e">val</span><span style="color:#f92672">);</span>
+        <span style="color:#f92672">}</span> <span style="color:#66d9ef">else</span> <span style="color:#f92672">{</span>
+            list<span style="color:#f92672">.</span><span style="color:#a6e22e">set</span><span style="color:#f92672">(</span>depth<span style="color:#f92672">,</span> list<span style="color:#f92672">.</span><span style="color:#a6e22e">get</span><span style="color:#f92672">(</span>depth<span style="color:#f92672">)+</span>node<span style="color:#f92672">.</span><span style="color:#a6e22e">val</span><span style="color:#f92672">);</span>
+        <span style="color:#f92672">}</span>
+        preorder<span style="color:#f92672">(</span>node<span style="color:#f92672">.</span><span style="color:#a6e22e">left</span><span style="color:#f92672">,</span> depth<span style="color:#f92672">+</span>1<span style="color:#f92672">);</span>
+        preorder<span style="color:#f92672">(</span>node<span style="color:#f92672">.</span><span style="color:#a6e22e">right</span><span style="color:#f92672">,</span> depth<span style="color:#f92672">+</span>1<span style="color:#f92672">);</span>
+    <span style="color:#f92672">}</span>
+
+<span style="color:#f92672">}</span>
+</code></pre></div><p>耗时 41ms, 击败了 29.19% 的提交. 这击败的好少, 于是我改了改, 因为这里耗时很大的原因可能是因为用List, 并且用了官方的排序, 因此试图改这里. 最多 100_000 个元素, 因此最多 100_000 层, 所以用一个数组存每一层的和, 至于第 K 大, 又不用排序, 我们很自然地会想到用堆.</p>
+<p>代码如下:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Solution</span> <span style="color:#f92672">{</span>
+    <span style="color:#66d9ef">private</span> <span style="color:#66d9ef">long</span><span style="color:#f92672">[]</span> bucket <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> <span style="color:#66d9ef">long</span><span style="color:#f92672">[</span>100_000<span style="color:#f92672">];</span>
+    <span style="color:#66d9ef">private</span> <span style="color:#66d9ef">int</span> maxDepth <span style="color:#f92672">=</span> <span style="color:#f92672">-</span>1<span style="color:#f92672">;</span>
+    <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">long</span> <span style="color:#a6e22e">kthLargestLevelSum</span><span style="color:#f92672">(</span>TreeNode root<span style="color:#f92672">,</span> <span style="color:#66d9ef">int</span> k<span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
+        preorder<span style="color:#f92672">(</span>root<span style="color:#f92672">,</span> 0<span style="color:#f92672">);</span>
+        <span style="color:#66d9ef">if</span> <span style="color:#f92672">(</span>k <span style="color:#f92672">&gt;</span> maxDepth<span style="color:#f92672">+</span>1<span style="color:#f92672">){</span>
+            <span style="color:#66d9ef">return</span> <span style="color:#f92672">-</span>1<span style="color:#f92672">;</span>
+        <span style="color:#f92672">}</span> <span style="color:#66d9ef">else</span> <span style="color:#f92672">{</span>
+            PriorityQueue<span style="color:#f92672">&lt;</span>Long<span style="color:#f92672">&gt;</span> minHeap <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> PriorityQueue<span style="color:#f92672">&lt;&gt;();</span>
+            <span style="color:#66d9ef">for</span> <span style="color:#f92672">(</span><span style="color:#66d9ef">int</span> i <span style="color:#f92672">=</span> 0<span style="color:#f92672">;</span> i<span style="color:#f92672">&lt;=</span> maxDepth<span style="color:#f92672">;</span> i<span style="color:#f92672">++)</span> <span style="color:#f92672">{</span>
+                minHeap<span style="color:#f92672">.</span><span style="color:#a6e22e">add</span><span style="color:#f92672">(</span>bucket<span style="color:#f92672">[</span>i<span style="color:#f92672">]);</span>
+                <span style="color:#66d9ef">if</span> <span style="color:#f92672">(</span>minHeap<span style="color:#f92672">.</span><span style="color:#a6e22e">size</span><span style="color:#f92672">()</span> <span style="color:#f92672">&gt;</span> k<span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
+                    minHeap<span style="color:#f92672">.</span><span style="color:#a6e22e">poll</span><span style="color:#f92672">();</span>
+                <span style="color:#f92672">}</span>
+            <span style="color:#f92672">}</span>
+            <span style="color:#66d9ef">return</span> minHeap<span style="color:#f92672">.</span><span style="color:#a6e22e">peek</span><span style="color:#f92672">();</span>
+        <span style="color:#f92672">}</span>
+    <span style="color:#f92672">}</span>
+
+    <span style="color:#66d9ef">private</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">preorder</span><span style="color:#f92672">(</span>TreeNode node<span style="color:#f92672">,</span> <span style="color:#66d9ef">int</span> depth<span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
+        <span style="color:#66d9ef">if</span> <span style="color:#f92672">(</span>node <span style="color:#f92672">==</span> <span style="color:#66d9ef">null</span><span style="color:#f92672">)</span> <span style="color:#f92672">{</span><span style="color:#66d9ef">return</span> <span style="color:#f92672">;}</span>
+        <span style="color:#66d9ef">if</span><span style="color:#f92672">(</span>depth <span style="color:#f92672">&gt;</span> maxDepth<span style="color:#f92672">)</span> <span style="color:#f92672">{</span> maxDepth <span style="color:#f92672">=</span> depth<span style="color:#f92672">;}</span>
+        bucket<span style="color:#f92672">[</span>depth<span style="color:#f92672">]</span> <span style="color:#f92672">+=</span> node<span style="color:#f92672">.</span><span style="color:#a6e22e">val</span><span style="color:#f92672">;</span>
+        preorder<span style="color:#f92672">(</span>node<span style="color:#f92672">.</span><span style="color:#a6e22e">left</span><span style="color:#f92672">,</span> depth<span style="color:#f92672">+</span>1<span style="color:#f92672">);</span>
+        preorder<span style="color:#f92672">(</span>node<span style="color:#f92672">.</span><span style="color:#a6e22e">right</span><span style="color:#f92672">,</span> depth<span style="color:#f92672">+</span>1<span style="color:#f92672">);</span>
+    <span style="color:#f92672">}</span>
+
+<span style="color:#f92672">}</span>
+</code></pre></div><p>此时耗时 36ms, 击败了 46.95% 的提交, 那么我们要怎么再提升呢? 虽然我们去掉了 List, 但是又引入了 <code>PriorityQueue</code>, 这个是不是也是耗时的原因呢? 我们可以试试看, 把 <code>PriorityQueue</code> 换成 <code>Arrays.sort</code>.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Solution</span> <span style="color:#f92672">{</span>
+    <span style="color:#66d9ef">private</span> <span style="color:#66d9ef">long</span><span style="color:#f92672">[]</span> bucket <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> <span style="color:#66d9ef">long</span><span style="color:#f92672">[</span>100_000<span style="color:#f92672">];</span>
+    <span style="color:#66d9ef">private</span> <span style="color:#66d9ef">int</span> maxDepth <span style="color:#f92672">=</span> <span style="color:#f92672">-</span>1<span style="color:#f92672">;</span>
+    <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">long</span> <span style="color:#a6e22e">kthLargestLevelSum</span><span style="color:#f92672">(</span>TreeNode root<span style="color:#f92672">,</span> <span style="color:#66d9ef">int</span> k<span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
+        preorder<span style="color:#f92672">(</span>root<span style="color:#f92672">,</span> 0<span style="color:#f92672">);</span>
+        <span style="color:#66d9ef">if</span> <span style="color:#f92672">(</span>k <span style="color:#f92672">&gt;</span> maxDepth<span style="color:#f92672">+</span>1<span style="color:#f92672">){</span>
+            <span style="color:#66d9ef">return</span> <span style="color:#f92672">-</span>1<span style="color:#f92672">;</span>
+        <span style="color:#f92672">}</span> <span style="color:#66d9ef">else</span> <span style="color:#f92672">{</span>
+            <span style="color:#66d9ef">long</span><span style="color:#f92672">[]</span> result <span style="color:#f92672">=</span> Arrays<span style="color:#f92672">.</span><span style="color:#a6e22e">copyOfRange</span><span style="color:#f92672">(</span>bucket<span style="color:#f92672">,</span> 0<span style="color:#f92672">,</span> maxDepth<span style="color:#f92672">+</span>1<span style="color:#f92672">);</span>
+            Arrays<span style="color:#f92672">.</span><span style="color:#a6e22e">sort</span><span style="color:#f92672">(</span>result<span style="color:#f92672">);</span>
+            <span style="color:#66d9ef">return</span> result<span style="color:#f92672">[</span>maxDepth<span style="color:#f92672">+</span>1<span style="color:#f92672">-</span>k<span style="color:#f92672">];</span>
+        <span style="color:#f92672">}</span>
+    <span style="color:#f92672">}</span>
+
+    <span style="color:#66d9ef">private</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">preorder</span><span style="color:#f92672">(</span>TreeNode node<span style="color:#f92672">,</span> <span style="color:#66d9ef">int</span> depth<span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
+        <span style="color:#66d9ef">if</span> <span style="color:#f92672">(</span>node <span style="color:#f92672">==</span> <span style="color:#66d9ef">null</span><span style="color:#f92672">)</span> <span style="color:#f92672">{</span><span style="color:#66d9ef">return</span> <span style="color:#f92672">;}</span>
+        <span style="color:#66d9ef">if</span><span style="color:#f92672">(</span>depth <span style="color:#f92672">&gt;</span> maxDepth<span style="color:#f92672">)</span> <span style="color:#f92672">{</span> maxDepth <span style="color:#f92672">=</span> depth<span style="color:#f92672">;}</span>
+        bucket<span style="color:#f92672">[</span>depth<span style="color:#f92672">]</span> <span style="color:#f92672">+=</span> node<span style="color:#f92672">.</span><span style="color:#a6e22e">val</span><span style="color:#f92672">;</span>
+        preorder<span style="color:#f92672">(</span>node<span style="color:#f92672">.</span><span style="color:#a6e22e">left</span><span style="color:#f92672">,</span> depth<span style="color:#f92672">+</span>1<span style="color:#f92672">);</span>
+        preorder<span style="color:#f92672">(</span>node<span style="color:#f92672">.</span><span style="color:#a6e22e">right</span><span style="color:#f92672">,</span> depth<span style="color:#f92672">+</span>1<span style="color:#f92672">);</span>
+    <span style="color:#f92672">}</span>
+<span style="color:#f92672">}</span>
+</code></pre></div><p>果然提升明显, 一下就提升到了 19ms, 击败了 72.34% 的提交, 我在想会不会因为用了 Array.copyOfRange, 导致的耗时, 结果发现居然还有这个函数 <code>Arrays.sort(long[], int fromIndex, int toIndex)</code>, 于是我试试看, 发现时间开销并没有更好, 可能要自己手写快排才会更快了, 但是懒得写捏.</p>
+
+    </div>
+    <div class="post-footer">
+      
+    </div>
+  </article>
+
+    </main>
+  </body>
+</html>
