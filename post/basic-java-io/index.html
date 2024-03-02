@@ -1,0 +1,813 @@
+<!doctype html>
+<html lang="en-us">
+  <head>
+    <title>Java IO 基础 // 洛七的摸鱼池塘</title>
+    <link rel="shortcut icon" href="/favicon.ico" />
+    <meta charset="utf-8" />
+    <meta name="generator" content="Hugo 0.81.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="author" content="洛七" />
+    <meta name="description" content="" />
+    <link rel="stylesheet" href="/css/main.min.0fb49e70a30412f97ddfc418e18fefef1d9fcdebe45f634dbbba768b00fe1eec.css" />
+    
+
+    
+    <meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Java IO 基础"/>
+<meta name="twitter:description" content="文件 文件就是保存数据的地方。
+ 流: 数据在数据源(文件)和程序(内存)之间经历的路径 输入流：数据从数据源(文件)到程序(内存)的路径 输出流: 数据从程序(内存)到数据源(文件)的路径  常用的文件操作  new File(String pathname): 根据路径构建一个 File 对象 new File(File parent, String child): 根据父目录文件&#43;子路径构建 new File(String parent, String child): 根据父目录&#43;子路径构建  import org.junit.Test; import java.io.File; import java.io.IOException; // 演示创建文件 public class FileCreate { public static void main(String[] args) { } // 方式1  @Test public void create01() { String filePath = &#34;f:\\news1.txt&#34;; File file = new File(filePath); try { // 执行了这个方法才会在磁盘创建  file."/>
+
+    <meta property="og:title" content="Java IO 基础" />
+<meta property="og:description" content="文件 文件就是保存数据的地方。
+ 流: 数据在数据源(文件)和程序(内存)之间经历的路径 输入流：数据从数据源(文件)到程序(内存)的路径 输出流: 数据从程序(内存)到数据源(文件)的路径  常用的文件操作  new File(String pathname): 根据路径构建一个 File 对象 new File(File parent, String child): 根据父目录文件&#43;子路径构建 new File(String parent, String child): 根据父目录&#43;子路径构建  import org.junit.Test; import java.io.File; import java.io.IOException; // 演示创建文件 public class FileCreate { public static void main(String[] args) { } // 方式1  @Test public void create01() { String filePath = &#34;f:\\news1.txt&#34;; File file = new File(filePath); try { // 执行了这个方法才会在磁盘创建  file." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://Lu0key.github.io/post/basic-java-io/" /><meta property="article:section" content="post" />
+<meta property="article:published_time" content="2024-03-02T22:07:15&#43;08:00" />
+<meta property="article:modified_time" content="2024-03-02T22:07:15&#43;08:00" />
+
+
+
+  </head>
+  <body>
+    <header class="app-header">
+      <a href="https://Lu0key.github.io/"><img class="app-header-avatar" src="/avatar.jpg" alt="洛七" /></a>
+      <span class="app-header-title">洛七的摸鱼池塘</span>
+      <nav class="app-header-menu">
+          <a class="app-header-menu-item" href="/tags/">Tags</a>
+      </nav>
+      <p>即将没书读的咸鱼</p>
+    </header>
+    <main class="app-container">
+      
+  <article class="post">
+    <header class="post-header">
+      <h1 class ="post-title">Java IO 基础</h1>
+      <div class="post-meta">
+        <div>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-calendar">
+  <title>calendar</title>
+  <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line>
+</svg>
+          Mar 2, 2024
+        </div>
+        <div>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-clock">
+  <title>clock</title>
+  <circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline>
+</svg>
+          9 min read
+        </div>
+        <div>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-tag">
+  <title>tag</title>
+  <path d="M20.59 13.41l-7.17 7.17a2 2 0 0 1-2.83 0L2 12V2h10l8.59 8.59a2 2 0 0 1 0 2.82z"></path><line x1="7" y1="7" x2="7.01" y2="7"></line>
+</svg>
+              <a class="tag" href="https://Lu0key.github.io/tags/java/">Java</a>
+        </div>
+      </div>
+    </header>
+    <div class="post-content">
+      <h2 id="文件">文件</h2>
+<p>文件就是保存数据的地方。</p>
+<ul>
+<li>流: 数据在数据源(文件)和程序(内存)之间经历的路径</li>
+<li>输入流：数据从数据源(文件)到程序(内存)的路径</li>
+<li>输出流: 数据从程序(内存)到数据源(文件)的路径</li>
+</ul>
+<h3 id="常用的文件操作">常用的文件操作</h3>
+<ul>
+<li><code>new File(String pathname)</code>: 根据路径构建一个 <code>File</code> 对象</li>
+<li><code>new File(File parent, String child)</code>: 根据父目录文件+子路径构建</li>
+<li><code>new File(String parent, String child)</code>: 根据父目录+子路径构建</li>
+</ul>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#f92672">import</span> org.junit.Test<span style="color:#f92672">;</span>
+
+<span style="color:#f92672">import</span> java.io.File<span style="color:#f92672">;</span>
+<span style="color:#f92672">import</span> java.io.IOException<span style="color:#f92672">;</span>
+
+<span style="color:#75715e">// 演示创建文件
+</span><span style="color:#75715e"></span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">FileCreate</span> <span style="color:#f92672">{</span>
+    <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">static</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">main</span><span style="color:#f92672">(</span>String<span style="color:#f92672">[]</span> args<span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
+
+    <span style="color:#f92672">}</span>
+
+    <span style="color:#75715e">// 方式1
+</span><span style="color:#75715e"></span>    <span style="color:#a6e22e">@Test</span>
+    <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">create01</span><span style="color:#f92672">()</span> <span style="color:#f92672">{</span>
+        String filePath <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;f:\\news1.txt&#34;</span><span style="color:#f92672">;</span>
+        File file <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> File<span style="color:#f92672">(</span>filePath<span style="color:#f92672">);</span>
+        <span style="color:#66d9ef">try</span> <span style="color:#f92672">{</span>
+            <span style="color:#75715e">// 执行了这个方法才会在磁盘创建
+</span><span style="color:#75715e"></span>            file<span style="color:#f92672">.</span><span style="color:#a6e22e">createNewFile</span><span style="color:#f92672">();</span>
+            System<span style="color:#f92672">.</span><span style="color:#a6e22e">out</span><span style="color:#f92672">.</span><span style="color:#a6e22e">println</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;文件创建成功&#34;</span><span style="color:#f92672">);</span>
+        <span style="color:#f92672">}</span> <span style="color:#66d9ef">catch</span> <span style="color:#f92672">(</span>IOException e<span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
+            <span style="color:#66d9ef">throw</span> <span style="color:#66d9ef">new</span> RuntimeException<span style="color:#f92672">(</span>e<span style="color:#f92672">);</span>
+        <span style="color:#f92672">}</span>
+    <span style="color:#f92672">}</span>
+
+    <span style="color:#75715e">// 方式2
+</span><span style="color:#75715e"></span>    <span style="color:#a6e22e">@Test</span>
+    <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">create02</span><span style="color:#f92672">()</span> <span style="color:#f92672">{</span>
+        File parentFile <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> File<span style="color:#f92672">(</span><span style="color:#e6db74">&#34;f:\\&#34;</span><span style="color:#f92672">);</span>
+        String fileName <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;news2.txt&#34;</span><span style="color:#f92672">;</span>
+        File file <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> File<span style="color:#f92672">(</span>parentFile<span style="color:#f92672">,</span> fileName<span style="color:#f92672">);</span>
+        <span style="color:#66d9ef">try</span> <span style="color:#f92672">{</span>
+            file<span style="color:#f92672">.</span><span style="color:#a6e22e">createNewFile</span><span style="color:#f92672">();</span>
+            System<span style="color:#f92672">.</span><span style="color:#a6e22e">out</span><span style="color:#f92672">.</span><span style="color:#a6e22e">println</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;创建成功02&#34;</span><span style="color:#f92672">);</span>
+        <span style="color:#f92672">}</span> <span style="color:#66d9ef">catch</span> <span style="color:#f92672">(</span>IOException e<span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
+            <span style="color:#66d9ef">throw</span> <span style="color:#66d9ef">new</span> RuntimeException<span style="color:#f92672">(</span>e<span style="color:#f92672">);</span>
+        <span style="color:#f92672">}</span>
+    <span style="color:#f92672">}</span>
+
+    <span style="color:#75715e">// 方法3
+</span><span style="color:#75715e"></span>    <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">create03</span><span style="color:#f92672">()</span> <span style="color:#f92672">{</span>
+        String parentPath <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;f:\\&#34;</span><span style="color:#f92672">;</span>
+        String fileName <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;news03.txt&#34;</span><span style="color:#f92672">;</span>
+        File file <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> File<span style="color:#f92672">(</span>parentPath<span style="color:#f92672">,</span> fileName<span style="color:#f92672">);</span>
+
+        <span style="color:#66d9ef">try</span> <span style="color:#f92672">{</span>
+            file<span style="color:#f92672">.</span><span style="color:#a6e22e">createNewFile</span><span style="color:#f92672">();</span>
+            System<span style="color:#f92672">.</span><span style="color:#a6e22e">out</span><span style="color:#f92672">.</span><span style="color:#a6e22e">println</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;03 创建成功&#34;</span><span style="color:#f92672">);</span>
+        <span style="color:#f92672">}</span> <span style="color:#66d9ef">catch</span> <span style="color:#f92672">(</span>IOException e<span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
+            <span style="color:#66d9ef">throw</span> <span style="color:#66d9ef">new</span> RuntimeException<span style="color:#f92672">(</span>e<span style="color:#f92672">);</span>
+        <span style="color:#f92672">}</span>
+    <span style="color:#f92672">}</span>
+<span style="color:#f92672">}</span>
+</code></pre></div><h4 id="获取文件的信息">获取文件的信息</h4>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#f92672">import</span> org.junit.Test<span style="color:#f92672">;</span>
+
+<span style="color:#f92672">import</span> java.io.File<span style="color:#f92672">;</span>
+
+<span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">FileInformation</span> <span style="color:#f92672">{</span>
+    <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">static</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">main</span><span style="color:#f92672">(</span>String<span style="color:#f92672">[]</span> args<span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
+
+    <span style="color:#f92672">}</span>
+
+    <span style="color:#75715e">// 获取文件的信息
+</span><span style="color:#75715e"></span>    <span style="color:#a6e22e">@Test</span>
+    <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">info</span><span style="color:#f92672">()</span> <span style="color:#f92672">{</span>
+        File file <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> File<span style="color:#f92672">(</span><span style="color:#e6db74">&#34;f:\\news1.txt&#34;</span><span style="color:#f92672">);</span>
+        <span style="color:#75715e">// 得到对应的信息
+</span><span style="color:#75715e"></span>        System<span style="color:#f92672">.</span><span style="color:#a6e22e">out</span><span style="color:#f92672">.</span><span style="color:#a6e22e">println</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;文件名: &#34;</span><span style="color:#f92672">+</span> file<span style="color:#f92672">.</span><span style="color:#a6e22e">getName</span><span style="color:#f92672">());</span>
+        System<span style="color:#f92672">.</span><span style="color:#a6e22e">out</span><span style="color:#f92672">.</span><span style="color:#a6e22e">println</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;绝对路径: &#34;</span><span style="color:#f92672">+</span> file<span style="color:#f92672">.</span><span style="color:#a6e22e">getAbsolutePath</span><span style="color:#f92672">());</span>
+        System<span style="color:#f92672">.</span><span style="color:#a6e22e">out</span><span style="color:#f92672">.</span><span style="color:#a6e22e">println</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;父级目录: &#34;</span><span style="color:#f92672">+</span> file<span style="color:#f92672">.</span><span style="color:#a6e22e">getParent</span><span style="color:#f92672">());</span>
+        <span style="color:#75715e">// UTF-8 一个中文是3个字节
+</span><span style="color:#75715e"></span>        System<span style="color:#f92672">.</span><span style="color:#a6e22e">out</span><span style="color:#f92672">.</span><span style="color:#a6e22e">println</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;文件大小(字节):&#34;</span> <span style="color:#f92672">+</span> file<span style="color:#f92672">.</span><span style="color:#a6e22e">length</span><span style="color:#f92672">());</span>
+        System<span style="color:#f92672">.</span><span style="color:#a6e22e">out</span><span style="color:#f92672">.</span><span style="color:#a6e22e">println</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;文件是否存在: &#34;</span><span style="color:#f92672">+</span> file<span style="color:#f92672">.</span><span style="color:#a6e22e">exists</span><span style="color:#f92672">());</span>
+        System<span style="color:#f92672">.</span><span style="color:#a6e22e">out</span><span style="color:#f92672">.</span><span style="color:#a6e22e">println</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;文件是否是文件: &#34;</span><span style="color:#f92672">+</span> file<span style="color:#f92672">.</span><span style="color:#a6e22e">isFile</span><span style="color:#f92672">());</span>
+        System<span style="color:#f92672">.</span><span style="color:#a6e22e">out</span><span style="color:#f92672">.</span><span style="color:#a6e22e">println</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;文件是否是目录:&#34;</span><span style="color:#f92672">+</span> file<span style="color:#f92672">.</span><span style="color:#a6e22e">isDirectory</span><span style="color:#f92672">());</span>
+    <span style="color:#f92672">}</span>
+<span style="color:#f92672">}</span>
+
+</code></pre></div><h4 id="文件夹操作">文件夹操作</h4>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#f92672">import</span> org.junit.Test<span style="color:#f92672">;</span>
+
+<span style="color:#f92672">import</span> java.io.File<span style="color:#f92672">;</span>
+
+<span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Directory_</span> <span style="color:#f92672">{</span>
+    <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">static</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">main</span><span style="color:#f92672">(</span>String<span style="color:#f92672">[]</span> args<span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
+
+    <span style="color:#f92672">}</span>
+
+    <span style="color:#75715e">// 判断 F:\\news1.txt 是否存在, 如果存在就删除
+</span><span style="color:#75715e"></span>    <span style="color:#a6e22e">@Test</span>
+    <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">m1</span><span style="color:#f92672">()</span> <span style="color:#f92672">{</span>
+        String filePath <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;F:\\news1.txt&#34;</span><span style="color:#f92672">;</span>
+        File file <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> File<span style="color:#f92672">(</span>filePath<span style="color:#f92672">);</span>
+        <span style="color:#66d9ef">if</span> <span style="color:#f92672">(</span>file<span style="color:#f92672">.</span><span style="color:#a6e22e">exists</span><span style="color:#f92672">()){</span>
+            <span style="color:#66d9ef">if</span> <span style="color:#f92672">(</span>file<span style="color:#f92672">.</span><span style="color:#a6e22e">delete</span><span style="color:#f92672">())</span> <span style="color:#f92672">{</span>
+                System<span style="color:#f92672">.</span><span style="color:#a6e22e">out</span><span style="color:#f92672">.</span><span style="color:#a6e22e">println</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;删除成功&#34;</span><span style="color:#f92672">);</span>
+            <span style="color:#f92672">}</span> <span style="color:#66d9ef">else</span> <span style="color:#f92672">{</span>
+                System<span style="color:#f92672">.</span><span style="color:#a6e22e">out</span><span style="color:#f92672">.</span><span style="color:#a6e22e">println</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;删除失败&#34;</span><span style="color:#f92672">);</span>
+            <span style="color:#f92672">}</span>
+        <span style="color:#f92672">}</span> <span style="color:#66d9ef">else</span> <span style="color:#f92672">{</span>
+            System<span style="color:#f92672">.</span><span style="color:#a6e22e">out</span><span style="color:#f92672">.</span><span style="color:#a6e22e">println</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;该文件不存在&#34;</span><span style="color:#f92672">);</span>
+        <span style="color:#f92672">}</span>
+    <span style="color:#f92672">}</span>
+
+    <span style="color:#75715e">// 在 Java 编程中, 目录也当成文件
+</span><span style="color:#75715e"></span>    <span style="color:#75715e">// 判断
+</span><span style="color:#75715e"></span>    <span style="color:#a6e22e">@Test</span>
+    <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">m2</span><span style="color:#f92672">()</span> <span style="color:#f92672">{</span>
+        String filePath <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;F:\\filedemo&#34;</span><span style="color:#f92672">;</span>
+        File file <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> File<span style="color:#f92672">(</span>filePath<span style="color:#f92672">);</span>
+        <span style="color:#66d9ef">if</span> <span style="color:#f92672">(</span>file<span style="color:#f92672">.</span><span style="color:#a6e22e">exists</span><span style="color:#f92672">()){</span>
+            <span style="color:#66d9ef">if</span> <span style="color:#f92672">(</span>file<span style="color:#f92672">.</span><span style="color:#a6e22e">delete</span><span style="color:#f92672">())</span> <span style="color:#f92672">{</span>
+                System<span style="color:#f92672">.</span><span style="color:#a6e22e">out</span><span style="color:#f92672">.</span><span style="color:#a6e22e">println</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;删除成功&#34;</span><span style="color:#f92672">);</span>
+            <span style="color:#f92672">}</span> <span style="color:#66d9ef">else</span> <span style="color:#f92672">{</span>
+                System<span style="color:#f92672">.</span><span style="color:#a6e22e">out</span><span style="color:#f92672">.</span><span style="color:#a6e22e">println</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;删除失败&#34;</span><span style="color:#f92672">);</span>
+            <span style="color:#f92672">}</span>
+        <span style="color:#f92672">}</span> <span style="color:#66d9ef">else</span> <span style="color:#f92672">{</span>
+            System<span style="color:#f92672">.</span><span style="color:#a6e22e">out</span><span style="color:#f92672">.</span><span style="color:#a6e22e">println</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;该目录不存在&#34;</span><span style="color:#f92672">);</span>
+        <span style="color:#f92672">}</span>
+    <span style="color:#f92672">}</span>
+
+    <span style="color:#75715e">// 判断文件夹是否存在, 如果不存在就创建
+</span><span style="color:#75715e"></span>    <span style="color:#75715e">// 创建多级目录要用 mkdirs
+</span><span style="color:#75715e"></span>    <span style="color:#75715e">// 创建一级目录用 mkdir 就行
+</span><span style="color:#75715e"></span>    <span style="color:#a6e22e">@Test</span>
+    <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">m3</span><span style="color:#f92672">()</span> <span style="color:#f92672">{</span>
+        String directoryPath <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;F:\\demo2\\a\\b\\c&#34;</span><span style="color:#f92672">;</span>
+        File file <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> File<span style="color:#f92672">(</span>directoryPath<span style="color:#f92672">);</span>
+        <span style="color:#66d9ef">if</span> <span style="color:#f92672">(</span>file<span style="color:#f92672">.</span><span style="color:#a6e22e">exists</span><span style="color:#f92672">())</span> <span style="color:#f92672">{</span>
+            System<span style="color:#f92672">.</span><span style="color:#a6e22e">out</span><span style="color:#f92672">.</span><span style="color:#a6e22e">println</span><span style="color:#f92672">(</span>directoryPath <span style="color:#f92672">+</span> <span style="color:#e6db74">&#34;已存在&#34;</span><span style="color:#f92672">);</span>
+        <span style="color:#f92672">}</span> <span style="color:#66d9ef">else</span> <span style="color:#f92672">{</span>
+            <span style="color:#66d9ef">if</span> <span style="color:#f92672">(</span>file<span style="color:#f92672">.</span><span style="color:#a6e22e">mkdirs</span><span style="color:#f92672">())</span> <span style="color:#f92672">{</span>
+                System<span style="color:#f92672">.</span><span style="color:#a6e22e">out</span><span style="color:#f92672">.</span><span style="color:#a6e22e">println</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;文件夹创建成功&#34;</span><span style="color:#f92672">);</span>
+            <span style="color:#f92672">}</span> <span style="color:#66d9ef">else</span> <span style="color:#f92672">{</span>
+                System<span style="color:#f92672">.</span><span style="color:#a6e22e">out</span><span style="color:#f92672">.</span><span style="color:#a6e22e">println</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;文件夹创建失败&#34;</span><span style="color:#f92672">);</span>
+            <span style="color:#f92672">}</span>
+        <span style="color:#f92672">}</span>
+    <span style="color:#f92672">}</span>
+<span style="color:#f92672">}</span>
+</code></pre></div><h2 id="io">IO</h2>
+<p>IO 流原理及流的分类</p>
+<ul>
+<li>按操作数据单位分为: 字节流(8bit,二进制文件), 字符流(按字符, 文本文件)</li>
+<li>按数据流的流向分为: 输入流, 输出流</li>
+<li>按流的角色分为: 节点流, 处理流/包装流</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th> </th>
+<th>字节流</th>
+<th>字符流</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>输入流</td>
+<td>InputStream</td>
+<td>Reader</td>
+</tr>
+<tr>
+<td>输出流</td>
+<td>OutputStream</td>
+<td>Writer</td>
+</tr>
+</tbody>
+</table>
+<h3 id="inputstream">InputStream</h3>
+<ul>
+<li>FileInputStream: 文件输入流</li>
+<li>BufferedInputStream: 缓冲字节输入流</li>
+<li>ObjectInputStream: 对象字节输入流</li>
+</ul>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#f92672">import</span> org.junit.Test<span style="color:#f92672">;</span>
+
+<span style="color:#f92672">import</span> java.io.FileInputStream<span style="color:#f92672">;</span>
+<span style="color:#f92672">import</span> java.io.FileNotFoundException<span style="color:#f92672">;</span>
+<span style="color:#f92672">import</span> java.io.IOException<span style="color:#f92672">;</span>
+
+<span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">FileInputStream_</span> <span style="color:#f92672">{</span>
+    <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">static</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">main</span><span style="color:#f92672">(</span>String<span style="color:#f92672">[]</span> args<span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
+
+    <span style="color:#f92672">}</span>
+
+    <span style="color:#75715e">// 演示读取文件
+</span><span style="color:#75715e"></span>    <span style="color:#75715e">// 单个字节的读取, 效率比较低
+</span><span style="color:#75715e"></span>    <span style="color:#a6e22e">@Test</span>
+    <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">readFile01</span><span style="color:#f92672">()</span> <span style="color:#f92672">{</span>
+        String filePath <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;F:\\hello.txt&#34;</span><span style="color:#f92672">;</span>
+        <span style="color:#66d9ef">int</span> readData <span style="color:#f92672">=</span> 0<span style="color:#f92672">;</span>
+        FileInputStream fileInputStream <span style="color:#f92672">=</span> <span style="color:#66d9ef">null</span><span style="color:#f92672">;</span>
+        <span style="color:#66d9ef">try</span> <span style="color:#f92672">{</span>
+            <span style="color:#75715e">// 创建这个对象用于读取文件
+</span><span style="color:#75715e"></span>            fileInputStream <span style="color:#f92672">=</span>  <span style="color:#66d9ef">new</span> FileInputStream<span style="color:#f92672">(</span>filePath<span style="color:#f92672">);</span>
+            <span style="color:#75715e">// 从该输入流中读取一个字节的数据, 如果没有输入可用, 此方法将被阻止
+</span><span style="color:#75715e"></span>            <span style="color:#66d9ef">while</span> <span style="color:#f92672">((</span>readData <span style="color:#f92672">=</span> fileInputStream<span style="color:#f92672">.</span><span style="color:#a6e22e">read</span><span style="color:#f92672">())</span> <span style="color:#f92672">!=</span> <span style="color:#f92672">-</span>1<span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
+                System<span style="color:#f92672">.</span><span style="color:#a6e22e">out</span><span style="color:#f92672">.</span><span style="color:#a6e22e">print</span><span style="color:#f92672">((</span><span style="color:#66d9ef">char</span><span style="color:#f92672">)</span> readData<span style="color:#f92672">);</span>
+            <span style="color:#f92672">}</span>
+        <span style="color:#f92672">}</span> <span style="color:#66d9ef">catch</span> <span style="color:#f92672">(</span>IOException e<span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
+            <span style="color:#66d9ef">throw</span> <span style="color:#66d9ef">new</span> RuntimeException<span style="color:#f92672">(</span>e<span style="color:#f92672">);</span>
+        <span style="color:#f92672">}</span> <span style="color:#66d9ef">finally</span> <span style="color:#f92672">{</span>
+            <span style="color:#75715e">// 关闭文件流, 释放资源
+</span><span style="color:#75715e"></span>            <span style="color:#66d9ef">try</span> <span style="color:#f92672">{</span>
+                fileInputStream<span style="color:#f92672">.</span><span style="color:#a6e22e">close</span><span style="color:#f92672">();</span>
+            <span style="color:#f92672">}</span> <span style="color:#66d9ef">catch</span> <span style="color:#f92672">(</span>IOException e<span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
+                <span style="color:#66d9ef">throw</span> <span style="color:#66d9ef">new</span> RuntimeException<span style="color:#f92672">(</span>e<span style="color:#f92672">);</span>
+            <span style="color:#f92672">}</span>
+        <span style="color:#f92672">}</span>
+    <span style="color:#f92672">}</span>
+
+    <span style="color:#75715e">// 使用 read(byte[]) 进行优化
+</span><span style="color:#75715e"></span>    <span style="color:#a6e22e">@Test</span>
+    <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">readFile02</span><span style="color:#f92672">()</span> <span style="color:#f92672">{</span>
+        String filePath <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;F:\\hello.txt&#34;</span><span style="color:#f92672">;</span>
+        <span style="color:#66d9ef">int</span> readLen <span style="color:#f92672">=</span> 0<span style="color:#f92672">;</span>
+        <span style="color:#75715e">// 字节数组
+</span><span style="color:#75715e"></span>        <span style="color:#66d9ef">byte</span><span style="color:#f92672">[]</span> buf <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> <span style="color:#66d9ef">byte</span><span style="color:#f92672">[</span>8<span style="color:#f92672">];</span>
+        FileInputStream fileInputStream <span style="color:#f92672">=</span> <span style="color:#66d9ef">null</span><span style="color:#f92672">;</span>
+        <span style="color:#66d9ef">try</span> <span style="color:#f92672">{</span>
+            <span style="color:#75715e">// 创建这个对象用于读取文件
+</span><span style="color:#75715e"></span>            fileInputStream <span style="color:#f92672">=</span>  <span style="color:#66d9ef">new</span> FileInputStream<span style="color:#f92672">(</span>filePath<span style="color:#f92672">);</span>
+            <span style="color:#75715e">// 如果读取完毕返回 -1
+</span><span style="color:#75715e"></span>            <span style="color:#75715e">// 如果读取正常, 返回实际读取的字节数
+</span><span style="color:#75715e"></span>            <span style="color:#66d9ef">while</span> <span style="color:#f92672">((</span>readLen <span style="color:#f92672">=</span> fileInputStream<span style="color:#f92672">.</span><span style="color:#a6e22e">read</span><span style="color:#f92672">(</span>buf<span style="color:#f92672">))</span> <span style="color:#f92672">!=</span> <span style="color:#f92672">-</span>1<span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
+                System<span style="color:#f92672">.</span><span style="color:#a6e22e">out</span><span style="color:#f92672">.</span><span style="color:#a6e22e">print</span><span style="color:#f92672">(</span><span style="color:#66d9ef">new</span> String<span style="color:#f92672">(</span>buf<span style="color:#f92672">,</span>0<span style="color:#f92672">,</span> readLen<span style="color:#f92672">));</span> <span style="color:#75715e">// 转成
+</span><span style="color:#75715e"></span>            <span style="color:#f92672">}</span>
+        <span style="color:#f92672">}</span> <span style="color:#66d9ef">catch</span> <span style="color:#f92672">(</span>IOException e<span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
+            <span style="color:#66d9ef">throw</span> <span style="color:#66d9ef">new</span> RuntimeException<span style="color:#f92672">(</span>e<span style="color:#f92672">);</span>
+        <span style="color:#f92672">}</span> <span style="color:#66d9ef">finally</span> <span style="color:#f92672">{</span>
+            <span style="color:#75715e">// 关闭文件流, 释放资源
+</span><span style="color:#75715e"></span>            <span style="color:#66d9ef">try</span> <span style="color:#f92672">{</span>
+                fileInputStream<span style="color:#f92672">.</span><span style="color:#a6e22e">close</span><span style="color:#f92672">();</span>
+            <span style="color:#f92672">}</span> <span style="color:#66d9ef">catch</span> <span style="color:#f92672">(</span>IOException e<span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
+                <span style="color:#66d9ef">throw</span> <span style="color:#66d9ef">new</span> RuntimeException<span style="color:#f92672">(</span>e<span style="color:#f92672">);</span>
+            <span style="color:#f92672">}</span>
+        <span style="color:#f92672">}</span>
+    <span style="color:#f92672">}</span>
+<span style="color:#f92672">}</span>
+</code></pre></div><h3 id="outputstream">OutPutStream</h3>
+<ul>
+<li>FileOutputStream</li>
+</ul>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#f92672">import</span> org.junit.Test<span style="color:#f92672">;</span>
+
+<span style="color:#f92672">import</span> java.io.FileNotFoundException<span style="color:#f92672">;</span>
+<span style="color:#f92672">import</span> java.io.FileOutputStream<span style="color:#f92672">;</span>
+<span style="color:#f92672">import</span> java.io.IOException<span style="color:#f92672">;</span>
+
+<span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">FileOutputStream01</span> <span style="color:#f92672">{</span>
+
+    <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">static</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">main</span><span style="color:#f92672">(</span>String<span style="color:#f92672">[]</span> args<span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
+    <span style="color:#f92672">}</span>
+
+    <span style="color:#a6e22e">@Test</span>
+    <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">writerFile</span><span style="color:#f92672">()</span> <span style="color:#f92672">{</span>
+        <span style="color:#75715e">// 创建 FileOutputStream 对象
+</span><span style="color:#75715e"></span>        String filePath  <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;F:\\a.txt&#34;</span><span style="color:#f92672">;</span>
+        FileOutputStream fileOutputStream <span style="color:#f92672">=</span> <span style="color:#66d9ef">null</span><span style="color:#f92672">;</span>
+
+        <span style="color:#66d9ef">try</span> <span style="color:#f92672">{</span>
+            <span style="color:#75715e">// 得到 FileOutputStream 对象
+</span><span style="color:#75715e"></span>            <span style="color:#75715e">// 这种方式会覆盖原来的内容
+</span><span style="color:#75715e"></span>            <span style="color:#75715e">// 如果希望是追加的话, new FileOutputStream(filePath, true)
+</span><span style="color:#75715e"></span>            fileOutputStream <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> FileOutputStream<span style="color:#f92672">(</span>filePath<span style="color:#f92672">);</span>
+            <span style="color:#75715e">// 写入一个字节
+</span><span style="color:#75715e"></span>            fileOutputStream<span style="color:#f92672">.</span><span style="color:#a6e22e">write</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#39;a&#39;</span><span style="color:#f92672">);</span>
+            <span style="color:#75715e">// 写入一个字符串
+</span><span style="color:#75715e"></span>            fileOutputStream<span style="color:#f92672">.</span><span style="color:#a6e22e">write</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;Hello,world&#34;</span><span style="color:#f92672">.</span><span style="color:#a6e22e">getBytes</span><span style="color:#f92672">());</span>
+            <span style="color:#75715e">// 另一种方法, start(offset) 和 length
+</span><span style="color:#75715e"></span>            fileOutputStream<span style="color:#f92672">.</span><span style="color:#a6e22e">write</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;000start,end000&#34;</span><span style="color:#f92672">.</span><span style="color:#a6e22e">getBytes</span><span style="color:#f92672">(),</span> 3<span style="color:#f92672">,</span> 9<span style="color:#f92672">);</span>
+        <span style="color:#f92672">}</span> <span style="color:#66d9ef">catch</span> <span style="color:#f92672">(</span>IOException e<span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
+            <span style="color:#66d9ef">throw</span> <span style="color:#66d9ef">new</span> RuntimeException<span style="color:#f92672">(</span>e<span style="color:#f92672">);</span>
+        <span style="color:#f92672">}</span> <span style="color:#66d9ef">finally</span> <span style="color:#f92672">{</span>
+            <span style="color:#66d9ef">try</span> <span style="color:#f92672">{</span>
+                fileOutputStream<span style="color:#f92672">.</span><span style="color:#a6e22e">close</span><span style="color:#f92672">();</span>
+            <span style="color:#f92672">}</span> <span style="color:#66d9ef">catch</span> <span style="color:#f92672">(</span>IOException e<span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
+                <span style="color:#66d9ef">throw</span> <span style="color:#66d9ef">new</span> RuntimeException<span style="color:#f92672">(</span>e<span style="color:#f92672">);</span>
+            <span style="color:#f92672">}</span>
+        <span style="color:#f92672">}</span>
+    <span style="color:#f92672">}</span>
+<span style="color:#f92672">}</span>
+</code></pre></div><h3 id="文件拷贝">文件拷贝</h3>
+<p>主要就是边读边拷.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#f92672">import</span> org.junit.Test<span style="color:#f92672">;</span>
+
+<span style="color:#f92672">import</span> java.io.FileInputStream<span style="color:#f92672">;</span>
+<span style="color:#f92672">import</span> java.io.FileNotFoundException<span style="color:#f92672">;</span>
+<span style="color:#f92672">import</span> java.io.FileOutputStream<span style="color:#f92672">;</span>
+<span style="color:#f92672">import</span> java.io.IOException<span style="color:#f92672">;</span>
+
+<span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">FileCopy</span> <span style="color:#f92672">{</span>
+
+    <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">static</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">main</span><span style="color:#f92672">(</span>String<span style="color:#f92672">[]</span> args<span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
+
+    <span style="color:#f92672">}</span>
+
+    <span style="color:#75715e">// 完成文件拷贝
+</span><span style="color:#75715e"></span>    <span style="color:#75715e">//
+</span><span style="color:#75715e"></span>    <span style="color:#a6e22e">@Test</span>
+    <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">copyFile</span><span style="color:#f92672">()</span> <span style="color:#f92672">{</span>
+        <span style="color:#75715e">// 将F:\\a.txt 拷贝到 E:\\
+</span><span style="color:#75715e"></span>        <span style="color:#75715e">// 如果文件大, 应该是读取部分数据, 就写入到指定的文件.
+</span><span style="color:#75715e"></span>        String filePath <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;f:\\bun.mp4&#34;</span><span style="color:#f92672">;</span>
+        String outputFilePath <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;f:\\bun2.mp4&#34;</span><span style="color:#f92672">;</span>
+        FileInputStream fileInputStream <span style="color:#f92672">=</span> <span style="color:#66d9ef">null</span><span style="color:#f92672">;</span>
+        FileOutputStream fileOutputStream<span style="color:#f92672">=</span> <span style="color:#66d9ef">null</span><span style="color:#f92672">;</span>
+        <span style="color:#66d9ef">int</span> readLen <span style="color:#f92672">=</span> 0<span style="color:#f92672">;</span>
+        <span style="color:#66d9ef">try</span> <span style="color:#f92672">{</span>
+            fileInputStream <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> FileInputStream<span style="color:#f92672">(</span>filePath<span style="color:#f92672">);</span>
+            fileOutputStream <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> FileOutputStream<span style="color:#f92672">(</span>outputFilePath<span style="color:#f92672">,</span> <span style="color:#66d9ef">true</span><span style="color:#f92672">);</span>
+
+            <span style="color:#75715e">// 定义一个字节数组
+</span><span style="color:#75715e"></span>            <span style="color:#66d9ef">byte</span><span style="color:#f92672">[]</span> buf <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> <span style="color:#66d9ef">byte</span><span style="color:#f92672">[</span>1024<span style="color:#f92672">];</span>
+
+            <span style="color:#66d9ef">while</span><span style="color:#f92672">((</span>readLen <span style="color:#f92672">=</span> fileInputStream<span style="color:#f92672">.</span><span style="color:#a6e22e">read</span><span style="color:#f92672">(</span>buf<span style="color:#f92672">))</span> <span style="color:#f92672">!=</span> <span style="color:#f92672">-</span>1<span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
+                fileOutputStream<span style="color:#f92672">.</span><span style="color:#a6e22e">write</span><span style="color:#f92672">(</span>buf<span style="color:#f92672">,</span>0 <span style="color:#f92672">,</span>readLen<span style="color:#f92672">);</span>
+            <span style="color:#f92672">}</span>
+            System<span style="color:#f92672">.</span><span style="color:#a6e22e">out</span><span style="color:#f92672">.</span><span style="color:#a6e22e">println</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;拷贝成功&#34;</span><span style="color:#f92672">);</span>
+
+        <span style="color:#f92672">}</span> <span style="color:#66d9ef">catch</span> <span style="color:#f92672">(</span>IOException e<span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
+            <span style="color:#66d9ef">throw</span> <span style="color:#66d9ef">new</span> RuntimeException<span style="color:#f92672">(</span>e<span style="color:#f92672">);</span>
+        <span style="color:#f92672">}</span> <span style="color:#66d9ef">finally</span> <span style="color:#f92672">{</span>
+            <span style="color:#66d9ef">try</span> <span style="color:#f92672">{</span>
+                <span style="color:#66d9ef">if</span> <span style="color:#f92672">(</span>fileInputStream <span style="color:#f92672">!=</span> <span style="color:#66d9ef">null</span><span style="color:#f92672">){</span>
+                    fileInputStream<span style="color:#f92672">.</span><span style="color:#a6e22e">close</span><span style="color:#f92672">();</span>
+                <span style="color:#f92672">}</span>
+                <span style="color:#66d9ef">if</span> <span style="color:#f92672">(</span>fileOutputStream <span style="color:#f92672">!=</span> <span style="color:#66d9ef">null</span><span style="color:#f92672">){</span>
+                    fileOutputStream<span style="color:#f92672">.</span><span style="color:#a6e22e">close</span><span style="color:#f92672">();</span>
+                <span style="color:#f92672">}</span>
+            <span style="color:#f92672">}</span> <span style="color:#66d9ef">catch</span> <span style="color:#f92672">(</span>IOException e<span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
+                <span style="color:#66d9ef">throw</span> <span style="color:#66d9ef">new</span> RuntimeException<span style="color:#f92672">(</span>e<span style="color:#f92672">);</span>
+            <span style="color:#f92672">}</span>
+
+        <span style="color:#f92672">}</span>
+    <span style="color:#f92672">}</span>
+<span style="color:#f92672">}</span>
+</code></pre></div><h3 id="filereader">FileReader</h3>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#75715e">// 单个字符读取文件
+</span><span style="color:#75715e"></span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">FileReader_</span> <span style="color:#f92672">{</span>
+    <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">static</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">main</span><span style="color:#f92672">(</span>String<span style="color:#f92672">[]</span> args<span style="color:#f92672">)</span> <span style="color:#66d9ef">throws</span> IOException <span style="color:#f92672">{</span>
+
+        String filePath <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;F:\\a.txt&#34;</span><span style="color:#f92672">;</span>
+        <span style="color:#66d9ef">int</span> data<span style="color:#f92672">;</span>
+        <span style="color:#66d9ef">try</span> <span style="color:#f92672">(</span>FileReader fileReader <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> FileReader<span style="color:#f92672">(</span>filePath<span style="color:#f92672">))</span> <span style="color:#f92672">{</span>
+            <span style="color:#75715e">// 循环读取
+</span><span style="color:#75715e"></span>            <span style="color:#66d9ef">while</span> <span style="color:#f92672">((</span>data <span style="color:#f92672">=</span> fileReader<span style="color:#f92672">.</span><span style="color:#a6e22e">read</span><span style="color:#f92672">())</span> <span style="color:#f92672">!=</span> <span style="color:#f92672">-</span>1<span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
+                System<span style="color:#f92672">.</span><span style="color:#a6e22e">out</span><span style="color:#f92672">.</span><span style="color:#a6e22e">print</span><span style="color:#f92672">((</span><span style="color:#66d9ef">char</span><span style="color:#f92672">)</span> data<span style="color:#f92672">);</span>
+            <span style="color:#f92672">}</span>
+        <span style="color:#f92672">}</span> <span style="color:#66d9ef">catch</span> <span style="color:#f92672">(</span>IOException e<span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
+            <span style="color:#66d9ef">throw</span> <span style="color:#66d9ef">new</span> RuntimeException<span style="color:#f92672">(</span>e<span style="color:#f92672">);</span>
+        <span style="color:#f92672">}</span>
+    <span style="color:#f92672">}</span>
+
+    <span style="color:#a6e22e">@Test</span>
+    <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">readFile02</span><span style="color:#f92672">()</span> <span style="color:#f92672">{</span>
+        String filePath <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;F:\\a.txt&#34;</span><span style="color:#f92672">;</span>
+        <span style="color:#66d9ef">char</span><span style="color:#f92672">[]</span> buf <span style="color:#f92672">=</span><span style="color:#66d9ef">new</span> <span style="color:#66d9ef">char</span><span style="color:#f92672">[</span>4<span style="color:#f92672">];</span>
+        <span style="color:#66d9ef">int</span> readLen<span style="color:#f92672">;</span>
+        <span style="color:#66d9ef">try</span> <span style="color:#f92672">(</span>FileReader fileReader <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> FileReader<span style="color:#f92672">(</span>filePath<span style="color:#f92672">))</span> <span style="color:#f92672">{</span>
+            <span style="color:#75715e">// 循环读取
+</span><span style="color:#75715e"></span>            <span style="color:#66d9ef">while</span> <span style="color:#f92672">((</span>readLen <span style="color:#f92672">=</span> fileReader<span style="color:#f92672">.</span><span style="color:#a6e22e">read</span><span style="color:#f92672">(</span>buf<span style="color:#f92672">))</span> <span style="color:#f92672">!=</span> <span style="color:#f92672">-</span>1<span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
+                System<span style="color:#f92672">.</span><span style="color:#a6e22e">out</span><span style="color:#f92672">.</span><span style="color:#a6e22e">print</span><span style="color:#f92672">(</span><span style="color:#66d9ef">new</span> String<span style="color:#f92672">(</span>buf<span style="color:#f92672">,</span>0<span style="color:#f92672">,</span>readLen<span style="color:#f92672">));</span>
+            <span style="color:#f92672">}</span>
+        <span style="color:#f92672">}</span> <span style="color:#66d9ef">catch</span> <span style="color:#f92672">(</span>IOException e<span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
+            <span style="color:#66d9ef">throw</span> <span style="color:#66d9ef">new</span> RuntimeException<span style="color:#f92672">(</span>e<span style="color:#f92672">);</span>
+        <span style="color:#f92672">}</span>
+    <span style="color:#f92672">}</span>
+<span style="color:#f92672">}</span>
+</code></pre></div><h3 id="filewriter">FileWriter</h3>
+<p>fileWrite 已经要关闭(close)或者刷新(flush)</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#f92672">import</span> org.junit.Test<span style="color:#f92672">;</span>
+
+<span style="color:#f92672">import</span> java.io.FileWriter<span style="color:#f92672">;</span>
+<span style="color:#f92672">import</span> java.io.IOException<span style="color:#f92672">;</span>
+
+<span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">FileWriter_</span> <span style="color:#f92672">{</span>
+    <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">static</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">main</span><span style="color:#f92672">(</span>String<span style="color:#f92672">[]</span> args<span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
+
+    <span style="color:#f92672">}</span>
+
+    <span style="color:#a6e22e">@Test</span>
+    <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">writeFile01</span><span style="color:#f92672">()</span> <span style="color:#66d9ef">throws</span> IOException <span style="color:#f92672">{</span>
+        String filePath <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;F:\\a.txt&#34;</span><span style="color:#f92672">;</span>
+
+        <span style="color:#75715e">// 这个写法有点像 python 的
+</span><span style="color:#75715e"></span>        <span style="color:#75715e">// with open
+</span><span style="color:#75715e"></span>        <span style="color:#66d9ef">try</span> <span style="color:#f92672">(</span>FileWriter fileWriter <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> FileWriter<span style="color:#f92672">(</span>filePath<span style="color:#f92672">))</span> <span style="color:#f92672">{</span>
+            <span style="color:#75715e">// 写入单个字符 write(int)
+</span><span style="color:#75715e"></span>            fileWriter<span style="color:#f92672">.</span><span style="color:#a6e22e">write</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;L&#34;</span><span style="color:#f92672">);</span>
+            <span style="color:#75715e">// 写入指定数组 write(char[])
+</span><span style="color:#75715e"></span>            <span style="color:#66d9ef">char</span><span style="color:#f92672">[]</span> buf <span style="color:#f92672">=</span> <span style="color:#f92672">{</span><span style="color:#e6db74">&#39;U&#39;</span><span style="color:#f92672">,</span><span style="color:#e6db74">&#39;O&#39;</span> <span style="color:#f92672">};</span>
+            fileWriter<span style="color:#f92672">.</span><span style="color:#a6e22e">write</span><span style="color:#f92672">(</span>buf<span style="color:#f92672">);</span>
+            <span style="color:#75715e">// 写入指定数组的指定部分 write(char[], off, len)
+</span><span style="color:#75715e"></span>            fileWriter<span style="color:#f92672">.</span><span style="color:#a6e22e">write</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34; file&#34;</span><span style="color:#f92672">,</span>0<span style="color:#f92672">,</span>5<span style="color:#f92672">);</span>
+            <span style="color:#75715e">// write(string) 写入整个字符串
+</span><span style="color:#75715e"></span>            fileWriter<span style="color:#f92672">.</span><span style="color:#a6e22e">write</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34; test&#34;</span><span style="color:#f92672">);</span>
+            <span style="color:#75715e">// write(string, off,len)
+</span><span style="color:#75715e"></span>            fileWriter<span style="color:#f92672">.</span><span style="color:#a6e22e">write</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34; textaaaaaaaaaaaaaaa&#34;</span><span style="color:#f92672">,</span>0<span style="color:#f92672">,</span>5<span style="color:#f92672">);</span>
+        <span style="color:#f92672">}</span> <span style="color:#66d9ef">catch</span> <span style="color:#f92672">(</span>IOException e<span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
+            <span style="color:#66d9ef">throw</span> <span style="color:#66d9ef">new</span> RuntimeException<span style="color:#f92672">(</span>e<span style="color:#f92672">);</span>
+        <span style="color:#f92672">}</span>
+    <span style="color:#f92672">}</span>
+<span style="color:#f92672">}</span>
+</code></pre></div><h2 id="节点流和处理流">节点流和处理流</h2>
+<ol>
+<li>节点流可以从一个特定的数据源读取数据，如 FileReader, FileWriter</li>
+<li>处理流(也叫包装流)是“连接”再已经存在的流(节点流或处理流)之上, 为程序提供更加强大的独写功能, 也更加灵活, 如 BufferedReader, BufferedWriter</li>
+</ol>
+<p>常见的节点流可以分为:</p>
+<ol>
+<li>字节输入流</li>
+<li>字节输出流</li>
+<li>字符输入流</li>
+<li>字符输出流</li>
+</ol>
+<p>可以根据访问的数据源分类</p>
+<ol>
+<li>访问文件</li>
+<li>访问数组</li>
+<li>访问管道</li>
+<li>访问字符串</li>
+</ol>
+<h3 id="节点流和处理流的区别和联系">节点流和处理流的区别和联系</h3>
+<ol>
+<li>节点流是底层流, 直接与数据源相关</li>
+<li>处理流(包装流)包装节点流, 既可以消除不同节点流的实现差异, 也可以提供更方便的方法来完成输入输出.</li>
+<li>处理流(包装流)对节点流进行包装, 使用了修饰器设计模式, 不会直接与数据源相连.</li>
+</ol>
+<h4 id="处理流的功能">处理流的功能</h4>
+<ol>
+<li>性能的提高: 主要增加缓冲的方式来提高输入输出的效率.</li>
+<li>操作的便捷: 处理流可能提供了一系列便捷的方法来一次输入输出大批量的数据, 使用更加灵活方便.</li>
+</ol>
+<h3 id="处理流">处理流</h3>
+<p><code>BufferedReader</code> 和 <code>BufferedWriter</code> 属于字符流, 是按照字符来读取数据的.<br>
+关闭处理流时, 只需要关闭外层流即可.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">BufferedReader_</span> <span style="color:#f92672">{</span>
+
+    <span style="color:#a6e22e">@Test</span>
+    <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">readFile01</span><span style="color:#f92672">()</span> <span style="color:#66d9ef">throws</span> IOException <span style="color:#f92672">{</span>
+        BufferedReader bufferedReader <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> BufferedReader<span style="color:#f92672">(</span><span style="color:#66d9ef">new</span> FileReader<span style="color:#f92672">(</span><span style="color:#e6db74">&#34;F:\\a.txt&#34;</span><span style="color:#f92672">));</span>
+        <span style="color:#75715e">// 读取
+</span><span style="color:#75715e"></span>        String line<span style="color:#f92672">;</span>
+        <span style="color:#75715e">// 1. BufferedReader.readLine() 是按行读取文件
+</span><span style="color:#75715e"></span>        <span style="color:#75715e">// 2. 当返回 null 时, 表示文件读取完毕.
+</span><span style="color:#75715e"></span>        <span style="color:#66d9ef">while</span><span style="color:#f92672">((</span>line <span style="color:#f92672">=</span> bufferedReader<span style="color:#f92672">.</span><span style="color:#a6e22e">readLine</span><span style="color:#f92672">())</span> <span style="color:#f92672">!=</span> <span style="color:#66d9ef">null</span><span style="color:#f92672">){</span>
+            System<span style="color:#f92672">.</span><span style="color:#a6e22e">out</span><span style="color:#f92672">.</span><span style="color:#a6e22e">println</span><span style="color:#f92672">(</span>line<span style="color:#f92672">);</span>
+        <span style="color:#f92672">}</span>
+        <span style="color:#75715e">// 关闭流, 只需要关闭 BufferedReader, 底层源码会自己去关闭被包装的流.
+</span><span style="color:#75715e"></span>        bufferedReader<span style="color:#f92672">.</span><span style="color:#a6e22e">close</span><span style="color:#f92672">();</span>
+    <span style="color:#f92672">}</span>
+<span style="color:#f92672">}</span>
+
+</code></pre></div><div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">BufferedWriter_</span> <span style="color:#f92672">{</span>
+
+    <span style="color:#a6e22e">@Test</span>
+    <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">writeFile01</span><span style="color:#f92672">()</span> <span style="color:#66d9ef">throws</span> IOException <span style="color:#f92672">{</span>
+        <span style="color:#75715e">// 如果要追加模式应当在 FileWriter 里面构造的时候 FileWriter(&#34;F:\\b.txt&#34;, true)
+</span><span style="color:#75715e"></span>        <span style="color:#75715e">// 应该很容易理解吧.
+</span><span style="color:#75715e"></span>        BufferedWriter bufferedWriter <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> BufferedWriter<span style="color:#f92672">(</span><span style="color:#66d9ef">new</span> FileWriter<span style="color:#f92672">(</span><span style="color:#e6db74">&#34;F:\\b.txt&#34;</span><span style="color:#f92672">));</span>
+        bufferedWriter<span style="color:#f92672">.</span><span style="color:#a6e22e">write</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;你好&#34;</span><span style="color:#f92672">);</span>
+        bufferedWriter<span style="color:#f92672">.</span><span style="color:#a6e22e">write</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;测试会不会换行&#34;</span><span style="color:#f92672">);</span>
+        <span style="color:#75715e">// 看来不会换行
+</span><span style="color:#75715e"></span>        bufferedWriter<span style="color:#f92672">.</span><span style="color:#a6e22e">newLine</span><span style="color:#f92672">();</span>
+        <span style="color:#75715e">// 这个是换行符, 是根据系统相关的换行符.
+</span><span style="color:#75715e"></span>        bufferedWriter<span style="color:#f92672">.</span><span style="color:#a6e22e">write</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;新的一行&#34;</span><span style="color:#f92672">);</span>
+        bufferedWriter<span style="color:#f92672">.</span><span style="color:#a6e22e">close</span><span style="color:#f92672">();</span>
+    <span style="color:#f92672">}</span>
+<span style="color:#f92672">}</span>
+</code></pre></div><p>文件拷贝</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">BufferedCopy_</span> <span style="color:#f92672">{</span>
+
+    <span style="color:#a6e22e">@Test</span>
+    <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">copyFile01</span><span style="color:#f92672">()</span> <span style="color:#66d9ef">throws</span> IOException <span style="color:#f92672">{</span>
+        BufferedReader bufferedReader <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> BufferedReader<span style="color:#f92672">(</span><span style="color:#66d9ef">new</span> FileReader<span style="color:#f92672">(</span><span style="color:#e6db74">&#34;F:\\a.txt&#34;</span><span style="color:#f92672">));</span>
+        String destFilePath <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;F:\\demo\\b.txt&#34;</span><span style="color:#f92672">;</span>
+        BufferedWriter bufferedWriter <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> BufferedWriter<span style="color:#f92672">(</span><span style="color:#66d9ef">new</span> FileWriter<span style="color:#f92672">(</span>destFilePath<span style="color:#f92672">));</span>
+        String line<span style="color:#f92672">;</span>
+        <span style="color:#66d9ef">while</span> <span style="color:#f92672">((</span>line <span style="color:#f92672">=</span> bufferedReader<span style="color:#f92672">.</span><span style="color:#a6e22e">readLine</span><span style="color:#f92672">())</span> <span style="color:#f92672">!=</span> <span style="color:#66d9ef">null</span><span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
+            bufferedWriter<span style="color:#f92672">.</span><span style="color:#a6e22e">write</span><span style="color:#f92672">(</span>line<span style="color:#f92672">);</span>
+            <span style="color:#75715e">// 记得插入换行符
+</span><span style="color:#75715e"></span>            bufferedWriter<span style="color:#f92672">.</span><span style="color:#a6e22e">newLine</span><span style="color:#f92672">();</span>
+        <span style="color:#f92672">}</span>
+        bufferedWriter<span style="color:#f92672">.</span><span style="color:#a6e22e">close</span><span style="color:#f92672">();</span>
+        bufferedReader<span style="color:#f92672">.</span><span style="color:#a6e22e">close</span><span style="color:#f92672">();</span>
+    <span style="color:#f92672">}</span>
+<span style="color:#f92672">}</span>
+</code></pre></div><p>不要用 <code>Reader</code>, <code>Writer</code> 去拷贝二进制文件, 图片, 视频等, 试过了真的会坏.</p>
+<p>二进制文件用字符流, 看下面</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#a6e22e">@Test</span>
+<span style="color:#66d9ef">public</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">copyFile02</span><span style="color:#f92672">()</span> <span style="color:#66d9ef">throws</span> IOException <span style="color:#f92672">{</span>
+    BufferedInputStream bufferedInputStream <span style="color:#f92672">=</span> <span style="color:#66d9ef">null</span><span style="color:#f92672">;</span>
+    BufferedOutputStream bufferedOutputStream <span style="color:#f92672">=</span> <span style="color:#66d9ef">null</span><span style="color:#f92672">;</span>
+
+    String srcPath <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;F:\\pyy.PNG&#34;</span><span style="color:#f92672">;</span>
+    String destPath <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;F:\\demo\\pyy.PNG&#34;</span><span style="color:#f92672">;</span>
+    <span style="color:#66d9ef">byte</span><span style="color:#f92672">[]</span> buff <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> <span style="color:#66d9ef">byte</span><span style="color:#f92672">[</span>1024<span style="color:#f92672">];</span>
+    <span style="color:#66d9ef">try</span> <span style="color:#f92672">{</span>
+        bufferedInputStream <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> BufferedInputStream<span style="color:#f92672">(</span><span style="color:#66d9ef">new</span> FileInputStream<span style="color:#f92672">(</span>srcPath<span style="color:#f92672">));</span>
+        bufferedOutputStream <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> BufferedOutputStream<span style="color:#f92672">(</span><span style="color:#66d9ef">new</span> FileOutputStream<span style="color:#f92672">(</span>destPath<span style="color:#f92672">));</span>
+        <span style="color:#66d9ef">int</span> readLen <span style="color:#f92672">=</span> 0<span style="color:#f92672">;</span>
+        <span style="color:#75715e">// 当 readLen  为 -1 时就表示读取完毕
+</span><span style="color:#75715e"></span>        <span style="color:#66d9ef">while</span> <span style="color:#f92672">((</span>readLen <span style="color:#f92672">=</span> bufferedInputStream<span style="color:#f92672">.</span><span style="color:#a6e22e">read</span><span style="color:#f92672">(</span>buff<span style="color:#f92672">))</span> <span style="color:#f92672">!=</span> <span style="color:#f92672">-</span>1<span style="color:#f92672">){</span>
+            bufferedOutputStream<span style="color:#f92672">.</span><span style="color:#a6e22e">write</span><span style="color:#f92672">(</span>buff<span style="color:#f92672">,</span> 0<span style="color:#f92672">,</span> readLen<span style="color:#f92672">);</span>
+        <span style="color:#f92672">}</span>
+    <span style="color:#f92672">}</span> <span style="color:#66d9ef">catch</span> <span style="color:#f92672">(</span>IOException e<span style="color:#f92672">){</span>
+        e<span style="color:#f92672">.</span><span style="color:#a6e22e">printStackTrace</span><span style="color:#f92672">();</span>
+    <span style="color:#f92672">}</span> <span style="color:#66d9ef">finally</span> <span style="color:#f92672">{</span>
+        <span style="color:#66d9ef">if</span> <span style="color:#f92672">(</span>bufferedInputStream <span style="color:#f92672">!=</span> <span style="color:#66d9ef">null</span><span style="color:#f92672">){</span>
+            bufferedInputStream<span style="color:#f92672">.</span><span style="color:#a6e22e">close</span><span style="color:#f92672">();</span>
+        <span style="color:#f92672">}</span>
+        <span style="color:#66d9ef">if</span> <span style="color:#f92672">(</span>bufferedOutputStream <span style="color:#f92672">!=</span> <span style="color:#66d9ef">null</span><span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
+            bufferedOutputStream<span style="color:#f92672">.</span><span style="color:#a6e22e">close</span><span style="color:#f92672">();</span>
+        <span style="color:#f92672">}</span>
+    <span style="color:#f92672">}</span>
+<span style="color:#f92672">}</span>
+</code></pre></div><h4 id="对象流">对象流</h4>
+<p>有时候需要把数据保存到文件中, 把对象保存到文件中, 因此需要ObjectOutputStream, 需要保存数据值和数据类型, 就是要能够将对象进行序列化和反序列化.</p>
+<p>为了让某个对象支持序列化机制, 就必须让这个类时可序列化的, 为了让某个类时可序列化的, 该类必须实现如下两个接口之一:</p>
+<ul>
+<li>Serializable(一般用这个)</li>
+<li>Externalizable(因为这个有方法需要实现)</li>
+</ul>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">ObjectOutputStream_</span> <span style="color:#f92672">{</span>
+
+    <span style="color:#a6e22e">@Test</span>
+    <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">saveObject</span><span style="color:#f92672">()</span> <span style="color:#66d9ef">throws</span> IOException <span style="color:#f92672">{</span>
+        <span style="color:#75715e">// 序列化后保存的文件格式不是文本, 而是他的方法
+</span><span style="color:#75715e"></span>        String filePath <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;F:\\object.dat&#34;</span><span style="color:#f92672">;</span>
+        ObjectOutputStream objectOutputStream <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> ObjectOutputStream<span style="color:#f92672">(</span><span style="color:#66d9ef">new</span> FileOutputStream<span style="color:#f92672">(</span>filePath<span style="color:#f92672">));</span>
+
+        <span style="color:#75715e">// Integer 实现了 Serializable 接口
+</span><span style="color:#75715e"></span>        objectOutputStream<span style="color:#f92672">.</span><span style="color:#a6e22e">writeInt</span><span style="color:#f92672">(</span>100<span style="color:#f92672">);</span>
+        <span style="color:#75715e">// 放字符串不是用 writeString
+</span><span style="color:#75715e"></span>        objectOutputStream<span style="color:#f92672">.</span><span style="color:#a6e22e">writeUTF</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;你好&#34;</span><span style="color:#f92672">);</span>
+        objectOutputStream<span style="color:#f92672">.</span><span style="color:#a6e22e">writeObject</span><span style="color:#f92672">(</span><span style="color:#66d9ef">new</span> Person<span style="color:#f92672">(</span><span style="color:#e6db74">&#34;allison&#34;</span><span style="color:#f92672">));</span>
+        objectOutputStream<span style="color:#f92672">.</span><span style="color:#a6e22e">close</span><span style="color:#f92672">();</span>
+    <span style="color:#f92672">}</span>
+
+    <span style="color:#a6e22e">@Test</span>
+    <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">readObject</span><span style="color:#f92672">()</span> <span style="color:#66d9ef">throws</span> IOException<span style="color:#f92672">,</span> ClassNotFoundException <span style="color:#f92672">{</span>
+        String filePath <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;F:\\object.dat&#34;</span><span style="color:#f92672">;</span>
+        ObjectInputStream inputStream <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> ObjectInputStream<span style="color:#f92672">(</span><span style="color:#66d9ef">new</span> FileInputStream<span style="color:#f92672">(</span>filePath<span style="color:#f92672">));</span>
+
+        <span style="color:#75715e">// 读取的顺序(反序列化的顺序), 需要和保存数据的顺序一致
+</span><span style="color:#75715e"></span>        System<span style="color:#f92672">.</span><span style="color:#a6e22e">out</span><span style="color:#f92672">.</span><span style="color:#a6e22e">println</span><span style="color:#f92672">(</span>inputStream<span style="color:#f92672">.</span><span style="color:#a6e22e">readInt</span><span style="color:#f92672">());</span>
+        System<span style="color:#f92672">.</span><span style="color:#a6e22e">out</span><span style="color:#f92672">.</span><span style="color:#a6e22e">println</span><span style="color:#f92672">(</span>inputStream<span style="color:#f92672">.</span><span style="color:#a6e22e">readUTF</span><span style="color:#f92672">());</span>
+        <span style="color:#75715e">// 就算这个类的定义一模一样, 但是如果不在同一个包下也会有问题, 比如我在别的包下定义的 Person 类,
+</span><span style="color:#75715e"></span>        <span style="color:#75715e">// 哪怕代码一模一样, 也无法读取, 因为所在的包不一样.
+</span><span style="color:#75715e"></span>        Object p <span style="color:#f92672">=</span> inputStream<span style="color:#f92672">.</span><span style="color:#a6e22e">readObject</span><span style="color:#f92672">();</span>
+        System<span style="color:#f92672">.</span><span style="color:#a6e22e">out</span><span style="color:#f92672">.</span><span style="color:#a6e22e">println</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;类型: &#34;</span><span style="color:#f92672">+</span>p<span style="color:#f92672">.</span><span style="color:#a6e22e">getClass</span><span style="color:#f92672">());</span>
+        System<span style="color:#f92672">.</span><span style="color:#a6e22e">out</span><span style="color:#f92672">.</span><span style="color:#a6e22e">println</span><span style="color:#f92672">(</span>p<span style="color:#f92672">);</span>
+
+    <span style="color:#f92672">}</span>
+<span style="color:#f92672">}</span>
+
+<span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Person</span> <span style="color:#66d9ef">implements</span> Serializable <span style="color:#f92672">{</span>
+    <span style="color:#66d9ef">private</span> String name<span style="color:#f92672">;</span>
+
+    <span style="color:#66d9ef">public</span> <span style="color:#a6e22e">Person</span><span style="color:#f92672">(</span>String name<span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
+        <span style="color:#66d9ef">this</span><span style="color:#f92672">.</span><span style="color:#a6e22e">name</span> <span style="color:#f92672">=</span> name<span style="color:#f92672">;</span>
+    <span style="color:#f92672">}</span>
+
+    <span style="color:#66d9ef">public</span> String <span style="color:#a6e22e">getName</span><span style="color:#f92672">()</span> <span style="color:#f92672">{</span>
+        <span style="color:#66d9ef">return</span> name<span style="color:#f92672">;</span>
+    <span style="color:#f92672">}</span>
+
+    <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">setName</span><span style="color:#f92672">(</span>String name<span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
+        <span style="color:#66d9ef">this</span><span style="color:#f92672">.</span><span style="color:#a6e22e">name</span> <span style="color:#f92672">=</span> name<span style="color:#f92672">;</span>
+    <span style="color:#f92672">}</span>
+
+<span style="color:#75715e">//    @Override
+</span><span style="color:#75715e">//    public String toString() {
+</span><span style="color:#75715e">//        return &#34;Person{&#34; +
+</span><span style="color:#75715e">//                &#34;name=&#39;&#34; + name + &#39;\&#39;&#39; +
+</span><span style="color:#75715e">//                &#39;}&#39;;
+</span><span style="color:#75715e">//    }
+</span><span style="color:#75715e"></span><span style="color:#f92672">}</span>
+</code></pre></div><p>注意:</p>
+<ol>
+<li>独写顺序要一致</li>
+<li>要求序列化或者反序列化对象, 需要实现 Serializable</li>
+<li>序列化的类中建议添加 SerialVersionUID, 为了提高版本的兼容性</li>
+<li>序列化对象时, 默认将里面所有属性都进行序列化, 但除了 static 或 transient 修饰的成员.</li>
+<li>序列化对象时, 要求里面属性的类型也需要实现序列化接口</li>
+<li>序列化具备可继承性, 也就是如果某类已经实现了序列化, 则它的所有子类也已经默认实现了序列化.</li>
+</ol>
+<h4 id="标准输入输出流">标准输入输出流</h4>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">InputAndOutput</span> <span style="color:#f92672">{</span>
+
+    <span style="color:#a6e22e">@Test</span>
+    <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">aaa</span><span style="color:#f92672">(){</span>
+        <span style="color:#75715e">// System.in
+</span><span style="color:#75715e"></span>        <span style="color:#75715e">// 编译类型 InputStream
+</span><span style="color:#75715e"></span>        <span style="color:#75715e">// 运行类型 BufferedInputStream
+</span><span style="color:#75715e"></span>        System<span style="color:#f92672">.</span><span style="color:#a6e22e">out</span><span style="color:#f92672">.</span><span style="color:#a6e22e">println</span><span style="color:#f92672">(</span>System<span style="color:#f92672">.</span><span style="color:#a6e22e">in</span><span style="color:#f92672">.</span><span style="color:#a6e22e">getClass</span><span style="color:#f92672">());</span>
+        <span style="color:#75715e">// Scanner scanner = new Scanner(System.in);
+</span><span style="color:#75715e"></span>        <span style="color:#75715e">// scanner.nextLine();
+</span><span style="color:#75715e"></span>
+        <span style="color:#75715e">// 1. System.out
+</span><span style="color:#75715e"></span>        <span style="color:#75715e">// 编译类型 PrintStream
+</span><span style="color:#75715e"></span>        <span style="color:#75715e">// 运行类型 PrintStream
+</span><span style="color:#75715e"></span>        <span style="color:#75715e">// 表示输出到显示屏上
+</span><span style="color:#75715e"></span>        System<span style="color:#f92672">.</span><span style="color:#a6e22e">out</span><span style="color:#f92672">.</span><span style="color:#a6e22e">println</span><span style="color:#f92672">(</span>System<span style="color:#f92672">.</span><span style="color:#a6e22e">out</span><span style="color:#f92672">.</span><span style="color:#a6e22e">getClass</span><span style="color:#f92672">());</span>
+    <span style="color:#f92672">}</span>
+<span style="color:#f92672">}</span>
+</code></pre></div><h4 id="转换流">转换流</h4>
+<p>InputStreamReader: Reader 的子类, 可以将 InputStream(字节流)包装成Reader(字符流)</p>
+<p>OutputStreamWriter: Writer 的子类, 可以将 OutputStream(字节流)包装成 Writer(字符流)</p>
+<p>常用于不同编码方式的读取</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">CodeQuestion</span> <span style="color:#f92672">{</span>
+
+    <span style="color:#a6e22e">@Test</span>
+    <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">readFile01</span><span style="color:#f92672">()</span> <span style="color:#66d9ef">throws</span> IOException <span style="color:#f92672">{</span>
+        <span style="color:#75715e">// 读取 F:\\a.txt
+</span><span style="color:#75715e"></span>        <span style="color:#75715e">// 1. 创建一个字符输入流 BufferedReader [处理流]
+</span><span style="color:#75715e"></span>        <span style="color:#75715e">// 2. 使用 BufferedReader 读取 a.txt
+</span><span style="color:#75715e"></span>        <span style="color:#75715e">// 3. 在默认情况下, 读取文件时按照 UTF-8 进行读取的, 当文件不是用 UTF-8 保存的时候, 可能会出现乱码
+</span><span style="color:#75715e"></span>        <span style="color:#75715e">//
+</span><span style="color:#75715e"></span>        String filePath <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;F:\\a.txt&#34;</span><span style="color:#f92672">;</span>
+        BufferedReader bufferedReader <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> BufferedReader<span style="color:#f92672">(</span><span style="color:#66d9ef">new</span> FileReader<span style="color:#f92672">(</span>filePath<span style="color:#f92672">));</span>
+
+        String s <span style="color:#f92672">=</span> bufferedReader<span style="color:#f92672">.</span><span style="color:#a6e22e">readLine</span><span style="color:#f92672">();</span>
+        <span style="color:#66d9ef">while</span> <span style="color:#f92672">((</span>s <span style="color:#f92672">=</span> bufferedReader<span style="color:#f92672">.</span><span style="color:#a6e22e">readLine</span><span style="color:#f92672">())</span> <span style="color:#f92672">!=</span> <span style="color:#66d9ef">null</span><span style="color:#f92672">){</span>
+        System<span style="color:#f92672">.</span><span style="color:#a6e22e">out</span><span style="color:#f92672">.</span><span style="color:#a6e22e">println</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;读取到的内容: &#34;</span><span style="color:#f92672">+</span>s<span style="color:#f92672">);}</span>
+        bufferedReader<span style="color:#f92672">.</span><span style="color:#a6e22e">close</span><span style="color:#f92672">();</span>
+        <span style="color:#75715e">// 如果不是 UTF-8 就可能会乱码
+</span><span style="color:#75715e"></span>    <span style="color:#f92672">}</span>
+
+    <span style="color:#a6e22e">@Test</span>
+    <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">readFile02</span><span style="color:#f92672">()</span> <span style="color:#66d9ef">throws</span> IOException <span style="color:#f92672">{</span>
+        String filePath <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;F:\\a.txt&#34;</span><span style="color:#f92672">;</span>
+        BufferedReader bufferedReader <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> BufferedReader<span style="color:#f92672">(</span><span style="color:#66d9ef">new</span> InputStreamReader<span style="color:#f92672">(</span><span style="color:#66d9ef">new</span> FileInputStream<span style="color:#f92672">(</span>filePath<span style="color:#f92672">),</span> <span style="color:#e6db74">&#34;gb18030&#34;</span><span style="color:#f92672">));</span>
+        String s <span style="color:#f92672">=</span> bufferedReader<span style="color:#f92672">.</span><span style="color:#a6e22e">readLine</span><span style="color:#f92672">();</span>
+        <span style="color:#66d9ef">while</span> <span style="color:#f92672">((</span>s <span style="color:#f92672">=</span> bufferedReader<span style="color:#f92672">.</span><span style="color:#a6e22e">readLine</span><span style="color:#f92672">())</span> <span style="color:#f92672">!=</span> <span style="color:#66d9ef">null</span><span style="color:#f92672">){</span>
+            System<span style="color:#f92672">.</span><span style="color:#a6e22e">out</span><span style="color:#f92672">.</span><span style="color:#a6e22e">println</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;读取到的内容: &#34;</span><span style="color:#f92672">+</span>s<span style="color:#f92672">);}</span>
+        bufferedReader<span style="color:#f92672">.</span><span style="color:#a6e22e">close</span><span style="color:#f92672">();</span>
+        <span style="color:#75715e">// 指定了编码就可以了, 就不会乱码了
+</span><span style="color:#75715e"></span>    <span style="color:#f92672">}</span>
+
+    <span style="color:#a6e22e">@Test</span>
+    <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">saveFile01</span><span style="color:#f92672">()</span> <span style="color:#66d9ef">throws</span> IOException <span style="color:#f92672">{</span>
+        String filePath <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;F:\\c.txt&#34;</span><span style="color:#f92672">;</span>
+        BufferedWriter bufferedWriter <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> BufferedWriter<span style="color:#f92672">(</span><span style="color:#66d9ef">new</span> OutputStreamWriter<span style="color:#f92672">(</span>Files<span style="color:#f92672">.</span><span style="color:#a6e22e">newOutputStream</span><span style="color:#f92672">(</span>Paths<span style="color:#f92672">.</span><span style="color:#a6e22e">get</span><span style="color:#f92672">(</span>filePath<span style="color:#f92672">)),</span> <span style="color:#e6db74">&#34;gbk&#34;</span><span style="color:#f92672">));</span>
+
+        bufferedWriter<span style="color:#f92672">.</span><span style="color:#a6e22e">write</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;你好！&#34;</span><span style="color:#f92672">);</span>
+        bufferedWriter<span style="color:#f92672">.</span><span style="color:#a6e22e">newLine</span><span style="color:#f92672">();</span>
+        bufferedWriter<span style="color:#f92672">.</span><span style="color:#a6e22e">write</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;Hello&#34;</span><span style="color:#f92672">);</span>
+        bufferedWriter<span style="color:#f92672">.</span><span style="color:#a6e22e">close</span><span style="color:#f92672">();</span>
+    <span style="color:#f92672">}</span>
+<span style="color:#f92672">}</span>
+</code></pre></div><h4 id="打印流">打印流</h4>
+<p>打印流只有输出流没有输入流: <code>PrintWriter</code>, <code>PrintStream</code></p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Print</span> <span style="color:#f92672">{</span>
+
+    <span style="color:#a6e22e">@Test</span>
+    <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">printStream</span><span style="color:#f92672">()</span> <span style="color:#66d9ef">throws</span> IOException <span style="color:#f92672">{</span>
+        PrintStream out <span style="color:#f92672">=</span> System<span style="color:#f92672">.</span><span style="color:#a6e22e">out</span><span style="color:#f92672">;</span>
+        <span style="color:#75715e">// 默认情况下, PrintStream 输出数据的位置是 标准输出, 即显示器
+</span><span style="color:#75715e"></span>        out<span style="color:#f92672">.</span><span style="color:#a6e22e">println</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;你好&#34;</span><span style="color:#f92672">);</span>
+        <span style="color:#75715e">// 基本等价于
+</span><span style="color:#75715e"></span>        <span style="color:#75715e">// out.write(&#34;你好&#34;.getBytes());
+</span><span style="color:#75715e"></span>        <span style="color:#75715e">// 好像不能直接用 newLine
+</span><span style="color:#75715e"></span>        <span style="color:#75715e">// out.newLine(); 因为 newLine 是 private 方法
+</span><span style="color:#75715e"></span>        out<span style="color:#f92672">.</span><span style="color:#a6e22e">close</span><span style="color:#f92672">();</span>
+        System<span style="color:#f92672">.</span><span style="color:#a6e22e">setOut</span><span style="color:#f92672">(</span><span style="color:#66d9ef">new</span> PrintStream<span style="color:#f92672">(</span><span style="color:#e6db74">&#34;F:\\d.txt&#34;</span><span style="color:#f92672">));</span>
+        System<span style="color:#f92672">.</span><span style="color:#a6e22e">out</span><span style="color:#f92672">.</span><span style="color:#a6e22e">println</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;输出到文件&#34;</span><span style="color:#f92672">);</span>
+
+    <span style="color:#f92672">}</span>
+    <span style="color:#a6e22e">@Test</span>
+    <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">printWriter</span><span style="color:#f92672">()</span> <span style="color:#66d9ef">throws</span> IOException <span style="color:#f92672">{</span>
+        <span style="color:#75715e">// PrintWriter(Writer)
+</span><span style="color:#75715e"></span>        <span style="color:#75715e">// PrintWriter(OutputStream)
+</span><span style="color:#75715e"></span>        <span style="color:#75715e">// PrintWriter(Charset, File)
+</span><span style="color:#75715e"></span>        PrintWriter printWriter <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> PrintWriter<span style="color:#f92672">(</span><span style="color:#66d9ef">new</span> FileWriter<span style="color:#f92672">(</span><span style="color:#e6db74">&#34;F:\\e.txt&#34;</span><span style="color:#f92672">));</span>
+        printWriter<span style="color:#f92672">.</span><span style="color:#a6e22e">println</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;你好 print writer&#34;</span><span style="color:#f92672">);</span>
+        <span style="color:#75715e">// 这时候才真的写数据, 可以看源码, 也可以debug到这里看 e.txt 有没有内容
+</span><span style="color:#75715e"></span>        printWriter<span style="color:#f92672">.</span><span style="color:#a6e22e">close</span><span style="color:#f92672">();</span>
+    <span style="color:#f92672">}</span>
+<span style="color:#f92672">}</span>
+</code></pre></div><h4 id="properties-类">Properties 类</h4>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Properties_</span> <span style="color:#f92672">{</span>
+
+    <span style="color:#a6e22e">@Test</span>
+    <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">readProperties01</span><span style="color:#f92672">()</span> <span style="color:#66d9ef">throws</span> IOException <span style="color:#f92672">{</span>
+        BufferedReader bufferedReader <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> BufferedReader<span style="color:#f92672">(</span><span style="color:#66d9ef">new</span> FileReader<span style="color:#f92672">(</span><span style="color:#e6db74">&#34;src\\mysql.properties&#34;</span><span style="color:#f92672">));</span>
+        String line<span style="color:#f92672">;</span>
+        <span style="color:#66d9ef">while</span><span style="color:#f92672">((</span>line <span style="color:#f92672">=</span> bufferedReader<span style="color:#f92672">.</span><span style="color:#a6e22e">readLine</span><span style="color:#f92672">())!=</span><span style="color:#66d9ef">null</span><span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
+            System<span style="color:#f92672">.</span><span style="color:#a6e22e">out</span><span style="color:#f92672">.</span><span style="color:#a6e22e">println</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;line: &#34;</span> <span style="color:#f92672">+</span> line<span style="color:#f92672">);</span>
+        <span style="color:#f92672">}</span>
+        bufferedReader<span style="color:#f92672">.</span><span style="color:#a6e22e">close</span><span style="color:#f92672">();</span>
+        <span style="color:#75715e">// 但是这样效果不好,也不方便
+</span><span style="color:#75715e"></span>    <span style="color:#f92672">}</span>
+
+    <span style="color:#a6e22e">@Test</span>
+    <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">readProperties02</span><span style="color:#f92672">()</span> <span style="color:#66d9ef">throws</span> IOException <span style="color:#f92672">{</span>
+        <span style="color:#75715e">// 使用 Properties 类来读取 mysql.properties 文件
+</span><span style="color:#75715e"></span>        <span style="color:#75715e">// 1. 创建 Properties 对象
+</span><span style="color:#75715e"></span>        String filePath <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;src\\mysql.properties&#34;</span><span style="color:#f92672">;</span>
+        Properties properties <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> Properties<span style="color:#f92672">();</span>
+        <span style="color:#75715e">// 2. 加载指定配置文件
+</span><span style="color:#75715e"></span>        properties<span style="color:#f92672">.</span><span style="color:#a6e22e">load</span><span style="color:#f92672">(</span><span style="color:#66d9ef">new</span> FileReader<span style="color:#f92672">(</span>filePath<span style="color:#f92672">));</span>
+        <span style="color:#75715e">// 3. 把 k-v 显示在控制台
+</span><span style="color:#75715e">//        properties.list(System.out);
+</span><span style="color:#75715e"></span>        <span style="color:#75715e">// 4. 根据 key 获取对应的值
+</span><span style="color:#75715e"></span>        System<span style="color:#f92672">.</span><span style="color:#a6e22e">out</span><span style="color:#f92672">.</span><span style="color:#a6e22e">println</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;IP: &#34;</span> <span style="color:#f92672">+</span> properties<span style="color:#f92672">.</span><span style="color:#a6e22e">getProperty</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;ip&#34;</span><span style="color:#f92672">));</span>
+    <span style="color:#f92672">}</span>
+
+    <span style="color:#a6e22e">@Test</span>
+    <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">modifiedProperties</span><span style="color:#f92672">()</span> <span style="color:#66d9ef">throws</span> IOException <span style="color:#f92672">{</span>
+        <span style="color:#75715e">// 1. 创建 Properties 对象
+</span><span style="color:#75715e"></span>        String filePath <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;src\\mysql.properties&#34;</span><span style="color:#f92672">;</span>
+        Properties properties <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> Properties<span style="color:#f92672">();</span>
+        <span style="color:#75715e">// 2. 加载指定配置文件
+</span><span style="color:#75715e"></span>        properties<span style="color:#f92672">.</span><span style="color:#a6e22e">load</span><span style="color:#f92672">(</span><span style="color:#66d9ef">new</span> FileReader<span style="color:#f92672">(</span>filePath<span style="color:#f92672">));</span>
+        <span style="color:#75715e">// 3. 修改文件
+</span><span style="color:#75715e"></span>        properties<span style="color:#f92672">.</span><span style="color:#a6e22e">setProperty</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;ip&#34;</span><span style="color:#f92672">,</span><span style="color:#e6db74">&#34;192.168.0.1&#34;</span><span style="color:#f92672">);</span>
+        properties<span style="color:#f92672">.</span><span style="color:#a6e22e">store</span><span style="color:#f92672">(</span><span style="color:#66d9ef">new</span> FileWriter<span style="color:#f92672">(</span>filePath<span style="color:#f92672">),</span> <span style="color:#e6db74">&#34;会在properties 最上面作为一个注释&#34;</span><span style="color:#f92672">);</span>
+    <span style="color:#f92672">}</span>
+<span style="color:#f92672">}</span>
+</code></pre></div>
+    </div>
+    <div class="post-footer">
+      
+    </div>
+  </article>
+
+    </main>
+  </body>
+</html>

@@ -6,7 +6,17 @@
     <description>Recent content on 洛七的摸鱼池塘</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Fri, 01 Mar 2024 15:53:03 +0800</lastBuildDate><atom:link href="https://Lu0key.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sat, 02 Mar 2024 22:07:15 +0800</lastBuildDate><atom:link href="https://Lu0key.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Java IO 基础</title>
+      <link>https://Lu0key.github.io/post/basic-java-io/</link>
+      <pubDate>Sat, 02 Mar 2024 22:07:15 +0800</pubDate>
+      
+      <guid>https://Lu0key.github.io/post/basic-java-io/</guid>
+      <description>文件 文件就是保存数据的地方。
+ 流: 数据在数据源(文件)和程序(内存)之间经历的路径 输入流：数据从数据源(文件)到程序(内存)的路径 输出流: 数据从程序(内存)到数据源(文件)的路径  常用的文件操作  new File(String pathname): 根据路径构建一个 File 对象 new File(File parent, String child): 根据父目录文件+子路径构建 new File(String parent, String child): 根据父目录+子路径构建  import org.junit.Test; import java.io.File; import java.io.IOException; // 演示创建文件 public class FileCreate { public static void main(String[] args) { } // 方式1  @Test public void create01() { String filePath = &amp;#34;f:\\news1.txt&amp;#34;; File file = new File(filePath); try { // 执行了这个方法才会在磁盘创建  file.</description>
+    </item>
+    
     <item>
       <title>Redis 离线安装</title>
       <link>https://Lu0key.github.io/post/redis-offline-installation/</link>
@@ -539,7 +549,7 @@ nums 的 不同元素数目差 数组可以用一个长度为 n 的数组 diff �
       <guid>https://Lu0key.github.io/post/detect-server-status/</guid>
       <description>检测服务器状态脚本
 主打一个抽象, 代码如下:
-from flask import Flask, request, redirect, url_for, session, render_template import psutil import subprocess app = Flask(__name__) app.secret_key = &amp;#39;keyyyyy&amp;#39; # 设置一个随机的密钥来加密 session 数据 def get_cpu_usage(): # 显示cpu型号 return &amp;#39;{}%&amp;#39;.format(psutil.cpu_percent(interval=1)) def bytes_to_gb(bytes): return bytes / (1024 ** 3) def get_mem_usage(): return &amp;#39;{:.2f}/{} GB({}%)&amp;#39;.format(bytes_to_gb(psutil.virtual_memory().used), int(bytes_to_gb(psutil.virtual_memory().total)), psutil.virtual_memory().percent) def get_gpu_info(): try: result = subprocess.run([&amp;#39;nvidia-smi&amp;#39;, &amp;#39;--query-gpu=index,name,memory.total,memory.used,memory.free,utilization.gpu,utilization.memory&amp;#39;, &amp;#39;--format=csv,noheader,nounits&amp;#39;], capture_output=True, text=True).stdout.strip() except Exception as e: if &amp;#34;No such file or directory: &amp;#39;nvidia-smi&amp;#39;&amp;#34; in str(e): return {&amp;#39;id&amp;#39;:[&amp;#39;无显卡&amp;#39;], &amp;#39;gpu_mem_usage&amp;#39;: [], &amp;#39;gpu_utilization&amp;#39;: []} else: print(e) return {&amp;#39;id&amp;#39;:[&amp;#39;未知显卡错误&amp;#39;], &amp;#39;gpu_mem_usage&amp;#39;: [], &amp;#39;gpu_utilization&amp;#39;: []} # print(result) if &amp;#34;NVIDIA-SMI has failed &amp;#34; in result: return {&amp;#39;id&amp;#39;:[&amp;#39;显卡状态异常&amp;#39;], &amp;#39;gpu_mem_usage&amp;#39;: [&amp;#39;N/A&amp;#39;], &amp;#39;gpu_utilization&amp;#39;: [&amp;#39;N/A&amp;#39;]} else: gpu_info = result.</description>
+from flask import Flask, request, redirect, url_for, session, render_template import psutil import subprocess app = Flask(__name__) app.secret_key = &amp;#39;keyyyyy&amp;#39; # 设置一个随机的密钥来加密 session 数据 def get_cpu_usage(): # 显示cpu型号 return &amp;#39;{}%&amp;#39;.format(psutil.cpu_percent(interval=1)) def bytes_to_gb(bytes): return bytes / (1024 ** 3) def get_mem_usage(): return &amp;#39;{:.2f}/{} GB({}%)&amp;#39;.format(bytes_to_gb(psutil.virtual_memory().used), int(bytes_to_gb(psutil.virtual_memory().total)), psutil.virtual_memory().percent) def get_gpu_info(): try: result = subprocess.run([&amp;#39;nvidia-smi&amp;#39;, &amp;#39;--query-gpu=index,name,memory.total,memory.used,memory.free,utilization.gpu,utilization.memory&amp;#39;, &amp;#39;--format=csv,noheader,nounits&amp;#39;], capture_output=True, text=True).stdout.strip() except Exception as e: if &amp;#34;No such file or directory: &amp;#39;nvidia-smi&amp;#39;&amp;#34; in str(e): return {&amp;#39;id&amp;#39;:[&amp;#39;无显卡&amp;#39;], &amp;#39;gpu_mem_usage&amp;#39;: [], &amp;#39;gpu_utilization&amp;#39;: []} else: print(e) return {&amp;#39;id&amp;#39;:[&amp;#39;未知显卡错误&amp;#39;], &amp;#39;gpu_mem_usage&amp;#39;: [], &amp;#39;gpu_utilization&amp;#39;: []} # print(result) if &amp;#34;NVIDIA-SMI has failed &amp;#34; in result: return {&amp;#39;id&amp;#39;:[&amp;#39;显卡驱动异常&amp;#39;], &amp;#39;gpu_mem_usage&amp;#39;: [&amp;#39;N/A&amp;#39;], &amp;#39;gpu_utilization&amp;#39;: [&amp;#39;N/A&amp;#39;]} elif &amp;#34;Unable to determine the device handle&amp;#34; in result: return {&amp;#39;id&amp;#39;:[&amp;#39;显卡状态异常&amp;#39;], &amp;#39;gpu_mem_usage&amp;#39;: [&amp;#39;N/A&amp;#39;], &amp;#39;gpu_utilization&amp;#39;: [&amp;#39;N/A&amp;#39;]} else: gpu_info = result.</description>
     </item>
     
     <item>
