@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>MySQL on 洛七的摸鱼池塘</title>
+    <link>https://Lu0key.github.io/tags/mysql/</link>
+    <description>Recent content in MySQL on 洛七的摸鱼池塘</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Mon, 04 Mar 2024 17:23:40 +0800</lastBuildDate><atom:link href="https://Lu0key.github.io/tags/mysql/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Mysql 离线安装</title>
+      <link>https://Lu0key.github.io/post/mysql-offline-installation/</link>
+      <pubDate>Mon, 04 Mar 2024 17:23:40 +0800</pubDate>
+      
+      <guid>https://Lu0key.github.io/post/mysql-offline-installation/</guid>
+      <description>因为需要 MySQL 离线安装, 所以记录一下
+环境 Ubuntu 22.04
+安装内容 MySQL 8.0
+下载 需要下载三个文件, MySQL 的安装文件和两个依赖
+MySQL 下载地址, 根据你的系统版本下载对应 DEB Bundle, 还需要 libaio1 和 libmecab2, 可以在这里下载
+ DEB Bundle libaio1 libmecab2  DEB Bundle（也称为.deb Bundle）是一种软件分发格式，通常用于在基于Debian的Linux发行版中安装软件。它是一个包含了软件及其依赖关系的打包文件，可以方便地在目标系统上进行安装和管理.
+安装 这里只是离线安装的方式, 真正离线的时候就拷进去就好了.
+# 用 wget 把上面三个东西下下来 # 把 deb 包解压到当前文件夹下 # mysql-server_8.2.0-1ubuntu22.04_amd64.deb-bundle.tar 换成你具体的包 tar -xvf mysql-server_8.2.0-1ubuntu22.04_amd64.deb-bundle.tar -C ./ # 开始安装 # 下面都是无关版本的, 安装的时候就复制进去 tab 一下就行 # 1.  sudo dpkg -i mysql-common # 2.  sudo dpkg -i mysql-community-client-plugins # 3.</description>
+    </item>
+    
+  </channel>
+</rss>
