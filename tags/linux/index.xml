@@ -6,7 +6,18 @@
     <description>Recent content in Linux on 洛七的摸鱼池塘</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Fri, 01 Mar 2024 15:53:03 +0800</lastBuildDate><atom:link href="https://Lu0key.github.io/tags/linux/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 04 Mar 2024 17:16:58 +0800</lastBuildDate><atom:link href="https://Lu0key.github.io/tags/linux/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Ubuntu 服务器防火墙</title>
+      <link>https://Lu0key.github.io/post/ubuntu-firewall/</link>
+      <pubDate>Mon, 04 Mar 2024 17:16:58 +0800</pubDate>
+      
+      <guid>https://Lu0key.github.io/post/ubuntu-firewall/</guid>
+      <description>实验室用的服务器是 firewall, 但是偶尔会有需求需要开放端口, 因此记一下, 避免每次反复查
+查询开放的端口
+# 查询已开放的端口 sudo firewall-cmd --list-ports # 开放新的端口 sudo firewall-cmd --zone=public --add-port=8080/tcp --permanent # 重新加载防火墙配置 sudo firewall-cmd --reload 一般用这三条就够了.</description>
+    </item>
+    
     <item>
       <title>Redis 离线安装</title>
       <link>https://Lu0key.github.io/post/redis-offline-installation/</link>
@@ -58,7 +69,7 @@ from flask import Flask, request, redirect, url_for, session, render_template im
 方法二 这个是网上推荐的方法, 但是我没有成功, 不知道问题在哪里
 [Unit] Description=Your Service Description After=network.target [Service] Type=simple ExecStart=/path/to/your/script.sh Restart=on-failure RestartSec=3s [Install] WantedBy=multi-user.target 这里 restart 只在异常退出的时候使用, 因为这个脚本只是启动服务的, 服务启动结束就完了, 不需要这个脚本一直执行.
 然后保存文件并执行
-sudo systemctl daemon-reload sudo systemctl restart your-service-name.service sudo systemctl status your-service-name 这里看 status 时发现, 都可以执行, 除了用 nohup python xxx 一直有问题不知道为什么, 就是执行不了, 前面后面的都能执行, 之后看看去掉 nohup 能不能执行, 不知道会不会与这个相关.</description>
+sudo systemctl daemon-reload sudo systemctl restart your-service-name.service sudo systemctl status your-service-name # 可以通过这个查看日志, 如果失败了 sudo journalctl -u your-service-name.service 这里看 status 时发现, 都可以执行, 除了用 nohup python xxx 一直有问题不知道为什么, 就是执行不了, 前面后面的都能执行, 之后看看去掉 nohup 能不能执行, 不知道会不会与这个相关.</description>
     </item>
     
     <item>
