@@ -6,7 +6,18 @@
     <description>Recent content on 洛七的摸鱼池塘</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Sun, 10 Mar 2024 20:26:19 +0800</lastBuildDate><atom:link href="https://Lu0key.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 10 Mar 2024 22:26:32 +0800</lastBuildDate><atom:link href="https://Lu0key.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Paddlespeech 语音识别</title>
+      <link>https://Lu0key.github.io/post/paddlespeech-asr/</link>
+      <pubDate>Sun, 10 Mar 2024 22:26:32 +0800</pubDate>
+      
+      <guid>https://Lu0key.github.io/post/paddlespeech-asr/</guid>
+      <description>PaddleSpeech ASR 安装
+conda create -n paddlespeech python=3.10 conda activate paddlespeech # 下载依赖 pip install -r requirements.txt # 内容见下文 # 下载PadlleSpeech git clone https://github.com/PaddlePaddle/PaddleSpeech.git cd PaddleSpeech # 对于到我写这一篇博客的当前版本来说，不用这个版本会报错，虽然其他会不会我不知道，但是这个不会 # 当前版本似乎要指定模型 git checkout 1b8ca706d6a8e0a8b97ee21d93314a245d777a69 pip install . # 下载 Paddlepaddle pip install paddlepaddle==2.6.0 -i https://mirror.baidu.com/pypi/simple # 下载测试音频 wget -c https://paddlespeech.bj.bcebos.com/PaddleAudio/zh.wav requirements.txt 的内容如下:
+absl-py==2.0.0 aiohttp==3.9.1 aiosignal==1.3.1 aistudio-sdk==0.1.5 annotated-types==0.6.0 antlr4-python3-runtime==4.9.3 anyio==4.2.0 astor==0.8.1 asttokens==2.4.1 async-timeout==4.0.3 attrs==23.2.0 audioread==3.0.1 Babel==2.14.0 backcall==0.2.0 bce-python-sdk==0.8.99 blinker==1.7.0 bokeh==3.1.1 boltons==23.1.1 Bottleneck==1.3.7 braceexpand==0.</description>
+    </item>
+    
     <item>
       <title>Openai的Whisper语音转文字试用</title>
       <link>https://Lu0key.github.io/post/openai-whisper/</link>
