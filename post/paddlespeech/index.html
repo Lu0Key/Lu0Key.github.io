@@ -1,0 +1,334 @@
+<!doctype html>
+<html lang="en-us">
+  <head>
+    <title>Paddlespeech 语音识别与语音合成 // 洛七的摸鱼池塘</title>
+    <link rel="shortcut icon" href="/favicon.ico" />
+    <meta charset="utf-8" />
+    <meta name="generator" content="Hugo 0.81.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="author" content="洛七" />
+    <meta name="description" content="" />
+    <link rel="stylesheet" href="/css/main.min.0fb49e70a30412f97ddfc418e18fefef1d9fcdebe45f634dbbba768b00fe1eec.css" />
+    
+
+    
+    <meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Paddlespeech 语音识别与语音合成"/>
+<meta name="twitter:description" content="PaddleSpeech ASR 安装
+conda create -n paddlespeech python=3.10 conda activate paddlespeech # 下载依赖 pip install -r requirements.txt # 内容见下文 # 下载PadlleSpeech git clone https://github.com/PaddlePaddle/PaddleSpeech.git cd PaddleSpeech # 对于到我写这一篇博客的当前版本来说，不用这个版本会报错，虽然其他会不会我不知道，但是这个不会 # 当前版本似乎要指定模型 git checkout 1b8ca706d6a8e0a8b97ee21d93314a245d777a69 pip install . # 下载 Paddlepaddle pip install paddlepaddle==2.6.0 -i https://mirror.baidu.com/pypi/simple # 如果要用GPU就用下面的版本 # python -m pip install paddlepaddle-gpu==2.6.0 -i https://pypi.tuna.tsinghua.edu.cn/simple # 下载测试音频 wget -c https://paddlespeech.bj.bcebos.com/PaddleAudio/zh.wav requirements.txt 的内容如下:
+absl-py==2.0.0 aiohttp==3.9.1 aiosignal==1.3.1 aistudio-sdk==0.1.5 annotated-types==0.6.0 antlr4-python3-runtime==4.9.3 anyio==4.2.0 astor==0.8.1 asttokens==2.4.1 async-timeout==4."/>
+
+    <meta property="og:title" content="Paddlespeech 语音识别与语音合成" />
+<meta property="og:description" content="PaddleSpeech ASR 安装
+conda create -n paddlespeech python=3.10 conda activate paddlespeech # 下载依赖 pip install -r requirements.txt # 内容见下文 # 下载PadlleSpeech git clone https://github.com/PaddlePaddle/PaddleSpeech.git cd PaddleSpeech # 对于到我写这一篇博客的当前版本来说，不用这个版本会报错，虽然其他会不会我不知道，但是这个不会 # 当前版本似乎要指定模型 git checkout 1b8ca706d6a8e0a8b97ee21d93314a245d777a69 pip install . # 下载 Paddlepaddle pip install paddlepaddle==2.6.0 -i https://mirror.baidu.com/pypi/simple # 如果要用GPU就用下面的版本 # python -m pip install paddlepaddle-gpu==2.6.0 -i https://pypi.tuna.tsinghua.edu.cn/simple # 下载测试音频 wget -c https://paddlespeech.bj.bcebos.com/PaddleAudio/zh.wav requirements.txt 的内容如下:
+absl-py==2.0.0 aiohttp==3.9.1 aiosignal==1.3.1 aistudio-sdk==0.1.5 annotated-types==0.6.0 antlr4-python3-runtime==4.9.3 anyio==4.2.0 astor==0.8.1 asttokens==2.4.1 async-timeout==4." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://Lu0key.github.io/post/paddlespeech/" /><meta property="article:section" content="post" />
+<meta property="article:published_time" content="2024-03-10T22:26:32&#43;08:00" />
+<meta property="article:modified_time" content="2024-03-10T22:26:32&#43;08:00" />
+
+
+
+  </head>
+  <body>
+    <header class="app-header">
+      <a href="https://Lu0key.github.io/"><img class="app-header-avatar" src="/avatar.jpg" alt="洛七" /></a>
+      <span class="app-header-title">洛七的摸鱼池塘</span>
+      <nav class="app-header-menu">
+          <a class="app-header-menu-item" href="/tags/">Tags</a>
+      </nav>
+      <p>即将没书读的咸鱼</p>
+    </header>
+    <main class="app-container">
+      
+  <article class="post">
+    <header class="post-header">
+      <h1 class ="post-title">Paddlespeech 语音识别与语音合成</h1>
+      <div class="post-meta">
+        <div>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-calendar">
+  <title>calendar</title>
+  <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line>
+</svg>
+          Mar 10, 2024
+        </div>
+        <div>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-clock">
+  <title>clock</title>
+  <circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline>
+</svg>
+          2 min read
+        </div>
+        <div>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-tag">
+  <title>tag</title>
+  <path d="M20.59 13.41l-7.17 7.17a2 2 0 0 1-2.83 0L2 12V2h10l8.59 8.59a2 2 0 0 1 0 2.82z"></path><line x1="7" y1="7" x2="7.01" y2="7"></line>
+</svg>
+              <a class="tag" href="https://Lu0key.github.io/tags/python/">Python</a>
+              <a class="tag" href="https://Lu0key.github.io/tags/llm/">LLM</a>
+        </div>
+      </div>
+    </header>
+    <div class="post-content">
+      <h2 id="paddlespeech-asr">PaddleSpeech ASR</h2>
+<p>安装</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">conda create -n paddlespeech python<span style="color:#f92672">=</span>3.10
+conda activate paddlespeech
+<span style="color:#75715e"># 下载依赖</span>
+pip install -r requirements.txt <span style="color:#75715e"># 内容见下文</span>
+<span style="color:#75715e"># 下载PadlleSpeech</span>
+git clone https://github.com/PaddlePaddle/PaddleSpeech.git
+cd PaddleSpeech
+<span style="color:#75715e"># 对于到我写这一篇博客的当前版本来说，不用这个版本会报错，虽然其他会不会我不知道，但是这个不会</span>
+<span style="color:#75715e"># 当前版本似乎要指定模型</span>
+git checkout 1b8ca706d6a8e0a8b97ee21d93314a245d777a69
+pip install .
+<span style="color:#75715e"># 下载 Paddlepaddle</span>
+pip install paddlepaddle<span style="color:#f92672">==</span>2.6.0 -i https://mirror.baidu.com/pypi/simple
+<span style="color:#75715e"># 如果要用GPU就用下面的版本</span>
+<span style="color:#75715e"># python -m pip install paddlepaddle-gpu==2.6.0 -i https://pypi.tuna.tsinghua.edu.cn/simple</span>
+<span style="color:#75715e"># 下载测试音频</span>
+wget -c https://paddlespeech.bj.bcebos.com/PaddleAudio/zh.wav
+</code></pre></div><p><code>requirements.txt</code> 的内容如下:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-txt" data-lang="txt">absl-py==2.0.0
+aiohttp==3.9.1
+aiosignal==1.3.1
+aistudio-sdk==0.1.5
+annotated-types==0.6.0
+antlr4-python3-runtime==4.9.3
+anyio==4.2.0
+astor==0.8.1
+asttokens==2.4.1
+async-timeout==4.0.3
+attrs==23.2.0
+audioread==3.0.1
+Babel==2.14.0
+backcall==0.2.0
+bce-python-sdk==0.8.99
+blinker==1.7.0
+bokeh==3.1.1
+boltons==23.1.1
+Bottleneck==1.3.7
+braceexpand==0.1.7
+certifi==2023.11.17
+cffi==1.16.0
+charset-normalizer==3.3.2
+click==8.1.7
+colorama==0.4.6
+coloredlogs==15.0.1
+colorlog==6.8.0
+contourpy==1.1.1
+cycler==0.12.1
+Cython==3.0.8
+datasets==2.16.1
+decorator==5.1.1
+dill==0.3.4
+Distance==0.1.3
+editdistance==0.6.2
+einops==0.7.0
+exceptiongroup==1.2.0
+executing==2.0.1
+fastapi==0.109.0
+filelock==3.13.1
+Flask==3.0.0
+flask-babel==4.0.0
+flatbuffers==23.5.26
+fonttools==4.47.2
+frozenlist==1.4.1
+fsspec==2023.10.0
+ftfy==6.1.3
+future==0.18.3
+g2p-en==2.1.0
+g2pM==0.1.2.5
+h11==0.14.0
+h5py==3.10.0
+httpcore==1.0.2
+httpx==0.26.0
+huggingface-hub==0.20.2
+humanfriendly==10.0
+HyperPyYAML==1.2.2
+idna==3.6
+importlib-metadata==7.0.1
+importlib-resources==6.1.1
+inflect==7.0.0
+intervaltree==3.1.0
+ipython==8.12.3
+itsdangerous==2.1.2
+jedi==0.19.1
+jieba==0.42.1
+Jinja2==3.1.3
+joblib==1.3.2
+jsonlines==4.0.0
+kaldiio==2.18.0
+kiwisolver==1.4.5
+librosa==0.8.1
+llvmlite==0.41.1
+loguru==0.7.2
+lxml==5.1.0
+markdown-it-py==3.0.0
+MarkupSafe==2.1.3
+matplotlib==3.7.4
+matplotlib-inline==0.1.6
+mdurl==0.1.2
+mido==1.3.2
+mock==5.1.0
+mpmath==1.3.0
+multidict==6.0.4
+multiprocess==0.70.12.2
+nara-wpe==0.0.9
+nltk==3.8.1
+note-seq==0.0.5
+numba==0.58.1
+numpy==1.23.5
+omegaconf==2.3.0
+onnx==1.15.0
+onnxruntime==1.16.3
+OpenCC==1.1.7
+opencc-python-reimplemented==0.1.7
+opencv-python==4.6.0.66
+opt-einsum==3.3.0
+packaging==23.2
+paddle2onnx==1.1.0
+paddleaudio==1.1.0
+paddlefsl==1.1.0
+paddlenlp==2.7.1
+paddlepaddle==2.6.0
+paddlesde==0.2.5
+paddleslim==2.6.0
+paddlespeech-ctcdecoders==0.2.1
+paddlespeech-feat==0.1.0
+pandas==2.0.3
+parameterized==0.9.0
+parso==0.8.3
+pathos==0.2.8
+pattern-singleton==1.2.0
+pexpect==4.9.0
+pickleshare==0.7.5
+pillow==10.2.0
+platformdirs==4.1.0
+pooch==1.8.0
+portalocker==2.8.2
+pox==0.3.3
+ppdiffusers==0.19.4
+ppft==1.7.6.7
+praatio==5.1.1
+pretty-midi==0.2.10
+prettytable==3.9.0
+prompt-toolkit==3.0.43
+protobuf==4.25.2
+psutil==5.9.7
+ptyprocess==0.7.0
+pure-eval==0.2.2
+pyarrow==14.0.2
+pyarrow-hotfix==0.6
+pybind11==2.11.1
+pycparser==2.21
+pycryptodome==3.20.0
+pydantic==2.5.3
+pydantic_core==2.14.6
+pydub==0.25.1
+Pygments==2.17.2
+pygtrie==2.5.0
+pyparsing==3.1.1
+pypinyin==0.44.0
+pypinyin-dict==0.7.0
+pytest-runner==6.0.1
+python-dateutil==2.8.2
+pytz==2023.3.post1
+pyworld==0.3.4
+PyYAML==6.0.1
+pyzmq==25.1.2
+rarfile==4.1
+regex==2023.12.25
+requests==2.31.0
+requests-mock==1.11.0
+resampy==0.4.2
+rich==13.7.0
+ruamel.yaml==0.18.5
+ruamel.yaml.clib==0.2.8
+sacrebleu==2.4.0
+safetensors==0.4.1
+scikit-learn==1.3.2
+scipy==1.10.1
+sentencepiece==0.1.99
+seqeval==1.2.2
+six==1.16.0
+sniffio==1.3.0
+sortedcontainers==2.4.0
+soundfile==0.12.1
+stack-data==0.6.3
+starlette==0.35.1
+swig==4.1.1.post1
+sympy==1.12
+tabulate==0.9.0
+TextGrid==1.5
+threadpoolctl==3.2.0
+timer==0.2.2
+ToJyutping==0.2.1
+tool-helpers==0.1.1
+tornado==6.4
+tqdm==4.66.1
+traitlets==5.14.1
+trampoline==0.1.2
+typeguard==2.13.3
+typer==0.9.0
+typing_extensions==4.9.0
+tzdata==2023.4
+urllib3==1.26.18
+uvicorn==0.25.0
+visualdl==2.5.3
+wcwidth==0.2.13
+webrtcvad==2.0.10
+websockets==12.0
+Werkzeug==3.0.1
+xxhash==3.4.1
+xyzservices==2023.10.1
+yacs==0.1.8
+yarl==1.9.4
+zhon==2.0.2
+zipp==3.17.0
+</code></pre></div><p>测试代码</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#f92672">import</span> time
+
+<span style="color:#f92672">from</span> paddlespeech.cli.asr.infer <span style="color:#f92672">import</span> ASRExecutor
+asr <span style="color:#f92672">=</span> ASRExecutor()
+result <span style="color:#f92672">=</span> asr(audio_file<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;4.wav&#34;</span>, force_yes<span style="color:#f92672">=</span>True)
+<span style="color:#66d9ef">print</span>(result)
+
+start_time <span style="color:#f92672">=</span> time<span style="color:#f92672">.</span>time()
+result <span style="color:#f92672">=</span> asr(audio_file<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;zh.wav&#34;</span>, force_yes<span style="color:#f92672">=</span>True)
+<span style="color:#66d9ef">print</span>(result)
+<span style="color:#66d9ef">print</span>(<span style="color:#e6db74">&#34;耗时:&#34;</span>, time<span style="color:#f92672">.</span>time()<span style="color:#f92672">-</span>start_time)
+<span style="color:#75715e"># 耗时: 1.0136737823486328</span>
+<span style="color:#75715e"># GPU版本耗时: 0.07937979698181152</span>
+</code></pre></div><p><code>force_yes</code> 是当输入不是 16000 的采样率时, 允许重新采样用的. 这里是为了记录模型推理的时间, 为了排除模型加载的时间因此进行了两次推理, 为了避免有缓存机制, 因此这里用了两个不同的音频.</p>
+<h2 id="paddlespeech-tts">PaddleSpeech TTS</h2>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#f92672">from</span> paddlespeech.cli.tts.infer <span style="color:#f92672">import</span> TTSExecutor
+tts <span style="color:#f92672">=</span> TTSExecutor()
+text <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;今天大家都好开心啊, 好多人啊&#34;</span>
+tts(text<span style="color:#f92672">=</span>text, output<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;./output.wav&#39;</span>)
+
+<span style="color:#f92672">import</span> time
+start_time <span style="color:#f92672">=</span> time<span style="color:#f92672">.</span>time()
+tts(text<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;你好啊, 我是一个大西瓜, 怎么称呼你呢&#34;</span>, output<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;./watermelon.wav&#39;</span>)
+<span style="color:#66d9ef">print</span>(<span style="color:#e6db74">&#34;耗时:&#34;</span>, time<span style="color:#f92672">.</span>time()<span style="color:#f92672">-</span>start_time)
+<span style="color:#75715e"># 耗时: 1.1994433403015137</span>
+<span style="color:#75715e"># GPU版本耗时: 0.14627718925476074</span>
+</code></pre></div><p>环境配置是一样的</p>
+<h2 id="todo">todo</h2>
+<ul>
+<li><input checked="" disabled="" type="checkbox"> GPU 版本的语音识别</li>
+<li><input checked="" disabled="" type="checkbox"> GPU 版本的语音合成</li>
+<li><input disabled="" type="checkbox"> 不同模型的语音识别</li>
+<li><input disabled="" type="checkbox"> 不同模型的语音合成</li>
+</ul>
+
+    </div>
+    <div class="post-footer">
+      
+    </div>
+  </article>
+
+    </main>
+  </body>
+</html>
