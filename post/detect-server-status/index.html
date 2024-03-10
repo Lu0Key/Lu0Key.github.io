@@ -57,7 +57,7 @@ from flask import Flask, request, redirect, url_for, session, render_template im
   <title>clock</title>
   <circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline>
 </svg>
-          1 min read
+          2 min read
         </div>
         <div>
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-tag">
@@ -124,12 +124,24 @@ app<span style="color:#f92672">.</span>secret_key <span style="color:#f92672">=<
 <span style="color:#a6e22e">@app.route</span>(<span style="color:#e6db74">&#39;/get_server_info&#39;</span>, methods<span style="color:#f92672">=</span>[<span style="color:#e6db74">&#39;GET&#39;</span>])
 <span style="color:#66d9ef">def</span> <span style="color:#a6e22e">get_server_info</span>():
     <span style="color:#66d9ef">return</span> {<span style="color:#e6db74">&#39;cpu_usage&#39;</span>: get_cpu_usage(), <span style="color:#e6db74">&#39;mem_usage&#39;</span>: get_mem_usage(), <span style="color:#e6db74">&#39;gpus&#39;</span>: get_gpu_info()}
+
+<span style="color:#a6e22e">@app.route</span>(<span style="color:#e6db74">&#39;/get_system_info&#39;</span>, methods<span style="color:#f92672">=</span>[<span style="color:#e6db74">&#39;GET&#39;</span>])
+<span style="color:#66d9ef">def</span> <span style="color:#a6e22e">get_system_info</span>():
+    <span style="color:#66d9ef">try</span>:
+        result <span style="color:#f92672">=</span> subprocess<span style="color:#f92672">.</span>run([<span style="color:#e6db74">&#39;uname&#39;</span>, <span style="color:#e6db74">&#39;-r&#39;</span>], capture_output<span style="color:#f92672">=</span>True, text<span style="color:#f92672">=</span>True)<span style="color:#f92672">.</span>stdout<span style="color:#f92672">.</span>strip()
+        <span style="color:#66d9ef">return</span> {<span style="color:#e6db74">&#34;result&#34;</span>: result, <span style="color:#e6db74">&#34;code&#34;</span>:<span style="color:#ae81ff">200</span>}
+    <span style="color:#66d9ef">except</span> <span style="color:#a6e22e">Exception</span> <span style="color:#66d9ef">as</span> e:
+        <span style="color:#66d9ef">return</span> {<span style="color:#e6db74">&#34;result&#34;</span>:result, <span style="color:#e6db74">&#34;code&#34;</span>:<span style="color:#ae81ff">500</span>}
             
 <span style="color:#66d9ef">if</span> __name__ <span style="color:#f92672">==</span> <span style="color:#e6db74">&#39;__main__&#39;</span>:
     app<span style="color:#f92672">.</span>run(debug<span style="color:#f92672">=</span>True, host<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;0.0.0.0&#39;</span>)
 </code></pre></div><p>然后用一个服务器作为网站服务器, 配置IP向所有服务器发送请求, 得到服务器的状态.</p>
 <p>虽然可能有开源的做的更好, 但是懒得搞了, 属于能用就行.</p>
-
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">crontab -e
+<span style="color:#75715e"># 2</span>
+<span style="color:#75715e"># @reboot bash xxx.sh</span>
+service cron reload
+</code></pre></div>
     </div>
     <div class="post-footer">
       

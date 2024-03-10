@@ -2,6 +2,24 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
+    <loc>https://Lu0key.github.io/tags/llm/</loc>
+    <lastmod>2024-03-10T20:17:49+08:00</lastmod>
+  </url><url>
+    <loc>https://Lu0key.github.io/post/</loc>
+    <lastmod>2024-03-10T20:17:49+08:00</lastmod>
+  </url><url>
+    <loc>https://Lu0key.github.io/tags/python/</loc>
+    <lastmod>2024-03-10T20:17:49+08:00</lastmod>
+  </url><url>
+    <loc>https://Lu0key.github.io/tags/</loc>
+    <lastmod>2024-03-10T20:17:49+08:00</lastmod>
+  </url><url>
+    <loc>https://Lu0key.github.io/</loc>
+    <lastmod>2024-03-10T20:17:49+08:00</lastmod>
+  </url><url>
+    <loc>https://Lu0key.github.io/post/ali-text2video-lm/</loc>
+    <lastmod>2024-03-10T20:17:49+08:00</lastmod>
+  </url><url>
     <loc>https://Lu0key.github.io/tags/linux/</loc>
     <lastmod>2024-03-04T17:23:40+08:00</lastmod>
   </url><url>
@@ -9,15 +27,6 @@
     <lastmod>2024-03-04T17:23:40+08:00</lastmod>
   </url><url>
     <loc>https://Lu0key.github.io/post/mysql-offline-installation/</loc>
-    <lastmod>2024-03-04T17:23:40+08:00</lastmod>
-  </url><url>
-    <loc>https://Lu0key.github.io/post/</loc>
-    <lastmod>2024-03-04T17:23:40+08:00</lastmod>
-  </url><url>
-    <loc>https://Lu0key.github.io/tags/</loc>
-    <lastmod>2024-03-04T17:23:40+08:00</lastmod>
-  </url><url>
-    <loc>https://Lu0key.github.io/</loc>
     <lastmod>2024-03-04T17:23:40+08:00</lastmod>
   </url><url>
     <loc>https://Lu0key.github.io/post/ubuntu-firewall/</loc>
@@ -117,9 +126,6 @@
     <lastmod>2024-02-28T21:15:49+08:00</lastmod>
   </url><url>
     <loc>https://Lu0key.github.io/tags/flask/</loc>
-    <lastmod>2024-02-28T17:14:54+08:00</lastmod>
-  </url><url>
-    <loc>https://Lu0key.github.io/tags/python/</loc>
     <lastmod>2024-02-28T17:14:54+08:00</lastmod>
   </url><url>
     <loc>https://Lu0key.github.io/post/detect-server-status/</loc>
