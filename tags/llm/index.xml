@@ -35,7 +35,8 @@ import whisper import time import os audio_name = &amp;#34;1.wav&amp;#34; model_
       <guid>https://Lu0key.github.io/post/ali-text2video-lm/</guid>
       <description>阿里文本生成视频大模型试用 用的是阿里的文本生成视频大模型，地址
 运行环境下载
-# 用的python 3.9 conda create -n t2vtest python=3.9 conda activate t2vtest pip install modelscope==1.4.2 pip install open_clip_torch pip install pytorch-lightning # modelscope.pipelines.multi_modal.text_to_video_synthesis_pipeline requires the opencv library but it was not found in your environment. # 解决方法 pip install opencv-python addict==2.4.0 aiohttp==3.9.3 aiosignal==1.3.1 aliyun-python-sdk-core==2.15.0 aliyun-python-sdk-kms==2.16.2 async-timeout==4.0.3 attrs==23.2.0 certifi==2024.2.2 cffi==1.16.0 charset-normalizer==3.3.2 crcmod==1.7 cryptography==42.0.5 datasets==2.8.0 dill==0.3.6 einops==0.7.0 filelock==3.13.1 frozenlist==1.4.1 fsspec==2024.2.0 ftfy==6.1.3 gast==0.5.4 huggingface-hub==0.21.4 idna==3.6 importlib_metadata==7.0.2 Jinja2==3.1.3 jmespath==0.10.0 jsonplus==0.8.0 lightning-utilities==0.10.1 MarkupSafe==2.1.5 modelscope==1.</description>
+# 用的python 3.9 conda create -n t2vtest python=3.9 conda activate t2vtest pip install modelscope==1.4.2 pip install open_clip_torch pip install pytorch-lightning # modelscope.pipelines.multi_modal.text_to_video_synthesis_pipeline requires the opencv library but it was not found in your environment. # 解决方法 pip install opencv-python {% details 按照上面的安装即可, 然后就OK了, 安装后的环境状态如下. %}
+addict==2.4.0 aiohttp==3.9.3 aiosignal==1.3.1 aliyun-python-sdk-core==2.15.0 aliyun-python-sdk-kms==2.16.2 async-timeout==4.0.3 attrs==23.2.0 certifi==2024.2.2 cffi==1.16.0 charset-normalizer==3.3.2 crcmod==1.7 cryptography==42.0.5 datasets==2.8.0 dill==0.3.6 einops==0.7.0 filelock==3.13.1 frozenlist==1.4.1 fsspec==2024.2.0 ftfy==6.1.3 gast==0.5.4 huggingface-hub==0.21.4 idna==3.6 importlib_metadata==7.</description>
     </item>
     
   </channel>
