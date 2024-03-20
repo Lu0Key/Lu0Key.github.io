@@ -16,14 +16,12 @@
 <meta name="twitter:title" content="阿里文生视频大模型试用(text-to-video-synthesis)"/>
 <meta name="twitter:description" content="阿里文本生成视频大模型试用 用的是阿里的文本生成视频大模型，地址
 运行环境下载
-# 用的python 3.9 conda create -n t2vtest python=3.9 conda activate t2vtest pip install modelscope==1.4.2 pip install open_clip_torch pip install pytorch-lightning # modelscope.pipelines.multi_modal.text_to_video_synthesis_pipeline requires the opencv library but it was not found in your environment. # 解决方法 pip install opencv-python 安装好后的 requirements
-addict==2.4.0 aiohttp==3.9.3 aiosignal==1.3.1 aliyun-python-sdk-core==2.15.0 aliyun-python-sdk-kms==2.16.2 async-timeout==4.0.3 attrs==23.2.0 certifi==2024.2.2 cffi==1.16.0 charset-normalizer==3.3.2 crcmod==1.7 cryptography==42.0.5 datasets==2.8.0 dill==0.3.6 einops==0.7.0 filelock==3.13.1 frozenlist==1.4.1 fsspec==2024.2.0 ftfy==6.1.3 gast==0.5.4 huggingface-hub==0.21.4 idna==3.6 importlib_metadata==7.0.2 Jinja2==3.1.3 jmespath==0.10.0 jsonplus==0.8.0 lightning-utilities==0."/>
+# 用的python 3.9 conda create -n t2vtest python=3.9 conda activate t2vtest pip install modelscope==1.4.2 pip install open_clip_torch pip install pytorch-lightning # modelscope.pipelines.multi_modal.text_to_video_synthesis_pipeline requires the opencv library but it was not found in your environment. # 解决方法 pip install opencv-python addict==2.4.0 aiohttp==3.9.3 aiosignal==1.3.1 aliyun-python-sdk-core==2.15.0 aliyun-python-sdk-kms==2.16.2 async-timeout==4.0.3 attrs==23.2.0 certifi==2024.2.2 cffi==1.16.0 charset-normalizer==3.3.2 crcmod==1.7 cryptography==42.0.5 datasets==2.8.0 dill==0.3.6 einops==0.7.0 filelock==3.13.1 frozenlist==1.4.1 fsspec==2024.2.0 ftfy==6.1.3 gast==0.5.4 huggingface-hub==0.21.4 idna==3.6 importlib_metadata==7.0.2 Jinja2==3.1.3 jmespath==0.10.0 jsonplus==0.8.0 lightning-utilities==0.10.1 MarkupSafe==2.1.5 modelscope==1."/>
 
     <meta property="og:title" content="阿里文生视频大模型试用(text-to-video-synthesis)" />
 <meta property="og:description" content="阿里文本生成视频大模型试用 用的是阿里的文本生成视频大模型，地址
 运行环境下载
-# 用的python 3.9 conda create -n t2vtest python=3.9 conda activate t2vtest pip install modelscope==1.4.2 pip install open_clip_torch pip install pytorch-lightning # modelscope.pipelines.multi_modal.text_to_video_synthesis_pipeline requires the opencv library but it was not found in your environment. # 解决方法 pip install opencv-python 安装好后的 requirements
-addict==2.4.0 aiohttp==3.9.3 aiosignal==1.3.1 aliyun-python-sdk-core==2.15.0 aliyun-python-sdk-kms==2.16.2 async-timeout==4.0.3 attrs==23.2.0 certifi==2024.2.2 cffi==1.16.0 charset-normalizer==3.3.2 crcmod==1.7 cryptography==42.0.5 datasets==2.8.0 dill==0.3.6 einops==0.7.0 filelock==3.13.1 frozenlist==1.4.1 fsspec==2024.2.0 ftfy==6.1.3 gast==0.5.4 huggingface-hub==0.21.4 idna==3.6 importlib_metadata==7.0.2 Jinja2==3.1.3 jmespath==0.10.0 jsonplus==0.8.0 lightning-utilities==0." />
+# 用的python 3.9 conda create -n t2vtest python=3.9 conda activate t2vtest pip install modelscope==1.4.2 pip install open_clip_torch pip install pytorch-lightning # modelscope.pipelines.multi_modal.text_to_video_synthesis_pipeline requires the opencv library but it was not found in your environment. # 解决方法 pip install opencv-python addict==2.4.0 aiohttp==3.9.3 aiosignal==1.3.1 aliyun-python-sdk-core==2.15.0 aliyun-python-sdk-kms==2.16.2 async-timeout==4.0.3 attrs==23.2.0 certifi==2024.2.2 cffi==1.16.0 charset-normalizer==3.3.2 crcmod==1.7 cryptography==42.0.5 datasets==2.8.0 dill==0.3.6 einops==0.7.0 filelock==3.13.1 frozenlist==1.4.1 fsspec==2024.2.0 ftfy==6.1.3 gast==0.5.4 huggingface-hub==0.21.4 idna==3.6 importlib_metadata==7.0.2 Jinja2==3.1.3 jmespath==0.10.0 jsonplus==0.8.0 lightning-utilities==0.10.1 MarkupSafe==2.1.5 modelscope==1." />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://Lu0key.github.io/post/ali-text2video-lm/" /><meta property="article:section" content="post" />
 <meta property="article:published_time" content="2024-03-10T20:17:49&#43;08:00" />
@@ -85,7 +83,7 @@ pip install pytorch-lightning
 <span style="color:#75715e"># modelscope.pipelines.multi_modal.text_to_video_synthesis_pipeline requires the opencv library but it was not found in your environment.</span>
 <span style="color:#75715e"># 解决方法</span>
 pip install opencv-python
-</code></pre></div><p>安装好后的 <code>requirements</code></p>
+</code></pre></div><!-- raw HTML omitted -->
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-text" data-lang="text">addict==2.4.0
 aiohttp==3.9.3
 aiosignal==1.3.1
@@ -172,7 +170,8 @@ xxhash==3.4.1
 yapf==0.40.2
 yarl==1.9.4
 zipp==3.17.0
-</code></pre></div><p>这里下载模型到目录 <code>text-to-video-synthesis</code> 下, 然后就可以用下面的代码测试了.</p>
+</code></pre></div><!-- raw HTML omitted -->
+<p>这里下载模型到目录 <code>text-to-video-synthesis</code> 下, 然后就可以用下面的代码测试了.</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#f92672">from</span> modelscope.pipelines <span style="color:#f92672">import</span> pipeline
 <span style="color:#f92672">from</span> modelscope.outputs <span style="color:#f92672">import</span> OutputKeys
 
@@ -189,6 +188,7 @@ output_video_path <span style="color:#f92672">=</span> p(test_text, output_video
 
 <span style="color:#66d9ef">print</span>(<span style="color:#e6db74">&#39;Time:&#39;</span>, time<span style="color:#f92672">.</span>time() <span style="color:#f92672">-</span> start_time)
 </code></pre></div><p>遇到了一些抽象的问题, 不知道为什么之前A服务器上的可以用, 然后到B服务器上配置的时候就用不了了, 用的是modelscope提供的git下载, 应该是下载的内容坏了, 但是坏的很一致, 不知道为什么, 删了又下, 两次的 md5 值都是一样的. 最后解决方案就是从 A 服务器上把模型下载下来, 然后上传到 B 服务器上, 就OK了&hellip;</p>
+<p>不过这个模型效果一般, 玩玩, 了解一下还行.</p>
 
     </div>
     <div class="post-footer">
