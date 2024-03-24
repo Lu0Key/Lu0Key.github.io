@@ -6,7 +6,27 @@
     <description>Recent content in MySQL on 洛七的摸鱼池塘</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Mon, 04 Mar 2024 17:23:40 +0800</lastBuildDate><atom:link href="https://Lu0key.github.io/tags/mysql/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 24 Mar 2024 20:37:52 +0800</lastBuildDate><atom:link href="https://Lu0key.github.io/tags/mysql/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>MySQL 基础学习</title>
+      <link>https://Lu0key.github.io/post/mysql-base/</link>
+      <pubDate>Sun, 24 Mar 2024 20:37:52 +0800</pubDate>
+      
+      <guid>https://Lu0key.github.io/post/mysql-base/</guid>
+      <description>1. 数据库概述 1. 为什么要使用数据库 为了持久化数据, 把数据保存到可掉电式存储设备中以供之后使用。持久化的主要作用是将内存中的数据存储在关系型数据库中, 当然也可以存储在磁盘文件、XML 数据文件中。但是数据量大的时候MySQL效率更高.
+2. 数据库与数据库管理系统 2.1 数据库的相关概念
+ DB: 数据库(Database): 本质是一个文件系统 DBMS: 数据库管理系统(DB Management System): 一种操作数据库的软件, 用域建立、使用和维护数据库 SQL: 结构化查询语言  2.2 数据库与数据库管理系统的关系
+MySQL其实是数据库管理系统
+2.3 常见的数据库管理系统
+MySQL, Oracle, Redis, MongDB, PostgreSQL, SQLite 等等
+3. MySQL 介绍 Sun 收购 MySQL, 然后 Oracle 收购 SUN.
+MySQL 6.x 之后分为社区版和商业版
+MySQL 在32最大表文件最大4GB, 64位支持最大8TB表文件
+存储引擎一开始用的 MyISAM, 后面转为默认 InnoDB 引擎.
+Oracle 适合大公司, 对于费用不敏感的.
+4. RDMBS 和 非RDMBS RDBMS 是现在的一个主流, 使用最多的是 Oracle, MySQL, SQL server, 都是关系型数据库.</description>
+    </item>
+    
     <item>
       <title>Mysql 离线安装</title>
       <link>https://Lu0key.github.io/post/mysql-offline-installation/</link>
