@@ -133,6 +133,12 @@ nvcc -V
 <span style="color:#75715e"># Build cuda_12.2.r12.2/compiler.32965470_0</span>
 <span style="color:#75715e"># 一般这个时候 /usr/local/cuda 都是链接到了 cuda-12.2 上了(要注意是不是.)</span>
 <span style="color:#75715e"># 不知道为什么后面又要手动链接</span>
+
+<span style="color:#75715e"># 有时候需要在.bashrc中添加环境变量</span>
+export CUDA_HOME<span style="color:#f92672">=</span>/usr/local/cuda:$CUDA_HOME
+export PATH<span style="color:#f92672">=</span>/usr/local/cuda/bin:$PATH
+export LD_LIBRARY_PATH<span style="color:#f92672">=</span>/usr/local/cuda/lib64:$LD_LIBRARY_PATH
+export LIBRARY_PATH<span style="color:#f92672">=</span>/usr/local/cuda/lib64:$LIBRARY_PATH
 </code></pre></div><h2 id="更新-cudnn">更新 Cudnn</h2>
 <p>到<a href="https://developer.nvidia.com/cudnn">官网</a> 下载对应cuda版本的cudnn, 需要登录, 我下载的是 <code>tar.zx</code> 的, 然后上传到服务器上, 然后执行</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell"><span style="color:#75715e"># 解压</span>

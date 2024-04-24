@@ -6,7 +6,20 @@
     <description>Recent content in Posts on 洛七的摸鱼池塘</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Mon, 15 Apr 2024 16:21:19 +0800</lastBuildDate><atom:link href="https://Lu0key.github.io/post/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Wed, 24 Apr 2024 09:53:10 +0800</lastBuildDate><atom:link href="https://Lu0key.github.io/post/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Apifox使用</title>
+      <link>https://Lu0key.github.io/post/apifox%E4%BD%BF%E7%94%A8/</link>
+      <pubDate>Wed, 24 Apr 2024 09:53:10 +0800</pubDate>
+      
+      <guid>https://Lu0key.github.io/post/apifox%E4%BD%BF%E7%94%A8/</guid>
+      <description>因为之前用 apipost 的时候, 有些接口是需要先登录得到 token的, 把 token 放到请求头里才能正常用, 这样实在是太麻烦了
+痛点:
+ 大部分接口有前置操作, 还是重复的那种 一个接口写好了，别的接口崩了，需要能够一次请求所有接口，进行测试 JMeter 不会用, 麻烦  结果 apifox 都能解决
+我的方式是把需要前置操作的接口放到同一个目录下, 然后在目录中写好前置操作的脚本, 内容如下
+const echoPostRequest = { url: pm.environment.get(&amp;#39;BASE_URL&amp;#39;) + &amp;#34;/auth/login&amp;#34;, method: &amp;#34;POST&amp;#34;, header: { &amp;#34;Content-Type&amp;#34;: &amp;#34;application/json&amp;#34; }, body: { mode: &amp;#34;raw&amp;#34;, // 此处为 urlencoded  // 此处为 urlencoded  raw: JSON.stringify({ username: &amp;#39;admin&amp;#39;, password:&amp;#39;password&amp;#39; }), }, }; pm.sendRequest(echoPostRequest, function (err, response) { var token = response.json().data.token; pm.environment.set(&amp;#39;token&amp;#39;, token); var headers = pm.</description>
+    </item>
+    
     <item>
       <title>Scp命令</title>
       <link>https://Lu0key.github.io/post/scp%E5%91%BD%E4%BB%A4/</link>

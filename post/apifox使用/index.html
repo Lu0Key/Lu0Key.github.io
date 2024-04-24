@@ -1,0 +1,160 @@
+<!doctype html>
+<html lang="en-us">
+  <head>
+    <title>Apifox使用 // 洛七的摸鱼池塘</title>
+    <link rel="shortcut icon" href="/favicon.ico" />
+    <meta charset="utf-8" />
+    <meta name="generator" content="Hugo 0.81.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="author" content="洛七" />
+    <meta name="description" content="" />
+    <link rel="stylesheet" href="/css/main.min.0fb49e70a30412f97ddfc418e18fefef1d9fcdebe45f634dbbba768b00fe1eec.css" />
+    
+
+    
+    <meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Apifox使用"/>
+<meta name="twitter:description" content="因为之前用 apipost 的时候, 有些接口是需要先登录得到 token的, 把 token 放到请求头里才能正常用, 这样实在是太麻烦了
+痛点:
+ 大部分接口有前置操作, 还是重复的那种 一个接口写好了，别的接口崩了，需要能够一次请求所有接口，进行测试 JMeter 不会用, 麻烦  结果 apifox 都能解决
+我的方式是把需要前置操作的接口放到同一个目录下, 然后在目录中写好前置操作的脚本, 内容如下
+const echoPostRequest = { url: pm.environment.get(&#39;BASE_URL&#39;) &#43; &#34;/auth/login&#34;, method: &#34;POST&#34;, header: { &#34;Content-Type&#34;: &#34;application/json&#34; }, body: { mode: &#34;raw&#34;, // 此处为 urlencoded  // 此处为 urlencoded  raw: JSON.stringify({ username: &#39;admin&#39;, password:&#39;password&#39; }), }, }; pm.sendRequest(echoPostRequest, function (err, response) { var token = response.json().data.token; pm.environment.set(&#39;token&#39;, token); var headers = pm."/>
+
+    <meta property="og:title" content="Apifox使用" />
+<meta property="og:description" content="因为之前用 apipost 的时候, 有些接口是需要先登录得到 token的, 把 token 放到请求头里才能正常用, 这样实在是太麻烦了
+痛点:
+ 大部分接口有前置操作, 还是重复的那种 一个接口写好了，别的接口崩了，需要能够一次请求所有接口，进行测试 JMeter 不会用, 麻烦  结果 apifox 都能解决
+我的方式是把需要前置操作的接口放到同一个目录下, 然后在目录中写好前置操作的脚本, 内容如下
+const echoPostRequest = { url: pm.environment.get(&#39;BASE_URL&#39;) &#43; &#34;/auth/login&#34;, method: &#34;POST&#34;, header: { &#34;Content-Type&#34;: &#34;application/json&#34; }, body: { mode: &#34;raw&#34;, // 此处为 urlencoded  // 此处为 urlencoded  raw: JSON.stringify({ username: &#39;admin&#39;, password:&#39;password&#39; }), }, }; pm.sendRequest(echoPostRequest, function (err, response) { var token = response.json().data.token; pm.environment.set(&#39;token&#39;, token); var headers = pm." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://Lu0key.github.io/post/apifox%E4%BD%BF%E7%94%A8/" /><meta property="article:section" content="post" />
+<meta property="article:published_time" content="2024-04-24T09:53:10&#43;08:00" />
+<meta property="article:modified_time" content="2024-04-24T09:53:10&#43;08:00" />
+
+
+
+  </head>
+  <body>
+    <header class="app-header">
+      <a href="https://Lu0key.github.io/"><img class="app-header-avatar" src="/avatar.jpg" alt="洛七" /></a>
+      <span class="app-header-title">洛七的摸鱼池塘</span>
+      <nav class="app-header-menu">
+          <a class="app-header-menu-item" href="/tags/">Tags</a>
+      </nav>
+      <p>即将没书读的咸鱼</p>
+    </header>
+    <main class="app-container">
+      
+  <article class="post">
+    <header class="post-header">
+      <h1 class ="post-title">Apifox使用</h1>
+      <div class="post-meta">
+        <div>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-calendar">
+  <title>calendar</title>
+  <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line>
+</svg>
+          Apr 24, 2024
+        </div>
+        <div>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-clock">
+  <title>clock</title>
+  <circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline>
+</svg>
+          2 min read
+        </div>
+      </div>
+    </header>
+    <div class="post-content">
+      <p>因为之前用 apipost 的时候, 有些接口是需要先登录得到 token的, 把 token 放到请求头里才能正常用, 这样实在是太麻烦了</p>
+<p>痛点:</p>
+<ul>
+<li>大部分接口有前置操作, 还是重复的那种</li>
+<li>一个接口写好了，别的接口崩了，需要能够一次请求所有接口，进行测试</li>
+<li>JMeter 不会用, 麻烦</li>
+</ul>
+<p>结果 apifox 都能解决</p>
+<p>我的方式是把需要前置操作的接口放到同一个目录下, 然后在目录中写好前置操作的脚本, 内容如下</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#66d9ef">const</span> <span style="color:#a6e22e">echoPostRequest</span> <span style="color:#f92672">=</span> {
+  <span style="color:#a6e22e">url</span><span style="color:#f92672">:</span> <span style="color:#a6e22e">pm</span>.<span style="color:#a6e22e">environment</span>.<span style="color:#a6e22e">get</span>(<span style="color:#e6db74">&#39;BASE_URL&#39;</span>) <span style="color:#f92672">+</span> <span style="color:#e6db74">&#34;/auth/login&#34;</span>,
+  <span style="color:#a6e22e">method</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;POST&#34;</span>,
+  <span style="color:#a6e22e">header</span><span style="color:#f92672">:</span> {
+   <span style="color:#e6db74">&#34;Content-Type&#34;</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;application/json&#34;</span>
+  },
+  <span style="color:#a6e22e">body</span><span style="color:#f92672">:</span> {
+    <span style="color:#a6e22e">mode</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;raw&#34;</span>, <span style="color:#75715e">// 此处为 urlencoded
+</span><span style="color:#75715e"></span>    <span style="color:#75715e">// 此处为 urlencoded
+</span><span style="color:#75715e"></span>    <span style="color:#a6e22e">raw</span><span style="color:#f92672">:</span> <span style="color:#a6e22e">JSON</span>.<span style="color:#a6e22e">stringify</span>({ <span style="color:#a6e22e">username</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;admin&#39;</span>, <span style="color:#a6e22e">password</span><span style="color:#f92672">:</span><span style="color:#e6db74">&#39;password&#39;</span> }),
+  },
+};
+<span style="color:#a6e22e">pm</span>.<span style="color:#a6e22e">sendRequest</span>(<span style="color:#a6e22e">echoPostRequest</span>, <span style="color:#66d9ef">function</span> (<span style="color:#a6e22e">err</span>, <span style="color:#a6e22e">response</span>) {
+        <span style="color:#66d9ef">var</span> <span style="color:#a6e22e">token</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">response</span>.<span style="color:#a6e22e">json</span>().<span style="color:#a6e22e">data</span>.<span style="color:#a6e22e">token</span>;
+        <span style="color:#a6e22e">pm</span>.<span style="color:#a6e22e">environment</span>.<span style="color:#a6e22e">set</span>(<span style="color:#e6db74">&#39;token&#39;</span>, <span style="color:#a6e22e">token</span>);
+        <span style="color:#66d9ef">var</span> <span style="color:#a6e22e">headers</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">pm</span>.<span style="color:#a6e22e">request</span>.<span style="color:#a6e22e">headers</span>;
+
+        <span style="color:#a6e22e">headers</span>.<span style="color:#a6e22e">upsert</span>({
+            <span style="color:#a6e22e">key</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;token&#39;</span>,
+            <span style="color:#a6e22e">value</span><span style="color:#f92672">:</span> <span style="color:#a6e22e">pm</span>.<span style="color:#a6e22e">environment</span>.<span style="color:#a6e22e">get</span>(<span style="color:#e6db74">&#34;token&#34;</span>),
+        });
+      });
+
+</code></pre></div><p>然后使用的时候只要在接口里设置 <code>{{token}}</code> 就可以了</p>
+<p>可能用的格式</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"> <span style="color:#75715e">// body 为 x-www-form-urlencoded 格式
+</span><span style="color:#75715e"></span>  <span style="color:#a6e22e">body</span><span style="color:#f92672">:</span> {
+    <span style="color:#a6e22e">mode</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;urlencoded&#34;</span>, <span style="color:#75715e">// 此处为 urlencoded
+</span><span style="color:#75715e"></span>    <span style="color:#75715e">// 此处为 urlencoded
+</span><span style="color:#75715e"></span>    <span style="color:#a6e22e">urlencoded</span><span style="color:#f92672">:</span> [
+      { <span style="color:#a6e22e">key</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;account&#34;</span>, <span style="color:#a6e22e">value</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;apifox&#34;</span> },
+      { <span style="color:#a6e22e">key</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;password&#34;</span>, <span style="color:#a6e22e">value</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;123456&#34;</span> },
+    ],
+  },
+  <span style="color:#75715e">/*
+</span><span style="color:#75715e">  // body 为 form-data 格式
+</span><span style="color:#75715e">  body: {
+</span><span style="color:#75715e">    mode: &#39;formdata&#39;, // 此处为 formdata
+</span><span style="color:#75715e">    // 此处为 formdata
+</span><span style="color:#75715e">    formdata: [
+</span><span style="color:#75715e">      { key: &#39;account&#39;, value: &#39;apifox&#39; },
+</span><span style="color:#75715e">      { key: &#39;password&#39;, value: &#39;123456&#39; }
+</span><span style="color:#75715e">    ]
+</span><span style="color:#75715e">  }
+</span><span style="color:#75715e">
+</span><span style="color:#75715e">  // body 为 json 格式
+</span><span style="color:#75715e">  header: {
+</span><span style="color:#75715e">    &#34;Content-Type&#34;: &#34;application/json&#34;, // 注意：header 需要加上 Content-Type
+</span><span style="color:#75715e">  },
+</span><span style="color:#75715e">  body: {
+</span><span style="color:#75715e">    mode: &#39;raw&#39;,// 此处为 raw
+</span><span style="color:#75715e">    raw: JSON.stringify({ account: &#39;apifox&#39;, password:&#39;123456&#39; }), // 序列化后的 json 字符串
+</span><span style="color:#75715e">  }
+</span><span style="color:#75715e">
+</span><span style="color:#75715e">  // body 为 raw 或 json 格式
+</span><span style="color:#75715e">  body: {
+</span><span style="color:#75715e">    mode: &#39;raw&#39;,
+</span><span style="color:#75715e">    raw: &#39;此处为 body 内容&#39;,
+</span><span style="color:#75715e">  }
+</span><span style="color:#75715e">  */</span>
+</code></pre></div><p>断言</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#75715e">// 对返回结果进行断言
+</span><span style="color:#75715e"></span><span style="color:#a6e22e">pm</span>.<span style="color:#a6e22e">sendRequest</span>(<span style="color:#e6db74">&#34;https://postman-echo.com/get&#34;</span>, <span style="color:#66d9ef">function</span>(<span style="color:#a6e22e">err</span>, <span style="color:#a6e22e">res</span>) {
+  <span style="color:#66d9ef">if</span> (<span style="color:#a6e22e">err</span>) {
+    <span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#a6e22e">err</span>);
+  }
+  <span style="color:#a6e22e">pm</span>.<span style="color:#a6e22e">test</span>(<span style="color:#e6db74">&#34;response should be okay to process&#34;</span>, <span style="color:#66d9ef">function</span>() {
+    <span style="color:#a6e22e">pm</span>.<span style="color:#a6e22e">expect</span>(<span style="color:#a6e22e">err</span>).<span style="color:#a6e22e">to</span>.<span style="color:#a6e22e">equal</span>(<span style="color:#66d9ef">null</span>);
+    <span style="color:#a6e22e">pm</span>.<span style="color:#a6e22e">expect</span>(<span style="color:#a6e22e">res</span>).<span style="color:#a6e22e">to</span>.<span style="color:#a6e22e">have</span>.<span style="color:#a6e22e">property</span>(<span style="color:#e6db74">&#34;code&#34;</span>, <span style="color:#ae81ff">200</span>);
+    <span style="color:#a6e22e">pm</span>.<span style="color:#a6e22e">expect</span>(<span style="color:#a6e22e">res</span>).<span style="color:#a6e22e">to</span>.<span style="color:#a6e22e">have</span>.<span style="color:#a6e22e">property</span>(<span style="color:#e6db74">&#34;status&#34;</span>, <span style="color:#e6db74">&#34;OK&#34;</span>);
+  });
+});
+</code></pre></div><p>Apifox 也可以直接进行性能测试</p>
+
+    </div>
+    <div class="post-footer">
+      
+    </div>
+  </article>
+
+    </main>
+  </body>
+</html>
