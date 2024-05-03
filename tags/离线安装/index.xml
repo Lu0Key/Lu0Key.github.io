@@ -6,7 +6,20 @@
     <description>Recent content in 离线安装 on 洛七的摸鱼池塘</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Fri, 03 May 2024 10:35:17 +0800</lastBuildDate><atom:link href="https://Lu0key.github.io/tags/%E7%A6%BB%E7%BA%BF%E5%AE%89%E8%A3%85/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Fri, 03 May 2024 14:36:01 +0800</lastBuildDate><atom:link href="https://Lu0key.github.io/tags/%E7%A6%BB%E7%BA%BF%E5%AE%89%E8%A3%85/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>离线安装 JDK</title>
+      <link>https://Lu0key.github.io/post/offline-installation-java/</link>
+      <pubDate>Fri, 03 May 2024 14:36:01 +0800</pubDate>
+      
+      <guid>https://Lu0key.github.io/post/offline-installation-java/</guid>
+      <description>环境 Ubuntu 22.04, 可以在这里 https://docs.aws.amazon.com/corretto/latest/corretto-17-ug/downloads-list.html 下载最新版本的 JDK, 但是为了环境的稳定，我们需要一个固定的版本, 一个固定的下载源. 可以在这里找到所有版本 https://github.com/corretto/corretto-17/releases
+这里使用的版本是 openjdk 的 17.0.8.8.1
+本地文件在 /home/xxx/environments/amazon-corretto-17.0.8.8.1-linux-x64.tar.gz
+tar -xzvf /home/xxx/environments/amazon-corretto-17.0.8.8.1-linux-x64.tar.gz 解压文件, 并在 ~/.bashrc 的里面增加两行
+# 这里看你真实的路径 export JAVA_HOME=/home/xxx/environments/amazon-corretto-17.0.8.8.1-linux-x64 export PATH=$JAVA_HOME/bin:$PATH # 保存文件, 然后执行 source ~/.bashrc # 这时候就应该就能正常用了 java -version # openjdk version &amp;#34;17.0.8.1&amp;#34; 2023-08-22 LTS # OpenJDK Runtime Environment Corretto-17.0.8.8.1 (build 17.0.8.1+8-LTS) # OpenJDK 64-Bit Server VM Corretto-17.0.8.8.1 (build 17.0.8.1+8-LTS, mixed mode, sharing) </description>
+    </item>
+    
     <item>
       <title>离线安装 NodeJs</title>
       <link>https://Lu0key.github.io/post/offline-installation-nodejs/</link>
