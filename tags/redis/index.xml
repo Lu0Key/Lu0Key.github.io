@@ -9,10 +9,10 @@
     <lastBuildDate>Fri, 01 Mar 2024 15:53:03 +0800</lastBuildDate><atom:link href="https://Lu0key.github.io/tags/redis/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Redis 离线安装</title>
-      <link>https://Lu0key.github.io/post/redis-offline-installation/</link>
+      <link>https://Lu0key.github.io/post/offline-installation-redis/</link>
       <pubDate>Fri, 01 Mar 2024 15:53:03 +0800</pubDate>
       
-      <guid>https://Lu0key.github.io/post/redis-offline-installation/</guid>
+      <guid>https://Lu0key.github.io/post/offline-installation-redis/</guid>
       <description>下载 需要以下内容
  redis make build-essential pkg-config libdpkg-perl  安装 tar -zxvf redis-7.2.2.tar.gz cd redis-7.2.2 make test &amp;amp;&amp;amp; make # Command &amp;#39;make&amp;#39; not found, but can be installed with: # sudo apt install make # version 4.3-4.1build1, or # sudo apt install make-guile # version 4.3-4.1build1 # 因此需要为离线环境安装 make sudo apt-get download make # 这里能下下来 make 所需的 deb 包, 到时候迁移到离线环境 sudo dpkg -i make_4.3-4.1build1_amd64.deb # 然后再回到 redis 进行测试 sudo make test &amp;amp;&amp;amp; make # /bin/sh: 1: cc: not found # make[1]: *** [Makefile:436: adlist.</description>
     </item>

@@ -2,22 +2,28 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
+    <loc>https://Lu0key.github.io/tags/linux/</loc>
+    <lastmod>2024-05-03T10:35:17+08:00</lastmod>
+  </url><url>
+    <loc>https://Lu0key.github.io/post/</loc>
+    <lastmod>2024-05-03T10:35:17+08:00</lastmod>
+  </url><url>
+    <loc>https://Lu0key.github.io/tags/</loc>
+    <lastmod>2024-05-03T10:35:17+08:00</lastmod>
+  </url><url>
+    <loc>https://Lu0key.github.io/</loc>
+    <lastmod>2024-05-03T10:35:17+08:00</lastmod>
+  </url><url>
+    <loc>https://Lu0key.github.io/tags/%E7%A6%BB%E7%BA%BF%E5%AE%89%E8%A3%85/</loc>
+    <lastmod>2024-05-03T10:35:17+08:00</lastmod>
+  </url><url>
+    <loc>https://Lu0key.github.io/post/offline-installation-nodejs/</loc>
+    <lastmod>2024-05-03T10:35:17+08:00</lastmod>
+  </url><url>
     <loc>https://Lu0key.github.io/post/apifox%E4%BD%BF%E7%94%A8/</loc>
     <lastmod>2024-04-24T09:53:10+08:00</lastmod>
   </url><url>
-    <loc>https://Lu0key.github.io/post/</loc>
-    <lastmod>2024-04-24T09:53:10+08:00</lastmod>
-  </url><url>
-    <loc>https://Lu0key.github.io/</loc>
-    <lastmod>2024-04-24T09:53:10+08:00</lastmod>
-  </url><url>
-    <loc>https://Lu0key.github.io/tags/linux/</loc>
-    <lastmod>2024-04-15T16:21:19+08:00</lastmod>
-  </url><url>
     <loc>https://Lu0key.github.io/post/scp%E5%91%BD%E4%BB%A4/</loc>
-    <lastmod>2024-04-15T16:21:19+08:00</lastmod>
-  </url><url>
-    <loc>https://Lu0key.github.io/tags/</loc>
     <lastmod>2024-04-15T16:21:19+08:00</lastmod>
   </url><url>
     <loc>https://Lu0key.github.io/post/example-code-for-multi-gpu-training-using-ddp/</loc>
@@ -53,7 +59,7 @@
     <loc>https://Lu0key.github.io/post/ali-text2video-lm/</loc>
     <lastmod>2024-03-10T20:17:49+08:00</lastmod>
   </url><url>
-    <loc>https://Lu0key.github.io/post/mysql-offline-installation/</loc>
+    <loc>https://Lu0key.github.io/post/offline-installation-mysql/</loc>
     <lastmod>2024-03-04T17:23:40+08:00</lastmod>
   </url><url>
     <loc>https://Lu0key.github.io/post/ubuntu-firewall/</loc>
@@ -65,7 +71,7 @@
     <loc>https://Lu0key.github.io/tags/redis/</loc>
     <lastmod>2024-03-01T15:53:03+08:00</lastmod>
   </url><url>
-    <loc>https://Lu0key.github.io/post/redis-offline-installation/</loc>
+    <loc>https://Lu0key.github.io/post/offline-installation-redis/</loc>
     <lastmod>2024-03-01T15:53:03+08:00</lastmod>
   </url><url>
     <loc>https://Lu0key.github.io/tags/leetcode/</loc>

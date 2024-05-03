@@ -29,10 +29,10 @@ Oracle 适合大公司, 对于费用不敏感的.
     
     <item>
       <title>Mysql 离线安装</title>
-      <link>https://Lu0key.github.io/post/mysql-offline-installation/</link>
+      <link>https://Lu0key.github.io/post/offline-installation-mysql/</link>
       <pubDate>Mon, 04 Mar 2024 17:23:40 +0800</pubDate>
       
-      <guid>https://Lu0key.github.io/post/mysql-offline-installation/</guid>
+      <guid>https://Lu0key.github.io/post/offline-installation-mysql/</guid>
       <description>因为需要 MySQL 离线安装, 所以记录一下
 环境 Ubuntu 22.04
 安装内容 MySQL 8.0
