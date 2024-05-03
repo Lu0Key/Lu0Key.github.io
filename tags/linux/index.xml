@@ -14,7 +14,9 @@
       
       <guid>https://Lu0key.github.io/post/scp%E5%91%BD%E4%BB%A4/</guid>
       <description>有时候需要从别的服务器上下载文件，这时候就可以使用 scp 命令。或者上传文件到别的服务器上
-# 如果是传一整个文件的夹的话，需要加上 -r 参数  -r：递归复制整个目录。 -P &amp;lt;port&amp;gt;：指定远程主机的 SSH 端口，默认为 22。 -v：显示详细的调试信息。 -p：保留源文件的修改时间、访问时间和权限。 -q：安静模式，不显示传输过程的进度信息。 -C：开启压缩传输，加快文件传输速度。 -i &amp;lt;identity_file&amp;gt;：指定用于身份验证的私钥文件。 -l &amp;lt;limit&amp;gt;：限制传输速率，以 Kbps 为单位。  # 本机上传到别的服务器上 scp -P 600 \  -i id_rsa_pc \  -r ck-225 \  pc@xx.xx.xx.xx:/home/pc/ 这里我们就是需要把 ck-225 这个文件夹上传到IP为 xx.xx.xx.xx 的服务器上, 地址为 /home/pc/ 下, 用户为 pc, 因为端口是自定义的, 因此需要加上 -P 600 参数, 而且需要指定私钥文件, 因此需要加上 -i id_rsa_pc 参数</description>
+# 如果是传一整个文件的夹的话，需要加上 -r 参数  -r：递归复制整个目录。 -P &amp;lt;port&amp;gt;：指定远程主机的 SSH 端口，默认为 22。 -v：显示详细的调试信息。 -p：保留源文件的修改时间、访问时间和权限。 -q：安静模式，不显示传输过程的进度信息。 -C：开启压缩传输，加快文件传输速度。 -i &amp;lt;identity_file&amp;gt;：指定用于身份验证的私钥文件。 -l &amp;lt;limit&amp;gt;：限制传输速率，以 Kbps 为单位。  # 本机上传到别的服务器上 scp -P 600 \  -i id_rsa_pc \  -r ck-225 \  pc@xx.xx.xx.xx:/home/pc/ 这里我们就是需要把 ck-225 这个文件夹上传到IP为 xx.xx.xx.xx 的服务器上, 地址为 /home/pc/ 下, 用户为 pc, 因为端口是自定义的, 因此需要加上 -P 600 参数, 而且需要指定私钥文件, 因此需要加上 -i id_rsa_pc 参数
+使用 python 上传 严谨一点应该是 Windows 文件上传到 Linux 服务器
+因为尝试了一下，不知道为什么总有些文件上传的时候会上传丢了，百思不得其解, 就是部分文件总是上传不上去, 因此采用了个笨办法, 就是用 Python 一个文件一个文件的上传</description>
     </item>
     
     <item>
