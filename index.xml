@@ -6,7 +6,18 @@
     <description>Recent content on 洛七的摸鱼池塘</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Fri, 03 May 2024 14:36:01 +0800</lastBuildDate><atom:link href="https://Lu0key.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sat, 04 May 2024 16:38:18 +0800</lastBuildDate><atom:link href="https://Lu0key.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>MinIO 使用</title>
+      <link>https://Lu0key.github.io/post/minio-test/</link>
+      <pubDate>Sat, 04 May 2024 16:38:18 +0800</pubDate>
+      
+      <guid>https://Lu0key.github.io/post/minio-test/</guid>
+      <description>这里用的版本是
+wget https://dl.min.io/server/minio/release/linux-amd64/minio chmod +x minio MINIO_ROOT_USER=admin MINIO_ROOT_PASSWORD=password ./minio server /mnt/data --console-address &amp;#34;:9001&amp;#34; wget https://dl.min.io/client/mc/release/linux-amd64/mc chmod +x mc mc alias set myminio/ http://MINIO-SERVER MYUSER MYPASSWORD &amp;lt;!-- Java 中导入 --&amp;gt; &amp;lt;!-- MinIO --&amp;gt; &amp;lt;dependency&amp;gt; &amp;lt;groupId&amp;gt;io.minio&amp;lt;/groupId&amp;gt; &amp;lt;artifactId&amp;gt;minio&amp;lt;/artifactId&amp;gt; &amp;lt;version&amp;gt;8.5.9&amp;lt;/version&amp;gt; &amp;lt;/dependency&amp;gt; 之后应该更新一个 MinIOUtils.java 文件, 用于连接 MinIO 服务器.
+挂载到本地 # 安装s3fs sudo apt-get install s3fs # 创建密码文件 vim ~/.s3fs-passwd # 内容 # ACCESS_KEY:SECRET_KEY # 例如: 账号:密码 # 保存后赋予文件权限 chmod 600 ~/.s3fs-passwd # 然后需要 user_allow_other  # 在 /etc/fuse.</description>
+    </item>
+    
     <item>
       <title>离线安装 JDK</title>
       <link>https://Lu0key.github.io/post/offline-installation-java/</link>
