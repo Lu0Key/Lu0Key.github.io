@@ -6,7 +6,37 @@
     <description>Recent content on 洛七的摸鱼池塘</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Sat, 04 May 2024 16:38:18 +0800</lastBuildDate><atom:link href="https://Lu0key.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Wed, 06 Nov 2024 16:44:15 +0800</lastBuildDate><atom:link href="https://Lu0key.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>ESM3推理使用</title>
+      <link>https://Lu0key.github.io/post/esm3-test/</link>
+      <pubDate>Wed, 06 Nov 2024 16:44:15 +0800</pubDate>
+      
+      <guid>https://Lu0key.github.io/post/esm3-test/</guid>
+      <description>呃呃呃，又是一个需求，需要我做什么呢？给定一个氨基酸序列，对他进行可视化，就是预测这个序列的结构，需要一个快！的算法。经推荐，使用了ESM3来进行推理。
+https://github.com/evolutionaryscale/esm
+这个还蛮好用的，使用起来也很简单。
+使用首先需要准备两个环境，一个是软件环境，一个是系统环境。
+系统环境：
+ cuda 12 显卡驱动 一个显存20GB以上的显卡（不要也行，会慢很多）  软件环境：
+conda create -n esm3 python=3.10 conda activate esm3 pip install esm # 下下来发现版本是3.0.7.post1 还需要准备一下模型，如果你能访问huggingface，那么让程序自动下载就行，如果不行就用我下面这种方法
+首先到这个网站 可能需要登录填表。
+然后进去会看到一个 data 文件夹, 把这个文件夹和 index.py （这个是我们的python推理文件）放到同一个文件夹下。
+目录结构
+- index.py - data - weights - 1utn.pdb - ...... 推理代码
+from esm.models.esm3 import ESM3 from esm.sdk.api import ESM3InferenceClient, ESMProtein, GenerationConfig import torch import os # 这里要这个，只是有了这个才会读本地的模型文件，不然会实时到 huggingface下载 os.environ[&amp;#39;INFRA_PROVIDER&amp;#39;] = &amp;#39;叫什么无所谓，他只是判断这个环境变量是不是存在&amp;#39; model: ESM3InferenceClient = ESM3.from_pretrained(&amp;#34;esm3-sm-open-v1&amp;#34;).cuda() sequences = [ &amp;#34;MATKAVCVLKGDGPVQGIINFEQKESNGPVKVWGSIKGLTEGLHGFHVHEFGDNTAGCTSAGPHFNPLSRKHGGPKDEERHVGDLGNVTADKDGVADVSIEDSVISLSGDHCIIGRTLVVHEKADDLGKGGNEESTKTGNAGSRLACGVIGIAQ&amp;#34;, ] import time for index, sequence in enumerate(sequences): start = time.</description>
+    </item>
+    
+    <item>
+      <title>PC查看已连过的wifi密码</title>
+      <link>https://Lu0key.github.io/post/pc%E6%9F%A5%E7%9C%8B%E5%B7%B2%E8%BF%9E%E8%BF%87%E7%9A%84wifi%E5%AF%86%E7%A0%81/</link>
+      <pubDate>Sun, 26 May 2024 20:11:05 +0800</pubDate>
+      
+      <guid>https://Lu0key.github.io/post/pc%E6%9F%A5%E7%9C%8B%E5%B7%B2%E8%BF%9E%E8%BF%87%E7%9A%84wifi%E5%AF%86%E7%A0%81/</guid>
+      <description>命令行的方式 netsh wlan show profiles # 系统会返回存储在计算机上的无线网络配置文件列表 # 你要看具体某个wifi的密码，就用下面的命令 # 可以直接复制上面命令输出的wifi名称 netsh wlan show profile name=&amp;#34;wifi名称&amp;#34; key=clear 然后根据输出的结果, 找到 安全设置 下的 关键内容，就是wifi密码了。
+系统设置信息的的方式 </description>
+    </item>
+    
     <item>
       <title>MinIO 使用</title>
       <link>https://Lu0key.github.io/post/minio-test/</link>
@@ -194,7 +224,9 @@ MySQL 下载地址, 根据你的系统版本下载对应 DEB Bundle, 还需要 l
       <guid>https://Lu0key.github.io/post/ubuntu-firewall/</guid>
       <description>实验室用的服务器是 firewall, 但是偶尔会有需求需要开放端口, 因此记一下, 避免每次反复查
 查询开放的端口
-# 查询已开放的端口 sudo firewall-cmd --list-ports # 开放新的端口 sudo firewall-cmd --zone=public --add-port=8080/tcp --permanent # 重新加载防火墙配置 sudo firewall-cmd --reload 一般用这三条就够了.</description>
+# 查询已开放的端口 sudo firewall-cmd --list-ports # 开放新的端口 sudo firewall-cmd --zone=public --add-port=8080/tcp --permanent # 重新加载防火墙配置 sudo firewall-cmd --reload 一般用这三条就够了.
+ 另一台服务器用的是 iptables 防火墙, 也记录一下
+# 查看已开放的端口 sudo iptables -L # 开放新的端口 sudo iptables -A INPUT -p tcp --dport 8502 -j ACCEPT # 重启防火墙 sudo service iptables restart </description>
     </item>
     
     <item>
@@ -752,9 +784,7 @@ from flask import Flask, request, redirect, url_for, session, render_template im
 很恶心的一个问题, 经常掉驱动
 # 看到这个就恶心 nvidia-smi # NVIDIA-SMI has failed because it couldn&amp;#39;t communicate with the NVIDIA driver. Make sure that the latest NVIDIA driver is installed and running. 目前可能的一个原因是服务器重启之后自动更新了内核版本, 导致驱动与内核版本不匹配, 很抽象
 这里主要记录禁止内核自动升级, 和已经升级了的解决尝试
-禁止内核自动升级 # 关闭内核自动升级 sudo apt-mark hold linux-image-generic linux-headers-generic # 以后如果要恢复 # sudo apt-mark unhold linux-image-generic linux-headers-generic # 先看看现在的 Linux 内核版本 uname -r # 6.5.0-18-generic 尝试解决 原来都是直接下新的驱动就OK了, 这次安装新的驱动不行可能是因为要求的 gcc 版本更高了, 但是电脑里没有新版的 gcc
-看了别人很多解决方案, 这里还是选择不重启的方法
-两种选择:</description>
+禁止内核自动升级 # 关闭内核自动升级 sudo apt-mark hold linux-image-generic linux-headers-generic # 以后如果要恢复 # sudo apt-mark unhold linux-image-generic linux-headers-generic # 先看看现在的 Linux 内核版本 uname -r # 6.5.0-18-generic # 上面这样好像无效，还在测试中，现在新加了 # 这台服务器的内核版本是 6.5.0-28-generic # 先查查 dpkg -l | grep linux-image dpkg -l | grep linux-headers sudo apt-mark hold linux-image-6.</description>
     </item>
     
     <item>

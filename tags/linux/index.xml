@@ -93,7 +93,9 @@ MySQL 下载地址, 根据你的系统版本下载对应 DEB Bundle, 还需要 l
       <guid>https://Lu0key.github.io/post/ubuntu-firewall/</guid>
       <description>实验室用的服务器是 firewall, 但是偶尔会有需求需要开放端口, 因此记一下, 避免每次反复查
 查询开放的端口
-# 查询已开放的端口 sudo firewall-cmd --list-ports # 开放新的端口 sudo firewall-cmd --zone=public --add-port=8080/tcp --permanent # 重新加载防火墙配置 sudo firewall-cmd --reload 一般用这三条就够了.</description>
+# 查询已开放的端口 sudo firewall-cmd --list-ports # 开放新的端口 sudo firewall-cmd --zone=public --add-port=8080/tcp --permanent # 重新加载防火墙配置 sudo firewall-cmd --reload 一般用这三条就够了.
+ 另一台服务器用的是 iptables 防火墙, 也记录一下
+# 查看已开放的端口 sudo iptables -L # 开放新的端口 sudo iptables -A INPUT -p tcp --dport 8502 -j ACCEPT # 重启防火墙 sudo service iptables restart </description>
     </item>
     
     <item>
@@ -127,9 +129,7 @@ from flask import Flask, request, redirect, url_for, session, render_template im
 很恶心的一个问题, 经常掉驱动
 # 看到这个就恶心 nvidia-smi # NVIDIA-SMI has failed because it couldn&amp;#39;t communicate with the NVIDIA driver. Make sure that the latest NVIDIA driver is installed and running. 目前可能的一个原因是服务器重启之后自动更新了内核版本, 导致驱动与内核版本不匹配, 很抽象
 这里主要记录禁止内核自动升级, 和已经升级了的解决尝试
-禁止内核自动升级 # 关闭内核自动升级 sudo apt-mark hold linux-image-generic linux-headers-generic # 以后如果要恢复 # sudo apt-mark unhold linux-image-generic linux-headers-generic # 先看看现在的 Linux 内核版本 uname -r # 6.5.0-18-generic 尝试解决 原来都是直接下新的驱动就OK了, 这次安装新的驱动不行可能是因为要求的 gcc 版本更高了, 但是电脑里没有新版的 gcc
-看了别人很多解决方案, 这里还是选择不重启的方法
-两种选择:</description>
+禁止内核自动升级 # 关闭内核自动升级 sudo apt-mark hold linux-image-generic linux-headers-generic # 以后如果要恢复 # sudo apt-mark unhold linux-image-generic linux-headers-generic # 先看看现在的 Linux 内核版本 uname -r # 6.5.0-18-generic # 上面这样好像无效，还在测试中，现在新加了 # 这台服务器的内核版本是 6.5.0-28-generic # 先查查 dpkg -l | grep linux-image dpkg -l | grep linux-headers sudo apt-mark hold linux-image-6.</description>
     </item>
     
     <item>

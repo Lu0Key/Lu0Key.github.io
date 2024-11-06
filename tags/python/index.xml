@@ -6,7 +6,27 @@
     <description>Recent content in Python on 洛七的摸鱼池塘</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Mon, 01 Apr 2024 10:32:46 +0800</lastBuildDate><atom:link href="https://Lu0key.github.io/tags/python/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Wed, 06 Nov 2024 16:44:15 +0800</lastBuildDate><atom:link href="https://Lu0key.github.io/tags/python/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>ESM3推理使用</title>
+      <link>https://Lu0key.github.io/post/esm3-test/</link>
+      <pubDate>Wed, 06 Nov 2024 16:44:15 +0800</pubDate>
+      
+      <guid>https://Lu0key.github.io/post/esm3-test/</guid>
+      <description>呃呃呃，又是一个需求，需要我做什么呢？给定一个氨基酸序列，对他进行可视化，就是预测这个序列的结构，需要一个快！的算法。经推荐，使用了ESM3来进行推理。
+https://github.com/evolutionaryscale/esm
+这个还蛮好用的，使用起来也很简单。
+使用首先需要准备两个环境，一个是软件环境，一个是系统环境。
+系统环境：
+ cuda 12 显卡驱动 一个显存20GB以上的显卡（不要也行，会慢很多）  软件环境：
+conda create -n esm3 python=3.10 conda activate esm3 pip install esm # 下下来发现版本是3.0.7.post1 还需要准备一下模型，如果你能访问huggingface，那么让程序自动下载就行，如果不行就用我下面这种方法
+首先到这个网站 可能需要登录填表。
+然后进去会看到一个 data 文件夹, 把这个文件夹和 index.py （这个是我们的python推理文件）放到同一个文件夹下。
+目录结构
+- index.py - data - weights - 1utn.pdb - ...... 推理代码
+from esm.models.esm3 import ESM3 from esm.sdk.api import ESM3InferenceClient, ESMProtein, GenerationConfig import torch import os # 这里要这个，只是有了这个才会读本地的模型文件，不然会实时到 huggingface下载 os.environ[&amp;#39;INFRA_PROVIDER&amp;#39;] = &amp;#39;叫什么无所谓，他只是判断这个环境变量是不是存在&amp;#39; model: ESM3InferenceClient = ESM3.from_pretrained(&amp;#34;esm3-sm-open-v1&amp;#34;).cuda() sequences = [ &amp;#34;MATKAVCVLKGDGPVQGIINFEQKESNGPVKVWGSIKGLTEGLHGFHVHEFGDNTAGCTSAGPHFNPLSRKHGGPKDEERHVGDLGNVTADKDGVADVSIEDSVISLSGDHCIIGRTLVVHEKADDLGKGGNEESTKTGNAGSRLACGVIGIAQ&amp;#34;, ] import time for index, sequence in enumerate(sequences): start = time.</description>
+    </item>
+    
     <item>
       <title>DDP 多卡训练样例代码</title>
       <link>https://Lu0key.github.io/post/example-code-for-multi-gpu-training-using-ddp/</link>

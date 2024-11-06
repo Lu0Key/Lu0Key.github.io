@@ -1,0 +1,148 @@
+<!doctype html>
+<html lang="en-us">
+  <head>
+    <title>ESM3推理使用 // 洛七的摸鱼池塘</title>
+    <link rel="shortcut icon" href="/favicon.ico" />
+    <meta charset="utf-8" />
+    <meta name="generator" content="Hugo 0.81.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="author" content="洛七" />
+    <meta name="description" content="" />
+    <link rel="stylesheet" href="/css/main.min.0fb49e70a30412f97ddfc418e18fefef1d9fcdebe45f634dbbba768b00fe1eec.css" />
+    
+
+    
+    <meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="ESM3推理使用"/>
+<meta name="twitter:description" content="呃呃呃，又是一个需求，需要我做什么呢？给定一个氨基酸序列，对他进行可视化，就是预测这个序列的结构，需要一个快！的算法。经推荐，使用了ESM3来进行推理。
+https://github.com/evolutionaryscale/esm
+这个还蛮好用的，使用起来也很简单。
+使用首先需要准备两个环境，一个是软件环境，一个是系统环境。
+系统环境：
+ cuda 12 显卡驱动 一个显存20GB以上的显卡（不要也行，会慢很多）  软件环境：
+conda create -n esm3 python=3.10 conda activate esm3 pip install esm # 下下来发现版本是3.0.7.post1 还需要准备一下模型，如果你能访问huggingface，那么让程序自动下载就行，如果不行就用我下面这种方法
+首先到这个网站 可能需要登录填表。
+然后进去会看到一个 data 文件夹, 把这个文件夹和 index.py （这个是我们的python推理文件）放到同一个文件夹下。
+目录结构
+- index.py - data - weights - 1utn.pdb - ...... 推理代码
+from esm.models.esm3 import ESM3 from esm.sdk.api import ESM3InferenceClient, ESMProtein, GenerationConfig import torch import os # 这里要这个，只是有了这个才会读本地的模型文件，不然会实时到 huggingface下载 os.environ[&#39;INFRA_PROVIDER&#39;] = &#39;叫什么无所谓，他只是判断这个环境变量是不是存在&#39; model: ESM3InferenceClient = ESM3.from_pretrained(&#34;esm3-sm-open-v1&#34;).cuda() sequences = [ &#34;MATKAVCVLKGDGPVQGIINFEQKESNGPVKVWGSIKGLTEGLHGFHVHEFGDNTAGCTSAGPHFNPLSRKHGGPKDEERHVGDLGNVTADKDGVADVSIEDSVISLSGDHCIIGRTLVVHEKADDLGKGGNEESTKTGNAGSRLACGVIGIAQ&#34;, ] import time for index, sequence in enumerate(sequences): start = time."/>
+
+    <meta property="og:title" content="ESM3推理使用" />
+<meta property="og:description" content="呃呃呃，又是一个需求，需要我做什么呢？给定一个氨基酸序列，对他进行可视化，就是预测这个序列的结构，需要一个快！的算法。经推荐，使用了ESM3来进行推理。
+https://github.com/evolutionaryscale/esm
+这个还蛮好用的，使用起来也很简单。
+使用首先需要准备两个环境，一个是软件环境，一个是系统环境。
+系统环境：
+ cuda 12 显卡驱动 一个显存20GB以上的显卡（不要也行，会慢很多）  软件环境：
+conda create -n esm3 python=3.10 conda activate esm3 pip install esm # 下下来发现版本是3.0.7.post1 还需要准备一下模型，如果你能访问huggingface，那么让程序自动下载就行，如果不行就用我下面这种方法
+首先到这个网站 可能需要登录填表。
+然后进去会看到一个 data 文件夹, 把这个文件夹和 index.py （这个是我们的python推理文件）放到同一个文件夹下。
+目录结构
+- index.py - data - weights - 1utn.pdb - ...... 推理代码
+from esm.models.esm3 import ESM3 from esm.sdk.api import ESM3InferenceClient, ESMProtein, GenerationConfig import torch import os # 这里要这个，只是有了这个才会读本地的模型文件，不然会实时到 huggingface下载 os.environ[&#39;INFRA_PROVIDER&#39;] = &#39;叫什么无所谓，他只是判断这个环境变量是不是存在&#39; model: ESM3InferenceClient = ESM3.from_pretrained(&#34;esm3-sm-open-v1&#34;).cuda() sequences = [ &#34;MATKAVCVLKGDGPVQGIINFEQKESNGPVKVWGSIKGLTEGLHGFHVHEFGDNTAGCTSAGPHFNPLSRKHGGPKDEERHVGDLGNVTADKDGVADVSIEDSVISLSGDHCIIGRTLVVHEKADDLGKGGNEESTKTGNAGSRLACGVIGIAQ&#34;, ] import time for index, sequence in enumerate(sequences): start = time." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://Lu0key.github.io/post/esm3-test/" /><meta property="article:section" content="post" />
+<meta property="article:published_time" content="2024-11-06T16:44:15&#43;08:00" />
+<meta property="article:modified_time" content="2024-11-06T16:44:15&#43;08:00" />
+
+
+
+  </head>
+  <body>
+    <header class="app-header">
+      <a href="https://Lu0key.github.io/"><img class="app-header-avatar" src="/avatar.jpg" alt="洛七" /></a>
+      <span class="app-header-title">洛七的摸鱼池塘</span>
+      <nav class="app-header-menu">
+          <a class="app-header-menu-item" href="/tags/">Tags</a>
+      </nav>
+      <p>即将没书读的咸鱼</p>
+    </header>
+    <main class="app-container">
+      
+  <article class="post">
+    <header class="post-header">
+      <h1 class ="post-title">ESM3推理使用</h1>
+      <div class="post-meta">
+        <div>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-calendar">
+  <title>calendar</title>
+  <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line>
+</svg>
+          Nov 6, 2024
+        </div>
+        <div>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-clock">
+  <title>clock</title>
+  <circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline>
+</svg>
+          1 min read
+        </div>
+        <div>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-tag">
+  <title>tag</title>
+  <path d="M20.59 13.41l-7.17 7.17a2 2 0 0 1-2.83 0L2 12V2h10l8.59 8.59a2 2 0 0 1 0 2.82z"></path><line x1="7" y1="7" x2="7.01" y2="7"></line>
+</svg>
+              <a class="tag" href="https://Lu0key.github.io/tags/python/">Python</a>
+        </div>
+      </div>
+    </header>
+    <div class="post-content">
+      <p>呃呃呃，又是一个需求，需要我做什么呢？给定一个氨基酸序列，对他进行可视化，就是预测这个序列的结构，需要一个快！的算法。经推荐，使用了ESM3来进行推理。</p>
+<p><a href="https://github.com/evolutionaryscale/esm">https://github.com/evolutionaryscale/esm</a></p>
+<p>这个还蛮好用的，使用起来也很简单。</p>
+<p>使用首先需要准备两个环境，一个是软件环境，一个是系统环境。</p>
+<p>系统环境：</p>
+<ul>
+<li>cuda 12</li>
+<li>显卡驱动</li>
+<li>一个显存20GB以上的显卡（不要也行，会慢很多）</li>
+</ul>
+<p>软件环境：</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">conda create -n esm3 python<span style="color:#f92672">=</span>3.10
+conda activate esm3
+pip install esm
+<span style="color:#75715e"># 下下来发现版本是3.0.7.post1</span>
+</code></pre></div><p>还需要准备一下模型，如果你能访问huggingface，那么让程序自动下载就行，如果不行就用我下面这种方法</p>
+<p>首先到这个<a href="https://huggingface.co/EvolutionaryScale/esm3-sm-open-v1/tree/main">网站</a> 可能需要登录填表。</p>
+<p>然后进去会看到一个 <code>data</code> 文件夹, 把这个文件夹和 <code>index.py</code> （这个是我们的python推理文件）放到同一个文件夹下。</p>
+<p>目录结构</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-plaintext" data-lang="plaintext">- index.py
+- data
+    - weights
+    - 1utn.pdb
+    - ......
+</code></pre></div><p>推理代码</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#f92672">from</span> esm.models.esm3 <span style="color:#f92672">import</span> ESM3
+<span style="color:#f92672">from</span> esm.sdk.api <span style="color:#f92672">import</span> ESM3InferenceClient, ESMProtein, GenerationConfig
+<span style="color:#f92672">import</span> torch
+<span style="color:#f92672">import</span> os
+<span style="color:#75715e"># 这里要这个，只是有了这个才会读本地的模型文件，不然会实时到 huggingface下载</span>
+os<span style="color:#f92672">.</span>environ[<span style="color:#e6db74">&#39;INFRA_PROVIDER&#39;</span>] <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;叫什么无所谓，他只是判断这个环境变量是不是存在&#39;</span>
+
+model: ESM3InferenceClient <span style="color:#f92672">=</span> ESM3<span style="color:#f92672">.</span>from_pretrained(<span style="color:#e6db74">&#34;esm3-sm-open-v1&#34;</span>)<span style="color:#f92672">.</span>cuda()
+
+sequences <span style="color:#f92672">=</span> [
+    <span style="color:#e6db74">&#34;MATKAVCVLKGDGPVQGIINFEQKESNGPVKVWGSIKGLTEGLHGFHVHEFGDNTAGCTSAGPHFNPLSRKHGGPKDEERHVGDLGNVTADKDGVADVSIEDSVISLSGDHCIIGRTLVVHEKADDLGKGGNEESTKTGNAGSRLACGVIGIAQ&#34;</span>,
+]
+<span style="color:#f92672">import</span> time 
+<span style="color:#66d9ef">for</span> index, sequence <span style="color:#f92672">in</span> enumerate(sequences):
+    
+    start <span style="color:#f92672">=</span> time<span style="color:#f92672">.</span>time()
+    protein <span style="color:#f92672">=</span> ESMProtein()
+    protein<span style="color:#f92672">.</span>sequence <span style="color:#f92672">=</span> sequence
+    protein<span style="color:#f92672">.</span>coordinates <span style="color:#f92672">=</span> None
+    protein <span style="color:#f92672">=</span> model<span style="color:#f92672">.</span>generate(protein, GenerationConfig(track<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;structure&#34;</span>, num_steps<span style="color:#f92672">=</span><span style="color:#ae81ff">20</span>))
+    protein<span style="color:#f92672">.</span>to_pdb(f<span style="color:#e6db74">&#34;./{index}.pdb&#34;</span>)
+    <span style="color:#66d9ef">print</span>(f<span style="color:#e6db74">&#34;Time: {time.time() - start}&#34;</span>)
+    <span style="color:#66d9ef">print</span>(<span style="color:#e6db74">&#34;avg:&#34;</span>, len(sequence)<span style="color:#f92672">/</span>(time<span style="color:#f92672">.</span>time()<span style="color:#f92672">-</span>start),<span style="color:#e6db74">&#34;length:&#34;</span>, len(sequence))
+</code></pre></div><p>长1000的序列大概3-4秒，得到了pdb文件后，拖到这个<a href="https://molstar.org/viewer/">网页</a>里就可以查看了</p>
+
+    </div>
+    <div class="post-footer">
+      
+    </div>
+  </article>
+
+    </main>
+  </body>
+</html>

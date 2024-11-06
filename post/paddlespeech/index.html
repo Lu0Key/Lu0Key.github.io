@@ -526,7 +526,15 @@ tts(text<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;你
 <li><input checked="" disabled="" type="checkbox"> 不同模型的语音识别</li>
 <li><input checked="" disabled="" type="checkbox"> 不同模型的语音合成</li>
 </ul>
-
+<h2 id="问题">问题</h2>
+<pre><code>ImportError: cannot import name 'kaiser' from 'scipy.signal' (/home/szr/anaconda3/envs/llm/lib/python3.10/site-packages/scipy/signal/__init__.py)
+</code></pre><p>这个应该是 scipy 的版本不对, 只需要换一下 scipy 的版本应该就行了</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">pip install scipy<span style="color:#f92672">==</span>1.11.4
+<span style="color:#75715e"># 之前是 1.13.0</span>
+</code></pre></div><p>如果要指定使用某张显卡</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#f92672">import</span> paddle
+paddle<span style="color:#f92672">.</span>device<span style="color:#f92672">.</span>set_device(<span style="color:#e6db74">&#39;gpu:1&#39;</span>)
+</code></pre></div>
     </div>
     <div class="post-footer">
       

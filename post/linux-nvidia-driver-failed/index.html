@@ -18,18 +18,14 @@
 很恶心的一个问题, 经常掉驱动
 # 看到这个就恶心 nvidia-smi # NVIDIA-SMI has failed because it couldn&#39;t communicate with the NVIDIA driver. Make sure that the latest NVIDIA driver is installed and running. 目前可能的一个原因是服务器重启之后自动更新了内核版本, 导致驱动与内核版本不匹配, 很抽象
 这里主要记录禁止内核自动升级, 和已经升级了的解决尝试
-禁止内核自动升级 # 关闭内核自动升级 sudo apt-mark hold linux-image-generic linux-headers-generic # 以后如果要恢复 # sudo apt-mark unhold linux-image-generic linux-headers-generic # 先看看现在的 Linux 内核版本 uname -r # 6.5.0-18-generic 尝试解决 原来都是直接下新的驱动就OK了, 这次安装新的驱动不行可能是因为要求的 gcc 版本更高了, 但是电脑里没有新版的 gcc
-看了别人很多解决方案, 这里还是选择不重启的方法
-两种选择:"/>
+禁止内核自动升级 # 关闭内核自动升级 sudo apt-mark hold linux-image-generic linux-headers-generic # 以后如果要恢复 # sudo apt-mark unhold linux-image-generic linux-headers-generic # 先看看现在的 Linux 内核版本 uname -r # 6.5.0-18-generic # 上面这样好像无效，还在测试中，现在新加了 # 这台服务器的内核版本是 6.5.0-28-generic # 先查查 dpkg -l | grep linux-image dpkg -l | grep linux-headers sudo apt-mark hold linux-image-6."/>
 
     <meta property="og:title" content="Linux Nvidia 显卡掉驱动" />
 <meta property="og:description" content="环境: Ubuntu 22.04
 很恶心的一个问题, 经常掉驱动
 # 看到这个就恶心 nvidia-smi # NVIDIA-SMI has failed because it couldn&#39;t communicate with the NVIDIA driver. Make sure that the latest NVIDIA driver is installed and running. 目前可能的一个原因是服务器重启之后自动更新了内核版本, 导致驱动与内核版本不匹配, 很抽象
 这里主要记录禁止内核自动升级, 和已经升级了的解决尝试
-禁止内核自动升级 # 关闭内核自动升级 sudo apt-mark hold linux-image-generic linux-headers-generic # 以后如果要恢复 # sudo apt-mark unhold linux-image-generic linux-headers-generic # 先看看现在的 Linux 内核版本 uname -r # 6.5.0-18-generic 尝试解决 原来都是直接下新的驱动就OK了, 这次安装新的驱动不行可能是因为要求的 gcc 版本更高了, 但是电脑里没有新版的 gcc
-看了别人很多解决方案, 这里还是选择不重启的方法
-两种选择:" />
+禁止内核自动升级 # 关闭内核自动升级 sudo apt-mark hold linux-image-generic linux-headers-generic # 以后如果要恢复 # sudo apt-mark unhold linux-image-generic linux-headers-generic # 先看看现在的 Linux 内核版本 uname -r # 6.5.0-18-generic # 上面这样好像无效，还在测试中，现在新加了 # 这台服务器的内核版本是 6.5.0-28-generic # 先查查 dpkg -l | grep linux-image dpkg -l | grep linux-headers sudo apt-mark hold linux-image-6." />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://Lu0key.github.io/post/linux-nvidia-driver-failed/" /><meta property="article:section" content="post" />
 <meta property="article:published_time" content="2024-02-28T16:45:30&#43;08:00" />
@@ -92,6 +88,27 @@ sudo apt-mark hold linux-image-generic linux-headers-generic
 <span style="color:#75715e"># 先看看现在的 Linux 内核版本</span>
 uname -r
 <span style="color:#75715e"># 6.5.0-18-generic</span>
+
+<span style="color:#75715e">#  上面这样好像无效，还在测试中，现在新加了</span>
+<span style="color:#75715e"># 这台服务器的内核版本是 6.5.0-28-generic</span>
+<span style="color:#75715e"># 先查查</span>
+dpkg -l | grep linux-image
+dpkg -l | grep linux-headers
+sudo apt-mark hold linux-image-6.5.0-28-generic
+sudo apt-mark hold linux-headers-6.5.0-28-generic
+sudo apt-mark hold linux-image-generic-hwe-22.04
+
+sudo vim /etc/apt/apt.conf.d/50unattended-upgrades
+<span style="color:#75715e"># 设置黑名单</span>
+Unattended-Upgrade::Package-Blacklist <span style="color:#f92672">{</span>
+    <span style="color:#e6db74">&#34;linux-image-6.5.0-28-generic&#34;</span>;
+    <span style="color:#e6db74">&#34;linux-headers-6.5.0-28-generic&#34;</span>;
+    <span style="color:#e6db74">&#34;linux-image-generic-hwe-22.04&#34;</span>;
+<span style="color:#f92672">}</span>;
+
+<span style="color:#75715e"># 查看锁定状态</span>
+sudo apt-mark showhold
+
 </code></pre></div><h2 id="尝试解决">尝试解决</h2>
 <p>原来都是直接下新的驱动就OK了, 这次安装新的驱动不行可能是因为要求的 gcc 版本更高了, 但是电脑里没有新版的 gcc</p>
 <p>看了别人很多解决方案, 这里还是选择不重启的方法</p>
@@ -106,6 +123,9 @@ sudo apt install gcc-12
 sudo apt install g++-12
 
 sudo update-alternatives --install /usr/bin/gcc gcc /usr/bin/gcc-12 <span style="color:#ae81ff">1</span> --slave /usr/bin/g++ g++ /usr/bin/g++-12
+<span style="color:#75715e"># 然后之后可以用这个切换</span>
+sudo update-alternatives --config gcc
+<span style="color:#75715e"># 比如突然要切换回老的 gcc，这个切换了gcc，g++也会变</span>
 </code></pre></div><p>这条命令是在Ubuntu和其他基于Debian的Linux发行版中用来管理默认程序版本的。具体来说，它用于更新gcc（GNU C编译器）和g++（GNU C++编译器）的默认版本。</p>
 <p>下面是这条命令各部分的解释：</p>
 <ul>
