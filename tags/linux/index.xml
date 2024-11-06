@@ -6,7 +6,18 @@
     <description>Recent content in Linux on 洛七的摸鱼池塘</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Sat, 04 May 2024 16:38:18 +0800</lastBuildDate><atom:link href="https://Lu0key.github.io/tags/linux/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Wed, 06 Nov 2024 17:04:58 +0800</lastBuildDate><atom:link href="https://Lu0key.github.io/tags/linux/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Ubuntu 离线安装 Python 2.7</title>
+      <link>https://Lu0key.github.io/post/ubuntu-python2.7/</link>
+      <pubDate>Wed, 06 Nov 2024 17:04:58 +0800</pubDate>
+      
+      <guid>https://Lu0key.github.io/post/ubuntu-python2.7/</guid>
+      <description>1. 下载源码 进入官网 https://www.python.org/downloads/source/ Ctrl+F找到你需要的版本, 比如我下载的是 2.7.12
+ Download Gzipped source tarball 对应的拓展名是 tgz Download XZ compressed source tarball 对应的拓展名是 tar.xz  我这里下载的是 tgz 的版本, 解压文件
+2. 解压编译构建 # tgz 文件 # 我这里保存到了 python文件夹里 tar -xvf Python-2.7.12.tgz -C ~/python # tar.xz 文件 tar -xf Python-2.7.12.tar.xz cd Python-2.7.12 ./configure make sudo make install 3. 测试 python # 得到输出 # Python 2.7.12 (default, 一个时间) # 说明成功了. 4. 其他 后面发现这样装会没有 pip, 因此我们还要额外装一下pip, 选择对应的 pip 版本，在网站 下载 .</description>
+    </item>
+    
     <item>
       <title>MinIO 使用</title>
       <link>https://Lu0key.github.io/post/minio-test/</link>
