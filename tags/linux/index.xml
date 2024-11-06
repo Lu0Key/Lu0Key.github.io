@@ -6,7 +6,17 @@
     <description>Recent content in Linux on 洛七的摸鱼池塘</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Wed, 06 Nov 2024 17:08:56 +0800</lastBuildDate><atom:link href="https://Lu0key.github.io/tags/linux/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Wed, 06 Nov 2024 17:12:21 +0800</lastBuildDate><atom:link href="https://Lu0key.github.io/tags/linux/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Ubuntu 离线安装 Node8.16</title>
+      <link>https://Lu0key.github.io/post/ubuntu-offline-node8.16/</link>
+      <pubDate>Wed, 06 Nov 2024 17:12:21 +0800</pubDate>
+      
+      <guid>https://Lu0key.github.io/post/ubuntu-offline-node8.16/</guid>
+      <description>1. 下载源码 进入官网选择所需要的版本, 下载, 这里我选择 node-v8.16.0-linux-x64.tar.gz
+2. 解压 # 解压 tar -xvf node-v8.16.0-linux-x64.tar.gz -C ~/nodejs/ 3. 配置软链接 # 配置软链接 sudo ln -s ~/nodejs/node-v8.16.0-linux-x64/bin/node /usr/local/bin sudo ln -s ~/nodejs/node-v8.16.0-linux-x64/bin/npm /usr/local/bin </description>
+    </item>
+    
     <item>
       <title>Ubuntu 离线安装 Mysql5.7</title>
       <link>https://Lu0key.github.io/post/ubuntu-offline-install-mysql5.7/</link>
