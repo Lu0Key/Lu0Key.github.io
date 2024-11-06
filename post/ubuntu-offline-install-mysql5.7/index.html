@@ -1,0 +1,149 @@
+<!doctype html>
+<html lang="en-us">
+  <head>
+    <title>Ubuntu 离线安装 Mysql5.7 // 洛七的摸鱼池塘</title>
+    <link rel="shortcut icon" href="/favicon.ico" />
+    <meta charset="utf-8" />
+    <meta name="generator" content="Hugo 0.81.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="author" content="洛七" />
+    <meta name="description" content="" />
+    <link rel="stylesheet" href="/css/main.min.0fb49e70a30412f97ddfc418e18fefef1d9fcdebe45f634dbbba768b00fe1eec.css" />
+    
+
+    
+    <meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Ubuntu 离线安装 Mysql5.7"/>
+<meta name="twitter:description" content="记录一下在 Ubuntu 22.04 上安装 Mysql 5.7.42 的过程.
+1. 下载安装包 从官网下载安装包: https://downloads.mysql.com/archives/community/
+下载这个文件
+然后解压
+tar -xvf ./mysql-server_5.7.42-1ubuntu18.04_amd64.deb-bundle.tar # 这边一般直接tab补全就可以了 2. 开始安装 # 1. 安装 mysql-common sudo dpkg -i mysql-common_5.7.42-1ubuntu18.04_amd64.deb # 2. 安装 mysql-community-client sudo dpkg -i mysql-community-client_5.7.42-1ubuntu18.04_amd64.deb # 这里报错提示要安装 libaio1 和 libtinfo5 # 先安装别的 # 3. 安装 libmysqlclient20 ... sudo dpkg -i libmysqlclient20_5.7.42-1ubuntu18.04_amd64.deb # 4. 安装 libmysqlclient-dev ... sudo dpkg -i libmysqlclient-dev_5.7.42-1ubuntu18.04_amd64.deb # 5. 安装 libmysqld-dev ... sudo dpkg -i libmysqld-dev_5.7.42-1ubuntu18.04_amd64.deb # 6."/>
+
+    <meta property="og:title" content="Ubuntu 离线安装 Mysql5.7" />
+<meta property="og:description" content="记录一下在 Ubuntu 22.04 上安装 Mysql 5.7.42 的过程.
+1. 下载安装包 从官网下载安装包: https://downloads.mysql.com/archives/community/
+下载这个文件
+然后解压
+tar -xvf ./mysql-server_5.7.42-1ubuntu18.04_amd64.deb-bundle.tar # 这边一般直接tab补全就可以了 2. 开始安装 # 1. 安装 mysql-common sudo dpkg -i mysql-common_5.7.42-1ubuntu18.04_amd64.deb # 2. 安装 mysql-community-client sudo dpkg -i mysql-community-client_5.7.42-1ubuntu18.04_amd64.deb # 这里报错提示要安装 libaio1 和 libtinfo5 # 先安装别的 # 3. 安装 libmysqlclient20 ... sudo dpkg -i libmysqlclient20_5.7.42-1ubuntu18.04_amd64.deb # 4. 安装 libmysqlclient-dev ... sudo dpkg -i libmysqlclient-dev_5.7.42-1ubuntu18.04_amd64.deb # 5. 安装 libmysqld-dev ... sudo dpkg -i libmysqld-dev_5.7.42-1ubuntu18.04_amd64.deb # 6." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://Lu0key.github.io/post/ubuntu-offline-install-mysql5.7/" /><meta property="article:section" content="post" />
+<meta property="article:published_time" content="2024-11-06T17:08:56&#43;08:00" />
+<meta property="article:modified_time" content="2024-11-06T17:08:56&#43;08:00" />
+
+
+
+  </head>
+  <body>
+    <header class="app-header">
+      <a href="https://Lu0key.github.io/"><img class="app-header-avatar" src="/avatar.jpg" alt="洛七" /></a>
+      <span class="app-header-title">洛七的摸鱼池塘</span>
+      <nav class="app-header-menu">
+          <a class="app-header-menu-item" href="/tags/">Tags</a>
+      </nav>
+      <p>即将没书读的咸鱼</p>
+    </header>
+    <main class="app-container">
+      
+  <article class="post">
+    <header class="post-header">
+      <h1 class ="post-title">Ubuntu 离线安装 Mysql5.7</h1>
+      <div class="post-meta">
+        <div>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-calendar">
+  <title>calendar</title>
+  <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line>
+</svg>
+          Nov 6, 2024
+        </div>
+        <div>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-clock">
+  <title>clock</title>
+  <circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline>
+</svg>
+          2 min read
+        </div>
+        <div>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-tag">
+  <title>tag</title>
+  <path d="M20.59 13.41l-7.17 7.17a2 2 0 0 1-2.83 0L2 12V2h10l8.59 8.59a2 2 0 0 1 0 2.82z"></path><line x1="7" y1="7" x2="7.01" y2="7"></line>
+</svg>
+              <a class="tag" href="https://Lu0key.github.io/tags/linux/">Linux</a>
+        </div>
+      </div>
+    </header>
+    <div class="post-content">
+      <p>记录一下在 Ubuntu 22.04 上安装 Mysql 5.7.42 的过程.</p>
+<h2 id="1-下载安装包">1. 下载安装包</h2>
+<p>从官网下载安装包: <a href="https://downloads.mysql.com/archives/community/">https://downloads.mysql.com/archives/community/</a></p>
+<p>下载这个文件</p>
+<p><img src="https://raw.githubusercontent.com/Lu0Key/hexo-image/master/images/2023/09/09202320230929172321.png" alt="deb bundle"></p>
+<p>然后解压</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">tar -xvf ./mysql-server_5.7.42-1ubuntu18.04_amd64.deb-bundle.tar
+<span style="color:#75715e"># 这边一般直接tab补全就可以了</span>
+</code></pre></div><h2 id="2-开始安装">2. 开始安装</h2>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e"># 1. 安装 mysql-common</span>
+sudo dpkg -i mysql-common_5.7.42-1ubuntu18.04_amd64.deb
+<span style="color:#75715e"># 2. 安装 mysql-community-client</span>
+sudo dpkg -i mysql-community-client_5.7.42-1ubuntu18.04_amd64.deb
+<span style="color:#75715e"># 这里报错提示要安装 libaio1 和 libtinfo5</span>
+<span style="color:#75715e"># 先安装别的</span>
+<span style="color:#75715e"># 3. 安装 libmysqlclient20 ...</span>
+sudo dpkg -i libmysqlclient20_5.7.42-1ubuntu18.04_amd64.deb
+<span style="color:#75715e"># 4. 安装 libmysqlclient-dev ...</span>
+sudo dpkg -i libmysqlclient-dev_5.7.42-1ubuntu18.04_amd64.deb
+<span style="color:#75715e"># 5. 安装 libmysqld-dev ...</span>
+sudo dpkg -i libmysqld-dev_5.7.42-1ubuntu18.04_amd64.deb
+<span style="color:#75715e"># 6. 解决libtinfo5 依赖的问题</span>
+</code></pre></div><p>进入 <a href="https://pkgs.org/">https://pkgs.org/</a> 网站进行搜索</p>
+<p><img src="https://raw.githubusercontent.com/Lu0Key/hexo-image/master/images/2023/09/20230929173718.png" alt=""></p>
+<p>选择适合自己系统的版本点进去，找到 Dowanload</p>
+<p><img src="https://raw.githubusercontent.com/Lu0Key/hexo-image/master/images/2023/09/20230929173856.png" alt=""></p>
+<p>复制链接</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">wget http://archive.ubuntu.com/ubuntu/pool/universe/n/ncurses/libtinfo5_6.3-2_amd64.deb
+</code></pre></div><p>libaio1 同理</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">wget http://archive.ubuntu.com/ubuntu/pool/main/liba/libaio/libaio1_0.3.112-13build1_amd64.deb
+</code></pre></div><p>安装</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e"># 1. 解决 libtinfo5 和 libaio1 依赖的问题</span>
+sudo dpkg -i libtinfo5_6.3-2_amd64.deb
+sudo dpkg -i libaio1_0.3.112-13build1_amd64.deb
+<span style="color:#75715e"># 2. 安装 mysql-community-client</span>
+sudo dpkg -i mysql-community-client_5.7.42-1ubuntu18.04_amd64.deb
+<span style="color:#75715e"># 3. 安装 mysql-client</span>
+sudo dpkg -i mysql-client_5.7.42-1ubuntu18.04_amd64.deb
+<span style="color:#75715e"># 4. 安装 mysql-community-source</span>
+sudo dpkg -i mysql-community-source_5.7.42-1ubuntu18.04_amd64.deb
+<span style="color:#75715e"># 5. 安装 mysql-community-server</span>
+sudo dpkg -i mysql-community-server_5.7.42-1ubuntu18.04_amd64.deb
+<span style="color:#75715e"># 发现需要 libmecab2 依赖</span>
+<span style="color:#75715e"># 同之前的解决方式</span>
+wget http://archive.ubuntu.com/ubuntu/pool/main/m/mecab/libmecab2_0.996-14build9_amd64.deb
+sudo dpkg -i libmecab2_0.996-14build9_amd64.deb
+<span style="color:#75715e"># 6. 再次安装 mysql-community-server</span>
+sudo dpkg -i mysql-community-server_5.7.42-1ubuntu18.04_amd64.deb
+<span style="color:#75715e"># 这里提示设置mysql root密码，设置一下就好</span>
+<span style="color:#75715e"># 7. 安装 mysql-server</span>
+sudo dpkg -i mysql-server_5.7.42-1ubuntu18.04_amd64.deb 
+</code></pre></div><h2 id="3-测试">3. 测试</h2>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e"># 检查状态</span>
+systemctl status mysql
+</code></pre></div><p>我到这里显示 <code>Active: active (running)</code> , 说明安装成功了, 进行登录测试</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">mysql -u root -p
+</code></pre></div><p>如哦显示 <code>Welcome to the MySQL monitor.  Commands end with ; or \g.</code> 说明登录成功了.</p>
+<h2 id="4-其他">4. 其他</h2>
+<p>如果需要运行 MySQL 能够远程登录</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">sudo vim /etc/mysql/mysql.conf.d/mysqld.cnf
+<span style="color:#75715e"># 修改配置</span>
+<span style="color:#75715e"># 注释掉 bind-address = 127.0.0.1</span>
+<span style="color:#75715e"># 然后重启 MySQL 服务即可</span>
+sudo systemctl restart mysql
+</code></pre></div>
+    </div>
+    <div class="post-footer">
+      
+    </div>
+  </article>
+
+    </main>
+  </body>
+</html>

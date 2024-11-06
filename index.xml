@@ -6,7 +6,20 @@
     <description>Recent content on 洛七的摸鱼池塘</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Wed, 06 Nov 2024 17:04:58 +0800</lastBuildDate><atom:link href="https://Lu0key.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Wed, 06 Nov 2024 17:08:56 +0800</lastBuildDate><atom:link href="https://Lu0key.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Ubuntu 离线安装 Mysql5.7</title>
+      <link>https://Lu0key.github.io/post/ubuntu-offline-install-mysql5.7/</link>
+      <pubDate>Wed, 06 Nov 2024 17:08:56 +0800</pubDate>
+      
+      <guid>https://Lu0key.github.io/post/ubuntu-offline-install-mysql5.7/</guid>
+      <description>记录一下在 Ubuntu 22.04 上安装 Mysql 5.7.42 的过程.
+1. 下载安装包 从官网下载安装包: https://downloads.mysql.com/archives/community/
+下载这个文件
+然后解压
+tar -xvf ./mysql-server_5.7.42-1ubuntu18.04_amd64.deb-bundle.tar # 这边一般直接tab补全就可以了 2. 开始安装 # 1. 安装 mysql-common sudo dpkg -i mysql-common_5.7.42-1ubuntu18.04_amd64.deb # 2. 安装 mysql-community-client sudo dpkg -i mysql-community-client_5.7.42-1ubuntu18.04_amd64.deb # 这里报错提示要安装 libaio1 和 libtinfo5 # 先安装别的 # 3. 安装 libmysqlclient20 ... sudo dpkg -i libmysqlclient20_5.7.42-1ubuntu18.04_amd64.deb # 4. 安装 libmysqlclient-dev ... sudo dpkg -i libmysqlclient-dev_5.7.42-1ubuntu18.04_amd64.deb # 5. 安装 libmysqld-dev ... sudo dpkg -i libmysqld-dev_5.7.42-1ubuntu18.04_amd64.deb # 6.</description>
+    </item>
+    
     <item>
       <title>Ubuntu 离线安装 Python 2.7</title>
       <link>https://Lu0key.github.io/post/ubuntu-python2.7/</link>
