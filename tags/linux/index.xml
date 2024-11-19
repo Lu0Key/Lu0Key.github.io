@@ -6,7 +6,20 @@
     <description>Recent content in Linux on 洛七的摸鱼池塘</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Wed, 06 Nov 2024 17:12:21 +0800</lastBuildDate><atom:link href="https://Lu0key.github.io/tags/linux/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Tue, 19 Nov 2024 11:40:44 +0800</lastBuildDate><atom:link href="https://Lu0key.github.io/tags/linux/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Docker 镜像下载加速</title>
+      <link>https://Lu0key.github.io/post/docker-mirrors/</link>
+      <pubDate>Tue, 19 Nov 2024 11:40:44 +0800</pubDate>
+      
+      <guid>https://Lu0key.github.io/post/docker-mirrors/</guid>
+      <description>当前，Docker 镜像下载速度较慢，可以通过配置 Docker 镜像加速器来提高下载速度。
+sudo vim /etc/docker/daemon.json 修改里面的内容为
+{ &amp;#34;registry-mirrors&amp;#34;: [ &amp;#34;https://yczv4b52.mirror.aliyuncs.com&amp;#34;, &amp;#34;https://docker.m.daocloud.io&amp;#34;, &amp;#34;https://huecker.io&amp;#34;, &amp;#34;https://dockerhub.timeweb.cloud&amp;#34;, &amp;#34;https://registry.cn-hangzhou.aliyuncs.com&amp;#34; ], &amp;#34;live-restore&amp;#34;: true, &amp;#34;log-opts&amp;#34;: { &amp;#34;max-size&amp;#34;: &amp;#34;512m&amp;#34;, &amp;#34;max-file&amp;#34;: &amp;#34;3&amp;#34; }, &amp;#34;dns&amp;#34;: [&amp;#34;127.0.0.53&amp;#34;, &amp;#34;8.8.8.8&amp;#34;, &amp;#34;114.114.114.114&amp;#34;] } 主要是这里的 registry-mirrors 配置项，可以配置多个镜像地址，以逗号分隔。
+然后重启docker
+sudo systemctl daemon-reload sudo systemctl restart docker 这样就可以加速 Docker 镜像的下载速度了。</description>
+    </item>
+    
     <item>
       <title>Ubuntu 离线安装 Node8.16</title>
       <link>https://Lu0key.github.io/post/ubuntu-offline-node8.16/</link>
