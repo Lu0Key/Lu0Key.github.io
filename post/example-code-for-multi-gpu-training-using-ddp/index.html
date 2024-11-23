@@ -17,13 +17,13 @@
 <meta name="twitter:description" content="有时候训练模型为了提高速度，单纯的提高batch size 已经没用了, 这时候我们会使用多卡训练，这里我们使用DDP（Distributed Data Parallel）来实现多卡训练。
 这里是单机多卡, 毕竟我们集群上也没几台机器&hellip;
 DDP 比较麻烦, 因此这里记录一下如何使用DDP进行多卡训练。
-# 这里只是一个大致的样例，具体的代码需要根据实际情况进行修改 # 有些常见的包我也不写了 import torch.distributed as dist from torch.nn.parallel import DistributedDataParallel as DDP parser = argparse.ArgumentParser(description=&#34;PyTorch DDP Example&#34;) # 这个是我的习惯, 常常是为了适配单卡和多卡的场景 parser.add_argument(&#34;--is_multi_gpu&#34;, type=bool, default=False) # 下面这个是必要的, 这个参数不需要手动传入 parser.add_argument(&#34;--local-rank&#34;, type=int, default=-1) args = parser.parse_args() device = torch.device(&#34;cuda&#34; if torch.cuda.is_available() else &#34;cpu&#34;)# 指定gpu0为主GPU is_multi_gpu = args.is_multi_gpu # 后面全是用这种方式去进行适配单卡和多卡 if is_multi_gpu == True: device = args.local_rank torch.cuda.set_device(args.local_rank) dist.init_process_group(backend=&#39;nccl&#39;) # 首先加载数据集 train_dataset = ."/>
+# 这里只是一个大致的样例，具体的代码需要根据实际情况进行修改 # 有些常见的包我也不写了 import torch.distributed as dist from torch.nn.parallel import DistributedDataParallel as DDP parser = argparse.ArgumentParser(description=&#34;PyTorch DDP Example&#34;) # 这个是我的习惯, 常常是为了适配单卡和多卡的场景 parser.add_argument(&#34;--is_multi_gpu&#34;, type=bool, default=False) # 下面这个是必要的, 这个参数不需要手动传入 parser.add_argument(&#34;--local-rank&#34;, type=int, default=-1) # 好像2.0 开始的torch 才是 local-rank # 1.x 的是 local_rank args = parser.parse_args() device = torch.device(&#34;cuda&#34; if torch.cuda.is_available() else &#34;cpu&#34;)# 指定gpu0为主GPU is_multi_gpu = args.is_multi_gpu # 后面全是用这种方式去进行适配单卡和多卡 if is_multi_gpu == True: device = args."/>
 
     <meta property="og:title" content="DDP 多卡训练样例代码" />
 <meta property="og:description" content="有时候训练模型为了提高速度，单纯的提高batch size 已经没用了, 这时候我们会使用多卡训练，这里我们使用DDP（Distributed Data Parallel）来实现多卡训练。
 这里是单机多卡, 毕竟我们集群上也没几台机器&hellip;
 DDP 比较麻烦, 因此这里记录一下如何使用DDP进行多卡训练。
-# 这里只是一个大致的样例，具体的代码需要根据实际情况进行修改 # 有些常见的包我也不写了 import torch.distributed as dist from torch.nn.parallel import DistributedDataParallel as DDP parser = argparse.ArgumentParser(description=&#34;PyTorch DDP Example&#34;) # 这个是我的习惯, 常常是为了适配单卡和多卡的场景 parser.add_argument(&#34;--is_multi_gpu&#34;, type=bool, default=False) # 下面这个是必要的, 这个参数不需要手动传入 parser.add_argument(&#34;--local-rank&#34;, type=int, default=-1) args = parser.parse_args() device = torch.device(&#34;cuda&#34; if torch.cuda.is_available() else &#34;cpu&#34;)# 指定gpu0为主GPU is_multi_gpu = args.is_multi_gpu # 后面全是用这种方式去进行适配单卡和多卡 if is_multi_gpu == True: device = args.local_rank torch.cuda.set_device(args.local_rank) dist.init_process_group(backend=&#39;nccl&#39;) # 首先加载数据集 train_dataset = ." />
+# 这里只是一个大致的样例，具体的代码需要根据实际情况进行修改 # 有些常见的包我也不写了 import torch.distributed as dist from torch.nn.parallel import DistributedDataParallel as DDP parser = argparse.ArgumentParser(description=&#34;PyTorch DDP Example&#34;) # 这个是我的习惯, 常常是为了适配单卡和多卡的场景 parser.add_argument(&#34;--is_multi_gpu&#34;, type=bool, default=False) # 下面这个是必要的, 这个参数不需要手动传入 parser.add_argument(&#34;--local-rank&#34;, type=int, default=-1) # 好像2.0 开始的torch 才是 local-rank # 1.x 的是 local_rank args = parser.parse_args() device = torch.device(&#34;cuda&#34; if torch.cuda.is_available() else &#34;cpu&#34;)# 指定gpu0为主GPU is_multi_gpu = args.is_multi_gpu # 后面全是用这种方式去进行适配单卡和多卡 if is_multi_gpu == True: device = args." />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://Lu0key.github.io/post/example-code-for-multi-gpu-training-using-ddp/" /><meta property="article:section" content="post" />
 <meta property="article:published_time" content="2024-04-01T10:32:46&#43;08:00" />
@@ -85,6 +85,8 @@ parser <span style="color:#f92672">=</span> argparse<span style="color:#f92672">
 parser<span style="color:#f92672">.</span>add_argument(<span style="color:#e6db74">&#34;--is_multi_gpu&#34;</span>, type<span style="color:#f92672">=</span>bool, default<span style="color:#f92672">=</span>False)
 <span style="color:#75715e"># 下面这个是必要的, 这个参数不需要手动传入</span>
 parser<span style="color:#f92672">.</span>add_argument(<span style="color:#e6db74">&#34;--local-rank&#34;</span>, type<span style="color:#f92672">=</span>int, default<span style="color:#f92672">=-</span><span style="color:#ae81ff">1</span>)
+<span style="color:#75715e"># 好像2.0 开始的torch 才是 local-rank</span>
+<span style="color:#75715e"># 1.x 的是 local_rank</span>
 args <span style="color:#f92672">=</span> parser<span style="color:#f92672">.</span>parse_args()
 
 device <span style="color:#f92672">=</span> torch<span style="color:#f92672">.</span>device(<span style="color:#e6db74">&#34;cuda&#34;</span> <span style="color:#66d9ef">if</span> torch<span style="color:#f92672">.</span>cuda<span style="color:#f92672">.</span>is_available() <span style="color:#66d9ef">else</span> <span style="color:#e6db74">&#34;cpu&#34;</span>)<span style="color:#75715e"># 指定gpu0为主GPU</span>
@@ -107,6 +109,8 @@ model <span style="color:#f92672">=</span> <span style="color:#f92672">...</span
 model <span style="color:#f92672">=</span> model<span style="color:#f92672">.</span>to(device)
 <span style="color:#66d9ef">if</span> is_multi_gpu <span style="color:#f92672">==</span> True:
     model <span style="color:#f92672">=</span> DDP(model, device_ids<span style="color:#f92672">=</span>[args<span style="color:#f92672">.</span>local_rank], output_device<span style="color:#f92672">=</span>args<span style="color:#f92672">.</span>local_rank)
+    <span style="color:#75715e"># 一般会加上另一个参数(因为有些参数不会回归)</span>
+    model <span style="color:#f92672">=</span> DDP(model, device_ids<span style="color:#f92672">=</span>[args<span style="color:#f92672">.</span>local_rank], output_device<span style="color:#f92672">=</span>args<span style="color:#f92672">.</span>local_rank, find_unused_parameters<span style="color:#f92672">=</span>True)
 
 optimizer <span style="color:#f92672">=</span> torch<span style="color:#f92672">.</span>optim<span style="color:#f92672">.</span>AdamW(model<span style="color:#f92672">.</span>parameters(), lr<span style="color:#f92672">=</span><span style="color:#ae81ff">5e-5</span>)
 
