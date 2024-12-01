@@ -105,12 +105,18 @@ train_dataloader <span style="color:#f92672">=</span> DataLoader(train_dataset, 
     train_dataloader <span style="color:#f92672">=</span> DataLoader(train_dataset, batch_size<span style="color:#f92672">=...</span>, sampler<span style="color:#f92672">=</span>train_sampler, num_workers<span style="color:#f92672">=...</span>)
 
 
+<span style="color:#75715e"># 超級重要!</span>
+<span style="color:#75715e"># 如果你要load 模型, 那么你需要在这里加上这个</span>
+<span style="color:#75715e"># model.load_state_dict(torch.load(&#34;model.pth&#34;, map_location=&#34;cpu&#34;))</span>
+<span style="color:#75715e"># 不然你的卡一會多占用很多份的顯存,份數為 GPU 數量 - 1</span>
 model <span style="color:#f92672">=</span> <span style="color:#f92672">...</span>
 model <span style="color:#f92672">=</span> model<span style="color:#f92672">.</span>to(device)
 <span style="color:#66d9ef">if</span> is_multi_gpu <span style="color:#f92672">==</span> True:
     model <span style="color:#f92672">=</span> DDP(model, device_ids<span style="color:#f92672">=</span>[args<span style="color:#f92672">.</span>local_rank], output_device<span style="color:#f92672">=</span>args<span style="color:#f92672">.</span>local_rank)
     <span style="color:#75715e"># 一般会加上另一个参数(因为有些参数不会回归)</span>
     model <span style="color:#f92672">=</span> DDP(model, device_ids<span style="color:#f92672">=</span>[args<span style="color:#f92672">.</span>local_rank], output_device<span style="color:#f92672">=</span>args<span style="color:#f92672">.</span>local_rank, find_unused_parameters<span style="color:#f92672">=</span>True)
+
+
 
 optimizer <span style="color:#f92672">=</span> torch<span style="color:#f92672">.</span>optim<span style="color:#f92672">.</span>AdamW(model<span style="color:#f92672">.</span>parameters(), lr<span style="color:#f92672">=</span><span style="color:#ae81ff">5e-5</span>)
 
