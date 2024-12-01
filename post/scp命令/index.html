@@ -59,7 +59,7 @@
   <title>clock</title>
   <circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline>
 </svg>
-          1 min read
+          2 min read
         </div>
         <div>
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-tag">
@@ -142,6 +142,22 @@ private_key_path <span style="color:#f92672">=</span> <span style="color:#e6db74
 
 scp_upload(local_path, remote_path, server, username, private_key_path)
 </code></pre></div><p>然后这里要注意一点 paramiko 的版本需要高一点, 我用的是 3.4.0, 之前用 2.8.0 会报错. 可能是因为一些参数的不一样, 但是这个不重要, 所以就不细探究了.</p>
+<h2 id="rsync">Rsync</h2>
+<p>发现有时候需要上传完成后删除本地的文件,因此此时可以使用这个命令</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">rsync -avzP --remove-source-files  -e <span style="color:#e6db74">&#34;ssh -i id_rsa&#34;</span> folder username@IP:/remote/to/path/
+</code></pre></div><ul>
+<li><code>-a</code>：归档模式，表示递归传输文件，并保持所有文件属性。</li>
+<li><code>-v</code>：详细模式，输出传输过程中的详细信息。</li>
+<li><code>-z</code>：压缩传输，加快文件传输速度。</li>
+<li><code>-P</code>：显示传输进度信息。就是显示速度啥的</li>
+<li><code>--remove-source-files</code>：传输完成后删除源文件。</li>
+<li>folder: 本地的文件夹, 你看这里没有 <code>/</code> 结尾</li>
+<li>username: 用户名</li>
+<li>IP: 服务器IP地址</li>
+<li>/remote/to/path/: 服务器上的路径</li>
+<li><code>-e &quot;ssh -i id_rsa&quot;</code>: 指定私钥文件登录</li>
+</ul>
+<p>传过去就会是 <code>/remote/to/path/folder</code> 这个形式</p>
 
     </div>
     <div class="post-footer">
