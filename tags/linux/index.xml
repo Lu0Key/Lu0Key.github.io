@@ -6,7 +6,17 @@
     <description>Recent content in Linux on 洛七的摸鱼池塘</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Tue, 19 Nov 2024 11:40:44 +0800</lastBuildDate><atom:link href="https://Lu0key.github.io/tags/linux/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Thu, 12 Dec 2024 14:47:53 +0800</lastBuildDate><atom:link href="https://Lu0key.github.io/tags/linux/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>查看 Linux 硬件信息</title>
+      <link>https://Lu0key.github.io/post/linux-hardware/</link>
+      <pubDate>Thu, 12 Dec 2024 14:47:53 +0800</pubDate>
+      
+      <guid>https://Lu0key.github.io/post/linux-hardware/</guid>
+      <description>信息监控 网速 有时候想要看看当前服务器的上传下载速度，当前的流量怎么样, 因此需要
+sudo apt-get update sudo apt-get install vnstat sudo vnstat -l # 上面那个比较简陋 # 我们可以使用有可视化界面的 sudo apt-get update sudo apt-get install bmon sudo bmon 硬件 # 有时候要看没装显卡的服务器的型号是什么 lspci | grep VGA # 16:00.0 VGA compatible controller: NVIDIA Corporation Device 2684 (rev a1) # 34:00.0 VGA compatible controller: NVIDIA Corporation Device 2684 (rev a1) # 52:00.0 VGA compatible controller: NVIDIA Corporation Device 2684 (rev a1) # 70:00.0 VGA compatible controller: NVIDIA Corporation Device 2684 (rev a1) # 然后就可以根据这个 2684 去下载显卡驱动 # https://admin.</description>
+    </item>
+    
     <item>
       <title>Docker 镜像下载加速</title>
       <link>https://Lu0key.github.io/post/docker-mirrors/</link>
