@@ -6,7 +6,17 @@
     <description>Recent content in Posts on 洛七的摸鱼池塘</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Thu, 12 Dec 2024 14:47:53 +0800</lastBuildDate><atom:link href="https://Lu0key.github.io/post/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Thu, 30 Jan 2025 16:50:41 +0800</lastBuildDate><atom:link href="https://Lu0key.github.io/post/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Echarts Sankey</title>
+      <link>https://Lu0key.github.io/post/echarts-sankey/</link>
+      <pubDate>Thu, 30 Jan 2025 16:50:41 +0800</pubDate>
+      
+      <guid>https://Lu0key.github.io/post/echarts-sankey/</guid>
+      <description>给我的sankey图做一个记录.
+option = { tooltip: { trigger: &amp;#39;item&amp;#39;, triggerOn: &amp;#39;mousemove&amp;#39; }, animation: false, series: [ { type: &amp;#39;sankey&amp;#39;, bottom: &amp;#39;10%&amp;#39;, emphasis: { focus: &amp;#39;adjacency&amp;#39; }, data: [ { name: &amp;#39;SARS-CoV2_Omicron-BA4/BA5&amp;#39;, itemStyle: { color: &amp;#39;rgb(239, 140, 46)&amp;#39; }, label: { verticalAlign: &amp;#39;middle&amp;#39;, align: &amp;#39;middle&amp;#39;, position: &amp;#39;inside&amp;#39;, color: &amp;#39;#fff&amp;#39;, fontSize: 10, } }, { name: &amp;#39;SARS-CoV2_Omicron-BA1&amp;#39;, itemStyle: { color: &amp;#39;rgb(240,147,174)&amp;#39; }, label: { verticalAlign: &amp;#39;middle&amp;#39;, align: &amp;#39;middle&amp;#39;, position: &amp;#39;inside&amp;#39;, color: &amp;#39;#fff&amp;#39;, fontSize: 10, } }, { name: &amp;#39;SARS-CoV2_Omicron-BA2.</description>
+    </item>
+    
     <item>
       <title>查看 Linux 硬件信息</title>
       <link>https://Lu0key.github.io/post/linux-hardware/</link>
